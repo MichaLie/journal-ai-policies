@@ -64,9 +64,8 @@ def _rows() -> list[dict]:
     corpus, strip_map = {}, {}
     for e in ents:
         for s in e.get("sources", []):
-            p = SNAPSHOTS / e["id"] / s["id"] / "content.bin"
-            if p.exists():
-                v = visible(p.read_bytes())
+            v = source_text(e["id"], s["id"])
+            if v is not None:
                 corpus[f"{e['id']}/{s['id']}"] = norm(v)
                 strip_map[f"{e['id']}/{s['id']}"] = strip(v)
     rows = []
@@ -90,14 +89,25 @@ def _rows() -> list[dict]:
     return rows
 
 
+def source_text(entity: str, source: str) -> str | None:
+    """Prefer the committed text extract; fall back to raw bytes when present.
+    text.txt is in version control, content.bin is not, so this is what makes
+    the quote gate runnable on a clean checkout."""
+    d = SNAPSHOTS / entity / source
+    txt = d / "text.txt"
+    if txt.exists():
+        return txt.read_text(encoding="utf-8")
+    raw = d / "content.bin"
+    return visible(raw.read_bytes()) if raw.exists() else None
+
+
 def main() -> int:
     ents = load_entities()
     corpus, strip_map = {}, {}
     for e in ents:
         for s in e.get("sources", []):
-            p = SNAPSHOTS / e["id"] / s["id"] / "content.bin"
-            if p.exists():
-                v = visible(p.read_bytes())
+            v = source_text(e["id"], s["id"])
+            if v is not None:
                 corpus[f"{e['id']}/{s['id']}"] = norm(v)
                 strip_map[f"{e['id']}/{s['id']}"] = strip(v)
 

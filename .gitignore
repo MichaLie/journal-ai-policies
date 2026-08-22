@@ -2,8 +2,12 @@ __pycache__/
 *.pyc
 .DS_Store
 
-# Fetched bytes are large and re-fetchable; the HASH is the record, not the payload.
+# Raw fetched bytes are large and re-fetchable. The archival hash of them lives
+# in meta.json as content_sha256; the bytes themselves stay local.
 snapshots/**/content.bin
 
-# meta.json IS tracked — it carries the hash chain that makes the time series work.
+# text.txt IS tracked. It is the extracted visible text, ~9% of the raw size,
+# and it is what quote verification reads. Without it in version control the
+# quote gate cannot run on a clean checkout, which is where CI runs.
+!snapshots/**/text.txt
 !snapshots/**/meta.json

@@ -112,6 +112,12 @@ def main(argv: list[str]) -> int:
                 history.append({"fetched": stamp, "sha256": digest, "text_sha256": tdigest})
 
             write_atomic(outdir / "content.bin", body)
+            # The text extract is what gets committed. Quote verification needs
+            # visible text, not raw bytes, and raw bytes are ~11x larger. Keeping
+            # only content.bin meant the quote gate could not run on a fresh
+            # checkout, so CI validated everything except the check this project
+            # is built around.
+            write_atomic(outdir / "text.txt", visible_text(body).encode("utf-8"))
             meta_path.write_text(json.dumps({
                 "entity": e["id"], "source": s["id"],
                 "url": url, "final_url": final_url, "http_status": status,
