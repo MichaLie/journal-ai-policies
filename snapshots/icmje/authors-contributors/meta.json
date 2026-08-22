@@ -1,0 +1,19 @@
+{
+  "entity": "icmje",
+  "source": "authors-contributors",
+  "url": "https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html",
+  "final_url": "https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html",
+  "http_status": "200",
+  "fetched": "2026-08-21",
+  "sha256": "f8abf4cc2a6e53ddbbf2db62482597f3abb2bf4d1fbbb403caebacf167dd0f10",
+  "text_sha256": "06293d267f4ad9fb3088ff23686cd19f2cdf5e8d3f035196ac2539b6a2ab17e2",
+  "bytes": 30215,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-08-21",
+      "sha256": "f8abf4cc2a6e53ddbbf2db62482597f3abb2bf4d1fbbb403caebacf167dd0f10",
+      "text_sha256": "06293d267f4ad9fb3088ff23686cd19f2cdf5e8d3f035196ac2539b6a2ab17e2"
+    }
+  ]
+}

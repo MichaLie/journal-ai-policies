@@ -1,0 +1,19 @@
+{
+  "entity": "wiley",
+  "source": "ai-guidelines",
+  "url": "https://www.wiley.com/en-us/publish/article/ai-guidelines/",
+  "final_url": "https://www.wiley.com/en-us/publish/article/ai-guidelines/",
+  "http_status": "200",
+  "fetched": "2026-08-21",
+  "sha256": "46c274126594f5a0d867b05e9d64e6aa2b1bdbe504cd713e28fd3ae5d1e44b17",
+  "text_sha256": "fb87b39ec81ad39599ed2df2b10599f3f0db36d3585001afc8f9dc43bd06a1b7",
+  "bytes": 334330,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-08-21",
+      "sha256": "46c274126594f5a0d867b05e9d64e6aa2b1bdbe504cd713e28fd3ae5d1e44b17",
+      "text_sha256": "fb87b39ec81ad39599ed2df2b10599f3f0db36d3585001afc8f9dc43bd06a1b7"
+    }
+  ]
+}

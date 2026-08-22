@@ -1,0 +1,24 @@
+{
+  "entity": "springer-nature",
+  "source": "nature-portfolio-ai",
+  "url": "https://web.archive.org/web/20260804231015/https://www.nature.com/nature-portfolio/editorial-policies/ai",
+  "final_url": "https://web.archive.org/web/20260804231015/https://www.nature.com/nature-portfolio/editorial-policies/ai",
+  "http_status": "200",
+  "fetched": "2026-08-21",
+  "sha256": "ca382659e24ce4f54fd1c4f56ed2187a08c8b69270ba3079ce48de35d68e5227",
+  "text_sha256": "c37e42eea5b6d4ef5bef504aa6d80f58137f90895d2b2ecc918f50df225ec7fb",
+  "bytes": 105824,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-08-21",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "text_sha256": "8ec7caf9e2bde63e06c15dd7587a189c00b45158d7899e4260fc5653ad931da5"
+    },
+    {
+      "fetched": "2026-08-21",
+      "sha256": "ca382659e24ce4f54fd1c4f56ed2187a08c8b69270ba3079ce48de35d68e5227",
+      "text_sha256": "c37e42eea5b6d4ef5bef504aa6d80f58137f90895d2b2ecc918f50df225ec7fb"
+    }
+  ]
+}

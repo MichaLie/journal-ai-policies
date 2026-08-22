@@ -1,0 +1,19 @@
+{
+  "entity": "elife",
+  "source": "review-process-ai",
+  "url": "https://reviewer.elifesciences.org/reviewer-guide/review-process",
+  "final_url": "https://elife-rp.msubmit.net/cgi-bin/main.plex?form_type=display_rev_instructions#process",
+  "http_status": "200",
+  "fetched": "2026-08-21",
+  "sha256": "e0ead2d067a69eedd8b7f9f0fddf9a893277009592014682eb7569c8721d9396",
+  "text_sha256": "4f55901fed920706827d050ab75caea7cb79758ea26a1ef8898c9d9ad5023320",
+  "bytes": 44712,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-08-21",
+      "sha256": "e0ead2d067a69eedd8b7f9f0fddf9a893277009592014682eb7569c8721d9396",
+      "text_sha256": "4f55901fed920706827d050ab75caea7cb79758ea26a1ef8898c9d9ad5023320"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+id: elsevier
+name: Elsevier
+type: publisher
+parent: null
+platform: sciencedirect.com
+policy_owner: elsevier
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+homepage: https://www.elsevier.com
+notes: Rewrote its journals policy in June 2026, permitting reviewers supportive use of private AI tools.
+  Its BOOKS policy sits behind a URL ending 'in-the-review-process' and forbids editors using AI to
+  evaluate material — secondary sources routinely quote that page as if it were the journals policy.
+  Cell Press, an Elsevier imprint, is reported to serve superseded 2023 wording; Cell Press is not yet
+  a record here.
+sources:
+- id: journals-policy
+  url: https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: stated
+  stated_date: 2026-06
+  last_verified: '2026-08-21'
+  content_sha256: 220011c7fb24006d8082761e9c8f14672f51a472bd84489ba0af1db041a97018
+  adjudicated_sha256: 118ebeeb6110f5ec2e9e48700b30560db84928bcae49f1cba402470cb1477e0e
+- id: books-policy
+  url: https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process
+  role: policy
+  audience: authors
+  status: current
+  authoritative: false
+  fetch_method: http
+  date_source: stated
+  stated_date: 2026-07
+  last_verified: '2026-08-21'
+  content_sha256: 0e97509b66eb141e7f99b3f24314b5261bb2cba0c5cb4914c0f020ce5a21b419
+  note: The slug says 'review process' but the page is Elsevier's BOOKS policy (13 mentions of book/chapter,
+    zero of 'journal' in lower case). Secondary sources routinely quote it as if it were the journals
+    policy. It is not.
+  adjudicated_sha256: 1b4c0ce846f4cefc20a4cd1cb9d9c852532d5ed848723721b95a10109bc0bee7
+policies:
+- axis: language_refinement
+  permission: permitted
+  disclosure: not_required
+  disclosure_location: []
+  rationale: unstated
+  conditions: Exemption is withdrawn where changes go beyond basic correction.
+  evidence:
+  - source: journals-policy
+    quote: Basic checks of grammar, spelling and punctuation do not need a declaration statement
+    quote_provenance: raw_bytes
+- axis: translation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: accountability
+  conditions: Output must be checked by a competent bilingual human.
+  evidence:
+  - source: journals-policy
+    quote: by a person who has a good understanding of both languages
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: confidentiality
+  conditions: 'Reversed in June 2026. Permitted only with a "private" AI tool as Elsevier defines it;
+    disclosure to authors is mandatory. Uploading the manuscript remains prohibited.
+
+    '
+  evidence:
+  - source: journals-policy
+    quote: Reviewers should not upload a submitted manuscript or any part of it into an AI tool
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: AI tools may therefore only be used in a supportive capacity, for example to improve the
+      language and structure of a review report, or to assist with a background literature search
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: The two policies disagree. The journals policy states Elsevier's editors have AI tools
+    for reviewer identification and duplicate detection; the books policy forbids editors using AI to
+    evaluate material at all. Neither tells an author which tools ran on their manuscript.
+  evidence:
+  - source: journals-policy
+    quote: Our editors have access to AI tools that assist in identifying relevant reviewers, matching
+      the scope of submissions, and detecting duplicate submissions.
+    quote_provenance: raw_bytes
+  - source: books-policy
+    quote: Generative AI or AI-assisted technologies should not be used by editors to assist in the
+      evaluation of authors' material/ manuscript
+    quote_provenance: raw_bytes
+    evidence_role: supports
+- axis: due_process
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'No threshold for triggering review, no duty to notify the author, and no route of appeal
+    is stated. The quote records what is granted instead: editorial discretion.'
+  evidence:
+  - source: journals-policy
+    quote: Authors may be asked to provide documentation of their AI use and the original, unprocessed
+      images for editorial assessment.
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+- axis: research_process_ai
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Names "AI agents and deep research tools" once, in a framing sentence. "Agentic" and "autonomous"
+    do not appear.
+- axis: detection_screening
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'Author-facing policy mentions image forensics only. Check Integrity was expanded to nearly
+    2,000 journals in March 2026 without appearing in the author policy.
+
+    '
+coherence:
+- summary: The books policy forbids editors using AI to evaluate material, while the journals policy
+    states Elsevier's editors have access to AI tools that identify reviewers and match submissions.
+    Both are live; the books policy sits behind a URL ending 'in-the-review-process'.
+  sources:
+  - journals-policy
+  - books-policy
+  axis: publisher_own_use

@@ -1,0 +1,19 @@
+{
+  "entity": "icmje",
+  "source": "ai-authors",
+  "url": "https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-authors.html",
+  "final_url": "https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-authors.html",
+  "http_status": "200",
+  "fetched": "2026-08-21",
+  "sha256": "9860a74b5dba3963d40f16a108f80e77b67d21aa6f03ef3c8b52ed131023157d",
+  "text_sha256": "84a8d89ddc8dd78af90bb6b06f9bcef247dc7a58198bbf5a082209e46835ff3f",
+  "bytes": 20984,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-08-21",
+      "sha256": "9860a74b5dba3963d40f16a108f80e77b67d21aa6f03ef3c8b52ed131023157d",
+      "text_sha256": "84a8d89ddc8dd78af90bb6b06f9bcef247dc7a58198bbf5a082209e46835ff3f"
+    }
+  ]
+}

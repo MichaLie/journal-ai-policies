@@ -1,0 +1,19 @@
+{
+  "entity": "icmje",
+  "source": "ai-editors",
+  "url": "https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-editors.html",
+  "final_url": "https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-editors.html",
+  "http_status": "200",
+  "fetched": "2026-08-21",
+  "sha256": "06d2dde1470800f2bba67d598103efa4b9a73c35f1b4091f49ff4383fb0cc1d3",
+  "text_sha256": "9156241b91cd5c3a9b464387e97de0a37af7ec8ed4c1ca790a8c4d321df1ec58",
+  "bytes": 21020,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-08-21",
+      "sha256": "06d2dde1470800f2bba67d598103efa4b9a73c35f1b4091f49ff4383fb0cc1d3",
+      "text_sha256": "9156241b91cd5c3a9b464387e97de0a37af7ec8ed4c1ca790a8c4d321df1ec58"
+    }
+  ]
+}

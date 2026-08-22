@@ -1,0 +1,1737 @@
+{
+  "generated": "2026-08-22",
+  "rights": "Records CC0. Quoted policy text remains the property of the publishers named and is reproduced as short excerpts for comparison and criticism.",
+  "consensus": {
+    "min_confident": 4,
+    "strong_threshold": 0.75,
+    "rows": [
+      {
+        "axis": "language_refinement",
+        "plain": "Using AI to polish your language",
+        "title": "Refinement, correction, editing or formatting the manuscript to improve clarity of language",
+        "band": "thin",
+        "n": 2,
+        "total": 10,
+        "rule": "Using AI to polish your language is permitted and needs no declaration",
+        "agree": 1.0,
+        "modal": "permitted",
+        "disclosure": "not_required",
+        "dissenters": [],
+        "stance": "allows",
+        "conditions_vary": false,
+        "locations": [],
+        "provisional": true,
+        "tied": false,
+        "stance_counts": {
+          "allows": 2
+        },
+        "group": "stm"
+      },
+      {
+        "axis": "writing_drafting",
+        "plain": "Using AI to draft manuscript text",
+        "title": "Writing or drafting manuscript content",
+        "band": "strong",
+        "n": 6,
+        "total": 10,
+        "rule": "Using AI to draft manuscript text is permitted under conditions and must be declared",
+        "agree": 0.83,
+        "modal": "permitted_with_conditions",
+        "disclosure": "required",
+        "dissenters": [
+          "ISTIC Guideline"
+        ],
+        "stance": "allows",
+        "conditions_vary": false,
+        "locations": [
+          "methods",
+          "acknowledgements",
+          "cover_letter"
+        ],
+        "provisional": false,
+        "tied": false,
+        "stance_counts": {
+          "allows": 5,
+          "forbids": 1
+        },
+        "group": "stm"
+      },
+      {
+        "axis": "data_presentation",
+        "plain": "Using AI to format the data you report",
+        "title": "Refining or formatting of data reported in the manuscript",
+        "band": "unassessed",
+        "n": 0,
+        "total": 10,
+        "rule": null,
+        "agree": 0,
+        "dissenters": [],
+        "provisional": true,
+        "group": "stm"
+      },
+      {
+        "axis": "illustrative_images",
+        "plain": "AI-generated illustrative figures",
+        "title": "Generation, refinement, correction, editing or formatting of images, diagrams or other figures for illustrative purposes only",
+        "band": "thin",
+        "n": 3,
+        "total": 10,
+        "rule": "AI-generated illustrative figures is not addressed",
+        "agree": 0.67,
+        "modal": "not_addressed",
+        "disclosure": "required",
+        "dissenters": [
+          "Science / AAAS"
+        ],
+        "stance": "silent",
+        "conditions_vary": false,
+        "locations": [
+          "submission_field"
+        ],
+        "provisional": true,
+        "tied": false,
+        "stance_counts": {
+          "silent": 2,
+          "allows": 1
+        },
+        "group": "stm"
+      },
+      {
+        "axis": "translation",
+        "plain": "Using AI to translate your manuscript",
+        "title": "Translation of manuscript text for the purpose of publishing",
+        "band": "thin",
+        "n": 3,
+        "total": 10,
+        "rule": "Using AI to translate your manuscript is permitted and must be declared",
+        "agree": 1.0,
+        "modal": "permitted",
+        "disclosure": "required",
+        "dissenters": [],
+        "stance": "allows",
+        "conditions_vary": true,
+        "locations": [
+          "dedicated_section",
+          "acknowledgements"
+        ],
+        "provisional": true,
+        "tied": false,
+        "stance_counts": {
+          "allows": 3
+        },
+        "group": "stm"
+      },
+      {
+        "axis": "data_visualisation",
+        "plain": "AI-generated charts of your real data",
+        "title": "Generation, refinement, correction, editing or formatting of visualisations of research data or results",
+        "band": "thin",
+        "n": 1,
+        "total": 10,
+        "rule": "AI-generated charts of your real data is prohibited",
+        "agree": 1.0,
+        "modal": "prohibited",
+        "disclosure": null,
+        "dissenters": [],
+        "stance": "forbids",
+        "conditions_vary": false,
+        "locations": [],
+        "provisional": true,
+        "tied": false,
+        "stance_counts": {
+          "forbids": 1
+        },
+        "group": "stm"
+      },
+      {
+        "axis": "code_presentation",
+        "plain": "Using AI to tidy code you report",
+        "title": "Refinement or formatting of code reported in the submitted manuscript",
+        "band": "thin",
+        "n": 1,
+        "total": 10,
+        "rule": "Using AI to tidy code you report is permitted under conditions",
+        "agree": 1.0,
+        "modal": "permitted_with_conditions",
+        "disclosure": "not_addressed",
+        "dissenters": [],
+        "stance": "allows",
+        "conditions_vary": false,
+        "locations": [],
+        "provisional": true,
+        "tied": false,
+        "stance_counts": {
+          "allows": 1
+        },
+        "group": "stm"
+      },
+      {
+        "axis": "reference_gathering",
+        "plain": "Using AI to find references",
+        "title": "Assisting with gathering references",
+        "band": "thin",
+        "n": 2,
+        "total": 10,
+        "rule": null,
+        "agree": 0.5,
+        "modal": "not_addressed",
+        "disclosure": "not_addressed",
+        "dissenters": [
+          "STM Association"
+        ],
+        "stance": "silent",
+        "conditions_vary": false,
+        "locations": [],
+        "provisional": true,
+        "tied": true,
+        "stance_counts": {
+          "silent": 1,
+          "allows": 1
+        },
+        "group": "stm"
+      },
+      {
+        "axis": "passing_off",
+        "plain": "Presenting AI output as original data",
+        "title": "Presentation of any kind of content generated by AI tools as though it were original research data/results from non-machine sources",
+        "band": "thin",
+        "n": 1,
+        "total": 10,
+        "rule": "Presenting AI output as original data is prohibited",
+        "agree": 1.0,
+        "modal": "prohibited",
+        "disclosure": null,
+        "dissenters": [],
+        "stance": "forbids",
+        "conditions_vary": false,
+        "locations": [],
+        "provisional": true,
+        "tied": false,
+        "stance_counts": {
+          "forbids": 1
+        },
+        "group": "stm"
+      },
+      {
+        "axis": "research_process_ai",
+        "plain": "Using AI to run the research itself",
+        "title": "AI used in the research process itself — analysis, code execution, agentic workflows",
+        "band": "split",
+        "n": 5,
+        "total": 10,
+        "rule": "Using AI to run the research itself is permitted under conditions and must be declared",
+        "agree": 0.6,
+        "modal": "permitted_with_conditions",
+        "disclosure": "required",
+        "dissenters": [
+          "Elsevier",
+          "STM Association"
+        ],
+        "stance": "allows",
+        "conditions_vary": false,
+        "locations": [
+          "methods"
+        ],
+        "provisional": false,
+        "tied": false,
+        "stance_counts": {
+          "allows": 3,
+          "silent": 2
+        },
+        "group": "extended"
+      },
+      {
+        "axis": "reviewer_use",
+        "plain": "Using AI when you peer-review",
+        "title": "Use of AI by peer reviewers",
+        "band": "split",
+        "n": 7,
+        "total": 10,
+        "rule": "Using AI when you peer-review is permitted under conditions and must be declared",
+        "agree": 0.71,
+        "modal": "permitted_with_conditions",
+        "disclosure": "required",
+        "dissenters": [
+          "ISTIC Guideline",
+          "Science / AAAS"
+        ],
+        "stance": "allows",
+        "conditions_vary": true,
+        "locations": [],
+        "provisional": false,
+        "tied": false,
+        "stance_counts": {
+          "allows": 5,
+          "silent": 1,
+          "forbids": 1
+        },
+        "group": "extended"
+      },
+      {
+        "axis": "publisher_own_use",
+        "plain": "The publisher running AI on your manuscript",
+        "title": "The publisher's or editor's own AI use on submitted manuscripts",
+        "band": "strong",
+        "n": 8,
+        "total": 10,
+        "rule": "The publisher running AI on your manuscript is permitted under conditions",
+        "agree": 0.88,
+        "modal": "permitted_with_conditions",
+        "disclosure": "not_addressed",
+        "dissenters": [
+          "Wiley"
+        ],
+        "stance": "allows",
+        "conditions_vary": true,
+        "locations": [],
+        "provisional": false,
+        "tied": false,
+        "stance_counts": {
+          "allows": 7,
+          "silent": 1
+        },
+        "group": "extended"
+      },
+      {
+        "axis": "detection_screening",
+        "plain": "Being screened by AI detectors",
+        "title": "Whether AI-text or integrity screening is run, and whether authors are told",
+        "band": "void",
+        "n": 4,
+        "total": 10,
+        "rule": null,
+        "agree": 1.0,
+        "modal": "not_addressed",
+        "disclosure": null,
+        "dissenters": [],
+        "stance": "silent",
+        "conditions_vary": false,
+        "locations": [],
+        "provisional": false,
+        "tied": false,
+        "stance_counts": {
+          "silent": 4
+        },
+        "group": "extended"
+      },
+      {
+        "axis": "due_process",
+        "plain": "Knowing why you were flagged, and appealing",
+        "title": "Threshold for review, notification of the author, and route of appeal",
+        "band": "void",
+        "n": 7,
+        "total": 10,
+        "rule": null,
+        "agree": 1.0,
+        "modal": "not_addressed",
+        "disclosure": null,
+        "dissenters": [],
+        "stance": "silent",
+        "conditions_vary": false,
+        "locations": [],
+        "provisional": false,
+        "tied": false,
+        "stance_counts": {
+          "silent": 7
+        },
+        "group": "extended"
+      },
+      {
+        "axis": "audit_trail",
+        "plain": "Keeping prompts and session records",
+        "title": "Prompts, model versions, session records retained as evidence",
+        "band": "thin",
+        "n": 2,
+        "total": 10,
+        "rule": "Keeping prompts and session records is permitted under conditions and must be declared",
+        "agree": 1.0,
+        "modal": "permitted_with_conditions",
+        "disclosure": "required",
+        "dissenters": [],
+        "stance": "allows",
+        "conditions_vary": true,
+        "locations": [
+          "methods",
+          "acknowledgements"
+        ],
+        "provisional": true,
+        "tied": false,
+        "stance_counts": {
+          "allows": 2
+        },
+        "group": "extended"
+      },
+      {
+        "axis": "content_licensing",
+        "plain": "Your paper licensed for AI training",
+        "title": "Licensing of author content for AI training, and author consent",
+        "band": "unassessed",
+        "n": 0,
+        "total": 10,
+        "rule": null,
+        "agree": 0,
+        "dissenters": [],
+        "provisional": true,
+        "group": "extended"
+      }
+    ],
+    "counts": {
+      "thin": 8,
+      "strong": 2,
+      "unassessed": 2,
+      "split": 2,
+      "void": 2
+    }
+  },
+  "axes": {
+    "source": {
+      "title": "Recommendations for a Classification of AI Use in Academic Manuscript Preparation",
+      "body": "STM Association Task and Finish Group on AI Labelling Terminology for Research Content Declaration",
+      "date": "2025-09",
+      "url": "https://s3.eu-west-2.amazonaws.com/stm.offloadmedia/wp-content/uploads/2025/04/23020709/STM_AI_Classification_Recs_19_Sept2025-1.pdf",
+      "retrieved": "2026-08-21",
+      "provenance": "raw_bytes"
+    },
+    "activities": [
+      {
+        "id": 1,
+        "key": "language_refinement",
+        "plain": "Using AI to polish your language",
+        "title": "Refinement, correction, editing or formatting the manuscript to improve clarity of language",
+        "note_2023": "2023 STM Guidelines recommend that disclosure is not necessary for this use of automated tools.",
+        "excludes": "Using AI tools to generate text from prompts or generate summaries of text"
+      },
+      {
+        "id": 2,
+        "key": "writing_drafting",
+        "plain": "Using AI to draft manuscript text",
+        "title": "Writing or drafting manuscript content",
+        "excludes": "Use of simple spelling and grammar checkers"
+      },
+      {
+        "id": 3,
+        "key": "data_presentation",
+        "plain": "Using AI to format the data you report",
+        "title": "Refining or formatting of data reported in the manuscript",
+        "excludes": "Using AI tools to visualise data sets (activity 6) or data manipulation"
+      },
+      {
+        "id": 4,
+        "key": "illustrative_images",
+        "plain": "AI-generated illustrative figures",
+        "title": "Generation, refinement, correction, editing or formatting of images, diagrams or other figures for illustrative purposes only",
+        "excludes": "Visualisation of actual data or research outputs"
+      },
+      {
+        "id": 5,
+        "key": "translation",
+        "plain": "Using AI to translate your manuscript",
+        "title": "Translation of manuscript text for the purpose of publishing",
+        "excludes": "Translation of materials as part of the research process, unrelated to manuscript preparation"
+      },
+      {
+        "id": 6,
+        "key": "data_visualisation",
+        "plain": "AI-generated charts of your real data",
+        "title": "Generation, refinement, correction, editing or formatting of visualisations of research data or results",
+        "excludes": "Use of traditional statistical software (such as STATA, SAS, and R) to visualise data"
+      },
+      {
+        "id": 7,
+        "key": "code_presentation",
+        "plain": "Using AI to tidy code you report",
+        "title": "Refinement or formatting of code reported in the submitted manuscript",
+        "excludes": "Using AI tools to generate new code for use in research processes"
+      },
+      {
+        "id": 8,
+        "key": "reference_gathering",
+        "plain": "Using AI to find references",
+        "title": "Assisting with gathering references",
+        "excludes": "Using AI tools to generate plausible-sounding references that do not exist"
+      },
+      {
+        "id": 9,
+        "key": "passing_off",
+        "plain": "Presenting AI output as original data",
+        "title": "Presentation of any kind of content generated by AI tools as though it were original research data/results from non-machine sources",
+        "note_2023": "2023 STM Guidelines recommend prohibiting this use of AI tools."
+      }
+    ],
+    "extended_axes": [
+      {
+        "key": "research_process_ai",
+        "plain": "Using AI to run the research itself",
+        "title": "AI used in the research process itself — analysis, code execution, agentic workflows",
+        "why": "Explicitly outside STM scope. Wiley addresses it; almost nobody else does."
+      },
+      {
+        "key": "reviewer_use",
+        "plain": "Using AI when you peer-review",
+        "title": "Use of AI by peer reviewers",
+        "why": "Widest divergence of any axis, and reversing. Not a manuscript-preparation activity."
+      },
+      {
+        "key": "publisher_own_use",
+        "plain": "The publisher running AI on your manuscript",
+        "title": "The publisher's or editor's own AI use on submitted manuscripts",
+        "why": "ICMJE section V.C now obliges journals to disclose this. Makes the asymmetry measurable."
+      },
+      {
+        "key": "detection_screening",
+        "plain": "Being screened by AI detectors",
+        "title": "Whether AI-text or integrity screening is run, and whether authors are told",
+        "why": "Near-universal silence. One publisher admits it. None denies it."
+      },
+      {
+        "key": "due_process",
+        "plain": "Knowing why you were flagged, and appealing",
+        "title": "Threshold for review, notification of the author, and route of appeal",
+        "why": "No policy found anywhere grants any of the three."
+      },
+      {
+        "key": "audit_trail",
+        "plain": "Keeping prompts and session records",
+        "title": "Prompts, model versions, session records retained as evidence",
+        "why": "The requirement agentic work needs. ISTIC 3.0 has it; English-language policy does not."
+      },
+      {
+        "key": "content_licensing",
+        "plain": "Your paper licensed for AI training",
+        "title": "Licensing of author content for AI training, and author consent",
+        "why": "Does not follow the publisher hierarchy — content is sublicensed between publishers."
+      }
+    ]
+  },
+  "entities": [
+    {
+      "id": "cope",
+      "name": "COPE",
+      "type": "normative_body",
+      "parent": null,
+      "platform": null,
+      "policy_owner": "cope",
+      "delegates_to_journal": false,
+      "policy_architecture": "prose",
+      "homepage": "https://publicationethics.org",
+      "notes": "The body most publishers cite, unrevised since 13 February 2023. Its separate discussion document on AI in editorial decisions dates from September 2021, before ChatGPT was released. The position statement places a duty on authors and assigns them liability; it contains no instruction to editors on what to do with a disclosure once received. Live publicationethics.org returns 403 to automated clients, so this record is verified against a dated Internet Archive capture.",
+      "sources": [
+        {
+          "id": "position-authorship-ai",
+          "url": "https://web.archive.org/web/20260208002603/https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools",
+          "role": "policy",
+          "audience": "authors",
+          "status": "current",
+          "authoritative": true,
+          "fetch_method": "archive",
+          "date_source": "stated",
+          "stated_date": "2023-02-13",
+          "last_verified": "2026-08-21",
+          "content_sha256": "2e0265f39fd552f0ed366257bba436ce2563cc7bca03e7c0d6147f4a224e429a",
+          "note": "Live publicationethics.org returns 403 to every automated client (Cloudflare). This is a dated Internet Archive capture of the same page.",
+          "adjudicated_sha256": "d0fbfe374dd619a3e749fcf515428e8a93f7534c64c44ad1015949e218682b90"
+        }
+      ],
+      "policies": [
+        {
+          "axis": "writing_drafting",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods"
+          ],
+          "rationale": "accountability",
+          "conditions": "Methods placement, naming the tool — three years before ICMJE said the same. Note the scope: it already covers collection and analysis of data.\n",
+          "evidence": [
+            {
+              "source": "position-authorship-ai",
+              "quote": "Authors who use AI tools in the writing of a manuscript, production of images or graphical elements of the paper, or in the collection and analysis of data, must be transparent in disclosing in the Materials and Methods (or similar section) of the paper how the AI tool was used",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "position-authorship-ai",
+              "quote": "Authors are fully responsible for the content of their manuscript, even those parts produced by an AI tool, and are thus liable for any breach of publication ethics.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "research_process_ai",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods"
+          ],
+          "rationale": "accountability",
+          "conditions": "The statement explicitly extends to \"the collection and analysis of data\".",
+          "evidence": [
+            {
+              "source": "position-authorship-ai",
+              "quote": "Authors who use AI tools in the writing of a manuscript, production of images or graphical elements of the paper, or in the collection and analysis of data, must be transparent in disclosing in the Materials and Methods (or similar section) of the paper how the AI tool was used",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "due_process",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "A load-bearing negative. The position statement says nothing whatsoever about what an editor should do with a disclosure once received.\n"
+        }
+      ],
+      "coherence": [],
+      "metadata_inconsistency": [
+        {
+          "summary": "The page states 'Last reviewed 13 February 2023' and carries a 2024 copyright line, while its DOI was deposited with Crossref on 2024-08-20. Cite it as reviewed February 2023, DOI deposited 2024.",
+          "sources": [
+            "position-authorship-ai"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "elife",
+      "name": "eLife",
+      "type": "publisher",
+      "parent": null,
+      "platform": "elifesciences.org",
+      "policy_owner": "elife",
+      "delegates_to_journal": false,
+      "policy_architecture": "prose",
+      "homepage": "https://elifesciences.org",
+      "notes": "The natural experiment. The only organisation recorded here that permits reviewers to use AI — because its reviewed-preprint model means the manuscript is already public, so the confidentiality reason other publishers give does not apply. Remove that reason and the ban has nothing to stand on: the rationale, not the technology, is doing the work. Disclosure is nonetheless required. eLife is also the only organisation here addressing editors using AI to find reviewers.",
+      "sources": [
+        {
+          "id": "review-process-ai",
+          "url": "https://reviewer.elifesciences.org/reviewer-guide/review-process",
+          "role": "policy",
+          "audience": "reviewers",
+          "status": "current",
+          "authoritative": true,
+          "fetch_method": "http",
+          "date_source": "none",
+          "stated_date": null,
+          "last_verified": "2026-08-21",
+          "content_sha256": "e0ead2d067a69eedd8b7f9f0fddf9a893277009592014682eb7569c8721d9396",
+          "adjudicated_sha256": "4f55901fed920706827d050ab75caea7cb79758ea26a1ef8898c9d9ad5023320"
+        }
+      ],
+      "policies": [
+        {
+          "axis": "reviewer_use",
+          "permission": "permitted",
+          "disclosure": "required",
+          "disclosure_location": [],
+          "rationale": "confidentiality",
+          "conditions": "Permitted because the confidentiality rationale does not apply to an already-public reviewed preprint — but disclosure is mandatory. An earlier version of this record quoted only the subordinate clause and wrongly recorded disclosure as not addressed.",
+          "evidence": [
+            {
+              "source": "review-process-ai",
+              "quote": "While we do not prevent the use of generative artificial intelligence tools within the review process, editors and reviewers remain accountable for their contributions and the contents of their reviews. If generative AI tools are used by editors or reviewers, this must be disclosed.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "publisher_own_use",
+          "permission": "permitted_with_conditions",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "The only entity found that addresses editors using AI to source reviewers.",
+          "evidence": [
+            {
+              "source": "review-process-ai",
+              "quote": "If generative AI is used by editors to source suggestions for potential reviewers, we expect the usual due diligence",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "illustrative_images",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "eLife's image expectations are not stated on the reviewer-guide page held here. Third-party accounts describing eLife as banning AI figures are unsupported by this source."
+        }
+      ]
+    },
+    {
+      "id": "elsevier",
+      "name": "Elsevier",
+      "type": "publisher",
+      "parent": null,
+      "platform": "sciencedirect.com",
+      "policy_owner": "elsevier",
+      "delegates_to_journal": false,
+      "policy_architecture": "rule_with_exemptions",
+      "homepage": "https://www.elsevier.com",
+      "notes": "Rewrote its journals policy in June 2026, permitting reviewers supportive use of private AI tools. Its BOOKS policy sits behind a URL ending 'in-the-review-process' and forbids editors using AI to evaluate material — secondary sources routinely quote that page as if it were the journals policy. Cell Press, an Elsevier imprint, is reported to serve superseded 2023 wording; Cell Press is not yet a record here.",
+      "sources": [
+        {
+          "id": "journals-policy",
+          "url": "https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals",
+          "role": "policy",
+          "audience": "all",
+          "status": "current",
+          "authoritative": true,
+          "fetch_method": "http",
+          "date_source": "stated",
+          "stated_date": "2026-06",
+          "last_verified": "2026-08-21",
+          "content_sha256": "220011c7fb24006d8082761e9c8f14672f51a472bd84489ba0af1db041a97018",
+          "adjudicated_sha256": "118ebeeb6110f5ec2e9e48700b30560db84928bcae49f1cba402470cb1477e0e"
+        },
+        {
+          "id": "books-policy",
+          "url": "https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process",
+          "role": "policy",
+          "audience": "authors",
+          "status": "current",
+          "authoritative": false,
+          "fetch_method": "http",
+          "date_source": "stated",
+          "stated_date": "2026-07",
+          "last_verified": "2026-08-21",
+          "content_sha256": "0e97509b66eb141e7f99b3f24314b5261bb2cba0c5cb4914c0f020ce5a21b419",
+          "note": "The slug says 'review process' but the page is Elsevier's BOOKS policy (13 mentions of book/chapter, zero of 'journal' in lower case). Secondary sources routinely quote it as if it were the journals policy. It is not.",
+          "adjudicated_sha256": "1b4c0ce846f4cefc20a4cd1cb9d9c852532d5ed848723721b95a10109bc0bee7"
+        }
+      ],
+      "policies": [
+        {
+          "axis": "language_refinement",
+          "permission": "permitted",
+          "disclosure": "not_required",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "Exemption is withdrawn where changes go beyond basic correction.",
+          "evidence": [
+            {
+              "source": "journals-policy",
+              "quote": "Basic checks of grammar, spelling and punctuation do not need a declaration statement",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "translation",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "dedicated_section"
+          ],
+          "rationale": "accountability",
+          "conditions": "Output must be checked by a competent bilingual human.",
+          "evidence": [
+            {
+              "source": "journals-policy",
+              "quote": "by a person who has a good understanding of both languages",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "reviewer_use",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "unspecified"
+          ],
+          "rationale": "confidentiality",
+          "conditions": "Reversed in June 2026. Permitted only with a \"private\" AI tool as Elsevier defines it; disclosure to authors is mandatory. Uploading the manuscript remains prohibited.\n",
+          "evidence": [
+            {
+              "source": "journals-policy",
+              "quote": "Reviewers should not upload a submitted manuscript or any part of it into an AI tool",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "journals-policy",
+              "quote": "AI tools may therefore only be used in a supportive capacity, for example to improve the language and structure of a review report, or to assist with a background literature search",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "publisher_own_use",
+          "permission": "permitted_with_conditions",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "The two policies disagree. The journals policy states Elsevier's editors have AI tools for reviewer identification and duplicate detection; the books policy forbids editors using AI to evaluate material at all. Neither tells an author which tools ran on their manuscript.",
+          "evidence": [
+            {
+              "source": "journals-policy",
+              "quote": "Our editors have access to AI tools that assist in identifying relevant reviewers, matching the scope of submissions, and detecting duplicate submissions.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "books-policy",
+              "quote": "Generative AI or AI-assisted technologies should not be used by editors to assist in the evaluation of authors' material/ manuscript",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "supports"
+            }
+          ]
+        },
+        {
+          "axis": "due_process",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "No threshold for triggering review, no duty to notify the author, and no route of appeal is stated. The quote records what is granted instead: editorial discretion.",
+          "evidence": [
+            {
+              "source": "journals-policy",
+              "quote": "Authors may be asked to provide documentation of their AI use and the original, unprocessed images for editorial assessment.",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "documents_absence"
+            }
+          ]
+        },
+        {
+          "axis": "research_process_ai",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "Names \"AI agents and deep research tools\" once, in a framing sentence. \"Agentic\" and \"autonomous\" do not appear."
+        },
+        {
+          "axis": "detection_screening",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "Author-facing policy mentions image forensics only. Check Integrity was expanded to nearly 2,000 journals in March 2026 without appearing in the author policy.\n"
+        }
+      ],
+      "coherence": [
+        {
+          "summary": "The books policy forbids editors using AI to evaluate material, while the journals policy states Elsevier's editors have access to AI tools that identify reviewers and match submissions. Both are live; the books policy sits behind a URL ending 'in-the-review-process'.",
+          "sources": [
+            "journals-policy",
+            "books-policy"
+          ],
+          "axis": "publisher_own_use"
+        }
+      ]
+    },
+    {
+      "id": "icmje",
+      "name": "ICMJE",
+      "type": "normative_body",
+      "parent": null,
+      "platform": null,
+      "policy_owner": "icmje",
+      "delegates_to_journal": false,
+      "policy_architecture": "prose",
+      "homepage": "https://www.icmje.org",
+      "notes": "Updated January 2026 with a whole new Section V. Files AI structurally INSIDE contributorship (II.A.4, directly after Non-Author Contributors) and NOT under conflicts of interest — which refutes the naive claim that guidance treats AI use as a competing interest. Section V.C is the first text anywhere obliging journals to disclose their own AI use.\n",
+      "sources": [
+        {
+          "id": "ai-authors",
+          "url": "https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-authors.html",
+          "role": "policy",
+          "audience": "authors",
+          "status": "current",
+          "authoritative": true,
+          "fetch_method": "http",
+          "date_source": "stated",
+          "stated_date": "2026-01",
+          "last_verified": "2026-08-21",
+          "content_sha256": "9860a74b5dba3963d40f16a108f80e77b67d21aa6f03ef3c8b52ed131023157d",
+          "adjudicated_sha256": "84a8d89ddc8dd78af90bb6b06f9bcef247dc7a58198bbf5a082209e46835ff3f"
+        },
+        {
+          "id": "ai-editors",
+          "url": "https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-editors.html",
+          "role": "policy",
+          "audience": "editors",
+          "status": "current",
+          "authoritative": true,
+          "fetch_method": "http",
+          "date_source": "stated",
+          "stated_date": "2026-01",
+          "last_verified": "2026-08-21",
+          "content_sha256": "06d2dde1470800f2bba67d598103efa4b9a73c35f1b4091f49ff4383fb0cc1d3",
+          "adjudicated_sha256": "9156241b91cd5c3a9b464387e97de0a37af7ec8ed4c1ca790a8c4d321df1ec58"
+        },
+        {
+          "id": "preparing-submission",
+          "url": "https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html",
+          "role": "policy",
+          "audience": "authors",
+          "status": "current",
+          "authoritative": false,
+          "fetch_method": "http",
+          "date_source": "stated",
+          "stated_date": "2026-01",
+          "last_verified": "2026-08-21",
+          "content_sha256": "abd85d15a93dfe53ed4159d7df6e7f887670ce8a5e808d6e7fdad99a4d339890",
+          "adjudicated_sha256": "b4269a64e5ab152eb2c8a494c285763768fb89c90ca0c37e7dfbd8c6d9aa53bd"
+        },
+        {
+          "id": "authors-contributors",
+          "url": "https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html",
+          "role": "policy",
+          "audience": "authors",
+          "status": "current",
+          "authoritative": false,
+          "fetch_method": "http",
+          "date_source": "stated",
+          "stated_date": "2026-01",
+          "last_verified": "2026-08-21",
+          "content_sha256": "f8abf4cc2a6e53ddbbf2db62482597f3abb2bf4d1fbbb403caebacf167dd0f10",
+          "adjudicated_sha256": "06293d267f4ad9fb3088ff23686cd19f2cdf5e8d3f035196ac2539b6a2ab17e2"
+        }
+      ],
+      "policies": [
+        {
+          "axis": "writing_drafting",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "cover_letter",
+            "acknowledgements",
+            "methods"
+          ],
+          "rationale": "accountability",
+          "conditions": "Disclosure duty at submission, in the cover letter AND in the work itself.",
+          "evidence": [
+            {
+              "source": "authors-contributors",
+              "quote": "Authors who use such technology should describe, in both the cover letter and the submitted work in the appropriate section if applicable, how they used it.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "research_process_ai",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods"
+          ],
+          "rationale": "reproducibility",
+          "conditions": "The tool-and-version instruction already exists here. But the required fields are dimensioned for a citation, not a trace — adequate for a paragraph, meaningless for forty tool calls. The document contains zero occurrences of agent, agentic or autonomous, against four of \"chatbot\", under a Section V titled \"Use of AI in Publishing\".\n",
+          "evidence": [
+            {
+              "source": "preparing-submission",
+              "quote": "including the tool used, version, and prompts where applicable.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "publisher_own_use",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "unspecified"
+          ],
+          "rationale": "accountability",
+          "conditions": "Section V.C. The first obligation anywhere on journals to disclose their own AI use — which converts the author/publisher asymmetry from an ethical complaint into a measurable compliance gap.\n",
+          "evidence": [
+            {
+              "source": "ai-editors",
+              "quote": "Journals should have a policy for the use of AI in the review process and should make all editors, reviewers, and authors aware of this journal policy.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "due_process",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "accountability",
+          "conditions": "No threshold for triggering review, no duty to notify the author, and no route of appeal is stated. The quote records what is granted instead: editorial discretion.",
+          "evidence": [
+            {
+              "source": "ai-editors",
+              "quote": "Editors should be vigilant that authors may not disclose AI use when queried.",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "documents_absence"
+            },
+            {
+              "source": "ai-authors",
+              "quote": "Nondisclosure of AI use may require corrective action and may be construed as misconduct in some circumstances",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "documents_absence"
+            }
+          ]
+        }
+      ],
+      "coherence": [],
+      "metadata_inconsistency": [
+        {
+          "summary": "The HTML title tag reads 'January 2025' while the URL and page body both say January 2026. Harmless to a reader; it will mislead an automated scraper.",
+          "sources": [
+            "ai-editors"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "istic",
+      "name": "ISTIC Guideline",
+      "type": "national_body",
+      "parent": null,
+      "platform": null,
+      "policy_owner": "istic",
+      "delegates_to_journal": false,
+      "policy_architecture": "rule_with_exemptions",
+      "homepage": null,
+      "notes": "Three editions: v1.0 September 2023, v2.0 September 2024, v3.0 December 2025, co-signed by Elsevier, Springer Nature, Wiley, Taylor & Francis, Wolters Kluwer and Cambridge University Press. It requires disclosure detail that English-language policy does not, including archiving AI session records. NOT a standard: it explicitly disclaims precedence over publisher policy and carries no standard number. A separate Chinese national guidance project on the same subject is registered and still under approval. Several verdicts here rest on the English v3.0 text; the Chinese edition is quoted where the English does not cover the point.",
+      "sources": [
+        {
+          "id": "guideline-v3-en",
+          "url": "https://files.sciengine.com/gridfs/2001556325267406848/%E9%99%84%E4%BB%B61-%E5%AD%A6%E6%9C%AF%E5%87%BA%E7%89%88%E4%B8%ADAIGC%E4%BD%BF%E7%94%A8%E8%BE%B9.pdf",
+          "role": "guidance",
+          "audience": "all",
+          "status": "current",
+          "authoritative": true,
+          "fetch_method": "http",
+          "date_source": "stated",
+          "stated_date": "2025-12-07",
+          "last_verified": "2026-08-21",
+          "content_sha256": "5ef3b6926f45646a0507215351451e66fd7dee03a3c45a29e3dd1985e3d34787",
+          "adjudicated_sha256": "5a713d78d472158cd4d1d4cf9a071e58c6d094352a8b978d51ec9366daa8e73f"
+        },
+        {
+          "id": "guideline-v2-zh",
+          "url": "https://www.lib.szu.edu.cn/sites/szulib/files/2025-06/%E5%AD%A6%E6%9C%AF%E5%87%BA%E7%89%88%E4%B8%ADAIGC%E4%BD%BF%E7%94%A8%E8%BE%B9%E7%95%8C%E6%8C%87%E5%8D%972.0.pdf",
+          "role": "guidance",
+          "audience": "all",
+          "status": "superseded",
+          "authoritative": false,
+          "fetch_method": "http",
+          "date_source": "stated",
+          "stated_date": "2024-09-26",
+          "last_verified": "2026-08-21",
+          "content_sha256": "bab8269736c404ae4136b0f631e8e77b5f50c9151a51896dd0f770b7ccbadcb4",
+          "adjudicated_sha256": "efe3e0f8622186433464ad815c9a4a612b66f3159cdd210496354152f30c4260"
+        }
+      ],
+      "policies": [
+        {
+          "axis": "audit_trail",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods",
+            "acknowledgements"
+          ],
+          "rationale": "reproducibility",
+          "conditions": "Six mandatory disclosure elements: the user; the AI system WITH VERSION NUMBER; the date and time of use; the prompts and questions used; the parts of the text written or co-written by AI; and the ideas arising from that use. Version 3.0 additionally requires naming the specific sections assisted, quoting the actual prompts, and ARCHIVING THE AI SESSION RECORDS AS AN ATTACHMENT.\n",
+          "evidence": [
+            {
+              "source": "guideline-v3-en",
+              "quote": "detailing disclosure and declaration requirements during the manuscript submission phase",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "writing_drafting",
+          "permission": "prohibited",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods",
+            "acknowledgements"
+          ],
+          "rationale": "accountability",
+          "conditions": "AI must not generate research hypotheses, write the whole paper, interpret data or draw scientific conclusions. Non-disclosure was made misconduct in v2.0 — over a year before ICMJE said the same.",
+          "evidence": [
+            {
+              "source": "guideline-v2-zh",
+              "quote": "研究人员使用AIGC直接生成的稿件文字等资料必须提供明确的披露和声明，否则将构成学术不端行为。",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "publisher_own_use",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "unspecified"
+          ],
+          "rationale": "control",
+          "conditions": "NOTE: this sentence comes from the third edition's list of changes, not from its normative text. It establishes that the guideline addresses journal, publisher and reviewer responsibilities — not what those responsibilities are.",
+          "evidence": [
+            {
+              "source": "guideline-v3-en",
+              "quote": "emphasizing the responsibilities of relevant parties (including journals/publishers and reviewers) during the review process.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "reviewer_use",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "Reported in research notes but not locatable in the English v3.0 text held here. Recorded as not addressed rather than asserted without a quote."
+        },
+        {
+          "axis": "reference_gathering",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "Reported in research notes but not locatable in the English v3.0 text held here. Recorded as not addressed rather than asserted without a quote."
+        },
+        {
+          "axis": "data_visualisation",
+          "permission": "prohibited",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "accountability",
+          "conditions": "Experimental images — Western blots, cytometry, histology — must not be AI-generated.",
+          "evidence": [
+            {
+              "source": "guideline-v3-en",
+              "quote": "For example, experimental images in the biomedical �ield—such as Western blot analysis diagrams, cell technology analy- ses, and tissue cell staining diagrams—must be obtained from genuinely conducted experimental research.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        }
+      ],
+      "coherence": []
+    },
+    {
+      "id": "plos",
+      "name": "PLOS",
+      "type": "publisher",
+      "parent": null,
+      "platform": "journals.plos.org",
+      "policy_owner": "plos",
+      "delegates_to_journal": false,
+      "policy_architecture": "prose",
+      "homepage": "https://plos.org",
+      "notes": "The strongest stated enforcement in the corpus — but keyed to NON-compliance, never to the act of disclosing. The only publisher requiring reviewer AI use to be disclosed to authors, and editor AI use to be disclosed in the decision letter. Its own justification for using in-house AI while forbidding reviewers external AI is the clearest statement of the control principle anywhere.\n",
+      "sources": [
+        {
+          "id": "ethical-publishing-practice",
+          "url": "https://journals.plos.org/plosone/s/ethical-publishing-practice",
+          "role": "policy",
+          "audience": "all",
+          "status": "current",
+          "authoritative": true,
+          "fetch_method": "http",
+          "date_source": "none",
+          "stated_date": null,
+          "last_verified": "2026-08-21",
+          "content_sha256": "81d32450f2ec34dc0449a8cd82e5c09525694b7576af4c11f76a2a77860e84f1",
+          "adjudicated_sha256": "fec072430ca9e3e8d5a619dd72f35a64b099dadcf9223ed12c426b9d832198c6"
+        }
+      ],
+      "policies": [
+        {
+          "axis": "writing_drafting",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods"
+          ],
+          "rationale": "accountability",
+          "conditions": "No stated exemption for language editing.",
+          "evidence": [
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "In cases where Large Language Model (LLM) AI tools or technologies contribute to generating text content for a PLOS submission, the article's authors are responsible for ensuring that: the content is accurate and valid",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "reviewer_use",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "unspecified"
+          ],
+          "rationale": "accountability",
+          "conditions": "Disclosure to AUTHORS is mandatory — in the review form for reviewers, in the decision letter for editors.",
+          "evidence": [
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "AI tools cannot serve as reviewers or as decision-issuing editors.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "publisher_own_use",
+          "permission": "permitted",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "control",
+          "conditions": "PLOS states it screens submissions with Crossref Similarity Check. It does not state whether it runs AI-text detection, and does not tell an author what ran on their manuscript.",
+          "evidence": [
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "PLOS uses Crossref Similarity Check (powered by iThenticate) to screen submitted content for originality.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "due_process",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "accountability",
+          "conditions": "No threshold for triggering review, no duty to notify the author, and no route of appeal is stated. The quote records what is granted instead: editorial discretion.",
+          "evidence": [
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "the journal may reject (pre-publication), retract (post-publication), or publish an editorial notice on the article",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "documents_absence"
+            }
+          ]
+        },
+        {
+          "axis": "detection_screening",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated"
+        }
+      ],
+      "coherence": []
+    },
+    {
+      "id": "science-aaas",
+      "name": "Science / AAAS",
+      "type": "publisher",
+      "parent": null,
+      "platform": "science.org",
+      "policy_owner": "science-aaas",
+      "delegates_to_journal": false,
+      "policy_architecture": "per_task_matrix",
+      "homepage": "https://www.science.org",
+      "notes": "Publishes an AI-use matrix grading roughly seventeen use-cases, and is the only publisher here ruling on using AI to respond to reviewers. Research notes record that a November 2023 blog post required full prompt disclosure and barred reviewer AI, and that neither requirement appears on the live page — but that blog post is not among the sources held here, so the comparison is reported as an observation, not evidenced on this site. The live page carries no revision date. Live science.org returns 403 to automated clients; this record is verified against a dated Internet Archive capture.",
+      "sources": [
+        {
+          "id": "editorial-policies",
+          "url": "https://web.archive.org/web/20260614001840/https://www.science.org/content/page/science-journals-editorial-policies",
+          "role": "policy",
+          "audience": "all",
+          "status": "current",
+          "authoritative": true,
+          "fetch_method": "archive",
+          "date_source": "hash",
+          "stated_date": null,
+          "last_verified": "2026-08-21",
+          "content_sha256": "ab8a190e9db099ff710d9cedbd92b167b9b0f99e234048a05bddde04a9f46314",
+          "note": "Live science.org returns 403 to every automated client. This is a dated Internet Archive capture.",
+          "adjudicated_sha256": "96da87014cece47eadd90921705974cb309a539051472cb25a71d9050ca0c38e"
+        }
+      ],
+      "policies": [
+        {
+          "axis": "reviewer_use",
+          "permission": "prohibited",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "confidentiality",
+          "evidence": [
+            {
+              "source": "editorial-policies",
+              "quote": "Reviewers may not enter any part of the manuscript into an LLM or other AI tool because this could breach the confidentiality of the manuscript.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "illustrative_images",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "submission_field"
+          ],
+          "rationale": "accountability",
+          "conditions": "Prior editor permission required; exceptions case-by-case and disclosed at submission.",
+          "evidence": [
+            {
+              "source": "editorial-policies",
+              "quote": "AI-generated images and other multimedia are not permitted in the Science journals without explicit permission from the editors.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "due_process",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "control",
+          "conditions": "No threshold for triggering review, no duty to notify the author, and no route of appeal is stated. The quote records what is granted instead: editorial discretion.",
+          "evidence": [
+            {
+              "source": "editorial-policies",
+              "quote": "Editors may decline to move forward with manuscripts if AI is used inappropriately.",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "documents_absence"
+            }
+          ]
+        },
+        {
+          "axis": "publisher_own_use",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "unspecified"
+          ],
+          "rationale": "accountability",
+          "conditions": "The AI-use matrix asks the editorial office to post its own AI tools on the journal website. We looked for such a posting on the editorial-policies page on 2026-08-21 and did not find one; the individual Science-family journal sites were not checked, so this is a gap in our looking, not an established absence.",
+          "evidence": [
+            {
+              "source": "editorial-policies",
+              "quote": "The Science journals use the Crossref Similarity Check service to detect plagiarism and follow guidelines from the Committee on Publication Ethics (COPE) in dealing with cases of suspected plagiarism.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        }
+      ],
+      "coherence": []
+    },
+    {
+      "id": "springer-nature",
+      "name": "Springer Nature",
+      "type": "publisher",
+      "parent": null,
+      "platform": "link.springer.com",
+      "policy_owner": "springer-nature",
+      "delegates_to_journal": false,
+      "policy_architecture": "risk_tiered",
+      "homepage": "https://www.nature.com",
+      "notes": "Moved to a Green/Amber/Red risk framework during 2026. No announcement was found in its press-release index (2015-2026, 190+ items) or its three company blogs, and the live page carries no date stamp and no changelog. Live nature.com serves automated clients a Cloudflare interstitial with HTTP 200, so this record is verified against a dated Internet Archive capture. Its peer-review policy page could not be retrieved from any source and is therefore not recorded here.",
+      "sources": [
+        {
+          "id": "nature-portfolio-ai",
+          "url": "https://web.archive.org/web/20260804231015/https://www.nature.com/nature-portfolio/editorial-policies/ai",
+          "role": "policy",
+          "audience": "all",
+          "status": "current",
+          "authoritative": true,
+          "fetch_method": "archive",
+          "date_source": "hash",
+          "stated_date": null,
+          "last_verified": "2026-08-21",
+          "content_sha256": "ca382659e24ce4f54fd1c4f56ed2187a08c8b69270ba3079ce48de35d68e5227",
+          "note": "Live nature.com returns a Cloudflare 'Client Challenge' interstitial with HTTP 200 to automated clients — a 3KB block page, not the policy. This is a dated Internet Archive capture of the real page.",
+          "adjudicated_sha256": "c37e42eea5b6d4ef5bef504aa6d80f58137f90895d2b2ecc918f50df225ec7fb"
+        }
+      ],
+      "policies": [
+        {
+          "axis": "translation",
+          "permission": "permitted",
+          "disclosure": "encouraged",
+          "disclosure_location": [],
+          "rationale": "quality",
+          "conditions": "Listed under the Green tier, whose compliance line reads \"Permitted. Disclosure enhances trust and transparency\" — encouraged, not required.",
+          "evidence": [
+            {
+              "source": "nature-portfolio-ai",
+              "quote": "Translation, structuring or clarifying reviewer comments",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "writing_drafting",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "unspecified"
+          ],
+          "rationale": "accountability",
+          "conditions": "Red tier applies only where core research reasoning is generated WITHOUT disclosure; the Amber tier permits substantive AI use with human accountability and disclosure. An earlier version of this record read the Red example as a blanket prohibition on drafting. It is not one.",
+          "evidence": [
+            {
+              "source": "nature-portfolio-ai",
+              "quote": "Using an LLM to generate core research reasoning without disclosure",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "reviewer_use",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "unspecified"
+          ],
+          "rationale": "accountability",
+          "conditions": "Amber tier permits evaluative use with oversight; delegating the review itself is Red.",
+          "evidence": [
+            {
+              "source": "nature-portfolio-ai",
+              "quote": "Delegating peer review to an LLM",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "illustrative_images",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "The image-integrity policy contains no AI content. Deepfakes are prohibited, but in the risk framework rather than the image policy, and photorealistic deepfakes are not the illustrative figures this activity covers.",
+          "evidence": []
+        },
+        {
+          "axis": "publisher_own_use",
+          "permission": "permitted",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "Stated for accessory content and editorial support. Authors are not told which tools ran on their particular manuscript.",
+          "evidence": [
+            {
+              "source": "nature-portfolio-ai",
+              "quote": "Nature Portfolio journals occasionally use artificial intelligence tools developed or approved by Springer Nature to support different tasks in the generation of accessory content or to support the editorial process.",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "supports"
+            }
+          ]
+        },
+        {
+          "axis": "detection_screening",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "evidence": []
+        },
+        {
+          "axis": "due_process",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "evidence": []
+        }
+      ],
+      "coherence": []
+    },
+    {
+      "id": "stm",
+      "name": "STM Association",
+      "type": "normative_body",
+      "parent": null,
+      "platform": null,
+      "policy_owner": "stm",
+      "delegates_to_journal": false,
+      "policy_architecture": "classification_only",
+      "homepage": "https://stm-assoc.org",
+      "notes": "Author of the nine-activity classification that is this observatory's comparison axis. Written by staff from Springer Nature (x2), Elsevier, Wiley, Taylor & Francis, CUP, BMJ, ACS and IEEE — then explicitly declining to harmonise the answers. The 2026 divergence is the designed output of the field's only coordination mechanism. COPE Council now defers to it.\n",
+      "sources": [
+        {
+          "id": "classification-2025",
+          "url": "https://s3.eu-west-2.amazonaws.com/stm.offloadmedia/wp-content/uploads/2025/04/23020709/STM_AI_Classification_Recs_19_Sept2025-1.pdf",
+          "role": "guidance",
+          "audience": "all",
+          "status": "current",
+          "authoritative": true,
+          "fetch_method": "http",
+          "date_source": "stated",
+          "stated_date": "2025-09",
+          "last_verified": "2026-08-21",
+          "content_sha256": "5dd3f74ed8d9347cc13249ebf943af2586fb7234e9b2c25ccd30f44e0a81bd8c",
+          "adjudicated_sha256": "eb5e95e7116c83bfafd5d602a2f650fce5f801708fd408d08ba79b9808745925"
+        }
+      ],
+      "policies": [
+        {
+          "axis": "research_process_ai",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "Excluded BY CONSTRUCTION, not by oversight. The field's only shared taxonomy draws its boundary to exclude exactly the workflows that now produce results.\n",
+          "evidence": [
+            {
+              "source": "classification-2025",
+              "quote": "This classification addresses only the use of AI assistance for the preparation of manuscripts intended for publication",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "documents_absence"
+            },
+            {
+              "source": "classification-2025",
+              "quote": "Classify uses of AI in research processes.",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "documents_absence"
+            }
+          ]
+        },
+        {
+          "axis": "language_refinement",
+          "permission": "permitted",
+          "disclosure": "not_required",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "One of only two of the nine activities carrying an inherited permission level.",
+          "evidence": [
+            {
+              "source": "classification-2025",
+              "quote": "2023 STM Guidelines recommend that disclosure is not necessary for this use of automated tools.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "passing_off",
+          "permission": "prohibited",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "accountability",
+          "evidence": [
+            {
+              "source": "classification-2025",
+              "quote": "2023 STM Guidelines recommend prohibiting this use of AI tools.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "code_presentation",
+          "permission": "permitted_with_conditions",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "In scope: tidying code you report. Explicitly OUT of scope: generating new code for use in the research itself, or altering its functionality.",
+          "evidence": [
+            {
+              "source": "classification-2025",
+              "quote": "Using AI tools to improve the readability and clarity of code submitted as part of the manuscript or any associated materials",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "supports"
+            }
+          ]
+        },
+        {
+          "axis": "reference_gathering",
+          "permission": "permitted_with_conditions",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "quality",
+          "evidence": [
+            {
+              "source": "classification-2025",
+              "quote": "Using AI tools to find and identify articles that are likely to be related to the research reported in the manuscript",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "supports"
+            }
+          ],
+          "conditions": "In scope: finding candidate references. Explicitly OUT of scope: generating plausible-sounding references that do not exist."
+        }
+      ],
+      "coherence": []
+    },
+    {
+      "id": "wiley",
+      "name": "Wiley",
+      "type": "publisher",
+      "parent": null,
+      "platform": "onlinelibrary.wiley.com",
+      "policy_owner": "wiley",
+      "delegates_to_journal": false,
+      "policy_architecture": "per_task_matrix",
+      "homepage": "https://www.wiley.com",
+      "notes": "The per-task requires/does-not-require matrix was announced 28 October 2025 — NOT 2026. Wiley is the only major publisher with a genuine agentic policy, and the only one that discloses its own policy document was AI-drafted. Routes disclosure by purpose rather than to one fixed position.\n",
+      "sources": [
+        {
+          "id": "ai-guidelines",
+          "url": "https://www.wiley.com/en-us/publish/article/ai-guidelines/",
+          "role": "policy",
+          "audience": "all",
+          "status": "current",
+          "authoritative": true,
+          "fetch_method": "http",
+          "date_source": "stated",
+          "stated_date": "2025-10-28",
+          "last_verified": "2026-08-21",
+          "content_sha256": "46c274126594f5a0d867b05e9d64e6aa2b1bdbe504cd713e28fd3ae5d1e44b17",
+          "adjudicated_sha256": "fb87b39ec81ad39599ed2df2b10599f3f0db36d3585001afc8f9dc43bd06a1b7"
+        },
+        {
+          "id": "ethics-guidelines",
+          "url": "https://authorservices.wiley.com/ethics-guidelines/index.html",
+          "role": "guidance",
+          "audience": "all",
+          "status": "current",
+          "authoritative": false,
+          "fetch_method": "http",
+          "date_source": "none",
+          "stated_date": null,
+          "last_verified": "2026-08-21",
+          "content_sha256": "504265470e65ec27700061f194ff62b16f70037c3f97ceef8da20072ac6fc7d7",
+          "adjudicated_sha256": "344735fd4c490d767d6d82c34894c289978ceb85c8255f6c5b20700e861e8c79"
+        }
+      ],
+      "policies": [
+        {
+          "axis": "writing_drafting",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "acknowledgements"
+          ],
+          "rationale": "accountability",
+          "conditions": "Disclosure is routed by purpose — drafting and editing to Acknowledgements.",
+          "evidence": [
+            {
+              "source": "ai-guidelines",
+              "quote": "AI use in manuscript development is not grounds for rejection.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "translation",
+          "permission": "permitted",
+          "disclosure": "required",
+          "disclosure_location": [
+            "acknowledgements"
+          ],
+          "rationale": "accountability",
+          "evidence": [
+            {
+              "source": "ai-guidelines",
+              "quote": "In your Acknowledgments when AI assists with manuscript drafting, editing, translation, or formatting.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "research_process_ai",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods"
+          ],
+          "rationale": "reproducibility",
+          "conditions": "The only entity in the corpus that names agentic workflows and asks for the audit trail — prompts, parameters, settings and a code repository.\n",
+          "evidence": [
+            {
+              "source": "ai-guidelines",
+              "quote": "You may have heard these referred to as: agentic AI, autonomous agents, or agent workflows",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "ai-guidelines",
+              "quote": "a goal and allowing it to carry out multiple steps independently",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "ai-guidelines",
+              "quote": "Agentic search: AI independently generates or executes search strategies",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "reviewer_use",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "unspecified"
+          ],
+          "rationale": "confidentiality",
+          "conditions": "Organising, prioritising, tone and translation are permitted; uploading the manuscript is not.",
+          "evidence": [
+            {
+              "source": "ai-guidelines",
+              "quote": "We require disclosure of AI when it's used for drafting assistance in your reviews.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "ethics-guidelines",
+              "quote": "Editors have the right to disregard peer reviewer reports that show signs of inappropriate AI use.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "publisher_own_use",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "Wiley's author-facing guidance does not state what AI Wiley itself runs on a submission. The quote below is the closest it comes, and it is a restriction on reviewers rather than a statement of Wiley's own use.",
+          "evidence": [
+            {
+              "source": "ai-guidelines",
+              "quote": "Authors have not given permission for reviewers or editors to share their unpublished work with AI Technologies",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "documents_absence"
+            }
+          ]
+        },
+        {
+          "axis": "detection_screening",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "Wiley discloses duplicate-text screening and says nothing about AI-text detection, despite having announced generative-AI content detection in 2024.",
+          "evidence": [
+            {
+              "source": "ethics-guidelines",
+              "quote": "Wiley routinely screens submitted manuscripts for duplicated text using tools such as Crossref Similarity Check.",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "documents_absence"
+            }
+          ]
+        },
+        {
+          "axis": "due_process",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "control",
+          "conditions": "No threshold for triggering review, no duty to notify the author, and no route of appeal is stated. The quote records what is granted instead: editorial discretion.",
+          "evidence": [
+            {
+              "source": "ethics-guidelines",
+              "quote": "The final decision on whether using AI Technology is appropriate or permissible for a submitted manuscript or a published article belongs to the journal's editor",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "documents_absence"
+            }
+          ]
+        },
+        {
+          "axis": "audit_trail",
+          "permission": "permitted",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods"
+          ],
+          "rationale": "reproducibility",
+          "conditions": "Wiley discloses that this very guidance document was AI-drafted — specific, in the register of methods, attached to the artefact, with no apology. The norm, demonstrated.\n",
+          "evidence": [
+            {
+              "source": "ai-guidelines",
+              "quote": "The final draft was revised by the author using Claude 4 Sonnet and GPT-5 (August 2025) and then polished by a human copyeditor with expertise in research communication.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        }
+      ],
+      "coherence": []
+    }
+  ]
+}

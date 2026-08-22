@@ -1,0 +1,95 @@
+id: stm
+name: STM Association
+type: normative_body
+parent: null
+platform: null
+policy_owner: stm
+delegates_to_journal: false
+policy_architecture: classification_only
+homepage: https://stm-assoc.org
+notes: 'Author of the nine-activity classification that is this observatory''s comparison axis. Written
+  by staff from Springer Nature (x2), Elsevier, Wiley, Taylor & Francis, CUP, BMJ, ACS and IEEE — then
+  explicitly declining to harmonise the answers. The 2026 divergence is the designed output of the field''s
+  only coordination mechanism. COPE Council now defers to it.
+
+  '
+sources:
+- id: classification-2025
+  url: https://s3.eu-west-2.amazonaws.com/stm.offloadmedia/wp-content/uploads/2025/04/23020709/STM_AI_Classification_Recs_19_Sept2025-1.pdf
+  role: guidance
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: stated
+  stated_date: 2025-09
+  last_verified: '2026-08-21'
+  content_sha256: 5dd3f74ed8d9347cc13249ebf943af2586fb7234e9b2c25ccd30f44e0a81bd8c
+  adjudicated_sha256: eb5e95e7116c83bfafd5d602a2f650fce5f801708fd408d08ba79b9808745925
+policies:
+- axis: research_process_ai
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'Excluded BY CONSTRUCTION, not by oversight. The field''s only shared taxonomy draws its
+    boundary to exclude exactly the workflows that now produce results.
+
+    '
+  evidence:
+  - source: classification-2025
+    quote: This classification addresses only the use of AI assistance for the preparation of manuscripts
+      intended for publication
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+  - source: classification-2025
+    quote: Classify uses of AI in research processes.
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+- axis: language_refinement
+  permission: permitted
+  disclosure: not_required
+  disclosure_location: []
+  rationale: unstated
+  conditions: One of only two of the nine activities carrying an inherited permission level.
+  evidence:
+  - source: classification-2025
+    quote: 2023 STM Guidelines recommend that disclosure is not necessary for this use of automated
+      tools.
+    quote_provenance: raw_bytes
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  evidence:
+  - source: classification-2025
+    quote: 2023 STM Guidelines recommend prohibiting this use of AI tools.
+    quote_provenance: raw_bytes
+- axis: code_presentation
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'In scope: tidying code you report. Explicitly OUT of scope: generating new code for use
+    in the research itself, or altering its functionality.'
+  evidence:
+  - source: classification-2025
+    quote: Using AI tools to improve the readability and clarity of code submitted as part of the manuscript
+      or any associated materials
+    quote_provenance: raw_bytes
+    evidence_role: supports
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: quality
+  evidence:
+  - source: classification-2025
+    quote: Using AI tools to find and identify articles that are likely to be related to the research
+      reported in the manuscript
+    quote_provenance: raw_bytes
+    evidence_role: supports
+  conditions: 'In scope: finding candidate references. Explicitly OUT of scope: generating plausible-sounding
+    references that do not exist.'
+coherence: []

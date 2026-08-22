@@ -1,0 +1,287 @@
+# Reader-facing copy. Kept OUT of stm-activities.yml deliberately: that file holds
+# verbatim STM text and must stay free of our editorial voice. Everything here is
+# our own writing, and the site labels it as such.
+#
+# RULE FOR THIS FILE: any empirical claim carries a key from `citations` below.
+# An audit found six uncited statistics sitting in the most-read block on the
+# page — the exact failure this project exists to expose in other people's work.
+
+citations:
+  ganjavi2024:
+    text: "Ganjavi C, et al. Publishers' and journals' instructions to authors on use of generative artificial intelligence in academic and scientific publishing: bibliometric analysis. BMJ 2024;384:e077192."
+    doi: 10.1136/bmj-2023-077192
+    pmid: '38296328'
+  laffaye2025:
+    text: "Laffaye TA, et al. Artificial intelligence for manuscript writing: policies and implementation in cardiovascular journals. Cardiovasc Diagn Ther 2025."
+    doi: 10.21037/cdt-2025-381
+    pmid: '41216259'
+  liang2023:
+    text: "Liang W, et al. GPT detectors are biased against non-native English writers. Patterns 2023;4(7):100779."
+    doi: 10.1016/j.patter.2023.100779
+    pmid: '37521038'
+  ans2026:
+    text: "Ans M, et al. The Presence and Nature of AI-Use Disclosure Statements in Medical Education Journals. Perspect Med Educ 2026;15:212-225."
+    doi: 10.5334/pme.2431
+    pmid: '41800434'
+
+reassurance:
+  headline: You have almost certainly not done anything wrong.
+  body: >
+    Of the 100 highest-ranked journals surveyed in 2023, 87% had published guidance on generative AI and
+    just one prohibited using it to help write a manuscript outright. What nearly all of them prohibited
+    was something different: listing AI as an author. Nothing in the records on this page penalises you
+    for saying you used a tool — policies penalise not saying.
+  body_cite: ganjavi2024
+  bound: >
+    The real lines are narrow, and they are not about tools. Do not invent citations. Do not present
+    generated content as though it were your data. Do not put someone else's unpublished manuscript into
+    a public AI tool while reviewing it. Those cause real harm. Using a model to improve your own
+    sentences does not.
+
+detector_note:
+  headline: If you write in English as a second language, one more thing
+  body: >
+    Publishers screen submissions, and most do not say so. Across 17 cardiovascular journals studied, 15
+    used AI-detection software and one said so publicly. You should know that these detectors are
+    unreliable, and unreliable in a specific direction: a widely cited study found they wrongly flagged
+    61% of essays written by non-native English speakers, against almost none by native speakers. That is
+    a defect in the detectors, not in your writing. It is also why a clear, dated note of what you
+    actually did is worth more to you than to anyone else.
+  cites: [laffaye2025, liang2023]
+
+not_your_fault:
+  headline: If you could not find a clear answer, that is the field's failure, not yours.
+  body: >
+    One major publisher rewrote its entire AI framework during 2026 with no announcement, no date stamp
+    and no changelog. The guidance most publishers cite has not been revised since February 2023. People
+    who work in research integrity full time find this confusing. You are not behind.
+
+silence_note: >
+  Most of the table below is silent. Read that as it is meant: where an organisation has published nothing,
+  there is no rule for you to have broken. Silence is not a hidden requirement.
+
+already_done:
+  headline: You already used it and kept no record
+  body: >
+    This is the common case and it is recoverable. Write down now what you can still remember — which
+    tool, roughly which version, roughly when, and which parts of the work it touched. Do it today rather
+    than at submission: model versions get retired and chat histories get deleted, and a rough note made
+    now beats a perfect one written from memory later. Then describe it in your methods the way you would
+    describe any other tool. You do not owe anyone an apology in that sentence.
+
+already_found_problem:
+  headline: You already found a fabricated reference in your own draft
+  body: >
+    Catching it before submission is the system working, not misconduct. Remove or replace the reference,
+    check every remaining one against the actual record, and carry on. Nothing obliges you to report to
+    anyone that you found and fixed an error in your own unsubmitted manuscript — that is simply what
+    checking is. If it has already been published, contact the journal: a correction is routine.
+
+register_contrast:
+  headline: How you word it matters more than you would expect
+  body: >
+    These say the same thing. The first invites suspicion; the second reads like every other sentence in
+    your methods. Nobody apologises for naming the machine that sequenced their samples, and the tone you
+    write in tells a reader whether you consider this a lapse or a method.
+  confession: >
+    The authors admit to having used ChatGPT for assistance with this manuscript and apologise for any
+    errors it may have introduced.
+  methods: >
+    [Tool and version] was used to [what it did], [when]. All output was checked against the primary
+    sources and revised by the authors, who take full responsibility for the content.
+  note: >
+    Write it the way you would write any other methods sentence: what, which version, when, and what you
+    did to check it. No apology, no hedging.
+
+templates:
+  bracket_contract: >
+    Square brackets are yours to fill. Some are plain facts — the tool, its version, the date. Some are
+    your own words, such as which sections were affected. Where you see a slash inside brackets, pick one.
+    If a tool has no version number you can cite, write the name and the date you used it; that is what
+    the date is for.
+  slot_warning: >
+    Write these in your own words rather than pasting them. A sentence that sounds like you is better than
+    a borrowed one — and more useful to a reader trying to understand what you actually did.
+
+boundary:
+  headline: "\"Fixing my English\" and \"rewriting my text\" are not the same thing"
+  body: >
+    This is the single most common question and the hardest boundary in the whole field, and it matters
+    most to people writing in a second language. A test that works: did the meaning change, or only the
+    wording? If the model corrected grammar, tightened phrasing or fixed article use, that is language
+    editing, and almost nobody asks you to declare it. If it produced sentences carrying arguments,
+    interpretations or conclusions you did not write yourself, that is drafting, and you should declare
+    it. If you drafted in your own language and the model produced the English, that is translation —
+    a third case, and one several publishers treat more leniently than drafting.
+  body_cite: ans2026
+  note: >
+    When you genuinely cannot tell, declare it. The records here show no penalty anywhere for declaring,
+    and an explicit penalty in several places for not declaring.
+
+cases:
+  - axis: language_refinement
+    worry: low
+    you_did: I used AI to fix my English, or to tidy up my writing
+    do_this: >
+      Usually nothing. This is the one use that both organisations assessed here exempt from declaration,
+      and STM's 2023 guidance says disclosure is not necessary for it. If you want the record complete,
+      one line in the acknowledgements covers it.
+    example:
+      needed: false
+      text: "[Tool and version] was used for language editing only; no content was generated. The authors are responsible for the final text."
+      note: >
+        Almost nobody requires this. Include it only if you want the record complete. If the model changed
+        your meaning rather than your wording, use the drafting example below instead.
+      placement_fallback: >
+        No organisation recorded here requires this. If you include it, the acknowledgements are the
+        conventional home.
+
+  - axis: writing_drafting
+    worry: some
+    you_did: I used AI to draft or substantially rewrite sections
+    do_this: >
+      Declare it, naming the tool, the version and which sections. Most organisations recorded here permit
+      this when it is declared. Two treat undeclared use of AI for core reasoning as a serious matter, so
+      the declaration is what protects you.
+    example:
+      needed: true
+      text: "[Tool and version] was used to draft [which sections], accessed [date]. All generated text was verified against the primary sources and substantially revised by the authors, who take full responsibility for the content."
+      note: >
+        Name the sections. A statement saying only "AI was used in preparing this manuscript" is the kind
+        editors describe as uninformative — one study found disclosures averaging 43 words and describing
+        the use only superficially.
+      note_cite: ans2026
+
+  - axis: reference_gathering
+    worry: some
+    you_did: I used AI to find papers or build my reference list
+    do_this: >
+      Check every reference against the actual record before you submit. This is where real damage
+      happens: fabricated citations in the biomedical literature rose twelvefold in two years. The tool
+      is fine; unverified output is not.
+    example:
+      needed: true
+      text: "[Tool and version] was used to identify candidate references, accessed [date]. Every reference was subsequently verified against the primary record by the authors."
+      note: >
+        The second sentence is the one that matters. Say that you checked them.
+
+  - axis: translation
+    worry: some
+    you_did: I wrote in my own language and used AI to translate
+    do_this: >
+      Declare it, and check the result. Organisations differ here more than anywhere else — one treats
+      translation as the lowest-risk use there is, another asks that the output be checked by someone who
+      reads both languages.
+    example:
+      needed: true
+      text: "The manuscript was drafted in [language] and translated into English using [tool and version] on [date]. The translation was checked by [who checked it, and how], and revised by the authors."
+      note: >
+        If you have no bilingual colleague to ask — and many people do not — say what you did instead. For
+        example, that you translated the English back into your own language and compared it against your
+        original. Describing a real check honestly is worth more than naming a person who did not do one.
+
+  - axis: code_presentation
+    worry: low
+    you_did: I used AI to write, debug or tidy analysis code
+    do_this: >
+      Report it in your methods as you would report any other software: what you used, which version. If
+      the model wrote code that produced results you report, say so there too and make the code available
+      — that is a methods question, not a disclosure question.
+    example:
+      needed: false
+      text: "[Tool and version] was used to assist with writing and debugging analysis code, accessed [date]. All code was reviewed and tested by the authors; analysis scripts are available at [repository]."
+      note: >
+        Report it as software, beside your other tool versions. That is the register it belongs in.
+      placement_fallback: >
+        No organisation recorded here states where this belongs. Put it in your methods beside your other
+        software versions.
+
+  - axis: research_process_ai
+    worry: some
+    you_did: I let an AI agent run analyses, searches or multi-step work for me
+    do_this: >
+      Keep the log. This is the one case where you genuinely cannot fix things afterwards: prompts, model
+      and version, dates, and the session records themselves. Most policies were written for a chatbot and
+      ask only for a tool name — enough for one paragraph, meaningless for forty tool calls. Record more
+      than you are asked for.
+    example:
+      needed: true
+      text: "[Tool and version] was used as an agent to [what it executed: run analyses / search literature / generate and run code], between [dates]. Prompts and session transcripts are provided in [supplementary file]. Human verification was performed at [which checkpoints]; outputs that could not be independently reproduced were excluded. The authors take full responsibility for all reported results."
+      note: >
+        Most journals do not ask for this yet. Provide it anyway — not for compliance, but because an
+        agentic pipeline cannot be reproduced from a tool name, and none of it can be reconstructed later.
+
+  - axis: illustrative_images
+    worry: some
+    you_did: I used AI to make a schematic, diagram or graphical abstract
+    do_this: >
+      Declare it in the figure caption, and check first — at least one publisher recorded here requires
+      the editor's permission in advance for any AI-generated image, including cover art.
+    example:
+      needed: true
+      text: "Figure [n] was generated using [tool and version] on [date] for illustrative purposes; it does not depict experimental data."
+      note: >
+        Put it in the figure caption, not only in a statement at the end. That is where a reader meets
+        the image. [n] is your figure number.
+
+  - axis: data_visualisation
+    worry: check_first
+    you_did: I used AI to generate or retouch a figure showing my actual data
+    do_this: >
+      Check before you do it. Experimental images — blots, micrographs, flow plots — are where
+      prohibitions are real and where retractions actually happen. Adjusting brightness or contrast
+      uniformly across a whole image is generally acceptable; anything that moves, adds or removes
+      content is not.
+    example:
+      needed: true
+      text: "[Tool and version] was used to produce the plots in Figure [n] from the underlying data, accessed [date]. No image content was added, removed or repositioned; source data are available at [location]."
+      note: >
+        Only use this if it is true. Generating a chart from real data is routine; altering an
+        experimental image is not, and that distinction is where retractions happen.
+      placement_fallback: >
+        No organisation recorded here states where this belongs. Put it in the figure caption as well as
+        your methods.
+
+  - axis: reviewer_use
+    worry: check_first
+    you_did: I used AI while peer-reviewing someone else's manuscript
+    do_this: >
+      Check that journal before you do this again. This is the most contested question in the whole
+      dataset and the rules are still moving in both directions: within one three-month period in 2026,
+      one funder lifted a ban and another introduced one. Putting an unpublished manuscript into a public
+      AI tool is prohibited nearly everywhere.
+    example:
+      needed: true
+      text: "In preparing this review I used [tool and version] to [check my own wording / organise my comments], on [date]. No part of the manuscript was entered into any AI tool. All assessments and conclusions are my own."
+      note: >
+        The second sentence is the one editors care about. Where a journal prohibits this outright, an
+        honest declaration will be read as an admission — which is exactly why you check first, and why
+        it is worth pressing your journals to say what they actually permit.
+      placement_fallback: >
+        No organisation recorded here states where a reviewer should declare this. Put it in the
+        confidential comments to the editor, not in the report the authors see.
+
+  - axis: passing_off
+    worry: check_first
+    you_did: I am wondering whether generated content can stand in for data I do not have
+    do_this: >
+      No. This is the one clear prohibition in the dataset, and it is the thing all the other rules exist
+      to protect against. If a figure, a value or a participant did not come from your research, it cannot
+      appear as though it did.
+    example:
+      needed: false
+      text: null
+      note: >
+        There is no wording for this. It is the only outright prohibition STM's classification carries,
+        and no declaration makes it acceptable.
+
+not_covered:
+  headline: Things this page does not answer
+  items:
+    - "**Your specific journal.** Every record here is at organisation level, and journals within one publisher genuinely differ — the records show a publisher whose own journals contradict each other three weeks apart. Check your target journal's author guidelines as well."
+    - "**Your thesis.** University rules bind you separately from journal rules, and they are often stricter. Ask your institution."
+    - "**Your co-authors.** If a co-author used AI and you did not, the declaration still covers the manuscript. Agree what it says before you submit — you are all signing it."
+    - "**Your funder.** Several funders have their own rules, and they moved in both directions during 2026. None is recorded here yet."
+    - "**Preprint servers.** They set their own policies, and they are not recorded here yet."
+    - "**Summarising papers you then cite.** No organisation recorded here addresses reading assistance. Verify what you cite and you are on solid ground."
+    - "**Cover letters and responses to reviewers.** Rarely addressed. One publisher here bans using AI to respond to reviewers; most say nothing."

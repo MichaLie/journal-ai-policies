@@ -1,0 +1,348 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI-use policy record for one publishing entity",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "type",
+    "sources",
+    "policies"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "publisher",
+        "imprint",
+        "journal",
+        "normative_body",
+        "funder",
+        "preprint_server",
+        "national_body"
+      ]
+    },
+    "parent": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "id of the entity whose policy this one inherits, or null"
+    },
+    "platform": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Where content is hosted. NOT the same as policy_owner \u2014 EMBO sits on Springer Nature Link but sets its own policy. Conflating them invents a false inheritance."
+    },
+    "policy_owner": {
+      "type": "string",
+      "description": "id of the entity that actually writes this policy"
+    },
+    "delegates_to_journal": {
+      "type": "boolean",
+      "description": "true only where individual journals genuinely deviate. Verified true for OUP and CUP; false for every other publisher checked."
+    },
+    "policy_architecture": {
+      "enum": [
+        "rule_with_exemptions",
+        "risk_tiered",
+        "per_task_matrix",
+        "prose",
+        "classification_only",
+        "silent"
+      ],
+      "description": "The SHAPE of the policy object. Converging on per-activity grids during 2026 while the content diverges \u2014 record both."
+    },
+    "homepage": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "url",
+          "role",
+          "status",
+          "last_verified"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "null ONLY where the quote is held but the URL is not yet confirmed. Never construct a URL by pattern."
+          },
+          "role": {
+            "enum": [
+              "policy",
+              "statement",
+              "guidance",
+              "information",
+              "announcement"
+            ]
+          },
+          "audience": {
+            "enum": [
+              "authors",
+              "reviewers",
+              "editors",
+              "all",
+              "unspecified"
+            ]
+          },
+          "status": {
+            "enum": [
+              "current",
+              "superseded",
+              "stale_but_live",
+              "dead",
+              "unconfirmed"
+            ],
+            "description": "stale_but_live is the trap: still HTTP 200, still findable, no longer correct."
+          },
+          "authoritative": {
+            "type": "boolean",
+            "description": "Powers the 'cite this, not that' layer. Exactly one source per audience should be true."
+          },
+          "fetch_method": {
+            "enum": [
+              "http",
+              "browser",
+              "archive",
+              "manual"
+            ],
+            "description": "18 of 29 society URLs 403 to curl. COPE is Cloudflare-blocked entirely. The fetcher needs to know before it tries."
+          },
+          "date_source": {
+            "enum": [
+              "stated",
+              "hash",
+              "archive",
+              "none"
+            ],
+            "description": "Most publishers date nothing. Where there is no stated date, the content hash IS the date."
+          },
+          "stated_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "last_verified": {
+            "type": "string",
+            "format": "date"
+          },
+          "content_sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "adjudicated_sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Text-hash a human last signed off. diff.py compares against THIS, not against the previous fetch \u2014 otherwise an unadjudicated change is overwritten and lost on the next run, which is exactly how the closest precedent to this project froze."
+          },
+          "note": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Why this source is fetched the way it is \u2014 e.g. why an archive capture stands in for a live page."
+          }
+        }
+      }
+    },
+    "policies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "axis",
+          "permission",
+          "disclosure"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "axis": {
+            "type": "string",
+            "description": "An activity key from schema/stm-activities.yml, or an extended-axis key."
+          },
+          "permission": {
+            "enum": [
+              "permitted",
+              "permitted_with_conditions",
+              "prohibited",
+              "discouraged",
+              "not_addressed"
+            ],
+            "description": "not_addressed is a real value, not a blank. It is the modal value across the corpus and the cell most likely to change first."
+          },
+          "disclosure": {
+            "enum": [
+              "required",
+              "encouraged",
+              "not_required",
+              "not_addressed"
+            ],
+            "description": "Sherpa's vocabulary, adapted. Separates silence (not_addressed) from an explicit exemption (not_required)."
+          },
+          "disclosure_location": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "methods",
+                "acknowledgements",
+                "cover_letter",
+                "dedicated_section",
+                "figure_caption",
+                "submission_field",
+                "references",
+                "abstract",
+                "unspecified"
+              ]
+            },
+            "description": "Wiley routes by purpose; Springer Nature is silent; Elsevier fixes one position. This field alone discriminates."
+          },
+          "rationale": {
+            "enum": [
+              "confidentiality",
+              "non_delegation",
+              "quality",
+              "accountability",
+              "control",
+              "sustainability",
+              "licensing",
+              "reproducibility",
+              "unstated"
+            ],
+            "description": "The GROUND of the rule, not its verdict. The ERC and DFG reach opposite conclusions from different principles; recording only the verdict loses that."
+          },
+          "conditions": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "source",
+                "quote",
+                "quote_provenance"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "quote": {
+                  "type": "string",
+                  "maxLength": 400,
+                  "description": "Verbatim, short, attributed. Never paraphrase \u2014 paraphrase is where this resource would lose its only asset."
+                },
+                "quote_provenance": {
+                  "enum": [
+                    "raw_bytes",
+                    "summariser_relayed",
+                    "unverified"
+                  ],
+                  "description": "raw_bytes = extracted from the fetched document. summariser_relayed = passed through a summarising fetch layer, so carries paraphrase risk. Different fabrication risk; nobody else distinguishes them."
+                },
+                "evidence_role": {
+                  "enum": [
+                    "supports",
+                    "documents_absence"
+                  ],
+                  "description": "supports (default): the quote establishes the verdict. documents_absence: the verdict is not_addressed and the quote shows what the entity says INSTEAD of addressing it. Without this, a silent cell carrying a quote reads as a contradiction and a reader cannot tell which is meant."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "coherence": {
+      "type": "array",
+      "description": "SUBSTANTIVE contradictions only: two live sources of this entity that give a reader conflicting instructions on the same question. Both sides must be quoted AND linked. Anything a publisher could rebut in one sentence belongs in metadata_inconsistency or nowhere.",
+      "items": {
+        "type": "object",
+        "required": [
+          "summary",
+          "sources"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "type": "string"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "axis": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "metadata_inconsistency": {
+      "type": "array",
+      "description": "Dating, tagging or versioning oddities. Real, and useful to a scraper \u2014 but NOT policy self-contradiction, and they must never be counted as such. Publicly labelling a stale HTML title tag a 'self-contradiction' is indefensible.",
+      "items": {
+        "type": "object",
+        "required": [
+          "summary",
+          "sources"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "type": "string"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

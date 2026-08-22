@@ -1,0 +1,19 @@
+{
+  "entity": "stm",
+  "source": "classification-2025",
+  "url": "https://s3.eu-west-2.amazonaws.com/stm.offloadmedia/wp-content/uploads/2025/04/23020709/STM_AI_Classification_Recs_19_Sept2025-1.pdf",
+  "final_url": "https://s3.eu-west-2.amazonaws.com/stm.offloadmedia/wp-content/uploads/2025/04/23020709/STM_AI_Classification_Recs_19_Sept2025-1.pdf",
+  "http_status": "200",
+  "fetched": "2026-08-21",
+  "sha256": "5dd3f74ed8d9347cc13249ebf943af2586fb7234e9b2c25ccd30f44e0a81bd8c",
+  "text_sha256": "eb5e95e7116c83bfafd5d602a2f650fce5f801708fd408d08ba79b9808745925",
+  "bytes": 390204,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-08-21",
+      "sha256": "5dd3f74ed8d9347cc13249ebf943af2586fb7234e9b2c25ccd30f44e0a81bd8c",
+      "text_sha256": "eb5e95e7116c83bfafd5d602a2f650fce5f801708fd408d08ba79b9808745925"
+    }
+  ]
+}

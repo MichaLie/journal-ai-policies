@@ -1,0 +1,19 @@
+{
+  "entity": "elsevier",
+  "source": "journals-policy",
+  "url": "https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals",
+  "final_url": "https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals",
+  "http_status": "200",
+  "fetched": "2026-08-21",
+  "sha256": "220011c7fb24006d8082761e9c8f14672f51a472bd84489ba0af1db041a97018",
+  "text_sha256": "118ebeeb6110f5ec2e9e48700b30560db84928bcae49f1cba402470cb1477e0e",
+  "bytes": 344966,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-08-21",
+      "sha256": "220011c7fb24006d8082761e9c8f14672f51a472bd84489ba0af1db041a97018",
+      "text_sha256": "118ebeeb6110f5ec2e9e48700b30560db84928bcae49f1cba402470cb1477e0e"
+    }
+  ]
+}

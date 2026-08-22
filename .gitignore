@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Fetched bytes are large and re-fetchable; the HASH is the record, not the payload.
+snapshots/**/content.bin
+
+# meta.json IS tracked — it carries the hash chain that makes the time series work.
+!snapshots/**/meta.json

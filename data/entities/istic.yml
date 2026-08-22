@@ -1,0 +1,114 @@
+id: istic
+name: ISTIC Guideline
+type: national_body
+parent: null
+platform: null
+policy_owner: istic
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+homepage: null
+notes: 'Three editions: v1.0 September 2023, v2.0 September 2024, v3.0 December 2025, co-signed by Elsevier,
+  Springer Nature, Wiley, Taylor & Francis, Wolters Kluwer and Cambridge University Press. It requires
+  disclosure detail that English-language policy does not, including archiving AI session records. NOT
+  a standard: it explicitly disclaims precedence over publisher policy and carries no standard number.
+  A separate Chinese national guidance project on the same subject is registered and still under approval.
+  Several verdicts here rest on the English v3.0 text; the Chinese edition is quoted where the English
+  does not cover the point.'
+sources:
+- id: guideline-v3-en
+  url: https://files.sciengine.com/gridfs/2001556325267406848/%E9%99%84%E4%BB%B61-%E5%AD%A6%E6%9C%AF%E5%87%BA%E7%89%88%E4%B8%ADAIGC%E4%BD%BF%E7%94%A8%E8%BE%B9.pdf
+  role: guidance
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: stated
+  stated_date: '2025-12-07'
+  last_verified: '2026-08-21'
+  content_sha256: 5ef3b6926f45646a0507215351451e66fd7dee03a3c45a29e3dd1985e3d34787
+  adjudicated_sha256: 5a713d78d472158cd4d1d4cf9a071e58c6d094352a8b978d51ec9366daa8e73f
+- id: guideline-v2-zh
+  url: https://www.lib.szu.edu.cn/sites/szulib/files/2025-06/%E5%AD%A6%E6%9C%AF%E5%87%BA%E7%89%88%E4%B8%ADAIGC%E4%BD%BF%E7%94%A8%E8%BE%B9%E7%95%8C%E6%8C%87%E5%8D%972.0.pdf
+  role: guidance
+  audience: all
+  status: superseded
+  authoritative: false
+  fetch_method: http
+  date_source: stated
+  stated_date: '2024-09-26'
+  last_verified: '2026-08-21'
+  content_sha256: bab8269736c404ae4136b0f631e8e77b5f50c9151a51896dd0f770b7ccbadcb4
+  adjudicated_sha256: efe3e0f8622186433464ad815c9a4a612b66f3159cdd210496354152f30c4260
+policies:
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - acknowledgements
+  rationale: reproducibility
+  conditions: 'Six mandatory disclosure elements: the user; the AI system WITH VERSION NUMBER; the date
+    and time of use; the prompts and questions used; the parts of the text written or co-written by
+    AI; and the ideas arising from that use. Version 3.0 additionally requires naming the specific sections
+    assisted, quoting the actual prompts, and ARCHIVING THE AI SESSION RECORDS AS AN ATTACHMENT.
+
+    '
+  evidence:
+  - source: guideline-v3-en
+    quote: detailing disclosure and declaration requirements during the manuscript submission phase
+    quote_provenance: raw_bytes
+- axis: writing_drafting
+  permission: prohibited
+  disclosure: required
+  disclosure_location:
+  - methods
+  - acknowledgements
+  rationale: accountability
+  conditions: AI must not generate research hypotheses, write the whole paper, interpret data or draw
+    scientific conclusions. Non-disclosure was made misconduct in v2.0 — over a year before ICMJE said
+    the same.
+  evidence:
+  - source: guideline-v2-zh
+    quote: 研究人员使用AIGC直接生成的稿件文字等资料必须提供明确的披露和声明，否则将构成学术不端行为。
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: control
+  conditions: 'NOTE: this sentence comes from the third edition''s list of changes, not from its normative
+    text. It establishes that the guideline addresses journal, publisher and reviewer responsibilities
+    — not what those responsibilities are.'
+  evidence:
+  - source: guideline-v3-en
+    quote: emphasizing the responsibilities of relevant parties (including journals/publishers and reviewers)
+      during the review process.
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Reported in research notes but not locatable in the English v3.0 text held here. Recorded
+    as not addressed rather than asserted without a quote.
+- axis: reference_gathering
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Reported in research notes but not locatable in the English v3.0 text held here. Recorded
+    as not addressed rather than asserted without a quote.
+- axis: data_visualisation
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: Experimental images — Western blots, cytometry, histology — must not be AI-generated.
+  evidence:
+  - source: guideline-v3-en
+    quote: For example, experimental images in the biomedical �ield—such as Western blot analysis diagrams,
+      cell technology analy- ses, and tissue cell staining diagrams—must be obtained from genuinely
+      conducted experimental research.
+    quote_provenance: raw_bytes
+coherence: []

@@ -1,0 +1,81 @@
+id: science-aaas
+name: Science / AAAS
+type: publisher
+parent: null
+platform: science.org
+policy_owner: science-aaas
+delegates_to_journal: false
+policy_architecture: per_task_matrix
+homepage: https://www.science.org
+notes: Publishes an AI-use matrix grading roughly seventeen use-cases, and is the only publisher here
+  ruling on using AI to respond to reviewers. Research notes record that a November 2023 blog post required
+  full prompt disclosure and barred reviewer AI, and that neither requirement appears on the live page
+  — but that blog post is not among the sources held here, so the comparison is reported as an observation,
+  not evidenced on this site. The live page carries no revision date. Live science.org returns 403 to
+  automated clients; this record is verified against a dated Internet Archive capture.
+sources:
+- id: editorial-policies
+  url: https://web.archive.org/web/20260614001840/https://www.science.org/content/page/science-journals-editorial-policies
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: archive
+  date_source: hash
+  stated_date: null
+  last_verified: '2026-08-21'
+  content_sha256: ab8a190e9db099ff710d9cedbd92b167b9b0f99e234048a05bddde04a9f46314
+  note: Live science.org returns 403 to every automated client. This is a dated Internet Archive capture.
+  adjudicated_sha256: 96da87014cece47eadd90921705974cb309a539051472cb25a71d9050ca0c38e
+policies:
+- axis: reviewer_use
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: confidentiality
+  evidence:
+  - source: editorial-policies
+    quote: Reviewers may not enter any part of the manuscript into an LLM or other AI tool because this
+      could breach the confidentiality of the manuscript.
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - submission_field
+  rationale: accountability
+  conditions: Prior editor permission required; exceptions case-by-case and disclosed at submission.
+  evidence:
+  - source: editorial-policies
+    quote: AI-generated images and other multimedia are not permitted in the Science journals without
+      explicit permission from the editors.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: control
+  conditions: 'No threshold for triggering review, no duty to notify the author, and no route of appeal
+    is stated. The quote records what is granted instead: editorial discretion.'
+  evidence:
+  - source: editorial-policies
+    quote: Editors may decline to move forward with manuscripts if AI is used inappropriately.
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: The AI-use matrix asks the editorial office to post its own AI tools on the journal website.
+    We looked for such a posting on the editorial-policies page on 2026-08-21 and did not find one;
+    the individual Science-family journal sites were not checked, so this is a gap in our looking, not
+    an established absence.
+  evidence:
+  - source: editorial-policies
+    quote: The Science journals use the Crossref Similarity Check service to detect plagiarism and follow
+      guidelines from the Committee on Publication Ethics (COPE) in dealing with cases of suspected
+      plagiarism.
+    quote_provenance: raw_bytes
+coherence: []

@@ -1,0 +1,102 @@
+id: springer-nature
+name: Springer Nature
+type: publisher
+parent: null
+platform: link.springer.com
+policy_owner: springer-nature
+delegates_to_journal: false
+policy_architecture: risk_tiered
+homepage: https://www.nature.com
+notes: Moved to a Green/Amber/Red risk framework during 2026. No announcement was found in its press-release
+  index (2015-2026, 190+ items) or its three company blogs, and the live page carries no date stamp
+  and no changelog. Live nature.com serves automated clients a Cloudflare interstitial with HTTP 200,
+  so this record is verified against a dated Internet Archive capture. Its peer-review policy page could
+  not be retrieved from any source and is therefore not recorded here.
+sources:
+- id: nature-portfolio-ai
+  url: https://web.archive.org/web/20260804231015/https://www.nature.com/nature-portfolio/editorial-policies/ai
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: archive
+  date_source: hash
+  stated_date: null
+  last_verified: '2026-08-21'
+  content_sha256: ca382659e24ce4f54fd1c4f56ed2187a08c8b69270ba3079ce48de35d68e5227
+  note: Live nature.com returns a Cloudflare 'Client Challenge' interstitial with HTTP 200 to automated
+    clients — a 3KB block page, not the policy. This is a dated Internet Archive capture of the real
+    page.
+  adjudicated_sha256: c37e42eea5b6d4ef5bef504aa6d80f58137f90895d2b2ecc918f50df225ec7fb
+policies:
+- axis: translation
+  permission: permitted
+  disclosure: encouraged
+  disclosure_location: []
+  rationale: quality
+  conditions: Listed under the Green tier, whose compliance line reads "Permitted. Disclosure enhances
+    trust and transparency" — encouraged, not required.
+  evidence:
+  - source: nature-portfolio-ai
+    quote: Translation, structuring or clarifying reviewer comments
+    quote_provenance: raw_bytes
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Red tier applies only where core research reasoning is generated WITHOUT disclosure; the
+    Amber tier permits substantive AI use with human accountability and disclosure. An earlier version
+    of this record read the Red example as a blanket prohibition on drafting. It is not one.
+  evidence:
+  - source: nature-portfolio-ai
+    quote: Using an LLM to generate core research reasoning without disclosure
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Amber tier permits evaluative use with oversight; delegating the review itself is Red.
+  evidence:
+  - source: nature-portfolio-ai
+    quote: Delegating peer review to an LLM
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: The image-integrity policy contains no AI content. Deepfakes are prohibited, but in the
+    risk framework rather than the image policy, and photorealistic deepfakes are not the illustrative
+    figures this activity covers.
+  evidence: []
+- axis: publisher_own_use
+  permission: permitted
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Stated for accessory content and editorial support. Authors are not told which tools ran
+    on their particular manuscript.
+  evidence:
+  - source: nature-portfolio-ai
+    quote: Nature Portfolio journals occasionally use artificial intelligence tools developed or approved
+      by Springer Nature to support different tasks in the generation of accessory content or to support
+      the editorial process.
+    quote_provenance: raw_bytes
+    evidence_role: supports
+- axis: detection_screening
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  evidence: []
+- axis: due_process
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  evidence: []
+coherence: []

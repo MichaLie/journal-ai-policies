@@ -1,0 +1,14 @@
+CC0 1.0 Universal — Public Domain Dedication
+
+The policy records in data/ and the derived docs/data.json are released into the
+public domain under CC0 1.0. https://creativecommons.org/publicdomain/zero/1.0/
+
+Chosen for survivability. Sherpa Romeo is CC BY-NC-ND, which meant nobody could
+legally rescue its data as it declined; ROARMAP's OAI interface states that no
+rights at all are granted. If this project stops being maintained, someone else
+must be able to pick it up without asking.
+
+EXCEPTION: verbatim quotations of publisher policy text remain the property of
+their respective publishers. They are reproduced here as short excerpts for
+comparison and criticism, with attribution and a link to the source, and are not
+covered by this dedication.

@@ -1,0 +1,85 @@
+id: plos
+name: PLOS
+type: publisher
+parent: null
+platform: journals.plos.org
+policy_owner: plos
+delegates_to_journal: false
+policy_architecture: prose
+homepage: https://plos.org
+notes: 'The strongest stated enforcement in the corpus — but keyed to NON-compliance, never to the act
+  of disclosing. The only publisher requiring reviewer AI use to be disclosed to authors, and editor
+  AI use to be disclosed in the decision letter. Its own justification for using in-house AI while forbidding
+  reviewers external AI is the clearest statement of the control principle anywhere.
+
+  '
+sources:
+- id: ethical-publishing-practice
+  url: https://journals.plos.org/plosone/s/ethical-publishing-practice
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  stated_date: null
+  last_verified: '2026-08-21'
+  content_sha256: 81d32450f2ec34dc0449a8cd82e5c09525694b7576af4c11f76a2a77860e84f1
+  adjudicated_sha256: fec072430ca9e3e8d5a619dd72f35a64b099dadcf9223ed12c426b9d832198c6
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: accountability
+  conditions: No stated exemption for language editing.
+  evidence:
+  - source: ethical-publishing-practice
+    quote: 'In cases where Large Language Model (LLM) AI tools or technologies contribute to generating
+      text content for a PLOS submission, the article''s authors are responsible for ensuring that:
+      the content is accurate and valid'
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Disclosure to AUTHORS is mandatory — in the review form for reviewers, in the decision
+    letter for editors.
+  evidence:
+  - source: ethical-publishing-practice
+    quote: AI tools cannot serve as reviewers or as decision-issuing editors.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: permitted
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: control
+  conditions: PLOS states it screens submissions with Crossref Similarity Check. It does not state whether
+    it runs AI-text detection, and does not tell an author what ran on their manuscript.
+  evidence:
+  - source: ethical-publishing-practice
+    quote: PLOS uses Crossref Similarity Check (powered by iThenticate) to screen submitted content
+      for originality.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: 'No threshold for triggering review, no duty to notify the author, and no route of appeal
+    is stated. The quote records what is granted instead: editorial discretion.'
+  evidence:
+  - source: ethical-publishing-practice
+    quote: the journal may reject (pre-publication), retract (post-publication), or publish an editorial
+      notice on the article
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+- axis: detection_screening
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+coherence: []

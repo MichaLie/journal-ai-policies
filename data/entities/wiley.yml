@@ -1,0 +1,154 @@
+id: wiley
+name: Wiley
+type: publisher
+parent: null
+platform: onlinelibrary.wiley.com
+policy_owner: wiley
+delegates_to_journal: false
+policy_architecture: per_task_matrix
+homepage: https://www.wiley.com
+notes: 'The per-task requires/does-not-require matrix was announced 28 October 2025 — NOT 2026. Wiley
+  is the only major publisher with a genuine agentic policy, and the only one that discloses its own
+  policy document was AI-drafted. Routes disclosure by purpose rather than to one fixed position.
+
+  '
+sources:
+- id: ai-guidelines
+  url: https://www.wiley.com/en-us/publish/article/ai-guidelines/
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: stated
+  stated_date: '2025-10-28'
+  last_verified: '2026-08-21'
+  content_sha256: 46c274126594f5a0d867b05e9d64e6aa2b1bdbe504cd713e28fd3ae5d1e44b17
+  adjudicated_sha256: fb87b39ec81ad39599ed2df2b10599f3f0db36d3585001afc8f9dc43bd06a1b7
+- id: ethics-guidelines
+  url: https://authorservices.wiley.com/ethics-guidelines/index.html
+  role: guidance
+  audience: all
+  status: current
+  authoritative: false
+  fetch_method: http
+  date_source: none
+  stated_date: null
+  last_verified: '2026-08-21'
+  content_sha256: 504265470e65ec27700061f194ff62b16f70037c3f97ceef8da20072ac6fc7d7
+  adjudicated_sha256: 344735fd4c490d767d6d82c34894c289978ceb85c8255f6c5b20700e861e8c79
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  rationale: accountability
+  conditions: Disclosure is routed by purpose — drafting and editing to Acknowledgements.
+  evidence:
+  - source: ai-guidelines
+    quote: AI use in manuscript development is not grounds for rejection.
+    quote_provenance: raw_bytes
+- axis: translation
+  permission: permitted
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  rationale: accountability
+  evidence:
+  - source: ai-guidelines
+    quote: In your Acknowledgments when AI assists with manuscript drafting, editing, translation, or
+      formatting.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: reproducibility
+  conditions: 'The only entity in the corpus that names agentic workflows and asks for the audit trail
+    — prompts, parameters, settings and a code repository.
+
+    '
+  evidence:
+  - source: ai-guidelines
+    quote: 'You may have heard these referred to as: agentic AI, autonomous agents, or agent workflows'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: a goal and allowing it to carry out multiple steps independently
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Agentic search: AI independently generates or executes search strategies'
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: confidentiality
+  conditions: Organising, prioritising, tone and translation are permitted; uploading the manuscript
+    is not.
+  evidence:
+  - source: ai-guidelines
+    quote: We require disclosure of AI when it's used for drafting assistance in your reviews.
+    quote_provenance: raw_bytes
+  - source: ethics-guidelines
+    quote: Editors have the right to disregard peer reviewer reports that show signs of inappropriate
+      AI use.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Wiley's author-facing guidance does not state what AI Wiley itself runs on a submission.
+    The quote below is the closest it comes, and it is a restriction on reviewers rather than a statement
+    of Wiley's own use.
+  evidence:
+  - source: ai-guidelines
+    quote: Authors have not given permission for reviewers or editors to share their unpublished work
+      with AI Technologies
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+- axis: detection_screening
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Wiley discloses duplicate-text screening and says nothing about AI-text detection, despite
+    having announced generative-AI content detection in 2024.
+  evidence:
+  - source: ethics-guidelines
+    quote: Wiley routinely screens submitted manuscripts for duplicated text using tools such as Crossref
+      Similarity Check.
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+- axis: due_process
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: control
+  conditions: 'No threshold for triggering review, no duty to notify the author, and no route of appeal
+    is stated. The quote records what is granted instead: editorial discretion.'
+  evidence:
+  - source: ethics-guidelines
+    quote: The final decision on whether using AI Technology is appropriate or permissible for a submitted
+      manuscript or a published article belongs to the journal's editor
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+- axis: audit_trail
+  permission: permitted
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: reproducibility
+  conditions: 'Wiley discloses that this very guidance document was AI-drafted — specific, in the register
+    of methods, attached to the artefact, with no apology. The norm, demonstrated.
+
+    '
+  evidence:
+  - source: ai-guidelines
+    quote: The final draft was revised by the author using Claude 4 Sonnet and GPT-5 (August 2025) and
+      then polished by a human copyeditor with expertise in research communication.
+    quote_provenance: raw_bytes
+coherence: []

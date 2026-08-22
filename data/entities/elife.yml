@@ -1,0 +1,60 @@
+id: elife
+name: eLife
+type: publisher
+parent: null
+platform: elifesciences.org
+policy_owner: elife
+delegates_to_journal: false
+policy_architecture: prose
+homepage: https://elifesciences.org
+notes: 'The natural experiment. The only organisation recorded here that permits reviewers to use AI
+  — because its reviewed-preprint model means the manuscript is already public, so the confidentiality
+  reason other publishers give does not apply. Remove that reason and the ban has nothing to stand on:
+  the rationale, not the technology, is doing the work. Disclosure is nonetheless required. eLife is
+  also the only organisation here addressing editors using AI to find reviewers.'
+sources:
+- id: review-process-ai
+  url: https://reviewer.elifesciences.org/reviewer-guide/review-process
+  role: policy
+  audience: reviewers
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  stated_date: null
+  last_verified: '2026-08-21'
+  content_sha256: e0ead2d067a69eedd8b7f9f0fddf9a893277009592014682eb7569c8721d9396
+  adjudicated_sha256: 4f55901fed920706827d050ab75caea7cb79758ea26a1ef8898c9d9ad5023320
+policies:
+- axis: reviewer_use
+  permission: permitted
+  disclosure: required
+  disclosure_location: []
+  rationale: confidentiality
+  conditions: Permitted because the confidentiality rationale does not apply to an already-public reviewed
+    preprint — but disclosure is mandatory. An earlier version of this record quoted only the subordinate
+    clause and wrongly recorded disclosure as not addressed.
+  evidence:
+  - source: review-process-ai
+    quote: While we do not prevent the use of generative artificial intelligence tools within the review
+      process, editors and reviewers remain accountable for their contributions and the contents of
+      their reviews. If generative AI tools are used by editors or reviewers, this must be disclosed.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: The only entity found that addresses editors using AI to source reviewers.
+  evidence:
+  - source: review-process-ai
+    quote: If generative AI is used by editors to source suggestions for potential reviewers, we expect
+      the usual due diligence
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: eLife's image expectations are not stated on the reviewer-guide page held here. Third-party
+    accounts describing eLife as banning AI figures are unsupported by this source.

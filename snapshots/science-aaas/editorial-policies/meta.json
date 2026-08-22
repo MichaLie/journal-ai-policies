@@ -1,0 +1,19 @@
+{
+  "entity": "science-aaas",
+  "source": "editorial-policies",
+  "url": "https://web.archive.org/web/20260614001840/https://www.science.org/content/page/science-journals-editorial-policies",
+  "final_url": "https://web.archive.org/web/20260614001840/https://www.science.org/content/page/science-journals-editorial-policies",
+  "http_status": "200",
+  "fetched": "2026-08-21",
+  "sha256": "ab8a190e9db099ff710d9cedbd92b167b9b0f99e234048a05bddde04a9f46314",
+  "text_sha256": "96da87014cece47eadd90921705974cb309a539051472cb25a71d9050ca0c38e",
+  "bytes": 250550,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-08-21",
+      "sha256": "ab8a190e9db099ff710d9cedbd92b167b9b0f99e234048a05bddde04a9f46314",
+      "text_sha256": "96da87014cece47eadd90921705974cb309a539051472cb25a71d9050ca0c38e"
+    }
+  ]
+}

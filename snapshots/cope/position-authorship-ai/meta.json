@@ -1,0 +1,19 @@
+{
+  "entity": "cope",
+  "source": "position-authorship-ai",
+  "url": "https://web.archive.org/web/20260208002603/https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools",
+  "final_url": "https://web.archive.org/web/20260208002603/https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools",
+  "http_status": "200",
+  "fetched": "2026-08-21",
+  "sha256": "2e0265f39fd552f0ed366257bba436ce2563cc7bca03e7c0d6147f4a224e429a",
+  "text_sha256": "d0fbfe374dd619a3e749fcf515428e8a93f7534c64c44ad1015949e218682b90",
+  "bytes": 109018,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-08-21",
+      "sha256": "2e0265f39fd552f0ed366257bba436ce2563cc7bca03e7c0d6147f4a224e429a",
+      "text_sha256": "d0fbfe374dd619a3e749fcf515428e8a93f7534c64c44ad1015949e218682b90"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+id: cope
+name: COPE
+type: normative_body
+parent: null
+platform: null
+policy_owner: cope
+delegates_to_journal: false
+policy_architecture: prose
+homepage: https://publicationethics.org
+notes: The body most publishers cite, unrevised since 13 February 2023. Its separate discussion document
+  on AI in editorial decisions dates from September 2021, before ChatGPT was released. The position
+  statement places a duty on authors and assigns them liability; it contains no instruction to editors
+  on what to do with a disclosure once received. Live publicationethics.org returns 403 to automated
+  clients, so this record is verified against a dated Internet Archive capture.
+sources:
+- id: position-authorship-ai
+  url: https://web.archive.org/web/20260208002603/https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools
+  role: policy
+  audience: authors
+  status: current
+  authoritative: true
+  fetch_method: archive
+  date_source: stated
+  stated_date: '2023-02-13'
+  last_verified: '2026-08-21'
+  content_sha256: 2e0265f39fd552f0ed366257bba436ce2563cc7bca03e7c0d6147f4a224e429a
+  note: Live publicationethics.org returns 403 to every automated client (Cloudflare). This is a dated
+    Internet Archive capture of the same page.
+  adjudicated_sha256: d0fbfe374dd619a3e749fcf515428e8a93f7534c64c44ad1015949e218682b90
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: accountability
+  conditions: 'Methods placement, naming the tool — three years before ICMJE said the same. Note the
+    scope: it already covers collection and analysis of data.
+
+    '
+  evidence:
+  - source: position-authorship-ai
+    quote: Authors who use AI tools in the writing of a manuscript, production of images or graphical
+      elements of the paper, or in the collection and analysis of data, must be transparent in disclosing
+      in the Materials and Methods (or similar section) of the paper how the AI tool was used
+    quote_provenance: raw_bytes
+  - source: position-authorship-ai
+    quote: Authors are fully responsible for the content of their manuscript, even those parts produced
+      by an AI tool, and are thus liable for any breach of publication ethics.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: accountability
+  conditions: The statement explicitly extends to "the collection and analysis of data".
+  evidence:
+  - source: position-authorship-ai
+    quote: Authors who use AI tools in the writing of a manuscript, production of images or graphical
+      elements of the paper, or in the collection and analysis of data, must be transparent in disclosing
+      in the Materials and Methods (or similar section) of the paper how the AI tool was used
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'A load-bearing negative. The position statement says nothing whatsoever about what an
+    editor should do with a disclosure once received.
+
+    '
+coherence: []
+metadata_inconsistency:
+- summary: The page states 'Last reviewed 13 February 2023' and carries a 2024 copyright line, while
+    its DOI was deposited with Crossref on 2024-08-20. Cite it as reviewed February 2023, DOI deposited
+    2024.
+  sources:
+  - position-authorship-ai

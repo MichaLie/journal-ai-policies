@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Journals Actually Require</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* ── tokens ───────────────────────────────────────────────────────────────
+   Every colour is defined here, in the bare :root, and redefined in BOTH the
+   prefers-color-scheme block and the [data-theme] block. A colour defined only
+   inside a theme block renders one theme's text on the other theme's ground.
+   --accent means ONE thing: attention/staleness. Quotes, row numbers and
+   required-disclosure each have their own token, because an accent that means
+   four things means nothing.                                                */
+:root{
+  --ground:#F6F7F8; --surface:#FFFFFF; --surface-2:#EDF0F3; --chip:#E7EBEF;
+  --ink:#161B21; --ink-2:#39424B; --muted:#57626D;
+  --rule:#D3D9DF; --rule-soft:#E5E9ED;
+  --accent:#8F3116;            /* attention + staleness + focus, nothing else */
+  --quote:#B0B7BF;             /* quotation rules */
+  --req:#7A4A0E;               /* "must be declared" */
+  --ok:#175C40; --cond:#7A5A11; --no:#6E1F2C; --live:#1B47A0;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#10141A; --surface:#171C23; --surface-2:#1E252D; --chip:#232B34;
+  --ink:#E8ECF0; --ink-2:#C2CAD3; --muted:#96A1AD;
+  --rule:#2C343D; --rule-soft:#232A32;
+  --accent:#E4805A; --quote:#4A545F; --req:#D6A860;
+  --ok:#56AB84; --cond:#D0AC5C; --no:#E07E92; --live:#89ADEC;
+}}
+:root[data-theme="dark"]{
+  --ground:#10141A; --surface:#171C23; --surface-2:#1E252D; --chip:#232B34;
+  --ink:#E8ECF0; --ink-2:#C2CAD3; --muted:#96A1AD;
+  --rule:#2C343D; --rule-soft:#232A32;
+  --accent:#E4805A; --quote:#4A545F; --req:#D6A860;
+  --ok:#56AB84; --cond:#D0AC5C; --no:#E07E92; --live:#89ADEC;
+}
+
+/* ── type scale ───────────────────────────────────────────────────────────
+   Eight steps, no others. The previous stylesheet had 24 distinct sizes, five
+   of them spanning 0.8px, and 413 elements at or below 10px against 63 at 16.
+   Label floor raised to .72rem: below about 11px, uppercase letterspaced mono
+   stops being scannable and becomes texture.                                */
+:root{
+  --t-label:.72rem; --t-small:.86rem; --t-body:1rem; --t-lead:1.15rem;
+  --t-h3:1.06rem; --pad-card:1.05rem 1.25rem; --track:minmax(min(18rem,100%),1fr);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
+body{overflow-x:clip}
+body{background:var(--ground);color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:var(--t-body);line-height:1.62;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:74rem;margin:0 auto;padding:3rem 1.5rem 6rem;display:flex;
+  flex-direction:column;gap:3.25rem;min-width:0}
+h1,h2,h3{font-family:Spectral,Georgia,serif;text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:clamp(2.1rem,5vw,3rem);font-weight:700;letter-spacing:-.015em}
+h2{font-size:clamp(1.4rem,3vw,1.8rem);font-weight:600}
+h3{font-size:var(--t-h3);font-weight:600}
+p{margin:0}
+a{color:var(--live);text-decoration:underline;text-underline-offset:2px}
+a:focus-visible,summary:focus-visible,.tw:focus-visible,.skip:focus{
+  outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.vh{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+.skip{position:absolute;left:-9999px}
+.skip:focus{position:fixed;left:1rem;top:1rem;z-index:9;background:var(--surface);
+  color:var(--ink);padding:.9rem 1.1rem;min-height:44px;border:2px solid var(--accent);
+  border-radius:3px}
+
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:var(--t-label);
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lede{font-family:Spectral,Georgia,serif;font-size:var(--t-lead);line-height:1.55;
+  color:var(--ink-2);max-width:46rem}
+.muted{color:var(--muted)}
+.foot{font-size:var(--t-small)}
+.cite{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:var(--t-label);
+  color:var(--muted);line-height:1.5}
+.cite a{color:var(--live)}
+
+header{display:flex;flex-direction:column;gap:1rem;padding-bottom:2rem;border-bottom:2px solid var(--ink)}
+.meta-row{display:flex;flex-wrap:wrap;gap:.4rem 1.3rem;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:var(--t-label);letter-spacing:.05em;color:var(--muted);text-transform:uppercase}
+nav.toc{display:flex;flex-wrap:wrap;gap:.4rem .9rem;padding:.7rem 0;border-bottom:1px solid var(--rule)}
+nav.toc a{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:var(--t-label);
+  letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--muted);
+  padding:.85rem .25rem;min-height:44px;display:flex;align-items:center;
+  border-bottom:2px solid transparent}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--ink);border-bottom-color:var(--accent)}
+
+section{display:flex;flex-direction:column;gap:1.25rem;min-width:0}
+.sec-head{display:flex;flex-direction:column;gap:.4rem;padding-bottom:.6rem;border-bottom:1px solid var(--rule)}
+.tombstone{background:var(--no);color:#fff;padding:1.25rem 1.5rem;border-radius:3px}
+/* dark palette's --no is light, so white-on-it fails; flip the text instead */
+:root[data-theme="dark"] .tombstone{color:#12161B}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tombstone{color:#12161B}}
+.warnbar{background:var(--surface-2);border-left:3px solid var(--cond);padding:.9rem 1.2rem;border-radius:3px}
+
+/* ── one label system ─────────────────────────────────────────────────── */
+.lbl,.p,.d,.f,.tag,.gap,.prov,.w,.dissent,.varies,.where,.lane-who,.loc,
+.reg-tag,.tmpl-tag,.band-n,.tmpl-opt{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:var(--t-label);
+  font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  padding:.16rem .42rem;border-radius:2px;display:inline-block}
+.p{border:1px solid currentColor;white-space:nowrap}
+.p.ok{color:var(--ok)}.p.cond{color:var(--cond)}.p.no{color:var(--no)}
+.p.silent{color:var(--muted);border-style:dashed}
+.p.none{color:var(--muted);border:1px dotted var(--rule);opacity:.85}
+.d{background:var(--chip);color:var(--muted);border:1px solid transparent;white-space:nowrap}
+.d-required{color:var(--req);font-weight:600}
+.d-encouraged{color:var(--live)}
+.d-exempt{color:var(--ok)}
+.d-silent{color:var(--muted);opacity:.8}
+.gap{color:var(--cond);border:1px solid var(--cond);cursor:help}
+.f{border:1px solid currentColor;white-space:nowrap}
+.f.fresh{color:var(--ok)}.f.aging{color:var(--cond)}.f.stale{color:var(--accent)}
+.f.expired,.f.unknown{color:var(--no)}
+.tag{background:var(--chip);color:var(--muted);border:1px solid transparent}
+.tag.arch{color:var(--live)}.tag.flagged{color:var(--accent);border-color:var(--accent)}
+.tag.undated{color:var(--cond)}.tag.auth{color:var(--ok);border-color:var(--ok)}
+.tag.st-current{color:var(--ok)}
+.tag.st-superseded,.tag.st-stale_but_live{color:var(--accent)}
+.tag.st-unconfirmed{color:var(--cond)}
+.prov{padding:0 .3rem}
+.prov.raw_bytes{color:var(--ok)}.prov.summariser_relayed{color:var(--cond)}
+.prov.unverified{color:var(--no)}
+.prov.absence{color:var(--live)}
+
+/* ── matrix ───────────────────────────────────────────────────────────── */
+.tw{overflow-x:auto;min-width:0;max-width:100%;border:1px solid var(--rule);
+  border-radius:3px;background:var(--surface)}
+table.matrix{border-collapse:collapse;width:100%}
+.matrix th,.matrix td{border-bottom:1px solid var(--rule-soft);border-right:1px solid var(--rule-soft);
+  padding:.5rem .6rem;vertical-align:top;text-align:left}
+.matrix thead th{background:var(--surface-2);border-bottom:1px solid var(--rule)}
+.matrix th.ent{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:var(--t-label);
+  letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:600;min-width:5.5rem}
+.matrix th.rowhead{font-family:inherit;font-size:var(--t-small);font-weight:400;line-height:1.35;
+  min-width:min(14rem,52vw);max-width:18rem;background:var(--surface);
+  position:sticky;left:0;z-index:1;
+  border-right:1px solid var(--rule)}
+.matrix thead th.rowhead{background:var(--surface-2);z-index:2}
+.matrix .num{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:var(--t-label);
+  color:var(--muted);font-weight:600;margin-right:.45rem}
+.matrix tr.extrow th.rowhead{font-style:italic;color:var(--ink-2)}
+.cell{display:table-cell}
+.cell .stack{display:flex;flex-direction:column;gap:.22rem;align-items:flex-start}
+caption{text-align:left;padding:.6rem .85rem;font-size:var(--t-small);color:var(--muted);
+  border-bottom:1px solid var(--rule)}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+.legend .sep{width:1px;height:1.1rem;background:var(--rule);margin:0 .4rem}
+
+/* ── cards & blocks ───────────────────────────────────────────────────── */
+.cols,.advice,.register{display:grid;grid-template-columns:repeat(auto-fit,var(--track));gap:1rem}
+.card,.adv,.band,.reg,.bound{background:var(--surface);border:1px solid var(--rule-soft);
+  border-left:3px solid var(--rule);padding:var(--pad-card);border-radius:3px;
+  display:flex;flex-direction:column;gap:.55rem;font-size:var(--t-body)}
+.card,.adv,.reg{font-size:.96rem}
+.adv-do{border-left-color:var(--accent);grid-column:1/-1}
+.adv-calm{border-left-color:var(--ok)}
+.adv-warn{border-left-color:var(--no)}
+.adv-flag{border-left-color:var(--cond)}
+.adv-cite{border-left-color:var(--live)}
+.adv-ev{font-size:var(--t-small);color:var(--muted)}
+.bound{border-left-color:var(--no);max-width:46rem}
+.reg-bad{border-left-color:var(--no)}
+.reg-good{border-left-color:var(--ok)}
+.reg p{font-family:Spectral,Georgia,serif;font-style:italic;color:var(--ink-2);line-height:1.5}
+.reg-tag{padding:0}
+.reg-bad .reg-tag{color:var(--no)}.reg-good .reg-tag{color:var(--ok)}
+.silence-note{background:var(--surface-2);border-left:3px solid var(--ok);
+  padding:.85rem 1.15rem;border-radius:3px;max-width:52rem}
+.detector{background:var(--surface);border:1px solid var(--rule-soft);
+  border-left:3px solid var(--live);padding:var(--pad-card);border-radius:3px;
+  display:flex;flex-direction:column;gap:.55rem;max-width:52rem}
+.boundary{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--accent);
+  padding:1.2rem 1.4rem;border-radius:3px;display:flex;flex-direction:column;gap:.6rem}
+
+/* ── consensus bands ──────────────────────────────────────────────────── */
+.consensus{display:flex;flex-direction:column;gap:1rem}
+.band-holds{border-left-color:var(--ok)}
+.band-void{border-left-color:var(--accent)}
+.band-split{border-left-color:var(--cond)}
+.band-thin,.band-unassessed{border-left-color:var(--rule)}
+.band-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.7rem;justify-content:space-between}
+.band-n{background:var(--chip);color:var(--muted);font-weight:400}
+.band-blurb{font-size:var(--t-small);color:var(--muted);max-width:52rem}
+ul.rules{list-style:none;margin:.15rem 0 0;padding:0;display:flex;flex-direction:column;gap:.45rem}
+ul.rules li{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;padding:.4rem 0;
+  border-top:1px solid var(--rule-soft);font-size:.96rem}
+ul.rules li:first-child{border-top:none}
+.frac{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums;
+  font-size:var(--t-small);font-weight:600;color:var(--ink-2);min-width:3.2rem}
+.frac span{color:var(--muted);font-weight:400}
+.rule-txt{flex:1 1 22rem}
+.dissent{color:var(--cond);border:1px solid currentColor;white-space:normal}
+.varies{color:var(--muted);border:1px dashed currentColor}
+.where{color:var(--live);background:var(--chip)}
+
+/* ── cases ────────────────────────────────────────────────────────────── */
+.cases{display:flex;flex-direction:column;gap:.5rem}
+details.case,details.ent-card{border:1px solid var(--rule-soft);border-left:3px solid var(--rule);
+  border-radius:3px;background:var(--surface)}
+details.case.w-low{border-left-color:var(--ok)}
+details.case.w-some{border-left-color:var(--cond)}
+details.case.w-check{border-left-color:var(--no)}
+details.case summary,details.ent-card summary{cursor:pointer;padding:.8rem 1.1rem;
+  display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;min-height:2.9rem}
+details[open].case summary,details[open].ent-card summary{border-bottom:1px solid var(--rule-soft)}
+.case .w{border:1px solid currentColor;white-space:nowrap}
+.case.w-low .w{color:var(--ok)}.case.w-some .w{color:var(--cond)}.case.w-check .w{color:var(--no)}
+.case .you{flex:1 1 20rem;font-size:var(--t-body)}
+.case-body{padding:.9rem 1.1rem;display:flex;flex-direction:column;gap:.6rem;
+  font-size:.96rem;color:var(--ink-2)}
+.case-src{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:var(--t-label);
+  letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.case-src a,ul.srcs li a{display:inline-block;padding-block:.55rem}
+
+/* ── templates ────────────────────────────────────────────────────────── */
+.tmpl{border:1px solid var(--rule);border-radius:3px;background:var(--surface-2);
+  padding:.85rem 1rem;display:flex;flex-direction:column;gap:.6rem}
+.tmpl-head{display:flex;flex-wrap:wrap;gap:.5rem;align-items:baseline}
+.tmpl-tag{color:var(--accent);padding:0}
+.tmpl-opt{color:var(--ok);padding:0;font-weight:400}
+blockquote.tmpl-text{margin:0;font-family:"IBM Plex Mono",ui-monospace,monospace;font-style:normal;
+  font-size:var(--t-small);line-height:1.7;border-left:2px solid var(--accent);background:var(--surface);
+  padding:.75rem .9rem;border-radius:2px;color:var(--ink);user-select:all}
+.tmpl-note{font-size:var(--t-small);color:var(--muted)}
+.tmpl-none{border-left:3px solid var(--no);padding-left:.9rem;color:var(--ink-2);font-size:.96rem}
+.places{display:flex;flex-direction:column;gap:.35rem}
+.places-lbl{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:var(--t-label);
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.places ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.3rem}
+.places li{display:flex;flex-wrap:wrap;gap:.45rem;align-items:baseline}
+.loc{color:var(--live);background:var(--chip)}
+.loc-who{font-size:var(--t-small);color:var(--muted)}
+.places-none{font-size:var(--t-small);color:var(--muted)}
+ul.lanes{list-style:none;margin:.2rem 0 0;padding:0;display:flex;flex-direction:column;gap:.4rem}
+ul.lanes li{display:flex;flex-wrap:wrap;gap:.4rem;align-items:baseline;padding:.35rem 0;
+  border-top:1px solid var(--rule-soft)}
+ul.lanes li:first-child{border-top:none}
+.lane{flex:1 1 12rem;font-size:.96rem}
+.lane-who{color:var(--no);border:1px solid currentColor;white-space:normal}
+
+/* ── entity records ───────────────────────────────────────────────────── */
+details.ent-card+details.ent-card{margin-top:.55rem}
+.ent-name{font-family:Spectral,Georgia,serif;font-size:var(--t-body);font-weight:600;margin-right:.3rem}
+.ent-body{padding:1.05rem 1.25rem;display:flex;flex-direction:column;gap:.9rem;font-size:.96rem}
+.note{color:var(--ink-2)}
+.inline-flag{border-left:3px solid var(--accent);padding-left:.8rem;color:var(--ink-2)}
+ul.srcs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+ul.srcs li{padding:.55rem .7rem;border:1px solid var(--rule-soft);border-radius:3px;
+  word-break:break-word;font-size:var(--t-small)}
+ul.srcs li.auth{border-left:3px solid var(--ok)}
+.src-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.4rem}
+.src-note{color:var(--muted);font-size:var(--t-small);margin-top:.35rem}
+.nourl{color:var(--cond);font-style:italic}
+.contra{border-left:3px solid var(--accent);padding-left:.85rem;color:var(--ink-2)}
+.metanote{border-left:3px solid var(--rule);padding-left:.85rem;color:var(--muted);font-size:var(--t-small)}
+.ev{display:flex;flex-direction:column;gap:.5rem;padding:.7rem 0;border-top:1px solid var(--rule-soft)}
+.ev-axis{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:var(--t-label);
+  letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+blockquote{margin:0;padding:.1rem 0 .1rem 1rem;border-left:2px solid var(--quote);
+  font-family:Spectral,Georgia,serif;font-style:italic;color:var(--ink-2)}
+cite{display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-style:normal;
+  font-size:var(--t-label);letter-spacing:.03em;color:var(--muted);margin-top:.35rem;text-transform:uppercase}
+.cond-note{color:var(--muted);font-size:var(--t-small)}
+ul.plain{margin:0;padding-left:1.15rem;display:flex;flex-direction:column;gap:.5rem}
+ul.plain li::marker{color:var(--muted)}
+strong{font-weight:600;color:var(--ink)}
+footer{border-top:2px solid var(--ink);padding-top:1.4rem;display:flex;flex-direction:column;gap:.5rem}
+
+@media (max-width:40rem){
+  .case summary{align-items:flex-start}
+  .case .w{order:-1;flex-basis:100%}
+}
+
+/* ── print ────────────────────────────────────────────────────────────────
+   Collapsed <details> print EMPTY. Without this rule a printed copy silently
+   loses every entity record and every case — the most-used part of the page. */
+@media print{
+  :root{--ground:#fff;--surface:#fff;--surface-2:#fff;--chip:#fff;
+        --ink:#000;--ink-2:#222;--muted:#444;--rule:#999;--rule-soft:#ccc}
+  body{font-size:10pt}
+  .wrap{max-width:none;padding:0;gap:1.6rem}
+  nav.toc,.skip{display:none}
+  details{border:1px solid #ccc}
+  details>summary{list-style:none}
+  details>*{display:block!important}          /* force open */
+  .tw{overflow:visible;border:1px solid #999}
+  .matrix{font-size:7.5pt}
+  .matrix th.rowhead{position:static;min-width:0}
+  a::after{content:" (" attr(href) ")";font-size:7pt;word-break:break-all;color:#444}
+  nav.toc a::after,.case-src a::after{content:""}
+  section,.card,.adv,.band,.reg,.ev,details{break-inside:avoid}
+}
+</style>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header>
+<p class="eyebrow">Generative AI in the natural &amp; life sciences</p>
+<h1>What Journals Actually Require</h1>
+<p class="lede">What publishers and research-ethics organisations have actually written down, quoted word for word and re-checked on a schedule &mdash; so the answer to &ldquo;am I allowed to do this?&rdquo; comes from a source rather than a rumour.</p>
+<p class="meta-row"><span>10 organisations</span><span>50 quotes, all checked against the page they came from</span><span>updated 2026-08-22</span></p>
+</header>
+<nav class="toc" aria-label="Sections">
+<a href="#fine">You are probably fine</a>
+<a href="#cases">Find what you did</a>
+<a href="#do">What to do</a>
+<a href="#summary">What applies</a>
+<a href="#grid">The grid</a>
+<a href="#records">Sources</a>
+<a href="#method">Method</a>
+</nav>
+<main id="main">
+<section id="fine" aria-labelledby="h-fine"><div class="sec-head"><p class="eyebrow">Read this first</p><h2 id="h-fine">You have almost certainly not done anything wrong.</h2></div>
+<p class="lede">Of the 100 highest-ranked journals surveyed in 2023, 87% had published guidance on generative AI and just one prohibited using it to help write a manuscript outright. What nearly all of them prohibited was something different: listing AI as an author. Nothing in the records on this page penalises you for saying you used a tool — policies penalise not saying.</p>
+<p class="cite">Ganjavi C, et al. Publishers&#x27; and journals&#x27; instructions to authors on use of generative artificial intelligence in academic and scientific publishing: bibliometric analysis. BMJ 2024;384:e077192. <a href="https://doi.org/10.1136/bmj-2023-077192">doi:10.1136/bmj-2023-077192</a> · PMID 38296328</p>
+<div class="bound"><h3>Where the real lines are</h3><p>The real lines are narrow, and they are not about tools. Do not invent citations. Do not present generated content as though it were your data. Do not put someone else&#x27;s unpublished manuscript into a public AI tool while reviewing it. Those cause real harm. Using a model to improve your own sentences does not.</p></div>
+<div class="detector"><h3>If you write in English as a second language, one more thing</h3><p>Publishers screen submissions, and most do not say so. Across 17 cardiovascular journals studied, 15 used AI-detection software and one said so publicly. You should know that these detectors are unreliable, and unreliable in a specific direction: a widely cited study found they wrongly flagged 61% of essays written by non-native English speakers, against almost none by native speakers. That is a defect in the detectors, not in your writing. It is also why a clear, dated note of what you actually did is worth more to you than to anyone else.</p>
+<p class="cite">Laffaye TA, et al. Artificial intelligence for manuscript writing: policies and implementation in cardiovascular journals. Cardiovasc Diagn Ther 2025. <a href="https://doi.org/10.21037/cdt-2025-381">doi:10.21037/cdt-2025-381</a> · PMID 41216259</p>
+<p class="cite">Liang W, et al. GPT detectors are biased against non-native English writers. Patterns 2023;4(7):100779. <a href="https://doi.org/10.1016/j.patter.2023.100779">doi:10.1016/j.patter.2023.100779</a> · PMID 37521038</p>
+</div>
+<p class="lede">One major publisher rewrote its entire AI framework during 2026 with no announcement, no date stamp and no changelog. The guidance most publishers cite has not been revised since February 2023. People who work in research integrity full time find this confusing. You are not behind.</p>
+</section>
+<section id="cases" aria-labelledby="h-cases"><div class="sec-head"><p class="eyebrow">The common cases</p><h2 id="h-cases">Find what you did</h2></div>
+<div class="boundary"><h3>&quot;Fixing my English&quot; and &quot;rewriting my text&quot; are not the same thing</h3><p>This is the single most common question and the hardest boundary in the whole field, and it matters most to people writing in a second language. A test that works: did the meaning change, or only the wording? If the model corrected grammar, tightened phrasing or fixed article use, that is language editing, and almost nobody asks you to declare it. If it produced sentences carrying arguments, interpretations or conclusions you did not write yourself, that is drafting, and you should declare it. If you drafted in your own language and the model produced the English, that is translation — a third case, and one several publishers treat more leniently than drafting.</p><p class="muted">When you genuinely cannot tell, declare it. The records here show no penalty anywhere for declaring, and an explicit penalty in several places for not declaring.</p><p class="cite">Ans M, et al. The Presence and Nature of AI-Use Disclosure Statements in Medical Education Journals. Perspect Med Educ 2026;15:212-225. <a href="https://doi.org/10.5334/pme.2431">doi:10.5334/pme.2431</a> · PMID 41800434</p></div>
+<p class="muted">Ordered by how often life scientists actually do these things. Verdicts and placement come from the records further down; the advice and the example wording are ours.</p>
+<p class="silence-note">Square brackets are yours to fill. Some are plain facts — the tool, its version, the date. Some are your own words, such as which sections were affected. Where you see a slash inside brackets, pick one. If a tool has no version number you can cite, write the name and the date you used it; that is what the date is for.</p>
+<div class="cases">
+<details class="case w-low"><summary><span class="you">I used AI to fix my English, or to tidy up my writing</span><span class="w">usually nothing to do</span></summary><div class="case-body"><p>Usually nothing. This is the one use that both organisations assessed here exempt from declaration, and STM&#x27;s 2023 guidance says disclosure is not necessary for it. If you want the record complete, one line in the acknowledgements covers it.</p>
+<div class="tmpl"><div class="tmpl-head"><span class="tmpl-tag">optional wording</span><span class="tmpl-opt">you probably need write nothing</span></div>
+<blockquote class="tmpl-text">[Tool and version] was used for language editing only; no content was generated. The authors are responsible for the final text.</blockquote>
+<p class="tmpl-note">Almost nobody requires this. Include it only if you want the record complete. If the model changed your meaning rather than your wording, use the drafting example below instead.</p>
+
+<p class="places-none">No organisation recorded here requires this. If you include it, the acknowledgements are the conventional home.</p>
+<p class="tmpl-note">Write these in your own words rather than pasting them. A sentence that sounds like you is better than a borrowed one — and more useful to a reader trying to understand what you actually did.</p>
+</div>
+<p class="case-src">2 of 10 organisations recorded here so far &middot; <a href="#grid">see the grid</a></p>
+</div></details>
+<details class="case w-some"><summary><span class="you">I used AI to draft or substantially rewrite sections</span><span class="w">declare it</span></summary><div class="case-body"><p>Declare it, naming the tool, the version and which sections. Most organisations recorded here permit this when it is declared. Two treat undeclared use of AI for core reasoning as a serious matter, so the declaration is what protects you.</p>
+<div class="tmpl"><div class="tmpl-head"><span class="tmpl-tag">example wording</span></div>
+<blockquote class="tmpl-text">[Tool and version] was used to draft [which sections], accessed [date]. All generated text was verified against the primary sources and substantially revised by the authors, who take full responsibility for the content.</blockquote>
+<p class="tmpl-note">Name the sections. A statement saying only &quot;AI was used in preparing this manuscript&quot; is the kind editors describe as uninformative — one study found disclosures averaging 43 words and describing the use only superficially.</p>
+<p class="cite">Ans M, et al. The Presence and Nature of AI-Use Disclosure Statements in Medical Education Journals. Perspect Med Educ 2026;15:212-225. <a href="https://doi.org/10.5334/pme.2431">doi:10.5334/pme.2431</a> · PMID 41800434</p>
+<div class="places"><span class="places-lbl">Where it goes, according to the records here</span><ul>
+<li><span class="loc">methods</span><span class="loc-who">COPE, ICMJE, ISTIC Guideline, PLOS</span></li>
+<li><span class="loc">acknowledgements</span><span class="loc-who">ICMJE, ISTIC Guideline, Wiley</span></li>
+<li><span class="loc">cover letter</span><span class="loc-who">ICMJE</span></li>
+</ul></div>
+<p class="tmpl-note">Write these in your own words rather than pasting them. A sentence that sounds like you is better than a borrowed one — and more useful to a reader trying to understand what you actually did.</p>
+</div>
+<p class="case-src">6 of 10 organisations recorded here so far &middot; <a href="#grid">see the grid</a></p>
+</div></details>
+<details class="case w-some"><summary><span class="you">I used AI to find papers or build my reference list</span><span class="w">declare it</span></summary><div class="case-body"><p>Check every reference against the actual record before you submit. This is where real damage happens: fabricated citations in the biomedical literature rose twelvefold in two years. The tool is fine; unverified output is not.</p>
+<div class="tmpl"><div class="tmpl-head"><span class="tmpl-tag">example wording</span></div>
+<blockquote class="tmpl-text">[Tool and version] was used to identify candidate references, accessed [date]. Every reference was subsequently verified against the primary record by the authors.</blockquote>
+<p class="tmpl-note">The second sentence is the one that matters. Say that you checked them.</p>
+
+<p class="places-none">No organisation recorded here states where this belongs. Your methods section is the safest default.</p>
+<p class="tmpl-note">Write these in your own words rather than pasting them. A sentence that sounds like you is better than a borrowed one — and more useful to a reader trying to understand what you actually did.</p>
+</div>
+<p class="case-src">2 of 10 organisations recorded here so far &middot; <a href="#grid">see the grid</a></p>
+</div></details>
+<details class="case w-some"><summary><span class="you">I wrote in my own language and used AI to translate</span><span class="w">declare it</span></summary><div class="case-body"><p>Declare it, and check the result. Organisations differ here more than anywhere else — one treats translation as the lowest-risk use there is, another asks that the output be checked by someone who reads both languages.</p>
+<div class="tmpl"><div class="tmpl-head"><span class="tmpl-tag">example wording</span></div>
+<blockquote class="tmpl-text">The manuscript was drafted in [language] and translated into English using [tool and version] on [date]. The translation was checked by [who checked it, and how], and revised by the authors.</blockquote>
+<p class="tmpl-note">If you have no bilingual colleague to ask — and many people do not — say what you did instead. For example, that you translated the English back into your own language and compared it against your original. Describing a real check honestly is worth more than naming a person who did not do one.</p>
+
+<div class="places"><span class="places-lbl">Where it goes, according to the records here</span><ul>
+<li><span class="loc">dedicated section</span><span class="loc-who">Elsevier</span></li>
+<li><span class="loc">acknowledgements</span><span class="loc-who">Wiley</span></li>
+</ul></div>
+<p class="tmpl-note">Write these in your own words rather than pasting them. A sentence that sounds like you is better than a borrowed one — and more useful to a reader trying to understand what you actually did.</p>
+</div>
+<p class="case-src">3 of 10 organisations recorded here so far &middot; <a href="#grid">see the grid</a></p>
+</div></details>
+<details class="case w-low"><summary><span class="you">I used AI to write, debug or tidy analysis code</span><span class="w">usually nothing to do</span></summary><div class="case-body"><p>Report it in your methods as you would report any other software: what you used, which version. If the model wrote code that produced results you report, say so there too and make the code available — that is a methods question, not a disclosure question.</p>
+<div class="tmpl"><div class="tmpl-head"><span class="tmpl-tag">optional wording</span><span class="tmpl-opt">you probably need write nothing</span></div>
+<blockquote class="tmpl-text">[Tool and version] was used to assist with writing and debugging analysis code, accessed [date]. All code was reviewed and tested by the authors; analysis scripts are available at [repository].</blockquote>
+<p class="tmpl-note">Report it as software, beside your other tool versions. That is the register it belongs in.</p>
+
+<p class="places-none">No organisation recorded here states where this belongs. Put it in your methods beside your other software versions.</p>
+<p class="tmpl-note">Write these in your own words rather than pasting them. A sentence that sounds like you is better than a borrowed one — and more useful to a reader trying to understand what you actually did.</p>
+</div>
+<p class="case-src">1 organisation recorded here so far &middot; <a href="#grid">see the grid</a></p>
+</div></details>
+<details class="case w-some"><summary><span class="you">I let an AI agent run analyses, searches or multi-step work for me</span><span class="w">declare it</span></summary><div class="case-body"><p>Keep the log. This is the one case where you genuinely cannot fix things afterwards: prompts, model and version, dates, and the session records themselves. Most policies were written for a chatbot and ask only for a tool name — enough for one paragraph, meaningless for forty tool calls. Record more than you are asked for.</p>
+<div class="tmpl"><div class="tmpl-head"><span class="tmpl-tag">example wording</span></div>
+<blockquote class="tmpl-text">[Tool and version] was used as an agent to [what it executed: run analyses / search literature / generate and run code], between [dates]. Prompts and session transcripts are provided in [supplementary file]. Human verification was performed at [which checkpoints]; outputs that could not be independently reproduced were excluded. The authors take full responsibility for all reported results.</blockquote>
+<p class="tmpl-note">Most journals do not ask for this yet. Provide it anyway — not for compliance, but because an agentic pipeline cannot be reproduced from a tool name, and none of it can be reconstructed later.</p>
+
+<div class="places"><span class="places-lbl">Where it goes, according to the records here</span><ul>
+<li><span class="loc">methods</span><span class="loc-who">COPE, ICMJE, Wiley</span></li>
+</ul></div>
+<p class="tmpl-note">Write these in your own words rather than pasting them. A sentence that sounds like you is better than a borrowed one — and more useful to a reader trying to understand what you actually did.</p>
+</div>
+<p class="case-src">5 of 10 organisations recorded here so far &middot; <a href="#grid">see the grid</a></p>
+</div></details>
+<details class="case w-some"><summary><span class="you">I used AI to make a schematic, diagram or graphical abstract</span><span class="w">declare it</span></summary><div class="case-body"><p>Declare it in the figure caption, and check first — at least one publisher recorded here requires the editor&#x27;s permission in advance for any AI-generated image, including cover art.</p>
+<div class="tmpl"><div class="tmpl-head"><span class="tmpl-tag">example wording</span></div>
+<blockquote class="tmpl-text">Figure [n] was generated using [tool and version] on [date] for illustrative purposes; it does not depict experimental data.</blockquote>
+<p class="tmpl-note">Put it in the figure caption, not only in a statement at the end. That is where a reader meets the image. [n] is your figure number.</p>
+
+<div class="places"><span class="places-lbl">Where it goes, according to the records here</span><ul>
+<li><span class="loc">submission field</span><span class="loc-who">Science / AAAS</span></li>
+</ul></div>
+<p class="tmpl-note">Write these in your own words rather than pasting them. A sentence that sounds like you is better than a borrowed one — and more useful to a reader trying to understand what you actually did.</p>
+</div>
+<p class="case-src">3 of 10 organisations recorded here so far &middot; <a href="#grid">see the grid</a></p>
+</div></details>
+<details class="case w-check"><summary><span class="you">I used AI to generate or retouch a figure showing my actual data</span><span class="w">check before you do it</span></summary><div class="case-body"><p>Check before you do it. Experimental images — blots, micrographs, flow plots — are where prohibitions are real and where retractions actually happen. Adjusting brightness or contrast uniformly across a whole image is generally acceptable; anything that moves, adds or removes content is not.</p>
+<div class="tmpl"><div class="tmpl-head"><span class="tmpl-tag">example wording</span></div>
+<blockquote class="tmpl-text">[Tool and version] was used to produce the plots in Figure [n] from the underlying data, accessed [date]. No image content was added, removed or repositioned; source data are available at [location].</blockquote>
+<p class="tmpl-note">Only use this if it is true. Generating a chart from real data is routine; altering an experimental image is not, and that distinction is where retractions happen.</p>
+
+<p class="places-none">No organisation recorded here states where this belongs. Put it in the figure caption as well as your methods.</p>
+<p class="tmpl-note">Write these in your own words rather than pasting them. A sentence that sounds like you is better than a borrowed one — and more useful to a reader trying to understand what you actually did.</p>
+</div>
+<p class="case-src">1 organisation recorded here so far &middot; <a href="#grid">see the grid</a></p>
+</div></details>
+<details class="case w-check"><summary><span class="you">I used AI while peer-reviewing someone else&#x27;s manuscript</span><span class="w">check before you do it</span></summary><div class="case-body"><p>Check that journal before you do this again. This is the most contested question in the whole dataset and the rules are still moving in both directions: within one three-month period in 2026, one funder lifted a ban and another introduced one. Putting an unpublished manuscript into a public AI tool is prohibited nearly everywhere.</p>
+<div class="tmpl"><div class="tmpl-head"><span class="tmpl-tag">example wording</span></div>
+<blockquote class="tmpl-text">In preparing this review I used [tool and version] to [check my own wording / organise my comments], on [date]. No part of the manuscript was entered into any AI tool. All assessments and conclusions are my own.</blockquote>
+<p class="tmpl-note">The second sentence is the one editors care about. Where a journal prohibits this outright, an honest declaration will be read as an admission — which is exactly why you check first, and why it is worth pressing your journals to say what they actually permit.</p>
+
+<p class="places-none">No organisation recorded here states where a reviewer should declare this. Put it in the confidential comments to the editor, not in the report the authors see.</p>
+<p class="tmpl-note">Write these in your own words rather than pasting them. A sentence that sounds like you is better than a borrowed one — and more useful to a reader trying to understand what you actually did.</p>
+</div>
+<p class="case-src">7 of 10 organisations recorded here so far &middot; <a href="#grid">see the grid</a></p>
+</div></details>
+<details class="case w-check"><summary><span class="you">I am wondering whether generated content can stand in for data I do not have</span><span class="w">check before you do it</span></summary><div class="case-body"><p>No. This is the one clear prohibition in the dataset, and it is the thing all the other rules exist to protect against. If a figure, a value or a participant did not come from your research, it cannot appear as though it did.</p>
+<p class="tmpl-none">There is no wording for this. It is the only outright prohibition STM&#x27;s classification carries, and no declaration makes it acceptable.</p>
+<p class="case-src">1 organisation recorded here so far &middot; <a href="#grid">see the grid</a></p>
+</div></details>
+</div>
+<div class="card"><h3>Things this page does not answer</h3><ul class="plain">
+<li><strong>Your specific journal.</strong> Every record here is at organisation level, and journals within one publisher genuinely differ — the records show a publisher whose own journals contradict each other three weeks apart. Check your target journal&#x27;s author guidelines as well.</li>
+<li><strong>Your thesis.</strong> University rules bind you separately from journal rules, and they are often stricter. Ask your institution.</li>
+<li><strong>Your co-authors.</strong> If a co-author used AI and you did not, the declaration still covers the manuscript. Agree what it says before you submit — you are all signing it.</li>
+<li><strong>Your funder.</strong> Several funders have their own rules, and they moved in both directions during 2026. None is recorded here yet.</li>
+<li><strong>Preprint servers.</strong> They set their own policies, and they are not recorded here yet.</li>
+<li><strong>Summarising papers you then cite.</strong> No organisation recorded here addresses reading assistance. Verify what you cite and you are on solid ground.</li>
+<li><strong>Cover letters and responses to reviewers.</strong> Rarely addressed. One publisher here bans using AI to respond to reviewers; most say nothing.</li>
+</ul></div>
+</section>
+<section id="do" aria-labelledby="h-do"><div class="sec-head"><p class="eyebrow">What to actually do</p><h2 id="h-do">Keep the record. That is the part you cannot recreate.</h2></div><div class="advice">
+<div class="adv adv-do"><h3>Start a log, even a rough one</h3><p>Model and <strong>version</strong>, rough dates, the prompts, and the session records themselves. Everything else can be sorted out at submission &mdash; a disclosure statement takes ten minutes to write. A transcript from eight months ago cannot be rebuilt, and model versions get retired.</p><p class="adv-ev">Already required, not hypothetical: ISTIC Guideline, Wiley asks for prompts, versions or archived session records today.</p></div>
+<div class="adv adv-calm"><h3>You already used it and kept no record</h3><p>This is the common case and it is recoverable. Write down now what you can still remember — which tool, roughly which version, roughly when, and which parts of the work it touched. Do it today rather than at submission: model versions get retired and chat histories get deleted, and a rough note made now beats a perfect one written from memory later. Then describe it in your methods the way you would describe any other tool. You do not owe anyone an apology in that sentence.</p></div>
+<div class="adv adv-calm"><h3>You already found a fabricated reference in your own draft</h3><p>Catching it before submission is the system working, not misconduct. Remove or replace the reference, check every remaining one against the actual record, and carry on. Nothing obliges you to report to anyone that you found and fixed an error in your own unsubmitted manuscript — that is simply what checking is. If it has already been published, contact the journal: a correction is routine.</p></div>
+<div class="adv adv-flag"><h3>Save a copy of the policy on the day you follow it</h3><p>Policies here change without announcement, date stamp or changelog. One publisher rewrote its whole framework during 2026 with no public notice of any kind. If a rule changes between your writing and your submission, the burden of showing what it said falls on you &mdash; and the publisher keeps no public record.</p><p class="adv-ev">It is also why this site stores a hash of every source. The snapshot is the receipt.</p></div>
+<div class="adv adv-warn"><h3>Confirm in advance only for these</h3><p>Where a use is prohibited outright, the work cannot be fixed at submission. These are the ones worth checking first, with the organisations here that forbid them:</p><ul class="lanes">
+<li><span class="lane">Using AI to draft manuscript text</span><span class="lane-who">ISTIC Guideline</span></li>
+<li><span class="lane">AI-generated charts of your real data</span><span class="lane-who">ISTIC Guideline</span></li>
+<li><span class="lane">Presenting AI output as original data</span><span class="lane-who">STM Association</span></li>
+<li><span class="lane">Using AI when you peer-review</span><span class="lane-who">Science / AAAS</span></li>
+</ul></div>
+<div class="adv adv-cite"><h3>Then check <em>which</em> page applies</h3><p>A publisher can have more than one live policy, and they need not agree: one organisation here has a books policy that forbids what its journals policy permits, sitting behind a URL that ends &ldquo;in-the-review-process&rdquo;. Each record below marks the page to cite.</p></div>
+</div></section>
+<section id="summary" aria-labelledby="h-sum"><div class="sec-head"><p class="eyebrow">Worked out from the records &mdash; never written by hand</p><h2 id="h-sum">What actually applies</h2></div>
+<p class="muted">Each fraction is organisations assessed over organisations in this build. A claim resting on three records is not the same as one resting on thirty, so the denominator is never hidden. Rows move between groups on their own as records are added.</p>
+<div class="consensus">
+<div class="band band-holds"><div class="band-head"><h3>Holds everywhere we looked</h3><span class="band-n">2 of 16</span></div><p class="band-blurb">Every organisation assessed takes the same stance. Differing on conditions is noted, but it is not disagreeing.</p><ul class="rules">
+<li><span class="frac">8<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">The publisher running AI on your manuscript is permitted under conditions</span><span class="dissent">except Wiley</span></li>
+<li><span class="frac">6<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">Using AI to draft manuscript text is permitted under conditions and must be declared</span><span class="where">methods, acknowledgements, cover letter</span><span class="dissent">except ISTIC Guideline</span></li>
+</ul></div>
+<div class="band band-void"><div class="band-head"><h3>Nobody answers this</h3><span class="band-n">2 of 16</span></div><p class="band-blurb">Every organisation assessed is silent. Not missing data &mdash; a measured, unanimous absence.</p><ul class="rules">
+<li><span class="frac">7<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">Knowing why you were flagged, and appealing &mdash; <em>no organisation states a position</em></span></li>
+<li><span class="frac">4<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">Being screened by AI detectors &mdash; <em>no organisation states a position</em></span></li>
+</ul></div>
+<div class="band band-split"><div class="band-head"><h3>Genuinely contested</h3><span class="band-n">2 of 16</span></div><p class="band-blurb">Organisations disagree on stance, not merely on conditions. The dissenters are named because they are the useful part.</p><ul class="rules">
+<li><span class="frac">7<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">Using AI when you peer-review is permitted under conditions and must be declared</span><span class="dissent">except ISTIC Guideline, Science / AAAS</span></li>
+<li><span class="frac">5<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">Using AI to run the research itself is permitted under conditions and must be declared</span><span class="where">methods</span><span class="dissent">except Elsevier, STM Association</span></li>
+</ul></div>
+<div class="band band-thin"><div class="band-head"><h3>Too thin to call</h3><span class="band-n">8 of 16</span></div><p class="band-blurb">Fewer than 4 organisations assessed. A rule resting on two records is not a finding, so no claim is made.</p><ul class="rules">
+<li><span class="frac">3<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">AI-generated illustrative figures is not addressed</span><span class="where">submission field</span><span class="dissent">except Science / AAAS</span></li>
+<li><span class="frac">3<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">Using AI to translate your manuscript is permitted and must be declared</span><span class="where">dedicated section, acknowledgements</span><span class="varies">conditions vary</span></li>
+<li><span class="frac">2<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">Using AI to polish your language is permitted and needs no declaration</span></li>
+<li><span class="frac">2<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">Using AI to find references &mdash; <em>no majority; organisations are evenly divided</em></span></li>
+<li><span class="frac">2<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">Keeping prompts and session records is permitted under conditions and must be declared</span><span class="where">methods, acknowledgements</span><span class="varies">conditions vary</span></li>
+<li><span class="frac">1<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">AI-generated charts of your real data is prohibited</span></li>
+<li><span class="frac">1<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">Using AI to tidy code you report is permitted under conditions</span></li>
+<li><span class="frac">1<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt">Presenting AI output as original data is prohibited</span></li>
+</ul></div>
+<div class="band band-unassessed"><div class="band-head"><h3>Not yet assessed</h3><span class="band-n">2 of 16</span></div><p class="band-blurb">No organisation here carries a record on this. Work to do, not a result.</p><ul class="rules">
+<li><span class="frac">0<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt muted">Using AI to format the data you report</span></li>
+<li><span class="frac">0<span>/10</span><span class="vh"> organisations assessed</span></span><span class="rule-txt muted">Your paper licensed for AI training</span></li>
+</ul></div>
+</div></section>
+<section id="grid" aria-labelledby="h-grid"><div class="sec-head"><p class="eyebrow">Nine activities from STM's 2025 classification, then the ones it leaves out</p><h2 id="h-grid">The evidence grid</h2></div>
+<p class="silence-note">Most of the table below is silent. Read that as it is meant: where an organisation has published nothing, there is no rule for you to have broken. Silence is not a hidden requirement.</p>
+<div class="legend" role="group" aria-label="Legend"><span class="p ok">permitted</span><span class="p cond">conditional</span><span class="p no">prohibited</span><span class="p silent">silent</span><span class="p none">&mdash;</span><span class="sep"></span><span class="d d-required">required</span><span class="d d-encouraged">encouraged</span><span class="d d-exempt">exempt</span><span class="d d-silent">silent</span></div>
+<p class="muted">Each cell carries two values: whether the use is <strong>permitted</strong>, and whether it <strong>must be declared</strong>. <span class="p silent">silent</span> means we checked and the organisation publishes nothing. <span class="p none">&mdash;</span> means something weaker: not yet assessed here. Treating those as the same would let unfinished work read as a finding.</p>
+<div class="tw" tabindex="0" role="region" aria-label="Evidence grid, scrollable"><table class="matrix">
+<caption>Permission and disclosure by organisation and activity. Scroll sideways to see all organisations.</caption>
+<thead><tr><th class="rowhead" scope="col">Activity</th>
+<th class="ent" scope="col">COPE</th>
+<th class="ent" scope="col">eLife</th>
+<th class="ent" scope="col">Elsevier</th>
+<th class="ent" scope="col">ICMJE</th>
+<th class="ent" scope="col">ISTIC Guideline</th>
+<th class="ent" scope="col">PLOS</th>
+<th class="ent" scope="col">Science / AAAS</th>
+<th class="ent" scope="col">Springer Nature</th>
+<th class="ent" scope="col">STM Association</th>
+<th class="ent" scope="col">Wiley</th>
+</tr></thead><tbody>
+<tr class=""><th class="rowhead" scope="row"><span class="num">1</span>Refinement, correction, editing or formatting the manuscript to improve clarity of language</th>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Elsevier: Refinement, correction, editing or formatting the manuscript to improve clarity of language; permitted; disclosure exempt"><span class="p ok">permitted</span><span class="d d-exempt">exempt</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="STM Association: Refinement, correction, editing or formatting the manuscript to improve clarity of language; permitted; disclosure exempt"><span class="p ok">permitted</span><span class="d d-exempt">exempt</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+</tr>
+<tr class=""><th class="rowhead" scope="row"><span class="num">2</span>Writing or drafting manuscript content</th>
+<td class="cell"><span class="stack" aria-label="COPE: Writing or drafting manuscript content; conditional; disclosure required; declared in methods; ground: accountability"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="ICMJE: Writing or drafting manuscript content; conditional; disclosure required; declared in cover letter, acknowledgements, methods; ground: accountability"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="stack" aria-label="ISTIC Guideline: Writing or drafting manuscript content; prohibited; disclosure required; declared in methods, acknowledgements; ground: accountability"><span class="p no">prohibited</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="stack" aria-label="PLOS: Writing or drafting manuscript content; conditional; disclosure required; declared in methods; ground: accountability"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Springer Nature: Writing or drafting manuscript content; conditional; disclosure required; declared in unspecified; ground: accountability"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Wiley: Writing or drafting manuscript content; conditional; disclosure required; declared in acknowledgements; ground: accountability"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+</tr>
+<tr class=""><th class="rowhead" scope="row"><span class="num">4</span>Generation, refinement, correction, editing or formatting of images, diagrams or other figures for illustrative purposes only</th>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="eLife: Generation, refinement, correction, editing or formatting of images, diagrams or other figures for illustrative purposes only; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Science / AAAS: Generation, refinement, correction, editing or formatting of images, diagrams or other figures for illustrative purposes only; conditional; disclosure required; declared in submission field; ground: accountability"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="stack" aria-label="Springer Nature: Generation, refinement, correction, editing or formatting of images, diagrams or other figures for illustrative purposes only; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+</tr>
+<tr class=""><th class="rowhead" scope="row"><span class="num">5</span>Translation of manuscript text for the purpose of publishing</th>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Elsevier: Translation of manuscript text for the purpose of publishing; conditional; disclosure required; declared in dedicated section; ground: accountability"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Springer Nature: Translation of manuscript text for the purpose of publishing; permitted; disclosure encouraged; ground: quality"><span class="p ok">permitted</span><span class="d d-encouraged">encouraged</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Wiley: Translation of manuscript text for the purpose of publishing; permitted; disclosure required; declared in acknowledgements; ground: accountability"><span class="p ok">permitted</span><span class="d d-required">required</span></span></td>
+</tr>
+<tr class=""><th class="rowhead" scope="row"><span class="num">6</span>Generation, refinement, correction, editing or formatting of visualisations of research data or results</th>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="ISTIC Guideline: Generation, refinement, correction, editing or formatting of visualisations of research data or results; prohibited; disclosure silent; ground: accountability"><span class="p no">prohibited</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+</tr>
+<tr class=""><th class="rowhead" scope="row"><span class="num">7</span>Refinement or formatting of code reported in the submitted manuscript</th>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="STM Association: Refinement or formatting of code reported in the submitted manuscript; conditional; disclosure silent"><span class="p cond">conditional</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+</tr>
+<tr class=""><th class="rowhead" scope="row"><span class="num">8</span>Assisting with gathering references</th>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="ISTIC Guideline: Assisting with gathering references; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="STM Association: Assisting with gathering references; conditional; disclosure silent; ground: quality"><span class="p cond">conditional</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+</tr>
+<tr class=""><th class="rowhead" scope="row"><span class="num">9</span>Presentation of any kind of content generated by AI tools as though it were original research data/results from non-machine sources</th>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="STM Association: Presentation of any kind of content generated by AI tools as though it were original research data/results from non-machine sources; prohibited; disclosure silent; ground: accountability"><span class="p no">prohibited</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+</tr>
+<tr class=" extrow"><th class="rowhead" scope="row"><span class="num" aria-hidden="true">+</span>AI used in the research process itself — analysis, code execution, agentic workflows</th>
+<td class="cell"><span class="stack" aria-label="COPE: AI used in the research process itself — analysis, code execution, agentic workflows; conditional; disclosure required; declared in methods; ground: accountability"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Elsevier: AI used in the research process itself — analysis, code execution, agentic workflows; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="stack" aria-label="ICMJE: AI used in the research process itself — analysis, code execution, agentic workflows; conditional; disclosure required; declared in methods; ground: reproducibility"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="STM Association: AI used in the research process itself — analysis, code execution, agentic workflows; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="stack" aria-label="Wiley: AI used in the research process itself — analysis, code execution, agentic workflows; conditional; disclosure required; declared in methods; ground: reproducibility"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+</tr>
+<tr class=" extrow"><th class="rowhead" scope="row"><span class="num" aria-hidden="true">+</span>Use of AI by peer reviewers</th>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="eLife: Use of AI by peer reviewers; permitted; disclosure required; ground: confidentiality"><span class="p ok">permitted</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="stack" aria-label="Elsevier: Use of AI by peer reviewers; conditional; disclosure required; declared in unspecified; ground: confidentiality"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="ISTIC Guideline: Use of AI by peer reviewers; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="stack" aria-label="PLOS: Use of AI by peer reviewers; conditional; disclosure required; declared in unspecified; ground: accountability"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="stack" aria-label="Science / AAAS: Use of AI by peer reviewers; prohibited; disclosure silent; ground: confidentiality"><span class="p no">prohibited</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="stack" aria-label="Springer Nature: Use of AI by peer reviewers; conditional; disclosure required; declared in unspecified; ground: accountability"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Wiley: Use of AI by peer reviewers; conditional; disclosure required; declared in unspecified; ground: confidentiality"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+</tr>
+<tr class=" extrow"><th class="rowhead" scope="row"><span class="num" aria-hidden="true">+</span>The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts</th>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="eLife: The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts; conditional; disclosure silent"><span class="p cond">conditional</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="stack" aria-label="Elsevier: The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts; conditional; disclosure silent"><span class="p cond">conditional</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="stack" aria-label="ICMJE: The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts; conditional; disclosure required; declared in unspecified; ground: accountability"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="stack" aria-label="ISTIC Guideline: The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts; conditional; disclosure required; declared in unspecified; ground: control"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="stack" aria-label="PLOS: The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts; permitted; disclosure silent; ground: control"><span class="p ok">permitted</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="stack" aria-label="Science / AAAS: The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts; conditional; disclosure required; declared in unspecified; ground: accountability"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="stack" aria-label="Springer Nature: The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts; permitted; disclosure silent"><span class="p ok">permitted</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Wiley: The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+</tr>
+<tr class=" extrow"><th class="rowhead" scope="row"><span class="num" aria-hidden="true">+</span>Whether AI-text or integrity screening is run, and whether authors are told</th>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Elsevier: Whether AI-text or integrity screening is run, and whether authors are told; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="PLOS: Whether AI-text or integrity screening is run, and whether authors are told; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Springer Nature: Whether AI-text or integrity screening is run, and whether authors are told; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Wiley: Whether AI-text or integrity screening is run, and whether authors are told; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+</tr>
+<tr class=" extrow"><th class="rowhead" scope="row"><span class="num" aria-hidden="true">+</span>Threshold for review, notification of the author, and route of appeal</th>
+<td class="cell"><span class="stack" aria-label="COPE: Threshold for review, notification of the author, and route of appeal; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Elsevier: Threshold for review, notification of the author, and route of appeal; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="stack" aria-label="ICMJE: Threshold for review, notification of the author, and route of appeal; silent; disclosure silent; ground: accountability"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="PLOS: Threshold for review, notification of the author, and route of appeal; silent; disclosure silent; ground: accountability"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="stack" aria-label="Science / AAAS: Threshold for review, notification of the author, and route of appeal; silent; disclosure silent; ground: control"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="stack" aria-label="Springer Nature: Threshold for review, notification of the author, and route of appeal; silent; disclosure silent"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Wiley: Threshold for review, notification of the author, and route of appeal; silent; disclosure silent; ground: control"><span class="p silent">silent</span><span class="d d-silent">silent</span></span></td>
+</tr>
+<tr class=" extrow"><th class="rowhead" scope="row"><span class="num" aria-hidden="true">+</span>Prompts, model versions, session records retained as evidence</th>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="ISTIC Guideline: Prompts, model versions, session records retained as evidence; conditional; disclosure required; declared in methods, acknowledgements; ground: reproducibility"><span class="p cond">conditional</span><span class="d d-required">required</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="p none">&mdash;<span class="vh"> not yet assessed</span></span></td>
+<td class="cell"><span class="stack" aria-label="Wiley: Prompts, model versions, session records retained as evidence; permitted; disclosure required; declared in methods; ground: reproducibility"><span class="p ok">permitted</span><span class="d d-required">required</span></span></td>
+</tr>
+</tbody></table></div>
+<p class="muted foot">A <span class="gap">?</span> marks a cell whose verdict is recorded but whose quote is not yet captured. 0 remain, published rather than hidden.</p></section>
+<section id="records" aria-labelledby="h-rec"><div class="sec-head"><p class="eyebrow">Sources</p><h2 id="h-rec">Organisations, and what to cite</h2></div>
+<details class="ent-card"><summary>
+<span class="ent-name">COPE</span>
+<span class="tag">normative body</span>
+<span class="tag arch">prose</span>
+<span class="f fresh">checked 1d ago</span>
+</summary><div class="ent-body">
+<p class="note">The body most publishers cite, unrevised since 13 February 2023. Its separate discussion document on AI in editorial decisions dates from September 2021, before ChatGPT was released. The position statement places a duty on authors and assigns them liability; it contains no instruction to editors on what to do with a disclosure once received. Live publicationethics.org returns 403 to automated clients, so this record is verified against a dated Internet Archive capture.</p>
+<h3>Cite this</h3><ul class="srcs">
+<li class="auth"><a href="https://web.archive.org/web/20260208002603/https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools">https://web.archive.org/web/20260208002603/https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools</a><p class="src-note">Live publicationethics.org returns 403 to every automated client (Cloudflare). This is a dated Internet Archive capture of the same page.</p><div class="src-tags"><span class="tag auth">cite this</span><span class="tag">authors</span><span class="tag st-current">current</span><span class="tag">archive</span><span class="tag">states 2023-02-13</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>Dating and tagging oddities</h3>
+<p class="metanote">The page states &#x27;Last reviewed 13 February 2023&#x27; and carries a 2024 copyright line, while its DOI was deposited with Crossref on 2024-08-20. Cite it as reviewed February 2023, DOI deposited 2024.</p>
+<h3>What it says, word for word</h3>
+<div class="ev"><p class="ev-axis">Writing or drafting manuscript content</p>
+<blockquote>Authors who use AI tools in the writing of a manuscript, production of images or graphical elements of the paper, or in the collection and analysis of data, must be transparent in disclosing in the Materials and Methods (or similar section) of the paper how the AI tool was used<cite>COPE &middot; position-authorship-ai &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<blockquote>Authors are fully responsible for the content of their manuscript, even those parts produced by an AI tool, and are thus liable for any breach of publication ethics.<cite>COPE &middot; position-authorship-ai &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Methods placement, naming the tool — three years before ICMJE said the same. Note the scope: it already covers collection and analysis of data.</p>
+</div>
+<div class="ev"><p class="ev-axis">AI used in the research process itself — analysis, code execution, agentic workflows</p>
+<blockquote>Authors who use AI tools in the writing of a manuscript, production of images or graphical elements of the paper, or in the collection and analysis of data, must be transparent in disclosing in the Materials and Methods (or similar section) of the paper how the AI tool was used<cite>COPE &middot; position-authorship-ai &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">The statement explicitly extends to &quot;the collection and analysis of data&quot;.</p>
+</div>
+</div></details>
+<details class="ent-card"><summary>
+<span class="ent-name">eLife</span>
+<span class="tag">publisher</span>
+<span class="tag arch">prose</span>
+<span class="f fresh">checked 1d ago</span>
+</summary><div class="ent-body">
+<p class="note">The natural experiment. The only organisation recorded here that permits reviewers to use AI — because its reviewed-preprint model means the manuscript is already public, so the confidentiality reason other publishers give does not apply. Remove that reason and the ban has nothing to stand on: the rationale, not the technology, is doing the work. Disclosure is nonetheless required. eLife is also the only organisation here addressing editors using AI to find reviewers.</p>
+<h3>Cite this</h3><ul class="srcs">
+<li class="auth"><a href="https://reviewer.elifesciences.org/reviewer-guide/review-process">https://reviewer.elifesciences.org/reviewer-guide/review-process</a><div class="src-tags"><span class="tag auth">cite this</span><span class="tag">reviewers</span><span class="tag st-current">current</span><span class="tag">http</span><span class="tag undated">undated</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>What it says, word for word</h3>
+<div class="ev"><p class="ev-axis">Use of AI by peer reviewers</p>
+<blockquote>While we do not prevent the use of generative artificial intelligence tools within the review process, editors and reviewers remain accountable for their contributions and the contents of their reviews. If generative AI tools are used by editors or reviewers, this must be disclosed.<cite>eLife &middot; review-process-ai &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Permitted because the confidentiality rationale does not apply to an already-public reviewed preprint — but disclosure is mandatory. An earlier version of this record quoted only the subordinate clause and wrongly recorded disclosure as not addressed.</p>
+</div>
+<div class="ev"><p class="ev-axis">The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts</p>
+<blockquote>If generative AI is used by editors to source suggestions for potential reviewers, we expect the usual due diligence<cite>eLife &middot; review-process-ai &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">The only entity found that addresses editors using AI to source reviewers.</p>
+</div>
+</div></details>
+<details class="ent-card"><summary>
+<span class="ent-name">Elsevier</span>
+<span class="tag">publisher</span>
+<span class="tag arch">rule with exemptions</span>
+<span class="tag flagged">1 internal contradiction</span>
+<span class="f fresh">checked 1d ago</span>
+</summary><div class="ent-body">
+<p class="note">Rewrote its journals policy in June 2026, permitting reviewers supportive use of private AI tools. Its BOOKS policy sits behind a URL ending &#x27;in-the-review-process&#x27; and forbids editors using AI to evaluate material — secondary sources routinely quote that page as if it were the journals policy. Cell Press, an Elsevier imprint, is reported to serve superseded 2023 wording; Cell Press is not yet a record here.</p>
+<h3>Cite this</h3><ul class="srcs">
+<li class="auth"><a href="https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals">https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals</a><div class="src-tags"><span class="tag auth">cite this</span><span class="tag">all</span><span class="tag st-current">current</span><span class="tag">http</span><span class="tag">states 2026-06</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>Also held, but not the one to cite</h3><ul class="srcs">
+<li class=""><a href="https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process">https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process</a><p class="src-note">The slug says &#x27;review process&#x27; but the page is Elsevier&#x27;s BOOKS policy (13 mentions of book/chapter, zero of &#x27;journal&#x27; in lower case). Secondary sources routinely quote it as if it were the journals policy. It is not.</p><div class="src-tags"><span class="tag">authors</span><span class="tag st-current">current</span><span class="tag">http</span><span class="tag">states 2026-07</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>Where this organisation contradicts itself</h3>
+<p class="contra">The books policy forbids editors using AI to evaluate material, while the journals policy states Elsevier&#x27;s editors have access to AI tools that identify reviewers and match submissions. Both are live; the books policy sits behind a URL ending &#x27;in-the-review-process&#x27;.</p>
+<h3>What it says, word for word</h3>
+<div class="ev"><p class="ev-axis">Refinement, correction, editing or formatting the manuscript to improve clarity of language</p>
+<blockquote>Basic checks of grammar, spelling and punctuation do not need a declaration statement<cite>Elsevier &middot; journals-policy &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Exemption is withdrawn where changes go beyond basic correction.</p>
+</div>
+<div class="ev"><p class="ev-axis">Translation of manuscript text for the purpose of publishing</p>
+<blockquote>by a person who has a good understanding of both languages<cite>Elsevier &middot; journals-policy &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Output must be checked by a competent bilingual human.</p>
+</div>
+<div class="ev"><p class="ev-axis">Use of AI by peer reviewers</p>
+<blockquote>Reviewers should not upload a submitted manuscript or any part of it into an AI tool<cite>Elsevier &middot; journals-policy &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<blockquote>AI tools may therefore only be used in a supportive capacity, for example to improve the language and structure of a review report, or to assist with a background literature search<cite>Elsevier &middot; journals-policy &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Reversed in June 2026. Permitted only with a &quot;private&quot; AI tool as Elsevier defines it; disclosure to authors is mandatory. Uploading the manuscript remains prohibited.</p>
+</div>
+<div class="ev"><p class="ev-axis">The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts</p>
+<blockquote>Our editors have access to AI tools that assist in identifying relevant reviewers, matching the scope of submissions, and detecting duplicate submissions.<cite>Elsevier &middot; journals-policy &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<blockquote>Generative AI or AI-assisted technologies should not be used by editors to assist in the evaluation of authors&#x27; material/ manuscript<cite>Elsevier &middot; books-policy &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">The two policies disagree. The journals policy states Elsevier&#x27;s editors have AI tools for reviewer identification and duplicate detection; the books policy forbids editors using AI to evaluate material at all. Neither tells an author which tools ran on their manuscript.</p>
+</div>
+<div class="ev"><p class="ev-axis">Threshold for review, notification of the author, and route of appeal</p>
+<blockquote>Authors may be asked to provide documentation of their AI use and the original, unprocessed images for editorial assessment.<cite><span class="prov absence">what is said instead</span> &middot; Elsevier &middot; journals-policy &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">No threshold for triggering review, no duty to notify the author, and no route of appeal is stated. The quote records what is granted instead: editorial discretion.</p>
+</div>
+</div></details>
+<details class="ent-card"><summary>
+<span class="ent-name">ICMJE</span>
+<span class="tag">normative body</span>
+<span class="tag arch">prose</span>
+<span class="f fresh">checked 1d ago</span>
+</summary><div class="ent-body">
+<p class="note">Updated January 2026 with a whole new Section V. Files AI structurally INSIDE contributorship (II.A.4, directly after Non-Author Contributors) and NOT under conflicts of interest — which refutes the naive claim that guidance treats AI use as a competing interest. Section V.C is the first text anywhere obliging journals to disclose their own AI use.</p>
+<h3>Cite this</h3><ul class="srcs">
+<li class="auth"><a href="https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-authors.html">https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-authors.html</a><div class="src-tags"><span class="tag auth">cite this</span><span class="tag">authors</span><span class="tag st-current">current</span><span class="tag">http</span><span class="tag">states 2026-01</span><span class="f fresh">checked 1d ago</span></div></li>
+<li class="auth"><a href="https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-editors.html">https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-editors.html</a><div class="src-tags"><span class="tag auth">cite this</span><span class="tag">editors</span><span class="tag st-current">current</span><span class="tag">http</span><span class="tag">states 2026-01</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>Also held, but not the one to cite</h3><ul class="srcs">
+<li class=""><a href="https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html">https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html</a><div class="src-tags"><span class="tag">authors</span><span class="tag st-current">current</span><span class="tag">http</span><span class="tag">states 2026-01</span><span class="f fresh">checked 1d ago</span></div></li>
+<li class=""><a href="https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html">https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html</a><div class="src-tags"><span class="tag">authors</span><span class="tag st-current">current</span><span class="tag">http</span><span class="tag">states 2026-01</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>Dating and tagging oddities</h3>
+<p class="metanote">The HTML title tag reads &#x27;January 2025&#x27; while the URL and page body both say January 2026. Harmless to a reader; it will mislead an automated scraper.</p>
+<h3>What it says, word for word</h3>
+<div class="ev"><p class="ev-axis">Writing or drafting manuscript content</p>
+<blockquote>Authors who use such technology should describe, in both the cover letter and the submitted work in the appropriate section if applicable, how they used it.<cite>ICMJE &middot; authors-contributors &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Disclosure duty at submission, in the cover letter AND in the work itself.</p>
+</div>
+<div class="ev"><p class="ev-axis">AI used in the research process itself — analysis, code execution, agentic workflows</p>
+<blockquote>including the tool used, version, and prompts where applicable.<cite>ICMJE &middot; preparing-submission &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">The tool-and-version instruction already exists here. But the required fields are dimensioned for a citation, not a trace — adequate for a paragraph, meaningless for forty tool calls. The document contains zero occurrences of agent, agentic or autonomous, against four of &quot;chatbot&quot;, under a Section V titled &quot;Use of AI in Publishing&quot;.</p>
+</div>
+<div class="ev"><p class="ev-axis">The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts</p>
+<blockquote>Journals should have a policy for the use of AI in the review process and should make all editors, reviewers, and authors aware of this journal policy.<cite>ICMJE &middot; ai-editors &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Section V.C. The first obligation anywhere on journals to disclose their own AI use — which converts the author/publisher asymmetry from an ethical complaint into a measurable compliance gap.</p>
+</div>
+<div class="ev"><p class="ev-axis">Threshold for review, notification of the author, and route of appeal</p>
+<blockquote>Editors should be vigilant that authors may not disclose AI use when queried.<cite><span class="prov absence">what is said instead</span> &middot; ICMJE &middot; ai-editors &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<blockquote>Nondisclosure of AI use may require corrective action and may be construed as misconduct in some circumstances<cite><span class="prov absence">what is said instead</span> &middot; ICMJE &middot; ai-authors &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">No threshold for triggering review, no duty to notify the author, and no route of appeal is stated. The quote records what is granted instead: editorial discretion.</p>
+</div>
+</div></details>
+<details class="ent-card"><summary>
+<span class="ent-name">ISTIC Guideline</span>
+<span class="tag">national body</span>
+<span class="tag arch">rule with exemptions</span>
+<span class="f fresh">checked 1d ago</span>
+</summary><div class="ent-body">
+<p class="note">Three editions: v1.0 September 2023, v2.0 September 2024, v3.0 December 2025, co-signed by Elsevier, Springer Nature, Wiley, Taylor &amp; Francis, Wolters Kluwer and Cambridge University Press. It requires disclosure detail that English-language policy does not, including archiving AI session records. NOT a standard: it explicitly disclaims precedence over publisher policy and carries no standard number. A separate Chinese national guidance project on the same subject is registered and still under approval. Several verdicts here rest on the English v3.0 text; the Chinese edition is quoted where the English does not cover the point.</p>
+<h3>Cite this</h3><ul class="srcs">
+<li class="auth"><a href="https://files.sciengine.com/gridfs/2001556325267406848/%E9%99%84%E4%BB%B61-%E5%AD%A6%E6%9C%AF%E5%87%BA%E7%89%88%E4%B8%ADAIGC%E4%BD%BF%E7%94%A8%E8%BE%B9.pdf">https://files.sciengine.com/gridfs/2001556325267406848/%E9%99%84%E4%BB%B61-%E5%AD%A6%E6%9C%AF%E5%87%BA%E7%89%88%E4%B8%ADAIGC%E4%BD%BF%E7%94%A8%E8%BE%B9.pdf</a><div class="src-tags"><span class="tag auth">cite this</span><span class="tag">all</span><span class="tag st-current">current</span><span class="tag">http</span><span class="tag">states 2025-12-07</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>Also held, but not the one to cite</h3><ul class="srcs">
+<li class=""><a href="https://www.lib.szu.edu.cn/sites/szulib/files/2025-06/%E5%AD%A6%E6%9C%AF%E5%87%BA%E7%89%88%E4%B8%ADAIGC%E4%BD%BF%E7%94%A8%E8%BE%B9%E7%95%8C%E6%8C%87%E5%8D%972.0.pdf">https://www.lib.szu.edu.cn/sites/szulib/files/2025-06/%E5%AD%A6%E6%9C%AF%E5%87%BA%E7%89%88%E4%B8%ADAIGC%E4%BD%BF%E7%94%A8%E8%BE%B9%E7%95%8C%E6%8C%87%E5%8D%972.0.pdf</a><div class="src-tags"><span class="tag">all</span><span class="tag st-superseded">superseded</span><span class="tag">http</span><span class="tag">states 2024-09-26</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>What it says, word for word</h3>
+<div class="ev"><p class="ev-axis">Prompts, model versions, session records retained as evidence</p>
+<blockquote>detailing disclosure and declaration requirements during the manuscript submission phase<cite>ISTIC Guideline &middot; guideline-v3-en &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Six mandatory disclosure elements: the user; the AI system WITH VERSION NUMBER; the date and time of use; the prompts and questions used; the parts of the text written or co-written by AI; and the ideas arising from that use. Version 3.0 additionally requires naming the specific sections assisted, quoting the actual prompts, and ARCHIVING THE AI SESSION RECORDS AS AN ATTACHMENT.</p>
+</div>
+<div class="ev"><p class="ev-axis">Writing or drafting manuscript content</p>
+<blockquote>研究人员使用AIGC直接生成的稿件文字等资料必须提供明确的披露和声明，否则将构成学术不端行为。<cite>ISTIC Guideline &middot; guideline-v2-zh &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">AI must not generate research hypotheses, write the whole paper, interpret data or draw scientific conclusions. Non-disclosure was made misconduct in v2.0 — over a year before ICMJE said the same.</p>
+</div>
+<div class="ev"><p class="ev-axis">The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts</p>
+<blockquote>emphasizing the responsibilities of relevant parties (including journals/publishers and reviewers) during the review process.<cite>ISTIC Guideline &middot; guideline-v3-en &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">NOTE: this sentence comes from the third edition&#x27;s list of changes, not from its normative text. It establishes that the guideline addresses journal, publisher and reviewer responsibilities — not what those responsibilities are.</p>
+</div>
+<div class="ev"><p class="ev-axis">Generation, refinement, correction, editing or formatting of visualisations of research data or results</p>
+<blockquote>For example, experimental images in the biomedical �ield—such as Western blot analysis diagrams, cell technology analy- ses, and tissue cell staining diagrams—must be obtained from genuinely conducted experimental research.<cite>ISTIC Guideline &middot; guideline-v3-en &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Experimental images — Western blots, cytometry, histology — must not be AI-generated.</p>
+</div>
+</div></details>
+<details class="ent-card"><summary>
+<span class="ent-name">PLOS</span>
+<span class="tag">publisher</span>
+<span class="tag arch">prose</span>
+<span class="f fresh">checked 1d ago</span>
+</summary><div class="ent-body">
+<p class="note">The strongest stated enforcement in the corpus — but keyed to NON-compliance, never to the act of disclosing. The only publisher requiring reviewer AI use to be disclosed to authors, and editor AI use to be disclosed in the decision letter. Its own justification for using in-house AI while forbidding reviewers external AI is the clearest statement of the control principle anywhere.</p>
+<h3>Cite this</h3><ul class="srcs">
+<li class="auth"><a href="https://journals.plos.org/plosone/s/ethical-publishing-practice">https://journals.plos.org/plosone/s/ethical-publishing-practice</a><div class="src-tags"><span class="tag auth">cite this</span><span class="tag">all</span><span class="tag st-current">current</span><span class="tag">http</span><span class="tag undated">undated</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>What it says, word for word</h3>
+<div class="ev"><p class="ev-axis">Writing or drafting manuscript content</p>
+<blockquote>In cases where Large Language Model (LLM) AI tools or technologies contribute to generating text content for a PLOS submission, the article&#x27;s authors are responsible for ensuring that: the content is accurate and valid<cite>PLOS &middot; ethical-publishing-practice &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">No stated exemption for language editing.</p>
+</div>
+<div class="ev"><p class="ev-axis">Use of AI by peer reviewers</p>
+<blockquote>AI tools cannot serve as reviewers or as decision-issuing editors.<cite>PLOS &middot; ethical-publishing-practice &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Disclosure to AUTHORS is mandatory — in the review form for reviewers, in the decision letter for editors.</p>
+</div>
+<div class="ev"><p class="ev-axis">The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts</p>
+<blockquote>PLOS uses Crossref Similarity Check (powered by iThenticate) to screen submitted content for originality.<cite>PLOS &middot; ethical-publishing-practice &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">PLOS states it screens submissions with Crossref Similarity Check. It does not state whether it runs AI-text detection, and does not tell an author what ran on their manuscript.</p>
+</div>
+<div class="ev"><p class="ev-axis">Threshold for review, notification of the author, and route of appeal</p>
+<blockquote>the journal may reject (pre-publication), retract (post-publication), or publish an editorial notice on the article<cite><span class="prov absence">what is said instead</span> &middot; PLOS &middot; ethical-publishing-practice &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">No threshold for triggering review, no duty to notify the author, and no route of appeal is stated. The quote records what is granted instead: editorial discretion.</p>
+</div>
+</div></details>
+<details class="ent-card"><summary>
+<span class="ent-name">Science / AAAS</span>
+<span class="tag">publisher</span>
+<span class="tag arch">per task matrix</span>
+<span class="f fresh">checked 1d ago</span>
+</summary><div class="ent-body">
+<p class="note">Publishes an AI-use matrix grading roughly seventeen use-cases, and is the only publisher here ruling on using AI to respond to reviewers. Research notes record that a November 2023 blog post required full prompt disclosure and barred reviewer AI, and that neither requirement appears on the live page — but that blog post is not among the sources held here, so the comparison is reported as an observation, not evidenced on this site. The live page carries no revision date. Live science.org returns 403 to automated clients; this record is verified against a dated Internet Archive capture.</p>
+<h3>Cite this</h3><ul class="srcs">
+<li class="auth"><a href="https://web.archive.org/web/20260614001840/https://www.science.org/content/page/science-journals-editorial-policies">https://web.archive.org/web/20260614001840/https://www.science.org/content/page/science-journals-editorial-policies</a><p class="src-note">Live science.org returns 403 to every automated client. This is a dated Internet Archive capture.</p><div class="src-tags"><span class="tag auth">cite this</span><span class="tag">all</span><span class="tag st-current">current</span><span class="tag">archive</span><span class="tag undated">undated</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>What it says, word for word</h3>
+<div class="ev"><p class="ev-axis">Use of AI by peer reviewers</p>
+<blockquote>Reviewers may not enter any part of the manuscript into an LLM or other AI tool because this could breach the confidentiality of the manuscript.<cite>Science / AAAS &middot; editorial-policies &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+</div>
+<div class="ev"><p class="ev-axis">Generation, refinement, correction, editing or formatting of images, diagrams or other figures for illustrative purposes only</p>
+<blockquote>AI-generated images and other multimedia are not permitted in the Science journals without explicit permission from the editors.<cite>Science / AAAS &middot; editorial-policies &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Prior editor permission required; exceptions case-by-case and disclosed at submission.</p>
+</div>
+<div class="ev"><p class="ev-axis">Threshold for review, notification of the author, and route of appeal</p>
+<blockquote>Editors may decline to move forward with manuscripts if AI is used inappropriately.<cite><span class="prov absence">what is said instead</span> &middot; Science / AAAS &middot; editorial-policies &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">No threshold for triggering review, no duty to notify the author, and no route of appeal is stated. The quote records what is granted instead: editorial discretion.</p>
+</div>
+<div class="ev"><p class="ev-axis">The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts</p>
+<blockquote>The Science journals use the Crossref Similarity Check service to detect plagiarism and follow guidelines from the Committee on Publication Ethics (COPE) in dealing with cases of suspected plagiarism.<cite>Science / AAAS &middot; editorial-policies &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">The AI-use matrix asks the editorial office to post its own AI tools on the journal website. We looked for such a posting on the editorial-policies page on 2026-08-21 and did not find one; the individual Science-family journal sites were not checked, so this is a gap in our looking, not an established absence.</p>
+</div>
+</div></details>
+<details class="ent-card"><summary>
+<span class="ent-name">Springer Nature</span>
+<span class="tag">publisher</span>
+<span class="tag arch">risk tiered</span>
+<span class="f fresh">checked 1d ago</span>
+</summary><div class="ent-body">
+<p class="note">Moved to a Green/Amber/Red risk framework during 2026. No announcement was found in its press-release index (2015-2026, 190+ items) or its three company blogs, and the live page carries no date stamp and no changelog. Live nature.com serves automated clients a Cloudflare interstitial with HTTP 200, so this record is verified against a dated Internet Archive capture. Its peer-review policy page could not be retrieved from any source and is therefore not recorded here.</p>
+<h3>Cite this</h3><ul class="srcs">
+<li class="auth"><a href="https://web.archive.org/web/20260804231015/https://www.nature.com/nature-portfolio/editorial-policies/ai">https://web.archive.org/web/20260804231015/https://www.nature.com/nature-portfolio/editorial-policies/ai</a><p class="src-note">Live nature.com returns a Cloudflare &#x27;Client Challenge&#x27; interstitial with HTTP 200 to automated clients — a 3KB block page, not the policy. This is a dated Internet Archive capture of the real page.</p><div class="src-tags"><span class="tag auth">cite this</span><span class="tag">all</span><span class="tag st-current">current</span><span class="tag">archive</span><span class="tag undated">undated</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>What it says, word for word</h3>
+<div class="ev"><p class="ev-axis">Translation of manuscript text for the purpose of publishing</p>
+<blockquote>Translation, structuring or clarifying reviewer comments<cite>Springer Nature &middot; nature-portfolio-ai &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Listed under the Green tier, whose compliance line reads &quot;Permitted. Disclosure enhances trust and transparency&quot; — encouraged, not required.</p>
+</div>
+<div class="ev"><p class="ev-axis">Writing or drafting manuscript content</p>
+<blockquote>Using an LLM to generate core research reasoning without disclosure<cite>Springer Nature &middot; nature-portfolio-ai &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Red tier applies only where core research reasoning is generated WITHOUT disclosure; the Amber tier permits substantive AI use with human accountability and disclosure. An earlier version of this record read the Red example as a blanket prohibition on drafting. It is not one.</p>
+</div>
+<div class="ev"><p class="ev-axis">Use of AI by peer reviewers</p>
+<blockquote>Delegating peer review to an LLM<cite>Springer Nature &middot; nature-portfolio-ai &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Amber tier permits evaluative use with oversight; delegating the review itself is Red.</p>
+</div>
+<div class="ev"><p class="ev-axis">The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts</p>
+<blockquote>Nature Portfolio journals occasionally use artificial intelligence tools developed or approved by Springer Nature to support different tasks in the generation of accessory content or to support the editorial process.<cite>Springer Nature &middot; nature-portfolio-ai &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Stated for accessory content and editorial support. Authors are not told which tools ran on their particular manuscript.</p>
+</div>
+</div></details>
+<details class="ent-card"><summary>
+<span class="ent-name">STM Association</span>
+<span class="tag">normative body</span>
+<span class="tag arch">classification only</span>
+<span class="f fresh">checked 1d ago</span>
+</summary><div class="ent-body">
+<p class="note">Author of the nine-activity classification that is this observatory&#x27;s comparison axis. Written by staff from Springer Nature (x2), Elsevier, Wiley, Taylor &amp; Francis, CUP, BMJ, ACS and IEEE — then explicitly declining to harmonise the answers. The 2026 divergence is the designed output of the field&#x27;s only coordination mechanism. COPE Council now defers to it.</p>
+<h3>Cite this</h3><ul class="srcs">
+<li class="auth"><a href="https://s3.eu-west-2.amazonaws.com/stm.offloadmedia/wp-content/uploads/2025/04/23020709/STM_AI_Classification_Recs_19_Sept2025-1.pdf">https://s3.eu-west-2.amazonaws.com/stm.offloadmedia/wp-content/uploads/2025/04/23020709/STM_AI_Classification_Recs_19_Sept2025-1.pdf</a><div class="src-tags"><span class="tag auth">cite this</span><span class="tag">all</span><span class="tag st-current">current</span><span class="tag">http</span><span class="tag">states 2025-09</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>What it says, word for word</h3>
+<div class="ev"><p class="ev-axis">AI used in the research process itself — analysis, code execution, agentic workflows</p>
+<blockquote>This classification addresses only the use of AI assistance for the preparation of manuscripts intended for publication<cite><span class="prov absence">what is said instead</span> &middot; STM Association &middot; classification-2025 &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<blockquote>Classify uses of AI in research processes.<cite><span class="prov absence">what is said instead</span> &middot; STM Association &middot; classification-2025 &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Excluded BY CONSTRUCTION, not by oversight. The field&#x27;s only shared taxonomy draws its boundary to exclude exactly the workflows that now produce results.</p>
+</div>
+<div class="ev"><p class="ev-axis">Refinement, correction, editing or formatting the manuscript to improve clarity of language</p>
+<blockquote>2023 STM Guidelines recommend that disclosure is not necessary for this use of automated tools.<cite>STM Association &middot; classification-2025 &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">One of only two of the nine activities carrying an inherited permission level.</p>
+</div>
+<div class="ev"><p class="ev-axis">Presentation of any kind of content generated by AI tools as though it were original research data/results from non-machine sources</p>
+<blockquote>2023 STM Guidelines recommend prohibiting this use of AI tools.<cite>STM Association &middot; classification-2025 &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+</div>
+<div class="ev"><p class="ev-axis">Refinement or formatting of code reported in the submitted manuscript</p>
+<blockquote>Using AI tools to improve the readability and clarity of code submitted as part of the manuscript or any associated materials<cite>STM Association &middot; classification-2025 &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">In scope: tidying code you report. Explicitly OUT of scope: generating new code for use in the research itself, or altering its functionality.</p>
+</div>
+<div class="ev"><p class="ev-axis">Assisting with gathering references</p>
+<blockquote>Using AI tools to find and identify articles that are likely to be related to the research reported in the manuscript<cite>STM Association &middot; classification-2025 &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">In scope: finding candidate references. Explicitly OUT of scope: generating plausible-sounding references that do not exist.</p>
+</div>
+</div></details>
+<details class="ent-card"><summary>
+<span class="ent-name">Wiley</span>
+<span class="tag">publisher</span>
+<span class="tag arch">per task matrix</span>
+<span class="f fresh">checked 1d ago</span>
+</summary><div class="ent-body">
+<p class="note">The per-task requires/does-not-require matrix was announced 28 October 2025 — NOT 2026. Wiley is the only major publisher with a genuine agentic policy, and the only one that discloses its own policy document was AI-drafted. Routes disclosure by purpose rather than to one fixed position.</p>
+<h3>Cite this</h3><ul class="srcs">
+<li class="auth"><a href="https://www.wiley.com/en-us/publish/article/ai-guidelines/">https://www.wiley.com/en-us/publish/article/ai-guidelines/</a><div class="src-tags"><span class="tag auth">cite this</span><span class="tag">all</span><span class="tag st-current">current</span><span class="tag">http</span><span class="tag">states 2025-10-28</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>Also held, but not the one to cite</h3><ul class="srcs">
+<li class=""><a href="https://authorservices.wiley.com/ethics-guidelines/index.html">https://authorservices.wiley.com/ethics-guidelines/index.html</a><div class="src-tags"><span class="tag">all</span><span class="tag st-current">current</span><span class="tag">http</span><span class="tag undated">undated</span><span class="f fresh">checked 1d ago</span></div></li>
+</ul>
+<h3>What it says, word for word</h3>
+<div class="ev"><p class="ev-axis">Writing or drafting manuscript content</p>
+<blockquote>AI use in manuscript development is not grounds for rejection.<cite>Wiley &middot; ai-guidelines &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Disclosure is routed by purpose — drafting and editing to Acknowledgements.</p>
+</div>
+<div class="ev"><p class="ev-axis">Translation of manuscript text for the purpose of publishing</p>
+<blockquote>In your Acknowledgments when AI assists with manuscript drafting, editing, translation, or formatting.<cite>Wiley &middot; ai-guidelines &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+</div>
+<div class="ev"><p class="ev-axis">AI used in the research process itself — analysis, code execution, agentic workflows</p>
+<blockquote>You may have heard these referred to as: agentic AI, autonomous agents, or agent workflows<cite>Wiley &middot; ai-guidelines &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<blockquote>a goal and allowing it to carry out multiple steps independently<cite>Wiley &middot; ai-guidelines &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<blockquote>Agentic search: AI independently generates or executes search strategies<cite>Wiley &middot; ai-guidelines &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">The only entity in the corpus that names agentic workflows and asks for the audit trail — prompts, parameters, settings and a code repository.</p>
+</div>
+<div class="ev"><p class="ev-axis">Use of AI by peer reviewers</p>
+<blockquote>We require disclosure of AI when it&#x27;s used for drafting assistance in your reviews.<cite>Wiley &middot; ai-guidelines &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<blockquote>Editors have the right to disregard peer reviewer reports that show signs of inappropriate AI use.<cite>Wiley &middot; ethics-guidelines &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Organising, prioritising, tone and translation are permitted; uploading the manuscript is not.</p>
+</div>
+<div class="ev"><p class="ev-axis">The publisher&#x27;s or editor&#x27;s own AI use on submitted manuscripts</p>
+<blockquote>Authors have not given permission for reviewers or editors to share their unpublished work with AI Technologies<cite><span class="prov absence">what is said instead</span> &middot; Wiley &middot; ai-guidelines &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Wiley&#x27;s author-facing guidance does not state what AI Wiley itself runs on a submission. The quote below is the closest it comes, and it is a restriction on reviewers rather than a statement of Wiley&#x27;s own use.</p>
+</div>
+<div class="ev"><p class="ev-axis">Whether AI-text or integrity screening is run, and whether authors are told</p>
+<blockquote>Wiley routinely screens submitted manuscripts for duplicated text using tools such as Crossref Similarity Check.<cite><span class="prov absence">what is said instead</span> &middot; Wiley &middot; ethics-guidelines &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Wiley discloses duplicate-text screening and says nothing about AI-text detection, despite having announced generative-AI content detection in 2024.</p>
+</div>
+<div class="ev"><p class="ev-axis">Threshold for review, notification of the author, and route of appeal</p>
+<blockquote>The final decision on whether using AI Technology is appropriate or permissible for a submitted manuscript or a published article belongs to the journal&#x27;s editor<cite><span class="prov absence">what is said instead</span> &middot; Wiley &middot; ethics-guidelines &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">No threshold for triggering review, no duty to notify the author, and no route of appeal is stated. The quote records what is granted instead: editorial discretion.</p>
+</div>
+<div class="ev"><p class="ev-axis">Prompts, model versions, session records retained as evidence</p>
+<blockquote>The final draft was revised by the author using Claude 4 Sonnet and GPT-5 (August 2025) and then polished by a human copyeditor with expertise in research communication.<cite>Wiley &middot; ai-guidelines &middot; <span class="prov raw_bytes">checked against the page</span></cite></blockquote>
+<p class="cond-note">Wiley discloses that this very guidance document was AI-drafted — specific, in the register of methods, attached to the artefact, with no apology. The norm, demonstrated.</p>
+</div>
+</div></details>
+</section>
+<section id="method" aria-labelledby="h-meth"><div class="sec-head"><p class="eyebrow">Method</p><h2 id="h-meth">What this does and does not claim</h2></div><div class="cols">
+<div class="card"><h3>Word for word, or not at all</h3><p>Every verdict carries a short quote, its source, and how it was obtained. All 50 quotes on this page are checked automatically against the stored copy of the page they came from; the build fails if any quote cannot be found. An earlier version of this site carried a sentence in quotation marks that turned out to be a research assistant’s paraphrase. That is what this check exists to prevent.</p></div>
+<div class="card"><h3>Published policy only</h3><p>This records what organisations have published. It cannot see what editors actually do. Across seventeen cardiovascular journals studied, fifteen ran AI-detection software and one said so publicly &mdash; the gap between stated and practised is real, and this site does not close it.</p></div>
+<div class="card"><h3>Coverage, stated plainly</h3><p>10 organisations, of which nine are Anglophone and one is not. Journal-level records, funders, preprint servers and content licensing are not covered yet. If your funder or institution is not here, that means we have not looked &mdash; not that it is silent.</p></div>
+<div class="card"><h3>Where the bytes come from</h3><p>13 of 16 sources are fetched directly. 3 return a block page or a challenge to any automated client, so those records are checked against dated Internet Archive captures instead, and each says so. Nothing is recorded from memory.</p></div>
+<div class="card"><h3>Contradictions, counted honestly</h3><p>1 substantive internal contradiction and 2 dating or tagging oddities across 10 organisations. A stale HTML title tag is not a policy contradiction and is not counted as one. Research notes record more contradictions among organisations not yet recorded here.</p></div>
+<div class="card"><h3>0 cells still await a quote</h3><p>Verdicts recorded without captured wording are marked and published, never asserted as verified. Where we could not find wording at all, the cell was changed to &ldquo;silent&rdquo; rather than left as a claim.</p></div>
+</div>
+<p class="muted foot">This page declares itself unmaintained automatically once its oldest record passes 550 days without re-checking. The closest precedent to this project still serves a live page, with no staleness warning, four years after its last update.</p>
+<div class="card"><h3>Corrections and right of reply</h3><p>If you work for an organisation recorded here and think a record is wrong, we want to fix it. Every record names its source and quotes the wording it relies on, so corrections can be specific. <a href="https://github.com/MichaLie/journal-ai-policies/issues">Open an issue</a> and we will respond. Corrected records carry the date they changed, and the change stays in the public history.</p></div>
+</section>
+</main>
+<footer><p class="eyebrow">Source and licence</p><p>Maintained by <a href="https://github.com/MichaLie">MichaLie</a>. Records, code and full change history: <a href="https://github.com/MichaLie/journal-ai-policies">github.com/MichaLie/journal-ai-policies</a>. Corrections via <a href="https://github.com/MichaLie/journal-ai-policies/issues">issues</a>.</p><p>Data CC0. Code MIT. Quoted policy text still belongs to the publishers, and is reproduced here as short excerpts for comparison and criticism, with attribution and a link to the source.</p><p class="muted">The reassurance and advice on this page are our own wording. Every verdict, fraction and named organisation is worked out from the records.</p></footer>
+</div></body></html>

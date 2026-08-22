@@ -1,0 +1,134 @@
+id: icmje
+name: ICMJE
+type: normative_body
+parent: null
+platform: null
+policy_owner: icmje
+delegates_to_journal: false
+policy_architecture: prose
+homepage: https://www.icmje.org
+notes: 'Updated January 2026 with a whole new Section V. Files AI structurally INSIDE contributorship
+  (II.A.4, directly after Non-Author Contributors) and NOT under conflicts of interest — which refutes
+  the naive claim that guidance treats AI use as a competing interest. Section V.C is the first text
+  anywhere obliging journals to disclose their own AI use.
+
+  '
+sources:
+- id: ai-authors
+  url: https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-authors.html
+  role: policy
+  audience: authors
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: stated
+  stated_date: 2026-01
+  last_verified: '2026-08-21'
+  content_sha256: 9860a74b5dba3963d40f16a108f80e77b67d21aa6f03ef3c8b52ed131023157d
+  adjudicated_sha256: 84a8d89ddc8dd78af90bb6b06f9bcef247dc7a58198bbf5a082209e46835ff3f
+- id: ai-editors
+  url: https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-editors.html
+  role: policy
+  audience: editors
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: stated
+  stated_date: 2026-01
+  last_verified: '2026-08-21'
+  content_sha256: 06d2dde1470800f2bba67d598103efa4b9a73c35f1b4091f49ff4383fb0cc1d3
+  adjudicated_sha256: 9156241b91cd5c3a9b464387e97de0a37af7ec8ed4c1ca790a8c4d321df1ec58
+- id: preparing-submission
+  url: https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html
+  role: policy
+  audience: authors
+  status: current
+  authoritative: false
+  fetch_method: http
+  date_source: stated
+  stated_date: 2026-01
+  last_verified: '2026-08-21'
+  content_sha256: abd85d15a93dfe53ed4159d7df6e7f887670ce8a5e808d6e7fdad99a4d339890
+  adjudicated_sha256: b4269a64e5ab152eb2c8a494c285763768fb89c90ca0c37e7dfbd8c6d9aa53bd
+- id: authors-contributors
+  url: https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html
+  role: policy
+  audience: authors
+  status: current
+  authoritative: false
+  fetch_method: http
+  date_source: stated
+  stated_date: 2026-01
+  last_verified: '2026-08-21'
+  content_sha256: f8abf4cc2a6e53ddbbf2db62482597f3abb2bf4d1fbbb403caebacf167dd0f10
+  adjudicated_sha256: 06293d267f4ad9fb3088ff23686cd19f2cdf5e8d3f035196ac2539b6a2ab17e2
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - cover_letter
+  - acknowledgements
+  - methods
+  rationale: accountability
+  conditions: Disclosure duty at submission, in the cover letter AND in the work itself.
+  evidence:
+  - source: authors-contributors
+    quote: Authors who use such technology should describe, in both the cover letter and the submitted
+      work in the appropriate section if applicable, how they used it.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: reproducibility
+  conditions: 'The tool-and-version instruction already exists here. But the required fields are dimensioned
+    for a citation, not a trace — adequate for a paragraph, meaningless for forty tool calls. The document
+    contains zero occurrences of agent, agentic or autonomous, against four of "chatbot", under a Section
+    V titled "Use of AI in Publishing".
+
+    '
+  evidence:
+  - source: preparing-submission
+    quote: including the tool used, version, and prompts where applicable.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: 'Section V.C. The first obligation anywhere on journals to disclose their own AI use —
+    which converts the author/publisher asymmetry from an ethical complaint into a measurable compliance
+    gap.
+
+    '
+  evidence:
+  - source: ai-editors
+    quote: Journals should have a policy for the use of AI in the review process and should make all
+      editors, reviewers, and authors aware of this journal policy.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: 'No threshold for triggering review, no duty to notify the author, and no route of appeal
+    is stated. The quote records what is granted instead: editorial discretion.'
+  evidence:
+  - source: ai-editors
+    quote: Editors should be vigilant that authors may not disclose AI use when queried.
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+  - source: ai-authors
+    quote: Nondisclosure of AI use may require corrective action and may be construed as misconduct
+      in some circumstances
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+coherence: []
+metadata_inconsistency:
+- summary: The HTML title tag reads 'January 2025' while the URL and page body both say January 2026.
+    Harmless to a reader; it will mislead an automated scraper.
+  sources:
+  - ai-editors
