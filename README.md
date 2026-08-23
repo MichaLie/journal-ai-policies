@@ -5,7 +5,6 @@ in the natural and life sciences.
 
 - **Site:** <https://michalie.github.io/journal-ai-policies/>
 - **Data:** <https://michalie.github.io/journal-ai-policies/data.json> (CC0)
-- **Background:** [`orientation.html`](orientation.html)
 - **Corrections:** [open an issue](https://github.com/MichaLie/journal-ai-policies/issues)
 
 Maintained by [MichaLie](https://github.com/MichaLie). If you work for an organisation recorded

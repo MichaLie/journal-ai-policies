@@ -11,3 +11,6 @@ snapshots/**/content.bin
 # quote gate cannot run on a clean checkout, which is where CI runs.
 !snapshots/**/text.txt
 !snapshots/**/meta.json
+
+# Pre-project reconnaissance memo — kept locally, not published
+orientation.html
