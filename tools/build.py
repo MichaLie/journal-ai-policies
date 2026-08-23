@@ -95,7 +95,7 @@ def build() -> None:
     A('<meta name="viewport" content="width=device-width, initial-scale=1">')
     A('<title>What Journals Actually Require</title>')
     A('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>')
-    A('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">')
+    A('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">')
     A("<style>" + CSS + "</style>")
     A('<body>')
     A('<a class="skip" href="#main">Skip to content</a>')
@@ -502,34 +502,32 @@ def src_li(s: dict, authoritative: bool) -> str:
             f'<span class="f {f}">checked {d if d is not None else "?"}d ago</span></div></li>')
 CSS = r"""
 /* ── tokens ───────────────────────────────────────────────────────────────
-   Every colour is defined here, in the bare :root, and redefined in BOTH the
-   prefers-color-scheme block and the [data-theme] block. A colour defined only
-   inside a theme block renders one theme's text on the other theme's ground.
+   The site is light-only. prefers-color-scheme is deliberately NOT honoured:
+   the OS-driven dark theme was the only switch and there is no toggle, so a
+   reader who wanted light could not get it. The [data-theme="dark"] block below
+   is kept, complete and in sync, but nothing sets the attribute — it is the
+   hook a future toggle would use. If you re-enable dark, define every colour in
+   both blocks: a colour defined in only one renders one theme's text on the
+   other theme's ground.
    --accent means ONE thing: attention/staleness. Quotes, row numbers and
    required-disclosure each have their own token, because an accent that means
    four things means nothing.                                                */
 :root{
-  --ground:#F6F7F8; --surface:#FFFFFF; --surface-2:#EDF0F3; --chip:#E7EBEF;
-  --ink:#161B21; --ink-2:#39424B; --muted:#57626D;
-  --rule:#D3D9DF; --rule-soft:#E5E9ED;
-  --accent:#8F3116;            /* attention + staleness + focus, nothing else */
-  --quote:#B0B7BF;             /* quotation rules */
-  --req:#7A4A0E;               /* "must be declared" */
-  --ok:#175C40; --cond:#7A5A11; --no:#6E1F2C; --live:#1B47A0;
+  --ground:#FBFCFD; --surface:#FFFFFF; --surface-2:#F2F5F8; --chip:#EAEFF4;
+  --ink:#14181E; --ink-2:#333B44; --muted:#4B545E;
+  --rule:#9BA5B0; --rule-soft:#D2D9E0;
+  --accent:#8A2E14;            /* attention + staleness + focus, nothing else */
+  --quote:#A7B0BA;             /* quotation rules */
+  --req:#6B4108;               /* "must be declared" */
+  --ok:#115438; --cond:#6B5009; --no:#651A27; --live:#16409B;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --ground:#10141A; --surface:#171C23; --surface-2:#1E252D; --chip:#232B34;
-  --ink:#E8ECF0; --ink-2:#C2CAD3; --muted:#96A1AD;
-  --rule:#2C343D; --rule-soft:#232A32;
-  --accent:#E4805A; --quote:#4A545F; --req:#D6A860;
-  --ok:#56AB84; --cond:#D0AC5C; --no:#E07E92; --live:#89ADEC;
-}}
+/* Dormant. Nothing sets data-theme; kept in sync for a future toggle. */
 :root[data-theme="dark"]{
-  --ground:#10141A; --surface:#171C23; --surface-2:#1E252D; --chip:#232B34;
-  --ink:#E8ECF0; --ink-2:#C2CAD3; --muted:#96A1AD;
-  --rule:#2C343D; --rule-soft:#232A32;
-  --accent:#E4805A; --quote:#4A545F; --req:#D6A860;
-  --ok:#56AB84; --cond:#D0AC5C; --no:#E07E92; --live:#89ADEC;
+  --ground:#161B22; --surface:#1F262F; --surface-2:#28323C; --chip:#252E37;
+  --ink:#EDF1F5; --ink-2:#CBD4DE; --muted:#A6B2BF;
+  --rule:#4E5C6B; --rule-soft:#333D48;
+  --accent:#F0916A; --quote:#566372; --req:#E0B673;
+  --ok:#68BC94; --cond:#DCB868; --no:#EE8FA1; --live:#9BBBF5;
 }
 
 /* ── type scale ───────────────────────────────────────────────────────────
@@ -546,12 +544,13 @@ CSS = r"""
 html{-webkit-text-size-adjust:100%;overflow-x:clip}
 body{overflow-x:clip}
 body{background:var(--ground);color:var(--ink);
-  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-family:Lexend,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   font-size:var(--t-body);line-height:1.62;margin:0;-webkit-font-smoothing:antialiased}
 .wrap{max-width:74rem;margin:0 auto;padding:3rem 1.5rem 6rem;display:flex;
   flex-direction:column;gap:3.25rem;min-width:0}
-h1,h2,h3{font-family:Spectral,Georgia,serif;text-wrap:balance;margin:0;line-height:1.2}
-h1{font-size:clamp(2.1rem,5vw,3rem);font-weight:700;letter-spacing:-.015em}
+h1,h2,h3{font-family:Lexend,-apple-system,BlinkMacSystemFont,sans-serif;text-wrap:balance;
+  margin:0;line-height:1.2;letter-spacing:normal}
+h1{font-size:clamp(2.1rem,5vw,3rem);font-weight:700}
 h2{font-size:clamp(1.4rem,3vw,1.8rem);font-weight:600}
 h3{font-size:var(--t-h3);font-weight:600}
 p{margin:0}
@@ -566,7 +565,7 @@ a:focus-visible,summary:focus-visible,.tw:focus-visible,.skip:focus{
 
 .eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:var(--t-label);
   letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.lede{font-family:Spectral,Georgia,serif;font-size:var(--t-lead);line-height:1.55;
+.lede{font-family:Lexend,-apple-system,BlinkMacSystemFont,sans-serif;font-size:var(--t-lead);line-height:1.55;
   color:var(--ink-2);max-width:46rem}
 .muted{color:var(--muted)}
 .foot{font-size:var(--t-small)}
@@ -589,7 +588,6 @@ section{display:flex;flex-direction:column;gap:1.25rem;min-width:0}
 .tombstone{background:var(--no);color:#fff;padding:1.25rem 1.5rem;border-radius:3px}
 /* dark palette's --no is light, so white-on-it fails; flip the text instead */
 :root[data-theme="dark"] .tombstone{color:#12161B}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tombstone{color:#12161B}}
 .warnbar{background:var(--surface-2);border-left:3px solid var(--cond);padding:.9rem 1.2rem;border-radius:3px}
 
 /* ── one label system ─────────────────────────────────────────────────── */
@@ -661,7 +659,7 @@ caption{text-align:left;padding:.6rem .85rem;font-size:var(--t-small);color:var(
 .bound{border-left-color:var(--no);max-width:46rem}
 .reg-bad{border-left-color:var(--no)}
 .reg-good{border-left-color:var(--ok)}
-.reg p{font-family:Spectral,Georgia,serif;font-style:italic;color:var(--ink-2);line-height:1.5}
+.reg p{font-family:Lexend,-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink-2);line-height:1.5}
 .reg-tag{padding:0}
 .reg-bad .reg-tag{color:var(--no)}.reg-good .reg-tag{color:var(--ok)}
 .silence-note{background:var(--surface-2);border-left:3px solid var(--ok);
