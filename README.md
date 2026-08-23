@@ -3,8 +3,8 @@
 A version-controlled record of what publishers and research-ethics bodies say about generative AI
 in the natural and life sciences.
 
-- **Site:** `docs/index.html`
-- **Data:** `docs/data.json` (CC0)
+- **Site:** <https://michalie.github.io/journal-ai-policies/>
+- **Data:** <https://michalie.github.io/journal-ai-policies/data.json> (CC0)
 - **Background:** [`orientation.html`](orientation.html)
 - **Corrections:** [open an issue](https://github.com/MichaLie/journal-ai-policies/issues)
 
