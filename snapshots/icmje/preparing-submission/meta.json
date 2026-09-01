@@ -4,11 +4,11 @@
   "url": "https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html",
   "final_url": "https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html",
   "http_status": "200",
-  "fetched": "2026-08-21",
-  "sha256": "abd85d15a93dfe53ed4159d7df6e7f887670ce8a5e808d6e7fdad99a4d339890",
+  "fetched": "2026-09-01",
+  "sha256": "63e7005c8846cadecc9e7d03f8177617e8ba5598f17457edaae308c1667153be",
   "text_sha256": "b4269a64e5ab152eb2c8a494c285763768fb89c90ca0c37e7dfbd8c6d9aa53bd",
-  "bytes": 47676,
-  "adjudicated_sha256": null,
+  "bytes": 48035,
+  "adjudicated_sha256": "b4269a64e5ab152eb2c8a494c285763768fb89c90ca0c37e7dfbd8c6d9aa53bd",
   "history": [
     {
       "fetched": "2026-08-21",

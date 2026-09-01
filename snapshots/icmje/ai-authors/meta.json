@@ -4,11 +4,11 @@
   "url": "https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-authors.html",
   "final_url": "https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-authors.html",
   "http_status": "200",
-  "fetched": "2026-08-21",
-  "sha256": "9860a74b5dba3963d40f16a108f80e77b67d21aa6f03ef3c8b52ed131023157d",
+  "fetched": "2026-09-01",
+  "sha256": "4c6e046b0e73e8c9bdc3f27548ed68ed1bb9ac2063ec05f563a56cd89fdd7803",
   "text_sha256": "84a8d89ddc8dd78af90bb6b06f9bcef247dc7a58198bbf5a082209e46835ff3f",
-  "bytes": 20984,
-  "adjudicated_sha256": null,
+  "bytes": 21343,
+  "adjudicated_sha256": "84a8d89ddc8dd78af90bb6b06f9bcef247dc7a58198bbf5a082209e46835ff3f",
   "history": [
     {
       "fetched": "2026-08-21",
