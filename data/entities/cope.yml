@@ -22,7 +22,7 @@ sources:
   fetch_method: archive
   date_source: stated
   stated_date: '2023-02-13'
-  last_verified: '2026-08-21'
+  last_verified: '2026-09-11'
   content_sha256: 2e0265f39fd552f0ed366257bba436ce2563cc7bca03e7c0d6147f4a224e429a
   note: Live publicationethics.org returns 403 to every automated client (Cloudflare). This is a dated
     Internet Archive capture of the same page.

@@ -24,9 +24,9 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: '2025-12-07'
-  last_verified: '2026-08-21'
+  last_verified: '2026-09-11'
   content_sha256: 5ef3b6926f45646a0507215351451e66fd7dee03a3c45a29e3dd1985e3d34787
-  adjudicated_sha256: 5a713d78d472158cd4d1d4cf9a071e58c6d094352a8b978d51ec9366daa8e73f
+  adjudicated_sha256: 5ef3b6926f45646a0507215351451e66fd7dee03a3c45a29e3dd1985e3d34787
 - id: guideline-v2-zh
   url: https://www.lib.szu.edu.cn/sites/szulib/files/2025-06/%E5%AD%A6%E6%9C%AF%E5%87%BA%E7%89%88%E4%B8%ADAIGC%E4%BD%BF%E7%94%A8%E8%BE%B9%E7%95%8C%E6%8C%87%E5%8D%972.0.pdf
   role: guidance
@@ -36,9 +36,9 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: '2024-09-26'
-  last_verified: '2026-08-21'
+  last_verified: '2026-09-11'
   content_sha256: bab8269736c404ae4136b0f631e8e77b5f50c9151a51896dd0f770b7ccbadcb4
-  adjudicated_sha256: efe3e0f8622186433464ad815c9a4a612b66f3159cdd210496354152f30c4260
+  adjudicated_sha256: bab8269736c404ae4136b0f631e8e77b5f50c9151a51896dd0f770b7ccbadcb4
 policies:
 - axis: audit_trail
   permission: permitted_with_conditions

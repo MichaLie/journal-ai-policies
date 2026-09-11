@@ -22,7 +22,7 @@ sources:
   fetch_method: archive
   date_source: hash
   stated_date: null
-  last_verified: '2026-08-21'
+  last_verified: '2026-09-11'
   content_sha256: ca382659e24ce4f54fd1c4f56ed2187a08c8b69270ba3079ce48de35d68e5227
   note: Live nature.com returns a Cloudflare 'Client Challenge' interstitial with HTTP 200 to automated
     clients — a 3KB block page, not the policy. This is a dated Internet Archive capture of the real

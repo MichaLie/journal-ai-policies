@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-23",
+  "generated": "2026-09-11",
   "rights": "Records CC0. Quoted policy text remains the property of the publishers named and is reproduced as short excerpts for comparison and criticism.",
   "consensus": {
     "min_confident": 4,
@@ -526,7 +526,7 @@
           "fetch_method": "archive",
           "date_source": "stated",
           "stated_date": "2023-02-13",
-          "last_verified": "2026-08-21",
+          "last_verified": "2026-09-11",
           "content_sha256": "2e0265f39fd552f0ed366257bba436ce2563cc7bca03e7c0d6147f4a224e429a",
           "note": "Live publicationethics.org returns 403 to every automated client (Cloudflare). This is a dated Internet Archive capture of the same page.",
           "adjudicated_sha256": "d0fbfe374dd619a3e749fcf515428e8a93f7534c64c44ad1015949e218682b90"
@@ -613,9 +613,10 @@
           "fetch_method": "http",
           "date_source": "none",
           "stated_date": null,
-          "last_verified": "2026-08-21",
+          "last_verified": "2026-09-11",
           "content_sha256": "e0ead2d067a69eedd8b7f9f0fddf9a893277009592014682eb7569c8721d9396",
-          "adjudicated_sha256": "4f55901fed920706827d050ab75caea7cb79758ea26a1ef8898c9d9ad5023320"
+          "adjudicated_sha256": "4f55901fed920706827d050ab75caea7cb79758ea26a1ef8898c9d9ad5023320",
+          "note": "Since at least 2026-09-11 the URL redirects to the eLife submission system (elife-rp.msubmit.net, reviewer instructions); text unchanged. The public reviewer-guide URL is kept as the citable address."
         }
       ],
       "policies": [
@@ -681,13 +682,13 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2026-06",
-          "last_verified": "2026-08-21",
+          "last_verified": "2026-09-11",
           "content_sha256": "220011c7fb24006d8082761e9c8f14672f51a472bd84489ba0af1db041a97018",
-          "adjudicated_sha256": "118ebeeb6110f5ec2e9e48700b30560db84928bcae49f1cba402470cb1477e0e"
+          "adjudicated_sha256": "e55a20f95abdd9f565222255e919a91e207b60b30e6249945edf70617828855e"
         },
         {
           "id": "books-policy",
-          "url": "https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process",
+          "url": "https://www.elsevier.com/about/policies-and-standards/publishing-ethics-books/generative-ai-policies",
           "role": "policy",
           "audience": "authors",
           "status": "current",
@@ -695,10 +696,10 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2026-07",
-          "last_verified": "2026-08-21",
+          "last_verified": "2026-09-11",
           "content_sha256": "0e97509b66eb141e7f99b3f24314b5261bb2cba0c5cb4914c0f020ce5a21b419",
-          "note": "The slug says 'review process' but the page is Elsevier's BOOKS policy (13 mentions of book/chapter, zero of 'journal' in lower case). Secondary sources routinely quote it as if it were the journals policy. It is not.",
-          "adjudicated_sha256": "1b4c0ce846f4cefc20a4cd1cb9d9c852532d5ed848723721b95a10109bc0bee7"
+          "note": "The slug says 'review process' but the page is Elsevier's BOOKS policy (13 mentions of book/chapter, zero of 'journal' in lower case). Secondary sources routinely quote it as if it were the journals policy. It is not. Recorded until 2026-09-11 as https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process, which now redirects here.",
+          "adjudicated_sha256": "4dc53275526ff38ae22e0c5125f3319dfd182ba5103f36cf25f930243bbe6138"
         }
       ],
       "policies": [
@@ -999,9 +1000,9 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2025-12-07",
-          "last_verified": "2026-08-21",
+          "last_verified": "2026-09-11",
           "content_sha256": "5ef3b6926f45646a0507215351451e66fd7dee03a3c45a29e3dd1985e3d34787",
-          "adjudicated_sha256": "5a713d78d472158cd4d1d4cf9a071e58c6d094352a8b978d51ec9366daa8e73f"
+          "adjudicated_sha256": "5ef3b6926f45646a0507215351451e66fd7dee03a3c45a29e3dd1985e3d34787"
         },
         {
           "id": "guideline-v2-zh",
@@ -1013,9 +1014,9 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2024-09-26",
-          "last_verified": "2026-08-21",
+          "last_verified": "2026-09-11",
           "content_sha256": "bab8269736c404ae4136b0f631e8e77b5f50c9151a51896dd0f770b7ccbadcb4",
-          "adjudicated_sha256": "efe3e0f8622186433464ad815c9a4a612b66f3159cdd210496354152f30c4260"
+          "adjudicated_sha256": "bab8269736c404ae4136b0f631e8e77b5f50c9151a51896dd0f770b7ccbadcb4"
         }
       ],
       "policies": [
@@ -1231,10 +1232,10 @@
           "fetch_method": "archive",
           "date_source": "hash",
           "stated_date": null,
-          "last_verified": "2026-08-21",
+          "last_verified": "2026-09-11",
           "content_sha256": "ab8a190e9db099ff710d9cedbd92b167b9b0f99e234048a05bddde04a9f46314",
           "note": "Live science.org returns 403 to every automated client. This is a dated Internet Archive capture.",
-          "adjudicated_sha256": "96da87014cece47eadd90921705974cb309a539051472cb25a71d9050ca0c38e"
+          "adjudicated_sha256": "71b0012bd7fc6c12a7ced1ca183b3ddddee5dc5d845fae74c7583f88c0dadc52"
         }
       ],
       "policies": [
@@ -1327,7 +1328,7 @@
           "fetch_method": "archive",
           "date_source": "hash",
           "stated_date": null,
-          "last_verified": "2026-08-21",
+          "last_verified": "2026-09-11",
           "content_sha256": "ca382659e24ce4f54fd1c4f56ed2187a08c8b69270ba3079ce48de35d68e5227",
           "note": "Live nature.com returns a Cloudflare 'Client Challenge' interstitial with HTTP 200 to automated clients — a 3KB block page, not the policy. This is a dated Internet Archive capture of the real page.",
           "adjudicated_sha256": "c37e42eea5b6d4ef5bef504aa6d80f58137f90895d2b2ecc918f50df225ec7fb"
@@ -1449,9 +1450,9 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2025-09",
-          "last_verified": "2026-08-21",
+          "last_verified": "2026-09-11",
           "content_sha256": "5dd3f74ed8d9347cc13249ebf943af2586fb7234e9b2c25ccd30f44e0a81bd8c",
-          "adjudicated_sha256": "eb5e95e7116c83bfafd5d602a2f650fce5f801708fd408d08ba79b9808745925"
+          "adjudicated_sha256": "5dd3f74ed8d9347cc13249ebf943af2586fb7234e9b2c25ccd30f44e0a81bd8c"
         }
       ],
       "policies": [
@@ -1569,7 +1570,7 @@
         },
         {
           "id": "ethics-guidelines",
-          "url": "https://authorservices.wiley.com/ethics-guidelines/index.html",
+          "url": "https://authors.wiley.com/ethics-guidelines/index.html",
           "role": "guidance",
           "audience": "all",
           "status": "current",
@@ -1577,9 +1578,10 @@
           "fetch_method": "http",
           "date_source": "none",
           "stated_date": null,
-          "last_verified": "2026-08-21",
+          "last_verified": "2026-09-11",
           "content_sha256": "504265470e65ec27700061f194ff62b16f70037c3f97ceef8da20072ac6fc7d7",
-          "adjudicated_sha256": "344735fd4c490d767d6d82c34894c289978ceb85c8255f6c5b20700e861e8c79"
+          "adjudicated_sha256": "f03bf8053d856346f16bc60ebabd2cc82a91cf2884782723171ca0f73d1cfcd7",
+          "note": "Recorded until 2026-09-11 as https://authorservices.wiley.com/ethics-guidelines/index.html, which now redirects here."
         }
       ],
       "policies": [

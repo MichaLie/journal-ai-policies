@@ -1,19 +1,24 @@
 {
   "entity": "elsevier",
   "source": "books-policy",
-  "url": "https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process",
+  "url": "https://www.elsevier.com/about/policies-and-standards/publishing-ethics-books/generative-ai-policies",
   "final_url": "https://www.elsevier.com/about/policies-and-standards/publishing-ethics-books/generative-ai-policies",
   "http_status": "200",
-  "fetched": "2026-09-01",
-  "sha256": "d023a60374d641fbf275555e4cad420f89aa70eff55ff20fa679108af881d8ad",
-  "text_sha256": "1b4c0ce846f4cefc20a4cd1cb9d9c852532d5ed848723721b95a10109bc0bee7",
-  "bytes": 272609,
-  "adjudicated_sha256": "1b4c0ce846f4cefc20a4cd1cb9d9c852532d5ed848723721b95a10109bc0bee7",
+  "fetched": "2026-09-11",
+  "sha256": "996f8260bc855f7f1dbd3a7dcdd3a0a6c48f6a74a008ef3851f7c345de750590",
+  "text_sha256": "4dc53275526ff38ae22e0c5125f3319dfd182ba5103f36cf25f930243bbe6138",
+  "bytes": 273453,
+  "adjudicated_sha256": "4dc53275526ff38ae22e0c5125f3319dfd182ba5103f36cf25f930243bbe6138",
   "history": [
     {
       "fetched": "2026-08-21",
       "sha256": "0e97509b66eb141e7f99b3f24314b5261bb2cba0c5cb4914c0f020ce5a21b419",
       "text_sha256": "1b4c0ce846f4cefc20a4cd1cb9d9c852532d5ed848723721b95a10109bc0bee7"
+    },
+    {
+      "fetched": "2026-09-11",
+      "sha256": "d5117ef5ceebdccf71c52acc487d591420b3b3a97bcbb797cc5d811607f37b0b",
+      "text_sha256": "4dc53275526ff38ae22e0c5125f3319dfd182ba5103f36cf25f930243bbe6138"
     }
   ]
 }

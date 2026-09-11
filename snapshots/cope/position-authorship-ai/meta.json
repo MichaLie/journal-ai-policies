@@ -4,15 +4,25 @@
   "url": "https://web.archive.org/web/20260208002603/https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools",
   "final_url": "https://web.archive.org/web/20260208002603/https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools",
   "http_status": "200",
-  "fetched": "2026-08-21",
-  "sha256": "2e0265f39fd552f0ed366257bba436ce2563cc7bca03e7c0d6147f4a224e429a",
+  "fetched": "2026-09-11",
+  "sha256": "b9432ce31982ad8036725a96fb93092172147911f043fa13f7dac29d2d4274e3",
   "text_sha256": "d0fbfe374dd619a3e749fcf515428e8a93f7534c64c44ad1015949e218682b90",
-  "bytes": 109018,
-  "adjudicated_sha256": null,
+  "bytes": 120657,
+  "adjudicated_sha256": "d0fbfe374dd619a3e749fcf515428e8a93f7534c64c44ad1015949e218682b90",
   "history": [
     {
       "fetched": "2026-08-21",
       "sha256": "2e0265f39fd552f0ed366257bba436ce2563cc7bca03e7c0d6147f4a224e429a",
+      "text_sha256": "d0fbfe374dd619a3e749fcf515428e8a93f7534c64c44ad1015949e218682b90"
+    },
+    {
+      "fetched": "2026-09-11",
+      "sha256": "ae9cfbfd1043e6ecc72ef4e971a76ea41b3cc9090668b119f686362ffb9c1630",
+      "text_sha256": "ef7a670a7293c5bc17b53b385fba787f7d2fbd8dd67c03558fd6043b64d6259a"
+    },
+    {
+      "fetched": "2026-09-11",
+      "sha256": "b9432ce31982ad8036725a96fb93092172147911f043fa13f7dac29d2d4274e3",
       "text_sha256": "d0fbfe374dd619a3e749fcf515428e8a93f7534c64c44ad1015949e218682b90"
     }
   ]

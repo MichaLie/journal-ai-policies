@@ -1,19 +1,24 @@
 {
   "entity": "wiley",
   "source": "ethics-guidelines",
-  "url": "https://authorservices.wiley.com/ethics-guidelines/index.html",
+  "url": "https://authors.wiley.com/ethics-guidelines/index.html",
   "final_url": "https://authors.wiley.com/ethics-guidelines/index.html",
   "http_status": "200",
-  "fetched": "2026-09-01",
-  "sha256": "504265470e65ec27700061f194ff62b16f70037c3f97ceef8da20072ac6fc7d7",
-  "text_sha256": "344735fd4c490d767d6d82c34894c289978ceb85c8255f6c5b20700e861e8c79",
-  "bytes": 87696,
-  "adjudicated_sha256": "344735fd4c490d767d6d82c34894c289978ceb85c8255f6c5b20700e861e8c79",
+  "fetched": "2026-09-11",
+  "sha256": "3936c0a54ac82aa80911662205a7f35a66966a521933271700a0eaba09d8aae5",
+  "text_sha256": "f03bf8053d856346f16bc60ebabd2cc82a91cf2884782723171ca0f73d1cfcd7",
+  "bytes": 87656,
+  "adjudicated_sha256": "f03bf8053d856346f16bc60ebabd2cc82a91cf2884782723171ca0f73d1cfcd7",
   "history": [
     {
       "fetched": "2026-08-21",
       "sha256": "504265470e65ec27700061f194ff62b16f70037c3f97ceef8da20072ac6fc7d7",
       "text_sha256": "344735fd4c490d767d6d82c34894c289978ceb85c8255f6c5b20700e861e8c79"
+    },
+    {
+      "fetched": "2026-09-11",
+      "sha256": "3936c0a54ac82aa80911662205a7f35a66966a521933271700a0eaba09d8aae5",
+      "text_sha256": "f03bf8053d856346f16bc60ebabd2cc82a91cf2884782723171ca0f73d1cfcd7"
     }
   ]
 }

@@ -15,21 +15,11 @@ from common import SNAPSHOTS, load_entities
 
 
 def visible(raw: bytes) -> str:
-    try:
-        s = raw.decode("utf-8", errors="replace")
-    except Exception:                                        # noqa: BLE001
-        return ""
-    if b"%PDF" == raw[:4]:
-        try:
-            import pypdf, io
-            return re.sub(r"\s+", " ", "\n".join(
-                (p.extract_text() or "") for p in pypdf.PdfReader(io.BytesIO(raw)).pages))
-        except Exception:                                    # noqa: BLE001
-            return ""
-    s = re.sub(r"<(script|style|noscript)\b.*?</\1>", " ", s, flags=re.S | re.I)
-    s = re.sub(r"<!--.*?-->", " ", s, flags=re.S)
-    s = re.sub(r"<[^>]+>", " ", s)
-    return re.sub(r"\s+", " ", html.unescape(s))
+    """One extractor for the whole pipeline. fetch.py writes text.txt with it;
+    a second copy here once drifted from the first (PDFs were handled here and
+    not there), which is how the committed extracts came to hold raw PDF bytes."""
+    from fetch import visible_text
+    return visible_text(raw)
 
 
 def norm(s: str) -> str:

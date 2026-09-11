@@ -26,7 +26,7 @@ sources:
   content_sha256: 46c274126594f5a0d867b05e9d64e6aa2b1bdbe504cd713e28fd3ae5d1e44b17
   adjudicated_sha256: fb87b39ec81ad39599ed2df2b10599f3f0db36d3585001afc8f9dc43bd06a1b7
 - id: ethics-guidelines
-  url: https://authorservices.wiley.com/ethics-guidelines/index.html
+  url: https://authors.wiley.com/ethics-guidelines/index.html
   role: guidance
   audience: all
   status: current
@@ -34,9 +34,11 @@ sources:
   fetch_method: http
   date_source: none
   stated_date: null
-  last_verified: '2026-08-21'
+  last_verified: '2026-09-11'
   content_sha256: 504265470e65ec27700061f194ff62b16f70037c3f97ceef8da20072ac6fc7d7
-  adjudicated_sha256: 344735fd4c490d767d6d82c34894c289978ceb85c8255f6c5b20700e861e8c79
+  adjudicated_sha256: f03bf8053d856346f16bc60ebabd2cc82a91cf2884782723171ca0f73d1cfcd7
+  note: Recorded until 2026-09-11 as https://authorservices.wiley.com/ethics-guidelines/index.html, which
+    now redirects here.
 policies:
 - axis: writing_drafting
   permission: permitted_with_conditions

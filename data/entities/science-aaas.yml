@@ -23,10 +23,10 @@ sources:
   fetch_method: archive
   date_source: hash
   stated_date: null
-  last_verified: '2026-08-21'
+  last_verified: '2026-09-11'
   content_sha256: ab8a190e9db099ff710d9cedbd92b167b9b0f99e234048a05bddde04a9f46314
   note: Live science.org returns 403 to every automated client. This is a dated Internet Archive capture.
-  adjudicated_sha256: 96da87014cece47eadd90921705974cb309a539051472cb25a71d9050ca0c38e
+  adjudicated_sha256: 71b0012bd7fc6c12a7ced1ca183b3ddddee5dc5d845fae74c7583f88c0dadc52
 policies:
 - axis: reviewer_use
   permission: prohibited

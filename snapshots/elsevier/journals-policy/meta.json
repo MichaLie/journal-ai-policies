@@ -4,16 +4,21 @@
   "url": "https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals",
   "final_url": "https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals",
   "http_status": "200",
-  "fetched": "2026-09-01",
-  "sha256": "5b7d1cbce68cf13978b6f86965acff91ff55541a40c815a522fa87089bd373fb",
-  "text_sha256": "118ebeeb6110f5ec2e9e48700b30560db84928bcae49f1cba402470cb1477e0e",
-  "bytes": 344957,
-  "adjudicated_sha256": "118ebeeb6110f5ec2e9e48700b30560db84928bcae49f1cba402470cb1477e0e",
+  "fetched": "2026-09-11",
+  "sha256": "b5bb623e6ad5369e07bb6e1be39e2057a8b36f2be46fe5efa5c4aa147a47b10f",
+  "text_sha256": "e55a20f95abdd9f565222255e919a91e207b60b30e6249945edf70617828855e",
+  "bytes": 345801,
+  "adjudicated_sha256": "e55a20f95abdd9f565222255e919a91e207b60b30e6249945edf70617828855e",
   "history": [
     {
       "fetched": "2026-08-21",
       "sha256": "220011c7fb24006d8082761e9c8f14672f51a472bd84489ba0af1db041a97018",
       "text_sha256": "118ebeeb6110f5ec2e9e48700b30560db84928bcae49f1cba402470cb1477e0e"
+    },
+    {
+      "fetched": "2026-09-11",
+      "sha256": "f0235a4f3ad08abcac5cc490db6789570d6e7cd920e06481993b0dba75ad2786",
+      "text_sha256": "e55a20f95abdd9f565222255e919a91e207b60b30e6249945edf70617828855e"
     }
   ]
 }

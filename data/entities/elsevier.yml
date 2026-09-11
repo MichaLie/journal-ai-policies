@@ -22,11 +22,11 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: 2026-06
-  last_verified: '2026-08-21'
+  last_verified: '2026-09-11'
   content_sha256: 220011c7fb24006d8082761e9c8f14672f51a472bd84489ba0af1db041a97018
-  adjudicated_sha256: 118ebeeb6110f5ec2e9e48700b30560db84928bcae49f1cba402470cb1477e0e
+  adjudicated_sha256: e55a20f95abdd9f565222255e919a91e207b60b30e6249945edf70617828855e
 - id: books-policy
-  url: https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process
+  url: https://www.elsevier.com/about/policies-and-standards/publishing-ethics-books/generative-ai-policies
   role: policy
   audience: authors
   status: current
@@ -34,12 +34,13 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: 2026-07
-  last_verified: '2026-08-21'
+  last_verified: '2026-09-11'
   content_sha256: 0e97509b66eb141e7f99b3f24314b5261bb2cba0c5cb4914c0f020ce5a21b419
   note: The slug says 'review process' but the page is Elsevier's BOOKS policy (13 mentions of book/chapter,
-    zero of 'journal' in lower case). Secondary sources routinely quote it as if it were the journals
-    policy. It is not.
-  adjudicated_sha256: 1b4c0ce846f4cefc20a4cd1cb9d9c852532d5ed848723721b95a10109bc0bee7
+    zero of 'journal' in lower case). Secondary sources routinely quote it as if it were the journals policy.
+    It is not. Recorded until 2026-09-11 as https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process,
+    which now redirects here.
+  adjudicated_sha256: 4dc53275526ff38ae22e0c5125f3319dfd182ba5103f36cf25f930243bbe6138
 policies:
 - axis: language_refinement
   permission: permitted

@@ -4,11 +4,11 @@
   "url": "https://web.archive.org/web/20260804231015/https://www.nature.com/nature-portfolio/editorial-policies/ai",
   "final_url": "https://web.archive.org/web/20260804231015/https://www.nature.com/nature-portfolio/editorial-policies/ai",
   "http_status": "200",
-  "fetched": "2026-08-21",
-  "sha256": "ca382659e24ce4f54fd1c4f56ed2187a08c8b69270ba3079ce48de35d68e5227",
+  "fetched": "2026-09-11",
+  "sha256": "9d45cd3f18ec6a88bd37262ab09905ed82cdf90c7ff0226fceec8e1ca4d26528",
   "text_sha256": "c37e42eea5b6d4ef5bef504aa6d80f58137f90895d2b2ecc918f50df225ec7fb",
-  "bytes": 105824,
-  "adjudicated_sha256": null,
+  "bytes": 114408,
+  "adjudicated_sha256": "c37e42eea5b6d4ef5bef504aa6d80f58137f90895d2b2ecc918f50df225ec7fb",
   "history": [
     {
       "fetched": "2026-08-21",
@@ -18,6 +18,16 @@
     {
       "fetched": "2026-08-21",
       "sha256": "ca382659e24ce4f54fd1c4f56ed2187a08c8b69270ba3079ce48de35d68e5227",
+      "text_sha256": "c37e42eea5b6d4ef5bef504aa6d80f58137f90895d2b2ecc918f50df225ec7fb"
+    },
+    {
+      "fetched": "2026-09-11",
+      "sha256": "40ef6efaa0b729d5b891f6bbf51518a495c1c4a39d8e9d4e02c957418775bbf5",
+      "text_sha256": "ea5860d0399ae7d956260e6eb2dc8b38a8d0279998d34e5afe606904bb4f0f59"
+    },
+    {
+      "fetched": "2026-09-11",
+      "sha256": "9d45cd3f18ec6a88bd37262ab09905ed82cdf90c7ff0226fceec8e1ca4d26528",
       "text_sha256": "c37e42eea5b6d4ef5bef504aa6d80f58137f90895d2b2ecc918f50df225ec7fb"
     }
   ]

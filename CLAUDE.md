@@ -104,3 +104,10 @@ recovered three sources previously recorded as permanently unreachable. Two stil
 challenge page **with HTTP 200** — a 3KB body that hashes and stores perfectly while
 containing no policy at all. That is why `fetch.py` stores a text hash and why quotes are
 re-checked: a 200 is not evidence of content.
+
+Three sources are PDFs. `fetch.py` extracts their text with pypdf (the first version decoded
+them as UTF-8 and committed raw bytes as "text", which broke the quote gate on 2026-09-01) and
+hashes the raw bytes for drift, because pypdf's extraction differs between versions. The three
+archive-checked sources carry the Wayback toolbar, whose capture count changes whenever anyone
+saves the page; `fetch.py` strips it before hashing. Live pages of all three were re-read in a
+real browser on 2026-09-11 and every recorded quote was present verbatim.
