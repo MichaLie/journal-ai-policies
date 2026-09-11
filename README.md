@@ -14,7 +14,7 @@ wording it relies on, so corrections can be specific.
 Policies here change without announcement, so the record is re-fetched on a schedule and every
 change is diffed. The git history of `data/entities/` is the dataset.
 
-Currently 10 organisations, 50 quotes, 16 sources.
+Currently 11 organisations, 73 quotes, 19 sources.
 
 ## Install
 
@@ -75,11 +75,11 @@ Each tool's docstring explains why it works the way it does.
 ## Limitations
 
 - Records published policy, not practice.
-- 10 organisations, nine Anglophone. No journal-level records, funders, preprint servers or content
+- 11 organisations, ten Anglophone. No journal-level records, funders, preprint servers or content
   licensing yet.
-- 3 of 16 sources block automated clients and are checked against dated Internet Archive captures.
+- 5 of 19 sources block automated clients and are checked against dated Internet Archive captures.
   Each record says so.
-- 1 substantive internal contradiction and 2 dating oddities across the ten organisations.
+- 1 substantive internal contradiction and 3 dating oddities across the eleven organisations.
 - GitHub disables scheduled workflows after 60 days without repository activity. If nobody pushes,
   the monitor stops.
 

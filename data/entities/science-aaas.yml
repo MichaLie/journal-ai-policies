@@ -7,8 +7,8 @@ policy_owner: science-aaas
 delegates_to_journal: false
 policy_architecture: per_task_matrix
 homepage: https://www.science.org
-notes: Publishes an AI-use matrix grading roughly seventeen use-cases, and is the only publisher here
-  ruling on using AI to respond to reviewers. Research notes record that a November 2023 blog post required
+notes: Publishes an AI-use matrix grading roughly seventeen use-cases, and, with JAMA Network, one of
+  two publishers here ruling on using AI to respond to reviewers. Research notes record that a November 2023 blog post required
   full prompt disclosure and barred reviewer AI, and that neither requirement appears on the live page
   — but that blog post is not among the sources held here, so the comparison is reported as an observation,
   not evidenced on this site. The live page carries no revision date. Live science.org returns 403 to

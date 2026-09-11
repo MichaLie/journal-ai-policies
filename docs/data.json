@@ -10,8 +10,8 @@
         "plain": "Using AI to polish your language",
         "title": "Refinement, correction, editing or formatting the manuscript to improve clarity of language",
         "band": "thin",
-        "n": 2,
-        "total": 10,
+        "n": 3,
+        "total": 11,
         "rule": "Using AI to polish your language is permitted and needs no declaration",
         "agree": 1.0,
         "modal": "permitted",
@@ -23,7 +23,7 @@
         "provisional": true,
         "tied": false,
         "stance_counts": {
-          "allows": 2
+          "allows": 3
         },
         "group": "stm"
       },
@@ -32,10 +32,10 @@
         "plain": "Using AI to draft manuscript text",
         "title": "Writing or drafting manuscript content",
         "band": "strong",
-        "n": 6,
-        "total": 10,
+        "n": 8,
+        "total": 11,
         "rule": "Using AI to draft manuscript text is permitted under conditions and must be declared",
-        "agree": 0.83,
+        "agree": 0.88,
         "modal": "permitted_with_conditions",
         "disclosure": "required",
         "dissenters": [
@@ -46,12 +46,12 @@
         "locations": [
           "methods",
           "acknowledgements",
-          "cover_letter"
+          "dedicated_section"
         ],
         "provisional": false,
         "tied": false,
         "stance_counts": {
-          "allows": 5,
+          "allows": 7,
           "forbids": 1
         },
         "group": "stm"
@@ -62,7 +62,7 @@
         "title": "Refining or formatting of data reported in the manuscript",
         "band": "unassessed",
         "n": 0,
-        "total": 10,
+        "total": 11,
         "rule": null,
         "agree": 0,
         "dissenters": [],
@@ -73,26 +73,31 @@
         "axis": "illustrative_images",
         "plain": "AI-generated illustrative figures",
         "title": "Generation, refinement, correction, editing or formatting of images, diagrams or other figures for illustrative purposes only",
-        "band": "thin",
-        "n": 3,
-        "total": 10,
-        "rule": "AI-generated illustrative figures is not addressed",
-        "agree": 0.67,
+        "band": "split",
+        "n": 5,
+        "total": 11,
+        "rule": null,
+        "agree": 0.4,
         "modal": "not_addressed",
         "disclosure": "required",
         "dissenters": [
+          "Elsevier",
+          "JAMA Network",
           "Science / AAAS"
         ],
         "stance": "silent",
         "conditions_vary": false,
         "locations": [
+          "figure_caption",
+          "dedicated_section",
           "submission_field"
         ],
-        "provisional": true,
-        "tied": false,
+        "provisional": false,
+        "tied": true,
         "stance_counts": {
           "silent": 2,
-          "allows": 1
+          "allows": 2,
+          "forbids": 1
         },
         "group": "stm"
       },
@@ -100,24 +105,24 @@
         "axis": "translation",
         "plain": "Using AI to translate your manuscript",
         "title": "Translation of manuscript text for the purpose of publishing",
-        "band": "thin",
-        "n": 3,
-        "total": 10,
-        "rule": "Using AI to translate your manuscript is permitted and must be declared",
+        "band": "universal",
+        "n": 4,
+        "total": 11,
+        "rule": "Using AI to translate your manuscript is permitted under conditions and must be declared",
         "agree": 1.0,
-        "modal": "permitted",
+        "modal": "permitted_with_conditions",
         "disclosure": "required",
         "dissenters": [],
         "stance": "allows",
         "conditions_vary": true,
         "locations": [
-          "dedicated_section",
-          "acknowledgements"
+          "acknowledgements",
+          "dedicated_section"
         ],
-        "provisional": true,
+        "provisional": false,
         "tied": false,
         "stance_counts": {
-          "allows": 3
+          "allows": 4
         },
         "group": "stm"
       },
@@ -126,19 +131,25 @@
         "plain": "AI-generated charts of your real data",
         "title": "Generation, refinement, correction, editing or formatting of visualisations of research data or results",
         "band": "thin",
-        "n": 1,
-        "total": 10,
-        "rule": "AI-generated charts of your real data is prohibited",
-        "agree": 1.0,
-        "modal": "prohibited",
-        "disclosure": null,
-        "dissenters": [],
-        "stance": "forbids",
+        "n": 3,
+        "total": 11,
+        "rule": "AI-generated charts of your real data is permitted under conditions and must be declared",
+        "agree": 0.67,
+        "modal": "permitted_with_conditions",
+        "disclosure": "required",
+        "dissenters": [
+          "ISTIC Guideline"
+        ],
+        "stance": "allows",
         "conditions_vary": false,
-        "locations": [],
+        "locations": [
+          "methods",
+          "figure_caption"
+        ],
         "provisional": true,
         "tied": false,
         "stance_counts": {
+          "allows": 2,
           "forbids": 1
         },
         "group": "stm"
@@ -149,7 +160,7 @@
         "title": "Refinement or formatting of code reported in the submitted manuscript",
         "band": "thin",
         "n": 1,
-        "total": 10,
+        "total": 11,
         "rule": "Using AI to tidy code you report is permitted under conditions",
         "agree": 1.0,
         "modal": "permitted_with_conditions",
@@ -170,13 +181,14 @@
         "plain": "Using AI to find references",
         "title": "Assisting with gathering references",
         "band": "thin",
-        "n": 2,
-        "total": 10,
+        "n": 3,
+        "total": 11,
         "rule": null,
-        "agree": 0.5,
+        "agree": 0.33,
         "modal": "not_addressed",
         "disclosure": "not_addressed",
         "dissenters": [
+          "JAMA Network",
           "STM Association"
         ],
         "stance": "silent",
@@ -186,6 +198,7 @@
         "tied": true,
         "stance_counts": {
           "silent": 1,
+          "forbids": 1,
           "allows": 1
         },
         "group": "stm"
@@ -195,8 +208,8 @@
         "plain": "Presenting AI output as original data",
         "title": "Presentation of any kind of content generated by AI tools as though it were original research data/results from non-machine sources",
         "band": "thin",
-        "n": 1,
-        "total": 10,
+        "n": 3,
+        "total": 11,
         "rule": "Presenting AI output as original data is prohibited",
         "agree": 1.0,
         "modal": "prohibited",
@@ -208,7 +221,7 @@
         "provisional": true,
         "tied": false,
         "stance_counts": {
-          "forbids": 1
+          "forbids": 3
         },
         "group": "stm"
       },
@@ -216,15 +229,14 @@
         "axis": "research_process_ai",
         "plain": "Using AI to run the research itself",
         "title": "AI used in the research process itself — analysis, code execution, agentic workflows",
-        "band": "split",
-        "n": 5,
-        "total": 10,
+        "band": "strong",
+        "n": 6,
+        "total": 11,
         "rule": "Using AI to run the research itself is permitted under conditions and must be declared",
-        "agree": 0.6,
+        "agree": 0.83,
         "modal": "permitted_with_conditions",
         "disclosure": "required",
         "dissenters": [
-          "Elsevier",
           "STM Association"
         ],
         "stance": "allows",
@@ -235,8 +247,8 @@
         "provisional": false,
         "tied": false,
         "stance_counts": {
-          "allows": 3,
-          "silent": 2
+          "allows": 5,
+          "silent": 1
         },
         "group": "extended"
       },
@@ -245,14 +257,15 @@
         "plain": "Using AI when you peer-review",
         "title": "Use of AI by peer reviewers",
         "band": "split",
-        "n": 7,
-        "total": 10,
+        "n": 8,
+        "total": 11,
         "rule": "Using AI when you peer-review is permitted under conditions and must be declared",
-        "agree": 0.71,
+        "agree": 0.62,
         "modal": "permitted_with_conditions",
         "disclosure": "required",
         "dissenters": [
           "ISTIC Guideline",
+          "JAMA Network",
           "Science / AAAS"
         ],
         "stance": "allows",
@@ -263,7 +276,7 @@
         "stance_counts": {
           "allows": 5,
           "silent": 1,
-          "forbids": 1
+          "forbids": 2
         },
         "group": "extended"
       },
@@ -273,7 +286,7 @@
         "title": "The publisher's or editor's own AI use on submitted manuscripts",
         "band": "strong",
         "n": 8,
-        "total": 10,
+        "total": 11,
         "rule": "The publisher running AI on your manuscript is permitted under conditions",
         "agree": 0.88,
         "modal": "permitted_with_conditions",
@@ -297,8 +310,8 @@
         "plain": "Being screened by AI detectors",
         "title": "Whether AI-text or integrity screening is run, and whether authors are told",
         "band": "void",
-        "n": 4,
-        "total": 10,
+        "n": 5,
+        "total": 11,
         "rule": null,
         "agree": 1.0,
         "modal": "not_addressed",
@@ -310,7 +323,7 @@
         "provisional": false,
         "tied": false,
         "stance_counts": {
-          "silent": 4
+          "silent": 5
         },
         "group": "extended"
       },
@@ -319,8 +332,8 @@
         "plain": "Knowing why you were flagged, and appealing",
         "title": "Threshold for review, notification of the author, and route of appeal",
         "band": "void",
-        "n": 7,
-        "total": 10,
+        "n": 8,
+        "total": 11,
         "rule": null,
         "agree": 1.0,
         "modal": "not_addressed",
@@ -332,7 +345,7 @@
         "provisional": false,
         "tied": false,
         "stance_counts": {
-          "silent": 7
+          "silent": 8
         },
         "group": "extended"
       },
@@ -341,8 +354,8 @@
         "plain": "Keeping prompts and session records",
         "title": "Prompts, model versions, session records retained as evidence",
         "band": "thin",
-        "n": 2,
-        "total": 10,
+        "n": 3,
+        "total": 11,
         "rule": "Keeping prompts and session records is permitted under conditions and must be declared",
         "agree": 1.0,
         "modal": "permitted_with_conditions",
@@ -357,7 +370,7 @@
         "provisional": true,
         "tied": false,
         "stance_counts": {
-          "allows": 2
+          "allows": 3
         },
         "group": "extended"
       },
@@ -367,7 +380,7 @@
         "title": "Licensing of author content for AI training, and author consent",
         "band": "unassessed",
         "n": 0,
-        "total": 10,
+        "total": 11,
         "rule": null,
         "agree": 0,
         "dissenters": [],
@@ -376,10 +389,11 @@
       }
     ],
     "counts": {
-      "thin": 8,
-      "strong": 2,
+      "thin": 6,
+      "strong": 3,
       "unassessed": 2,
       "split": 2,
+      "universal": 1,
       "void": 2
     }
   },
@@ -670,7 +684,7 @@
       "delegates_to_journal": false,
       "policy_architecture": "rule_with_exemptions",
       "homepage": "https://www.elsevier.com",
-      "notes": "Rewrote its journals policy in June 2026, permitting reviewers supportive use of private AI tools. Its BOOKS policy sits behind a URL ending 'in-the-review-process' and forbids editors using AI to evaluate material — secondary sources routinely quote that page as if it were the journals policy. Cell Press, an Elsevier imprint, is reported to serve superseded 2023 wording; Cell Press is not yet a record here.",
+      "notes": "Rewrote its journals policy in June 2026, permitting reviewers supportive use of private AI tools. Its BOOKS policy sits behind a URL ending 'in-the-review-process' and forbids editors using AI to evaluate material — secondary sources routinely quote that page as if it were the journals policy. Cell Press, an Elsevier imprint, is reported to serve superseded 2023 wording; Cell Press is not yet a record here. Re-read on 2026-09-11 against the text signed off on 2026-08-21: the record had captured five axes of a policy that rules on ten. Added writing, research-process, explanatory-image, data-visualisation and passing-off axes with quotes, and the 18 August 2026 Elsevier Connect announcement as a source.",
       "sources": [
         {
           "id": "journals-policy",
@@ -700,6 +714,21 @@
           "content_sha256": "0e97509b66eb141e7f99b3f24314b5261bb2cba0c5cb4914c0f020ce5a21b419",
           "note": "The slug says 'review process' but the page is Elsevier's BOOKS policy (13 mentions of book/chapter, zero of 'journal' in lower case). Secondary sources routinely quote it as if it were the journals policy. It is not. Recorded until 2026-09-11 as https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process, which now redirects here.",
           "adjudicated_sha256": "4dc53275526ff38ae22e0c5125f3319dfd182ba5103f36cf25f930243bbe6138"
+        },
+        {
+          "id": "announcement-2026-08",
+          "url": "https://www.elsevier.com/connect/updated-generative-ai-policies-for-journals-supporting-responsible-use-while-protecting-trust",
+          "role": "announcement",
+          "audience": "all",
+          "status": "current",
+          "authoritative": false,
+          "fetch_method": "http",
+          "date_source": "stated",
+          "stated_date": "2026-08-18",
+          "last_verified": "2026-09-11",
+          "content_sha256": "c7d31bf07834145832cc588fdf954ebacc57f7202bc602d6199fa93554bc626f",
+          "note": "Elsevier Connect post announcing the updated journals policy, dated 18 August 2026; the policy page itself states 'Policy updated June 2026'.",
+          "adjudicated_sha256": "86d090f162405b396d08affa68404ab97aa7655fd051d87b54a71dd29a2ebdb8"
         }
       ],
       "policies": [
@@ -795,20 +824,116 @@
           ]
         },
         {
-          "axis": "research_process_ai",
-          "permission": "not_addressed",
-          "disclosure": "not_addressed",
-          "disclosure_location": [],
-          "rationale": "unstated",
-          "conditions": "Names \"AI agents and deep research tools\" once, in a framing sentence. \"Agentic\" and \"autonomous\" do not appear."
-        },
-        {
           "axis": "detection_screening",
           "permission": "not_addressed",
           "disclosure": "not_addressed",
           "disclosure_location": [],
           "rationale": "unstated",
           "conditions": "Author-facing policy mentions image forensics only. Check Integrity was expanded to nearly 2,000 journals in March 2026 without appearing in the author policy.\n"
+        },
+        {
+          "axis": "writing_drafting",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "dedicated_section"
+          ],
+          "rationale": "accountability",
+          "conditions": "Separate AI declaration statement at submission, published with the article; basic grammar and spelling checks exempt, substantive changes to structure or content must be declared. Output must not replace the authors' own judgement, analysis or interpretation.",
+          "evidence": [
+            {
+              "source": "journals-policy",
+              "quote": "Authors should disclose the use of AI tools for manuscript preparation in a separate AI declaration statement included in their manuscript upon submission.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "journals-policy",
+              "quote": "Although AI tools may support your writing process, they must not replace your own scientific judgement, analysis, interpretation or intellectual contribution.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "research_process_ai",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods"
+          ],
+          "rationale": "reproducibility",
+          "conditions": "Described 'in a reproducible manner' in Methods with model or tool, version and developer. The policy names AI-assisted imaging and predictive modelling as examples; agentic or autonomous workflows are not named.",
+          "evidence": [
+            {
+              "source": "journals-policy",
+              "quote": "Where the use of AI tools forms part of the research design or research methods, the use of the tools must be described in a reproducible manner in the Methods section.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "illustrative_images",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "figure_caption",
+            "dedicated_section"
+          ],
+          "rationale": "accountability",
+          "conditions": "Explanatory images only (flow charts, decision trees, timelines, schematic illustrations, workflow diagrams); tool, version and use disclosed in each caption and in the AI declaration.",
+          "evidence": [
+            {
+              "source": "journals-policy",
+              "quote": "Authors may use AI tools to support the creation of certain types of explanatory images for publication, such as flow charts, decision trees, timelines, schematic conceptual illustrations, or experimental workflow diagrams.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "journals-policy",
+              "quote": "The use of AI tools should be disclosed in the caption of each image (including the specific tool, version, and how the tool was used) and in the general AI disclosure statement in the article.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "data_visualisation",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods"
+          ],
+          "rationale": "reproducibility",
+          "conditions": "Only where the visual is directly derived from underlying data via reproducible methods reported in Methods; tool, version and developer disclosed there.",
+          "evidence": [
+            {
+              "source": "journals-policy",
+              "quote": "AI tools may be used to support the creation of data visualizations only when the visual output is directly derived from underlying data.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "journals-policy",
+              "quote": "Where AI tools are used in the generation of data visualizations, authors should disclose the name of the model or tool, the version used, and the developer or manufacturer, in the Methods section.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "passing_off",
+          "permission": "prohibited",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "quality",
+          "conditions": "Covers fabricated results, invented or altered data, figures not faithfully derived from data, and primary research images (microscopy, blots, scans, patient images).",
+          "evidence": [
+            {
+              "source": "journals-policy",
+              "quote": "AI tools must not be used to fabricate results, invent or alter underlying data, or generate figures that are not faithfully derived from the underlying data and methods used in the research.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "journals-policy",
+              "quote": "AI tools must not be used to create or alter images that represent primary observed or experimental data that were not directly obtained in the research.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
         }
       ],
       "coherence": [
@@ -819,6 +944,15 @@
             "books-policy"
           ],
           "axis": "publisher_own_use"
+        }
+      ],
+      "metadata_inconsistency": [
+        {
+          "sources": [
+            "journals-policy",
+            "announcement-2026-08"
+          ],
+          "summary": "The policy page's own footer states 'Policy updated June 2026', while Elsevier Connect announced 'Elsevier has updated its generative AI policies for journals' on 18 August 2026. Either the August post is a late announcement of the June revision or the page changed again without its date line. Cite the page as updated June 2026 per its own statement."
         }
       ]
     },
@@ -1108,6 +1242,255 @@
       "coherence": []
     },
     {
+      "id": "jama-network",
+      "name": "JAMA Network",
+      "type": "publisher",
+      "parent": null,
+      "platform": "jamanetwork.com",
+      "policy_owner": "jama-network",
+      "delegates_to_journal": false,
+      "policy_architecture": "per_task_matrix",
+      "homepage": "https://jamanetwork.com",
+      "notes": "Publisher of JAMA and the JAMA Network specialty journals (American Medical Association). One instructions-for-authors page serves every title, so the AI rules are network-wide. Revised guidance was published as an editorial on 2026-08-10 (Flanagin, Perlis, Bibbins-Domingo; doi:10.1001/jama.2026.16613, Crossref-verified 2026-09-11) with a table grading fourteen use types; the instructions page was updated 2026-07-29 to add the prohibition on drafting Opinion pieces, Letters and Comments. Alongside Science / AAAS it is one of two publishers here ruling on AI-drafted responses to reviewers (not permitted). Live jamanetwork.com returns 403 to automated clients; both sources are dated Internet Archive captures.",
+      "sources": [
+        {
+          "id": "instructions-for-authors",
+          "url": "https://web.archive.org/web/20260819063831/https://jamanetwork.com/journals/jama/pages/instructions-for-authors",
+          "role": "policy",
+          "audience": "authors",
+          "status": "current",
+          "authoritative": true,
+          "fetch_method": "archive",
+          "date_source": "stated",
+          "stated_date": "2026-07-29",
+          "last_verified": "2026-09-11",
+          "content_sha256": "ea9289537ae5792a5ca9b7baaa4a7c3a89eb64b58be55181cd24679f19787a08",
+          "note": "Live jamanetwork.com returns 403 to automated clients. Dated Internet Archive capture; the page states 'Last Updated: July 29, 2026'. The previous capture (2026-07-01) lacks the Opinion/Letters/Comments prohibition, so that rule dates from July 2026.",
+          "adjudicated_sha256": "1b016f4853977c20c81486235f5eca17eb4d2c2147eed6afe8f841fc345e7d32"
+        },
+        {
+          "id": "editorial-2026-08",
+          "url": "https://web.archive.org/web/20260812121424/https://jamanetwork.com/journals/jama/fullarticle/2852772",
+          "role": "guidance",
+          "audience": "all",
+          "status": "current",
+          "authoritative": false,
+          "fetch_method": "archive",
+          "date_source": "stated",
+          "stated_date": "2026-08-10",
+          "last_verified": "2026-09-11",
+          "content_sha256": "811a0929d768904195c205f4ed966a1ca979f2623b86f3b89b31d6ce6d19414c",
+          "note": "Flanagin A, Perlis RH, Bibbins-Domingo K. Updated Guidance for Author Use of AI in Medical Publication. JAMA, published online 2026-08-10, doi:10.1001/jama.2026.16613. Carries the acceptable-use table and the Box reproduced in the instructions. Dated Internet Archive capture.",
+          "adjudicated_sha256": "6675f00f71eb78680233c5c34262a033ae41f4e9ce0d0c8a9246d55cd589ad32"
+        }
+      ],
+      "policies": [
+        {
+          "axis": "writing_drafting",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "acknowledgements"
+          ],
+          "rationale": "accountability",
+          "conditions": "Not permitted at all for Opinion manuscripts, Letters to the Editor and online Comments ('human insights are prioritized'). Acknowledgment must name tool, version, manufacturer, dates of use, what it was used on, and confirm author responsibility.",
+          "evidence": [
+            {
+              "source": "instructions-for-authors",
+              "quote": "Use of AI, LLMs, chatbots, or similar technologies to assist with content creation, revision, and formatting must be reported in the Acknowledgment section.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "instructions-for-authors",
+              "quote": "Use of AI, LLM, and chatbots to draft Opinion manuscripts, Letters to the Editor, and Online Comments is not permitted.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "language_refinement",
+          "permission": "permitted",
+          "disclosure": "not_required",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "Only after the initial text is written by humans.",
+          "evidence": [
+            {
+              "source": "instructions-for-authors",
+              "quote": "Note this guidance does not apply to basic tools for checking grammar or spelling.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "editorial-2026-08",
+              "quote": "Use of AI tools and software to check grammar and spelling or for translation is permitted, but only after the initial text is written by humans.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "translation",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "acknowledgements"
+          ],
+          "rationale": "accountability",
+          "conditions": "Table row; warns against entering content into public translation tools.",
+          "evidence": [
+            {
+              "source": "editorial-2026-08",
+              "quote": "Translation Yes, provided the use is fully described in the Acknowledgment section and authors check for accuracy and take full responsibility for all content",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "reference_gathering",
+          "permission": "discouraged",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "quality",
+          "conditions": "The editorial's table grades this 'Discouraged'; the instructions say 'should not'.",
+          "evidence": [
+            {
+              "source": "instructions-for-authors",
+              "quote": "AI, LLM, and chatbots should not be used to generate or format references as these tools may cause problems with the accuracy and integrity of cited references; standard reference managers may be used instead.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "illustrative_images",
+          "permission": "prohibited",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods"
+          ],
+          "rationale": "quality",
+          "conditions": "Scope is clinical images and clinical illustrations (and clinical video/audio); the sole exception is use as part of formal research design or methods, which must be fully disclosed. Non-clinical explanatory figures are not addressed.",
+          "evidence": [
+            {
+              "source": "instructions-for-authors",
+              "quote": "Submission of clinical images and clinical illustrations created or manipulated by AI, LLM, and chatbots is not permitted, unless part of formal research design or methods, which must be fully disclosed.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "data_visualisation",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "figure_caption"
+          ],
+          "rationale": "accountability",
+          "conditions": "Name and version number of the AI or software in the figure legend.",
+          "evidence": [
+            {
+              "source": "editorial-2026-08",
+              "quote": "Use of AI to generate graphic visualization of research data or results is permitted, provided that the AI or software (name and version number) used is included in the figure legend.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "passing_off",
+          "permission": "prohibited",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "quality",
+          "conditions": "Table row in the editorial.",
+          "evidence": [
+            {
+              "source": "editorial-2026-08",
+              "quote": "Presenting AI-generated data as if it were original research from non-AI sources No",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "research_process_ai",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods"
+          ],
+          "rationale": "reproducibility",
+          "conditions": "Follow the relevant reporting guideline; describe each use in Methods; for LLM studies give platform, version, manufacturer, dates and prompts; for ML give training/validation data, metrics, bias and subgroup analyses; data-sharing statement including code.",
+          "evidence": [
+            {
+              "source": "editorial-2026-08",
+              "quote": "Research Yes, provided the use is fully described in the Methods section and reporting guidance is followed and authors take full responsibility for all content",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "instructions-for-authors",
+              "quote": "Describe how AI was used for specific aspects of the study (eg, to generate or refine study hypotheses, assist in the generation of a list of adjustment variables, create graphs to show visual relationships).",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "audit_trail",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods",
+            "acknowledgements"
+          ],
+          "rationale": "reproducibility",
+          "conditions": "For research use: prompts, their sequence and revisions, dates, platform and version in Methods. For manuscript preparation: tool, version, manufacturer and dates in the Acknowledgment. No requirement to archive session records.",
+          "evidence": [
+            {
+              "source": "instructions-for-authors",
+              "quote": "For studies using LLMs, provide the name of the platform or program, tool, version, and manufacturer; specify dates and prompt(s) used and their sequence and any revisions to prompts in response to initial outputs.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "reviewer_use",
+          "permission": "prohibited",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "confidentiality",
+          "conditions": "Stated in the author-facing table; JAMA Network's separate reviewer instructions are not held here. The same table also bars AI-drafted author responses to reviewer and editor comments.",
+          "evidence": [
+            {
+              "source": "editorial-2026-08",
+              "quote": "Entering an author’s manuscript or the reviewer’s summary of the manuscript into an external AI tool or LLM is a violation of confidentiality",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "due_process",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "control",
+          "conditions": "A sanction is stated (rejection or post-publication correction) but no threshold for suspicion, no duty to notify the author and no route of appeal.",
+          "evidence": [
+            {
+              "source": "instructions-for-authors",
+              "quote": "If incomplete disclosure or failure to disclose use of AI is detected during the editorial process or after publication, content may be rejected or subject to postpublication corrective action.",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "documents_absence"
+            }
+          ]
+        },
+        {
+          "axis": "detection_screening",
+          "permission": "not_addressed",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "Both sources speak of non-disclosure being 'detected' but neither says whether AI-text screening is run or whether authors are told."
+        }
+      ],
+      "coherence": []
+    },
+    {
       "id": "plos",
       "name": "PLOS",
       "type": "publisher",
@@ -1220,7 +1603,7 @@
       "delegates_to_journal": false,
       "policy_architecture": "per_task_matrix",
       "homepage": "https://www.science.org",
-      "notes": "Publishes an AI-use matrix grading roughly seventeen use-cases, and is the only publisher here ruling on using AI to respond to reviewers. Research notes record that a November 2023 blog post required full prompt disclosure and barred reviewer AI, and that neither requirement appears on the live page — but that blog post is not among the sources held here, so the comparison is reported as an observation, not evidenced on this site. The live page carries no revision date. Live science.org returns 403 to automated clients; this record is verified against a dated Internet Archive capture.",
+      "notes": "Publishes an AI-use matrix grading roughly seventeen use-cases, and, with JAMA Network, one of two publishers here ruling on using AI to respond to reviewers. Research notes record that a November 2023 blog post required full prompt disclosure and barred reviewer AI, and that neither requirement appears on the live page — but that blog post is not among the sources held here, so the comparison is reported as an observation, not evidenced on this site. The live page carries no revision date. Live science.org returns 403 to automated clients; this record is verified against a dated Internet Archive capture.",
       "sources": [
         {
           "id": "editorial-policies",

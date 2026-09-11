@@ -1,0 +1,19 @@
+{
+  "entity": "jama-network",
+  "source": "instructions-for-authors",
+  "url": "https://web.archive.org/web/20260819063831/https://jamanetwork.com/journals/jama/pages/instructions-for-authors",
+  "final_url": "https://web.archive.org/web/20260819063831/https://jamanetwork.com/journals/jama/pages/instructions-for-authors",
+  "http_status": "200",
+  "fetched": "2026-09-11",
+  "sha256": "ea9289537ae5792a5ca9b7baaa4a7c3a89eb64b58be55181cd24679f19787a08",
+  "text_sha256": "1b016f4853977c20c81486235f5eca17eb4d2c2147eed6afe8f841fc345e7d32",
+  "bytes": 450424,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-09-11",
+      "sha256": "ea9289537ae5792a5ca9b7baaa4a7c3a89eb64b58be55181cd24679f19787a08",
+      "text_sha256": "1b016f4853977c20c81486235f5eca17eb4d2c2147eed6afe8f841fc345e7d32"
+    }
+  ]
+}

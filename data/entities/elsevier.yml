@@ -7,11 +7,13 @@ policy_owner: elsevier
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
 homepage: https://www.elsevier.com
-notes: Rewrote its journals policy in June 2026, permitting reviewers supportive use of private AI tools.
-  Its BOOKS policy sits behind a URL ending 'in-the-review-process' and forbids editors using AI to
-  evaluate material — secondary sources routinely quote that page as if it were the journals policy.
-  Cell Press, an Elsevier imprint, is reported to serve superseded 2023 wording; Cell Press is not yet
-  a record here.
+notes: 'Rewrote its journals policy in June 2026, permitting reviewers supportive use of private AI tools.
+  Its BOOKS policy sits behind a URL ending ''in-the-review-process'' and forbids editors using AI to
+  evaluate material — secondary sources routinely quote that page as if it were the journals policy. Cell
+  Press, an Elsevier imprint, is reported to serve superseded 2023 wording; Cell Press is not yet a record
+  here. Re-read on 2026-09-11 against the text signed off on 2026-08-21: the record had captured five
+  axes of a policy that rules on ten. Added writing, research-process, explanatory-image, data-visualisation
+  and passing-off axes with quotes, and the 18 August 2026 Elsevier Connect announcement as a source.'
 sources:
 - id: journals-policy
   url: https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals
@@ -41,6 +43,20 @@ sources:
     It is not. Recorded until 2026-09-11 as https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process,
     which now redirects here.
   adjudicated_sha256: 4dc53275526ff38ae22e0c5125f3319dfd182ba5103f36cf25f930243bbe6138
+- id: announcement-2026-08
+  url: https://www.elsevier.com/connect/updated-generative-ai-policies-for-journals-supporting-responsible-use-while-protecting-trust
+  role: announcement
+  audience: all
+  status: current
+  authoritative: false
+  fetch_method: http
+  date_source: stated
+  stated_date: '2026-08-18'
+  last_verified: '2026-09-11'
+  content_sha256: c7d31bf07834145832cc588fdf954ebacc57f7202bc602d6199fa93554bc626f
+  note: Elsevier Connect post announcing the updated journals policy, dated 18 August 2026; the policy
+    page itself states 'Policy updated June 2026'.
+  adjudicated_sha256: 86d090f162405b396d08affa68404ab97aa7655fd051d87b54a71dd29a2ebdb8
 policies:
 - axis: language_refinement
   permission: permitted
@@ -112,13 +128,6 @@ policies:
       images for editorial assessment.
     quote_provenance: raw_bytes
     evidence_role: documents_absence
-- axis: research_process_ai
-  permission: not_addressed
-  disclosure: not_addressed
-  disclosure_location: []
-  rationale: unstated
-  conditions: Names "AI agents and deep research tools" once, in a framing sentence. "Agentic" and "autonomous"
-    do not appear.
 - axis: detection_screening
   permission: not_addressed
   disclosure: not_addressed
@@ -128,6 +137,90 @@ policies:
     2,000 journals in March 2026 without appearing in the author policy.
 
     '
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: accountability
+  conditions: Separate AI declaration statement at submission, published with the article; basic grammar
+    and spelling checks exempt, substantive changes to structure or content must be declared. Output must
+    not replace the authors' own judgement, analysis or interpretation.
+  evidence:
+  - source: journals-policy
+    quote: Authors should disclose the use of AI tools for manuscript preparation in a separate AI declaration
+      statement included in their manuscript upon submission.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Although AI tools may support your writing process, they must not replace your own scientific
+      judgement, analysis, interpretation or intellectual contribution.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: reproducibility
+  conditions: Described 'in a reproducible manner' in Methods with model or tool, version and developer.
+    The policy names AI-assisted imaging and predictive modelling as examples; agentic or autonomous workflows
+    are not named.
+  evidence:
+  - source: journals-policy
+    quote: Where the use of AI tools forms part of the research design or research methods, the use of
+      the tools must be described in a reproducible manner in the Methods section.
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - figure_caption
+  - dedicated_section
+  rationale: accountability
+  conditions: Explanatory images only (flow charts, decision trees, timelines, schematic illustrations,
+    workflow diagrams); tool, version and use disclosed in each caption and in the AI declaration.
+  evidence:
+  - source: journals-policy
+    quote: Authors may use AI tools to support the creation of certain types of explanatory images for
+      publication, such as flow charts, decision trees, timelines, schematic conceptual illustrations,
+      or experimental workflow diagrams.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: The use of AI tools should be disclosed in the caption of each image (including the specific
+      tool, version, and how the tool was used) and in the general AI disclosure statement in the article.
+    quote_provenance: raw_bytes
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: reproducibility
+  conditions: Only where the visual is directly derived from underlying data via reproducible methods
+    reported in Methods; tool, version and developer disclosed there.
+  evidence:
+  - source: journals-policy
+    quote: AI tools may be used to support the creation of data visualizations only when the visual output
+      is directly derived from underlying data.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Where AI tools are used in the generation of data visualizations, authors should disclose the
+      name of the model or tool, the version used, and the developer or manufacturer, in the Methods section.
+    quote_provenance: raw_bytes
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: quality
+  conditions: Covers fabricated results, invented or altered data, figures not faithfully derived from
+    data, and primary research images (microscopy, blots, scans, patient images).
+  evidence:
+  - source: journals-policy
+    quote: AI tools must not be used to fabricate results, invent or alter underlying data, or generate
+      figures that are not faithfully derived from the underlying data and methods used in the research.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: AI tools must not be used to create or alter images that represent primary observed or experimental
+      data that were not directly obtained in the research.
+    quote_provenance: raw_bytes
 coherence:
 - summary: The books policy forbids editors using AI to evaluate material, while the journals policy
     states Elsevier's editors have access to AI tools that identify reviewers and match submissions.
@@ -136,3 +229,11 @@ coherence:
   - journals-policy
   - books-policy
   axis: publisher_own_use
+metadata_inconsistency:
+- sources:
+  - journals-policy
+  - announcement-2026-08
+  summary: The policy page's own footer states 'Policy updated June 2026', while Elsevier Connect announced
+    'Elsevier has updated its generative AI policies for journals' on 18 August 2026. Either the August
+    post is a late announcement of the June revision or the page changed again without its date line.
+    Cite the page as updated June 2026 per its own statement.

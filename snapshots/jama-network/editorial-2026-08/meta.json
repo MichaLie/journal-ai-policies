@@ -1,0 +1,19 @@
+{
+  "entity": "jama-network",
+  "source": "editorial-2026-08",
+  "url": "https://web.archive.org/web/20260812121424/https://jamanetwork.com/journals/jama/fullarticle/2852772",
+  "final_url": "https://web.archive.org/web/20260812121424/https://jamanetwork.com/journals/jama/fullarticle/2852772",
+  "http_status": "200",
+  "fetched": "2026-09-11",
+  "sha256": "811a0929d768904195c205f4ed966a1ca979f2623b86f3b89b31d6ce6d19414c",
+  "text_sha256": "6675f00f71eb78680233c5c34262a033ae41f4e9ce0d0c8a9246d55cd589ad32",
+  "bytes": 301126,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-09-11",
+      "sha256": "811a0929d768904195c205f4ed966a1ca979f2623b86f3b89b31d6ce6d19414c",
+      "text_sha256": "6675f00f71eb78680233c5c34262a033ae41f4e9ce0d0c8a9246d55cd589ad32"
+    }
+  ]
+}
