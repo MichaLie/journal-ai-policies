@@ -1,7 +1,97 @@
 {
-  "generated": "2026-09-11",
-  "review_queue": [],
-  "unchanged": 19,
+  "generated": "2026-10-01",
+  "review_queue": [
+    {
+      "entity": "elsevier",
+      "entity_name": "Elsevier",
+      "source": "journals-policy",
+      "url": "https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals",
+      "signed_off": "e55a20f95abd",
+      "now": "91d156e9f33c",
+      "fetched": "2026-10-01",
+      "axes_to_recheck": [
+        "data_visualisation",
+        "due_process",
+        "illustrative_images",
+        "language_refinement",
+        "passing_off",
+        "publisher_own_use",
+        "research_process_ai",
+        "reviewer_use",
+        "translation",
+        "writing_drafting"
+      ]
+    },
+    {
+      "entity": "elsevier",
+      "entity_name": "Elsevier",
+      "source": "books-policy",
+      "url": "https://www.elsevier.com/about/policies-and-standards/publishing-ethics-books/generative-ai-policies",
+      "signed_off": "4dc53275526f",
+      "now": "3867c16a231c",
+      "fetched": "2026-10-01",
+      "axes_to_recheck": [
+        "publisher_own_use"
+      ]
+    },
+    {
+      "entity": "elsevier",
+      "entity_name": "Elsevier",
+      "source": "announcement-2026-08",
+      "url": "https://www.elsevier.com/connect/updated-generative-ai-policies-for-journals-supporting-responsible-use-while-protecting-trust",
+      "signed_off": "86d090f16240",
+      "now": "c259bf6359f4",
+      "fetched": "2026-10-01",
+      "axes_to_recheck": []
+    },
+    {
+      "entity": "plos",
+      "entity_name": "PLOS",
+      "source": "ethical-publishing-practice",
+      "url": "https://journals.plos.org/plosone/s/ethical-publishing-practice",
+      "signed_off": "fec072430ca9",
+      "now": "7a1eecac7d3d",
+      "fetched": "2026-10-01",
+      "axes_to_recheck": [
+        "due_process",
+        "publisher_own_use",
+        "reviewer_use",
+        "writing_drafting"
+      ]
+    },
+    {
+      "entity": "wiley",
+      "entity_name": "Wiley",
+      "source": "ai-guidelines",
+      "url": "https://www.wiley.com/en-us/publish/article/ai-guidelines/",
+      "signed_off": "fb87b39ec81a",
+      "now": "9a18c5964f9f",
+      "fetched": "2026-10-01",
+      "axes_to_recheck": [
+        "audit_trail",
+        "publisher_own_use",
+        "research_process_ai",
+        "reviewer_use",
+        "translation",
+        "writing_drafting"
+      ]
+    },
+    {
+      "entity": "wiley",
+      "entity_name": "Wiley",
+      "source": "ethics-guidelines",
+      "url": "https://authors.wiley.com/ethics-guidelines/index.html",
+      "signed_off": "f03bf8053d85",
+      "now": "af1a2dc56c05",
+      "fetched": "2026-10-01",
+      "axes_to_recheck": [
+        "detection_screening",
+        "due_process",
+        "reviewer_use"
+      ]
+    }
+  ],
+  "unchanged": 13,
   "never_fetched": [],
   "awaiting_first_signoff": 0,
   "url_changed": [],
