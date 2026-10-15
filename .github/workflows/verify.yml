@@ -29,6 +29,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install pyyaml jsonschema pypdf
+      - name: Test monitoring failure paths
+        run: python3 -m unittest discover -s tests -v
       - name: Validate records, schema and every quote
         run: python3 tools/validate.py
       - name: Build site
@@ -50,10 +52,13 @@ jobs:
       - run: pip install pyyaml jsonschema pypdf
 
       - name: Fetch and hash every source
+        id: fetch
         shell: bash
         run: |
           set -o pipefail
-          python3 tools/fetch.py | tee /tmp/fetch.txt
+          code=0
+          python3 tools/fetch.py 2>&1 | tee /tmp/fetch.txt || code=$?
+          echo "code=$code" >> "$GITHUB_OUTPUT"
 
       # The monitor's own commit is pushed with GITHUB_TOKEN, which does not
       # trigger the validate job. On 2026-09-01 it committed text extracts that
@@ -62,21 +67,22 @@ jobs:
       - name: Quote gate on the refetched extracts
         id: gate
         shell: bash
-        continue-on-error: true
         run: |
           set -o pipefail
-          python3 tools/validate.py | tee /tmp/gate.txt
+          code=0
+          python3 tools/validate.py 2>&1 | tee /tmp/gate.txt || code=$?
+          echo "code=$code" >> "$GITHUB_OUTPUT"
 
       # diff.py exits 2 when items await adjudication. An exit code is the
       # mechanism; grepping stdout was brittle and `| tee` swallowed crashes.
       - name: Build the review queue
         id: diff
         shell: bash
-        continue-on-error: true
         run: |
           set -o pipefail
-          python3 tools/diff.py | tee /tmp/review.txt
-          echo "code=$?" >> "$GITHUB_OUTPUT"
+          code=0
+          python3 tools/diff.py 2>&1 | tee /tmp/review.txt || code=$?
+          echo "code=$code" >> "$GITHUB_OUTPUT"
 
       - name: Persist the hash chain
         shell: bash
@@ -85,18 +91,26 @@ jobs:
           git config user.email "policy-monitor@users.noreply.github.com"
           git add -A snapshots
           git diff --cached --quiet || git commit -m "monitor: refresh source hashes $(date -u +%Y-%m-%d)"
-          git push || echo "nothing to push"
+          git push
 
-      - name: Open a review issue if anything drifted or the quote gate failed
-        if: steps.diff.outputs.code == '2' || steps.gate.outcome == 'failure'
+      - name: Open a review issue for drift, failed retrieval or missing live checks
+        if: steps.diff.outputs.code != '0' || steps.gate.outputs.code != '0' || steps.fetch.outputs.code != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           gh label create review-queue --color FBCA04 \
             --description "A tracked policy page changed and needs a human" 2>/dev/null || true
-          { cat /tmp/review.txt; echo; echo '## Quote gate'; echo '```'; cat /tmp/gate.txt; echo '```'; } > /tmp/issue.md
+          { cat /tmp/review.txt; echo; echo '## Fetch and live coverage'; echo '```'; cat /tmp/fetch.txt; echo '```'; echo '## Quote gate'; echo '```'; cat /tmp/gate.txt; echo '```'; } > /tmp/issue.md
           gh issue create \
-            --title "Policy drift detected — $(date -u +%Y-%m-%d)" \
+            --title "Policy review needed — $(date -u +%Y-%m-%d)" \
             --body-file /tmp/issue.md \
             --label review-queue
+
+      - name: Fail the monitor when review or repair is needed
+        if: always()
+        env:
+          FETCH_CODE: ${{ steps.fetch.outputs.code }}
+          GATE_CODE: ${{ steps.gate.outputs.code }}
+          DIFF_CODE: ${{ steps.diff.outputs.code }}
+        run: test "$FETCH_CODE" = 0 && test "$GATE_CODE" = 0 && test "$DIFF_CODE" = 0

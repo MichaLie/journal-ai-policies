@@ -23,7 +23,7 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: 2025-09
-  last_verified: '2026-09-11'
+  last_verified: '2026-10-15'
   content_sha256: 5dd3f74ed8d9347cc13249ebf943af2586fb7234e9b2c25ccd30f44e0a81bd8c
   adjudicated_sha256: 5dd3f74ed8d9347cc13249ebf943af2586fb7234e9b2c25ccd30f44e0a81bd8c
 policies:

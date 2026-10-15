@@ -1,0 +1,18 @@
+{
+  "entity": "springer-nature",
+  "source": "peer-review-ai",
+  "url": "https://www.springernature.com/de/policies/editorial-policies/using-ai-in-peer-review",
+  "fetched": "2026-10-15",
+  "capture_method": "browser_dom",
+  "capture_scope": "First visible risk-framework table; whitespace normalized. This is an excerpt, not the full page or raw HTTP bytes.",
+  "sha256": null,
+  "text_sha256": "d9af514ed88f51113a79375c391d1066e3b2ad24068fda018075c09bb96e9ee2",
+  "bytes": 1358,
+  "adjudicated_sha256": "d9af514ed88f51113a79375c391d1066e3b2ad24068fda018075c09bb96e9ee2",
+  "history": [
+    {
+      "fetched": "2026-10-15",
+      "text_sha256": "d9af514ed88f51113a79375c391d1066e3b2ad24068fda018075c09bb96e9ee2"
+    }
+  ]
+}

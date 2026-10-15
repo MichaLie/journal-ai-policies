@@ -22,8 +22,8 @@ sources:
   fetch_method: http
   date_source: none
   stated_date: null
-  last_verified: '2026-09-11'
-  content_sha256: e0ead2d067a69eedd8b7f9f0fddf9a893277009592014682eb7569c8721d9396
+  last_verified: '2026-10-15'
+  content_sha256: 7ab4646f61689310602a312d1ac44d1c5b501a286b069201474a42a34ce89586
   adjudicated_sha256: 4f55901fed920706827d050ab75caea7cb79758ea26a1ef8898c9d9ad5023320
   note: Since at least 2026-09-11 the URL redirects to the eLife submission system (elife-rp.msubmit.net,
     reviewer instructions); text unchanged. The public reviewer-guide URL is kept as the citable address.

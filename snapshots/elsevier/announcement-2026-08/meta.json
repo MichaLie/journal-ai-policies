@@ -4,11 +4,11 @@
   "url": "https://www.elsevier.com/connect/updated-generative-ai-policies-for-journals-supporting-responsible-use-while-protecting-trust",
   "final_url": "https://www.elsevier.com/connect/updated-generative-ai-policies-for-journals-supporting-responsible-use-while-protecting-trust",
   "http_status": "200",
-  "fetched": "2026-10-01",
-  "sha256": "40bb2f8f1d6d013de498548356918f23af46121bdc9b8f4917845ff2d827c34a",
-  "text_sha256": "c259bf6359f458efa2dc4085bbe568d7764d1f2f332ee0f36a4ba20b2b99e965",
-  "bytes": 212886,
-  "adjudicated_sha256": "86d090f162405b396d08affa68404ab97aa7655fd051d87b54a71dd29a2ebdb8",
+  "fetched": "2026-10-15",
+  "sha256": "15e64dc9a531c846ac13a3189328a225e52e1b83cf690ebc8df3620c5cd5d038",
+  "text_sha256": "2215164be27a3784450582d18c57b7f4242ab598af8ba2bd00835aaf53378acb",
+  "bytes": 215131,
+  "adjudicated_sha256": "2215164be27a3784450582d18c57b7f4242ab598af8ba2bd00835aaf53378acb",
   "history": [
     {
       "fetched": "2026-09-11",
@@ -19,6 +19,11 @@
       "fetched": "2026-10-01",
       "sha256": "40bb2f8f1d6d013de498548356918f23af46121bdc9b8f4917845ff2d827c34a",
       "text_sha256": "c259bf6359f458efa2dc4085bbe568d7764d1f2f332ee0f36a4ba20b2b99e965"
+    },
+    {
+      "fetched": "2026-10-15",
+      "sha256": "15e64dc9a531c846ac13a3189328a225e52e1b83cf690ebc8df3620c5cd5d038",
+      "text_sha256": "2215164be27a3784450582d18c57b7f4242ab598af8ba2bd00835aaf53378acb"
     }
   ]
 }

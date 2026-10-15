@@ -1,0 +1,19 @@
+{
+  "entity": "springer-nature",
+  "source": "announcement-2026-09",
+  "url": "https://group.springernature.com/de/group/media/press-releases/sn-policy-responsible-ai-use/53209516",
+  "final_url": "https://group.springernature.com/de/group/media/press-releases/sn-policy-responsible-ai-use/53209516",
+  "http_status": "200",
+  "fetched": "2026-10-15",
+  "sha256": "b113ca9b046f79622c18550e70863ba3b16b5e0aaec630fb2047e21d5ca20f17",
+  "text_sha256": "e79a7e33b463af23977ba1f5dd4364018a96a90dcca87edeceabc60336ccb239",
+  "bytes": 73189,
+  "history": [
+    {
+      "fetched": "2026-10-15",
+      "sha256": "b113ca9b046f79622c18550e70863ba3b16b5e0aaec630fb2047e21d5ca20f17",
+      "text_sha256": "e79a7e33b463af23977ba1f5dd4364018a96a90dcca87edeceabc60336ccb239"
+    }
+  ],
+  "adjudicated_sha256": "e79a7e33b463af23977ba1f5dd4364018a96a90dcca87edeceabc60336ccb239"
+}

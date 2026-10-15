@@ -44,7 +44,8 @@ def cite_html(guide, key) -> str:
         return ""
     doi = f' <a href="https://doi.org/{esc(c["doi"])}">doi:{esc(c["doi"])}</a>' if c.get("doi") else ""
     pmid = f' · PMID {esc(c["pmid"])}' if c.get("pmid") else ""
-    return f'<p class="cite">{esc(c["text"])}{doi}{pmid}</p>'
+    link = f' <a href="{esc(c["url"])}">Source</a>' if c.get("url") else ""
+    return f'<p class="cite">{esc(c["text"])}{doi}{pmid}{link}</p>'
 
 
 def where_it_goes(axis: str, entities: list[dict]) -> list[tuple[str, list[str]]]:
@@ -86,6 +87,8 @@ def build() -> None:
     n_src = sum(len(e.get("sources", [])) for e in entities)
     n_arch = sum(1 for e in entities for s in e.get("sources", [])
                  if s.get("fetch_method") == "archive")
+    n_browser = sum(1 for e in entities for s in e.get("sources", [])
+                    if s.get("fetch_method") == "browser")
 
     P = []
     A = P.append
@@ -141,6 +144,7 @@ def build() -> None:
     A('</div>')
     nf = guide["not_your_fault"]
     A(f'<p class="lede">{esc(nf["body"].strip())}</p>')
+    A(cite_html(guide, nf.get("body_cite")))
     A('</section>')
 
     # 2 ─ your case
@@ -170,6 +174,7 @@ def build() -> None:
           f'<span class="you">{esc(c["you_did"])}</span>'
           f'<span class="w">{label}</span></summary>'
           f'<div class="case-body"><p>{esc(c["do_this"].strip())}</p>')
+        A(cite_html(guide, c.get("body_cite")))
         if ex.get("text"):
             places = where_it_goes(c["axis"], entities)
             A('<div class="tmpl"><div class="tmpl-head"><span class="tmpl-tag">'
@@ -231,12 +236,9 @@ def build() -> None:
          'asks for prompts, versions or archived session records today.</p>' if audit_req else '') + '</div>')
     A(f'<div class="adv adv-calm"><h3>{esc(ad["headline"])}</h3><p>{esc(ad["body"].strip())}</p></div>')
     A(f'<div class="adv adv-calm"><h3>{esc(af["headline"])}</h3><p>{esc(af["body"].strip())}</p></div>')
-    A('<div class="adv adv-flag"><h3>Save a copy of the policy on the day you follow it</h3>'
-      '<p>Policies here change without announcement, date stamp or changelog. One publisher rewrote its '
-      'whole framework during 2026 with no public notice of any kind. If a rule changes between your '
-      'writing and your submission, the burden of showing what it said falls on you &mdash; and the '
-      'publisher keeps no public record.</p>'
-      '<p class="adv-ev">It is also why this site stores a hash of every source. The snapshot is the receipt.</p></div>')
+    saved = guide["save_policy"]
+    A(f'<div class="adv adv-flag"><h3>{esc(saved["headline"])}</h3>'
+      f'<p>{esc(saved["body"].strip())}</p></div>')
     A('<div class="adv adv-warn"><h3>Confirm in advance only for these</h3>'
       '<p>Where a use is prohibited outright, the work cannot be fixed at submission. These are the ones '
       'worth checking first, with the organisations here that forbid them:</p><ul class="lanes">')
@@ -246,15 +248,15 @@ def build() -> None:
     A('</ul></div>')
     A(f'<div class="adv adv-cite"><h3>Then check <em>which</em> page applies</h3>'
       '<p>A publisher can have more than one live policy, and they need not agree: one organisation here '
-      'has a books policy that forbids what its journals policy permits, sitting behind a URL that ends '
-      '&ldquo;in-the-review-process&rdquo;. Each record below marks the page to cite.</p></div>')
+      'has a books policy that forbids what its journals policy permits. Each record below marks the '
+      'page and audience to cite.</p></div>')
     A('</div></section>')
 
     # 4 ─ consensus
     rows_by = lambda *b: [x for x in con["rows"] if x["band"] in b]
-    BANDS = [("holds", ("universal", "strong"), "Holds everywhere we looked",
-              "Every organisation assessed takes the same stance. Differing on conditions is noted, but "
-              "it is not disagreeing."),
+    BANDS = [("holds", ("universal", "strong"), "Broad agreement",
+              "At least three quarters of assessed organisations take the same stance. Exceptions and "
+              "differences in disclosure requirements are shown below."),
              ("void", ("void",), "Nobody answers this",
               "Every organisation assessed is silent. Not missing data &mdash; a measured, unanimous absence."),
              ("split", ("split",), "Genuinely contested",
@@ -299,11 +301,17 @@ def build() -> None:
                 extra = ""
             locs = (f'<span class="where">{esc(", ".join(x["locations"]).replace("_"," "))}</span>'
                     if x.get("locations") else "")
+            disclosure_note = ""
+            if x.get("disclosure_varies") and x.get("stance") == "allows":
+                labels = {"required": "require disclosure", "encouraged": "encourage disclosure",
+                          "not_required": "exempt this use", "not_addressed": "do not address disclosure"}
+                counts = "; ".join(f'{n} {labels[k]}' for k, n in x["disclosure_counts"].items())
+                disclosure_note = f'<span class="where">Among organisations allowing this use: {esc(counts)}</span>'
             if not x.get("rule"):
                 A(f'<li>{frac}<span class="rule-txt">{esc(x["plain"])} &mdash; '
                   '<em>no majority; organisations are evenly divided</em></span>'
                   f'{extra}</li>'); continue
-            A(f'<li>{frac}<span class="rule-txt">{esc(x["rule"])}</span>{locs}{extra}</li>')
+            A(f'<li>{frac}<span class="rule-txt">{esc(x["rule"])}</span>{disclosure_note}{locs}{extra}</li>')
         A('</ul></div>')
     A('</div></section>')
 
@@ -408,6 +416,7 @@ def build() -> None:
                 for ev in p["evidence"]:
                     prov = ev["quote_provenance"]
                     plabel = {"raw_bytes": "checked against the page",
+                              "browser_dom": "checked against a saved browser extract",
                               "summariser_relayed": "relayed, not directly checked",
                               "unverified": "not verified"}[prov]
                     role = ("" if ev.get("evidence_role", "supports") == "supports"
@@ -432,14 +441,15 @@ def build() -> None:
       'It cannot see what editors actually do. Across seventeen cardiovascular journals studied, fifteen '
       'ran AI-detection software and one said so publicly &mdash; the gap between stated and practised is '
       'real, and this site does not close it.</p></div>')
-    A(f'<div class="card"><h3>Coverage, stated plainly</h3><p>{len(entities)} organisations, of which nine '
-      'are Anglophone and one is not. Journal-level records, funders, preprint servers and content '
+    A(f'<div class="card"><h3>Coverage, stated plainly</h3><p>{len(entities)} organisations. '
+      'Journal-level records, funders, preprint servers and content '
       'licensing are not covered yet. If your funder or institution is not here, that means we have not '
       'looked &mdash; not that it is silent.</p></div>')
-    A(f'<div class="card"><h3>Where the bytes come from</h3><p>{n_src - n_arch} of {n_src} sources are '
-      f'fetched directly. {n_arch} return a block page or a challenge to any automated client, so those '
-      'records are checked against dated Internet Archive captures instead, and each says so. Nothing is '
-      'recorded from memory.</p></div>')
+    A(f'<div class="card"><h3>Where the evidence comes from</h3><p>{n_src - n_arch - n_browser} of {n_src} '
+      f'sources are fetched directly. {n_arch} retain dated Internet Archive captures; their current '
+      f'pages are checked separately and carry a live-check date. {n_browser} uses a saved excerpt '
+      'from the rendered browser page, labelled as such. A fixed archive capture does not establish '
+      'that the live policy is unchanged. Missing live checks enter the monitoring queue.</p></div>')
     A(f'<div class="card"><h3>Contradictions, counted honestly</h3><p>{n_coh} substantive internal '
       f'contradiction{"s" if n_coh != 1 else ""} and {n_meta} dating or tagging '
       f'oddit{"ies" if n_meta != 1 else "y"} across {len(entities)} organisations. A stale HTML title tag '
@@ -489,6 +499,10 @@ def src_li(s: dict, authoritative: bool) -> str:
     url = s.get("url")
     link = (f'<a href="{esc(url)}">{esc(url)}</a>' if url
             else '<span class="nourl">URL not yet confirmed</span>')
+    if s.get("live_url"):
+        link = (f'<a href="{esc(s["live_url"])}">Current policy</a> · '
+                f'<a href="{esc(url)}">Archived evidence</a> '
+                f'<span class="muted">(live page checked {esc(s.get("last_live_verified") or "not yet")})</span>')
     bits = [f'<span class="tag">{esc(s.get("audience", "all"))}</span>',
             f'<span class="tag st-{esc(s["status"])}">{esc(s["status"].replace("_", " "))}</span>',
             f'<span class="tag">{esc(s.get("fetch_method", "http"))}</span>']

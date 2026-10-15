@@ -17,6 +17,8 @@ incomplete, marked as incomplete, rather than waiting until they are perfect.
 
 2. **`quote_provenance` is mandatory and meaningful.**
    `raw_bytes` — you extracted it from the fetched document yourself.
+   `browser_dom` — directly captured rendered text; save and label the extract and its scope.
+   Never describe a browser excerpt as raw HTTP bytes or a full-page capture.
    `summariser_relayed` — it passed through a summarising fetch layer, so it carries
    paraphrase risk and must be re-checked before anyone cites it.
    `unverified` — you have the claim but not the document. Ships marked, never silently.
@@ -86,6 +88,12 @@ Sources marked `browser`, `archive` or `manual` appear in a printed work queue. 
 "fix" this by dropping them — a monitor that silently skips a third of its sources
 reports false confidence.
 
+The queue also persists in `snapshots/review-queue.json`; HTTP failures persist in each
+source's `attempt.json`. Do not overwrite good evidence with a challenge page. A fixed
+archive is historical evidence, not a live freshness check: use its confirmed `live_url`
+and record `last_live_verified` after actually reading it. Browser/manual sources use
+`last_verified`. The monitor requires a current-day live read for these sources.
+
 ## What this does not have yet
 
 - Journal-level records under OUP and CUP (the only two publishers verified to delegate).
@@ -107,7 +115,8 @@ re-checked: a 200 is not evidence of content.
 
 Three sources are PDFs. `fetch.py` extracts their text with pypdf (the first version decoded
 them as UTF-8 and committed raw bytes as "text", which broke the quote gate on 2026-09-01) and
-hashes the raw bytes for drift, because pypdf's extraction differs between versions. The three
+hashes the raw bytes for drift, because pypdf's extraction differs between versions. The five
 archive-checked sources carry the Wayback toolbar, whose capture count changes whenever anyone
-saves the page; `fetch.py` strips it before hashing. Live pages of all three were re-read in a
-real browser on 2026-09-11 and every recorded quote was present verbatim.
+saves the page; `fetch.py` strips it before hashing. Their live pages were re-read on
+2026-10-15. A sixth source, Springer Nature's reviewer guidance, uses a labelled browser
+DOM excerpt because direct HTTP returns a challenge page.

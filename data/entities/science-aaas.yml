@@ -8,11 +8,12 @@ delegates_to_journal: false
 policy_architecture: per_task_matrix
 homepage: https://www.science.org
 notes: Publishes an AI-use matrix grading roughly seventeen use-cases, and, with JAMA Network, one of
-  two publishers here ruling on using AI to respond to reviewers. Research notes record that a November 2023 blog post required
-  full prompt disclosure and barred reviewer AI, and that neither requirement appears on the live page
-  — but that blog post is not among the sources held here, so the comparison is reported as an observation,
-  not evidenced on this site. The live page carries no revision date. Live science.org returns 403 to
-  automated clients; this record is verified against a dated Internet Archive capture.
+  two publishers here ruling on using AI to respond to reviewers. Research notes record that a November
+  2023 blog post required full prompt disclosure and barred reviewer AI, and that neither requirement
+  appears on the live page — but that blog post is not among the sources held here, so the comparison
+  is reported as an observation, not evidenced on this site. The live page carries no revision date. Live
+  science.org returns 403 to automated clients; this record is verified against a dated Internet Archive
+  capture.
 sources:
 - id: editorial-policies
   url: https://web.archive.org/web/20260614001840/https://www.science.org/content/page/science-journals-editorial-policies
@@ -23,21 +24,34 @@ sources:
   fetch_method: archive
   date_source: hash
   stated_date: null
-  last_verified: '2026-09-11'
+  last_verified: '2026-10-15'
   content_sha256: ab8a190e9db099ff710d9cedbd92b167b9b0f99e234048a05bddde04a9f46314
   note: Live science.org returns 403 to every automated client. This is a dated Internet Archive capture.
+    The corresponding live policy was re-read on 15 October 2026; fixed archive captures are retained
+    as evidence and do not establish current live freshness.
   adjudicated_sha256: 71b0012bd7fc6c12a7ced1ca183b3ddddee5dc5d845fae74c7583f88c0dadc52
+  live_url: https://www.science.org/content/page/science-journals-editorial-policies
+  last_live_verified: '2026-10-15'
 policies:
 - axis: reviewer_use
-  permission: prohibited
-  disclosure: not_addressed
-  disclosure_location: []
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - review_report
   rationale: confidentiality
   evidence:
   - source: editorial-policies
     quote: Reviewers may not enter any part of the manuscript into an LLM or other AI tool because this
       could breach the confidentiality of the manuscript.
     quote_provenance: raw_bytes
+  - source: editorial-policies
+    quote: However, reviewers may use AI tools to revise their own writing, provided that the system does
+      not save or use inputs to train the model and that such use is transparently declared in the review.
+    quote_provenance: raw_bytes
+  conditions: Reviewers may revise their own writing if the tool neither saves inputs nor uses them for
+    training, and they disclose this in the review. Entering any manuscript content remains prohibited.
+    This corrects the former blanket prohibition in this record; the exception was already present in
+    the stored source.
 - axis: illustrative_images
   permission: permitted_with_conditions
   disclosure: required
@@ -69,13 +83,12 @@ policies:
   - unspecified
   rationale: accountability
   conditions: The AI-use matrix asks the editorial office to post its own AI tools on the journal website.
-    We looked for such a posting on the editorial-policies page on 2026-08-21 and did not find one;
-    the individual Science-family journal sites were not checked, so this is a gap in our looking, not
-    an established absence.
+    We looked for such a posting on the editorial-policies page on 2026-08-21 and did not find one; the
+    individual Science-family journal sites were not checked, so this is a gap in our looking, not an
+    established absence.
   evidence:
   - source: editorial-policies
     quote: The Science journals use the Crossref Similarity Check service to detect plagiarism and follow
-      guidelines from the Committee on Publication Ethics (COPE) in dealing with cases of suspected
-      plagiarism.
+      guidelines from the Committee on Publication Ethics (COPE) in dealing with cases of suspected plagiarism.
     quote_provenance: raw_bytes
 coherence: []

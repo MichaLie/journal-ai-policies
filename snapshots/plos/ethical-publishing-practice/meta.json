@@ -4,11 +4,11 @@
   "url": "https://journals.plos.org/plosone/s/ethical-publishing-practice",
   "final_url": "https://journals.plos.org/plosone/s/ethical-publishing-practice",
   "http_status": "200",
-  "fetched": "2026-10-01",
-  "sha256": "730203a7bef79f07c189e95be1350c8a7f2aecedbb7de9fc0b1e15f8890b5faa",
+  "fetched": "2026-10-15",
+  "sha256": "22d900942c5a397a77aed89641e689ae4120e9755b7e7275c4204aab7393285f",
   "text_sha256": "7a1eecac7d3d753a8e3f62e9fee79b105088fdbeac527161ff0563042adcd7d0",
   "bytes": 98921,
-  "adjudicated_sha256": "fec072430ca9e3e8d5a619dd72f35a64b099dadcf9223ed12c426b9d832198c6",
+  "adjudicated_sha256": "7a1eecac7d3d753a8e3f62e9fee79b105088fdbeac527161ff0563042adcd7d0",
   "history": [
     {
       "fetched": "2026-08-21",

@@ -8,11 +8,11 @@ delegates_to_journal: false
 policy_architecture: rule_with_exemptions
 homepage: https://www.elsevier.com
 notes: 'Rewrote its journals policy in June 2026, permitting reviewers supportive use of private AI tools.
-  Its BOOKS policy sits behind a URL ending ''in-the-review-process'' and forbids editors using AI to
-  evaluate material — secondary sources routinely quote that page as if it were the journals policy. Cell
-  Press, an Elsevier imprint, is reported to serve superseded 2023 wording; Cell Press is not yet a record
-  here. Re-read on 2026-09-11 against the text signed off on 2026-08-21: the record had captured five
-  axes of a policy that rules on ten. Added writing, research-process, explanatory-image, data-visualisation
+  Its BOOKS policy previously used a URL ending ''in-the-review-process'' and forbids editors using AI
+  to evaluate material — secondary sources routinely quote that page as if it were the journals policy.
+  Cell Press, an Elsevier imprint, is reported to serve superseded 2023 wording; Cell Press is not yet
+  a record here. Re-read on 2026-09-11 against the text signed off on 2026-08-21: the record had captured
+  five axes of a policy that rules on ten. Added writing, research-process, explanatory-image, data-visualisation
   and passing-off axes with quotes, and the 18 August 2026 Elsevier Connect announcement as a source.'
 sources:
 - id: journals-policy
@@ -24,9 +24,9 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: 2026-06
-  last_verified: '2026-09-11'
-  content_sha256: 220011c7fb24006d8082761e9c8f14672f51a472bd84489ba0af1db041a97018
-  adjudicated_sha256: e55a20f95abdd9f565222255e919a91e207b60b30e6249945edf70617828855e
+  last_verified: '2026-10-15'
+  content_sha256: 82dac3e8c323e4567e55c043224050e57ce10c948b35a32febc356ddb2acd6ab
+  adjudicated_sha256: 8977f5de13470c625364eca1e5089b9014fa3ea50dfca04e67b1a7746c959e8c
 - id: books-policy
   url: https://www.elsevier.com/about/policies-and-standards/publishing-ethics-books/generative-ai-policies
   role: policy
@@ -36,13 +36,13 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: 2026-07
-  last_verified: '2026-09-11'
-  content_sha256: 0e97509b66eb141e7f99b3f24314b5261bb2cba0c5cb4914c0f020ce5a21b419
+  last_verified: '2026-10-15'
+  content_sha256: b35986eb69cfdb0f2159ba326beda393bb4e5e46dcad55255dab4ab71d8134f9
   note: The slug says 'review process' but the page is Elsevier's BOOKS policy (13 mentions of book/chapter,
-    zero of 'journal' in lower case). Secondary sources routinely quote it as if it were the journals policy.
-    It is not. Recorded until 2026-09-11 as https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process,
+    zero of 'journal' in lower case). Secondary sources routinely quote it as if it were the journals
+    policy. It is not. Recorded until 2026-09-11 as https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process,
     which now redirects here.
-  adjudicated_sha256: 4dc53275526ff38ae22e0c5125f3319dfd182ba5103f36cf25f930243bbe6138
+  adjudicated_sha256: 93c6664ac466dc44dc26cd3fd5e2b43096293c50274dc8a0adb8117915a66509
 - id: announcement-2026-08
   url: https://www.elsevier.com/connect/updated-generative-ai-policies-for-journals-supporting-responsible-use-while-protecting-trust
   role: announcement
@@ -52,11 +52,11 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: '2026-08-18'
-  last_verified: '2026-09-11'
-  content_sha256: c7d31bf07834145832cc588fdf954ebacc57f7202bc602d6199fa93554bc626f
+  last_verified: '2026-10-15'
+  content_sha256: 15e64dc9a531c846ac13a3189328a225e52e1b83cf690ebc8df3620c5cd5d038
   note: Elsevier Connect post announcing the updated journals policy, dated 18 August 2026; the policy
     page itself states 'Policy updated June 2026'.
-  adjudicated_sha256: 86d090f162405b396d08affa68404ab97aa7655fd051d87b54a71dd29a2ebdb8
+  adjudicated_sha256: 2215164be27a3784450582d18c57b7f4242ab598af8ba2bd00835aaf53378acb
 policies:
 - axis: language_refinement
   permission: permitted
@@ -94,25 +94,25 @@ policies:
     quote: Reviewers should not upload a submitted manuscript or any part of it into an AI tool
     quote_provenance: raw_bytes
   - source: journals-policy
-    quote: AI tools may therefore only be used in a supportive capacity, for example to improve the
-      language and structure of a review report, or to assist with a background literature search
+    quote: AI tools may therefore only be used in a supportive capacity, for example to improve the language
+      and structure of a review report, or to assist with a background literature search
     quote_provenance: raw_bytes
 - axis: publisher_own_use
   permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
   rationale: unstated
-  conditions: The two policies disagree. The journals policy states Elsevier's editors have AI tools
-    for reviewer identification and duplicate detection; the books policy forbids editors using AI to
-    evaluate material at all. Neither tells an author which tools ran on their manuscript.
+  conditions: The two policies disagree. The journals policy states Elsevier's editors have AI tools for
+    reviewer identification and duplicate detection; the books policy forbids editors using AI to evaluate
+    material at all. Neither tells an author which tools ran on their manuscript.
   evidence:
   - source: journals-policy
     quote: Our editors have access to AI tools that assist in identifying relevant reviewers, matching
       the scope of submissions, and detecting duplicate submissions.
     quote_provenance: raw_bytes
   - source: books-policy
-    quote: Generative AI or AI-assisted technologies should not be used by editors to assist in the
-      evaluation of authors' material/ manuscript
+    quote: Generative AI or AI-assisted technologies should not be used by editors to assist in the evaluation
+      of authors' material/ manuscript
     quote_provenance: raw_bytes
     evidence_role: supports
 - axis: due_process
@@ -222,9 +222,9 @@ policies:
       data that were not directly obtained in the research.
     quote_provenance: raw_bytes
 coherence:
-- summary: The books policy forbids editors using AI to evaluate material, while the journals policy
-    states Elsevier's editors have access to AI tools that identify reviewers and match submissions.
-    Both are live; the books policy sits behind a URL ending 'in-the-review-process'.
+- summary: The books policy forbids editors using AI to evaluate material, while the journals policy states
+    Elsevier's editors have access to AI tools that identify reviewers and match submissions. Both are
+    live; the books policy sits behind a URL ending 'in-the-review-process'.
   sources:
   - journals-policy
   - books-policy

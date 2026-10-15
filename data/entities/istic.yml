@@ -24,7 +24,7 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: '2025-12-07'
-  last_verified: '2026-09-11'
+  last_verified: '2026-10-15'
   content_sha256: 5ef3b6926f45646a0507215351451e66fd7dee03a3c45a29e3dd1985e3d34787
   adjudicated_sha256: 5ef3b6926f45646a0507215351451e66fd7dee03a3c45a29e3dd1985e3d34787
 - id: guideline-v2-zh
@@ -36,7 +36,7 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: '2024-09-26'
-  last_verified: '2026-09-11'
+  last_verified: '2026-10-15'
   content_sha256: bab8269736c404ae4136b0f631e8e77b5f50c9151a51896dd0f770b7ccbadcb4
   adjudicated_sha256: bab8269736c404ae4136b0f631e8e77b5f50c9151a51896dd0f770b7ccbadcb4
 policies:

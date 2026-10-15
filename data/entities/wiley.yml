@@ -8,13 +8,13 @@ delegates_to_journal: false
 policy_architecture: per_task_matrix
 homepage: https://www.wiley.com
 notes: 'The per-task requires/does-not-require matrix was announced 28 October 2025 — NOT 2026. Wiley
-  is the only major publisher with a genuine agentic policy, and the only one that discloses its own
-  policy document was AI-drafted. Routes disclosure by purpose rather than to one fixed position.
+  is the only major publisher with a genuine agentic policy, and the only one that discloses its own policy
+  document was AI-drafted. Routes disclosure by purpose rather than to one fixed position.
 
   '
 sources:
 - id: ai-guidelines
-  url: https://www.wiley.com/en-us/publish/article/ai-guidelines/
+  url: https://www.wiley.com/publishing/article/ai-guidelines
   role: policy
   audience: all
   status: current
@@ -22,9 +22,11 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: '2025-10-28'
-  last_verified: '2026-08-21'
-  content_sha256: 46c274126594f5a0d867b05e9d64e6aa2b1bdbe504cd713e28fd3ae5d1e44b17
-  adjudicated_sha256: fb87b39ec81ad39599ed2df2b10599f3f0db36d3585001afc8f9dc43bd06a1b7
+  last_verified: '2026-10-15'
+  content_sha256: 6f83d9f6d14110ecc72e4c819900f3174e8c08ddc94b6730d247acb87bf3ce5a
+  adjudicated_sha256: e2b0e8794377ff4f2ed7766f0b00ba689752238f7d1abe97c143491dbc26228d
+  note: Redirect verified on 15 October 2026 from https://www.wiley.com/en-us/publish/article/ai-guidelines/.
+    Policy-body wording is unchanged; the changed hash reflects site navigation and formatting.
 - id: ethics-guidelines
   url: https://authors.wiley.com/ethics-guidelines/index.html
   role: guidance
@@ -34,9 +36,9 @@ sources:
   fetch_method: http
   date_source: none
   stated_date: null
-  last_verified: '2026-09-11'
-  content_sha256: 504265470e65ec27700061f194ff62b16f70037c3f97ceef8da20072ac6fc7d7
-  adjudicated_sha256: f03bf8053d856346f16bc60ebabd2cc82a91cf2884782723171ca0f73d1cfcd7
+  last_verified: '2026-10-15'
+  content_sha256: b49390a3a9e00094ffb380a7567b836a0a650e8bb79a201d799d066739cf68e0
+  adjudicated_sha256: af1a2dc56c0557b5b5a56a00a8c9ed05054170fc1aaf10d863383db572852979
   note: Recorded until 2026-09-11 as https://authorservices.wiley.com/ethics-guidelines/index.html, which
     now redirects here.
 policies:
@@ -88,8 +90,8 @@ policies:
   disclosure_location:
   - unspecified
   rationale: confidentiality
-  conditions: Organising, prioritising, tone and translation are permitted; uploading the manuscript
-    is not.
+  conditions: Organising, prioritising, tone and translation are permitted; uploading the manuscript is
+    not.
   evidence:
   - source: ai-guidelines
     quote: We require disclosure of AI when it's used for drafting assistance in your reviews.

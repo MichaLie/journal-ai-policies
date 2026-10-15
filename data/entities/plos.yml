@@ -5,14 +5,13 @@ parent: null
 platform: journals.plos.org
 policy_owner: plos
 delegates_to_journal: false
-policy_architecture: prose
+policy_architecture: rule_with_exemptions
 homepage: https://plos.org
-notes: 'The strongest stated enforcement in the corpus — but keyed to NON-compliance, never to the act
-  of disclosing. The only publisher requiring reviewer AI use to be disclosed to authors, and editor
-  AI use to be disclosed in the decision letter. Its own justification for using in-house AI while forbidding
-  reviewers external AI is the clearest statement of the control principle anywhere.
-
-  '
+notes: The AI section changed between the successful fetches of 11 September and 1 October 2026; the 15
+  October fetch matches the 1 October wording. It now expressly exempts language improvements from disclosure,
+  recommends disclosure for translation, and addresses analysis code, figures and AI detection. Reviewer
+  and editor disclosures must be available to authors. The policy distinguishes disclosure from undisclosed
+  or unacceptable use; disclosure itself is not grounds for an adverse decision.
 sources:
 - id: ethical-publishing-practice
   url: https://journals.plos.org/plosone/s/ethical-publishing-practice
@@ -21,65 +20,191 @@ sources:
   status: current
   authoritative: true
   fetch_method: http
-  date_source: none
+  date_source: hash
   stated_date: null
-  last_verified: '2026-08-21'
-  content_sha256: 81d32450f2ec34dc0449a8cd82e5c09525694b7576af4c11f76a2a77860e84f1
-  adjudicated_sha256: fec072430ca9e3e8d5a619dd72f35a64b099dadcf9223ed12c426b9d832198c6
+  last_verified: '2026-10-15'
+  content_sha256: 22d900942c5a397a77aed89641e689ae4120e9755b7e7275c4204aab7393285f
+  adjudicated_sha256: 7a1eecac7d3d753a8e3f62e9fee79b105088fdbeac527161ff0563042adcd7d0
+  note: No revision date is stated. A text change is bounded by the 11 September and 1 October 2026 fetches;
+    it is not dated precisely. Re-read on 15 October.
 policies:
+- axis: language_refinement
+  permission: permitted
+  disclosure: not_required
+  disclosure_location: []
+  rationale: unstated
+  conditions: Exemption covers spelling, grammar and rephrasing for clarity or conciseness; it does not
+    cover generating new intellectual content.
+  evidence:
+  - source: ethical-publishing-practice
+    quote: We do not require disclosure of AI use for language improvements, such as to correct spelling
+      or grammar, or to rephrase content for clarity or conciseness.
+    quote_provenance: raw_bytes
 - axis: writing_drafting
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - methods
+  - acknowledgements
   rationale: accountability
-  conditions: No stated exemption for language editing.
+  conditions: Authors retain responsibility for accuracy and their own ideas. Name the tool, explain its
+    use and affected content, and describe how outputs were checked. Methods and Acknowledgements are
+    alternative locations; figure-specific use belongs in the legend.
   evidence:
   - source: ethical-publishing-practice
-    quote: 'In cases where Large Language Model (LLM) AI tools or technologies contribute to generating
-      text content for a PLOS submission, the article''s authors are responsible for ensuring that:
-      the content is accurate and valid'
+    quote: AI tools may be used to support development or revision of a PLOS submission.
+    quote_provenance: raw_bytes
+  - source: ethical-publishing-practice
+    quote: Any AI use to generate or revise content for a PLOS submission, or to support research reported
+      in a PLOS article, must be clearly disclosed as outlined in the AI use disclosures section of this
+      policy.
+    quote_provenance: raw_bytes
+  - source: ethical-publishing-practice
+    quote: For AI use by authors, disclosures should be in the body of the article, either in a dedicated
+      section of the Methods, in the Acknowledgement section, or in the relevant figure legend(s).
+    quote_provenance: raw_bytes
+- axis: translation
+  permission: permitted
+  disclosure: encouraged
+  disclosure_location:
+  - methods
+  - acknowledgements
+  rationale: quality
+  conditions: Disclosure is recommended to preempt concerns but is expressly not compulsory.
+  evidence:
+  - source: ethical-publishing-practice
+    quote: If an AI tool has been used for language translation, we recommend this be disclosed in order
+      to preempt concerns, but this is not strictly required.
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - figure_caption
+  rationale: accountability
+  conditions: Illustrative figures must not misrepresent primary research, introduce invalid content or
+    put sensitive data at risk. Check accuracy, copyright and licensing; disclose use in the legend.
+  evidence:
+  - source: ethical-publishing-practice
+    quote: For example, authors can use AI-generated figures for illustrative purposes or to summarize
+      results, but should be aware that depending on the AI tool’s terms and conditions any data uploaded
+      to the tool may be ingested into the AI tool’s training dataset and exposed to future users.
+    quote_provenance: raw_bytes
+  - source: ethical-publishing-practice
+    quote: Any AI use for figure preparation should be clearly disclosed in the figure legend.
+    quote_provenance: raw_bytes
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - figure_caption
+  rationale: accountability
+  conditions: Figures summarizing results are allowed only when valid and faithful to the research outputs;
+    disclosure belongs in the legend. This does not permit fabricating or misrepresenting primary data.
+  evidence:
+  - source: ethical-publishing-practice
+    quote: For example, authors can use AI-generated figures for illustrative purposes or to summarize
+      results, but should be aware that depending on the AI tool’s terms and conditions any data uploaded
+      to the tool may be ingested into the AI tool’s training dataset and exposed to future users.
+    quote_provenance: raw_bytes
+  - source: ethical-publishing-practice
+    quote: Any AI use for figure preparation should be clearly disclosed in the figure legend.
+    quote_provenance: raw_bytes
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: Fabrication or misrepresentation of primary research data is a breach of publication ethics.
+  evidence:
+  - source: ethical-publishing-practice
+    quote: The use of AI tools and technologies to fabricate or otherwise misrepresent primary research
+      data is unacceptable and will be considered by PLOS to be a breach of publication ethics.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - acknowledgements
+  rationale: accountability
+  conditions: Includes development of analysis scripts or software code. Name the tools, identify affected
+    study components and explain output validation. Code generation belongs to this research-process axis,
+    which STM excludes from code formatting.
+  evidence:
+  - source: ethical-publishing-practice
+    quote: Any AI use to generate or revise content for a PLOS submission, or to support research reported
+      in a PLOS article, must be clearly disclosed as outlined in the AI use disclosures section of this
+      policy.
+    quote_provenance: raw_bytes
+  - source: ethical-publishing-practice
+    quote: Do I need to disclose AI use for generation or development of analysis scripts or software
+      code? Yes.
     quote_provenance: raw_bytes
 - axis: reviewer_use
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
-  - unspecified
-  rationale: accountability
-  conditions: Disclosure to AUTHORS is mandatory — in the review form for reviewers, in the decision
-    letter for editors.
+  - review_report
+  - decision_letter
+  rationale: confidentiality
+  conditions: Only support that preserves confidentiality and the reviewer’s own intellectual contribution
+    is allowed. AI may not summarize or evaluate submissions. Reviewers disclose in the review form; editors
+    in the decision letter, available to authors.
   evidence:
   - source: ethical-publishing-practice
-    quote: AI tools cannot serve as reviewers or as decision-issuing editors.
+    quote: AI tools can only be used in peer review for purposes that (i) do not place the confidentiality
+      of manuscript content or data at risk, AND (ii) would not misrepresent the reviewer’s or editor’s
+      own intellectual contributions.
+    quote_provenance: raw_bytes
+  - source: ethical-publishing-practice
+    quote: For AI use by editors or reviewers, the disclosure should be in the review form or decision
+      letter so that the information about AI use is available to authors when they receive their decision
+      letter.
     quote_provenance: raw_bytes
 - axis: publisher_own_use
   permission: permitted
   disclosure: not_addressed
   disclosure_location: []
   rationale: control
-  conditions: PLOS states it screens submissions with Crossref Similarity Check. It does not state whether
-    it runs AI-text detection, and does not tell an author what ran on their manuscript.
+  conditions: PLOS describes vetted AI tools for submission checks, screening and integrity investigations.
+    It does not promise an article-specific account of which internal tools ran. Editor decision-letter
+    disclosure is recorded separately under reviewer use.
   evidence:
   - source: ethical-publishing-practice
-    quote: PLOS uses Crossref Similarity Check (powered by iThenticate) to screen submitted content
-      for originality.
+    quote: PLOS uses AI tools to support submission checks, screening, and integrity investigations, and
+      we may also integrate AI tools to further support our publishing processes, communications, and
+      author services.
+    quote_provenance: raw_bytes
+- axis: detection_screening
+  permission: permitted
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: control
+  conditions: The policy expressly allows AI detection at article level; it does not say every submission
+    is screened or promise individual notification.
+  evidence:
+  - source: ethical-publishing-practice
+    quote: We may use available AI detection tools in article-level checks or assessments, and we follow
+      up if editors, reviewers, staff, or readers report concerns about undisclosed AI use.
     quote_provenance: raw_bytes
 - axis: due_process
   permission: not_addressed
   disclosure: not_addressed
   disclosure_location: []
   rationale: accountability
-  conditions: 'No threshold for triggering review, no duty to notify the author, and no route of appeal
-    is stated. The quote records what is granted instead: editorial discretion.'
+  conditions: The AI section offers a journal-office contact for decision or review concerns, and says
+    disclosure itself will not adversely affect the decision. It does not specify an investigation threshold,
+    a notification duty or a formal appeal procedure. These quotations document the limited guidance that
+    is provided.
   evidence:
   - source: ethical-publishing-practice
-    quote: the journal may reject (pre-publication), retract (post-publication), or publish an editorial
-      notice on the article
+    quote: Will AI use disclosures negatively affect my article’s review or editorial decision? No.
     quote_provenance: raw_bytes
     evidence_role: documents_absence
-- axis: detection_screening
-  permission: not_addressed
-  disclosure: not_addressed
-  disclosure_location: []
-  rationale: unstated
+  - source: ethical-publishing-practice
+    quote: If you have concerns about your submission’s decision or review comments, please contact the
+      journal office.
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
 coherence: []

@@ -24,12 +24,17 @@ sources:
   fetch_method: archive
   date_source: stated
   stated_date: '2026-07-29'
-  last_verified: '2026-09-11'
+  last_verified: '2026-10-15'
   content_sha256: ea9289537ae5792a5ca9b7baaa4a7c3a89eb64b58be55181cd24679f19787a08
   note: 'Live jamanetwork.com returns 403 to automated clients. Dated Internet Archive capture; the page
     states ''Last Updated: July 29, 2026''. The previous capture (2026-07-01) lacks the Opinion/Letters/Comments
-    prohibition, so that rule dates from July 2026.'
+    prohibition, so that rule dates from July 2026. The corresponding live policy was re-read on 15 October
+    2026; fixed archive captures are retained as evidence and do not establish current live freshness.
+    The live instructions show Last Updated: September 8, 2026; the July date above describes the retained
+    capture. The recorded AI provisions remain present.'
   adjudicated_sha256: 1b016f4853977c20c81486235f5eca17eb4d2c2147eed6afe8f841fc345e7d32
+  live_url: https://jamanetwork.com/journals/jama/pages/instructions-for-authors
+  last_live_verified: '2026-10-15'
 - id: editorial-2026-08
   url: https://web.archive.org/web/20260812121424/https://jamanetwork.com/journals/jama/fullarticle/2852772
   role: guidance
@@ -39,12 +44,16 @@ sources:
   fetch_method: archive
   date_source: stated
   stated_date: '2026-08-10'
-  last_verified: '2026-09-11'
+  last_verified: '2026-10-15'
   content_sha256: 811a0929d768904195c205f4ed966a1ca979f2623b86f3b89b31d6ce6d19414c
   note: Flanagin A, Perlis RH, Bibbins-Domingo K. Updated Guidance for Author Use of AI in Medical Publication.
     JAMA, published online 2026-08-10, doi:10.1001/jama.2026.16613. Carries the acceptable-use table and
-    the Box reproduced in the instructions. Dated Internet Archive capture.
+    the Box reproduced in the instructions. Dated Internet Archive capture. The corresponding live policy
+    was re-read on 15 October 2026; fixed archive captures are retained as evidence and do not establish
+    current live freshness.
   adjudicated_sha256: 6675f00f71eb78680233c5c34262a033ae41f4e9ce0d0c8a9246d55cd589ad32
+  live_url: https://jamanetwork.com/journals/jama/fullarticle/2852772
+  last_live_verified: '2026-10-15'
 policies:
 - axis: writing_drafting
   permission: permitted_with_conditions

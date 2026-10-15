@@ -22,17 +22,33 @@ from common import SNAPSHOTS, load_entities, today
 
 def main() -> int:
     review, unchanged, new, never, orphans, moved = [], 0, 0, [], [], []
+    retrieval, manual = [], []
+    stamp = today().isoformat()
     known = set()
 
     for e in load_entities():
         for s in e.get("sources", []):
             key = f"{e['id']}/{s['id']}"
             known.add(key)
+            method = s.get("fetch_method", "http")
+            if method in ("archive", "browser", "manual"):
+                verified = s.get("last_live_verified") if method == "archive" else s.get("last_verified")
+                if str(verified or "") < stamp or not s.get("url"):
+                    manual.append({"source": key, "url": s.get("live_url") or s.get("url"),
+                                   "last_live_verified": str(verified) if verified else None,
+                                   "reason": "A current live read is required; stored evidence is historical."})
+            attempt_path = SNAPSHOTS / e["id"] / s["id"] / "attempt.json"
+            if attempt_path.exists():
+                attempt = json.loads(attempt_path.read_text(encoding="utf-8"))
+                if attempt.get("status") == "failed":
+                    retrieval.append({"source": key, **attempt})
             meta_path = SNAPSHOTS / e["id"] / s["id"] / "meta.json"
             if not meta_path.exists():
                 never.append(key)
                 continue
             m = json.loads(meta_path.read_text(encoding="utf-8"))
+            if method == "http" and str(m.get("fetched", "")) < stamp and not any(r["source"] == key for r in retrieval):
+                retrieval.append({"source": key, "status": "stale_fetch", "detail": "No successful fetch today", "url": s.get("url")})
 
             # A URL edited in the YAML would otherwise diff the new page against
             # the old page's hash — a guaranteed false CHANGED, indistinguishable
@@ -67,13 +83,14 @@ def main() -> int:
                 if sd.is_dir() and f"{ed.name}/{sd.name}" not in known:
                     orphans.append(f"{ed.name}/{sd.name}")
 
-    out = {"generated": today().isoformat(), "review_queue": review, "unchanged": unchanged,
+    out = {"generated": stamp, "review_queue": review, "unchanged": unchanged,
            "never_fetched": never, "awaiting_first_signoff": new,
-           "url_changed": moved, "orphan_snapshots": orphans}
+           "url_changed": moved, "orphan_snapshots": orphans,
+           "retrieval_failures": retrieval, "live_review_due": manual}
     SNAPSHOTS.mkdir(parents=True, exist_ok=True)
     (SNAPSHOTS / "review-queue.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
 
-    print(f"\nunchanged {unchanged} · awaiting first sign-off {new} · never fetched {len(never)} "
+    print(f"\nstored hashes unchanged {unchanged} · awaiting first sign-off {new} · never fetched {len(never)} "
           f"· TO REVIEW {len(review)}")
     for r in review:
         print(f"\n  {r['entity_name']} — {r['source']}")
@@ -85,9 +102,16 @@ def main() -> int:
               f"    Re-fetch, then re-read the quotes: the hash chain has been reset.")
     if orphans:
         print(f"\n  orphan snapshots (source removed from YAML): {', '.join(orphans)}")
-    if not review and not moved:
+    for r in retrieval:
+        print(f"\n  RETRIEVAL FAILED {r['source']}: {r.get('detail')}\n    {r.get('url')}")
+    for r in manual:
+        print(f"\n  LIVE REVIEW DUE {r['source']} (last read {r['last_live_verified'] or 'never'})\n    {r['url']}")
+    for key in never:
+        print(f"\n  NO SNAPSHOT {key}")
+    pending = review or moved or new or never or orphans or retrieval or manual
+    if not pending:
         print("\n  Nothing to adjudicate.")
-    return 2 if (review or moved) else 0
+    return 2 if pending else 0
 
 
 if __name__ == "__main__":

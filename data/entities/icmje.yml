@@ -23,8 +23,8 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: 2026-01
-  last_verified: '2026-08-21'
-  content_sha256: 9860a74b5dba3963d40f16a108f80e77b67d21aa6f03ef3c8b52ed131023157d
+  last_verified: '2026-10-15'
+  content_sha256: fa84591da9945b0fbbeed892dca05f916802eb6760014d885794a2c080fbb8c1
   adjudicated_sha256: 84a8d89ddc8dd78af90bb6b06f9bcef247dc7a58198bbf5a082209e46835ff3f
 - id: ai-editors
   url: https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-editors.html
@@ -35,8 +35,8 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: 2026-01
-  last_verified: '2026-08-21'
-  content_sha256: 06d2dde1470800f2bba67d598103efa4b9a73c35f1b4091f49ff4383fb0cc1d3
+  last_verified: '2026-10-15'
+  content_sha256: f98a9af17d985b43cb6f62474c0adacd8dad71fc69f184108f705963e5c0bc15
   adjudicated_sha256: 9156241b91cd5c3a9b464387e97de0a37af7ec8ed4c1ca790a8c4d321df1ec58
 - id: preparing-submission
   url: https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html
@@ -47,8 +47,8 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: 2026-01
-  last_verified: '2026-08-21'
-  content_sha256: abd85d15a93dfe53ed4159d7df6e7f887670ce8a5e808d6e7fdad99a4d339890
+  last_verified: '2026-10-15'
+  content_sha256: 430e4a04f8c14be9d52a34377a039b0d8f5fc8e329b978c36e4fc5c313892052
   adjudicated_sha256: b4269a64e5ab152eb2c8a494c285763768fb89c90ca0c37e7dfbd8c6d9aa53bd
 - id: authors-contributors
   url: https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html
@@ -59,8 +59,8 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: 2026-01
-  last_verified: '2026-08-21'
-  content_sha256: f8abf4cc2a6e53ddbbf2db62482597f3abb2bf4d1fbbb403caebacf167dd0f10
+  last_verified: '2026-10-15'
+  content_sha256: 67533fea7ec1078503193422931fe5f9393ed0a8e974946e995781c168992b45
   adjudicated_sha256: 06293d267f4ad9fb3088ff23686cd19f2cdf5e8d3f035196ac2539b6a2ab17e2
 policies:
 - axis: writing_drafting

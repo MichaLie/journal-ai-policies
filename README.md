@@ -11,10 +11,10 @@ Maintained by [MichaLie](https://github.com/MichaLie). If you work for an organi
 here and think a record is wrong, open an issue. Every record names its source and quotes the
 wording it relies on, so corrections can be specific.
 
-Policies here change without announcement, so the record is re-fetched on a schedule and every
-change is diffed. The git history of `data/entities/` is the dataset.
+Policies can change between checks. Direct sources are re-fetched on a schedule; browser and
+archive-backed sources are queued for a dated live read. The git history of `data/entities/` is the dataset.
 
-Currently 11 organisations, 73 quotes, 19 sources.
+Currently 11 organisations, 89 quotes, 21 sources. Reviewed 15 October 2026.
 
 ## Install
 
@@ -28,14 +28,29 @@ pip install pyyaml jsonschema pypdf
 
 ```bash
 python3 tools/validate.py       # schema, cross-references, every quote re-checked
-python3 tools/fetch.py          # fetch, hash and snapshot every source
+python3 tools/fetch.py          # fetch HTTP sources; queue sources needing a live read
 python3 tools/diff.py           # what changed since last sign-off (exit 2 = review needed)
 python3 tools/build.py          # render docs/
 python3 tools/verify_quotes.py  # quote report on its own
+python3 -m unittest discover -s tests -v  # monitoring failure-path regression tests
 ```
 
 `validate.py` must pass before anything ships. It fails the build if a quote cannot be found in the
 stored copy of its source.
+
+`fetch.py` exits 1 for retrieval failures and 2 for outstanding manual live checks. Failed requests,
+empty extracts and recognised HTTP-200 challenge pages leave the last good snapshot intact and write
+an `attempt.json` receipt. `diff.py` includes those failures, missing snapshots, unsigned sources and
+outstanding live checks in its review queue. An unchanged stored hash is not proof of a successful
+current retrieval. The scheduled workflow records all exit codes, opens a review issue when needed,
+and finishes with a failing status while review or repair remains outstanding.
+
+Fixed archive captures are retained as historical evidence, not fetched again to claim live freshness.
+Read their confirmed `live_url` and update `last_live_verified` only after checking the current text.
+Browser/manual sources use `last_verified` for the same purpose. Each monitoring run requires a live
+check dated that day, so these six sources will need manual attention on future runs. To retain a new
+browser excerpt, save its text and scope in its own snapshot directory, label its provenance
+`browser_dom`, and review its new text hash before updating the record. The monitor never signs it off.
 
 ## Layout
 
@@ -59,7 +74,9 @@ Each tool's docstring explains why it works the way it does.
 ## Editing records
 
 1. Quote policy text; don't paraphrase it.
-2. `raw_bytes` provenance is enforced. The quote must be findable in bytes we hold.
+2. `raw_bytes` provenance is enforced. The quote must be findable in the stored source text.
+   `browser_dom` is a directly captured, labelled browser extract; it is checked against that extract,
+   not presented as a raw HTTP response or a full-page snapshot.
    `summariser_relayed` carries paraphrase risk. `unverified` ships labelled.
 3. Don't guess URLs. If you didn't load it: `url: null`, `status: unconfirmed`.
 4. `not_addressed` means we checked and found nothing. Omitting the axis means we haven't checked.
@@ -77,8 +94,9 @@ Each tool's docstring explains why it works the way it does.
 - Records published policy, not practice.
 - 11 organisations, ten Anglophone. No journal-level records, funders, preprint servers or content
   licensing yet.
-- 5 of 19 sources block automated clients and are checked against dated Internet Archive captures.
-  Each record says so.
+- 5 of 21 sources retain archive evidence with separate current-policy links and live-check dates.
+  One additional source uses a labelled browser DOM excerpt. Automated live coverage is incomplete;
+  the monitor queues these sources for human review instead of reporting them as current.
 - 1 substantive internal contradiction and 3 dating oddities across the eleven organisations.
 - GitHub disables scheduled workflows after 60 days without repository activity. If nobody pushes,
   the monitor stops.

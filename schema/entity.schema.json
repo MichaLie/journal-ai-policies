@@ -177,6 +177,16 @@
               "null"
             ],
             "description": "Why this source is fetched the way it is \u2014 e.g. why an archive capture stands in for a live page."
+          },
+          "live_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Confirmed current page corresponding to a fixed archive capture; checked separately from archive evidence."
+          },
+          "last_live_verified": {
+            "type": "string",
+            "format": "date",
+            "description": "Date a person last read the current page, independent of fetching a dated archive."
           }
         }
       }
@@ -227,7 +237,9 @@
                 "submission_field",
                 "references",
                 "abstract",
-                "unspecified"
+                "unspecified",
+                "review_report",
+                "decision_letter"
               ]
             },
             "description": "Wiley routes by purpose; Springer Nature is silent; Elsevier fixes one position. This field alone discriminates."
@@ -275,9 +287,10 @@
                   "enum": [
                     "raw_bytes",
                     "summariser_relayed",
-                    "unverified"
+                    "unverified",
+                    "browser_dom"
                   ],
-                  "description": "raw_bytes = extracted from the fetched document. summariser_relayed = passed through a summarising fetch layer, so carries paraphrase risk. Different fabrication risk; nobody else distinguishes them."
+                  "description": "raw_bytes = extracted from the fetched document. summariser_relayed = passed through a summarising fetch layer, so carries paraphrase risk. Different fabrication risk; nobody else distinguishes them. browser_dom = copied directly from a rendered browser DOM and checked against that stored extract; not raw response bytes."
                 },
                 "evidence_role": {
                   "enum": [

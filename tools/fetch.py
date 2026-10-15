@@ -126,6 +126,29 @@ def write_atomic(path, data: bytes) -> None:
     os.replace(tmp, path)
 
 
+def response_problem(body: bytes) -> str | None:
+    """An HTTP 200 challenge is not a policy snapshot. Preserve the last good copy."""
+    if is_pdf(body):
+        return None if visible_text(body) else "PDF TEXT EXTRACTION FAILED"
+    raw = body.decode("utf-8", errors="replace")
+    title = re.search(r"<title[^>]*>(.*?)</title>", raw, re.I | re.S)
+    title = html.unescape(title.group(1)).strip().lower() if title else ""
+    if any(marker in title for marker in (
+        "client challenge", "just a moment", "access denied", "attention required",
+        "security verification", "robot or human", "verify you are human",
+    )):
+        return "CHALLENGE PAGE"
+    text = visible_text(body)
+    if not text:
+        return "EMPTY TEXT"
+    if len(text) < 2000 and any(marker in text.lower() for marker in (
+        "enable javascript and cookies to continue", "verify you are human",
+        "checking your browser", "please enable javascript to proceed",
+    )):
+        return "CHALLENGE PAGE"
+    return None
+
+
 def main(argv: list[str]) -> int:
     only = argv[1] if len(argv) > 1 else None
     stamp = today().isoformat()
@@ -138,19 +161,35 @@ def main(argv: list[str]) -> int:
             tag, url = f"{e['id']}/{s['id']}", s.get("url")
             method = s.get("fetch_method", "http")
 
-            if not url:
-                queue.append((tag, "no URL recorded", method)); continue
-            if method == "manual":
-                queue.append((tag, url, method)); continue
-
             outdir = SNAPSHOTS / e["id"] / s["id"]           # isolation, by construction
             outdir.mkdir(parents=True, exist_ok=True)
+            attempt_path = outdir / "attempt.json"
+
+            def record_attempt(status, detail=None):
+                write_atomic(attempt_path, json.dumps({
+                    "attempted": stamp, "url": url, "method": method,
+                    "status": status, "detail": detail,
+                }, indent=2).encode("utf-8"))
+
+            # A fixed archive cannot reveal live changes. These sources need an
+            # explicit dated live read, not another successful fetch of old bytes.
+            if method in ("archive", "browser", "manual") or not url:
+                verified = s.get("last_live_verified") if method == "archive" else s.get("last_verified")
+                if url and str(verified or "") >= stamp:
+                    record_attempt("manually_verified", str(verified))
+                else:
+                    record_attempt("manual_review_due", s.get("live_url") or url)
+                    queue.append((tag, s.get("live_url") or url or "no URL recorded", method))
+                continue
+
             meta_path = outdir / "meta.json"
             prev = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
 
             body, status, final_url = fetch_url(url)
-            if body is None:
-                failed.append((tag, status, url)); continue
+            problem = status if body is None else response_problem(body)
+            if problem:
+                record_attempt("failed", problem)
+                failed.append((tag, problem, url)); continue
 
             digest, tdigest = sha256(body), drift_hash(body)
             adjudicated = s.get("adjudicated_sha256")
@@ -175,6 +214,7 @@ def main(argv: list[str]) -> int:
                 "bytes": len(body), "adjudicated_sha256": adjudicated,
                 "history": history[-20:],
             }, indent=2), encoding="utf-8")
+            record_attempt("fetched", status)
 
             redirected = final_url and final_url.rstrip("/") != url.rstrip("/")
             fetched.append((tag, status, tdigest[:12], state, redirected))
@@ -185,21 +225,21 @@ def main(argv: list[str]) -> int:
         for tag, status, d, state, redir in fetched:
             print(f"  {tag:<{w}}  {status:<8} {d}  {state}" + ("  [REDIRECTED]" if redir else ""))
     if failed:
-        print("\nFAILED — needs an archive URL or a human")
+        print("\nFAILED — previous snapshot retained; needs a retry or a human")
         for tag, status, url in failed:
             print(f"  {tag:<{w}}  {status:<10} {url}")
     if queue:
-        print("\nWORK QUEUE — not attempted")
+        print("\nLIVE REVIEW DUE — archive/browser/manual sources need a dated live read")
         for tag, url, method in queue:
             print(f"  {tag:<{w}}  [{method}]  {url}")
     if failed or queue:
-        print(f"\n  {len(failed) + len(queue)} source(s) unretrieved. Listed, not skipped:")
+        print(f"\n  {len(failed) + len(queue)} source(s) lack a current successful check:")
         print("  a monitor that silently drops sources reports false confidence.")
 
     changed = [f for f in fetched if f[3] == "CHANGED"]
     if changed:
         print(f"\n{len(changed)} source(s) CHANGED — run tools/diff.py.")
-    return 0
+    return 1 if failed else 2 if queue else 0
 
 
 if __name__ == "__main__":

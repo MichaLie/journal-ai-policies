@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-11",
+  "generated": "2026-10-15",
   "rights": "Records CC0. Quoted policy text remains the property of the publishers named and is reproduced as short excerpts for comparison and criticism.",
   "consensus": {
     "min_confident": 4,
@@ -9,21 +9,25 @@
         "axis": "language_refinement",
         "plain": "Using AI to polish your language",
         "title": "Refinement, correction, editing or formatting the manuscript to improve clarity of language",
-        "band": "thin",
-        "n": 3,
+        "band": "universal",
+        "n": 4,
         "total": 11,
         "rule": "Using AI to polish your language is permitted and needs no declaration",
         "agree": 1.0,
         "modal": "permitted",
         "disclosure": "not_required",
+        "disclosure_counts": {
+          "not_required": 4
+        },
+        "disclosure_varies": false,
         "dissenters": [],
         "stance": "allows",
         "conditions_vary": false,
         "locations": [],
-        "provisional": true,
+        "provisional": false,
         "tied": false,
         "stance_counts": {
-          "allows": 3
+          "allows": 4
         },
         "group": "stm"
       },
@@ -38,14 +42,18 @@
         "agree": 0.88,
         "modal": "permitted_with_conditions",
         "disclosure": "required",
+        "disclosure_counts": {
+          "required": 7
+        },
+        "disclosure_varies": false,
         "dissenters": [
           "ISTIC Guideline"
         ],
         "stance": "allows",
         "conditions_vary": false,
         "locations": [
-          "methods",
           "acknowledgements",
+          "methods",
           "dedicated_section"
         ],
         "provisional": false,
@@ -74,18 +82,22 @@
         "plain": "AI-generated illustrative figures",
         "title": "Generation, refinement, correction, editing or formatting of images, diagrams or other figures for illustrative purposes only",
         "band": "split",
-        "n": 5,
+        "n": 6,
         "total": 11,
-        "rule": null,
-        "agree": 0.4,
-        "modal": "not_addressed",
+        "rule": "AI-generated illustrative figures is permitted under conditions and must be declared",
+        "agree": 0.5,
+        "modal": "permitted_with_conditions",
         "disclosure": "required",
+        "disclosure_counts": {
+          "required": 3
+        },
+        "disclosure_varies": false,
         "dissenters": [
-          "Elsevier",
           "JAMA Network",
-          "Science / AAAS"
+          "Springer Nature",
+          "eLife"
         ],
-        "stance": "silent",
+        "stance": "allows",
         "conditions_vary": false,
         "locations": [
           "figure_caption",
@@ -93,10 +105,10 @@
           "submission_field"
         ],
         "provisional": false,
-        "tied": true,
+        "tied": false,
         "stance_counts": {
           "silent": 2,
-          "allows": 2,
+          "allows": 3,
           "forbids": 1
         },
         "group": "stm"
@@ -106,23 +118,29 @@
         "plain": "Using AI to translate your manuscript",
         "title": "Translation of manuscript text for the purpose of publishing",
         "band": "universal",
-        "n": 4,
+        "n": 5,
         "total": 11,
-        "rule": "Using AI to translate your manuscript is permitted under conditions and must be declared",
+        "rule": "Using AI to translate your manuscript is permitted and disclosure requirements vary",
         "agree": 1.0,
-        "modal": "permitted_with_conditions",
+        "modal": "permitted",
         "disclosure": "required",
+        "disclosure_counts": {
+          "required": 3,
+          "encouraged": 2
+        },
+        "disclosure_varies": true,
         "dissenters": [],
         "stance": "allows",
         "conditions_vary": true,
         "locations": [
           "acknowledgements",
-          "dedicated_section"
+          "dedicated_section",
+          "methods"
         ],
         "provisional": false,
         "tied": false,
         "stance_counts": {
-          "allows": 4
+          "allows": 5
         },
         "group": "stm"
       },
@@ -130,26 +148,30 @@
         "axis": "data_visualisation",
         "plain": "AI-generated charts of your real data",
         "title": "Generation, refinement, correction, editing or formatting of visualisations of research data or results",
-        "band": "thin",
-        "n": 3,
+        "band": "strong",
+        "n": 4,
         "total": 11,
         "rule": "AI-generated charts of your real data is permitted under conditions and must be declared",
-        "agree": 0.67,
+        "agree": 0.75,
         "modal": "permitted_with_conditions",
         "disclosure": "required",
+        "disclosure_counts": {
+          "required": 3
+        },
+        "disclosure_varies": false,
         "dissenters": [
           "ISTIC Guideline"
         ],
         "stance": "allows",
         "conditions_vary": false,
         "locations": [
-          "methods",
-          "figure_caption"
+          "figure_caption",
+          "methods"
         ],
-        "provisional": true,
+        "provisional": false,
         "tied": false,
         "stance_counts": {
-          "allows": 2,
+          "allows": 3,
           "forbids": 1
         },
         "group": "stm"
@@ -165,6 +187,10 @@
         "agree": 1.0,
         "modal": "permitted_with_conditions",
         "disclosure": "not_addressed",
+        "disclosure_counts": {
+          "not_addressed": 1
+        },
+        "disclosure_varies": false,
         "dissenters": [],
         "stance": "allows",
         "conditions_vary": false,
@@ -187,6 +213,10 @@
         "agree": 0.33,
         "modal": "not_addressed",
         "disclosure": "not_addressed",
+        "disclosure_counts": {
+          "not_addressed": 1
+        },
+        "disclosure_varies": false,
         "dissenters": [
           "JAMA Network",
           "STM Association"
@@ -207,21 +237,23 @@
         "axis": "passing_off",
         "plain": "Presenting AI output as original data",
         "title": "Presentation of any kind of content generated by AI tools as though it were original research data/results from non-machine sources",
-        "band": "thin",
-        "n": 3,
+        "band": "universal",
+        "n": 4,
         "total": 11,
         "rule": "Presenting AI output as original data is prohibited",
         "agree": 1.0,
         "modal": "prohibited",
         "disclosure": null,
+        "disclosure_counts": {},
+        "disclosure_varies": false,
         "dissenters": [],
         "stance": "forbids",
         "conditions_vary": false,
         "locations": [],
-        "provisional": true,
+        "provisional": false,
         "tied": false,
         "stance_counts": {
-          "forbids": 3
+          "forbids": 4
         },
         "group": "stm"
       },
@@ -230,24 +262,29 @@
         "plain": "Using AI to run the research itself",
         "title": "AI used in the research process itself — analysis, code execution, agentic workflows",
         "band": "strong",
-        "n": 6,
+        "n": 7,
         "total": 11,
         "rule": "Using AI to run the research itself is permitted under conditions and must be declared",
-        "agree": 0.83,
+        "agree": 0.86,
         "modal": "permitted_with_conditions",
         "disclosure": "required",
+        "disclosure_counts": {
+          "required": 6
+        },
+        "disclosure_varies": false,
         "dissenters": [
           "STM Association"
         ],
         "stance": "allows",
         "conditions_vary": false,
         "locations": [
-          "methods"
+          "methods",
+          "acknowledgements"
         ],
         "provisional": false,
         "tied": false,
         "stance_counts": {
-          "allows": 5,
+          "allows": 6,
           "silent": 1
         },
         "group": "extended"
@@ -256,27 +293,33 @@
         "axis": "reviewer_use",
         "plain": "Using AI when you peer-review",
         "title": "Use of AI by peer reviewers",
-        "band": "split",
+        "band": "strong",
         "n": 8,
         "total": 11,
         "rule": "Using AI when you peer-review is permitted under conditions and must be declared",
-        "agree": 0.62,
+        "agree": 0.75,
         "modal": "permitted_with_conditions",
         "disclosure": "required",
+        "disclosure_counts": {
+          "required": 6
+        },
+        "disclosure_varies": false,
         "dissenters": [
           "ISTIC Guideline",
-          "JAMA Network",
-          "Science / AAAS"
+          "JAMA Network"
         ],
         "stance": "allows",
         "conditions_vary": true,
-        "locations": [],
+        "locations": [
+          "review_report",
+          "decision_letter"
+        ],
         "provisional": false,
         "tied": false,
         "stance_counts": {
-          "allows": 5,
+          "allows": 6,
           "silent": 1,
-          "forbids": 2
+          "forbids": 1
         },
         "group": "extended"
       },
@@ -287,10 +330,15 @@
         "band": "strong",
         "n": 8,
         "total": 11,
-        "rule": "The publisher running AI on your manuscript is permitted under conditions",
+        "rule": "The publisher running AI on your manuscript is permitted under conditions and disclosure requirements vary",
         "agree": 0.88,
         "modal": "permitted_with_conditions",
         "disclosure": "not_addressed",
+        "disclosure_counts": {
+          "not_addressed": 4,
+          "required": 3
+        },
+        "disclosure_varies": true,
         "dissenters": [
           "Wiley"
         ],
@@ -309,21 +357,28 @@
         "axis": "detection_screening",
         "plain": "Being screened by AI detectors",
         "title": "Whether AI-text or integrity screening is run, and whether authors are told",
-        "band": "void",
+        "band": "strong",
         "n": 5,
         "total": 11,
-        "rule": null,
-        "agree": 1.0,
+        "rule": "Being screened by AI detectors is not addressed",
+        "agree": 0.8,
         "modal": "not_addressed",
-        "disclosure": null,
-        "dissenters": [],
+        "disclosure": "not_addressed",
+        "disclosure_counts": {
+          "not_addressed": 1
+        },
+        "disclosure_varies": false,
+        "dissenters": [
+          "PLOS"
+        ],
         "stance": "silent",
         "conditions_vary": false,
         "locations": [],
         "provisional": false,
         "tied": false,
         "stance_counts": {
-          "silent": 5
+          "silent": 4,
+          "allows": 1
         },
         "group": "extended"
       },
@@ -338,6 +393,8 @@
         "agree": 1.0,
         "modal": "not_addressed",
         "disclosure": null,
+        "disclosure_counts": {},
+        "disclosure_varies": false,
         "dissenters": [],
         "stance": "silent",
         "conditions_vary": false,
@@ -360,6 +417,10 @@
         "agree": 1.0,
         "modal": "permitted_with_conditions",
         "disclosure": "required",
+        "disclosure_counts": {
+          "required": 3
+        },
+        "disclosure_varies": false,
         "dissenters": [],
         "stance": "allows",
         "conditions_vary": true,
@@ -389,12 +450,12 @@
       }
     ],
     "counts": {
-      "thin": 6,
-      "strong": 3,
+      "universal": 3,
+      "strong": 6,
       "unassessed": 2,
-      "split": 2,
-      "universal": 1,
-      "void": 2
+      "split": 1,
+      "thin": 3,
+      "void": 1
     }
   },
   "axes": {
@@ -540,10 +601,12 @@
           "fetch_method": "archive",
           "date_source": "stated",
           "stated_date": "2023-02-13",
-          "last_verified": "2026-09-11",
+          "last_verified": "2026-10-15",
           "content_sha256": "2e0265f39fd552f0ed366257bba436ce2563cc7bca03e7c0d6147f4a224e429a",
-          "note": "Live publicationethics.org returns 403 to every automated client (Cloudflare). This is a dated Internet Archive capture of the same page.",
-          "adjudicated_sha256": "d0fbfe374dd619a3e749fcf515428e8a93f7534c64c44ad1015949e218682b90"
+          "note": "Live publicationethics.org returns 403 to every automated client (Cloudflare). This is a dated Internet Archive capture of the same page. The corresponding live policy was re-read on 15 October 2026; fixed archive captures are retained as evidence and do not establish current live freshness.",
+          "adjudicated_sha256": "d0fbfe374dd619a3e749fcf515428e8a93f7534c64c44ad1015949e218682b90",
+          "live_url": "https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools",
+          "last_live_verified": "2026-10-15"
         }
       ],
       "policies": [
@@ -627,8 +690,8 @@
           "fetch_method": "http",
           "date_source": "none",
           "stated_date": null,
-          "last_verified": "2026-09-11",
-          "content_sha256": "e0ead2d067a69eedd8b7f9f0fddf9a893277009592014682eb7569c8721d9396",
+          "last_verified": "2026-10-15",
+          "content_sha256": "7ab4646f61689310602a312d1ac44d1c5b501a286b069201474a42a34ce89586",
           "adjudicated_sha256": "4f55901fed920706827d050ab75caea7cb79758ea26a1ef8898c9d9ad5023320",
           "note": "Since at least 2026-09-11 the URL redirects to the eLife submission system (elife-rp.msubmit.net, reviewer instructions); text unchanged. The public reviewer-guide URL is kept as the citable address."
         }
@@ -684,7 +747,7 @@
       "delegates_to_journal": false,
       "policy_architecture": "rule_with_exemptions",
       "homepage": "https://www.elsevier.com",
-      "notes": "Rewrote its journals policy in June 2026, permitting reviewers supportive use of private AI tools. Its BOOKS policy sits behind a URL ending 'in-the-review-process' and forbids editors using AI to evaluate material — secondary sources routinely quote that page as if it were the journals policy. Cell Press, an Elsevier imprint, is reported to serve superseded 2023 wording; Cell Press is not yet a record here. Re-read on 2026-09-11 against the text signed off on 2026-08-21: the record had captured five axes of a policy that rules on ten. Added writing, research-process, explanatory-image, data-visualisation and passing-off axes with quotes, and the 18 August 2026 Elsevier Connect announcement as a source.",
+      "notes": "Rewrote its journals policy in June 2026, permitting reviewers supportive use of private AI tools. Its BOOKS policy previously used a URL ending 'in-the-review-process' and forbids editors using AI to evaluate material — secondary sources routinely quote that page as if it were the journals policy. Cell Press, an Elsevier imprint, is reported to serve superseded 2023 wording; Cell Press is not yet a record here. Re-read on 2026-09-11 against the text signed off on 2026-08-21: the record had captured five axes of a policy that rules on ten. Added writing, research-process, explanatory-image, data-visualisation and passing-off axes with quotes, and the 18 August 2026 Elsevier Connect announcement as a source.",
       "sources": [
         {
           "id": "journals-policy",
@@ -696,9 +759,9 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2026-06",
-          "last_verified": "2026-09-11",
-          "content_sha256": "220011c7fb24006d8082761e9c8f14672f51a472bd84489ba0af1db041a97018",
-          "adjudicated_sha256": "e55a20f95abdd9f565222255e919a91e207b60b30e6249945edf70617828855e"
+          "last_verified": "2026-10-15",
+          "content_sha256": "82dac3e8c323e4567e55c043224050e57ce10c948b35a32febc356ddb2acd6ab",
+          "adjudicated_sha256": "8977f5de13470c625364eca1e5089b9014fa3ea50dfca04e67b1a7746c959e8c"
         },
         {
           "id": "books-policy",
@@ -710,10 +773,10 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2026-07",
-          "last_verified": "2026-09-11",
-          "content_sha256": "0e97509b66eb141e7f99b3f24314b5261bb2cba0c5cb4914c0f020ce5a21b419",
+          "last_verified": "2026-10-15",
+          "content_sha256": "b35986eb69cfdb0f2159ba326beda393bb4e5e46dcad55255dab4ab71d8134f9",
           "note": "The slug says 'review process' but the page is Elsevier's BOOKS policy (13 mentions of book/chapter, zero of 'journal' in lower case). Secondary sources routinely quote it as if it were the journals policy. It is not. Recorded until 2026-09-11 as https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process, which now redirects here.",
-          "adjudicated_sha256": "4dc53275526ff38ae22e0c5125f3319dfd182ba5103f36cf25f930243bbe6138"
+          "adjudicated_sha256": "93c6664ac466dc44dc26cd3fd5e2b43096293c50274dc8a0adb8117915a66509"
         },
         {
           "id": "announcement-2026-08",
@@ -725,10 +788,10 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2026-08-18",
-          "last_verified": "2026-09-11",
-          "content_sha256": "c7d31bf07834145832cc588fdf954ebacc57f7202bc602d6199fa93554bc626f",
+          "last_verified": "2026-10-15",
+          "content_sha256": "15e64dc9a531c846ac13a3189328a225e52e1b83cf690ebc8df3620c5cd5d038",
           "note": "Elsevier Connect post announcing the updated journals policy, dated 18 August 2026; the policy page itself states 'Policy updated June 2026'.",
-          "adjudicated_sha256": "86d090f162405b396d08affa68404ab97aa7655fd051d87b54a71dd29a2ebdb8"
+          "adjudicated_sha256": "2215164be27a3784450582d18c57b7f4242ab598af8ba2bd00835aaf53378acb"
         }
       ],
       "policies": [
@@ -978,8 +1041,8 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2026-01",
-          "last_verified": "2026-08-21",
-          "content_sha256": "9860a74b5dba3963d40f16a108f80e77b67d21aa6f03ef3c8b52ed131023157d",
+          "last_verified": "2026-10-15",
+          "content_sha256": "fa84591da9945b0fbbeed892dca05f916802eb6760014d885794a2c080fbb8c1",
           "adjudicated_sha256": "84a8d89ddc8dd78af90bb6b06f9bcef247dc7a58198bbf5a082209e46835ff3f"
         },
         {
@@ -992,8 +1055,8 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2026-01",
-          "last_verified": "2026-08-21",
-          "content_sha256": "06d2dde1470800f2bba67d598103efa4b9a73c35f1b4091f49ff4383fb0cc1d3",
+          "last_verified": "2026-10-15",
+          "content_sha256": "f98a9af17d985b43cb6f62474c0adacd8dad71fc69f184108f705963e5c0bc15",
           "adjudicated_sha256": "9156241b91cd5c3a9b464387e97de0a37af7ec8ed4c1ca790a8c4d321df1ec58"
         },
         {
@@ -1006,8 +1069,8 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2026-01",
-          "last_verified": "2026-08-21",
-          "content_sha256": "abd85d15a93dfe53ed4159d7df6e7f887670ce8a5e808d6e7fdad99a4d339890",
+          "last_verified": "2026-10-15",
+          "content_sha256": "430e4a04f8c14be9d52a34377a039b0d8f5fc8e329b978c36e4fc5c313892052",
           "adjudicated_sha256": "b4269a64e5ab152eb2c8a494c285763768fb89c90ca0c37e7dfbd8c6d9aa53bd"
         },
         {
@@ -1020,8 +1083,8 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2026-01",
-          "last_verified": "2026-08-21",
-          "content_sha256": "f8abf4cc2a6e53ddbbf2db62482597f3abb2bf4d1fbbb403caebacf167dd0f10",
+          "last_verified": "2026-10-15",
+          "content_sha256": "67533fea7ec1078503193422931fe5f9393ed0a8e974946e995781c168992b45",
           "adjudicated_sha256": "06293d267f4ad9fb3088ff23686cd19f2cdf5e8d3f035196ac2539b6a2ab17e2"
         }
       ],
@@ -1134,7 +1197,7 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2025-12-07",
-          "last_verified": "2026-09-11",
+          "last_verified": "2026-10-15",
           "content_sha256": "5ef3b6926f45646a0507215351451e66fd7dee03a3c45a29e3dd1985e3d34787",
           "adjudicated_sha256": "5ef3b6926f45646a0507215351451e66fd7dee03a3c45a29e3dd1985e3d34787"
         },
@@ -1148,7 +1211,7 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2024-09-26",
-          "last_verified": "2026-09-11",
+          "last_verified": "2026-10-15",
           "content_sha256": "bab8269736c404ae4136b0f631e8e77b5f50c9151a51896dd0f770b7ccbadcb4",
           "adjudicated_sha256": "bab8269736c404ae4136b0f631e8e77b5f50c9151a51896dd0f770b7ccbadcb4"
         }
@@ -1263,10 +1326,12 @@
           "fetch_method": "archive",
           "date_source": "stated",
           "stated_date": "2026-07-29",
-          "last_verified": "2026-09-11",
+          "last_verified": "2026-10-15",
           "content_sha256": "ea9289537ae5792a5ca9b7baaa4a7c3a89eb64b58be55181cd24679f19787a08",
-          "note": "Live jamanetwork.com returns 403 to automated clients. Dated Internet Archive capture; the page states 'Last Updated: July 29, 2026'. The previous capture (2026-07-01) lacks the Opinion/Letters/Comments prohibition, so that rule dates from July 2026.",
-          "adjudicated_sha256": "1b016f4853977c20c81486235f5eca17eb4d2c2147eed6afe8f841fc345e7d32"
+          "note": "Live jamanetwork.com returns 403 to automated clients. Dated Internet Archive capture; the page states 'Last Updated: July 29, 2026'. The previous capture (2026-07-01) lacks the Opinion/Letters/Comments prohibition, so that rule dates from July 2026. The corresponding live policy was re-read on 15 October 2026; fixed archive captures are retained as evidence and do not establish current live freshness. The live instructions show Last Updated: September 8, 2026; the July date above describes the retained capture. The recorded AI provisions remain present.",
+          "adjudicated_sha256": "1b016f4853977c20c81486235f5eca17eb4d2c2147eed6afe8f841fc345e7d32",
+          "live_url": "https://jamanetwork.com/journals/jama/pages/instructions-for-authors",
+          "last_live_verified": "2026-10-15"
         },
         {
           "id": "editorial-2026-08",
@@ -1278,10 +1343,12 @@
           "fetch_method": "archive",
           "date_source": "stated",
           "stated_date": "2026-08-10",
-          "last_verified": "2026-09-11",
+          "last_verified": "2026-10-15",
           "content_sha256": "811a0929d768904195c205f4ed966a1ca979f2623b86f3b89b31d6ce6d19414c",
-          "note": "Flanagin A, Perlis RH, Bibbins-Domingo K. Updated Guidance for Author Use of AI in Medical Publication. JAMA, published online 2026-08-10, doi:10.1001/jama.2026.16613. Carries the acceptable-use table and the Box reproduced in the instructions. Dated Internet Archive capture.",
-          "adjudicated_sha256": "6675f00f71eb78680233c5c34262a033ae41f4e9ce0d0c8a9246d55cd589ad32"
+          "note": "Flanagin A, Perlis RH, Bibbins-Domingo K. Updated Guidance for Author Use of AI in Medical Publication. JAMA, published online 2026-08-10, doi:10.1001/jama.2026.16613. Carries the acceptable-use table and the Box reproduced in the instructions. Dated Internet Archive capture. The corresponding live policy was re-read on 15 October 2026; fixed archive captures are retained as evidence and do not establish current live freshness.",
+          "adjudicated_sha256": "6675f00f71eb78680233c5c34262a033ae41f4e9ce0d0c8a9246d55cd589ad32",
+          "live_url": "https://jamanetwork.com/journals/jama/fullarticle/2852772",
+          "last_live_verified": "2026-10-15"
         }
       ],
       "policies": [
@@ -1498,9 +1565,9 @@
       "platform": "journals.plos.org",
       "policy_owner": "plos",
       "delegates_to_journal": false,
-      "policy_architecture": "prose",
+      "policy_architecture": "rule_with_exemptions",
       "homepage": "https://plos.org",
-      "notes": "The strongest stated enforcement in the corpus — but keyed to NON-compliance, never to the act of disclosing. The only publisher requiring reviewer AI use to be disclosed to authors, and editor AI use to be disclosed in the decision letter. Its own justification for using in-house AI while forbidding reviewers external AI is the clearest statement of the control principle anywhere.\n",
+      "notes": "The AI section changed between the successful fetches of 11 September and 1 October 2026; the 15 October fetch matches the 1 October wording. It now expressly exempts language improvements from disclosure, recommends disclosure for translation, and addresses analysis code, figures and AI detection. Reviewer and editor disclosures must be available to authors. The policy distinguishes disclosure from undisclosed or unacceptable use; disclosure itself is not grounds for an adverse decision.",
       "sources": [
         {
           "id": "ethical-publishing-practice",
@@ -1510,27 +1577,154 @@
           "status": "current",
           "authoritative": true,
           "fetch_method": "http",
-          "date_source": "none",
+          "date_source": "hash",
           "stated_date": null,
-          "last_verified": "2026-08-21",
-          "content_sha256": "81d32450f2ec34dc0449a8cd82e5c09525694b7576af4c11f76a2a77860e84f1",
-          "adjudicated_sha256": "fec072430ca9e3e8d5a619dd72f35a64b099dadcf9223ed12c426b9d832198c6"
+          "last_verified": "2026-10-15",
+          "content_sha256": "22d900942c5a397a77aed89641e689ae4120e9755b7e7275c4204aab7393285f",
+          "adjudicated_sha256": "7a1eecac7d3d753a8e3f62e9fee79b105088fdbeac527161ff0563042adcd7d0",
+          "note": "No revision date is stated. A text change is bounded by the 11 September and 1 October 2026 fetches; it is not dated precisely. Re-read on 15 October."
         }
       ],
       "policies": [
+        {
+          "axis": "language_refinement",
+          "permission": "permitted",
+          "disclosure": "not_required",
+          "disclosure_location": [],
+          "rationale": "unstated",
+          "conditions": "Exemption covers spelling, grammar and rephrasing for clarity or conciseness; it does not cover generating new intellectual content.",
+          "evidence": [
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "We do not require disclosure of AI use for language improvements, such as to correct spelling or grammar, or to rephrase content for clarity or conciseness.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
         {
           "axis": "writing_drafting",
           "permission": "permitted_with_conditions",
           "disclosure": "required",
           "disclosure_location": [
-            "methods"
+            "methods",
+            "acknowledgements"
           ],
           "rationale": "accountability",
-          "conditions": "No stated exemption for language editing.",
+          "conditions": "Authors retain responsibility for accuracy and their own ideas. Name the tool, explain its use and affected content, and describe how outputs were checked. Methods and Acknowledgements are alternative locations; figure-specific use belongs in the legend.",
           "evidence": [
             {
               "source": "ethical-publishing-practice",
-              "quote": "In cases where Large Language Model (LLM) AI tools or technologies contribute to generating text content for a PLOS submission, the article's authors are responsible for ensuring that: the content is accurate and valid",
+              "quote": "AI tools may be used to support development or revision of a PLOS submission.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "Any AI use to generate or revise content for a PLOS submission, or to support research reported in a PLOS article, must be clearly disclosed as outlined in the AI use disclosures section of this policy.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "For AI use by authors, disclosures should be in the body of the article, either in a dedicated section of the Methods, in the Acknowledgement section, or in the relevant figure legend(s).",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "translation",
+          "permission": "permitted",
+          "disclosure": "encouraged",
+          "disclosure_location": [
+            "methods",
+            "acknowledgements"
+          ],
+          "rationale": "quality",
+          "conditions": "Disclosure is recommended to preempt concerns but is expressly not compulsory.",
+          "evidence": [
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "If an AI tool has been used for language translation, we recommend this be disclosed in order to preempt concerns, but this is not strictly required.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "illustrative_images",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "figure_caption"
+          ],
+          "rationale": "accountability",
+          "conditions": "Illustrative figures must not misrepresent primary research, introduce invalid content or put sensitive data at risk. Check accuracy, copyright and licensing; disclose use in the legend.",
+          "evidence": [
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "For example, authors can use AI-generated figures for illustrative purposes or to summarize results, but should be aware that depending on the AI tool’s terms and conditions any data uploaded to the tool may be ingested into the AI tool’s training dataset and exposed to future users.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "Any AI use for figure preparation should be clearly disclosed in the figure legend.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "data_visualisation",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "figure_caption"
+          ],
+          "rationale": "accountability",
+          "conditions": "Figures summarizing results are allowed only when valid and faithful to the research outputs; disclosure belongs in the legend. This does not permit fabricating or misrepresenting primary data.",
+          "evidence": [
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "For example, authors can use AI-generated figures for illustrative purposes or to summarize results, but should be aware that depending on the AI tool’s terms and conditions any data uploaded to the tool may be ingested into the AI tool’s training dataset and exposed to future users.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "Any AI use for figure preparation should be clearly disclosed in the figure legend.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "passing_off",
+          "permission": "prohibited",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "accountability",
+          "conditions": "Fabrication or misrepresentation of primary research data is a breach of publication ethics.",
+          "evidence": [
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "The use of AI tools and technologies to fabricate or otherwise misrepresent primary research data is unacceptable and will be considered by PLOS to be a breach of publication ethics.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "research_process_ai",
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "methods",
+            "acknowledgements"
+          ],
+          "rationale": "accountability",
+          "conditions": "Includes development of analysis scripts or software code. Name the tools, identify affected study components and explain output validation. Code generation belongs to this research-process axis, which STM excludes from code formatting.",
+          "evidence": [
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "Any AI use to generate or revise content for a PLOS submission, or to support research reported in a PLOS article, must be clearly disclosed as outlined in the AI use disclosures section of this policy.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "Do I need to disclose AI use for generation or development of analysis scripts or software code? Yes.",
               "quote_provenance": "raw_bytes"
             }
           ]
@@ -1540,14 +1734,20 @@
           "permission": "permitted_with_conditions",
           "disclosure": "required",
           "disclosure_location": [
-            "unspecified"
+            "review_report",
+            "decision_letter"
           ],
-          "rationale": "accountability",
-          "conditions": "Disclosure to AUTHORS is mandatory — in the review form for reviewers, in the decision letter for editors.",
+          "rationale": "confidentiality",
+          "conditions": "Only support that preserves confidentiality and the reviewer’s own intellectual contribution is allowed. AI may not summarize or evaluate submissions. Reviewers disclose in the review form; editors in the decision letter, available to authors.",
           "evidence": [
             {
               "source": "ethical-publishing-practice",
-              "quote": "AI tools cannot serve as reviewers or as decision-issuing editors.",
+              "quote": "AI tools can only be used in peer review for purposes that (i) do not place the confidentiality of manuscript content or data at risk, AND (ii) would not misrepresent the reviewer’s or editor’s own intellectual contributions.",
+              "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "For AI use by editors or reviewers, the disclosure should be in the review form or decision letter so that the information about AI use is available to authors when they receive their decision letter.",
               "quote_provenance": "raw_bytes"
             }
           ]
@@ -1558,11 +1758,26 @@
           "disclosure": "not_addressed",
           "disclosure_location": [],
           "rationale": "control",
-          "conditions": "PLOS states it screens submissions with Crossref Similarity Check. It does not state whether it runs AI-text detection, and does not tell an author what ran on their manuscript.",
+          "conditions": "PLOS describes vetted AI tools for submission checks, screening and integrity investigations. It does not promise an article-specific account of which internal tools ran. Editor decision-letter disclosure is recorded separately under reviewer use.",
           "evidence": [
             {
               "source": "ethical-publishing-practice",
-              "quote": "PLOS uses Crossref Similarity Check (powered by iThenticate) to screen submitted content for originality.",
+              "quote": "PLOS uses AI tools to support submission checks, screening, and integrity investigations, and we may also integrate AI tools to further support our publishing processes, communications, and author services.",
+              "quote_provenance": "raw_bytes"
+            }
+          ]
+        },
+        {
+          "axis": "detection_screening",
+          "permission": "permitted",
+          "disclosure": "not_addressed",
+          "disclosure_location": [],
+          "rationale": "control",
+          "conditions": "The policy expressly allows AI detection at article level; it does not say every submission is screened or promise individual notification.",
+          "evidence": [
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "We may use available AI detection tools in article-level checks or assessments, and we follow up if editors, reviewers, staff, or readers report concerns about undisclosed AI use.",
               "quote_provenance": "raw_bytes"
             }
           ]
@@ -1573,22 +1788,21 @@
           "disclosure": "not_addressed",
           "disclosure_location": [],
           "rationale": "accountability",
-          "conditions": "No threshold for triggering review, no duty to notify the author, and no route of appeal is stated. The quote records what is granted instead: editorial discretion.",
+          "conditions": "The AI section offers a journal-office contact for decision or review concerns, and says disclosure itself will not adversely affect the decision. It does not specify an investigation threshold, a notification duty or a formal appeal procedure. These quotations document the limited guidance that is provided.",
           "evidence": [
             {
               "source": "ethical-publishing-practice",
-              "quote": "the journal may reject (pre-publication), retract (post-publication), or publish an editorial notice on the article",
+              "quote": "Will AI use disclosures negatively affect my article’s review or editorial decision? No.",
+              "quote_provenance": "raw_bytes",
+              "evidence_role": "documents_absence"
+            },
+            {
+              "source": "ethical-publishing-practice",
+              "quote": "If you have concerns about your submission’s decision or review comments, please contact the journal office.",
               "quote_provenance": "raw_bytes",
               "evidence_role": "documents_absence"
             }
           ]
-        },
-        {
-          "axis": "detection_screening",
-          "permission": "not_addressed",
-          "disclosure": "not_addressed",
-          "disclosure_location": [],
-          "rationale": "unstated"
         }
       ],
       "coherence": []
@@ -1615,26 +1829,36 @@
           "fetch_method": "archive",
           "date_source": "hash",
           "stated_date": null,
-          "last_verified": "2026-09-11",
+          "last_verified": "2026-10-15",
           "content_sha256": "ab8a190e9db099ff710d9cedbd92b167b9b0f99e234048a05bddde04a9f46314",
-          "note": "Live science.org returns 403 to every automated client. This is a dated Internet Archive capture.",
-          "adjudicated_sha256": "71b0012bd7fc6c12a7ced1ca183b3ddddee5dc5d845fae74c7583f88c0dadc52"
+          "note": "Live science.org returns 403 to every automated client. This is a dated Internet Archive capture. The corresponding live policy was re-read on 15 October 2026; fixed archive captures are retained as evidence and do not establish current live freshness.",
+          "adjudicated_sha256": "71b0012bd7fc6c12a7ced1ca183b3ddddee5dc5d845fae74c7583f88c0dadc52",
+          "live_url": "https://www.science.org/content/page/science-journals-editorial-policies",
+          "last_live_verified": "2026-10-15"
         }
       ],
       "policies": [
         {
           "axis": "reviewer_use",
-          "permission": "prohibited",
-          "disclosure": "not_addressed",
-          "disclosure_location": [],
+          "permission": "permitted_with_conditions",
+          "disclosure": "required",
+          "disclosure_location": [
+            "review_report"
+          ],
           "rationale": "confidentiality",
           "evidence": [
             {
               "source": "editorial-policies",
               "quote": "Reviewers may not enter any part of the manuscript into an LLM or other AI tool because this could breach the confidentiality of the manuscript.",
               "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "editorial-policies",
+              "quote": "However, reviewers may use AI tools to revise their own writing, provided that the system does not save or use inputs to train the model and that such use is transparently declared in the review.",
+              "quote_provenance": "raw_bytes"
             }
-          ]
+          ],
+          "conditions": "Reviewers may revise their own writing if the tool neither saves inputs nor uses them for training, and they disclose this in the review. Entering any manuscript content remains prohibited. This corrects the former blanket prohibition in this record; the exception was already present in the stored source."
         },
         {
           "axis": "illustrative_images",
@@ -1699,7 +1923,7 @@
       "delegates_to_journal": false,
       "policy_architecture": "risk_tiered",
       "homepage": "https://www.nature.com",
-      "notes": "Moved to a Green/Amber/Red risk framework during 2026. No announcement was found in its press-release index (2015-2026, 190+ items) or its three company blogs, and the live page carries no date stamp and no changelog. Live nature.com serves automated clients a Cloudflare interstitial with HTTP 200, so this record is verified against a dated Internet Archive capture. Its peer-review policy page could not be retrieved from any source and is therefore not recorded here.",
+      "notes": "The Green/Amber/Red framework is present in the 4 August 2026 archive capture and remains on the live Nature Portfolio page. An official announcement dated 10 September 2026 has now been located; that date is not the framework’s first observed appearance. The separate reviewer guidance is also recorded. The Nature Portfolio policy page itself has no revision date.",
       "sources": [
         {
           "id": "nature-portfolio-ai",
@@ -1711,10 +1935,42 @@
           "fetch_method": "archive",
           "date_source": "hash",
           "stated_date": null,
-          "last_verified": "2026-09-11",
+          "last_verified": "2026-10-15",
           "content_sha256": "ca382659e24ce4f54fd1c4f56ed2187a08c8b69270ba3079ce48de35d68e5227",
-          "note": "Live nature.com returns a Cloudflare 'Client Challenge' interstitial with HTTP 200 to automated clients — a 3KB block page, not the policy. This is a dated Internet Archive capture of the real page.",
-          "adjudicated_sha256": "c37e42eea5b6d4ef5bef504aa6d80f58137f90895d2b2ecc918f50df225ec7fb"
+          "note": "Live nature.com returns a Cloudflare 'Client Challenge' interstitial with HTTP 200 to automated clients — a 3KB block page, not the policy. This is a dated Internet Archive capture of the real page. The corresponding live policy was re-read on 15 October 2026; fixed archive captures are retained as evidence and do not establish current live freshness.",
+          "adjudicated_sha256": "c37e42eea5b6d4ef5bef504aa6d80f58137f90895d2b2ecc918f50df225ec7fb",
+          "live_url": "https://www.nature.com/nature-portfolio/editorial-policies/ai",
+          "last_live_verified": "2026-10-15"
+        },
+        {
+          "id": "announcement-2026-09",
+          "url": "https://group.springernature.com/de/group/media/press-releases/sn-policy-responsible-ai-use/53209516",
+          "role": "announcement",
+          "audience": "all",
+          "status": "current",
+          "authoritative": false,
+          "fetch_method": "http",
+          "date_source": "stated",
+          "stated_date": "2026-09-10",
+          "last_verified": "2026-10-15",
+          "note": "Official announcement. The framework predates the announcement in the archive evidence held here.",
+          "content_sha256": "b113ca9b046f79622c18550e70863ba3b16b5e0aaec630fb2047e21d5ca20f17",
+          "adjudicated_sha256": "e79a7e33b463af23977ba1f5dd4364018a96a90dcca87edeceabc60336ccb239"
+        },
+        {
+          "id": "peer-review-ai",
+          "url": "https://www.springernature.com/de/policies/editorial-policies/using-ai-in-peer-review",
+          "role": "guidance",
+          "audience": "reviewers",
+          "status": "current",
+          "authoritative": true,
+          "fetch_method": "browser",
+          "date_source": "none",
+          "stated_date": null,
+          "last_verified": "2026-10-15",
+          "note": "Direct HTTP returns a challenge page. The stored text is a browser DOM excerpt of the visible risk-framework table, captured on 15 October 2026; it is not raw HTTP bytes or a full-page snapshot.",
+          "content_sha256": null,
+          "adjudicated_sha256": "d9af514ed88f51113a79375c391d1066e3b2ad24068fda018075c09bb96e9ee2"
         }
       ],
       "policies": [
@@ -1755,15 +2011,20 @@
           "permission": "permitted_with_conditions",
           "disclosure": "required",
           "disclosure_location": [
-            "unspecified"
+            "review_report"
           ],
           "rationale": "accountability",
-          "conditions": "Amber tier permits evaluative use with oversight; delegating the review itself is Red.",
+          "conditions": "AI may support communication and exploration under human oversight. Reviewers retain independent expert judgement and must not delegate critique or disclose manuscript content to unsecured or public tools. The reviewer guidance specifies declaration in the report.",
           "evidence": [
             {
               "source": "nature-portfolio-ai",
               "quote": "Delegating peer review to an LLM",
               "quote_provenance": "raw_bytes"
+            },
+            {
+              "source": "peer-review-ai",
+              "quote": "Describe how AI was used, confirm independent judgement and take accountability for all content in report",
+              "quote_provenance": "browser_dom"
             }
           ]
         },
@@ -1833,7 +2094,7 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2025-09",
-          "last_verified": "2026-09-11",
+          "last_verified": "2026-10-15",
           "content_sha256": "5dd3f74ed8d9347cc13249ebf943af2586fb7234e9b2c25ccd30f44e0a81bd8c",
           "adjudicated_sha256": "5dd3f74ed8d9347cc13249ebf943af2586fb7234e9b2c25ccd30f44e0a81bd8c"
         }
@@ -1939,7 +2200,7 @@
       "sources": [
         {
           "id": "ai-guidelines",
-          "url": "https://www.wiley.com/en-us/publish/article/ai-guidelines/",
+          "url": "https://www.wiley.com/publishing/article/ai-guidelines",
           "role": "policy",
           "audience": "all",
           "status": "current",
@@ -1947,9 +2208,10 @@
           "fetch_method": "http",
           "date_source": "stated",
           "stated_date": "2025-10-28",
-          "last_verified": "2026-08-21",
-          "content_sha256": "46c274126594f5a0d867b05e9d64e6aa2b1bdbe504cd713e28fd3ae5d1e44b17",
-          "adjudicated_sha256": "fb87b39ec81ad39599ed2df2b10599f3f0db36d3585001afc8f9dc43bd06a1b7"
+          "last_verified": "2026-10-15",
+          "content_sha256": "6f83d9f6d14110ecc72e4c819900f3174e8c08ddc94b6730d247acb87bf3ce5a",
+          "adjudicated_sha256": "e2b0e8794377ff4f2ed7766f0b00ba689752238f7d1abe97c143491dbc26228d",
+          "note": "Redirect verified on 15 October 2026 from https://www.wiley.com/en-us/publish/article/ai-guidelines/. Policy-body wording is unchanged; the changed hash reflects site navigation and formatting."
         },
         {
           "id": "ethics-guidelines",
@@ -1961,9 +2223,9 @@
           "fetch_method": "http",
           "date_source": "none",
           "stated_date": null,
-          "last_verified": "2026-09-11",
-          "content_sha256": "504265470e65ec27700061f194ff62b16f70037c3f97ceef8da20072ac6fc7d7",
-          "adjudicated_sha256": "f03bf8053d856346f16bc60ebabd2cc82a91cf2884782723171ca0f73d1cfcd7",
+          "last_verified": "2026-10-15",
+          "content_sha256": "b49390a3a9e00094ffb380a7567b836a0a650e8bb79a201d799d066739cf68e0",
+          "adjudicated_sha256": "af1a2dc56c0557b5b5a56a00a8c9ed05054170fc1aaf10d863383db572852979",
           "note": "Recorded until 2026-09-11 as https://authorservices.wiley.com/ethics-guidelines/index.html, which now redirects here."
         }
       ],

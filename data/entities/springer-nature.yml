@@ -7,11 +7,10 @@ policy_owner: springer-nature
 delegates_to_journal: false
 policy_architecture: risk_tiered
 homepage: https://www.nature.com
-notes: Moved to a Green/Amber/Red risk framework during 2026. No announcement was found in its press-release
-  index (2015-2026, 190+ items) or its three company blogs, and the live page carries no date stamp
-  and no changelog. Live nature.com serves automated clients a Cloudflare interstitial with HTTP 200,
-  so this record is verified against a dated Internet Archive capture. Its peer-review policy page could
-  not be retrieved from any source and is therefore not recorded here.
+notes: The Green/Amber/Red framework is present in the 4 August 2026 archive capture and remains on the
+  live Nature Portfolio page. An official announcement dated 10 September 2026 has now been located; that
+  date is not the framework’s first observed appearance. The separate reviewer guidance is also recorded.
+  The Nature Portfolio policy page itself has no revision date.
 sources:
 - id: nature-portfolio-ai
   url: https://web.archive.org/web/20260804231015/https://www.nature.com/nature-portfolio/editorial-policies/ai
@@ -22,12 +21,42 @@ sources:
   fetch_method: archive
   date_source: hash
   stated_date: null
-  last_verified: '2026-09-11'
+  last_verified: '2026-10-15'
   content_sha256: ca382659e24ce4f54fd1c4f56ed2187a08c8b69270ba3079ce48de35d68e5227
   note: Live nature.com returns a Cloudflare 'Client Challenge' interstitial with HTTP 200 to automated
-    clients — a 3KB block page, not the policy. This is a dated Internet Archive capture of the real
-    page.
+    clients — a 3KB block page, not the policy. This is a dated Internet Archive capture of the real page.
+    The corresponding live policy was re-read on 15 October 2026; fixed archive captures are retained
+    as evidence and do not establish current live freshness.
   adjudicated_sha256: c37e42eea5b6d4ef5bef504aa6d80f58137f90895d2b2ecc918f50df225ec7fb
+  live_url: https://www.nature.com/nature-portfolio/editorial-policies/ai
+  last_live_verified: '2026-10-15'
+- id: announcement-2026-09
+  url: https://group.springernature.com/de/group/media/press-releases/sn-policy-responsible-ai-use/53209516
+  role: announcement
+  audience: all
+  status: current
+  authoritative: false
+  fetch_method: http
+  date_source: stated
+  stated_date: '2026-09-10'
+  last_verified: '2026-10-15'
+  note: Official announcement. The framework predates the announcement in the archive evidence held here.
+  content_sha256: b113ca9b046f79622c18550e70863ba3b16b5e0aaec630fb2047e21d5ca20f17
+  adjudicated_sha256: e79a7e33b463af23977ba1f5dd4364018a96a90dcca87edeceabc60336ccb239
+- id: peer-review-ai
+  url: https://www.springernature.com/de/policies/editorial-policies/using-ai-in-peer-review
+  role: guidance
+  audience: reviewers
+  status: current
+  authoritative: true
+  fetch_method: browser
+  date_source: none
+  stated_date: null
+  last_verified: '2026-10-15'
+  note: Direct HTTP returns a challenge page. The stored text is a browser DOM excerpt of the visible
+    risk-framework table, captured on 15 October 2026; it is not raw HTTP bytes or a full-page snapshot.
+  content_sha256: null
+  adjudicated_sha256: d9af514ed88f51113a79375c391d1066e3b2ad24068fda018075c09bb96e9ee2
 policies:
 - axis: translation
   permission: permitted
@@ -57,13 +86,19 @@ policies:
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
-  - unspecified
+  - review_report
   rationale: accountability
-  conditions: Amber tier permits evaluative use with oversight; delegating the review itself is Red.
+  conditions: AI may support communication and exploration under human oversight. Reviewers retain independent
+    expert judgement and must not delegate critique or disclose manuscript content to unsecured or public
+    tools. The reviewer guidance specifies declaration in the report.
   evidence:
   - source: nature-portfolio-ai
     quote: Delegating peer review to an LLM
     quote_provenance: raw_bytes
+  - source: peer-review-ai
+    quote: Describe how AI was used, confirm independent judgement and take accountability for all content
+      in report
+    quote_provenance: browser_dom
 - axis: illustrative_images
   permission: not_addressed
   disclosure: not_addressed

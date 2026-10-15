@@ -37,7 +37,7 @@ def strip(s: str) -> str:
 
 def collect_unverified() -> list[dict]:
     """Machine-readable form of the report, for validate.py.
-    Only quotes claiming byte-level provenance are enforced: a quote explicitly
+    Every claimed source match, including browser DOM extracts, is enforced: a quote explicitly
     marked `unverified` is an honest declaration, not an error."""
     out = []
     for row in _rows():
@@ -138,7 +138,10 @@ def main() -> int:
         print(f"{flag}{eid:<{w1}}  {ax:<{w2}}  {src:<{w3}}  {verdict}")
         if not verdict.startswith("VERIFIED"):
             print(f"{'':<{w1+w2+w3+7}}  “{snippet}…”")
-    print(f"\n{len(rows)} quotes · {len(rows)-bad} verified against held bytes · {bad} NOT verified")
+    browser = sum(r[-1] == "browser_dom" for r in rows)
+    print(f"\n{len(rows)} quotes · {len(rows)-bad} verified against stored source text · {bad} NOT verified")
+    if browser:
+        print(f"{browser} quote(s) use labelled browser DOM extracts, not raw response bytes.")
     return 1 if bad else 0
 
 

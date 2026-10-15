@@ -70,6 +70,7 @@ def compute(entities: list[dict], axes: dict, axes_raw: dict) -> dict:
         allowing = [p for _, p in recs if p["permission"] in
                     ("permitted", "permitted_with_conditions")]
         disc_modal = None
+        dc = Counter()
         if allowing:
             dc = Counter(p["disclosure"] for p in allowing)
             disc_modal = dc.most_common(1)[0][0]
@@ -108,7 +109,9 @@ def compute(entities: list[dict], axes: dict, axes_raw: dict) -> dict:
             rule = f"{plain[k]} {PERM_RULE[modal]}"
             # Only attach a disclosure clause when the modal stance ALLOWS the
             # activity. "Prohibited and must be declared" is not a sentence.
-            if modal_stance == "allows" and disc_modal and DISC_RULE[disc_modal]:
+            if modal_stance == "allows" and len(dc) > 1:
+                rule += " and disclosure requirements vary"
+            elif modal_stance == "allows" and disc_modal and DISC_RULE[disc_modal]:
                 rule += f" {DISC_RULE[disc_modal]}"
 
         # Where does the modal disclosure go, among those that require it?
@@ -124,6 +127,7 @@ def compute(entities: list[dict], axes: dict, axes_raw: dict) -> dict:
             "axis": k, "plain": plain[k], "title": axes[k]["title"], "band": band,
             "n": n_assessed, "total": len(entities), "rule": rule,
             "agree": round(agree, 2), "modal": modal, "disclosure": disc_modal,
+            "disclosure_counts": dict(dc), "disclosure_varies": len(dc) > 1,
             "dissenters": dissenters, "stance": modal_stance,
             "conditions_vary": cond_split,
             "locations": [l for l, _ in locs.most_common(3)],

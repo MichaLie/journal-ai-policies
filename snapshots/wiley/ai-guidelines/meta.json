@@ -1,14 +1,14 @@
 {
   "entity": "wiley",
   "source": "ai-guidelines",
-  "url": "https://www.wiley.com/en-us/publish/article/ai-guidelines/",
+  "url": "https://www.wiley.com/publishing/article/ai-guidelines",
   "final_url": "https://www.wiley.com/publishing/article/ai-guidelines",
   "http_status": "200",
-  "fetched": "2026-10-01",
-  "sha256": "d9985dd81751bcae17652052b4426f7705a3c9a8a77e62c12a54f682da054029",
-  "text_sha256": "9a18c5964f9f53a1e695cfb1e52f6e6b6b29338146e8419eb3abef8e5f75875a",
-  "bytes": 642213,
-  "adjudicated_sha256": "fb87b39ec81ad39599ed2df2b10599f3f0db36d3585001afc8f9dc43bd06a1b7",
+  "fetched": "2026-10-15",
+  "sha256": "6f83d9f6d14110ecc72e4c819900f3174e8c08ddc94b6730d247acb87bf3ce5a",
+  "text_sha256": "e2b0e8794377ff4f2ed7766f0b00ba689752238f7d1abe97c143491dbc26228d",
+  "bytes": 644437,
+  "adjudicated_sha256": "e2b0e8794377ff4f2ed7766f0b00ba689752238f7d1abe97c143491dbc26228d",
   "history": [
     {
       "fetched": "2026-08-21",
@@ -19,6 +19,12 @@
       "fetched": "2026-10-01",
       "sha256": "d9985dd81751bcae17652052b4426f7705a3c9a8a77e62c12a54f682da054029",
       "text_sha256": "9a18c5964f9f53a1e695cfb1e52f6e6b6b29338146e8419eb3abef8e5f75875a"
+    },
+    {
+      "fetched": "2026-10-15",
+      "sha256": "6f83d9f6d14110ecc72e4c819900f3174e8c08ddc94b6730d247acb87bf3ce5a",
+      "text_sha256": "e2b0e8794377ff4f2ed7766f0b00ba689752238f7d1abe97c143491dbc26228d"
     }
-  ]
+  ],
+  "requested_url": "https://www.wiley.com/en-us/publish/article/ai-guidelines/"
 }
