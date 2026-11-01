@@ -1,11 +1,92 @@
 {
-  "generated": "2026-10-15",
-  "review_queue": [],
-  "unchanged": 21,
+  "generated": "2026-11-01",
+  "review_queue": [
+    {
+      "entity": "elsevier",
+      "entity_name": "Elsevier",
+      "source": "journals-policy",
+      "url": "https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals",
+      "signed_off": "8977f5de1347",
+      "now": "089404563935",
+      "fetched": "2026-11-01",
+      "axes_to_recheck": [
+        "data_visualisation",
+        "due_process",
+        "illustrative_images",
+        "language_refinement",
+        "passing_off",
+        "publisher_own_use",
+        "research_process_ai",
+        "reviewer_use",
+        "translation",
+        "writing_drafting"
+      ]
+    },
+    {
+      "entity": "elsevier",
+      "entity_name": "Elsevier",
+      "source": "books-policy",
+      "url": "https://www.elsevier.com/about/policies-and-standards/publishing-ethics-books/generative-ai-policies",
+      "signed_off": "93c6664ac466",
+      "now": "62a2906f7f73",
+      "fetched": "2026-11-01",
+      "axes_to_recheck": [
+        "publisher_own_use"
+      ]
+    },
+    {
+      "entity": "elsevier",
+      "entity_name": "Elsevier",
+      "source": "announcement-2026-08",
+      "url": "https://www.elsevier.com/connect/updated-generative-ai-policies-for-journals-supporting-responsible-use-while-protecting-trust",
+      "signed_off": "2215164be27a",
+      "now": "81f15063439c",
+      "fetched": "2026-11-01",
+      "axes_to_recheck": []
+    }
+  ],
+  "unchanged": 18,
   "never_fetched": [],
   "awaiting_first_signoff": 0,
   "url_changed": [],
   "orphan_snapshots": [],
   "retrieval_failures": [],
-  "live_review_due": []
+  "live_review_due": [
+    {
+      "source": "cope/position-authorship-ai",
+      "url": "https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools",
+      "last_live_verified": "2026-10-15",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "jama-network/instructions-for-authors",
+      "url": "https://jamanetwork.com/journals/jama/pages/instructions-for-authors",
+      "last_live_verified": "2026-10-15",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "jama-network/editorial-2026-08",
+      "url": "https://jamanetwork.com/journals/jama/fullarticle/2852772",
+      "last_live_verified": "2026-10-15",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "science-aaas/editorial-policies",
+      "url": "https://www.science.org/content/page/science-journals-editorial-policies",
+      "last_live_verified": "2026-10-15",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "springer-nature/nature-portfolio-ai",
+      "url": "https://www.nature.com/nature-portfolio/editorial-policies/ai",
+      "last_live_verified": "2026-10-15",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "springer-nature/peer-review-ai",
+      "url": "https://www.springernature.com/de/policies/editorial-policies/using-ai-in-peer-review",
+      "last_live_verified": "2026-10-15",
+      "reason": "A current live read is required; stored evidence is historical."
+    }
+  ]
 }

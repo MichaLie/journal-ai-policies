@@ -4,10 +4,10 @@
   "url": "https://www.elsevier.com/about/policies-and-standards/publishing-ethics-books/generative-ai-policies",
   "final_url": "https://www.elsevier.com/about/policies-and-standards/publishing-ethics-books/generative-ai-policies",
   "http_status": "200",
-  "fetched": "2026-10-15",
-  "sha256": "b35986eb69cfdb0f2159ba326beda393bb4e5e46dcad55255dab4ab71d8134f9",
-  "text_sha256": "93c6664ac466dc44dc26cd3fd5e2b43096293c50274dc8a0adb8117915a66509",
-  "bytes": 276867,
+  "fetched": "2026-11-01",
+  "sha256": "df5b3d501ebe556a7e2827866b6d4135472092e1af841e17714652e639d0c2b8",
+  "text_sha256": "62a2906f7f73c96d7189c20ddff464d06e1940a324195f031c697e7941b77275",
+  "bytes": 277460,
   "adjudicated_sha256": "93c6664ac466dc44dc26cd3fd5e2b43096293c50274dc8a0adb8117915a66509",
   "history": [
     {
@@ -29,6 +29,11 @@
       "fetched": "2026-10-15",
       "sha256": "b35986eb69cfdb0f2159ba326beda393bb4e5e46dcad55255dab4ab71d8134f9",
       "text_sha256": "93c6664ac466dc44dc26cd3fd5e2b43096293c50274dc8a0adb8117915a66509"
+    },
+    {
+      "fetched": "2026-11-01",
+      "sha256": "df5b3d501ebe556a7e2827866b6d4135472092e1af841e17714652e639d0c2b8",
+      "text_sha256": "62a2906f7f73c96d7189c20ddff464d06e1940a324195f031c697e7941b77275"
     }
   ]
 }

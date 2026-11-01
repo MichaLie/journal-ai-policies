@@ -4,10 +4,10 @@
   "url": "https://reviewer.elifesciences.org/reviewer-guide/review-process",
   "final_url": "https://elife-rp.msubmit.net/cgi-bin/main.plex?form_type=display_rev_instructions#process",
   "http_status": "200",
-  "fetched": "2026-10-15",
-  "sha256": "7ab4646f61689310602a312d1ac44d1c5b501a286b069201474a42a34ce89586",
+  "fetched": "2026-11-01",
+  "sha256": "60151f5a3e104163ef58a02928bafb7bf67cecaf2ad57a4cd878f1c74b5c5c6a",
   "text_sha256": "4f55901fed920706827d050ab75caea7cb79758ea26a1ef8898c9d9ad5023320",
-  "bytes": 44716,
+  "bytes": 44892,
   "adjudicated_sha256": "4f55901fed920706827d050ab75caea7cb79758ea26a1ef8898c9d9ad5023320",
   "history": [
     {
