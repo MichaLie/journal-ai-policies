@@ -1,0 +1,36 @@
+id: nsf
+name: National Science Foundation
+type: funder
+parent: null
+platform: null
+policy_owner: nsf
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+notes: Proposal and review material cannot be uploaded to non-approved tools. Public-information support
+  is distinct from delegation of evaluation.
+sources:
+- id: ai-guidance
+  url: https://www.nsf.gov/policies/ai/merit-review
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: b4ac2e9a84ebe24228bd4bbae6c49e05d1272e5d7d35447a9610a542c479906e
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies:
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: Proposal and review material cannot be uploaded to non-approved tools. Public-information
+    support is distinct from delegation of evaluation.
+  evidence:
+  - source: ai-guidance
+    quote: NSF reviewers may share publicly available information with current generation generative AI
+      tools.
+    quote_provenance: raw_bytes
+coherence: []

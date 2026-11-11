@@ -1,0 +1,20 @@
+id: isc
+name: ISC AI disclosure initiative
+type: normative_body
+policy_owner: isc
+notes: Vancouver Standard initiative with COPE, STM and GYA. Consultation in progress, not an adopted
+  standard. No permission verdicts are inferred from survey questions.
+sources:
+- id: official-information
+  url: https://council.science/our-work/ai-disclosure-in-research/
+  role: information
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: 6554a9555636deed52c80834d33a2d85ec631c92cbf0fa9c04b2b4892264a670
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies: []
+coherence: []

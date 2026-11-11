@@ -1,0 +1,36 @@
+id: doaj
+name: Directory of Open Access Journals
+type: normative_body
+parent: null
+platform: null
+policy_owner: doaj
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+notes: Guidance for journal AI policies; supports disclosed editing, not generated assessments.
+sources:
+- id: ai-guidance
+  url: https://doaj.org/apply/guide/
+  role: guidance
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: efe1f8581424ff7b8170ccadc1bbffca0d567839e4ee575218a63be7c9a1292d
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies:
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: encouraged
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Guidance for journal AI policies; supports disclosed editing, not generated assessments.
+  evidence:
+  - source: ai-guidance
+    quote: Peer reviewers and editors should not use generative AI to create their assessments, due to
+      risks such as breaches of confidentiality, superficial and non-specific feedback, bias, hidden prompts
+      , and false information such as fake references; editing and rewriting may be acceptable if disclosed.
+    quote_provenance: raw_bytes
+coherence: []

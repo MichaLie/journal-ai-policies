@@ -1,0 +1,11 @@
+{
+  "name": "Springer Nature writing",
+  "url": "https://www.springernature.com/gp/policies/editorial-policies/ai-manuscript-preparation",
+  "capture_method": "browser_dom",
+  "capture_scope": "Selected visible policy passages, captured 11 November 2026. Excerpt, not a full page or raw HTTP response.",
+  "sha256": null,
+  "text_sha256": "c380245399fe6996cbda5da6a0f16590ac5dfc18b0d3dcf0fa45541d434f2561",
+  "entity": "springer-nature",
+  "source": "manuscript-preparation",
+  "fetched": "2026-11-11"
+}

@@ -68,13 +68,11 @@ incomplete, marked as incomplete, rather than waiting until they are perfect.
 - `id` is kebab-case and stable forever — it is the join key across the time series.
 - `platform` ≠ `policy_owner`. EMBO Press sits on Springer Nature Link and sets its own
   policy; conflating them invents an inheritance that does not exist.
-- `delegates_to_journal: true` **only** where journals genuinely deviate. Verified true
-  for OUP and CUP; false for every other publisher checked. Do not set it speculatively —
+- `delegates_to_journal: true` **only** where journals genuinely deviate. Verify this from the named source; Taylor & Francis also explicitly allows journal-specific limits. Do not set it speculatively —
   it multiplies the maintenance surface by the number of journals.
 - Exactly one `authoritative: true` source per audience. That flag powers "cite this,
   not that", which is the feature authors actually need.
-- Record `coherence` entries whenever an entity's own sources disagree. Seven entities
-  already do. This is the headline finding, not a defect to tidy away.
+- Record `coherence` entries whenever an entity's own sources disagree. Keep differences in product or activity scope out of the contradiction count.
 
 ## Fetching
 
@@ -96,11 +94,9 @@ and record `last_live_verified` after actually reading it. Browser/manual source
 
 ## What this does not have yet
 
-- Journal-level records under OUP and CUP (the only two publishers verified to delegate).
+- Broader journal-level coverage under publishers that delegate.
 - Funders (DFG, ERC, NWO, NIH), preprint servers, and the content-licensing axis.
-- Cell Press, SAGE, Frontiers, MDPI, Taylor & Francis — all recorded in the reconnaissance,
-  none yet a record here. Note that four of them appear in earlier drafts of the
-  contradiction list; they must not be cited until they are actual records.
+- Further task-level coverage for newly added publishers; a source record does not imply every activity has been assessed.
 - Roughly half the possible organisation×axis cells. The rest render as `—`, which means
   *not assessed*, never *silent*.
 

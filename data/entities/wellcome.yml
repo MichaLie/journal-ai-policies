@@ -1,0 +1,37 @@
+id: wellcome
+name: Wellcome
+type: funder
+parent: null
+platform: null
+policy_owner: wellcome
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+notes: Grant applications, not journal articles. Minimal language, translation and formatting uses are
+  exempt.
+sources:
+- id: ai-guidance
+  url: https://wellcome.org/research-funding/guidance/policies-grant-conditions/use-of-generative-ai
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: 6fa06f38653823ac312ba9dfa21aae849b3caa9a8ba7ec5686e89a7df3c30c73
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Grant applications, not journal articles. Minimal language, translation and formatting uses
+    are exempt.
+  evidence:
+  - source: ai-guidance
+    quote: Applicants for Wellcome funding can use generative AI tools when preparing a grant application
+      but must tell us about any substantive use of generative AI on their application form.
+    quote_provenance: raw_bytes
+coherence: []

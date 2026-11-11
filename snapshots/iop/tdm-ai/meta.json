@@ -1,0 +1,10 @@
+{
+  "name": "iop-licensing",
+  "url": "https://ioppublishing.org/legal/textanddataminingpolicy/",
+  "final_url": "https://ioppublishing.org/legal/textanddataminingpolicy/",
+  "sha256": "7af8f5424a7af14c4b689f44c7aabbb18e087983338cedfe20318b126c9dded8",
+  "text_sha256": "c1723b3e41ae72048b571a20ccd962ec4303f78996120469c71290130fefe123",
+  "entity": "iop",
+  "source": "tdm-ai",
+  "fetched": "2026-11-11"
+}

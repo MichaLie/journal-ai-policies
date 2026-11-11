@@ -1,0 +1,37 @@
+id: dfg
+name: DFG
+type: funder
+parent: null
+platform: null
+policy_owner: dfg
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+notes: Funding-proposal reviews. Rules effective 16 April 2026; reviewers disclose use and retain responsibility.
+sources:
+- id: ai-guidance
+  url: https://www.dfg.de/en/news/news-topics/announcements-proposals/2026/ifr-26-18
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: 26413f6bef437bd5e9ceebd76f530234553e540d21ba0a5b448e145c29a49d40
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies:
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Funding-proposal reviews. Rules effective 16 April 2026; reviewers disclose use and retain
+    responsibility.
+  evidence:
+  - source: ai-guidance
+    quote: 'The guideline allows the use of AI systems in the review process exclusively in a supporting
+      role, linking such use to four central principles: confidentiality, transparency, quality assurance
+      and responsibility.'
+    quote_provenance: raw_bytes
+coherence: []

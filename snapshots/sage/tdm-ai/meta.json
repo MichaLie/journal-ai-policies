@@ -1,0 +1,10 @@
+{
+  "name": "sage-licensing",
+  "url": "https://www.sagepub.com/tdm-ai-policy",
+  "final_url": "https://www.sagepub.com/tdm-ai-policy",
+  "sha256": "f46ca0118908979e3dd2f35f5753a43840dd53cdf09b0a380d2ad6e7c87caef0",
+  "text_sha256": "3f535a06cff5487898ef1da1bcbae50d784acd3c4d752a657f1b1a260d6a2487",
+  "entity": "sage",
+  "source": "tdm-ai",
+  "fetched": "2026-11-11"
+}

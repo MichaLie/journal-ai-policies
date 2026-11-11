@@ -1,0 +1,20 @@
+id: china-national
+name: China GB/Z 290-2026
+type: national_body
+policy_owner: china-national
+notes: Issued 30 October 2026. Official register metadata for the separate national guidance technical
+  document; not ISTIC 3.0. Full normative text remains to be assessed.
+sources:
+- id: official-information
+  url: https://std.samr.gov.cn/gb/search/gbDetailed?id=5F6B9C9E6B66C75BE06397BE0A0A6C0B
+  role: information
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: 7960b61fded2378f81128f8b4c8515c9c1dec848608187e5470ada51e5080e2f
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies: []
+coherence: []

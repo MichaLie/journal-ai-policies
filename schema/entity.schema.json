@@ -49,7 +49,7 @@
     },
     "delegates_to_journal": {
       "type": "boolean",
-      "description": "true only where individual journals genuinely deviate. Verified true for OUP and CUP; false for every other publisher checked."
+      "description": "True where the verified policy explicitly provides for journal-specific requirements."
     },
     "policy_architecture": {
       "enum": [

@@ -1,0 +1,10 @@
+{
+  "name": "BMJ",
+  "url": "https://www.bmj.com/content/ai-use",
+  "final_url": "https://www.bmj.com/content/ai-use",
+  "sha256": "c1bc68ca35d0e3f661f940f212215c1962a19c41079cd6b22a197d985900b100",
+  "text_sha256": "cf13ecd881ea3df0759c12c43a905387812f50ba3f64d7827fac12bf10747931",
+  "entity": "bmj",
+  "source": "ai-policy",
+  "fetched": "2026-11-11"
+}

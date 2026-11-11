@@ -4,7 +4,7 @@ type: publisher
 parent: null
 platform: sciencedirect.com
 policy_owner: elsevier
-delegates_to_journal: false
+delegates_to_journal: true
 policy_architecture: rule_with_exemptions
 homepage: https://www.elsevier.com
 notes: 'Rewrote its journals policy in June 2026, permitting reviewers supportive use of private AI tools.
@@ -63,7 +63,8 @@ policies:
   disclosure: not_required
   disclosure_location: []
   rationale: unstated
-  conditions: Exemption is withdrawn where changes go beyond basic correction.
+  conditions: Exemption is withdrawn where changes go beyond basic correction. Specialist disability-related
+    assistive technology used solely for accessibility is also exempt.
   evidence:
   - source: journals-policy
     quote: Basic checks of grammar, spelling and punctuation do not need a declaration statement
@@ -83,7 +84,7 @@ policies:
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
-  - unspecified
+  - review_report
   rationale: confidentiality
   conditions: 'Reversed in June 2026. Permitted only with a "private" AI tool as Elsevier defines it;
     disclosure to authors is mandatory. Uploading the manuscript remains prohibited.
@@ -102,19 +103,15 @@ policies:
   disclosure: not_addressed
   disclosure_location: []
   rationale: unstated
-  conditions: The two policies disagree. The journals policy states Elsevier's editors have AI tools for
-    reviewer identification and duplicate detection; the books policy forbids editors using AI to evaluate
-    material at all. Neither tells an author which tools ran on their manuscript.
+  conditions: Authorized private tools within Elsevier editorial systems are distinguished from external
+    supportive tools. Journal and book policies concern different products and activities. The earlier
+    blanket journal-notification sentence is absent from the November snapshot.
   evidence:
   - source: journals-policy
-    quote: Our editors have access to AI tools that assist in identifying relevant reviewers, matching
-      the scope of submissions, and detecting duplicate submissions.
+    quote: Through Elsevier’s editorial systems, editors have access to private AI tools that assist them
+      in performing certain tasks, such as identifying relevant reviewers, matching the scope of submissions
+      to their journal, and detecting duplicate submissions.
     quote_provenance: raw_bytes
-  - source: books-policy
-    quote: Generative AI or AI-assisted technologies should not be used by editors to assist in the evaluation
-      of authors' material/ manuscript
-    quote_provenance: raw_bytes
-    evidence_role: supports
 - axis: due_process
   permission: not_addressed
   disclosure: not_addressed
@@ -161,9 +158,8 @@ policies:
   disclosure_location:
   - methods
   rationale: reproducibility
-  conditions: Described 'in a reproducible manner' in Methods with model or tool, version and developer.
-    The policy names AI-assisted imaging and predictive modelling as examples; agentic or autonomous workflows
-    are not named.
+  conditions: Research-method use must be reproducibly described in Methods. The author guidance also
+    names agents and deep research tools for manuscript preparation.
   evidence:
   - source: journals-policy
     quote: Where the use of AI tools forms part of the research design or research methods, the use of
@@ -221,14 +217,7 @@ policies:
     quote: AI tools must not be used to create or alter images that represent primary observed or experimental
       data that were not directly obtained in the research.
     quote_provenance: raw_bytes
-coherence:
-- summary: The books policy forbids editors using AI to evaluate material, while the journals policy states
-    Elsevier's editors have access to AI tools that identify reviewers and match submissions. Both are
-    live; the books policy sits behind a URL ending 'in-the-review-process'.
-  sources:
-  - journals-policy
-  - books-policy
-  axis: publisher_own_use
+coherence: []
 metadata_inconsistency:
 - sources:
   - journals-policy
@@ -237,3 +226,8 @@ metadata_inconsistency:
     'Elsevier has updated its generative AI policies for journals' on 18 August 2026. Either the August
     post is a late announcement of the June revision or the page changed again without its date line.
     Cite the page as updated June 2026 per its own statement.
+- sources:
+  - journals-policy
+  summary: Editorial-tool wording changed between the 15 October adjudication and 1 November snapshot
+    while the stated update remained June 2026. This is an observed interval, not an inferred effective
+    date.

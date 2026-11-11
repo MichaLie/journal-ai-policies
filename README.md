@@ -14,7 +14,9 @@ wording it relies on, so corrections can be specific.
 Policies can change between checks. Direct sources are re-fetched on a schedule; browser and
 archive-backed sources are queued for a dated live read. The git history of `data/entities/` is the dataset.
 
-Currently 11 organisations, 89 quotes, 21 sources. Reviewed 15 October 2026.
+Currently 36 organisations, 140 quotes, 53 sources. Evidence update prepared 11 November 2026.
+Publisher/journal agreement is calculated separately from funders, preprint servers and advisory bodies.
+See [the November review notes](reviews/2026-11-11.md) for evidence scope and remaining retrieval work.
 
 ## Install
 
@@ -92,12 +94,9 @@ Each tool's docstring explains why it works the way it does.
 ## Limitations
 
 - Records published policy, not practice.
-- 11 organisations, ten Anglophone. No journal-level records, funders, preprint servers or content
-  licensing yet.
-- 5 of 21 sources retain archive evidence with separate current-policy links and live-check dates.
-  One additional source uses a labelled browser DOM excerpt. Automated live coverage is incomplete;
-  the monitor queues these sources for human review instead of reporting them as current.
-- 1 substantive internal contradiction and 3 dating oddities across the eleven organisations.
+- Coverage is activity-specific; blank cells are unassessed, not silent.
+- Browser excerpts are labelled and archived separately from HTTP captures.
+- New evidence awaits maintainer adjudication through this PR; historical sign-off hashes are preserved.
 - GitHub disables scheduled workflows after 60 days without repository activity. If nobody pushes,
   the monitor stops.
 

@@ -1,0 +1,74 @@
+id: sage
+name: Sage
+type: publisher
+parent: null
+platform: null
+policy_owner: sage
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+homepage: null
+notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+sources:
+- id: ai-policy
+  url: https://www.sagepub.com/journals/publication-ethics-policies/artificial-intelligence-policy
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: 756f1101abb0153481f63f17c5c88b7e552768ca4225cb61ec0b2d63396d42f6
+  note: Verified for this PR. Maintainer adjudication remains pending.
+- id: tdm-ai
+  url: https://www.sagepub.com/tdm-ai-policy
+  role: policy
+  audience: all
+  status: current
+  authoritative: false
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: f46ca0118908979e3dd2f35f5753a43840dd53cdf09b0a380d2ad6e7c87caef0
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies:
+- axis: language_refinement
+  permission: permitted_with_conditions
+  disclosure: not_required
+  disclosure_location: []
+  rationale: accountability
+  conditions: Assistive editing of the author’s own work.
+  evidence:
+  - source: ai-policy
+    quote: AI tools that make suggestions to improve or enhance your own work, such as tools to improve
+      language, grammar, or structure, are considered assistive AI tools and do not require disclosure
+      by authors or reviewers.
+    quote_provenance: raw_bytes
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - acknowledgements
+  rationale: accountability
+  conditions: Verify outputs and sources. Disclosing use does not authorize prohibited activities.
+  evidence:
+  - source: ai-policy
+    quote: The primary or partial use of AI tools and/or LLMs that produce content such as references,
+      text, images, or any other content that directly impacts the research methodology, analysis, results
+      and/or conclusions must be disclosed upon submission so the editorial team can evaluate the content
+      generated.
+    quote_provenance: raw_bytes
+- axis: content_licensing
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: Publisher-stated access and reuse terms. Scope depends on content, license and purpose;
+    this is not a finding about author consent or the reach of legal exceptions.
+  evidence:
+  - source: tdm-ai
+    quote: If you wish to use Sage journals content for any AI uses including generative AI you should
+      request permission
+    quote_provenance: raw_bytes
+coherence: []

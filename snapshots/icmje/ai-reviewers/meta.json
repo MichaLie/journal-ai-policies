@@ -1,0 +1,10 @@
+{
+  "name": "ICMJE reviewers",
+  "url": "https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-reviewers.html",
+  "final_url": "https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-reviewers.html",
+  "sha256": "8c9abdb163fcf39e3ca91bc8f785cf198c8eb208f3109d5762086fdb0a9d87c3",
+  "text_sha256": "372c1a56c8c6e7f6a80f8488210c7ad3b47df4924c86dc4852f6a35aa85b0e34",
+  "entity": "icmje",
+  "source": "ai-reviewers",
+  "fetched": "2026-11-11"
+}

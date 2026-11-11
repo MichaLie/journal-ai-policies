@@ -1,0 +1,11 @@
+{
+  "name": "Cell",
+  "url": "https://www.cell.com/cell/information-for-authors/journal-policies",
+  "capture_method": "browser_dom",
+  "capture_scope": "Selected visible policy passages, captured 11 November 2026. Excerpt, not a full page or raw HTTP response.",
+  "sha256": null,
+  "text_sha256": "5ca0fa066ec727bad7634041a5faa8baa106346574722fa0af03adc09762a6f3",
+  "entity": "cell",
+  "source": "ai-policy",
+  "fetched": "2026-11-11"
+}

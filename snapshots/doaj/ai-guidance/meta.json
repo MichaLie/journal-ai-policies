@@ -1,0 +1,10 @@
+{
+  "name": "doaj",
+  "url": "https://doaj.org/apply/guide/",
+  "final_url": "https://doaj.org/apply/guide/",
+  "sha256": "efe1f8581424ff7b8170ccadc1bbffca0d567839e4ee575218a63be7c9a1292d",
+  "text_sha256": "a4060c93d2783815599bf296829440b77db2d2f2ab6e932ef942a2e31e9f39e4",
+  "entity": "doaj",
+  "source": "ai-guidance",
+  "fetched": "2026-11-11"
+}

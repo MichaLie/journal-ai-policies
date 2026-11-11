@@ -1,0 +1,11 @@
+{
+  "name": "MDPI",
+  "url": "https://www.mdpi.com/ethics",
+  "capture_method": "browser_dom",
+  "capture_scope": "Selected visible policy passages, captured 11 November 2026. Excerpt, not a full page or raw HTTP response.",
+  "sha256": null,
+  "text_sha256": "d225f27758c4a98a14e3d9fad3e1a5b9461cc6358117ad5ae2c3d15ca20be3e1",
+  "entity": "mdpi",
+  "source": "ai-policy",
+  "fetched": "2026-11-11"
+}

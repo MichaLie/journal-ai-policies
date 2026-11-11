@@ -1,0 +1,37 @@
+id: arxiv
+name: arXiv
+type: preprint_server
+parent: null
+platform: null
+policy_owner: arxiv
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+notes: Significant tool use should be reported; authors remain responsible. Preprint moderation, not journal
+  peer review.
+sources:
+- id: ai-guidance
+  url: https://info.arxiv.org/help/moderation/index.html
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: f483423e281516c22676503f1e98439dcb35784070573c6e5f6f00758b0ca13b
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Significant tool use should be reported; authors remain responsible. Preprint moderation,
+    not journal peer review.
+  evidence:
+  - source: ai-guidance
+    quote: we now include in particular text-to-text generative AI among those that should be reported
+      consistent with subject standards for methodology.
+    quote_provenance: raw_bytes
+coherence: []

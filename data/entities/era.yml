@@ -1,0 +1,37 @@
+id: era
+name: European Research Area living guidelines
+type: normative_body
+parent: null
+platform: null
+policy_owner: era
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+notes: Non-binding fourth edition, October 2026. Substantial use, human responsibility, checkpoints and
+  reproducibility; not a journal submission rule.
+sources:
+- id: ai-guidance
+  url: https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en
+  role: guidance
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: 0935796ec133fea77d609ad2d9bb25dfdd7e37f8ca15ca0c8dde60521f63fe0d
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies:
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: encouraged
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Non-binding fourth edition, October 2026. Substantial use, human responsibility, checkpoints
+    and reproducibility; not a journal submission rule.
+  evidence:
+  - source: ai-guidance
+    quote: Researchers disclose which AI tools or systems were used substantially10 in their research
+      or reporting processes and describe what they contributed or were used for.
+    quote_provenance: raw_bytes
+coherence: []

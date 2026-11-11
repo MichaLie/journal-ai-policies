@@ -1,0 +1,36 @@
+id: erc
+name: European Research Council
+type: funder
+parent: null
+platform: null
+policy_owner: erc
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+notes: 'Funding review: no proposal summarization, scientific-merit assessment or draft evaluations; external
+  uploads prohibited.'
+sources:
+- id: ai-guidance
+  url: https://erc.europa.eu/news-events/news/erc-clarifies-limits-ai-use-grant-evaluation
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: 643433ae66eea7cc214b936ab38548763c9676d705f672cfb0aa264dc1c7e609
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies:
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: 'Funding review: no proposal summarization, scientific-merit assessment or draft evaluations;
+    external uploads prohibited.'
+  evidence:
+  - source: ai-guidance
+    quote: Reviewers may use AI tools to improve the language of their reports or to search for general
+      information, provided no proposal content or personal data is shared and no assessment is delegated.
+    quote_provenance: raw_bytes
+coherence: []

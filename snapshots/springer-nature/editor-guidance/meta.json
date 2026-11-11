@@ -1,0 +1,11 @@
+{
+  "name": "Springer Nature editors",
+  "url": "https://www.springernature.com/gp/policies/editorial-policies/ai-editor-guidance",
+  "capture_method": "browser_dom",
+  "capture_scope": "Selected visible policy passages, captured 11 November 2026. Excerpt, not a full page or raw HTTP response.",
+  "sha256": null,
+  "text_sha256": "63c541c29e0731f2985948bb3cd4d55bb953335180332d34452b2fd9dd139976",
+  "entity": "springer-nature",
+  "source": "editor-guidance",
+  "fetched": "2026-11-11"
+}

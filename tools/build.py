@@ -176,7 +176,7 @@ def build() -> None:
           f'<div class="case-body"><p>{esc(c["do_this"].strip())}</p>')
         A(cite_html(guide, c.get("body_cite")))
         if ex.get("text"):
-            places = where_it_goes(c["axis"], entities)
+            places = where_it_goes(c["axis"], [e for e in entities if e.get("type") in ("publisher", "imprint", "journal")])
             A('<div class="tmpl"><div class="tmpl-head"><span class="tmpl-tag">'
               + ('example wording' if ex.get("needed") else 'optional wording') + '</span>'
               + ('' if ex.get("needed") else
@@ -193,7 +193,7 @@ def build() -> None:
                       f'<span class="loc-who">{esc(", ".join(who))}</span></li>')
                 A('</ul></div>')
             else:
-                A(f'<p class="places-none">{esc((ex.get("placement_fallback") or "No organisation recorded here states where this belongs. Your methods section is the safest default.").strip())}</p>')
+                A(f'<p class="places-none">{esc((ex.get("placement_fallback") or "Check the journal’s disclosure instructions for the required location.").strip())}</p>')
             A(f'<p class="tmpl-note">{esc(guide["templates"]["slot_warning"].strip())}</p>')
             A('</div>')
         elif ex.get("note"):
@@ -217,7 +217,7 @@ def build() -> None:
     risky = []
     for rr in con["rows"]:
         forb = [e["name"] for e in entities for pp in e.get("policies", [])
-                if pp["axis"] == rr["axis"] and pp["permission"] in ("prohibited", "discouraged")]
+                if pp["axis"] == rr["axis"] and pp["permission"] == "prohibited"]
         if forb:
             risky.append((rr["plain"], sorted(set(forb))))
     audit_req = sorted({e["name"] for e in entities for pp in e.get("policies", [])
@@ -229,17 +229,17 @@ def build() -> None:
       '<h2 id="h-do">Keep the record. That is the part you cannot recreate.</h2></div><div class="advice">')
     A('<div class="adv adv-do"><h3>Start a log, even a rough one</h3>'
       '<p>Model and <strong>version</strong>, rough dates, the prompts, and the session records '
-      'themselves. Everything else can be sorted out at submission &mdash; a disclosure statement takes '
+      'themselves. Write the declaration while the work is fresh &mdash; a first draft takes '
       'ten minutes to write. A transcript from eight months ago cannot be rebuilt, and model versions '
       'get retired.</p>'
       + (f'<p class="adv-ev">Already required, not hypothetical: {esc(", ".join(audit_req))} '
-         'asks for prompts, versions or archived session records today.</p>' if audit_req else '') + '</div>')
+         'require prompts, versions or archived session records today.</p>' if audit_req else '') + '</div>')
     A(f'<div class="adv adv-calm"><h3>{esc(ad["headline"])}</h3><p>{esc(ad["body"].strip())}</p></div>')
     A(f'<div class="adv adv-calm"><h3>{esc(af["headline"])}</h3><p>{esc(af["body"].strip())}</p></div>')
     saved = guide["save_policy"]
     A(f'<div class="adv adv-flag"><h3>{esc(saved["headline"])}</h3>'
       f'<p>{esc(saved["body"].strip())}</p></div>')
-    A('<div class="adv adv-warn"><h3>Confirm in advance only for these</h3>'
+    A('<div class="adv adv-warn"><h3>Check these before you start</h3>'
       '<p>Where a use is prohibited outright, the work cannot be fixed at submission. These are the ones '
       'worth checking first, with the organisations here that forbid them:</p><ul class="lanes">')
     for plain, who in risky:
@@ -247,9 +247,8 @@ def build() -> None:
           f'<span class="lane-who">{esc(", ".join(who))}</span></li>')
     A('</ul></div>')
     A(f'<div class="adv adv-cite"><h3>Then check <em>which</em> page applies</h3>'
-      '<p>A publisher can have more than one live policy, and they need not agree: one organisation here '
-      'has a books policy that forbids what its journals policy permits. Each record below marks the '
-      'page and audience to cite.</p></div>')
+      '<p>Authors, reviewers and editors have different responsibilities. Journal-specific rules can add '
+      'requirements to a publisher policy. Each record below marks the page and audience to cite.</p></div>')
     A('</div></section>')
 
     # 4 ─ consensus
@@ -257,8 +256,8 @@ def build() -> None:
     BANDS = [("holds", ("universal", "strong"), "Broad agreement",
               "At least three quarters of assessed organisations take the same stance. Exceptions and "
               "differences in disclosure requirements are shown below."),
-             ("void", ("void",), "Nobody answers this",
-              "Every organisation assessed is silent. Not missing data &mdash; a measured, unanimous absence."),
+             ("void", ("void",), "Not addressed in assessed sources",
+              "The assessed sources do not address this activity. Blank cells remain separate: they have not been assessed."),
              ("split", ("split",), "Genuinely contested",
               "Organisations disagree on stance, not merely on conditions. The dissenters are named "
               "because they are the useful part."),
@@ -269,8 +268,8 @@ def build() -> None:
               "No organisation here carries a record on this. Work to do, not a result.")]
     A('<section id="summary" aria-labelledby="h-sum"><div class="sec-head">'
       '<p class="eyebrow">Worked out from the records &mdash; never written by hand</p>'
-      '<h2 id="h-sum">What actually applies</h2></div>')
-    A('<p class="muted">Each fraction is organisations assessed over organisations in this build. A claim '
+      '<h2 id="h-sum">Where the policies agree</h2></div>')
+    A('<p class="muted">Each fraction is publishers and journals assessed over publishers and journals in this build. Advisory bodies, funders and preprint servers stay in the records below, outside this comparison. A claim '
       'resting on three records is not the same as one resting on thirty, so the denominator is never '
       'hidden. Rows move between groups on their own as records are added.</p>')
     A('<div class="consensus">')
@@ -442,9 +441,8 @@ def build() -> None:
       'ran AI-detection software and one said so publicly &mdash; the gap between stated and practised is '
       'real, and this site does not close it.</p></div>')
     A(f'<div class="card"><h3>Coverage, stated plainly</h3><p>{len(entities)} organisations. '
-      'Journal-level records, funders, preprint servers and content '
-      'licensing are not covered yet. If your funder or institution is not here, that means we have not '
-      'looked &mdash; not that it is silent.</p></div>')
+      'Coverage is recorded activity by activity. If your journal, funder or institution has no entry, '
+      'that means it has not been assessed &mdash; not that it is silent.</p></div>')
     A(f'<div class="card"><h3>Where the evidence comes from</h3><p>{n_src - n_arch - n_browser} of {n_src} '
       f'sources are fetched directly. {n_arch} retain dated Internet Archive captures; their current '
       f'pages are checked separately and carry a live-check date. {n_browser} uses a saved excerpt '
@@ -453,11 +451,11 @@ def build() -> None:
     A(f'<div class="card"><h3>Contradictions, counted honestly</h3><p>{n_coh} substantive internal '
       f'contradiction{"s" if n_coh != 1 else ""} and {n_meta} dating or tagging '
       f'oddit{"ies" if n_meta != 1 else "y"} across {len(entities)} organisations. A stale HTML title tag '
-      'is not a policy contradiction and is not counted as one. Research notes record more contradictions '
-      'among organisations not yet recorded here.</p></div>')
+      'is not a policy contradiction and is not counted as one. Differences in audience or product scope '
+      'are kept separate.</p></div>')
     A(f'<div class="card"><h3>{n_gaps} cells still await a quote</h3><p>Verdicts recorded without captured '
       'wording are marked and published, never asserted as verified. Where we could not find wording at '
-      'all, the cell was changed to &ldquo;silent&rdquo; rather than left as a claim.</p></div>')
+      'all, the activity remains unassessed rather than being labelled silent.</p></div>')
     A('</div>')
     A(f'<p class="muted foot">This page declares itself unmaintained automatically once its oldest record '
       f'passes {TOMBSTONE_DAYS} days without re-checking. The closest precedent to this project still '

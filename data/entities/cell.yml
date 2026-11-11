@@ -1,0 +1,50 @@
+id: cell
+name: Cell
+type: journal
+parent: elsevier
+platform: null
+policy_owner: cell
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+homepage: null
+notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+sources:
+- id: ai-policy
+  url: https://www.cell.com/cell/information-for-authors/journal-policies
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: browser
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: null
+  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
+    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
+policies:
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - figure_caption
+  - dedicated_section
+  rationale: accountability
+  conditions: Explanatory figures need tool/version/use. Cover art is prohibited except when AI is integral
+    to the research; general-purpose image tools cannot produce graphical abstracts.
+  evidence:
+  - source: ai-policy
+    quote: Allows use of generative AI tools in the creation of explanatory images, in line with Elsevier
+      policy.
+    quote_provenance: browser_dom
+- axis: language_refinement
+  permission: permitted_with_conditions
+  disclosure: not_required
+  disclosure_location: []
+  rationale: accountability
+  conditions: This is an exemption for basic checking, not all drafting.
+  evidence:
+  - source: ai-policy
+    quote: The declaration does not apply to the use of basic tools, such as tools used to check grammar,
+      spelling, and references.
+    quote_provenance: browser_dom
+coherence: []

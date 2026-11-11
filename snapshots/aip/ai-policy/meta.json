@@ -1,0 +1,11 @@
+{
+  "name": "AIP Publishing",
+  "url": "https://publishing.aip.org/resources/researchers/policies-and-ethics/ai-policy/",
+  "capture_method": "browser_dom",
+  "capture_scope": "Selected visible policy passages, captured 11 November 2026. Excerpt, not a full page or raw HTTP response.",
+  "sha256": null,
+  "text_sha256": "ea0072463f5ac163e0b222d7967dd81b1733a5fb0067713a89e6bffdda259369",
+  "entity": "aip",
+  "source": "ai-policy",
+  "fetched": "2026-11-11"
+}

@@ -1,0 +1,38 @@
+id: wame
+name: World Association of Medical Editors
+type: normative_body
+parent: null
+platform: null
+policy_owner: wame
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+notes: Recommendations revised 31 May 2023. Research uses are reported in Abstract and Methods; drafting
+  in acknowledgments. These are recommendations, not every journal’s rule.
+sources:
+- id: ai-guidance
+  url: https://wame.org/pdf/Chatbots-Generative-AI-and-Scholarly-Manuscripts.pdf
+  role: guidance
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: ae0f0362bf7fdb16befea19fc9dec0de66ef6cbaf2dfffc419c8d52870e0aaf4
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies:
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: encouraged
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Recommendations revised 31 May 2023. Research uses are reported in Abstract and Methods;
+    drafting in acknowledgments. These are recommendations, not every journal’s rule.
+  evidence:
+  - source: ai-guidance
+    quote: In the interests of enabling scientific scrutiny, including replication and identifying falsification,
+      the full prompt used to generate the research results, the time and date of query, and the AI tool
+      used and its version, should be provided.
+    quote_provenance: raw_bytes
+coherence: []

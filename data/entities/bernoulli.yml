@@ -1,0 +1,37 @@
+id: bernoulli
+name: Bernoulli
+type: journal
+parent: null
+platform: null
+policy_owner: bernoulli
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+notes: Mathematics/statistics journal. Secure tools must prohibit training on manuscripts. Disclose tools/purposes
+  confidentially to editors; authors agree to safeguarded review use on submission.
+sources:
+- id: ai-guidance
+  url: https://bernoullisociety.org/publications/bernoulli-journal/policy-on-ai-3
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: eeaad0b5d89a17ae91d487d8a823559413274bbed5ac8137600b2346b3362513
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies:
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Mathematics/statistics journal. Secure tools must prohibit training on manuscripts. Disclose
+    tools/purposes confidentially to editors; authors agree to safeguarded review use on submission.
+  evidence:
+  - source: ai-guidance
+    quote: Bernoulli allows reviewers and editors to use AI tools to assist in checking technical claims,
+      subject to the confidentiality and data-protection safeguards specified below.
+    quote_provenance: raw_bytes
+coherence: []

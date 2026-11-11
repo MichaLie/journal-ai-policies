@@ -1,0 +1,10 @@
+{
+  "name": "ACS",
+  "url": "https://researcher-resources.acs.org/publish/aipolicy",
+  "final_url": "https://researcher-resources.acs.org/publish/aipolicy",
+  "sha256": "f5b741386422c85c92ce976c0b335630738b5757c82f8ae5f500ae6d10aaf8b4",
+  "text_sha256": "7a3224cd8efacc20ab3f7fafab7447a8b69d9e28bfadcc66a76d7f137e7b54f5",
+  "entity": "acs",
+  "source": "ai-policy",
+  "fetched": "2026-11-11"
+}

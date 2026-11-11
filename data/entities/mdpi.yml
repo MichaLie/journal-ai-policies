@@ -1,0 +1,49 @@
+id: mdpi
+name: MDPI
+type: publisher
+parent: null
+platform: null
+policy_owner: mdpi
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+homepage: null
+notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+sources:
+- id: ai-policy
+  url: https://www.mdpi.com/ethics
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: browser
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: null
+  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
+    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
+policies:
+- axis: language_refinement
+  permission: permitted_with_conditions
+  disclosure: not_required
+  disclosure_location: []
+  rationale: accountability
+  conditions: Editing exemption includes structure.
+  evidence:
+  - source: ai-policy
+    quote: The use of GenAI tools for the purposes of text editing (e.g., grammar, structure, spelling,
+      punctuation, and formatting) is not covered by this policy and does not need to be declared.
+    quote_provenance: browser_dom
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - review_report
+  rationale: accountability
+  conditions: Limited editing only; no manuscript or review communications may be uploaded.
+  evidence:
+  - source: ai-policy
+    quote: Some limited use to improve the written quality of a peer review report, such as checking grammar,
+      structure, spelling, punctuation, and formatting, may be acceptable but should be disclosed upon
+      submission of the peer review report.
+    quote_provenance: browser_dom
+coherence: []

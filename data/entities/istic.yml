@@ -7,13 +7,10 @@ policy_owner: istic
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
 homepage: null
-notes: 'Three editions: v1.0 September 2023, v2.0 September 2024, v3.0 December 2025, co-signed by Elsevier,
-  Springer Nature, Wiley, Taylor & Francis, Wolters Kluwer and Cambridge University Press. It requires
-  disclosure detail that English-language policy does not, including archiving AI session records. NOT
-  a standard: it explicitly disclaims precedence over publisher policy and carries no standard number.
-  A separate Chinese national guidance project on the same subject is registered and still under approval.
-  Several verdicts here rest on the English v3.0 text; the Chinese edition is quoted where the English
-  does not cover the point.'
+notes: Version 3.0 (December 2025) is publisher-co-signed guidance, not the separate Chinese national
+  document. GB/Z 290-2026 was issued on 30 October 2026; its full normative text still needs separate
+  assessment. Disclosure, reviewer support and research-process rules below come from the English v3.0
+  operative sections.
 sources:
 - id: guideline-v3-en
   url: https://files.sciengine.com/gridfs/2001556325267406848/%E9%99%84%E4%BB%B61-%E5%AD%A6%E6%9C%AF%E5%87%BA%E7%89%88%E4%B8%ADAIGC%E4%BD%BF%E7%94%A8%E8%BE%B9.pdf
@@ -40,75 +37,84 @@ sources:
   content_sha256: bab8269736c404ae4136b0f631e8e77b5f50c9151a51896dd0f770b7ccbadcb4
   adjudicated_sha256: bab8269736c404ae4136b0f631e8e77b5f50c9151a51896dd0f770b7ccbadcb4
 policies:
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location: []
+  rationale: accountability
+  conditions: 'Section 4.1.1: verify every source and retain human-led selection. Deep research outputs
+    need the same checks.'
+  evidence:
+  - source: guideline-v3-en
+    quote: 'Literature research: AIGC tools can be used to collect reference literature based on keywords
+      or topics, classi- fy and review the literature, summarize the conclusions, and provide references
+      for researchers;'
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: 'Section 4.2.4.2: follow the commissioning journal. Support must enhance the reviewer’s
+    own comments; the text also forbids processing content under review and restricts public-tool uploads.'
+  evidence:
+  - source: guideline-v3-en
+    quote: During the manuscript review process, reviewers must determine whether AIGC tools can be used
+      based on the policies of the commissioning party (e.g., journals or publishers). If journal policies
+      explicitly prohibit their use, AIGC tools must not be employed.
+    quote_provenance: raw_bytes
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - acknowledgements
+  rationale: accountability
+  conditions: Section 4.1.4 allows literature-review assistance, not whole-paper writing or replacement
+    of scientific judgment. Section 4.2.3 requires disclosure.
+  evidence:
+  - source: guideline-v3-en
+    quote: Also, AIGC can be used to summa- rize other scholarly publications during the research process
+      or to generate the literature review section. However, it should not be used to write the entire
+      text, interpret data, or draw scienti�ic conclusions.
+    quote_provenance: raw_bytes
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location: []
+  rationale: accountability
+  conditions: Section 4.1.3 permits chart formatting and data-grounded examples. Experimental images must
+    come from research; graphical abstracts are prohibited and cover art needs prior permission.
+  evidence:
+  - source: guideline-v3-en
+    quote: 'Statistical chart and diagram format processing and optimization: When processing and optimizing
+      statisti- cal charts, researchers can use AIGC tools to help adjust chart styles according to the
+      amount of data and speci�ic needs.'
+    quote_provenance: raw_bytes
 - axis: audit_trail
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - methods
   - acknowledgements
-  rationale: reproducibility
-  conditions: 'Six mandatory disclosure elements: the user; the AI system WITH VERSION NUMBER; the date
-    and time of use; the prompts and questions used; the parts of the text written or co-written by
-    AI; and the ideas arising from that use. Version 3.0 additionally requires naming the specific sections
-    assisted, quoting the actual prompts, and ARCHIVING THE AI SESSION RECORDS AS AN ATTACHMENT.
-
-    '
+  rationale: accountability
+  conditions: Section 4.2.3 specifies user, tool/version, time/date, prompts, affected parts and ideas.
+    Its template describes attached records; section 4.3.1 addresses supplementary archiving. This is
+    more specific than a tool-name declaration, not a blanket demand to publish every session.
   evidence:
   - source: guideline-v3-en
-    quote: detailing disclosure and declaration requirements during the manuscript submission phase
+    quote: The user; the arti�icial intelligence technology or system (version number required); the time
+      and date of use; prompts and questions used for content generation or optimization;
     quote_provenance: raw_bytes
-- axis: writing_drafting
-  permission: prohibited
-  disclosure: required
-  disclosure_location:
-  - methods
-  - acknowledgements
-  rationale: accountability
-  conditions: AI must not generate research hypotheses, write the whole paper, interpret data or draw
-    scientific conclusions. Non-disclosure was made misconduct in v2.0 — over a year before ICMJE said
-    the same.
-  evidence:
-  - source: guideline-v2-zh
-    quote: 研究人员使用AIGC直接生成的稿件文字等资料必须提供明确的披露和声明，否则将构成学术不端行为。
-    quote_provenance: raw_bytes
-- axis: publisher_own_use
+- axis: detection_screening
   permission: permitted_with_conditions
-  disclosure: required
-  disclosure_location:
-  - unspecified
-  rationale: control
-  conditions: 'NOTE: this sentence comes from the third edition''s list of changes, not from its normative
-    text. It establishes that the guideline addresses journal, publisher and reviewer responsibilities
-    — not what those responsibilities are.'
-  evidence:
-  - source: guideline-v3-en
-    quote: emphasizing the responsibilities of relevant parties (including journals/publishers and reviewers)
-      during the review process.
-    quote_provenance: raw_bytes
-- axis: reviewer_use
-  permission: not_addressed
-  disclosure: not_addressed
-  disclosure_location: []
-  rationale: unstated
-  conditions: Reported in research notes but not locatable in the English v3.0 text held here. Recorded
-    as not addressed rather than asserted without a quote.
-- axis: reference_gathering
-  permission: not_addressed
-  disclosure: not_addressed
-  disclosure_location: []
-  rationale: unstated
-  conditions: Reported in research notes but not locatable in the English v3.0 text held here. Recorded
-    as not addressed rather than asserted without a quote.
-- axis: data_visualisation
-  permission: prohibited
   disclosure: not_addressed
   disclosure_location: []
   rationale: accountability
-  conditions: Experimental images — Western blots, cytometry, histology — must not be AI-generated.
+  conditions: 'Section 4.3.2: account for false positives and evaluate detections in context. This is
+    guidance on detection, not evidence that ISTIC screens submissions.'
   evidence:
   - source: guideline-v3-en
-    quote: For example, experimental images in the biomedical �ield—such as Western blot analysis diagrams,
-      cell technology analy- ses, and tissue cell staining diagrams—must be obtained from genuinely
-      conducted experimental research.
+    quote: The detection results should be used as an auxiliary supporting basis in a comprehensive evaluation
     quote_provenance: raw_bytes
 coherence: []
