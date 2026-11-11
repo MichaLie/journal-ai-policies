@@ -21,7 +21,7 @@ STRONG = 0.75              # majority threshold for "holds, with exceptions"
 # "split" would report a distinction without a difference as disagreement.
 STANCE = {
     "permitted": "allows", "permitted_with_conditions": "allows",
-    "prohibited": "forbids", "discouraged": "forbids",
+    "prohibited": "forbids", "discouraged": "discourages",
     "not_addressed": "silent",
 }
 
@@ -41,6 +41,8 @@ DISC_RULE = {
 
 
 def compute(entities: list[dict], axes: dict, axes_raw: dict) -> dict:
+    entities = [e for e in entities if e.get("policy_architecture") != "classification_only"
+                and e.get("type", "publisher") in ("publisher", "imprint", "journal")]
     order = [a["key"] for a in axes_raw["activities"]] + [a["key"] for a in axes_raw["extended_axes"]]
     plain = {a["key"]: a.get("plain", a["key"])
              for a in axes_raw["activities"] + axes_raw["extended_axes"]}

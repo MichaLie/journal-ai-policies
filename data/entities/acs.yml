@@ -1,0 +1,50 @@
+id: acs
+name: ACS
+type: publisher
+parent: null
+platform: null
+policy_owner: acs
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+homepage: null
+notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+sources:
+- id: ai-policy
+  url: https://researcher-resources.acs.org/publish/aipolicy
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: stated
+  last_verified: '2026-11-11'
+  content_sha256: f5b741386422c85c92ce976c0b335630738b5757c82f8ae5f500ae6d10aaf8b4
+  note: Verified for this PR. Maintainer adjudication remains pending.
+  stated_date: '2026-11-06'
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  rationale: accountability
+  conditions: 'Assistance only: no generation of underlying results, scientific reasoning or substantial
+    commentary/review content. Research-method uses have a separate exception.'
+  evidence:
+  - source: ai-policy
+    quote: Authors may use generative AI tools to assist in preparing their submissions, provided that
+      the use complies with this policy and is disclosed where required below.
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: Report generation, drafting and revision are prohibited. Confidential material may enter
+    only ACS-authorized integrated tools.
+  evidence:
+  - source: ai-policy
+    quote: peer reviewers remain responsible for all comments and recommendations provided during peer
+      review and must not use generative AI tools to generate, draft, or revise their peer review reports.
+    quote_provenance: raw_bytes
+coherence: []

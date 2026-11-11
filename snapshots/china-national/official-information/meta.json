@@ -1,0 +1,10 @@
+{
+  "name": "china-national",
+  "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=5F6B9C9E6B66C75BE06397BE0A0A6C0B",
+  "final_url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=5F6B9C9E6B66C75BE06397BE0A0A6C0B",
+  "sha256": "7960b61fded2378f81128f8b4c8515c9c1dec848608187e5470ada51e5080e2f",
+  "text_sha256": "98b937c4054445f7381ad1a9c1a232fcbd18d827751670302369cce1a797e46b",
+  "entity": "china-national",
+  "source": "official-information",
+  "fetched": "2026-11-11"
+}

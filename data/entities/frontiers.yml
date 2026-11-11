@@ -1,0 +1,61 @@
+id: frontiers
+name: Frontiers
+type: publisher
+parent: null
+platform: null
+policy_owner: frontiers
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+homepage: null
+notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+sources:
+- id: ai-policy
+  url: https://www.frontiersin.org/guidelines/policies-and-publication-ethics
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: 00575087d3040c2fb72e302f250db88559e4c58514b7799302eaa337d07a9af1
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  rationale: accountability
+  conditions: Check accuracy and originality; authors remain responsible.
+  evidence:
+  - source: ai-policy
+    quote: If AI tools have been used to generate main text, then this must be clearly disclosed in the
+      acknowledgments.
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - review_report
+  rationale: accountability
+  conditions: Internal support does not make decisions. External use needs advance editorial discussion
+    and, if approved, disclosure to authors; no manuscript upload to external tools.
+  evidence:
+  - source: ai-policy
+    quote: To support peer reviewers, we provide an internal AI tool within the review forum, operating
+      in a secure, closed environment.
+    quote_provenance: raw_bytes
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: encouraged
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Supplementary prompts and outputs are encouraged, not universally mandatory.
+  evidence:
+  - source: ai-policy
+    quote: We encourage authors to upload all input prompts provided to a generative AI technology and
+      outputs received from a generative AI technology in the supplementary files for the manuscript.
+    quote_provenance: raw_bytes
+coherence: []

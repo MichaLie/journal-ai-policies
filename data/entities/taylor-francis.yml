@@ -1,0 +1,57 @@
+id: taylor-francis
+name: Taylor & Francis
+type: publisher
+parent: null
+platform: null
+policy_owner: taylor-francis
+delegates_to_journal: true
+policy_architecture: rule_with_exemptions
+homepage: null
+notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+sources:
+- id: ai-policy
+  url: https://taylorandfrancis.com/our-policies/ai-policy/
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: a678b1c8d000353bad9386d6e5e9d623f7e90b9c538a8b74f5fc2c57edc50517
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies:
+- axis: translation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: accountability
+  conditions: Name tool/version, how and why. Individual journals can restrict use beyond language improvement.
+  evidence:
+  - source: ai-policy
+    quote: Copyediting, language improvement and translations
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: accountability
+  conditions: Does not permit creation or manipulation of research or clinical-testing outputs.
+  evidence:
+  - source: ai-policy
+    quote: Taylor & Francis does permit use of Generative AI tools to assist research data visualisations
+      and conceptual illustrations of processes, flow diagrams or teaching illustrations.
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: No manuscript upload, substantive analysis, summarization or generated review reports.
+  evidence:
+  - source: ai-policy
+    quote: However, Generative AI may be utilised to assist with improving review language.
+    quote_provenance: raw_bytes
+coherence: []

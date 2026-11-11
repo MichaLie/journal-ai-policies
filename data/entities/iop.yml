@@ -1,0 +1,75 @@
+id: iop
+name: IOP Publishing
+type: publisher
+parent: null
+platform: null
+policy_owner: iop
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+homepage: null
+notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+sources:
+- id: ai-policy
+  url: https://publishingsupport.iopscience.iop.org/ethical-policy-journals/
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: 20f6950ccb0a1de295034080cd951e7328ee489fb27b17681323bdf55c39675b
+  note: Verified for this PR. Maintainer adjudication remains pending.
+- id: tdm-ai
+  url: https://ioppublishing.org/legal/textanddataminingpolicy/
+  role: policy
+  audience: all
+  status: current
+  authoritative: false
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: 7af8f5424a7af14c4b689f44c7aabbb18e087983338cedfe20318b126c9dded8
+  note: Verified for this PR. Maintainer adjudication remains pending.
+policies:
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - acknowledgements
+  rationale: accountability
+  conditions: Material uses require an AI statement in Acknowledgements and research-method detail in
+    Methods.
+  evidence:
+  - source: ai-policy
+    quote: GenAI tools may be used as part of the research process, including to support research ideation,
+      methodology, analysis where their use is methodologically appropriate, transparent and reproducible.
+    quote_provenance: raw_bytes
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: encouraged
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Conditional requirement where AI is central; retain the distinction from a universal prompt-publication
+    mandate.
+  evidence:
+  - source: ai-policy
+    quote: Authors are encouraged, and may be required in fields where AI is central to the research method,
+      to provide relevant prompts, prompt logs, model settings, outputs and validation materials as supplementary
+      data where this is necessary to support transparency, reproducibility and assessment of the work.
+    quote_provenance: raw_bytes
+- axis: content_licensing
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: Publisher-stated access and reuse terms. Scope depends on content, license and purpose;
+    this is not a finding about author consent or the reach of legal exceptions.
+  evidence:
+  - source: tdm-ai
+    quote: AI and/or T&DM for commercial purposes is not permitted unless expressly agreed in writing
+      by IOP Publishing.
+    quote_provenance: raw_bytes
+coherence: []

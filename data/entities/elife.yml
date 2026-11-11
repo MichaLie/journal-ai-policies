@@ -7,11 +7,8 @@ policy_owner: elife
 delegates_to_journal: false
 policy_architecture: prose
 homepage: https://elifesciences.org
-notes: 'The natural experiment. The only organisation recorded here that permits reviewers to use AI
-  — because its reviewed-preprint model means the manuscript is already public, so the confidentiality
-  reason other publishers give does not apply. Remove that reason and the ban has nothing to stand on:
-  the rationale, not the technology, is doing the work. Disclosure is nonetheless required. eLife is
-  also the only organisation here addressing editors using AI to find reviewers.'
+notes: Preprint-based review changes what is already public, but does not remove accountability. Author
+  instructions and reviewer guidance are recorded separately.
 sources:
 - id: review-process-ai
   url: https://reviewer.elifesciences.org/reviewer-guide/review-process
@@ -27,6 +24,17 @@ sources:
   adjudicated_sha256: 4f55901fed920706827d050ab75caea7cb79758ea26a1ef8898c9d9ad5023320
   note: Since at least 2026-09-11 the URL redirects to the eLife submission system (elife-rp.msubmit.net,
     reviewer instructions); text unchanged. The public reviewer-guide URL is kept as the citable address.
+- id: author-instructions
+  url: https://elife-rp.msubmit.net/html/elife-rp_author_instructions.html
+  role: policy
+  audience: authors
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: 70eec09e225a87d6d853986e0aaa580ae690f5b30de896fe6153c89c64139538
+  note: Verified for this PR. Maintainer adjudication remains pending.
 policies:
 - axis: reviewer_use
   permission: permitted
@@ -39,15 +47,15 @@ policies:
   evidence:
   - source: review-process-ai
     quote: While we do not prevent the use of generative artificial intelligence tools within the review
-      process, editors and reviewers remain accountable for their contributions and the contents of
-      their reviews. If generative AI tools are used by editors or reviewers, this must be disclosed.
+      process, editors and reviewers remain accountable for their contributions and the contents of their
+      reviews. If generative AI tools are used by editors or reviewers, this must be disclosed.
     quote_provenance: raw_bytes
 - axis: publisher_own_use
   permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
   rationale: unstated
-  conditions: The only entity found that addresses editors using AI to source reviewers.
+  conditions: The guidance addresses AI assistance in sourcing reviewers.
   evidence:
   - source: review-process-ai
     quote: If generative AI is used by editors to source suggestions for potential reviewers, we expect
@@ -60,3 +68,28 @@ policies:
   rationale: unstated
   conditions: eLife's image expectations are not stated on the reviewer-guide page held here. Third-party
     accounts describing eLife as banning AI figures are unsupported by this source.
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: accountability
+  conditions: Authors retain responsibility for the work and for reporting AI outputs.
+  evidence:
+  - source: author-instructions
+    quote: Whilst such AI tools might be used to aid researchers and authors in doing their work, they
+      cannot be listed as or serve as co-authors of a paper, and their use must be clearly described in
+      the Materials and Methods section.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: General misconduct procedure provides notification and response. The author guide also offers
+    appeals; neither is an AI-detector threshold.
+  evidence:
+  - source: author-instructions
+    quote: If we receive an allegation of potential research or publication misconduct, we will alert
+      those affected and ask for their response.
+    quote_provenance: raw_bytes

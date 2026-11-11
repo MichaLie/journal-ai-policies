@@ -1,0 +1,10 @@
+{
+  "name": "arxiv",
+  "url": "https://info.arxiv.org/help/moderation/index.html",
+  "final_url": "https://info.arxiv.org/help/moderation/index.html",
+  "sha256": "f483423e281516c22676503f1e98439dcb35784070573c6e5f6f00758b0ca13b",
+  "text_sha256": "63ddd0b1c73032af80b7e99679773822f2713404eb305c4b9e3dee663f5d8430",
+  "entity": "arxiv",
+  "source": "ai-guidance",
+  "fetched": "2026-11-11"
+}

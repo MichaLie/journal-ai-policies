@@ -1,0 +1,50 @@
+id: embo
+name: EMBO Press
+type: publisher
+parent: null
+platform: link.springer.com
+policy_owner: embo
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+homepage: null
+notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+sources:
+- id: ai-policy
+  url: https://link.springer.com/partners/embo-press/editorial-policies
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: browser
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: null
+  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
+    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
+policies:
+- axis: language_refinement
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Declare affected parts and tools in the published article.
+  evidence:
+  - source: ai-policy
+    quote: Use of AI programs should be primarily restricted to improve the style, accessibility or quality
+      of human generated text and images, including schemata and data figures.
+    quote_provenance: browser_dom
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: accountability
+  conditions: Label synthetic data; never misrepresent experimental findings.
+  evidence:
+  - source: ai-policy
+    quote: For data based on original experimentation or meta-analysis of the literature, AI programs
+      can be used in the collection and analysis of data if this is documented in the Methods section
+      of the paper.
+    quote_provenance: browser_dom
+coherence: []

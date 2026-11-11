@@ -87,40 +87,32 @@ activities:
 # ─────────────────────────────────────────────────────────────────────────────
 # AXES STM EXCLUDES BY CONSTRUCTION.
 # Not part of the STM grid. We track them because the exclusion is the finding:
-# the field's only shared taxonomy draws its boundary to exclude exactly the
-# workflows that now produce results, and the questions authors most need answered.
+# these activities sit outside the manuscript-preparation taxonomy.
 extended_axes:
   - key: research_process_ai
     plain: Using AI to run the research itself
     title: AI used in the research process itself — analysis, code execution, agentic workflows
-    why: Explicitly outside STM scope. Wiley addresses it; almost nobody else does.
 
   - key: reviewer_use
     plain: Using AI when you peer-review
     title: Use of AI by peer reviewers
-    why: Widest divergence of any axis, and reversing. Not a manuscript-preparation activity.
 
   - key: publisher_own_use
     plain: The publisher running AI on your manuscript
     title: The publisher's or editor's own AI use on submitted manuscripts
-    why: ICMJE section V.C now obliges journals to disclose this. Makes the asymmetry measurable.
 
   - key: detection_screening
     plain: Being screened by AI detectors
     title: Whether AI-text or integrity screening is run, and whether authors are told
-    why: Near-universal silence. One publisher admits it. None denies it.
 
   - key: due_process
     plain: Knowing why you were flagged, and appealing
     title: Threshold for review, notification of the author, and route of appeal
-    why: No policy found anywhere grants any of the three.
 
   - key: audit_trail
     plain: Keeping prompts and session records
     title: Prompts, model versions, session records retained as evidence
-    why: The requirement agentic work needs. ISTIC 3.0 has it; English-language policy does not.
 
   - key: content_licensing
     plain: Your paper licensed for AI training
     title: Licensing of author content for AI training, and author consent
-    why: Does not follow the publisher hierarchy — content is sublicensed between publishers.

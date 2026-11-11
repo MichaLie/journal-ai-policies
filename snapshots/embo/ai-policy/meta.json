@@ -1,0 +1,11 @@
+{
+  "name": "EMBO Press",
+  "url": "https://link.springer.com/partners/embo-press/editorial-policies",
+  "capture_method": "browser_dom",
+  "capture_scope": "Selected visible policy passages, captured 11 November 2026. Excerpt, not a full page or raw HTTP response.",
+  "sha256": null,
+  "text_sha256": "7126a36900a91c536a1ba8e066970646d91fd9faefd8e90d7015c217cf8c12f3",
+  "entity": "embo",
+  "source": "ai-policy",
+  "fetched": "2026-11-11"
+}

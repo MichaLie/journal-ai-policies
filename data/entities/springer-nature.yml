@@ -7,10 +7,9 @@ policy_owner: springer-nature
 delegates_to_journal: false
 policy_architecture: risk_tiered
 homepage: https://www.nature.com
-notes: The Green/Amber/Red framework is present in the 4 August 2026 archive capture and remains on the
-  live Nature Portfolio page. An official announcement dated 10 September 2026 has now been located; that
-  date is not the framework’s first observed appearance. The separate reviewer guidance is also recorded.
-  The Nature Portfolio policy page itself has no revision date.
+notes: Role-specific writing, research and editor guidance supplements the Nature umbrella and reviewer
+  sources. The author declaration wording is more explicit than the umbrella green-tier wording; use the
+  role-specific instructions.
 sources:
 - id: nature-portfolio-ai
   url: https://web.archive.org/web/20260804231015/https://www.nature.com/nature-portfolio/editorial-policies/ai
@@ -57,31 +56,43 @@ sources:
     risk-framework table, captured on 15 October 2026; it is not raw HTTP bytes or a full-page snapshot.
   content_sha256: null
   adjudicated_sha256: d9af514ed88f51113a79375c391d1066e3b2ad24068fda018075c09bb96e9ee2
+- id: manuscript-preparation
+  url: https://www.springernature.com/gp/policies/editorial-policies/ai-manuscript-preparation
+  role: policy
+  audience: authors
+  status: current
+  authoritative: true
+  fetch_method: browser
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: null
+  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
+    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
+- id: research-use
+  url: https://www.springernature.com/gp/policies/editorial-policies/using-ai-in-research
+  role: policy
+  audience: authors
+  status: current
+  authoritative: false
+  fetch_method: browser
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: null
+  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
+    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
+- id: editor-guidance
+  url: https://www.springernature.com/gp/policies/editorial-policies/ai-editor-guidance
+  role: policy
+  audience: editors
+  status: current
+  authoritative: true
+  fetch_method: browser
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: null
+  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
+    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
 policies:
-- axis: translation
-  permission: permitted
-  disclosure: encouraged
-  disclosure_location: []
-  rationale: quality
-  conditions: Listed under the Green tier, whose compliance line reads "Permitted. Disclosure enhances
-    trust and transparency" — encouraged, not required.
-  evidence:
-  - source: nature-portfolio-ai
-    quote: Translation, structuring or clarifying reviewer comments
-    quote_provenance: raw_bytes
-- axis: writing_drafting
-  permission: permitted_with_conditions
-  disclosure: required
-  disclosure_location:
-  - unspecified
-  rationale: accountability
-  conditions: Red tier applies only where core research reasoning is generated WITHOUT disclosure; the
-    Amber tier permits substantive AI use with human accountability and disclosure. An earlier version
-    of this record read the Red example as a blanket prohibition on drafting. It is not one.
-  evidence:
-  - source: nature-portfolio-ai
-    quote: Using an LLM to generate core research reasoning without disclosure
-    quote_provenance: raw_bytes
 - axis: reviewer_use
   permission: permitted_with_conditions
   disclosure: required
@@ -99,22 +110,14 @@ policies:
     quote: Describe how AI was used, confirm independent judgement and take accountability for all content
       in report
     quote_provenance: browser_dom
-- axis: illustrative_images
-  permission: not_addressed
-  disclosure: not_addressed
-  disclosure_location: []
-  rationale: unstated
-  conditions: The image-integrity policy contains no AI content. Deepfakes are prohibited, but in the
-    risk framework rather than the image policy, and photorealistic deepfakes are not the illustrative
-    figures this activity covers.
-  evidence: []
 - axis: publisher_own_use
   permission: permitted
-  disclosure: not_addressed
-  disclosure_location: []
+  disclosure: required
+  disclosure_location:
+  - unspecified
   rationale: unstated
-  conditions: Stated for accessory content and editorial support. Authors are not told which tools ran
-    on their particular manuscript.
+  conditions: Ancillary support is described in the policy; substantive use beyond those listed activities
+    is declared per article.
   evidence:
   - source: nature-portfolio-ai
     quote: Nature Portfolio journals occasionally use artificial intelligence tools developed or approved
@@ -122,16 +125,88 @@ policies:
       the editorial process.
     quote_provenance: raw_bytes
     evidence_role: supports
+  - source: nature-portfolio-ai
+    quote: Any substantive use of artificial intelligence beyond the above will be declared on an individual
+      article basis.
+    quote_provenance: raw_bytes
+- axis: translation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Author guidance places translation in green with a declaration. This is more explicit than
+    the umbrella green-tier wording.
+  evidence:
+  - source: manuscript-preparation
+    quote: formatting; translation; summarising author-written text
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: Clearly describe use and confirm author accountability
+    quote_provenance: browser_dom
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Drafting from author input is amber. Disclosure does not authorize replacement of scientific
+    judgment.
+  evidence:
+  - source: manuscript-preparation
+    quote: Generating outlines; drafting sections based on author input;
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: Clearly describe use and confirm author accountability
+    quote_provenance: browser_dom
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Grounded visual content is amber and must be labelled. Ungrounded generation is not covered
+    by this permission.
+  evidence:
+  - source: manuscript-preparation
+    quote: creating visual content with verifiable source data or material
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: Clearly describe use and confirm author accountability
+    quote_provenance: browser_dom
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: Research support under human accountability; the captured principle is not a task-by-task
+    permission or a disclosure exemption.
+  evidence:
+  - source: research-use
+    quote: AI may support your work, but you remain fully accountable for all research decisions, outputs,
+      and conclusions.
+    quote_provenance: browser_dom
 - axis: detection_screening
-  permission: not_addressed
+  permission: discouraged
   disclosure: not_addressed
   disclosure_location: []
-  rationale: unstated
-  evidence: []
+  rationale: accountability
+  conditions: Detector use calls for extreme caution and confidentiality checks. This guidance is not
+    a statement that routine screening occurs.
+  evidence:
+  - source: editor-guidance
+    quote: The accuracy and usefulness of such tools is far from definitive, and no tool is able to confirm
+      whether the AI use was safe and policy compliant.
+    quote_provenance: browser_dom
 - axis: due_process
-  permission: not_addressed
+  permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
-  rationale: unstated
-  evidence: []
+  rationale: accountability
+  conditions: Explains when to seek clarification. Does not create a universal AI-specific appeal right.
+  evidence:
+  - source: editor-guidance
+    quote: 'The presence of an AI declaration does not indicate concern. Editors may seek clarification
+      where: A declaration lacks sufficient detail.'
+    quote_provenance: browser_dom
 coherence: []

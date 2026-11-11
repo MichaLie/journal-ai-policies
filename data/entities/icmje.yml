@@ -7,12 +7,9 @@ policy_owner: icmje
 delegates_to_journal: false
 policy_architecture: prose
 homepage: https://www.icmje.org
-notes: 'Updated January 2026 with a whole new Section V. Files AI structurally INSIDE contributorship
-  (II.A.4, directly after Non-Author Contributors) and NOT under conflicts of interest — which refutes
-  the naive claim that guidance treats AI use as a competing interest. Section V.C is the first text
-  anywhere obliging journals to disclose their own AI use.
-
-  '
+notes: "Updated January 2026 with a whole new Section V. Files AI structurally INSIDE contributorship\
+  \ (II.A.4, directly after Non-Author Contributors) and NOT under conflicts of interest — which refutes\
+  \ the naive claim that guidance treats AI use as a competing interest. Section V.C is the \n"
 sources:
 - id: ai-authors
   url: https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-authors.html
@@ -62,6 +59,17 @@ sources:
   last_verified: '2026-10-15'
   content_sha256: 67533fea7ec1078503193422931fe5f9393ed0a8e974946e995781c168992b45
   adjudicated_sha256: 06293d267f4ad9fb3088ff23686cd19f2cdf5e8d3f035196ac2539b6a2ab17e2
+- id: ai-reviewers
+  url: https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-reviewers.html
+  role: policy
+  audience: reviewers
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: none
+  last_verified: '2026-11-11'
+  content_sha256: 8c9abdb163fcf39e3ca91bc8f785cf198c8eb208f3109d5762086fdb0a9d87c3
+  note: Verified for this PR. Maintainer adjudication remains pending.
 policies:
 - axis: writing_drafting
   permission: permitted_with_conditions
@@ -99,15 +107,14 @@ policies:
   disclosure_location:
   - unspecified
   rationale: accountability
-  conditions: 'Section V.C. The first obligation anywhere on journals to disclose their own AI use —
-    which converts the author/publisher asymmetry from an ethical complaint into a measurable compliance
-    gap.
+  conditions: 'Section V.C. The first obligation anywhere on journals to disclose their own AI use — which
+    converts the author/publisher asymmetry from an ethical complaint into a measurable compliance gap.
 
     '
   evidence:
   - source: ai-editors
-    quote: Journals should have a policy for the use of AI in the review process and should make all
-      editors, reviewers, and authors aware of this journal policy.
+    quote: Journals should have a policy for the use of AI in the review process and should make all editors,
+      reviewers, and authors aware of this journal policy.
     quote_provenance: raw_bytes
 - axis: due_process
   permission: not_addressed
@@ -122,10 +129,23 @@ policies:
     quote_provenance: raw_bytes
     evidence_role: documents_absence
   - source: ai-authors
-    quote: Nondisclosure of AI use may require corrective action and may be construed as misconduct
-      in some circumstances
+    quote: Nondisclosure of AI use may require corrective action and may be construed as misconduct in
+      some circumstances
     quote_provenance: raw_bytes
     evidence_role: documents_absence
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Follow the journal policy or request permission; maintain confidentiality, disclose use
+    to the journal and validate the output.
+  evidence:
+  - source: ai-reviewers
+    quote: Reviewers must adhere to the journal’s stated policy on the use of AI or request permission
+      from the journal prior to using AI technology to facilitate their review.
+    quote_provenance: raw_bytes
 coherence: []
 metadata_inconsistency:
 - summary: The HTML title tag reads 'January 2025' while the URL and page body both say January 2026.

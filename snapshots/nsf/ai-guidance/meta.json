@@ -1,0 +1,10 @@
+{
+  "name": "nsf",
+  "url": "https://www.nsf.gov/policies/ai/merit-review",
+  "final_url": "https://www.nsf.gov/policies/ai/merit-review",
+  "sha256": "b4ac2e9a84ebe24228bd4bbae6c49e05d1272e5d7d35447a9610a542c479906e",
+  "text_sha256": "0a1bdba26dbc694712224c9d66ef0a352eaec47f4c24b5aa9c6da31691a48b1b",
+  "entity": "nsf",
+  "source": "ai-guidance",
+  "fetched": "2026-11-11"
+}

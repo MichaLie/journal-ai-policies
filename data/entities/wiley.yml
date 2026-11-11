@@ -7,11 +7,8 @@ policy_owner: wiley
 delegates_to_journal: false
 policy_architecture: per_task_matrix
 homepage: https://www.wiley.com
-notes: 'The per-task requires/does-not-require matrix was announced 28 October 2025 — NOT 2026. Wiley
-  is the only major publisher with a genuine agentic policy, and the only one that discloses its own policy
-  document was AI-drafted. Routes disclosure by purpose rather than to one fixed position.
-
-  '
+notes: Purpose-specific guidance covers research-process use, agentic workflows and disclosure. Its own
+  policy-development disclosure is recorded separately from author requirements.
 sources:
 - id: ai-guidelines
   url: https://www.wiley.com/publishing/article/ai-guidelines
@@ -70,8 +67,8 @@ policies:
   disclosure_location:
   - methods
   rationale: reproducibility
-  conditions: 'The only entity in the corpus that names agentic workflows and asks for the audit trail
-    — prompts, parameters, settings and a code repository.
+  conditions: 'Names agentic workflows and asks for the audit trail — prompts, parameters, settings and
+    a code repository.
 
     '
   evidence:

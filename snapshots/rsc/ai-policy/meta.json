@@ -1,0 +1,11 @@
+{
+  "name": "Royal Society of Chemistry",
+  "url": "https://www.rsc.org/publishing/journals/processes-and-policies/author-responsibilities",
+  "capture_method": "browser_dom",
+  "capture_scope": "Selected visible policy passages, captured 11 November 2026. Excerpt, not a full page or raw HTTP response.",
+  "sha256": null,
+  "text_sha256": "a9768c8ebd59c289934fdd4e7fe9b404f390f1c8b8e94e8f41f0df51dc69aad1",
+  "entity": "rsc",
+  "source": "ai-policy",
+  "fetched": "2026-11-11"
+}

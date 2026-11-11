@@ -1,0 +1,11 @@
+{
+  "name": "PNAS",
+  "url": "https://www.pnas.org/author-center/editorial-and-journal-policies",
+  "capture_method": "browser_dom",
+  "capture_scope": "Selected visible policy passages, captured 11 November 2026. Excerpt, not a full page or raw HTTP response.",
+  "sha256": null,
+  "text_sha256": "3b342298cd12b2a121ac1666c6725e286a130984cb29941b7c1e121bd7c000ec",
+  "entity": "pnas",
+  "source": "ai-policy",
+  "fetched": "2026-11-11"
+}
