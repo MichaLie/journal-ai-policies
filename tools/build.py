@@ -472,6 +472,8 @@ def build() -> None:
       '<p>Maintained by <a href="https://github.com/MichaLie">MichaLie</a>. '
       'Records, code and full change history: <a href="https://github.com/MichaLie/journal-ai-policies">github.com/MichaLie/journal-ai-policies</a>. '
       'Corrections via <a href="https://github.com/MichaLie/journal-ai-policies/issues">issues</a>.</p>'
+      '<p>Related: <a href="https://michalie.github.io/publishing-under-ai/">Publishing Under AI</a>: how scientific writing and peer review are coping with AI, where researchers disagree, and what is being tried · '
+      '<a href="https://michalie.github.io/agent-risk-atlas/">Agent Risk Atlas</a>: how research with AI agents goes wrong, and what protects you.</p>'
       '<p>Data CC0. Code MIT. Quoted policy text still belongs to the publishers, and is reproduced here '
       'as short excerpts for comparison and criticism, with attribution and a link to the source.</p>'
       '<p class="muted">The reassurance and advice on this page are our own wording. Every verdict, '

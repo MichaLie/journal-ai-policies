@@ -6,6 +6,7 @@ in the natural and life sciences.
 - **Site:** <https://michalie.github.io/journal-ai-policies/>
 - **Data:** <https://michalie.github.io/journal-ai-policies/data.json> (CC0)
 - **Corrections:** [open an issue](https://github.com/MichaLie/journal-ai-policies/issues)
+- **Related:** [Publishing Under AI](https://michalie.github.io/publishing-under-ai/): how scientific writing and peer review are coping with AI, where researchers disagree, and what is being tried · [Agent Risk Atlas](https://michalie.github.io/agent-risk-atlas/): how research with AI agents goes wrong, and what protects you.
 
 Maintained by [MichaLie](https://github.com/MichaLie). If you work for an organisation recorded
 here and think a record is wrong, open an issue. Every record names its source and quotes the
