@@ -1,0 +1,25 @@
+The Use of Generative Artificial Intelligence Technologies is Prohibited for the NIH Peer Review Process
+Notice Number:
+NOT-OD-23-149
+Key Dates
+Release Date:
+June 23, 2023
+Related Announcements
+December 30, 2021 - Maintaining Security and Confidentiality in NIH Peer Review: Rules, Responsibilities and Possible Consequences. See NOT-OD-22-044.
+Issued by
+NATIONAL INSTITUTES OF HEALTH (NIH)
+Purpose
+The purpose of this Notice is to clarify NOT-OD-22-044 on Maintaining Security and Confidentiality in NIH Peer Review: Rules, Responsibilities and Possible Consequences and inform the extramural community that the NIH prohibits NIH scientific peer reviewers from using natural language processors, large language models, or other generative Artificial Intelligence (AI) technologies for analyzing and formulating peer review critiques for grant applications and R&D contract proposals. NIH is revising its Security, Confidentiality, and Non-disclosure Agreements for Peer Reviewers to clarify this prohibition. Reviewers should be aware that uploading or sharing content or original concepts from an NIH grant application, contract proposal, or critique to online generative AI tools violates the NIH peer review confidentiality and integrity requirements.
+Confidentiality and AI Technologies
+Maintaining security and confidentiality in the NIH peer review process is essential for safeguarding the exchange of scientific opinions and evaluations. Materials pertaining to an application or proposal, and any other associated privileged information, cannot be disclosed, transmitted, or discussed with another individual through any means, except as authorized by the Designated Federal Officer (DFO) in charge of the review meeting, or other designated NIH official, as stated in the NIH Security, Confidentiality, and Non-disclosure Agreements for Peer Reviewers. The use of generative AI tools to output a peer reviewer critique on a specific grant application or contract proposal requires substantial and detailed information inputs. AI tools have no guarantee of where data are being sent, saved, viewed, or used in the future, and thus NIH is revising its Confidentiality Agreements for Peer Reviewers to clarify that reviewers are prohibited from using AI tools in analyzing and critiquing NIH grant applications and R&D contract proposals. Such actions violate NIH’s peer review confidentiality requirements.
+Implementation and Notification
+As part of the standard pre-meeting certifications, all NIH Peer Reviewers will be required to sign and submit a modified Security, Confidentiality and Nondisclosure Agreement certifying that they fully understand and will comply with the confidential nature of the review process, including the prohibition on uploading or sharing content or original concepts from an NIH grant application, R&D contract proposal, or critique to online generative AI tools. NIH will also extend this policy to members of NIH National Advisory Councils and Boards and will require such members to certify similar Security, Confidentiality, and Nondisclosure agreements.
+Additional Information
+Computer technologies that are used for accessibility needs may be granted an exception to this policy. NIH Peer Reviewers must communicate the technology being used with their Designated Federal Officer in charge of the review meeting or other designated NIH official prior to use.
+For additional information on applicable laws, regulations, and policies, as well as possible consequences for violations of the NIH peer review rules, see Maintaining Security and Confidentiality in NIH Peer Review: Rules, Responsibilities and Possible Consequences.
+Resources
+Use of Generative AI in Peer Review FAQs
+Inquiries
+Please direct all inquiries to:
+NIH Review Policy Officer
+ReviewPolicyOfficer@mail.nih.gov

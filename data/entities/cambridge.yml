@@ -5,9 +5,13 @@ parent: null
 platform: null
 policy_owner: cambridge
 delegates_to_journal: true
-policy_architecture: rule_with_exemptions
+policy_architecture: prose
 homepage: null
-notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+notes: 'Cambridge sets one general rule for any AI use: it must be declared and explained, authors are accountable
+  for it, and it must not breach Cambridge''s plagiarism policy. AI does not meet Cambridge''s requirements
+  for authorship, and AI and LLM tools may not be listed as an author. Individual journals may add their
+  own requirements. The policy says: "Please note, individual journals may have more specific requirements
+  or guidelines for upholding this policy."'
 sources:
 - id: ai-policy
   url: https://www.cambridge.org/core/services/publishing-ethics/authorship-and-contributorship-journals
@@ -17,9 +21,9 @@ sources:
   authoritative: true
   fetch_method: http
   date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: f5a1fce6932e095bd154edbb35abc38b43232d2310ae548479235e34daa0a535
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  last_verified: '2026-11-20'
+  content_sha256: 018b18a54a56d42bf5fef95c170ce06f74d192029ea1300291f572e891a00769
+  note: null
 policies:
 - axis: writing_drafting
   permission: permitted_with_conditions
@@ -27,10 +31,52 @@ policies:
   disclosure_location:
   - unspecified
   rationale: accountability
-  conditions: Authors remain accountable; consult the individual journal’s instructions.
+  conditions: AI use must be declared and explained in the publication. Authors are accountable for any
+    use of AI. AI use must not breach Cambridge’s plagiarism policy, and the work must be the author’s
+    own. Individual journals may set more specific requirements.
   evidence:
   - source: ai-policy
     quote: AI use must be declared and clearly explained in publications such as research papers, just
       as we expect scholars to do with other software, tools and methodologies.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are accountable for the accuracy, integrity and originality of their research papers,
+      including for any use of AI.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Any use of AI must not breach Cambridge’s plagiarism policy .
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Scholarly works must be the author’s own, and not present others’ ideas, data, words or other
+      material without adequate citation and transparent referencing.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Please note, individual journals may have more specific requirements or guidelines for upholding
+      this policy.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: AI use must be declared and explained in the publication, as for other software, tools and
+    methodologies. Authors are accountable for any use of AI. AI use must not breach Cambridge’s plagiarism
+    policy. Individual journals may set more specific requirements.
+  evidence:
+  - source: ai-policy
+    quote: AI use must be declared and clearly explained in publications such as research papers, just
+      as we expect scholars to do with other software, tools and methodologies.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are accountable for the accuracy, integrity and originality of their research papers,
+      including for any use of AI.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Any use of AI must not breach Cambridge’s plagiarism policy .
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Please note, individual journals may have more specific requirements or guidelines for upholding
+      this policy.
     quote_provenance: raw_bytes
 coherence: []

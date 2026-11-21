@@ -5,9 +5,14 @@ parent: null
 platform: null
 policy_owner: frontiers
 delegates_to_journal: false
-policy_architecture: rule_with_exemptions
+policy_architecture: prose
 homepage: null
-notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+notes: Frontiers' AI policy covers authors, editors and reviewers. Authors must disclose AI use in the
+  acknowledgments, and in the methods where applicable, giving the tool's name, version, model and source.
+  Editors and reviewers must not upload manuscript content to external generative AI tools; Frontiers
+  provides its own AI tool for reviewers inside the review forum. The policy page also asks that clinical
+  trials with AI components follow the CONSORT-AI extension and that clinical study protocols with an
+  AI component follow the SPIRIT-AI extension.
 sources:
 - id: ai-policy
   url: https://www.frontiersin.org/guidelines/policies-and-publication-ethics
@@ -17,45 +22,292 @@ sources:
   authoritative: true
   fetch_method: http
   date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: 00575087d3040c2fb72e302f250db88559e4c58514b7799302eaa337d07a9af1
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  last_verified: '2026-11-20'
+  content_sha256: 72ca73957a1f766634312059bd1fdf159ca4c649b9b8dbcb5a4b50f1138d6382
+  note: null
 policies:
 - axis: writing_drafting
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - acknowledgements
+  - methods
   rationale: accountability
-  conditions: Check accuracy and originality; authors remain responsible.
+  conditions: Authors should not list a generative AI technology as an author or co-author, because it
+    cannot be held accountable for all aspects of a manuscript. Authors remain responsible for checking
+    the factual accuracy of AI-generated content and must check it is free from plagiarism. Disclosure
+    goes in the Acknowledgements and, where applicable, the Methods, and must give the tool’s name, version,
+    model and source.
   evidence:
   - source: ai-policy
     quote: If AI tools have been used to generate main text, then this must be clearly disclosed in the
       acknowledgments.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If the author of a submitted manuscript has used written or visual content produced by or edited
+      using a generative AI technology, such use must be acknowledged in the acknowledgments section of
+      the manuscript and the methods section, if applicable.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: This explanation must list the name, version, model, and source of the generative AI technology.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors should not list a generative AI technology as a co-author or author of any submitted
+      manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Generative AI technologies cannot be held accountable for all aspects of a manuscript and consequently
+      do not meet the ICMJE criteria required for authorship.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: the author remains responsible for checking the factual accuracy of all content created using
+      generative AI technology. This includes, but is not limited to, any quotes, citations, or references.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors must also check that any written or visual content produced by or edited using a generative
+      AI technology is free from plagiarism.
     quote_provenance: raw_bytes
 - axis: reviewer_use
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - review_report
+  rationale: confidentiality
+  conditions: Frontiers states that it adheres to WAME, EASE and COPE guidelines on the use of AI in peer
+    review. Manuscript content must not be uploaded to external generative AI tools. Any use of external
+    AI tools must be discussed with the editorial team in advance and, if approved, disclosed to authors
+    in the review. Frontiers provides an internal AI tool in a secure, closed environment; it should not
+    be used for editorial decision-making. Reviewers and editors remain solely responsible for their reports
+    and decisions.
+  evidence:
+  - source: ai-policy
+    quote: Frontiers adheres to WAME , EASE , and COPE guidelines on the use of AI in peer review.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: To protect confidentiality and intellectual property, manuscript content must not be uploaded
+      to external generative AI tools.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Any use of external AI tools must be discussed with the editorial team in advance, and - if
+      approved - clearly disclosed to authors in the review.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: To support peer reviewers, we provide an internal AI tool within the review forum, operating
+      in a secure, closed environment.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Importantly, this AI tool does not participate in editorial decision-making, and should not
+      be used for that purpose.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Academic editors and invited community reviewers remain solely responsible for the accuracy,
+      integrity, and relevance of their peer review reports and editorial decisions.
+    quote_provenance: raw_bytes
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  - methods
+  rationale: unstated
+  conditions: The tool’s name, version, model and source must be listed in the Acknowledgements and,
+    where applicable, the Methods. Uploading all input prompts and outputs as supplementary files is
+    encouraged.
+  evidence:
+  - source: ai-policy
+    quote: We encourage authors to upload all input prompts provided to a generative AI technology and
+      outputs received from a generative AI technology in the supplementary files for the manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: This explanation must list the name, version, model, and source of the generative AI technology.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If the author of a submitted manuscript has used written or visual content produced by or edited
+      using a generative AI technology, such use must be acknowledged in the acknowledgments section of
+      the manuscript and the methods section, if applicable.
+    quote_provenance: raw_bytes
+- axis: language_refinement
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  - methods
+  rationale: unstated
+  conditions: The policy covers AI use in writing or editing manuscripts and has no exemption for language
+    editing. Content edited using generative AI must comply with all Frontiers guidelines and policies,
+    be checked for plagiarism, and be acknowledged in the Acknowledgements and, where applicable, the
+    Methods.
+  evidence:
+  - source: ai-policy
+    quote: This policy covers acceptable uses of generative AI technologies such as Large Language Models
+      (ChatGPT, Jasper) and text-to-image generators (DALL-E 2, Midjourney, Stable Diffusion) in the writing
+      or editing of manuscripts submitted to Frontiers.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If the author of a submitted manuscript has used written or visual content produced by or edited
+      using a generative AI technology, such use must be acknowledged in the acknowledgments section of
+      the manuscript and the methods section, if applicable.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If the author of a submitted manuscript has used written or visual content produced by or edited
+      using a generative AI technology, this use must comply to all Frontiers guidelines and policies.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors must also check that any written or visual content produced by or edited using a generative
+      AI technology is free from plagiarism.
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  - methods
+  rationale: unstated
+  conditions: Visual content produced or edited with generative AI must be checked for plagiarism and
+    acknowledged in the Acknowledgements and, where applicable, the Methods.
+  evidence:
+  - source: ai-policy
+    quote: Authors must also check that any written or visual content produced by or edited using a generative
+      AI technology is free from plagiarism.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If the author of a submitted manuscript has used written or visual content produced by or edited
+      using a generative AI technology, such use must be acknowledged in the acknowledgments section of
+      the manuscript and the methods section, if applicable.
+    quote_provenance: raw_bytes
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  - methods
+  rationale: unstated
+  conditions: Figures produced or edited with generative AI must be checked to ensure they accurately
+    reflect the data, and acknowledged in the Acknowledgements and, where applicable, the Methods.
+  evidence:
+  - source: ai-policy
+    quote: Figures produced by or edited using a generative AI technology must be checked to ensure they
+      accurately reflect the data presented in the manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If the author of a submitted manuscript has used written or visual content produced by or edited
+      using a generative AI technology, such use must be acknowledged in the acknowledgments section of
+      the manuscript and the methods section, if applicable.
+    quote_provenance: raw_bytes
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  - methods
   rationale: accountability
-  conditions: Internal support does not make decisions. External use needs advance editorial discussion
-    and, if approved, disclosure to authors; no manuscript upload to external tools.
+  conditions: The author remains responsible for checking the factual accuracy of any quotes, citations
+    or references produced with generative AI. Such use must be acknowledged in the Acknowledgements and,
+    where applicable, the Methods.
+  evidence:
+  - source: ai-policy
+    quote: the author remains responsible for checking the factual accuracy of all content created using
+      generative AI technology. This includes, but is not limited to, any quotes, citations, or references.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If the author of a submitted manuscript has used written or visual content produced by or edited
+      using a generative AI technology, such use must be acknowledged in the acknowledgments section of
+      the manuscript and the methods section, if applicable.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: confidentiality
+  conditions: The policy page describes two Frontiers AI systems. An internal AI tool in the review forum,
+    operating in a secure, closed environment, summarises manuscript content, highlights areas for analysis
+    and helps reviewers draft feedback; it does not take part in editorial decision-making and should not
+    be used for that purpose. Under the image-manipulation policy, Frontiers’ AI review assistant (AIRA)
+    is trained to detect specific types of recycling, modification and manipulation. Under the heading on
+    AI use by editors and reviewers, manuscript content must not be uploaded to external generative AI tools,
+    to protect confidentiality and intellectual property, and academic editors remain solely responsible
+    for their editorial decisions. The policy does not say whether authors are told that these Frontiers
+    tools were used on their manuscript.
   evidence:
   - source: ai-policy
     quote: To support peer reviewers, we provide an internal AI tool within the review forum, operating
       in a secure, closed environment.
     quote_provenance: raw_bytes
-- axis: audit_trail
-  permission: permitted_with_conditions
-  disclosure: encouraged
-  disclosure_location:
-  - unspecified
-  rationale: accountability
-  conditions: Supplementary prompts and outputs are encouraged, not universally mandatory.
+  - source: ai-policy
+    quote: It helps by summarizing manuscript content, highlighting areas for analysis, and assisting
+      in drafting constructive feedback - while fully preserving author privacy.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Importantly, this AI tool does not participate in editorial decision-making, and should not
+      be used for that purpose.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: To protect confidentiality and intellectual property, manuscript content must not be uploaded
+      to external generative AI tools.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Academic editors and invited community reviewers remain solely responsible for the accuracy,
+      integrity, and relevance of their peer review reports and editorial decisions.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Our artificial intelligence review assistant (AIRA) is trained to detect specific types of
+      recycling, modifications, and manipulation.
+    quote_provenance: raw_bytes
+- axis: detection_screening
+  permission: permitted
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Frontiers’ AI review assistant (AIRA) is described in the image-manipulation policy as trained
+    to detect specific types of recycling, modification and manipulation. The policy does not mention
+    AI-text detection and does not say whether authors are told when AIRA screens their manuscript.
   evidence:
   - source: ai-policy
-    quote: We encourage authors to upload all input prompts provided to a generative AI technology and
-      outputs received from a generative AI technology in the supplementary files for the manuscript.
+    quote: Our artificial intelligence review assistant (AIRA) is trained to detect specific types of
+      recycling, modifications, and manipulation.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'Trigger and consequence: stated for image concerns. Frontiers’ AI review assistant (AIRA)
+    is trained to detect specific types of image recycling, modification and manipulation, and concerns
+    over undeclared image modifications are investigated. Failure to address the concerns leads to rejection,
+    and the issue may be raised with the authors'' institutions; after publication, failure to provide
+    the original images may result in retraction. No threshold beyond a raised concern is stated. Author
+    contact: stated; authors are asked to provide the original images and data. Appeal route: the image-manipulation
+    guidance does not refer to one; the general rebuttals and appeals policy lets authors appeal a rejection
+    they believe misapplied a journal policy, considers one appeal or rebuttal per manuscript, and treats
+    all decisions as final. The AI fair use and disclosure policy states no consequence for undisclosed
+    AI use.'
+  evidence:
+  - source: ai-policy
+    quote: Our artificial intelligence review assistant (AIRA) is trained to detect specific types of
+      recycling, modifications, and manipulation.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Any concerns raised over undeclared image modifications will be investigated, and the authors
+      will be asked to provide the original images and data
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Failure by authors to adequately address such concerns will result in rejection of the manuscript,
+      and the issue may be raised with the authors' institutions.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If it is brought to our attention post-publication, it will be investigated, and authors will
+      be required to provide the original images. Failure to do so may result in retraction.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'Appealing compliance with policies : If you think your submission was rejected because the
+      journal''s policies were misapplied or your adherence was misunderstood, you can appeal.'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'Please be aware that we will not consider rebuttals or appeals under the following circumstances:
+      When one appeal or rebuttal has already been evaluated for the manuscript'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: assessment of all rebuttals and appeals remains at the discretion of the journal and all decisions
+      are final.
     quote_provenance: raw_bytes
 coherence: []

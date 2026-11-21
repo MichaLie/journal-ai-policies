@@ -1,0 +1,18 @@
+{
+  "name": "NEJM",
+  "url": "https://www.nejm.org/about-nejm/editorial-policies",
+  "capture_method": "browser_dom",
+  "capture_scope": "Two AI sections of the rendered NEJM Editorial Policies page, 'Author Use of AI-Assisted Technologies' and 'NEJM Use of AI-Assisted Technologies', from the first heading up to the next heading ('Conflicts of Interest and Financial Disclosures'), captured from the browser DOM on 20 November 2026; whitespace normalised. The other sections of the page are not held. Not a raw HTTP response or full-page capture.",
+  "sha256": null,
+  "text_sha256": "ac1d7c845bbd2e466e3a5395c6183dfe2c6207966e211c9b7b7341ca95529a67",
+  "entity": "nejm",
+  "source": "editorial-policies",
+  "fetched": "2026-11-20",
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "text_sha256": "ac1d7c845bbd2e466e3a5395c6183dfe2c6207966e211c9b7b7341ca95529a67",
+      "capture_method": "browser_dom"
+    }
+  ]
+}

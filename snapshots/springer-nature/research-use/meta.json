@@ -2,10 +2,22 @@
   "name": "Springer Nature research",
   "url": "https://www.springernature.com/gp/policies/editorial-policies/using-ai-in-research",
   "capture_method": "browser_dom",
-  "capture_scope": "Selected visible policy passages, captured 11 November 2026. Excerpt, not a full page or raw HTTP response.",
+  "capture_scope": "Full AI-policy text of the rendered page, captured from the browser DOM on 20 November 2026 with collapsed sections expanded; whitespace normalised. Not a raw HTTP response.",
   "sha256": null,
-  "text_sha256": "c67726737124c9e6d078b5ca01d8d852652f053873b80ca2946c27fa76602b28",
+  "text_sha256": "584270f78020295dd3954344342076b1ce28931c7d33faf3bac24c3bfd384214",
   "entity": "springer-nature",
   "source": "research-use",
-  "fetched": "2026-11-11"
+  "fetched": "2026-11-20",
+  "history": [
+    {
+      "fetched": "2026-11-11",
+      "text_sha256": "c67726737124c9e6d078b5ca01d8d852652f053873b80ca2946c27fa76602b28",
+      "capture_method": "browser_dom"
+    },
+    {
+      "fetched": "2026-11-20",
+      "text_sha256": "584270f78020295dd3954344342076b1ce28931c7d33faf3bac24c3bfd384214",
+      "capture_method": "browser_dom"
+    }
+  ]
 }

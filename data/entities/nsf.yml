@@ -6,8 +6,10 @@ platform: null
 policy_owner: nsf
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
-notes: Proposal and review material cannot be uploaded to non-approved tools. Public-information support
-  is distinct from delegation of evaluation.
+notes: 'NSF notice on generative AI in merit review, published 14 December 2023 and last updated 21 May
+  2026. Reviewers may not upload proposal content or review information to non-approved generative AI
+  tools. Proposers are encouraged to state in the project description whether and how they used
+  generative AI.'
 sources:
 - id: ai-guidance
   url: https://www.nsf.gov/policies/ai/merit-review
@@ -16,21 +18,111 @@ sources:
   status: current
   authoritative: true
   fetch_method: http
-  date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: b4ac2e9a84ebe24228bd4bbae6c49e05d1272e5d7d35447a9610a542c479906e
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  date_source: stated
+  stated_date: '2023-12-14'
+  last_verified: '2026-11-20'
+  content_sha256: c7a1f782be9fc90bf1fe0233824c2c68bee85d37c19df09ffcbbacb8131dcf4d
+  note: The page states a publication date of December 14, 2023 and a last update of May 21, 2026.
 policies:
 - axis: reviewer_use
   permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
-  rationale: accountability
-  conditions: Proposal and review material cannot be uploaded to non-approved tools. Public-information
-    support is distinct from delegation of evaluation.
+  rationale: confidentiality
+  conditions: Applies to reviewers of grant proposals, including ad hoc reviewers and panelists, who serve as
+    Special Government Employees. Content from proposals, review information and related records may not be
+    uploaded to non-approved generative AI tools. Review information includes panel summaries, review
+    analysis, recommendations for funding, PO comments and other similar records. NSF will consider such an
+    upload a violation of the agency's confidentiality pledge and of other applicable laws, regulations and
+    policies. Reviewers may share publicly available information with current generation generative AI tools.
+    NSF states that, at the writing of the memo, the current generation of generative AI does not comply with
+    NSF confidentiality standards because information may be released to a third party. Information uploaded
+    into generative AI tools not behind NSF's firewall is considered to be entering the public domain.
   evidence:
+  - source: ai-guidance
+    quote: NSF reviewers are prohibited from uploading any content from proposals, review information and
+      related records to non-approved generative AI tools.
+    quote_provenance: raw_bytes
   - source: ai-guidance
     quote: NSF reviewers may share publicly available information with current generation generative AI
       tools.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: "A key observation for reviewers is that sharing proposal information with generative AI technology
+      via the open internet violates the confidentiality and integrity principles of NSF's merit review
+      process."
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: NSF reviewers, including those conducting ad hoc reviews and panelists, participate in the NSF
+      merit review process as Special Government Employees.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Review information includes panel summaries, review analysis, recommendations for funding, PO
+      comments and other similar records.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: If reviewers take this action, NSF will consider it a violation of the agency's confidentiality
+      pledge and other applicable laws, regulations and policies.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: However, at the writing of this memo, the current generation of generative AI does not comply
+      with NSF confidentiality standards as information may be released to a third party.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Any information uploaded into generative AI tools not behind NSF's firewall 2 is considered to be
+      entering the public domain.
+    quote_provenance: raw_bytes
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: encouraged
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Applies to grant proposals, not manuscripts. NSF states that its guidelines for reviewers and
+    proposers are meant to safeguard the integrity of the development and evaluation of proposals in merit
+    review. Proposers are encouraged to state in the project description whether and how generative AI was
+    used. The disclosure encouragement also covers content not developed by the proposer. NSF states that it
+    is examining the use of generative AI in proposal preparation and first seeks to understand how the
+    community uses it, to minimise administrative requirements and build appropriate processes and resources
+    for merit review. Proposers are responsible for the accuracy and authenticity of the proposal, including
+    AI-assisted content. NSF states that the source and accuracy of information derived from generative AI is
+    not always clear, which can lead to research integrity concerns including the authenticity of authorship.
+    NSF states that generative AI tools may create risks of research misconduct, which the PAPPG describes as
+    including fabrication, falsification or plagiarism. Proposers and awardees are responsible for the
+    integrity of their proposal and of their reporting of research results.
+  evidence:
+  - source: ai-guidance
+    quote: "To safeguard the integrity of the development and evaluation of proposals in the merit review
+      process, this memo establishes guidelines for its use by reviewers and proposers:"
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Proposers are encouraged to indicate in the project description the extent to which, if any,
+      generative AI technology was used and how it was used to develop their proposal.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Proposers are responsible for the accuracy and authenticity of their proposal submission in
+      consideration for merit review, including content developed with the assistance of generative AI
+      tools.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: This policy also applies to any content not developed by the proposer.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In addition, the source and accuracy of the information derived from this technology is not
+      always clear, which can lead to research integrity concerns including the authenticity of authorship.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: NSF is examining the use of GAI in proposal preparation and seeks to first understand how it is
+      used by the community to minimize administrative requirements and build appropriate processes and
+      resources for the merit review process.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: NSF's Proposal and Award Policies and Procedures Guide (PAPPG) addresses research misconduct,
+      which includes fabrication, falsification, or plagiarism in proposing or performing NSF-funded
+      research, or in reporting results funded by NSF.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Generative AI tools may create these risks, and proposers and awardees are responsible for
+      ensuring the integrity of their proposal and reporting of research results.
     quote_provenance: raw_bytes
 coherence: []

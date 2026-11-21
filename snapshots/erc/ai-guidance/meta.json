@@ -1,10 +1,19 @@
 {
-  "name": "erc",
-  "url": "https://erc.europa.eu/news-events/news/erc-clarifies-limits-ai-use-grant-evaluation",
-  "final_url": "https://erc.europa.eu/news-events/news/erc-clarifies-limits-ai-use-grant-evaluation",
-  "sha256": "643433ae66eea7cc214b936ab38548763c9676d705f672cfb0aa264dc1c7e609",
-  "text_sha256": "7d3116dfc3733d519552ea85f590b5e138dae317b1d54a3707c45c55d801288b",
   "entity": "erc",
   "source": "ai-guidance",
-  "fetched": "2026-11-11"
+  "url": "https://erc.europa.eu/news-events/news/erc-clarifies-limits-ai-use-grant-evaluation",
+  "final_url": "https://erc.europa.eu/news-events/news/erc-clarifies-limits-ai-use-grant-evaluation",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "dbe71e06f5065589cb0502244a1dd00297b7bef8ef61c8c6b6ab464c4959df12",
+  "text_sha256": "7d3116dfc3733d519552ea85f590b5e138dae317b1d54a3707c45c55d801288b",
+  "bytes": 66096,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "dbe71e06f5065589cb0502244a1dd00297b7bef8ef61c8c6b6ab464c4959df12",
+      "text_sha256": "7d3116dfc3733d519552ea85f590b5e138dae317b1d54a3707c45c55d801288b"
+    }
+  ]
 }

@@ -1,10 +1,19 @@
 {
-  "name": "Frontiers",
-  "url": "https://www.frontiersin.org/guidelines/policies-and-publication-ethics",
-  "final_url": "https://www.frontiersin.org/guidelines/policies-and-publication-ethics",
-  "sha256": "00575087d3040c2fb72e302f250db88559e4c58514b7799302eaa337d07a9af1",
-  "text_sha256": "053af9a94d4e8092f84172bbb5f7d22b0bc055b0d16525ec573cdb06798bfbcb",
   "entity": "frontiers",
   "source": "ai-policy",
-  "fetched": "2026-11-11"
+  "url": "https://www.frontiersin.org/guidelines/policies-and-publication-ethics",
+  "final_url": "https://www.frontiersin.org/guidelines/policies-and-publication-ethics",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "72ca73957a1f766634312059bd1fdf159ca4c649b9b8dbcb5a4b50f1138d6382",
+  "text_sha256": "571f0b19a31803f3666ba732887af93302f690b8b986e715265b6bbe1536b10e",
+  "bytes": 408029,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "72ca73957a1f766634312059bd1fdf159ca4c649b9b8dbcb5a4b50f1138d6382",
+      "text_sha256": "571f0b19a31803f3666ba732887af93302f690b8b986e715265b6bbe1536b10e"
+    }
+  ]
 }

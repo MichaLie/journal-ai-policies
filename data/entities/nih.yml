@@ -1,0 +1,135 @@
+id: nih
+name: NIH
+type: funder
+parent: null
+platform: null
+policy_owner: nih
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+homepage: null
+notes: 'NIH''s rules are set out in two Guide notices. Peer reviewers of grant applications and R&D
+  contract proposals, and members of NIH advisory councils and boards, may not use generative AI to
+  analyse or write critiques (NOT-OD-23-149, 23 June 2023). For applications submitted from the 25
+  September 2025 receipt date, NIH will not treat applications, or sections of them, substantially
+  developed by AI as the applicants'' original ideas (NOT-OD-25-132, 17 July 2025). The same notice
+  limits each Principal Investigator to six new, renewal, resubmission or revision applications per
+  calendar year, except for T activity codes and R13 Conference Grant Applications.'
+sources:
+- id: applications-ai
+  url: https://www.grants.nih.gov/grants/guide/notice-files/NOT-OD-25-132.html
+  role: policy
+  audience: authors
+  status: current
+  authoritative: true
+  fetch_method: browser
+  date_source: stated
+  stated_date: '2025-07-17'
+  last_verified: '2026-11-20'
+  content_sha256: null
+  adjudicated_sha256: null
+  note: 'Full notice text copied from the live page in a browser on 20 November 2026; no direct download
+    is held.'
+- id: peer-review-ai
+  url: https://grants.nih.gov/grants/guide/notice-files/NOT-OD-23-149.html
+  role: policy
+  audience: reviewers
+  status: current
+  authoritative: true
+  fetch_method: browser
+  date_source: stated
+  stated_date: '2023-06-23'
+  last_verified: '2026-11-20'
+  content_sha256: null
+  adjudicated_sha256: null
+  note: 'Full notice text copied from the live page in a browser on 20 November 2026; no direct download
+    is held.'
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: non_delegation
+  conditions: Applies to grant applications, not manuscripts. AI tools may assist with limited aspects
+    of application preparation or in specific circumstances. NIH will not treat applications, or sections
+    of applications, substantially developed by AI as the original ideas of the applicants. The notice
+    does not ask applicants to declare AI use. The stated ground is that applicants are expected to
+    propose original ideas.
+  evidence:
+  - source: applications-ai
+    quote: it is imperative that all NIH research applications are consistent with the NIH Grants Policy
+      Statement (GPS) Section 2.1.2’s expectation that institutions and affiliated research teams propose
+      original ideas for funding.
+    quote_provenance: browser_dom
+  - source: applications-ai
+    quote: AI tools may be appropriate to assist in application preparation for limited aspects or in specific
+      circumstances, but researchers should be aware that using AI comes with its own risks.
+    quote_provenance: browser_dom
+  - source: applications-ai
+    quote: NIH will not consider applications that are either substantially developed by AI, or contain
+      sections substantially developed by AI, to be original ideas of applicants.
+    quote_provenance: browser_dom
+- axis: detection_screening
+  permission: permitted
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Applies to grant applications. NIH states that it uses technology to detect AI-generated
+    content in applications. The notice does not say whether applicants are told of a detection result.
+  evidence:
+  - source: applications-ai
+    quote: NIH will continue to employ the latest technology in detection of AI-generated content to identify
+      AI generated applications
+    quote_provenance: browser_dom
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Applies to grant applications. If AI use is detected after an award, NIH may refer the matter
+    to the Office of Research Integrity to determine whether there is research misconduct, and may take
+    enforcement actions at the same time. Trigger and consequence are stated (detection of AI after an
+    award, followed by referral and enforcement actions). Contact with the applicant is not stated. An
+    appeal route is not stated.
+  evidence:
+  - source: applications-ai
+    quote: "If the detection of AI is identified post award, NIH may refer the matter to the Office of Research\
+      \ Integrity to determine whether there is research misconduct while simultaneously taking enforcement\
+      \ actions including but not limited to disallowing costs, withholding future awards, wholly or in part\
+      \ suspending the grant, and possible termination."
+    quote_provenance: browser_dom
+    evidence_role: supports
+- axis: reviewer_use
+  permission: prohibited
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: confidentiality
+  conditions: Applies to peer review of grant applications and R&D contract proposals, and to members of
+    NIH advisory councils and boards. Reviewers may not use generative AI to analyse or write critiques,
+    and may not upload application, proposal or critique content to online generative AI tools. Technologies
+    used for accessibility needs may be granted an exception; the reviewer must tell the Designated Federal
+    Officer or another designated NIH official before use. This duty to disclose applies only to such
+    accessibility technologies, and the disclosure goes to that official.
+  evidence:
+  - source: peer-review-ai
+    quote: the NIH prohibits NIH scientific peer reviewers from using natural language processors, large
+      language models, or other generative Artificial Intelligence (AI) technologies for analyzing and formulating
+      peer review critiques for grant applications and R&D contract proposals.
+    quote_provenance: browser_dom
+  - source: peer-review-ai
+    quote: Reviewers should be aware that uploading or sharing content or original concepts from an NIH
+      grant application, contract proposal, or critique to online generative AI tools violates the NIH peer
+      review confidentiality and integrity requirements.
+    quote_provenance: browser_dom
+  - source: peer-review-ai
+    quote: NIH will also extend this policy to members of NIH National Advisory Councils and Boards
+    quote_provenance: browser_dom
+  - source: peer-review-ai
+    quote: Computer technologies that are used for accessibility needs may be granted an exception to this
+      policy.
+    quote_provenance: browser_dom
+  - source: peer-review-ai
+    quote: NIH Peer Reviewers must communicate the technology being used with their Designated Federal Officer
+      in charge of the review meeting or other designated NIH official prior to use.
+    quote_provenance: browser_dom
+coherence: []

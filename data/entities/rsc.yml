@@ -7,7 +7,11 @@ policy_owner: rsc
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
 homepage: null
-notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+notes: 'The RSC sets out its AI rules for authors in three sections of its author responsibilities page:
+  authorship, disclosure and transparency, and image creation and editing. AI tools cannot be listed as
+  an author, and the RSC follows the COPE position statement on AI and authorship. Any generative AI use
+  in preparing the manuscript must be declared in the cover letter at submission; AI-assisted copy editing
+  need not be declared.'
 sources:
 - id: ai-policy
   url: https://www.rsc.org/publishing/journals/processes-and-policies/author-responsibilities
@@ -17,11 +21,22 @@ sources:
   authoritative: true
   fetch_method: browser
   date_source: none
-  last_verified: '2026-11-11'
+  last_verified: '2026-11-20'
   content_sha256: null
-  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
-    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
+  note: Copied from the live page in a browser on 20 November 2026 (the three Artificial Intelligence sections
+    only).
 policies:
+- axis: language_refinement
+  permission: permitted
+  disclosure: not_required
+  disclosure_location: []
+  rationale: unstated
+  conditions: Use of an LLM or other AI tool for AI-assisted copy editing does not need to be declared.
+  evidence:
+  - source: ai-policy
+    quote: The use of an LLM (or other AI-tool) for “AI assisted copy editing” purposes does not need to
+      be declared.
+    quote_provenance: browser_dom
 - axis: writing_drafting
   permission: permitted_with_conditions
   disclosure: required
@@ -30,23 +45,436 @@ policies:
   - methods
   - acknowledgements
   rationale: accountability
-  conditions: Methods describes use and prompts; acknowledgments identifies the tool/model. Copyediting
-    is exempt.
+  conditions: Declare use at submission in the cover letter. A Methods statement should describe how the
+    tool was used, including prompts, and the tool name and model or version go in the Acknowledgements.
+    Without a Methods section, all details go in the Acknowledgements. A recommended Acknowledgements
+    statement names the tool, version and purpose, and states that the authors reviewed and edited the
+    output. Authors are fully responsible for AI-produced content. The RSC states that it set out its AI
+    policies to ensure openness and clarity for its community.
   evidence:
   - source: ai-policy
     quote: If GenAI tools have been used when generating any part of the manuscript (for example when
       drafting text, translating content, formatting data, creating or editing figures, visualising results,
       refining code, or compiling references) this must be declared at submission within the cover letter.
     quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors should also include a statement within the Experimental/Materials and Methods section
+      outlining how the tool was used, including prompts.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Details of the AI tool such as the name and specific model or version (e.g., GPT-4 or Claude 3.5
+      Sonnet) should be included in the Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: If there is no Experimental/Materials and Methods section, all details must be included in the
+      Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: 'Recommended statement in Acknowledgements section:'
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: During the preparation of this manuscript/study, the author(s) used [tool name, version information]
+      for the purposes of [description of use].
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors are fully responsible and accountable for the content of their article, including any
+      parts produced by an AI tool.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: The authors have reviewed and edited the output and take full responsibility for the content
+      of this publication.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: To ensure openness and clarity for our community, we have set out artificial intelligence
+      policies guided by the principles shared by STM and the Committee on Publication Ethics (COPE) in
+      their position statement.
+    quote_provenance: browser_dom
+- axis: translation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - cover_letter
+  - methods
+  - acknowledgements
+  rationale: accountability
+  conditions: Declare use at submission in the cover letter, describe it in the Methods with prompts,
+    and name the tool and model or version in the Acknowledgements. Without a Methods section, all
+    details go in the Acknowledgements. Authors are fully responsible for AI-produced content. The RSC
+    states that it set out its AI policies to ensure openness and clarity for its community.
+  evidence:
+  - source: ai-policy
+    quote: If GenAI tools have been used when generating any part of the manuscript (for example when
+      drafting text, translating content, formatting data, creating or editing figures, visualising results,
+      refining code, or compiling references) this must be declared at submission within the cover letter.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors should also include a statement within the Experimental/Materials and Methods section
+      outlining how the tool was used, including prompts.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Details of the AI tool such as the name and specific model or version (e.g., GPT-4 or Claude 3.5
+      Sonnet) should be included in the Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors are fully responsible and accountable for the content of their article, including any
+      parts produced by an AI tool.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: If there is no Experimental/Materials and Methods section, all details must be included in
+      the Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: To ensure openness and clarity for our community, we have set out artificial intelligence
+      policies guided by the principles shared by STM and the Committee on Publication Ethics (COPE) in
+      their position statement.
+    quote_provenance: browser_dom
+- axis: data_presentation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - cover_letter
+  - methods
+  - acknowledgements
+  rationale: accountability
+  conditions: Declare use at submission in the cover letter, describe it in the Methods with prompts,
+    and name the tool and model or version in the Acknowledgements. Without a Methods section, all
+    details go in the Acknowledgements. Authors are fully responsible for AI-produced content. The RSC
+    states that it set out its AI policies to ensure openness and clarity for its community.
+  evidence:
+  - source: ai-policy
+    quote: If GenAI tools have been used when generating any part of the manuscript (for example when
+      drafting text, translating content, formatting data, creating or editing figures, visualising results,
+      refining code, or compiling references) this must be declared at submission within the cover letter.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors should also include a statement within the Experimental/Materials and Methods section
+      outlining how the tool was used, including prompts.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Details of the AI tool such as the name and specific model or version (e.g., GPT-4 or Claude 3.5
+      Sonnet) should be included in the Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors are fully responsible and accountable for the content of their article, including any
+      parts produced by an AI tool.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: If there is no Experimental/Materials and Methods section, all details must be included in
+      the Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: To ensure openness and clarity for our community, we have set out artificial intelligence
+      policies guided by the principles shared by STM and the Committee on Publication Ethics (COPE) in
+      their position statement.
+    quote_provenance: browser_dom
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - cover_letter
+  - methods
+  - figure_caption
+  - acknowledgements
+  rationale: accountability
+  conditions: Declare use at submission in the cover letter. A Methods statement should describe how the
+    tool was used, including prompts; without a Methods section, all details go in the Acknowledgements.
+    Graphics made with AI for illustrative or aesthetic purposes also need a brief description in the
+    figure caption and the tool name and model or version in the Acknowledgements. The tool should be
+    trained on licensed datasets and the output must be cleared for commercial reuse. Authors are fully
+    responsible for the output and should check its accuracy. AI-generated images of identifiable people
+    are not acceptable. A replacement image without people or with non-identifiable people should be
+    used. The RSC states that it set out its AI policies to ensure openness and clarity for its community.
+  evidence:
+  - source: ai-policy
+    quote: If GenAI tools have been used when generating any part of the manuscript (for example when
+      drafting text, translating content, formatting data, creating or editing figures, visualising results,
+      refining code, or compiling references) this must be declared at submission within the cover letter.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors should also include a statement within the Experimental/Materials and Methods section
+      outlining how the tool was used, including prompts.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: If there is no Experimental/Materials and Methods section, all details must be included in
+      the Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Where graphics have been created using AI for illustrative or aesthetic purposes only, a brief
+      description of AI use should be included in the figure caption to explain to readers how the image
+      was created.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Details of the AI tool such as the name and specific model or version should be included in the
+      Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Any AI tool used during image creation should be trained on licensed datasets and the output must
+      be cleared for commercial reuse.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Images containing identifiable people which have been generated using any AI tool are not acceptable.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors are fully responsible and accountable for the output and should check its accuracy.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: A replacement image without people or with non-identifiable people should be used.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: To ensure openness and clarity for our community, we have set out artificial intelligence
+      policies guided by the principles shared by STM and the Committee on Publication Ethics (COPE) in
+      their position statement.
+    quote_provenance: browser_dom
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - cover_letter
+  - methods
+  - acknowledgements
+  rationale: accountability
+  conditions: Declare use at submission in the cover letter, describe it in the Methods with prompts,
+    and name the tool and model or version in the Acknowledgements. Without a Methods section, all
+    details go in the Acknowledgements. Authors are fully responsible for AI-produced content. AI tools
+    must not be used to alter images in submitted manuscripts, including adding, removing, moving or
+    obscuring features within an image or figure. Basic brightness, contrast or colour balance
+    adjustments are acceptable if they do not hide or remove original information. The RSC states that
+    it set out its AI policies to ensure openness and clarity for its community.
+  evidence:
+  - source: ai-policy
+    quote: If GenAI tools have been used when generating any part of the manuscript (for example when
+      drafting text, translating content, formatting data, creating or editing figures, visualising results,
+      refining code, or compiling references) this must be declared at submission within the cover letter.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors should also include a statement within the Experimental/Materials and Methods section
+      outlining how the tool was used, including prompts.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Details of the AI tool such as the name and specific model or version (e.g., GPT-4 or Claude 3.5
+      Sonnet) should be included in the Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors are fully responsible and accountable for the content of their article, including any
+      parts produced by an AI tool.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: GenAI or AI-assisted tools must not be used to alter images in submitted manuscripts. This includes
+      adding, removing, moving, or obscuring features within an image or figure.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Basic adjustments such as brightness, contrast or colour balance are acceptable, provided they
+      do not hide or remove original information.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: If there is no Experimental/Materials and Methods section, all details must be included in
+      the Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: To ensure openness and clarity for our community, we have set out artificial intelligence
+      policies guided by the principles shared by STM and the Committee on Publication Ethics (COPE) in
+      their position statement.
+    quote_provenance: browser_dom
+- axis: code_presentation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - cover_letter
+  - methods
+  - acknowledgements
+  rationale: accountability
+  conditions: Declare use at submission in the cover letter, describe it in the Methods with prompts,
+    and name the tool and model or version in the Acknowledgements. Without a Methods section, all
+    details go in the Acknowledgements. Authors are fully responsible for AI-produced content. The RSC
+    states that it set out its AI policies to ensure openness and clarity for its community.
+  evidence:
+  - source: ai-policy
+    quote: If GenAI tools have been used when generating any part of the manuscript (for example when
+      drafting text, translating content, formatting data, creating or editing figures, visualising results,
+      refining code, or compiling references) this must be declared at submission within the cover letter.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors should also include a statement within the Experimental/Materials and Methods section
+      outlining how the tool was used, including prompts.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Details of the AI tool such as the name and specific model or version (e.g., GPT-4 or Claude 3.5
+      Sonnet) should be included in the Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors are fully responsible and accountable for the content of their article, including any
+      parts produced by an AI tool.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: If there is no Experimental/Materials and Methods section, all details must be included in
+      the Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: To ensure openness and clarity for our community, we have set out artificial intelligence
+      policies guided by the principles shared by STM and the Committee on Publication Ethics (COPE) in
+      their position statement.
+    quote_provenance: browser_dom
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - cover_letter
+  - methods
+  - acknowledgements
+  rationale: accountability
+  conditions: Declare use at submission in the cover letter, describe it in the Methods with prompts,
+    and name the tool and model or version in the Acknowledgements. Without a Methods section, all
+    details go in the Acknowledgements. Authors are fully responsible for AI-produced content. The RSC
+    states that it set out its AI policies to ensure openness and clarity for its community.
+  evidence:
+  - source: ai-policy
+    quote: If GenAI tools have been used when generating any part of the manuscript (for example when
+      drafting text, translating content, formatting data, creating or editing figures, visualising results,
+      refining code, or compiling references) this must be declared at submission within the cover letter.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors should also include a statement within the Experimental/Materials and Methods section
+      outlining how the tool was used, including prompts.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Details of the AI tool such as the name and specific model or version (e.g., GPT-4 or Claude 3.5
+      Sonnet) should be included in the Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors are fully responsible and accountable for the content of their article, including any
+      parts produced by an AI tool.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: If there is no Experimental/Materials and Methods section, all details must be included in
+      the Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: To ensure openness and clarity for our community, we have set out artificial intelligence
+      policies guided by the principles shared by STM and the Committee on Publication Ethics (COPE) in
+      their position statement.
+    quote_provenance: browser_dom
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: unstated
+  conditions: Stated in the image creation and editing section, as the exception to the image-alteration
+    ban. Where AI tools form part of the research design or methods, such as AI-assisted imaging used to
+    generate or interpret research data, authors must describe the process in the Methods, including how
+    the tool was used, its name, version and manufacturer. Authors should follow the tool's usage
+    policies and ensure correct attribution. Original, unaltered images may be requested.
+  evidence:
+  - source: ai-policy
+    quote: GenAI or AI-assisted tools must not be used to alter images in submitted manuscripts.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: The only exception is where AI tools form part of the research design or methods, for example,
+      AI-assisted imaging used to generate or interpret research data.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: In these cases, authors must describe the process clearly in the Experimental/Materials and Methods
+      section, including how the tool was used, its name, version, and manufacturer.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors should follow the tool’s usage policies and ensure correct attribution.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Where requested, authors may need to provide original, unaltered images or raw composites for
+      editorial review.
+    quote_provenance: browser_dom
 - axis: passing_off
   permission: prohibited
   disclosure: not_addressed
   disclosure_location: []
-  rationale: accountability
-  conditions: Generated content cannot stand in for nonmachine research data.
+  rationale: unstated
+  conditions: AI-generated content must not be presented as original research data or results from nonmachine
+    sources. AI tools must not be used to alter images in submitted manuscripts, apart from basic adjustments
+    that do not hide or remove original information. The exception to the image ban is AI that forms part
+    of the research design or methods, such as AI-assisted imaging, which must be described in the Methods.
   evidence:
   - source: ai-policy
     quote: We do not permit the presentation of any kind of content generated by AI tools as though it
       were original research data/results from nonmachine sources.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: GenAI or AI-assisted tools must not be used to alter images in submitted manuscripts.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Basic adjustments such as brightness, contrast or colour balance are acceptable, provided they
+      do not hide or remove original information.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: The only exception is where AI tools form part of the research design or methods, for example,
+      AI-assisted imaging used to generate or interpret research data.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: In these cases, authors must describe the process clearly in the Experimental/Materials and Methods
+      section, including how the tool was used, its name, version, and manufacturer.
+    quote_provenance: browser_dom
+- axis: detection_screening
+  permission: permitted
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: The RSC may use image forensics or specialist software to check images for irregularities.
+    The AI sections name no AI-text detection tool. If undisclosed AI use is suspected, the RSC may
+    contact the author for further information.
+  evidence:
+  - source: ai-policy
+    quote: We may use image forensics or specialist software to check for irregularities.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: If AI usage is suspected and not disclosed, the RSC reserves the right to contact the author
+      for further information.
+    quote_provenance: browser_dom
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Stated in the AI sections are a trigger, contact with the author and a consequence. If undisclosed
+    AI use is suspected, the RSC may contact the author for further information. If concerns are not
+    addressed satisfactorily, the manuscript may be withdrawn, rejected or retracted. The AI sections state
+    no threshold for suspicion and no route of appeal.
+  evidence:
+  - source: ai-policy
+    quote: If AI usage is suspected and not disclosed, the RSC reserves the right to contact the author
+      for further information.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: If concerns are not addressed satisfactorily, the manuscript may be withdrawn, rejected or retracted.
+    quote_provenance: browser_dom
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - acknowledgements
+  rationale: unstated
+  conditions: The Methods statement should include the prompts used, and the Acknowledgements should give
+    the tool name and model or version. Where AI forms part of the research design or methods, the Methods
+    must give the tool's name, version and manufacturer, and authors may be asked for original, unaltered
+    images or raw composites for editorial review. The AI sections do not mention keeping session records.
+  evidence:
+  - source: ai-policy
+    quote: Authors should also include a statement within the Experimental/Materials and Methods section
+      outlining how the tool was used, including prompts.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Details of the AI tool such as the name and specific model or version (e.g., GPT-4 or Claude 3.5
+      Sonnet) should be included in the Acknowledgements section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: The only exception is where AI tools form part of the research design or methods, for example,
+      AI-assisted imaging used to generate or interpret research data.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: In these cases, authors must describe the process clearly in the Experimental/Materials and Methods
+      section, including how the tool was used, its name, version, and manufacturer.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Where requested, authors may need to provide original, unaltered images or raw composites for
+      editorial review.
     quote_provenance: browser_dom
 coherence: []

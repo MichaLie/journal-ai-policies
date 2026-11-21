@@ -7,7 +7,12 @@ policy_owner: taylor-francis
 delegates_to_journal: true
 policy_architecture: rule_with_exemptions
 homepage: null
-notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+notes: 'The policy says individual journals may restrict AI use further: "Note that some journals may
+  not allow use of Generative AI tools beyond language improvement, therefore authors are advised to review
+  the “Instructions for authors” on the journal homepage prior to submission." Book authors must ask their
+  editorial contacts to approve any planned AI use, at the proposal stage or during writing; an approved
+  statement goes in the preface or introduction of the book. The policy warns that generative AI providers
+  may reuse input or output data, for example for AI training.'
 sources:
 - id: ai-policy
   url: https://taylorandfrancis.com/our-policies/ai-policy/
@@ -17,20 +22,118 @@ sources:
   authoritative: true
   fetch_method: http
   date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: a678b1c8d000353bad9386d6e5e9d623f7e90b9c538a8b74f5fc2c57edc50517
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  last_verified: '2026-11-20'
+  content_sha256: 6fe8a9af585634f85b35c10c048b2f7c5836be5820634c5a54a6112625bbe49d
+  note: null
 policies:
+- axis: language_refinement
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: accountability
+  conditions: Supported with tools that respect data security, confidentiality and copyright protection.
+    Articles need an AI usage statement naming the tool and version, how it was used and why.
+  evidence:
+  - source: ai-policy
+    quote: Taylor & Francis supports the responsible use of Generative AI tools that respect high standards
+      of data security, confidentiality, and copyright protection in cases such as
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Copyediting, language improvement and translations
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'Authors must clearly acknowledge within the article or book any use of Generative AI tools through
+      a statement that includes: the full name of the tool used (with version number), how it was used and
+      the reason for use.'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: For article submissions, a specific statement of AI usage disclosure must be included.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are accountable for the originality, validity, and integrity of the content of their
+      submissions, including the references.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: This includes reviewing the outputs of any Generative AI tools and confirming content accuracy.
+    quote_provenance: raw_bytes
 - axis: translation
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - dedicated_section
   rationale: accountability
-  conditions: Name tool/version, how and why. Individual journals can restrict use beyond language improvement.
+  conditions: Supported with tools that respect data security, confidentiality and copyright protection.
+    Articles need an AI usage statement naming the tool and version, how it was used and why. Some journals
+    may not allow AI use beyond language improvement.
   evidence:
   - source: ai-policy
+    quote: Taylor & Francis supports the responsible use of Generative AI tools that respect high standards
+      of data security, confidentiality, and copyright protection in cases such as
+    quote_provenance: raw_bytes
+  - source: ai-policy
     quote: Copyediting, language improvement and translations
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: For article submissions, a specific statement of AI usage disclosure must be included.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'Authors must clearly acknowledge within the article or book any use of Generative AI tools through
+      a statement that includes: the full name of the tool used (with version number), how it was used and the
+      reason for use.'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Note that some journals may not allow use of Generative AI tools beyond language improvement
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are accountable for the originality, validity, and integrity of the content of their
+      submissions, including the references.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: This includes reviewing the outputs of any Generative AI tools and confirming content accuracy.
+    quote_provenance: raw_bytes
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: accountability
+  conditions: Generated text must be rigorously revised and checked for accuracy. Authors should not submit
+    AI-generated content that is inaccurate, including abstracts or supplemental materials. Authors are responsible
+    for ensuring that submitted content is created by the author. Articles need an AI usage statement
+    naming the tool and version, how it was used and why. Some journals may not allow AI use beyond
+    language improvement.
+  evidence:
+  - source: ai-policy
+    quote: 'Authors should not submit manuscripts where Generative AI tools have been used in ways that replace
+      core researcher and author responsibilities, for example: Text or code generation without rigorous
+      revision'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Generation of any types of content which is inaccurate including abstracts or supplemental materials
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: This includes reviewing the outputs of any Generative AI tools and confirming content accuracy.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: For article submissions, a specific statement of AI usage disclosure must be included.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are responsible for ensuring that the content of their submissions meets the required
+      standards of rigorous scientific and scholarly assessment, research and validation, and is created by the
+      author.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'Authors must clearly acknowledge within the article or book any use of Generative AI tools through
+      a statement that includes: the full name of the tool used (with version number), how it was used and the
+      reason for use.'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Note that some journals may not allow use of Generative AI tools beyond language improvement
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are accountable for the originality, validity, and integrity of the content of their
+      submissions, including the references.
     quote_provenance: raw_bytes
 - axis: illustrative_images
   permission: permitted_with_conditions
@@ -38,20 +141,203 @@ policies:
   disclosure_location:
   - dedicated_section
   rationale: accountability
-  conditions: Does not permit creation or manipulation of research or clinical-testing outputs.
+  conditions: Permitted for conceptual illustrations of processes, flow diagrams and teaching illustrations.
+    Articles need an AI usage statement naming the tool and version, how it was used and why. Some journals
+    may not allow AI use beyond language improvement.
   evidence:
   - source: ai-policy
     quote: Taylor & Francis does permit use of Generative AI tools to assist research data visualisations
       and conceptual illustrations of processes, flow diagrams or teaching illustrations.
     quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: For article submissions, a specific statement of AI usage disclosure must be included.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'Authors must clearly acknowledge within the article or book any use of Generative AI tools through
+      a statement that includes: the full name of the tool used (with version number), how it was used and the
+      reason for use.'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Note that some journals may not allow use of Generative AI tools beyond language improvement
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are accountable for the originality, validity, and integrity of the content of their
+      submissions, including the references.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: This includes reviewing the outputs of any Generative AI tools and confirming content accuracy.
+    quote_provenance: raw_bytes
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: accountability
+  conditions: AI may assist research data visualisations. It must not be used to create or manipulate
+    research results, clinical samples or diagnostic images. Articles need an AI usage statement naming
+    the tool and version, how it was used and why. Some journals may not allow AI use beyond language
+    improvement.
+  evidence:
+  - source: ai-policy
+    quote: Taylor & Francis does permit use of Generative AI tools to assist research data visualisations
+      and conceptual illustrations of processes, flow diagrams or teaching illustrations.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: For article submissions, a specific statement of AI usage disclosure must be included.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Taylor & Francis does not permit the use of Generative AI in the creation or manipulation of outputs
+      of research or clinical testing, for example, research results, clinical samples and diagnostic images.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'Authors must clearly acknowledge within the article or book any use of Generative AI tools through
+      a statement that includes: the full name of the tool used (with version number), how it was used and the
+      reason for use.'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Note that some journals may not allow use of Generative AI tools beyond language improvement
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are accountable for the originality, validity, and integrity of the content of their
+      submissions, including the references.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: This includes reviewing the outputs of any Generative AI tools and confirming content accuracy.
+    quote_provenance: raw_bytes
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Generative AI must not be used to create or manipulate outputs of research or clinical testing,
+    including adding, removing or concealing features in an image. Authors should not submit manuscripts
+    that use synthetic data to substitute missing data without robust methodology. Such cases may be subject
+    to editorial investigation.
+  evidence:
+  - source: ai-policy
+    quote: Taylor & Francis does not permit the use of Generative AI in the creation or manipulation of
+      outputs of research or clinical testing, for example, research results, clinical samples and diagnostic
+      images.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The term “manipulation” includes augmenting, concealing, moving, removing, or introducing a specific
+      feature within an image or figure.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Synthetic data generation to substitute missing data without robust methodology
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'Authors should not submit manuscripts where Generative AI tools have been used in ways that replace
+      core researcher and author responsibilities, for example:'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: These types of cases may be subject to editorial investigation.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: accountability
+  conditions: Supported uses include idea generation, literature classification and coding assistance.
+    Use in the research process needs human oversight and transparency. Articles need an AI usage statement.
+    Some journals may not allow AI use beyond language improvement.
+  evidence:
+  - source: ai-policy
+    quote: Idea generation and idea exploration
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Literature classification
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Coding assistance
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Utilising Generative AI and AI-assisted technologies in any part of the research process should
+      always be undertaken with human oversight and transparency.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: For article submissions, a specific statement of AI usage disclosure must be included.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Taylor & Francis supports the responsible use of Generative AI tools that respect high standards of
+      data security, confidentiality, and copyright protection in cases such as
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Note that some journals may not allow use of Generative AI tools beyond language improvement
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are accountable for the originality, validity, and integrity of the content of their
+      submissions, including the references.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: This includes reviewing the outputs of any Generative AI tools and confirming content accuracy.
+    quote_provenance: raw_bytes
 - axis: reviewer_use
   permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
-  rationale: accountability
-  conditions: No manuscript upload, substantive analysis, summarization or generated review reports.
+  rationale: confidentiality
+  conditions: Reviewers may use generative AI to improve review language. They must not upload unpublished
+    manuscripts or associated files into AI tools or use AI to generate review reports. They should not
+    use generative AI for analysis or to summarise submitted articles.
   evidence:
   - source: ai-policy
     quote: However, Generative AI may be utilised to assist with improving review language.
     quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: As such, peer reviewers must not upload unpublished manuscripts or project proposals, including
+      any associated files, images, or information, into Generative AI tools.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Reviewers must not use artificial intelligence tools to generate manuscript and proposal review
+      reports, including LLM based tools like ChatGPT.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The use of manuscripts in Generative AI systems may give rise to risks around confidentiality,
+      infringement of proprietary rights and data and other risks.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Peer reviewers are chosen experts in their fields and should not be using Generative AI for analysis
+      or to summarise submitted articles or portions thereof in the creation of their reviews.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: confidentiality
+  conditions: Editors may use generative AI tools where they have been informed that the tool and the
+    proposed use are authorised. Otherwise they should check with their Taylor & Francis contact first.
+    Editors must not upload unpublished manuscripts or associated files into generative AI tools. The source
+    does not describe Taylor & Francis's own AI systems or tools.
+  evidence:
+  - source: ai-policy
+    quote: Therefore, editors must not upload unpublished manuscripts, including any associated files, images,
+      or information into Generative AI tools.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Editors should check with their Taylor & Francis contact prior to using any Generative AI tools,
+      unless they have already been informed that the tool and proposed use of the tool is authorised.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Use of manuscripts in Generative AI systems may give rise to risks around confidentiality,
+      infringement of proprietary rights and data and other risks.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'Consequence: stated. Manuscripts where generative AI replaced core author responsibilities
+    may be subject to editorial investigation. Author contact about AI use: not stated. Appeal route: not
+    stated.'
+  evidence:
+  - source: ai-policy
+    quote: 'Authors should not submit manuscripts where Generative AI tools have been used in ways that replace
+      core researcher and author responsibilities, for example:'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: These types of cases may be subject to editorial investigation.
+    quote_provenance: raw_bytes
+    evidence_role: supports
 coherence: []

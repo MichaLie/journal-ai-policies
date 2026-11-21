@@ -2,8 +2,10 @@ id: isc
 name: ISC AI disclosure initiative
 type: normative_body
 policy_owner: isc
-notes: Vancouver Standard initiative with COPE, STM and GYA. Consultation in progress, not an adopted
-  standard. No permission verdicts are inferred from survey questions.
+notes: A joint initiative of the International Science Council (ISC), COPE, STM and the Global Young Academy
+  (GYA) to develop a global reporting standard for AI disclosure in research, the Vancouver Standard.
+  It is still being developed and is not yet an adopted standard. The second consultation round (July
+  to October 2026) has closed; the third is planned to open in January 2027.
 sources:
 - id: official-information
   url: https://council.science/our-work/ai-disclosure-in-research/
@@ -13,8 +15,7 @@ sources:
   authoritative: true
   fetch_method: http
   date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: 6554a9555636deed52c80834d33a2d85ec631c92cbf0fa9c04b2b4892264a670
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  last_verified: '2026-11-20'
+  content_sha256: f2a8d303d442e1d371f5135fb76877074f1e8b8e97b8ebe8a95e36537648e5ca
 policies: []
 coherence: []

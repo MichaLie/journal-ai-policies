@@ -1,0 +1,152 @@
+id: nhmrc
+name: NHMRC
+type: funder
+parent: null
+platform: null
+policy_owner: nhmrc
+delegates_to_journal: false
+policy_architecture: prose
+homepage: null
+notes: 'Australian funder policy on generative AI in grant applications and peer review, dated 28 April
+  2026 and applying to all peer review for NHMRC MREA grant schemes from that date. Applicants may use
+  generative AI as a support tool under human oversight; the policy does not ask them to declare it.
+  Peer reviewers may use it to refine their review comments, and using it to evaluate, critique or score
+  applications is inappropriate. Breaches are managed under NHMRC''s Policy on Research Integrity.'
+sources:
+- id: genai-policy
+  url: https://www.nhmrc.gov.au/about-us/resources/policy-use-generative-artificial-intelligence
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: browser
+  date_source: stated
+  stated_date: '2026-04-28'
+  last_verified: '2026-11-20'
+  content_sha256: null
+  adjudicated_sha256: null
+  note: 'Full policy text copied from the live page in a browser on 20 November 2026; no direct download
+    is held.'
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: Applies to grant applications, not manuscripts. Applicants may use generative AI to prepare
+    applications as a support tool under human oversight. All outputs must be reviewed by a human. Applicants
+    and their Administering Institutions certify that the application is accurate and are accountable for
+    errors, including those resulting from AI use. The policy's confidentiality and privacy principles
+    apply to applicants, who are to assume anything entered into a generative AI tool could be made public. The policy
+    gives maintaining confidentiality, human judgement and accountability as essential to trust in its funding
+    and peer review processes. The policy does not ask applicants to declare AI use.
+  evidence:
+  - source: genai-policy
+    quote: GenAI should only be used as a support tool where appropriate, with human oversight, and decision-making
+      authority remaining with a human.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: by applicants in the preparation of grant applications
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: P2.1 All outputs must be reviewed by a human.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: P3.1 Applicants and peer reviewers must take responsibility for the accuracy and appropriateness
+      of their outputs.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: R4. Applicants (and their Administering Institutions) must certify that all information provided
+      in their applications is accurate and are accountable for any misinformation and factual errors more
+      broadly, including those resulting from the use of GenAI in their applications.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: Any use of GenAI must accord with the following principles and responsibilities.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: P1.2 Assume anything entered into a GenAI tool could be made public.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: Maintaining confidentiality, human judgement and accountability is essential to sustaining trust
+      in NHMRC’s funding and peer review processes.
+    quote_provenance: browser_dom
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: confidentiality
+  conditions: Applies to peer review of grant applications, including community and consumer reviewers.
+    Reviewers may use generative AI to refine their review comments. Using it to evaluate, critique or
+    score applications is inappropriate. Applications are confidential; reviewers use only the minimum
+    information necessary and paraphrase or anonymise content where possible. Improper use, including inadvertent
+    disclosure of personal or sensitive information, must be notified to NHMRC.
+  evidence:
+  - source: genai-policy
+    quote: by peer reviewers to assist with refining review comments (for example, to improve clarity, check
+      grammar, structure comments, or reduce language barriers).
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: NHMRC considers the use of GenAI by peer reviewers to evaluate, critique and/or score applications
+      to be inappropriate.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: P1.1 The application submitted to NHMRC must be treated as confidential and handled in a manner
+      that protects privacy.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: P1.3 Only use the minimum information necessary when interacting with GenAI tools. Paraphrase
+      or anonymise content where possible to protect confidentiality and privacy while still obtaining useful
+      assistance.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: Any improper use of GenAI tools, including the inadvertent disclosure of personal or sensitive
+      information, must be notified to NHMRC.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: 2 For the purposes of this policy the term peer reviewers also includes community/consumer reviewers.
+    quote_provenance: browser_dom
+- axis: publisher_own_use
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: The policy covers applicants and peer reviewers. It does not describe NHMRC's own use of
+    generative AI in handling or assessing applications.
+  evidence:
+  - source: genai-policy
+    quote: The use of generative artificial intelligence (GenAI) may present a number of opportunities and
+      challenges for grant applicants and peer reviewers.
+    quote_provenance: browser_dom
+    evidence_role: documents_absence
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: A failure to meet the policy's principles and responsibilities is a breach. Suspected breaches
+    are to be reported to NHMRC as appropriate. Breaches range from minor to more serious and are managed
+    under NHMRC's Policy on Research Integrity and the NHMRC Confidentiality Undertaking form. Complaints
+    about alleged breaches are managed under the NHMRC Complaints policy. Of the AI-specific elements, the
+    policy states a trigger (a breach, and reporting of suspected breaches) and a consequence route (management
+    under the Policy on Research Integrity). It does not say whether the applicant or reviewer is contacted
+    before action, and it names no appeal route.
+  evidence:
+  - source: genai-policy
+    quote: A failure to meet the principles and responsibilities set out in this Policy is a breach of the
+      Policy.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: R10. Report suspected breaches of this Policy to NHMRC as appropriate.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: A breach could occur on a spectrum from minor breaches to those that are more serious.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: Any breaches will be managed as per NHMRC’s Policy on Research Integrity and the NHMRC Confidentiality
+      Undertaking form.
+    quote_provenance: browser_dom
+  - source: genai-policy
+    quote: Any complaints made about alleged breaches of this Policy will be managed as per the NHMRC Complaints
+      policy.
+    quote_provenance: browser_dom
+coherence: []

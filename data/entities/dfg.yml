@@ -6,32 +6,80 @@ platform: null
 policy_owner: dfg
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
-notes: Funding-proposal reviews. Rules effective 16 April 2026; reviewers disclose use and retain responsibility.
+notes: DFG's rules cover reviewers of funding proposals and apply from 16 April 2026. AI may be used only
+  in a supporting role, proposal content may be processed only in systems that guarantee secure and purpose-specific
+  use, and reviewers must disclose AI use. This summary is based on DFG's announcement of 12 March 2026
+  (Information for Researchers, No. 18); the full Guideline on the Use of Artificial Intelligence in the
+  Review Process is linked from it and has not been read here. The announcement does not mention AI training.
 sources:
 - id: ai-guidance
   url: https://www.dfg.de/en/news/news-topics/announcements-proposals/2026/ifr-26-18
-  role: policy
-  audience: all
+  role: announcement
+  audience: reviewers
   status: current
   authoritative: true
   fetch_method: http
-  date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: 26413f6bef437bd5e9ceebd76f530234553e540d21ba0a5b448e145c29a49d40
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  date_source: stated
+  stated_date: '2026-03-12'
+  last_verified: '2026-11-20'
+  content_sha256: 2905d0be81a287c49ee5ef95b3534c3afa9d9fbfe273cf40f16dfeb0a9996c3c
+  note: DFG's announcement summarising the guideline; the guideline itself is linked from this page and has
+    not been read here.
 policies:
 - axis: reviewer_use
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
-  - unspecified
+  - submission_field
   rationale: accountability
-  conditions: Funding-proposal reviews. Rules effective 16 April 2026; reviewers disclose use and retain
-    responsibility.
+  conditions: Applies to reviews of funding proposals, from 16 April 2026. AI may be used only in a supporting
+    role. The guideline links such use to four principles (confidentiality, transparency, quality
+    assurance and responsibility). Proposal content may be processed only in systems that guarantee secure
+    and purpose-specific use. All AI-generated content must be critically reviewed. Reviewers must disclose AI use. They will indicate
+    it when submitting the review in the elan portal; the stated purpose is verifiability in the later
+    evaluation and decision-making process. Responsibility for the review stays with the reviewer. elan
+    users must actively consent to observing the guideline when they first log in. elan users must also
+    give a one-off confirmation of a declaration granting the rights needed to use proposal content,
+    including its processing in AI systems in accordance with the guideline.
   evidence:
+  - source: ai-guidance
+    quote: 'When the guideline enters into force on 16 April 2026, there will also be technical adjustments
+      to the elan portal (the DFG’s proposal processing system).'
+    quote_provenance: raw_bytes
   - source: ai-guidance
     quote: 'The guideline allows the use of AI systems in the review process exclusively in a supporting
       role, linking such use to four central principles: confidentiality, transparency, quality assurance
       and responsibility.'
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: The obligation to maintain confidentiality means that proposal content may only be processed
+      in systems that guarantee secure and purpose-specific use.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: The principle of transparency requires reviewers to disclose the use of AI.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Quality assurance requires the critical review of all AI-generated content.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Furthermore, when submitting their review in the elan portal, reviewers will in future be required
+      to indicate whether they used an AI system when preparing the review.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: This disclosure serves to ensure verifiability in the subsequent evaluation and decision-making
+      process.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Responsibility for the content of the review remains fully with the reviewer.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: From 16 April 2026 onwards, when elan users log in for the first time, they will be required
+      to actively consent to observing the guideline and meeting other legal conditions in the event of
+      AI use.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: 'In addition, elan users will have to provide one-off confirmation of a declaration granting
+      the necessary rights to the use of proposal content, thereby ensuring legally secure processing –
+      including permissible processing in AI systems in accordance with the guideline.'
     quote_provenance: raw_bytes
 coherence: []

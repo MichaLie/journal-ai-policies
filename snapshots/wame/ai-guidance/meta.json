@@ -1,10 +1,19 @@
 {
-  "name": "wame",
-  "url": "https://wame.org/pdf/Chatbots-Generative-AI-and-Scholarly-Manuscripts.pdf",
-  "final_url": "https://wame.org/pdf/Chatbots-Generative-AI-and-Scholarly-Manuscripts.pdf",
-  "sha256": "ae0f0362bf7fdb16befea19fc9dec0de66ef6cbaf2dfffc419c8d52870e0aaf4",
-  "text_sha256": "ae0f0362bf7fdb16befea19fc9dec0de66ef6cbaf2dfffc419c8d52870e0aaf4",
   "entity": "wame",
   "source": "ai-guidance",
-  "fetched": "2026-11-11"
+  "url": "https://wame.org/pdf/Chatbots-Generative-AI-and-Scholarly-Manuscripts.pdf",
+  "final_url": "https://wame.org/pdf/Chatbots-Generative-AI-and-Scholarly-Manuscripts.pdf",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "ae0f0362bf7fdb16befea19fc9dec0de66ef6cbaf2dfffc419c8d52870e0aaf4",
+  "text_sha256": "ae0f0362bf7fdb16befea19fc9dec0de66ef6cbaf2dfffc419c8d52870e0aaf4",
+  "bytes": 186176,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "ae0f0362bf7fdb16befea19fc9dec0de66ef6cbaf2dfffc419c8d52870e0aaf4",
+      "text_sha256": "ae0f0362bf7fdb16befea19fc9dec0de66ef6cbaf2dfffc419c8d52870e0aaf4"
+    }
+  ]
 }

@@ -4,11 +4,17 @@ type: publisher
 parent: null
 platform: onlinelibrary.wiley.com
 policy_owner: wiley
-delegates_to_journal: false
+delegates_to_journal: true
 policy_architecture: per_task_matrix
 homepage: https://www.wiley.com
-notes: Purpose-specific guidance covers research-process use, agentic workflows and disclosure. Its own
-  policy-development disclosure is recorded separately from author requirements.
+notes: 'Wiley''s AI guidelines cover research-process use, agentic search and disclosure; AI tools must
+  not be listed as authors. The ethics guidelines leave the decision to each journal: "The final decision
+  on whether using AI Technology is appropriate or permissible for a submitted manuscript or a published
+  article belongs to the journal’s editor or other party responsible for the publication’s editorial policy."
+  The AI guidelines add: "Check the specific requirements of your target journal, as policies vary across
+  publishers and titles". Authors must make sure an AI tool''s provider gains no rights over their content,
+  including the right to train on it, and should check the tool''s terms for clauses on ownership, data
+  reuse, training or opt-out.'
 sources:
 - id: ai-guidelines
   url: https://www.wiley.com/publishing/article/ai-guidelines
@@ -17,13 +23,12 @@ sources:
   status: current
   authoritative: true
   fetch_method: http
-  date_source: stated
-  stated_date: '2025-10-28'
-  last_verified: '2026-10-15'
-  content_sha256: 6f83d9f6d14110ecc72e4c819900f3174e8c08ddc94b6730d247acb87bf3ce5a
+  date_source: none
+  stated_date: null
+  last_verified: '2026-11-20'
+  content_sha256: 99ce5280137b1f0a369b071e624ce3a8f7f05e5fe77511c4ab8c028478b3f874
   adjudicated_sha256: e2b0e8794377ff4f2ed7766f0b00ba689752238f7d1abe97c143491dbc26228d
-  note: Redirect verified on 15 October 2026 from https://www.wiley.com/en-us/publish/article/ai-guidelines/.
-    Policy-body wording is unchanged; the changed hash reflects site navigation and formatting.
+  note: Formerly at https://www.wiley.com/en-us/publish/article/ai-guidelines/.
 - id: ethics-guidelines
   url: https://authors.wiley.com/ethics-guidelines/index.html
   role: guidance
@@ -31,35 +36,254 @@ sources:
   status: current
   authoritative: false
   fetch_method: http
-  date_source: none
-  stated_date: null
-  last_verified: '2026-10-15'
+  date_source: stated
+  stated_date: 2026-07
+  last_verified: '2026-11-20'
   content_sha256: b49390a3a9e00094ffb380a7567b836a0a650e8bb79a201d799d066739cf68e0
   adjudicated_sha256: af1a2dc56c0557b5b5a56a00a8c9ed05054170fc1aaf10d863383db572852979
-  note: Recorded until 2026-09-11 as https://authorservices.wiley.com/ethics-guidelines/index.html, which
-    now redirects here.
+  note: Formerly at https://authorservices.wiley.com/ethics-guidelines/index.html.
 policies:
+- axis: language_refinement
+  permission: permitted
+  disclosure: not_required
+  disclosure_location: []
+  rationale: unstated
+  conditions: Simple grammar correction, formatting and word-choice suggestions typically need no disclosure.
+    The ethics guidelines exclude tools used solely for spelling, grammar and general editing. AI that
+    improves the readability and flow of paragraphs, assists with transitions or substantially edits the
+    text is listed as requiring disclosure, in the Acknowledgements.
+  evidence:
+  - source: ai-guidelines
+    quote: Simple grammar correction, formatting, and word choice suggestions typically do not require
+      disclosure.
+    quote_provenance: raw_bytes
+  - source: ethics-guidelines
+    quote: AI Tools used solely for spelling, grammar, and general editing are not included in these disclosure
+      requirements.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Cohesion and organization: AI restructures arguments or document flow; improves readability
+      and flow of paragraphs; assists with transitions; reorganizes sections of the manuscript'
+    quote_provenance: raw_bytes
+  - source: ethics-guidelines
+    quote: If an author has used AI Technology to substantially edit, develop, or translate any part of
+      a manuscript, its use must be described transparently
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: In your Acknowledgments when AI assists with manuscript drafting, editing, translation, or
+      formatting.
+    quote_provenance: raw_bytes
 - axis: writing_drafting
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - acknowledgements
   rationale: accountability
-  conditions: Disclosure is routed by purpose — drafting and editing to Acknowledgements.
+  conditions: Disclosure is required when AI generates substantial text or restructures arguments, and
+    belongs in the Acknowledgements. Authors may use AI only as a companion to their own writing and must
+    review AI-generated content.
   evidence:
   - source: ai-guidelines
-    quote: AI use in manuscript development is not grounds for rejection.
+    quote: Wiley supports the purposeful use of AI for manuscript drafting and editing.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: Wiley requires disclosure of AI when used to generate substantial text or restructure arguments.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: In your Acknowledgments when AI assists with manuscript drafting, editing, translation, or
+      formatting.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: Authors may only use AI Technology as a companion to their writing process, not a replacement.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: Disclosure ensures transparency in manuscript evaluation and accountability by the authors
+      for the content, a generally held authorship requirement.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: Before including AI-generated content in their Material, authors must carefully review it
     quote_provenance: raw_bytes
 - axis: translation
-  permission: permitted
+  permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - acknowledgements
   rationale: accountability
+  conditions: AI translation of manuscript sections is listed among uses that require disclosure, which
+    belongs in the Acknowledgements.
   evidence:
   - source: ai-guidelines
     quote: In your Acknowledgments when AI assists with manuscript drafting, editing, translation, or
       formatting.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Translation: AI translates manuscript sections (e.g., abstract, methods) into another language'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: Translation and support for non-native languages
+    quote_provenance: raw_bytes
+  - source: ethics-guidelines
+    quote: If an author has used AI Technology to substantially edit, develop, or translate any part of
+      a manuscript, its use must be described transparently
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: Disclosure ensures transparency in manuscript evaluation and accountability by the authors
+      for the content, a generally held authorship requirement.
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - figure_caption
+  rationale: unstated
+  conditions: Authors must disclose AI use in the figure caption and verify the accuracy of the submitted
+    image. Authors must ensure generated illustrations comply with any licensing requirements. Exploring
+    illustration ideas that do not end up in the manuscript, or that are fully recreated in established
+    software, is listed as not requiring disclosure.
+  evidence:
+  - source: ai-guidelines
+    quote: Yes. Wiley supports the use of AI for creating research figures and illustrations.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: For generated illustration content, ensure compliance with any licensing requirements as outlined
+      in the Content rights and permissions author FAQ.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: When using AI to generate or edit research figures and illustrations, you are required to disclose
+      your AI use and verify the accuracy of your submitted image
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: In your figure captions when AI generates or edits any visual content that appears in your
+      manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Research illustration exploration: AI supports exploration of illustrations that do not end
+      up in the manuscript or are fully recreated in established software'
+    quote_provenance: raw_bytes
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - figure_caption
+  rationale: unstated
+  conditions: Authors must disclose AI use in the figure caption and verify the accuracy of the submitted
+    image. Exploring visualisation ideas that do not end up in the manuscript is listed as not requiring
+    disclosure.
+  evidence:
+  - source: ai-guidelines
+    quote: Yes. Wiley supports the use of AI for creating data visualizations.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: When using AI for data visualizations, you are required to disclose your AI use and verify
+      the accuracy of your submitted image
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: In your figure captions when AI generates or edits any visual content that appears in your
+      manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Data visualization exploration: AI supports exploration of data visualization or diagram ideas
+      that do not end up in the manuscript'
+    quote_provenance: raw_bytes
+- axis: code_presentation
+  permission: permitted
+  disclosure: not_required
+  disclosure_location: []
+  rationale: unstated
+  conditions: The research-methodology disclosure table lists AI formatting of code structure or style
+    among uses that do not require disclosure.
+  evidence:
+  - source: ai-guidelines
+    quote: 'Code style: AI formats code structure/style'
+    quote_provenance: raw_bytes
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: reproducibility
+  conditions: Agentic search, AI screening of literature and AI extraction of references or metadata require
+    disclosure in the Methods. Keyword search support, reference management and reference formatting are
+    listed as not requiring disclosure. Authors must verify that every citation corresponds to a real
+    publication.
+  evidence:
+  - source: ai-guidelines
+    quote: Wiley supports the purposeful use of AI for literature search and review.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: Wiley requires disclosure when AI is used in your research methodology, including study design
+      and data collection, literature review, code development, and data analysis.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: In your Methods when AI is used to assist with your research methodology, data collection or
+      analysis, or literature review processes.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Agentic search: AI independently generates or executes search strategies (designing full search
+      strings, running database queries, or pre-filtering results) for a literature review or systematic
+      review'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Screening and selection: AI applies inclusion/exclusion criteria to filter or select literature
+      for systematic reviews or meta-analyses'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Citation extraction: AI pulls references or metadata from papers or databases'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Search support: AI assists with keyword or phrase-based searching to suggest relevant resources;
+      the author reviews and decides on final inclusion'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Reference management: AI organizes citations and references'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Reference formatting: AI assists with citation style formatting'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'When disclosing AI use in your methods, we require that you share: AI Technology name and
+      version Date/year of use'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: Verify that every citation corresponds to an actual, accessible publication
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: Disclosure of AI methods builds upon the established research practice of documenting your
+      process so others can understand, evaluate, and build upon your work.
+    quote_provenance: raw_bytes
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: quality
+  conditions: AI must not generate, modify or enhance factual and evidential images such as research results
+    or diagnostic images. AI-edited photographs are not permitted. AI analysis of photographs collected
+    during the research is allowed as part of the research methodology and must be disclosed in the Methods.
+    AI may be used to create composite images from images collected during the research; this should be
+    clearly explained in the image caption or legend, and original images may be requested upon submission.
+  evidence:
+  - source: ai-guidelines
+    quote: Factual and evidential images are not permitted.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: AI Technologies must not be used to generate, modify, or enhance these images, as they require
+      verifiable accuracy.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: AI-edited photographs are not permitted in Wiley journals.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: However, AI may be used to analyze photographs you have collected during the course of your
+      research as part of your research methodology.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: These uses must be disclosed in the methods section including the software used for transparency
+      and reproducibility.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Creation of composite images: AI is used to create composite images collected during the course
+      of your research; this should be clearly explained in the image caption or legend. Original images
+      may be requested upon submission'
     quote_provenance: raw_bytes
 - axis: research_process_ai
   permission: permitted_with_conditions
@@ -67,89 +291,224 @@ policies:
   disclosure_location:
   - methods
   rationale: reproducibility
-  conditions: 'Names agentic workflows and asks for the audit trail — prompts, parameters, settings and
-    a code repository.
-
-    '
+  conditions: Methods disclosure is required for AI use in study design, data collection, literature review,
+    code development and data analysis, giving the tool name, version, date of use, its role, the author’s
+    role in directing or reviewing it, and, for sensitive, proprietary or human-subject data, how privacy
+    and compliance requirements were maintained. Agentic search is listed among uses requiring disclosure.
+    Troubleshooting software errors, routine data transformations and data cleaning are listed as not
+    requiring disclosure. Where AI contributed substantially, authors may be asked for prompts, settings
+    and a code repository.
   evidence:
   - source: ai-guidelines
-    quote: 'You may have heard these referred to as: agentic AI, autonomous agents, or agent workflows'
+    quote: Wiley requires disclosure when AI is used in your research methodology, including study design
+      and data collection, literature review, code development, and data analysis.
     quote_provenance: raw_bytes
   - source: ai-guidelines
-    quote: a goal and allowing it to carry out multiple steps independently
+    quote: In your Methods when AI is used to assist with your research methodology, data collection or
+      analysis, or literature review processes.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Troubleshooting: AI helps troubleshoot software errors'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Routine transformations: AI converts units, standardizes formats, or executes simple data transformations'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Data cleaning: AI assists with data entry or cleaning (e.g., removing duplicates, fixing typos)'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'When disclosing AI use in your methods, we require that you share: AI Technology name and
+      version Date/year of use The AI Technology’s role in your work'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: The author’s role in directing or reviewing the work of the AI Technology For sensitive, proprietary,
+      or human subject data describe how privacy and compliance requirements were maintained
     quote_provenance: raw_bytes
   - source: ai-guidelines
     quote: 'Agentic search: AI independently generates or executes search strategies'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'If AI contributed substantially to your analysis or methodology, you may be asked to provide
+      supplemental documentation to support reproducibility and transparency, such as: Prompts or parameters
+      used AI settings or configurations Code repository'
     quote_provenance: raw_bytes
 - axis: reviewer_use
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
-  - unspecified
+  - review_report
   rationale: confidentiality
-  conditions: Organising, prioritising, tone and translation are permitted; uploading the manuscript is
-    not.
+  conditions: Reviewers may use AI to organise their thoughts, improve clarity and tone, or translate
+    their review. Manuscripts must not be uploaded to AI tools in full or in part. Drafting assistance
+    must be disclosed; the ethics guidelines say to the handling editor when the review is submitted.
+    Responsibility for the content of a review report rests with the reviewer and must not be delegated
+    to AI. Editors may disregard reviewer reports that show signs of inappropriate AI use.
   evidence:
   - source: ai-guidelines
-    quote: We require disclosure of AI when it's used for drafting assistance in your reviews.
+    quote: Use AI to organize your thoughts and prioritize feedback Use AI to improve review clarity and
+      tone or translate your review
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: Manuscripts under review are confidential and must not be uploaded to AI Technologies, whether
+      in full or in part.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: We require disclosure of AI when it’s used for drafting assistance in your reviews.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'When disclosing AI use in your review, we recommend sharing:'
+    quote_provenance: raw_bytes
+  - source: ethics-guidelines
+    quote: If this occurs, the reviewer must disclose that use to the handling editor when the review
+      is submitted.
+    quote_provenance: raw_bytes
+  - source: ethics-guidelines
+    quote: Responsibility for the accuracy, integrity, and overall content of a peer review report rests
+      entirely with the individual reviewer and must not be delegated to AI Technology.
     quote_provenance: raw_bytes
   - source: ethics-guidelines
     quote: Editors have the right to disregard peer reviewer reports that show signs of inappropriate
       AI use.
     quote_provenance: raw_bytes
 - axis: publisher_own_use
-  permission: not_addressed
+  permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
-  rationale: unstated
-  conditions: Wiley's author-facing guidance does not state what AI Wiley itself runs on a submission.
-    The quote below is the closest it comes, and it is a restriction on reviewers rather than a statement
-    of Wiley's own use.
+  rationale: confidentiality
+  conditions: Wiley states that its Research Exchange platform uses AI for reviewer matching and integrity
+    screening. It does not say whether authors are told which tools ran on their submission. Editors may
+    use AI to improve the clarity or quality of written feedback in a peer review report. Beyond this,
+    editors must not upload manuscripts or any part of them, including figures and tables, into AI tools,
+    because submitted manuscripts are confidential to the peer review process.
   evidence:
   - source: ai-guidelines
-    quote: Authors have not given permission for reviewers or editors to share their unpublished work
-      with AI Technologies
+    quote: Wiley’s Research Exchange platform uses AI to support editors with reviewer matching and integrity
+      screening.
     quote_provenance: raw_bytes
-    evidence_role: documents_absence
+  - source: ai-guidelines
+    quote: 'Reviewer matching: AI Technologies are used to match manuscripts with appropriate reviewers
+      based on expertise, availability, and review history.'
+    quote_provenance: raw_bytes
+  - source: ethics-guidelines
+    quote: Authors should be aware that editors or peer reviewers may use AI Technology to help improve
+      the clarity or quality of the written feedback in a peer review report.
+    quote_provenance: raw_bytes
+  - source: ethics-guidelines
+    quote: Beyond this limited use, editors and peer reviewers are not permitted to upload manuscripts
+      (or any parts of manuscripts including figures and tables) into AI Technology.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'If you are reviewing a manuscript as a peer reviewer or journal editor: Do not upload any
+      portion of submitted manuscripts, as these are confidential to the peer review process'
+    quote_provenance: raw_bytes
 - axis: detection_screening
-  permission: not_addressed
+  permission: permitted
   disclosure: not_addressed
   disclosure_location: []
   rationale: unstated
-  conditions: Wiley discloses duplicate-text screening and says nothing about AI-text detection, despite
-    having announced generative-AI content detection in 2024.
+  conditions: AI tools screen for plagiarism, image manipulation and other integrity issues and flag them
+    to editors. Duplicate-text screening uses tools such as Crossref Similarity Check. The sources do
+    not mention AI-text detection or say whether authors are notified.
   evidence:
+  - source: ai-guidelines
+    quote: 'Integrity screening: AI Technologies are being used to detect plagiarism, image manipulation,
+      and other research integrity issues during the editorial process.'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: These Technologies flag specific markers for integrity issues so that editors can review the
+      article with this information in mind
+    quote_provenance: raw_bytes
   - source: ethics-guidelines
     quote: Wiley routinely screens submitted manuscripts for duplicated text using tools such as Crossref
-      Similarity Check.
+      Similarity Check
     quote_provenance: raw_bytes
-    evidence_role: documents_absence
 - axis: due_process
-  permission: not_addressed
+  permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
-  rationale: control
-  conditions: 'No threshold for triggering review, no duty to notify the author, and no route of appeal
-    is stated. The quote records what is granted instead: editorial discretion.'
+  rationale: unstated
+  conditions: 'Stated AI-specific elements: a trigger (listed issues that warrant editorial review), a
+    consequence (evidence such as fabricated citations may warrant rejection; AI use that does not align
+    with a journal’s policy may lead to a request to revise the manuscript) and contact with the author.
+    The appeal route given is general and not tied to AI. AI use in manuscript development is not grounds
+    for rejection. If AI use does not align with a journal’s policy, authors may be asked to remove or
+    rewrite AI-assisted sections. A disclosure not provided at submission may be requested during peer
+    review or after publication. Editors are told to raise concerns with the author directly, whether or not AI is suspected,
+    and may consult Wiley’s Integrity Assurance and Case Resolution team. The guidelines list issues that
+    warrant editorial review, such as citations that do not adequately support claims, and evidence of
+    integrity concerns that may warrant rejection, such as fabricated citations or references. The ethics
+    guidelines say Wiley’s Integrity Assurance & Case Resolution team investigates where specific and
+    detailed evidence of questionable research practices has been provided. Appeals of editorial decisions
+    go to the relevant journal and need new evidence or information. The journal’s editor, or another
+    party responsible for the publication’s editorial policy, decides whether AI use is appropriate.'
   evidence:
+  - source: ai-guidelines
+    quote: At Wiley, AI use in manuscript development is not grounds for rejection.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: If your use of AI does not align with a journal’s policy, you may be asked to revise your manuscript
+      to remove or rewrite AI-assisted sections.
+    quote_provenance: raw_bytes
+  - source: ethics-guidelines
+    quote: If disclosure is not provided at submission, it may be requested during peer review or after
+      publication.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Start with author communication: If you notice issues that concern you, or concerns are raised
+      to you by a peer reviewer—whether you suspect AI involvement or not—reach out to the author to discuss
+      them directly.'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Seek support: Wiley’s Integrity Assurance and Case Resolution team can assist your evaluation'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Common issues that warrant editorial review: Citations that don''t adequately support claims'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'Evidence of integrity concerns that may warrant rejection: Fabricated citations or references'
+    quote_provenance: raw_bytes
+  - source: ethics-guidelines
+    quote: Where specific and detailed evidence of questionable research practices has been provided,
+      an investigation will be conducted by Wiley's Integrity Assurance & Case Resolution team
+    quote_provenance: raw_bytes
+  - source: ethics-guidelines
+    quote: Wiley journals consider substantiated appeals of editorial decisions if they provide new evidence
+      or information.
+    quote_provenance: raw_bytes
+  - source: ethics-guidelines
+    quote: Authors should submit their appeal to the relevant journal using the contact details provided
+      on Wiley Online Library.
+    quote_provenance: raw_bytes
   - source: ethics-guidelines
     quote: The final decision on whether using AI Technology is appropriate or permissible for a submitted
-      manuscript or a published article belongs to the journal's editor
+      manuscript or a published article belongs to the journal’s editor or other party responsible for
+      the publication’s editorial policy.
     quote_provenance: raw_bytes
-    evidence_role: documents_absence
 - axis: audit_trail
-  permission: permitted
+  permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - methods
   rationale: reproducibility
-  conditions: 'Wiley discloses that this very guidance document was AI-drafted — specific, in the register
-    of methods, attached to the artefact, with no apology. The norm, demonstrated.
-
-    '
+  conditions: Authors should keep records of all AI use, including its purpose and how outputs were checked;
+    the journal may request them. Methods disclosures must give the tool name, version and date of use.
+    Prompts, settings and a code repository may be requested where AI contributed substantially.
   evidence:
   - source: ai-guidelines
-    quote: The final draft was revised by the author using Claude 4 Sonnet and GPT-5 (August 2025) and
-      then polished by a human copyeditor with expertise in research communication.
+    quote: Authors should maintain documentation of all AI Technology used, including its purpose, whether
+      it impacted key arguments or conclusions, and how they personally reviewed and verified AI-generated
+      content.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: If not provided, the journal may request this documentation.
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'When disclosing AI use in your methods, we require that you share: AI Technology name and
+      version Date/year of use'
+    quote_provenance: raw_bytes
+  - source: ai-guidelines
+    quote: 'If AI contributed substantially to your analysis or methodology, you may be asked to provide
+      supplemental documentation to support reproducibility and transparency, such as: Prompts or parameters
+      used AI settings or configurations Code repository'
     quote_provenance: raw_bytes
 coherence: []

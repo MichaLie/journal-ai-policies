@@ -1,0 +1,18 @@
+{
+  "name": "NIH",
+  "url": "https://grants.nih.gov/grants/guide/notice-files/NOT-OD-23-149.html",
+  "capture_method": "browser_dom",
+  "capture_scope": "Full text of NIH notice NOT-OD-23-149 (The Use of Generative Artificial Intelligence Technologies is Prohibited for the NIH Peer Review Process), from the title through the Inquiries contact, captured from the rendered browser DOM on 20 November 2026; whitespace normalised. Site navigation and footer excluded. Not a raw HTTP response.",
+  "sha256": null,
+  "text_sha256": "8b508faf706ccd6f0dcded4713df38de4911e28de80b2f16ac3bbe66b7ccb771",
+  "entity": "nih",
+  "source": "peer-review-ai",
+  "fetched": "2026-11-20",
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "text_sha256": "8b508faf706ccd6f0dcded4713df38de4911e28de80b2f16ac3bbe66b7ccb771",
+      "capture_method": "browser_dom"
+    }
+  ]
+}

@@ -7,7 +7,12 @@ policy_owner: cell
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
 homepage: null
-notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+notes: Cell's journal-policies page requires authors to follow Elsevier's generative AI policy and adds Cell
+  Press rules on explanatory images, data visualisations, research images, cover art and graphical abstracts.
+  AI may not be used to create or alter research or data images, and AI cover art is allowed only as an
+  editorial exception when AI is integral to the research. For peer review, Cell follows Elsevier's policy
+  on generative AI in peer review and points to the Cell Press Information for Reviewers page. See the
+  Elsevier entry for the publisher's own policy.
 sources:
 - id: ai-policy
   url: https://www.cell.com/cell/information-for-authors/journal-policies
@@ -17,10 +22,10 @@ sources:
   authoritative: true
   fetch_method: browser
   date_source: none
-  last_verified: '2026-11-11'
+  last_verified: '2026-11-20'
   content_sha256: null
-  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
-    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
+  note: Copied from the live page in a browser on 20 November 2026 (only the two AI sections of a longer page).
+    It is a browser copy and was not downloaded directly.
 policies:
 - axis: illustrative_images
   permission: permitted_with_conditions
@@ -28,23 +33,192 @@ policies:
   disclosure_location:
   - figure_caption
   - dedicated_section
-  rationale: accountability
-  conditions: Explanatory figures need tool/version/use. Cover art is prohibited except when AI is integral
-    to the research; general-purpose image tools cannot produce graphical abstracts.
+  rationale: unstated
+  conditions: Explanatory images are allowed; tool, version and usage are declared in the figure legend
+    and the general AI disclosure statement. AI cover art is not permitted; an editorial exception may
+    be granted only when AI is integral to the research. General-purpose generative AI image tools may
+    not be used for graphical abstracts.
   evidence:
   - source: ai-policy
     quote: Allows use of generative AI tools in the creation of explanatory images, in line with Elsevier
       policy.
     quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Usage must be declared in the relevant figure legend and general AI disclosure statement, with
+      details of the specific tool, version, and usage.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Does not permit use of generative AI or AI-assisted tools in the production of cover art. An
+      editorial exception may be granted only when the use of AI or AI-assisted tools are integral to
+      the research described in the manuscript.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: General-purpose generative AI image tools may not be used in creation of graphical abstracts.
+    quote_provenance: browser_dom
 - axis: language_refinement
   permission: permitted_with_conditions
-  disclosure: not_required
-  disclosure_location: []
-  rationale: accountability
-  conditions: This is an exemption for basic checking, not all drafting.
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: quality
+  conditions: Generative AI may be used to improve language and readability, within the limits of the
+    Elsevier policy page. AI must be applied with human oversight, and authors should review and edit
+    the result, as AI can produce output that is incorrect, incomplete or biased. This use must be declared
+    in a new section after the declaration of interests. Basic tools that check grammar, spelling and
+    references need no declaration.
   evidence:
+  - source: ai-policy
+    quote: Authors preparing a manuscript for submission can use generative AI tools
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: provide tailored support for tasks such as content organization and improving language and
+      readability, within the limitations described on the Elsevier policy page.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: The technology must be applied with human oversight and control, and authors should carefully
+      review and edit the result, as AI can generate authoritative-sounding output that can be incorrect,
+      incomplete, or biased.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors must declare the use of generative AI in scientific manuscript preparation upon submission
+      of the paper
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: The statement will appear in the published work and should be placed in a new section after
+      the “declaration of interests” section.
+    quote_provenance: browser_dom
   - source: ai-policy
     quote: The declaration does not apply to the use of basic tools, such as tools used to check grammar,
       spelling, and references.
+    quote_provenance: browser_dom
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: accountability
+  conditions: Uses such as literature synthesis and content organization are allowed within the limits
+    of the Elsevier policy page. AI must be applied with human oversight and control. Authors should carefully
+    review and edit the output, as AI can produce output that is incorrect, incomplete or biased. Authors
+    are accountable for the content. AI tools may not be listed or cited as an author or co-author. The
+    declaration is a new section after the declaration of interests, added at first submission, and appears
+    in the published work.
+  evidence:
+  - source: ai-policy
+    quote: Authors preparing a manuscript for submission can use generative AI tools, including agents
+      and deep research tools, to synthesize complex literature
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: provide tailored support for tasks such as content organization and improving language and
+      readability, within the limitations described on the Elsevier policy page.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: The technology must be applied with human oversight and control, and authors should carefully
+      review and edit the result, as AI can generate authoritative-sounding output that can be incorrect,
+      incomplete, or biased.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors are ultimately responsible and accountable for the contents of the work.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors must not list or cite AI and AI-assisted technologies as an author or co-author on the
+      manuscript, since authorship implies responsibilities and tasks that can only be attributed to and
+      performed by humans.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors must declare the use of generative AI in scientific manuscript preparation upon submission
+      of the paper
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: must be declared by adding a statement at the end of the manuscript when the paper is first
+      submitted
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: The statement will appear in the published work and should be placed in a new section after
+      the “declaration of interests” section.
+    quote_provenance: browser_dom
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - dedicated_section
+  rationale: unstated
+  conditions: Use in research design or methods must be described reproducibly in the methods or STAR
+    Methods section and in the AI disclosure statement. The description should include the model or tool
+    name, version and developer, where applicable. Authors should follow the tools' usage policies and
+    give attribution where required.
+  evidence:
+  - source: ai-policy
+    quote: When the use of AI tools forms part of the research design or research methods, the use of
+      the tools must be described in the manuscript in a reproducible manner in the methods or STAR Methods
+      section and in the AI disclosure statement.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: This description should include the name of the model or tool, the version used, and the developer
+      or manufacturer, where applicable.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors should adhere to the tools’ usage policies and ensure proper attribution where required.
+    quote_provenance: browser_dom
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - dedicated_section
+  rationale: unstated
+  conditions: Only where the visual output is directly derived from underlying data through reproducible
+    methods reported in the methods or STAR Methods section; model or tool, version and developer disclosed
+    there and in the AI disclosure statement. AI may not be used to create or alter research or data images,
+    including adjustments of brightness, contrast or colour balance.
+  evidence:
+  - source: ai-policy
+    quote: Allows use of AI tools to support creation of data visualizations only when the visual output
+      is directly derived from underlying data.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Such visualizations must be created via reproducible analytical, computational, or statistical
+      methods that are clearly reported within the methods or STAR Methods section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: authors should disclose the name of the model or tool, the version used, and the developer
+      or manufacturer in the methods or STAR Methods section and in the AI disclosure statement.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Does not permit use of generative AI or AI-assisted tools to create or alter research or data
+      images in submitted manuscripts, including but not limited to adjustments of brightness, contrast,
+      or color balance in any image presenting experimental or observational data.
+    quote_provenance: browser_dom
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Covers creating or altering research or data images, including adjustments of brightness,
+    contrast or colour balance in any image presenting experimental or observational data.
+  evidence:
+  - source: ai-policy
+    quote: Does not permit use of generative AI or AI-assisted tools to create or alter research or data
+      images in submitted manuscripts, including but not limited to adjustments of brightness, contrast,
+      or color balance in any image presenting experimental or observational data.
+    quote_provenance: browser_dom
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: confidentiality
+  conditions: Editors may use private tools in a supportive capacity, such as improving the language or
+    structure of decision letters, and as described in the Elsevier policy. The journal follows the Elsevier
+    peer-review AI policy to protect authors' rights and the confidentiality of their research. The source
+    does not say what the private tools are and does not describe AI systems run by the publisher.
+  evidence:
+  - source: ai-policy
+    quote: Private tools may be used by editors in a supportive capacity (e.g., to improve language or
+      the structure of decision letters) and as described in the Elsevier policy
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: to protect authors’ rights and the confidentiality of their research, this journal follows
+      the Elsevier policy for use of generative AI and AI-assisted technologies in peer review
     quote_provenance: browser_dom
 coherence: []

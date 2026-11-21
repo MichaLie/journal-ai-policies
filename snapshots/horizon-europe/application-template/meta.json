@@ -1,0 +1,19 @@
+{
+  "entity": "horizon-europe",
+  "source": "application-template",
+  "url": "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/temp-form/af/af_he-ria-ia-stage-1_en.pdf",
+  "final_url": "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/temp-form/af/af_he-ria-ia-stage-1_en.pdf",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "4df50a6f9755505d16f207949418548ac7dd40837ab74c3bba41047482c88c37",
+  "text_sha256": "4df50a6f9755505d16f207949418548ac7dd40837ab74c3bba41047482c88c37",
+  "bytes": 1063787,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "4df50a6f9755505d16f207949418548ac7dd40837ab74c3bba41047482c88c37",
+      "text_sha256": "4df50a6f9755505d16f207949418548ac7dd40837ab74c3bba41047482c88c37"
+    }
+  ]
+}

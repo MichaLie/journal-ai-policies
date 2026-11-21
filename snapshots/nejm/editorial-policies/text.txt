@@ -1,0 +1,10 @@
+Author Use of AI-Assisted Technologies
+The Journal has adopted the following policies, as specified by the International Committee of Medical Journal Editors (ICMJE), on the use of artificial intelligence (AI) in preparation of material to be submitted for publication in the Journal.
+Authors must disclose at submission of the manuscript whether AI-assisted technologies (such as large language models, chatbots, or image creators) were used to produce the submitted work. If so, both the cover letter and the submitted work should include a description of the technologies used and what was produced.
+Because the authors of a manuscript are responsible for the accuracy, integrity, and originality of the work, chatbots or other AI-assisted technologies cannot be listed as authors.
+Authors must carefully review and edit all materials produced with AI, to prevent the submission of authoritative-sounding output that is incorrect, incomplete, or biased.
+Authors must be able to assert that there is no plagiarism of text or images in materials produced by AI. Authors must ensure that all quoted material is properly attributed, including full citations.
+Citation of AI-generated material as a primary source is not acceptable.
+NEJM Use of AI-Assisted Technologies
+AI tools are used selectively to support aspects of our editorial process. All content is reviewed by human editors who make all editorial decisions for what we publish.
+NEJM Group uses AI to help readers access and engage with medical evidence more effectively. Features such as the AI Companion help make complex journal articles more accessible, while content licensing ensures that the peer-reviewed evidence we publish is available in the tools clinicians and patients already use. In all cases, AI supports but never replaces clinical judgment.

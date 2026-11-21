@@ -7,9 +7,11 @@ policy_owner: icmje
 delegates_to_journal: false
 policy_architecture: prose
 homepage: https://www.icmje.org
-notes: "Updated January 2026 with a whole new Section V. Files AI structurally INSIDE contributorship\
-  \ (II.A.4, directly after Non-Author Contributors) and NOT under conflicts of interest — which refutes\
-  \ the naive claim that guidance treats AI use as a competing interest. Section V.C is the \n"
+notes: 'ICMJE''s recommendations have separate pages on AI use by authors, reviewers and editors (Section
+  V, Use of Artificial Intelligence in Publishing). Section II.A.4 says: "Authors should not list AI and
+  AI-assisted technologies as an author or co-author, nor cite AI as an author." Section IV.A on references
+  says: "Referencing AI-generated material as the primary source is not acceptable." The pages give no
+  revision date.'
 sources:
 - id: ai-authors
   url: https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-authors.html
@@ -18,10 +20,10 @@ sources:
   status: current
   authoritative: true
   fetch_method: http
-  date_source: stated
-  stated_date: 2026-01
-  last_verified: '2026-10-15'
-  content_sha256: fa84591da9945b0fbbeed892dca05f916802eb6760014d885794a2c080fbb8c1
+  date_source: hash
+  stated_date: null
+  last_verified: '2026-11-20'
+  content_sha256: db5e7c0b0adbb65d1737e539241120952141372097369a3eb18e1c13e9b87be8
   adjudicated_sha256: 84a8d89ddc8dd78af90bb6b06f9bcef247dc7a58198bbf5a082209e46835ff3f
 - id: ai-editors
   url: https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-editors.html
@@ -30,10 +32,10 @@ sources:
   status: current
   authoritative: true
   fetch_method: http
-  date_source: stated
-  stated_date: 2026-01
-  last_verified: '2026-10-15'
-  content_sha256: f98a9af17d985b43cb6f62474c0adacd8dad71fc69f184108f705963e5c0bc15
+  date_source: hash
+  stated_date: null
+  last_verified: '2026-11-20'
+  content_sha256: 080667ee18b9682f0e2cd1bc35285e359aba07753143e7aaa9d132c74b6e58ba
   adjudicated_sha256: 9156241b91cd5c3a9b464387e97de0a37af7ec8ed4c1ca790a8c4d321df1ec58
 - id: preparing-submission
   url: https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html
@@ -42,10 +44,10 @@ sources:
   status: current
   authoritative: false
   fetch_method: http
-  date_source: stated
-  stated_date: 2026-01
-  last_verified: '2026-10-15'
-  content_sha256: 430e4a04f8c14be9d52a34377a039b0d8f5fc8e329b978c36e4fc5c313892052
+  date_source: hash
+  stated_date: null
+  last_verified: '2026-11-20'
+  content_sha256: 9140ff677a5f2c5d1534130082c61fa6fbc8df64d6272607288dab1138f5d0be
   adjudicated_sha256: b4269a64e5ab152eb2c8a494c285763768fb89c90ca0c37e7dfbd8c6d9aa53bd
 - id: authors-contributors
   url: https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html
@@ -54,10 +56,10 @@ sources:
   status: current
   authoritative: false
   fetch_method: http
-  date_source: stated
-  stated_date: 2026-01
-  last_verified: '2026-10-15'
-  content_sha256: 67533fea7ec1078503193422931fe5f9393ed0a8e974946e995781c168992b45
+  date_source: hash
+  stated_date: null
+  last_verified: '2026-11-20'
+  content_sha256: 6c658c79c4ef210b0b82444867bc84ba24dc507ffaf5c4503a2b889e46619ea3
   adjudicated_sha256: 06293d267f4ad9fb3088ff23686cd19f2cdf5e8d3f035196ac2539b6a2ab17e2
 - id: ai-reviewers
   url: https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-reviewers.html
@@ -66,38 +68,156 @@ sources:
   status: current
   authoritative: true
   fetch_method: http
-  date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: 8c9abdb163fcf39e3ca91bc8f785cf198c8eb208f3109d5762086fdb0a9d87c3
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  date_source: hash
+  stated_date: null
+  last_verified: '2026-11-20'
+  content_sha256: c2caf1ad75f87abb89449002e5a82d6d86a7849d8214fa1c5515da3d79ae41e8
 policies:
+- axis: language_refinement
+  permission: permitted
+  disclosure: required
+  disclosure_location:
+  - cover_letter
+  rationale: unstated
+  conditions: Spell-checking and grammar correction are generally viewed as acceptable. Journals should
+    require authors to disclose AI use at submission. Authors describe the use in the cover letter and,
+    if applicable, in the appropriate section of the submitted work. In all use cases, authors check the
+    accuracy and validity of their content before submission. AI writing assistance is reported in the acknowledgment
+    section; the guidance does not say whether spell-checking or grammar correction counts as writing assistance.
+  evidence:
+  - source: ai-editors
+    quote: For example, using AI to spell-check and correct grammar is generally viewed as acceptable
+      whereas using AI for content generation must be considered in the context of the work.
+    quote_provenance: raw_bytes
+  - source: ai-editors
+    quote: Nonetheless, editors should query authors and authors should disclose if and how LLM and AI
+      were used.
+    quote_provenance: raw_bytes
+  - source: ai-editors
+    quote: "In all use cases, authors should check the accu\x02racy and validity of their content before\
+      \ submission."
+    quote_provenance: raw_bytes
+  - source: ai-authors
+    quote: the journal should require authors to disclose at submission whether they used AI-assisted
+      technologies
+    quote_provenance: raw_bytes
+  - source: ai-authors
+    quote: Authors who use such technology should describe, in both the cover letter and the submitted
+      work in the appropriate section if applicable, how they used it
+    quote_provenance: raw_bytes
+  - source: authors-contributors
+    quote: Use of AI for writing assistance should be reported in the acknowledgment section (see also
+      Section V).
+    quote_provenance: raw_bytes
 - axis: writing_drafting
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - cover_letter
   - acknowledgements
-  - methods
   rationale: accountability
-  conditions: Disclosure duty at submission, in the cover letter AND in the work itself.
+  conditions: Describe the use in the cover letter and in the submitted work. Writing assistance is described
+    in the acknowledgment section. Content generation is considered in the context of the work, and authors
+    review and edit the output. Humans are responsible for any submitted material that used AI-assisted
+    technologies.
+  evidence:
+  - source: ai-authors
+    quote: Authors who use such technology should describe, in both the cover letter and the submitted
+      work in the appropriate section if applicable, how they used it
+    quote_provenance: raw_bytes
+  - source: authors-contributors
+    quote: For example, if AI was used for writing assistance, describe this in the acknowledgment section
+      (see Section II.A.3).
+    quote_provenance: raw_bytes
+  - source: ai-authors
+    quote: Authors should carefully review and edit the AI-generated content as the output can be incorrect,
+      incomplete, or biased.
+    quote_provenance: raw_bytes
+  - source: ai-editors
+    quote: using AI for content generation must be considered in the context of the work
+    quote_provenance: raw_bytes
+  - source: authors-contributors
+    quote: Therefore, humans are responsible for any submitted material that included the use of AI-assisted
+      technologies.
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - cover_letter
+  - methods
+  rationale: unstated
+  conditions: AI used for figure generation is described in the methods and in the cover letter. Authors
+    should be able to assert that images produced by AI contain no plagiarism.
   evidence:
   - source: authors-contributors
+    quote: If AI was used for data collection, analysis, or figure generation, authors should describe
+      this use in the methods (see Section IV.A.3.d).
+    quote_provenance: raw_bytes
+  - source: ai-authors
+    quote: Authors should be able to assert that there is no plagiarism in their paper, including in text
+      and images produced by the AI.
+    quote_provenance: raw_bytes
+  - source: ai-authors
     quote: Authors who use such technology should describe, in both the cover letter and the submitted
-      work in the appropriate section if applicable, how they used it.
+      work in the appropriate section if applicable, how they used it
+    quote_provenance: raw_bytes
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - cover_letter
+  - methods
+  rationale: unstated
+  conditions: AI used for figure generation is described in the methods and in the cover letter.
+  evidence:
+  - source: authors-contributors
+    quote: If AI was used for data collection, analysis, or figure generation, authors should describe
+      this use in the methods (see Section IV.A.3.d).
+    quote_provenance: raw_bytes
+  - source: ai-authors
+    quote: Authors who use such technology should describe, in both the cover letter and the submitted
+      work in the appropriate section if applicable, how they used it
     quote_provenance: raw_bytes
 - axis: research_process_ai
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
+  - cover_letter
   - methods
   rationale: reproducibility
-  conditions: 'The tool-and-version instruction already exists here. But the required fields are dimensioned
-    for a citation, not a trace — adequate for a paragraph, meaningless for forty tool calls. The document
-    contains zero occurrences of agent, agentic or autonomous, against four of "chatbot", under a Section
-    V titled "Use of AI in Publishing".
-
-    '
+  conditions: Describe the use in the methods in enough detail to replicate the approach, including the
+    tool, version and prompts where applicable. The cover-letter disclosure applies as well.
   evidence:
+  - source: preparing-submission
+    quote: Authors who used AI technology to conduct the study should describe its use in the methods section
+      in sufficient detail to enable replication of the approach.
+    quote_provenance: raw_bytes
+  - source: preparing-submission
+    quote: including the tool used, version, and prompts where applicable.
+    quote_provenance: raw_bytes
+  - source: authors-contributors
+    quote: If AI was used for data collection, analysis, or figure generation, authors should describe
+      this use in the methods (see Section IV.A.3.d).
+    quote_provenance: raw_bytes
+  - source: ai-authors
+    quote: Authors who use such technology should describe, in both the cover letter and the submitted
+      work in the appropriate section if applicable, how they used it
+    quote_provenance: raw_bytes
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: reproducibility
+  conditions: Authors who used AI to conduct the study describe its use in the methods in enough detail
+    to enable replication, including the tool, version and prompts where applicable. The recommendations
+    say nothing about keeping session records.
+  evidence:
+  - source: preparing-submission
+    quote: Authors who used AI technology to conduct the study should describe its use in the methods
+      section in sufficient detail to enable replication of the approach.
+    quote_provenance: raw_bytes
   - source: preparing-submission
     quote: including the tool used, version, and prompts where applicable.
     quote_provenance: raw_bytes
@@ -106,49 +226,106 @@ policies:
   disclosure: required
   disclosure_location:
   - unspecified
-  rationale: accountability
-  conditions: 'Section V.C. The first obligation anywhere on journals to disclose their own AI use — which
-    converts the author/publisher asymmetry from an ethical complaint into a measurable compliance gap.
-
-    '
+  rationale: confidentiality
+  conditions: Editors and reviewers should not upload submitted manuscripts into AI systems where confidentiality
+    cannot be assured without the authors' explicit permission. Journals should remind editors and reviewers
+    that submitted manuscripts are privileged communications and that such uploading is prohibited except
+    with authors' permission. Journals that use AI for copy-editing and other production purposes disclose
+    this in their information to authors. Editors are responsible for the accuracy and validity of ancillary
+    content the journal produces with AI, such as podcasts, educational questions and patient summaries.
+    The recommendations describe no particular AI systems or tools used by journals.
   evidence:
   - source: ai-editors
-    quote: Journals should have a policy for the use of AI in the review process and should make all editors,
-      reviewers, and authors aware of this journal policy.
+    quote: Editors and reviewers should not upload submitted manuscripts into AI systems where confidentiality
+      cannot be assured without authors’ explicit permission.
+    quote_provenance: raw_bytes
+  - source: ai-editors
+    quote: "Journals should remind editors and reviewers that manuscripts submitted to journals are privileged\
+      \ communications and that uploading of the manuscript to software or other AI tech\x02nologies where\
+      \ confidentiality cannot be assured is pro\x02hibited except with authors’ permission."
+    quote_provenance: raw_bytes
+  - source: ai-editors
+    quote: "If journals use AI for copy-editing and other produc\x02tion purposes, they should disclose\
+      \ this in their informa\x02tion to authors."
+    quote_provenance: raw_bytes
+  - source: ai-editors
+    quote: Journals may also be using AI/LLM for ancillary content (e.g., podcasts, educational questions,
+      patient summaries).
+    quote_provenance: raw_bytes
+  - source: ai-editors
+    quote: Editors are responsible for ensuring the accuracy and validity of this content.
     quote_provenance: raw_bytes
 - axis: due_process
-  permission: not_addressed
+  permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
-  rationale: accountability
-  conditions: 'No threshold for triggering review, no duty to notify the author, and no route of appeal
-    is stated. The quote records what is granted instead: editorial discretion.'
+  rationale: unstated
+  conditions: A consequence and contact with the author are stated. Nondisclosure of AI use may require
+    corrective action and may be construed as misconduct in some circumstances, with a reference to Sections
+    III.A and III.B. Editors should query authors about whether and how AI was used, and should be vigilant
+    that authors may not disclose AI use when queried. No threshold for review and no route of appeal are
+    stated. Sections III.A and III.B were not reviewed here.
   evidence:
+  - source: ai-authors
+    quote: "Nondisclosure of AI use may require corrective action and may be construed as misconduct in\
+      \ some cir\x02cumstances (see Sections III.A and III.B)."
+    quote_provenance: raw_bytes
+  - source: ai-editors
+    quote: Nonetheless, editors should query authors and authors should disclose if and how LLM and AI
+      were used.
+    quote_provenance: raw_bytes
   - source: ai-editors
     quote: Editors should be vigilant that authors may not disclose AI use when queried.
     quote_provenance: raw_bytes
-    evidence_role: documents_absence
-  - source: ai-authors
-    quote: Nondisclosure of AI use may require corrective action and may be construed as misconduct in
-      some circumstances
-    quote_provenance: raw_bytes
-    evidence_role: documents_absence
 - axis: reviewer_use
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - unspecified
-  rationale: accountability
-  conditions: Follow the journal policy or request permission; maintain confidentiality, disclose use
-    to the journal and validate the output.
+  rationale: confidentiality
+  conditions: Journals should have a policy for AI use in the review process and make editors, reviewers
+    and authors aware of it. Reviewers follow the journal's AI policy or ask the journal's permission
+    first. Keeping the manuscript confidential may prohibit uploading it to AI tools where confidentiality
+    cannot be assured, unless the journal explicitly permits such use. The editors' page says editors
+    and reviewers should not upload submitted manuscripts into such AI systems without the authors' explicit
+    permission. Disclose use to the journal and check the output.
   evidence:
+  - source: ai-editors
+    quote: Journals should have a policy for the use of AI in the review process and should make all editors,
+      reviewers, and authors aware of this journal policy.
+    quote_provenance: raw_bytes
   - source: ai-reviewers
     quote: Reviewers must adhere to the journal’s stated policy on the use of AI or request permission
       from the journal prior to using AI technology to facilitate their review.
     quote_provenance: raw_bytes
-coherence: []
-metadata_inconsistency:
-- summary: The HTML title tag reads 'January 2025' while the URL and page body both say January 2026.
-    Harmless to a reader; it will mislead an automated scraper.
+  - source: ai-reviewers
+    quote: reviewers must maintain the confidentiality of the manuscript, which may prohibit the uploading
+      of the manuscript to software or other AI
+    quote_provenance: raw_bytes
+  - source: ai-reviewers
+    quote: where confidentiality cannot be assured unless such use of AI is explicitly permitted by journals.
+    quote_provenance: raw_bytes
+  - source: ai-editors
+    quote: Editors and reviewers should not upload submitted manuscripts into AI systems where confidentiality
+      cannot be assured without authors’ explicit permission.
+    quote_provenance: raw_bytes
+  - source: ai-reviewers
+    quote: Reviewers who use AI in their review should disclose its use to the journal and ensure the content
+      is appropriate and valid
+    quote_provenance: raw_bytes
+coherence:
+- axis: reviewer_use
   sources:
+  - ai-reviewers
   - ai-editors
+  summary: 'The reviewer page lets the journal authorise uploading a manuscript to AI where confidentiality
+    cannot be assured ("unless such use of AI is explicitly permitted by journals"). The editor page says
+    the same upload "is prohibited except with authors’ permission". The two pages name different parties
+    who can authorise it.'
+metadata_inconsistency:
+- summary: 'The three Section V pages carry the HTML title tag of Section IV.A: ''ICMJE | Recommendations
+    | Preparing a Manuscript for Submission to a Medical Journal''.'
+  sources:
+  - ai-authors
+  - ai-editors
+  - ai-reviewers

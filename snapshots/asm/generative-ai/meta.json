@@ -1,0 +1,18 @@
+{
+  "name": "ASM Journals",
+  "url": "https://journals.asm.org/generative-ai",
+  "capture_method": "browser_dom",
+  "capture_scope": "Full body text of the rendered ASM Journals 'Generative AI' page, from the first paragraph through the 'Other AI Resources' link list (page title, breadcrumbs, sidebar navigation and site footer excluded), captured from the browser DOM on 20 November 2026; whitespace normalised. Not a raw HTTP response.",
+  "sha256": null,
+  "text_sha256": "bf934d1508aa62a37c1c09ba3869cb861e72585e93eb36fa5af29102ded2dad1",
+  "entity": "asm",
+  "source": "generative-ai",
+  "fetched": "2026-11-20",
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "text_sha256": "bf934d1508aa62a37c1c09ba3869cb861e72585e93eb36fa5af29102ded2dad1",
+      "capture_method": "browser_dom"
+    }
+  ]
+}

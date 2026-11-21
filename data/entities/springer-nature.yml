@@ -7,28 +7,28 @@ policy_owner: springer-nature
 delegates_to_journal: false
 policy_architecture: risk_tiered
 homepage: https://www.nature.com
-notes: Role-specific writing, research and editor guidance supplements the Nature umbrella and reviewer
-  sources. The author declaration wording is more explicit than the umbrella green-tier wording; use the
-  role-specific instructions.
+notes: 'The Nature Portfolio page sets one risk framework for authors, reviewers and editors: green uses
+  are permitted, amber uses call for caution and red uses are not permitted. Separate Springer Nature
+  pages for manuscript preparation, research practice, peer review and editors add task examples and declaration
+  wording.'
 sources:
 - id: nature-portfolio-ai
   url: https://web.archive.org/web/20260804231015/https://www.nature.com/nature-portfolio/editorial-policies/ai
   role: policy
   audience: all
   status: current
-  authoritative: true
+  authoritative: false
   fetch_method: archive
   date_source: hash
   stated_date: null
   last_verified: '2026-10-15'
-  content_sha256: ca382659e24ce4f54fd1c4f56ed2187a08c8b69270ba3079ce48de35d68e5227
-  note: Live nature.com returns a Cloudflare 'Client Challenge' interstitial with HTTP 200 to automated
-    clients — a 3KB block page, not the policy. This is a dated Internet Archive capture of the real page.
-    The corresponding live policy was re-read on 15 October 2026; fixed archive captures are retained
-    as evidence and do not establish current live freshness.
+  content_sha256: 9d45cd3f18ec6a88bd37262ab09905ed82cdf90c7ff0226fceec8e1ca4d26528
+  note: A dated Internet Archive copy of the Nature Portfolio framework page from 4 August 2026, used because
+    nature.com blocks automated downloads; its quotes were found on the live page on 20 November 2026. For
+    citing, use the role-specific pages for authors, reviewers and editors.
   adjudicated_sha256: c37e42eea5b6d4ef5bef504aa6d80f58137f90895d2b2ecc918f50df225ec7fb
   live_url: https://www.nature.com/nature-portfolio/editorial-policies/ai
-  last_live_verified: '2026-10-15'
+  last_live_verified: '2026-11-20'
 - id: announcement-2026-09
   url: https://group.springernature.com/de/group/media/press-releases/sn-policy-responsible-ai-use/53209516
   role: announcement
@@ -38,9 +38,9 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: '2026-09-10'
-  last_verified: '2026-10-15'
-  note: Official announcement. The framework predates the announcement in the archive evidence held here.
-  content_sha256: b113ca9b046f79622c18550e70863ba3b16b5e0aaec630fb2047e21d5ca20f17
+  last_verified: '2026-11-20'
+  note: Springer Nature's press release of 10 September 2026 announcing its updated AI policies.
+  content_sha256: f46ee9182063ba5c2c7f9a7b01e3fafbc0e83f790188c753e4e92ff138fdb20b
   adjudicated_sha256: e79a7e33b463af23977ba1f5dd4364018a96a90dcca87edeceabc60336ccb239
 - id: peer-review-ai
   url: https://www.springernature.com/de/policies/editorial-policies/using-ai-in-peer-review
@@ -51,9 +51,9 @@ sources:
   fetch_method: browser
   date_source: none
   stated_date: null
-  last_verified: '2026-10-15'
-  note: Direct HTTP returns a challenge page. The stored text is a browser DOM excerpt of the visible
-    risk-framework table, captured on 15 October 2026; it is not raw HTTP bytes or a full-page snapshot.
+  last_verified: '2026-11-20'
+  note: Copied from the live page in a browser on 20 November 2026 (full AI-policy text, collapsed sections
+    expanded), because direct downloads return a challenge page.
   content_sha256: null
   adjudicated_sha256: d9af514ed88f51113a79375c391d1066e3b2ad24068fda018075c09bb96e9ee2
 - id: manuscript-preparation
@@ -64,10 +64,10 @@ sources:
   authoritative: true
   fetch_method: browser
   date_source: none
-  last_verified: '2026-11-11'
+  last_verified: '2026-11-20'
   content_sha256: null
-  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
-    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
+  note: Copied from the live page in a browser on 20 November 2026 (full AI-policy text, collapsed sections
+    expanded).
 - id: research-use
   url: https://www.springernature.com/gp/policies/editorial-policies/using-ai-in-research
   role: policy
@@ -76,10 +76,10 @@ sources:
   authoritative: false
   fetch_method: browser
   date_source: none
-  last_verified: '2026-11-11'
+  last_verified: '2026-11-20'
   content_sha256: null
-  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
-    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
+  note: Copied from the live page in a browser on 20 November 2026 (full AI-policy text, collapsed sections
+    expanded).
 - id: editor-guidance
   url: https://www.springernature.com/gp/policies/editorial-policies/ai-editor-guidance
   role: policy
@@ -88,36 +88,81 @@ sources:
   authoritative: true
   fetch_method: browser
   date_source: none
-  last_verified: '2026-11-11'
+  last_verified: '2026-11-20'
   content_sha256: null
-  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
-    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
+  note: Copied from the live page in a browser on 20 November 2026 (full AI-policy text with its reference
+    list, collapsed sections expanded).
 policies:
 - axis: reviewer_use
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
-  - review_report
+  - unspecified
   rationale: accountability
-  conditions: AI may support communication and exploration under human oversight. Reviewers retain independent
-    expert judgement and must not delegate critique or disclose manuscript content to unsecured or public
-    tools. The reviewer guidance specifies declaration in the report.
+  conditions: The Nature Portfolio framework applies to reviewers. Green uses are permitted, and amber
+    uses are permitted with human oversight, verification and disclosure. Green uses are declared by describing
+    the use; amber uses by describing how AI was used and confirming independent judgement. In both
+    cases the reviewer takes accountability for all content in the report. Reviewers must independently
+    verify all outputs and ensure conclusions and recommendations are their own. Generating full review reports,
+    producing accept/reject recommendations, delegating critique to AI and uploading manuscripts to public
+    or unsecured tools are not permitted. Limited use of manuscript content may be acceptable in secure
+    or institutionally approved tools, depending on their data policies.
   evidence:
+  - source: nature-portfolio-ai
+    quote: 'The same framework applies across all roles: authors, reviewers and editors.'
+    quote_provenance: raw_bytes
+  - source: nature-portfolio-ai
+    quote: Permitted. Disclosure enhances trust and transparency and clearly demonstrates human accountability.
+    quote_provenance: raw_bytes
+  - source: nature-portfolio-ai
+    quote: Permitted with human oversight, verification, and transparency through disclosure.
+    quote_provenance: raw_bytes
+  - source: nature-portfolio-ai
+    quote: May use AI to support peer review but must not upload manuscript content to unsecured or public
+      AI tools
+    quote_provenance: raw_bytes
   - source: nature-portfolio-ai
     quote: Delegating peer review to an LLM
     quote_provenance: raw_bytes
   - source: peer-review-ai
+    quote: Describe use (e.g. language or structure support) and take accountability for all content in
+      report
+    quote_provenance: browser_dom
+  - source: peer-review-ai
     quote: Describe how AI was used, confirm independent judgement and take accountability for all content
       in report
     quote_provenance: browser_dom
+  - source: peer-review-ai
+    quote: Uploading manuscripts to public/unsecured tools; generating full review reports; producing accept/reject
+      recommendations; delegating critique to AI
+    quote_provenance: browser_dom
+  - source: peer-review-ai
+    quote: Undermines confidentiality, independence, and accountability
+    quote_provenance: browser_dom
+  - source: peer-review-ai
+    quote: Confidentiality risks may be reduced when using secure or institutionally approved AI tools.
+    quote_provenance: browser_dom
+  - source: peer-review-ai
+    quote: Dependent on the data and privacy policies and settings of these tools limited use of manuscript
+      content may be acceptable.
+    quote_provenance: browser_dom
+  - source: peer-review-ai
+    quote: You must independently verify all outputs, make sure that you use your own discipline-specific
+      expertise and ensure conclusions and recommendations are your own.
+    quote_provenance: browser_dom
 - axis: publisher_own_use
-  permission: permitted
+  permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - unspecified
-  rationale: unstated
-  conditions: Ancillary support is described in the policy; substantive use beyond those listed activities
-    is declared per article.
+  rationale: confidentiality
+  conditions: Nature Portfolio journals occasionally use Springer Nature-developed or approved tools for accessory
+    content, which the author and/or editor always edits and fact-checks. In the editorial process AI
+    is used only to summarise, retrieve or highlight information; editors make all decisions. Editors
+    should not upload manuscripts into public or open AI tools. Per-article declaration applies to substantive
+    use beyond the listed tasks. The same risk framework applies to editors, who remain accountable for
+    editorial decisions and oversight. The source lists the kinds of accessory content but does not name
+    the tools or describe how they work.
   evidence:
   - source: nature-portfolio-ai
     quote: Nature Portfolio journals occasionally use artificial intelligence tools developed or approved
@@ -126,23 +171,89 @@ policies:
     quote_provenance: raw_bytes
     evidence_role: supports
   - source: nature-portfolio-ai
+    quote: 'Accessory content can include (but is not limited to): key points, glossary terms, editorial
+      summaries, plain language summaries and social media posts.'
+    quote_provenance: raw_bytes
+  - source: nature-portfolio-ai
+    quote: Accessory content is always edited and fact-checked by the author and/or editor to meet Nature
+      Portfolio publication standards.
+    quote_provenance: raw_bytes
+  - source: nature-portfolio-ai
+    quote: In the editorial process, artificial intelligence is only used to summarise, retrieve or highlight
+      information. All decisions are made by editors.
+    quote_provenance: raw_bytes
+  - source: nature-portfolio-ai
     quote: Any substantive use of artificial intelligence beyond the above will be declared on an individual
       article basis.
     quote_provenance: raw_bytes
+  - source: editor-guidance
+    quote: Editors should also not upload manuscripts into public or open AI tools for assistance in evaluation.
+    quote_provenance: browser_dom
+  - source: nature-portfolio-ai
+    quote: Confidentiality and data protection are mandatory Manuscripts, peer review reports, and sensitive
+      data must not be shared with unsecured or public AI systems.
+    quote_provenance: raw_bytes
+  - source: nature-portfolio-ai
+    quote: 'The same framework applies across all roles: authors, reviewers and editors.'
+    quote_provenance: raw_bytes
+  - source: nature-portfolio-ai
+    quote: Remain accountable for editorial decisions and oversight
+    quote_provenance: raw_bytes
+- axis: language_refinement
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Grammar and language editing is green (low risk) in the author guidance. Outputs must be
+    checked for accuracy and meaning, and the use is described with a confirmation of author accountability.
+    Extensive copy editing is amber in the Nature Portfolio framework and is permitted with human oversight,
+    verification and disclosure.
+  evidence:
+  - source: manuscript-preparation
+    quote: Grammar and language editing; improving readability and flow
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: Outputs must be checked for accuracy and meaning
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: Clearly describe use and confirm author accountability
+    quote_provenance: browser_dom
+  - source: nature-portfolio-ai
+    quote: Extensive copy editing or writing support
+    quote_provenance: raw_bytes
+  - source: nature-portfolio-ai
+    quote: Permitted with human oversight, verification, and transparency through disclosure.
+    quote_provenance: raw_bytes
+  - source: manuscript-preparation
+    quote: It becomes unsafe without adequate human oversight and accountability.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: You remain fully accountable for everything submitted in your name.
+    quote_provenance: browser_dom
 - axis: translation
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - unspecified
   rationale: accountability
-  conditions: Author guidance places translation in green with a declaration. This is more explicit than
-    the umbrella green-tier wording.
+  conditions: Green (low risk) in the author guidance. Outputs must be checked for accuracy and meaning,
+    and the use is described with a confirmation of author accountability.
   evidence:
   - source: manuscript-preparation
     quote: formatting; translation; summarising author-written text
     quote_provenance: browser_dom
   - source: manuscript-preparation
+    quote: Outputs must be checked for accuracy and meaning
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
     quote: Clearly describe use and confirm author accountability
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: It becomes unsafe without adequate human oversight and accountability.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: You remain fully accountable for everything submitted in your name.
     quote_provenance: browser_dom
 - axis: writing_drafting
   permission: permitted_with_conditions
@@ -150,63 +261,316 @@ policies:
   disclosure_location:
   - unspecified
   rationale: accountability
-  conditions: Drafting from author input is amber. Disclosure does not authorize replacement of scientific
-    judgment.
+  conditions: Generating outlines and drafting sections based on author input are amber and must be clearly
+    labelled. The use is described with a confirmation of author accountability. For drafting, authors
+    should ensure that all content is accurate and verified and that the intellectual contribution remains
+    their own. Argument, interpretation and conclusions must be author-led. Writing results or discussion
+    independently, or generating scientific claims or interpretations, is not permitted.
   evidence:
   - source: manuscript-preparation
     quote: Generating outlines; drafting sections based on author input;
     quote_provenance: browser_dom
   - source: manuscript-preparation
+    quote: all AI generated or assisted content must be clearly labelled
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: More extensive uses, such as drafting or restructuring content, require greater care.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: all content is accurate and verified
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: the intellectual contribution remains their own
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: AI can assist with expression, but the argument, interpretation, and conclusions must be author-led.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: Writing results or discussion independently; generating scientific claims or interpretations;
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
     quote: Clearly describe use and confirm author accountability
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: Undermines originality, accuracy, and accountability
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: It becomes unsafe without adequate human oversight and accountability.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: You remain fully accountable for everything submitted in your name.
     quote_provenance: browser_dom
 - axis: illustrative_images
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
-  - unspecified
+  - dedicated_section
+  - figure_caption
   rationale: accountability
-  conditions: Grounded visual content is amber and must be labelled. Ungrounded generation is not covered
-    by this permission.
+  conditions: AI visual content is permitted only where it derives from verifiable data, source material,
+    methods, computational outputs or author-developed content. Content created from text prompts or
+    without verifiable source material is not permitted. Creating photorealistic images (deepfakes) is
+    a red use in the Nature Portfolio framework. Authors remain responsible for ensuring that the use does
+    not infringe copyright, licensing or other intellectual property rights. Disclosure goes in an AI
+    Declaration in the manuscript and in the caption or legend.
   evidence:
   - source: manuscript-preparation
-    quote: creating visual content with verifiable source data or material
+    quote: AI generated visual content that is not derived from independently verifiable data, source
+      material, methods, computational outputs or author-developed content is considered opaque and is
+      not permitted by Springer Nature policy.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: creating content from text prompts or without verifiable source data or material
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: Specific disclosure should be provided within the caption or legend of the visual content.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: information about the AI system used, the purpose of its use, and the extent of its contribution
+      should be provided in an AI Declaration in your manuscript.
+    quote_provenance: browser_dom
+  - source: nature-portfolio-ai
+    quote: Creating photorealistic images (deepfakes)
+    quote_provenance: raw_bytes
+  - source: manuscript-preparation
+    quote: authors remain responsible for ensuring that the use of AI-generated or AI-assisted visual content
+      does not infringe copyright, licensing or other intellectual property rights.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: Undermines originality, accuracy, and accountability
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: You remain fully accountable for everything submitted in your name.
+    quote_provenance: browser_dom
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  - figure_caption
+  rationale: accountability
+  conditions: Permitted where the underlying data, methods or computational outputs can be inspected and
+    verified, the processing has had human review, and the output accurately represents the evidence.
+    Authors remain responsible for ensuring that the use does not infringe copyright, licensing or other
+    intellectual property rights. Producing data or figures as if empirical is not permitted. Disclosure names model and purpose, in
+    an AI Declaration and in the caption or legend. Non-generative machine learning tools that analyse,
+    improve, combine, restore, segment or enhance existing visual content may be permitted where the
+    underlying material remains attributable and the changes do not misrepresent the original content.
+    Such use should be disclosed for editorial assessment.
+  evidence:
+  - source: manuscript-preparation
+    quote: Examples may include the creation of charts from datasets, visualisation of computational outputs,
+      diagrams derived from author-developed content, scientific images created from attributable data
+      sources, or figures generated using code that has been reviewed and verified by the author.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: the underlying data, source material, methods or computational outputs can be inspected, verified
+      and are clearly attributed;
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: any AI-assisted processing, analysis or code generation has been subject to appropriate human
+      review and validation;
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: the resulting visual output accurately represents the underlying evidence;
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: authors remain responsible for ensuring that the use of AI-generated or AI-assisted visual content
+      does not infringe copyright, licensing or other intellectual property rights.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: AI use is disclosed appropriately, including model and purpose of use;
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: producing data or figures as if empirical
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: information about the AI system used, the purpose of its use, and the extent of its contribution
+      should be provided in an AI Declaration in your manuscript.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: Specific disclosure should be provided within the caption or legend of the visual content.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: Not all AI tools are generative.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: The use of machine learning tools to analyse, improve, combine, restore, segment or enhance
+      existing visual content may be permitted where the underlying material remains attributable and
+      the changes do not misrepresent the original content.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: Such use should be disclosed for editorial assessment.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: It becomes unsafe without adequate human oversight and accountability.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: You remain fully accountable for everything submitted in your name.
+    quote_provenance: browser_dom
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Reference management support is amber in the writing guidance and its use is described
+    with a confirmation of author accountability. For more extensive uses such as drafting or restructuring
+    content, authors should ensure that references are real and have been checked. Fabricating references
+    is not permitted.
+  evidence:
+  - source: manuscript-preparation
+    quote: reference management support
     quote_provenance: browser_dom
   - source: manuscript-preparation
     quote: Clearly describe use and confirm author accountability
     quote_provenance: browser_dom
-- axis: research_process_ai
-  permission: permitted_with_conditions
+  - source: manuscript-preparation
+    quote: More extensive uses, such as drafting or restructuring content, require greater care.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: references are real and have been checked
+    quote_provenance: browser_dom
+  - source: research-use
+    quote: fabricating data or references
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: It becomes unsafe without adequate human oversight and accountability.
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: You remain fully accountable for everything submitted in your name.
+    quote_provenance: browser_dom
+- axis: passing_off
+  permission: prohibited
   disclosure: not_addressed
   disclosure_location: []
   rationale: accountability
-  conditions: Research support under human accountability; the captured principle is not a task-by-task
-    permission or a disclosure exemption.
+  conditions: Presenting AI-generated hypotheses, analyses or conclusions as human-derived, fabricating
+    data, citations or results, and producing data or figures as if empirical are red uses.
+  evidence:
+  - source: nature-portfolio-ai
+    quote: Generating hypotheses, analyses or conclusions and presenting them as human-derived
+    quote_provenance: raw_bytes
+  - source: nature-portfolio-ai
+    quote: Fabricating data, citations or results
+    quote_provenance: raw_bytes
+  - source: manuscript-preparation
+    quote: producing data or figures as if empirical
+    quote_provenance: browser_dom
+  - source: manuscript-preparation
+    quote: Undermines originality, accuracy, and accountability
+    quote_provenance: browser_dom
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Green uses such as literature discovery, data cleaning and code scaffolding are declared
+    by describing tool and purpose. Amber uses such as pattern identification, statistical modelling support
+    and qualitative coding need a clear methodological description and validation steps. Generating hypotheses,
+    analyses or conclusions without human oversight, fabricating data or references, and using sensitive
+    or restricted data in public tools are not permitted.
   evidence:
   - source: research-use
     quote: AI may support your work, but you remain fully accountable for all research decisions, outputs,
       and conclusions.
     quote_provenance: browser_dom
+  - source: research-use
+    quote: Literature discovery, semantic search, summarising public literature; data cleaning, deduplication,
+      quality checks; code scaffolding; project planning
+    quote_provenance: browser_dom
+  - source: research-use
+    quote: Describe tool and purpose and take accountability
+    quote_provenance: browser_dom
+  - source: research-use
+    quote: Identifying patterns in datasets; supporting statistical modelling; qualitative coding; generating
+      explanatory summaries or comparisons
+    quote_provenance: browser_dom
+  - source: research-use
+    quote: Provide clear methodological description and validation steps and take accountability
+    quote_provenance: browser_dom
+  - source: research-use
+    quote: Generating hypotheses, analyses, or conclusions without human oversight; fabricating data or
+      references; using sensitive or restricted data in public tools
+    quote_provenance: browser_dom
 - axis: detection_screening
-  permission: discouraged
+  permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
-  rationale: accountability
-  conditions: Detector use calls for extreme caution and confidentiality checks. This guidance is not
-    a statement that routine screening occurs.
+  rationale: confidentiality
+  conditions: The editor guidance says tools claiming to detect generative AI are of uncertain accuracy
+    and should be used with extreme caution. The editor and reviewer guidance both say that detectors
+    that retain or train on uploaded content are inappropriate for unpublished manuscripts. Springer Nature
+    does not expect editors to identify or investigate undisclosed AI use. The sources do not say whether
+    Springer Nature itself screens submissions for AI use or whether authors are told of any screening.
   evidence:
   - source: editor-guidance
     quote: The accuracy and usefulness of such tools is far from definitive, and no tool is able to confirm
       whether the AI use was safe and policy compliant.
     quote_provenance: browser_dom
+  - source: editor-guidance
+    quote: Indeed, any such tools should be used with extreme caution, both in terms of the results they
+      surface and the privacy and confidentiality frameworks within which they are being used
+    quote_provenance: browser_dom
+  - source: editor-guidance
+    quote: Some enterprise and institutional versions of these AI detectors can retain and train on content
+      uploaded to them; making them inappropriate for use with unpublished manuscripts as this would be
+      a breach of confidentiality.
+    quote_provenance: browser_dom
+  - source: peer-review-ai
+    quote: Some enterprise and institutional versions of these AI detectors can retain and train on content
+      uploaded to them; making them inappropriate for use with unpublished manuscripts as this would be
+      a breach of confidentiality.
+    quote_provenance: browser_dom
+  - source: editor-guidance
+    quote: In practice, Springer Nature does not expect editors to identify or investigate undisclosed
+      or unsafe uses of AI.
+    quote_provenance: browser_dom
 - axis: due_process
   permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
-  rationale: accountability
-  conditions: Explains when to seek clarification. Does not create a universal AI-specific appeal right.
+  rationale: unstated
+  conditions: The presence of an AI declaration does not indicate concern. Editors may seek clarification
+    where a declaration lacks detail, where the declared use appears inconsistent with policy or with
+    the manuscript or report, or where concerns arise regarding accountability, integrity, confidentiality
+    or transparency. Where AI use is not declared, editors may need to investigate or request clarification.
+    Editors intervene where accountability or transparency is unclear, and escalate to their publishing
+    contact where integrity or policy boundaries are breached. The editor guidance says Springer Nature
+    does not expect editors to identify or investigate undisclosed or unsafe uses of AI. Existing integrity,
+    ethics and editorial governance processes apply. Triggers are stated (the conditions above). As a
+    consequence, escalation to a publishing contact is stated; no rejection, correction or retraction
+    for AI use is stated. On author contact, editors may request clarification, but the sources do not
+    say from whom. No appeal route tied to AI concerns is stated.
   evidence:
   - source: editor-guidance
     quote: 'The presence of an AI declaration does not indicate concern. Editors may seek clarification
       where: A declaration lacks sufficient detail.'
+    quote_provenance: browser_dom
+  - source: editor-guidance
+    quote: The declared use appears inconsistent with policy requirements or inconsistent with what is presented
+      in the manuscript or peer review report.
+    quote_provenance: browser_dom
+  - source: editor-guidance
+    quote: Concerns arise regarding accountability, integrity, confidentiality, or transparency.
+    quote_provenance: browser_dom
+  - source: nature-portfolio-ai
+    quote: Existing research integrity, ethics, and editorial governance processes apply to all AI‑related
+      concerns.
+    quote_provenance: raw_bytes
+  - source: manuscript-preparation
+    quote: Where AI use is not declared, editors may need to investigate or request clarification, which
+      can delay the review process and shift attention away from the manuscript’s contribution.
+    quote_provenance: browser_dom
+  - source: nature-portfolio-ai
+    quote: Intervene where accountability or transparency is unclear
+    quote_provenance: raw_bytes
+  - source: nature-portfolio-ai
+    quote: Escalate to their publishing contact where integrity or policy boundaries are breached
+    quote_provenance: raw_bytes
+  - source: editor-guidance
+    quote: In practice, Springer Nature does not expect editors to identify or investigate undisclosed
+      or unsafe uses of AI.
     quote_provenance: browser_dom
 coherence: []

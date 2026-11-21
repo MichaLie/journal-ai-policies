@@ -4,16 +4,21 @@ type: publisher
 parent: null
 platform: sciencedirect.com
 policy_owner: elsevier
-delegates_to_journal: true
+delegates_to_journal: false
 policy_architecture: rule_with_exemptions
 homepage: https://www.elsevier.com
-notes: 'Rewrote its journals policy in June 2026, permitting reviewers supportive use of private AI tools.
-  Its BOOKS policy previously used a URL ending ''in-the-review-process'' and forbids editors using AI
-  to evaluate material — secondary sources routinely quote that page as if it were the journals policy.
-  Cell Press, an Elsevier imprint, is reported to serve superseded 2023 wording; Cell Press is not yet
-  a record here. Re-read on 2026-09-11 against the text signed off on 2026-08-21: the record had captured
-  five axes of a policy that rules on ten. Added writing, research-process, explanatory-image, data-visualisation
-  and passing-off axes with quotes, and the 18 August 2026 Elsevier Connect announcement as a source.'
+notes: Elsevier's journals policy (updated June 2026) covers authors, reviewers and editors. Reviewers,
+  and editors working outside Elsevier's editorial systems, should use only private AI tools, meaning
+  tools that must not use submitted content to train or improve the AI model. It also tells authors to
+  check an AI tool's terms so that the tool gains only the right to use their material to provide the
+  service, and no right to train on it. The page notes that "the range of AI use varies depending on the
+  journal" but does not say that journals may set their own AI rules. A separate policy for books and
+  commissioned content says authors cannot use output from AI agents or deep research directly as manuscript
+  text, may not upload previously published or copyrighted content into external, open AI tools, and may
+  not use AI to create or alter images (except as part of research design or methods) or to produce covers
+  or graphical abstracts; it also says editors and reviewers should not use generative AI to help evaluate
+  material. The site's copyright notice reserves rights for AI training, but that notice is not part of
+  the AI policy.
 sources:
 - id: journals-policy
   url: https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals
@@ -24,24 +29,21 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: 2026-06
-  last_verified: '2026-10-15'
-  content_sha256: 82dac3e8c323e4567e55c043224050e57ce10c948b35a32febc356ddb2acd6ab
+  last_verified: '2026-11-20'
+  content_sha256: 211ed59e7c3ee1a42d951142622e9c17f3b19499b4534d7453e2b6fe98d61641
   adjudicated_sha256: 8977f5de13470c625364eca1e5089b9014fa3ea50dfca04e67b1a7746c959e8c
 - id: books-policy
   url: https://www.elsevier.com/about/policies-and-standards/publishing-ethics-books/generative-ai-policies
   role: policy
-  audience: authors
+  audience: all
   status: current
   authoritative: false
   fetch_method: http
   date_source: stated
   stated_date: 2026-07
-  last_verified: '2026-10-15'
-  content_sha256: b35986eb69cfdb0f2159ba326beda393bb4e5e46dcad55255dab4ab71d8134f9
-  note: The slug says 'review process' but the page is Elsevier's BOOKS policy (13 mentions of book/chapter,
-    zero of 'journal' in lower case). Secondary sources routinely quote it as if it were the journals
-    policy. It is not. Recorded until 2026-09-11 as https://www.elsevier.com/about/policies-and-standards/the-use-of-generative-ai-and-ai-assisted-technologies-in-the-review-process,
-    which now redirects here.
+  last_verified: '2026-11-20'
+  content_sha256: 96b4d2ef6b699b5025e918a4c05983c7c244e3600f7d661b8d3a8255865f97e6
+  note: Elsevier's separate AI policy for books and commissioned content.
   adjudicated_sha256: 93c6664ac466dc44dc26cd3fd5e2b43096293c50274dc8a0adb8117915a66509
 - id: announcement-2026-08
   url: https://www.elsevier.com/connect/updated-generative-ai-policies-for-journals-supporting-responsible-use-while-protecting-trust
@@ -52,22 +54,40 @@ sources:
   fetch_method: http
   date_source: stated
   stated_date: '2026-08-18'
-  last_verified: '2026-10-15'
-  content_sha256: 15e64dc9a531c846ac13a3189328a225e52e1b83cf690ebc8df3620c5cd5d038
-  note: Elsevier Connect post announcing the updated journals policy, dated 18 August 2026; the policy
-    page itself states 'Policy updated June 2026'.
+  last_verified: '2026-11-20'
+  content_sha256: e4b5df8244a82ede458b49c80e5cd49233aad35e2b7dc4650133e0695610c79a
+  note: Elsevier Connect post of 18 August 2026 announcing the updated journals policy; the policy page
+    itself says 'Policy updated June 2026'.
   adjudicated_sha256: 2215164be27a3784450582d18c57b7f4242ab598af8ba2bd00835aaf53378acb
 policies:
 - axis: language_refinement
-  permission: permitted
-  disclosure: not_required
-  disclosure_location: []
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
   rationale: unstated
-  conditions: Exemption is withdrawn where changes go beyond basic correction. Specialist disability-related
-    assistive technology used solely for accessibility is also exempt.
+  conditions: Basic grammar, spelling and punctuation checks need no declaration. Substantive AI changes
+    to sentence structure or organization should be disclosed in the separate AI declaration statement.
+    AI features within specialist disability-related assistive technology used solely for accessibility
+    need no disclosure.
   evidence:
   - source: journals-policy
+    quote: Improving language, clarity, and readability of text written by the authors.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Authors should disclose the use of AI tools for manuscript preparation in a separate AI declaration
+      statement included in their manuscript upon submission.
+    quote_provenance: raw_bytes
+  - source: journals-policy
     quote: Basic checks of grammar, spelling and punctuation do not need a declaration statement
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: However, when an AI tool makes substantive changes to sentence structure or organization of
+      a part of the text, this should be disclosed.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: authors are not required to disclose the use of AI tools or features within specialist disability-related
+      assistive technology, provided these are used solely for accessibility purposes.
     quote_provenance: raw_bytes
 - axis: translation
   permission: permitted_with_conditions
@@ -75,10 +95,31 @@ policies:
   disclosure_location:
   - dedicated_section
   rationale: accountability
-  conditions: Output must be checked by a competent bilingual human.
+  conditions: Authors must review the translation for accuracy, completeness and potential bias, have
+    it checked by a person who understands both languages and the scientific content, and disclose the
+    use in the separate AI declaration statement. Authors remain fully accountable for the translated
+    text. They should protect confidentiality, privacy and intellectual property rights and review the
+    tool's terms and conditions before uploading their content.
   evidence:
   - source: journals-policy
-    quote: by a person who has a good understanding of both languages
+    quote: If you use AI tools to translate text that you have written, you must carefully review the
+      translation for accuracy, completeness and potential bias.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: The output should be checked by a person who has a good understanding of both languages and
+      the scientific content.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: You remain fully accountable for the translated text, and you should disclose the use of AI
+      tools for translations included in your manuscript.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: As with any AI use, you should ensure that confidentiality, privacy and intellectual property
+      rights are protected and review the tool’s terms and conditions before uploading your content.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Authors should disclose the use of AI tools for manuscript preparation in a separate AI declaration
+      statement included in their manuscript upon submission.
     quote_provenance: raw_bytes
 - axis: reviewer_use
   permission: permitted_with_conditions
@@ -86,84 +127,195 @@ policies:
   disclosure_location:
   - review_report
   rationale: confidentiality
-  conditions: 'Reversed in June 2026. Permitted only with a "private" AI tool as Elsevier defines it;
-    disclosure to authors is mandatory. Uploading the manuscript remains prohibited.
-
-    '
+  conditions: Supportive use only, such as improving the language and structure of a review report or
+    a background literature search, provided that confidentiality is maintained and human control and
+    oversight are exercised. Reviewers should use only private AI tools as Elsevier defines them.
+    Reviewers must not upload a submitted manuscript or any information from it into an AI tool. Disclosure
+    goes in the review report, in the comments to the authors. Basic checks for spelling and grammar need
+    no disclosure.
   evidence:
   - source: journals-policy
-    quote: Reviewers should not upload a submitted manuscript or any part of it into an AI tool
+    quote: Reviewers should not upload a submitted manuscript or any part of it into an AI tool as this
+      may violate the authors’ confidentiality and proprietary rights
     quote_provenance: raw_bytes
   - source: journals-policy
     quote: AI tools may therefore only be used in a supportive capacity, for example to improve the language
-      and structure of a review report, or to assist with a background literature search
+      and structure of a review report, or to assist with a background literature search, provided that
+      confidentiality is maintained and human control and oversight are exercised.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: reviewers should only use private AI tools to assist in the review process
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: reviewers must not upload submitted manuscripts, or any information from them, into AI Tools.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Reviewers should disclose AI use in their review reports, including the tool used and purpose
+      of the use.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: they should include a statement directly in their report(s) (specifically in the comments to
+      the authors section)
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Basic checks for spelling and grammar do not need to be disclosed.
     quote_provenance: raw_bytes
 - axis: publisher_own_use
   permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
-  rationale: unstated
-  conditions: Authorized private tools within Elsevier editorial systems are distinguished from external
-    supportive tools. Journal and book policies concern different products and activities. The earlier
-    blanket journal-notification sentence is absent from the November snapshot.
+  rationale: confidentiality
+  conditions: AI tools cannot replace an editor's critical thinking, independent evaluation or final decision-making;
+    editors remain fully responsible for the final decision and its communication to authors. Editors
+    have private AI tools inside Elsevier's editorial systems for tasks such as identifying reviewers,
+    matching scope and detecting duplicate submissions. Outside those systems, editors may use only private
+    AI tools in a supportive capacity and should not upload a submitted manuscript into an AI tool, as
+    this may violate the authors' confidentiality and proprietary rights. The Editors FAQ states without
+    that qualification that editors must not upload submitted manuscripts into AI tools. Elsevier's teams
+    use AI tools at the post-acceptance stage, including proof preparation, copy editing and identifying
+    inconsistencies or inaccuracies in the final paper. The policy does not say that authors are told
+    which tools ran on their manuscript.
   evidence:
+  - source: journals-policy
+    quote: AI tools can be helpful in assisting with certain tasks, but cannot replace an editor’s critical
+      thinking, independent evaluation or final decision-making.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Editors remain fully responsible and accountable for the editorial process, the final decision
+      and its communication to authors.
+    quote_provenance: raw_bytes
   - source: journals-policy
     quote: Through Elsevier’s editorial systems, editors have access to private AI tools that assist them
       in performing certain tasks, such as identifying relevant reviewers, matching the scope of submissions
       to their journal, and detecting duplicate submissions.
     quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Outside of Elsevier’s editorial systems, editors may only use private AI tools (see explanation
+      above) in a supportive capacity
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: academic editors should not upload a submitted manuscript or any part of it into an AI tool
+      outside of Elsevier’s editorial systems, as this may violate the authors’ confidentiality and proprietary
+      rights
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: academic editors must not upload submitted manuscripts, or any part of them, into AI tools.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: 'Our teams use AI tools to support them in:'
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Supporting the post-acceptance stage of publication, including proof preparation, copy editing,
+      and identifying inconsistencies or inaccuracies in the final paper.
+    quote_provenance: raw_bytes
 - axis: due_process
-  permission: not_addressed
+  permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
   rationale: unstated
-  conditions: 'No threshold for triggering review, no duty to notify the author, and no route of appeal
-    is stated. The quote records what is granted instead: editorial discretion.'
+  conditions: A consequence is stated, as inclusion of fabricated references may lead to rejection of
+    a manuscript. Author contact is stated, as authors may be asked for documentation of their AI use and
+    for the original, unprocessed images for editorial assessment, and should be able to provide documentation
+    of their AI use if editors request it. No appeal route is stated.
   evidence:
   - source: journals-policy
     quote: Authors may be asked to provide documentation of their AI use and the original, unprocessed
       images for editorial assessment.
     quote_provenance: raw_bytes
-    evidence_role: documents_absence
+  - source: journals-policy
+    quote: If requested by editors, authors should be able to provide documentation of their use of AI
+      tools.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Inclusion of fabricated references may lead to rejection of a manuscript.
+    quote_provenance: raw_bytes
 - axis: detection_screening
-  permission: not_addressed
+  permission: permitted
   disclosure: not_addressed
   disclosure_location: []
   rationale: unstated
-  conditions: 'Author-facing policy mentions image forensics only. Check Integrity was expanded to nearly
-    2,000 journals in March 2026 without appearing in the author policy.
-
-    '
+  conditions: Elsevier states that its teams use AI tools for technical checks and research integrity
+    checks on submitted papers. The books policy states that image forensics tools or specialized software
+    might be applied to submitted manuscripts to identify suspected image irregularities. Neither policy
+    names AI-text detection or says whether authors are told of a result.
+  evidence:
+  - source: journals-policy
+    quote: 'Our teams use AI tools to support them in: Conducting technical checks of submitted papers,
+      such as checking for adherence to submission guidelines and assessing for completeness. Performing
+      research integrity checks to ensure compliance with our policies.'
+    quote_provenance: raw_bytes
+  - source: books-policy
+    quote: Image forensics tools or specialized software might be applied to submitted manuscripts to identify
+      suspected image irregularities.
+    quote_provenance: raw_bytes
 - axis: writing_drafting
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - dedicated_section
   rationale: accountability
-  conditions: Separate AI declaration statement at submission, published with the article; basic grammar
-    and spelling checks exempt, substantive changes to structure or content must be declared. Output must
-    not replace the authors' own judgement, analysis or interpretation.
+  conditions: Disclosure goes in a separate AI declaration section at the end of the manuscript, before
+    the references, and is published with the article. Basic grammar, spelling and punctuation checks
+    are exempt; substantive changes to sentence structure or organization should be disclosed. Output
+    must not replace the authors' own judgement, analysis or interpretation. AI-generated output must
+    be carefully reviewed and edited before it is included in the manuscript. Generating sections without
+    genuine intellectual contribution from the author is listed as inappropriate.
   evidence:
   - source: journals-policy
     quote: Authors should disclose the use of AI tools for manuscript preparation in a separate AI declaration
       statement included in their manuscript upon submission.
     quote_provenance: raw_bytes
   - source: journals-policy
+    quote: This statement will appear in the published article to ensure transparency.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: you must include a separate declaration section at the end of your manuscript, immediately
+      before the references
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Basic checks of grammar, spelling and punctuation do not need a declaration statement
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: However, when an AI tool makes substantive changes to sentence structure or organization of
+      a part of the text, this should be disclosed.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Ultimately, authors are responsible and accountable for the contents of their work.
+    quote_provenance: raw_bytes
+  - source: journals-policy
     quote: Although AI tools may support your writing process, they must not replace your own scientific
       judgement, analysis, interpretation or intellectual contribution.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Any AI-generated output must be carefully reviewed and edited before being included in your
+      manuscript.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: 'Examples of inappropriate use may include: Generating sections of a manuscript without genuine
+      intellectual contribution from the author.'
     quote_provenance: raw_bytes
 - axis: research_process_ai
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - methods
-  rationale: reproducibility
-  conditions: Research-method use must be reproducibly described in Methods. The author guidance also
-    names agents and deep research tools for manuscript preparation.
+  rationale: unstated
+  conditions: Use in research design or methods must be described reproducibly in Methods, with the model
+    or tool name, version and developer or manufacturer, where applicable. The FAQ says the policy does
+    not prevent AI use in formal research design or research methods, including study design, code development
+    and data analysis.
   evidence:
   - source: journals-policy
     quote: Where the use of AI tools forms part of the research design or research methods, the use of
       the tools must be described in a reproducible manner in the Methods section.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: This should include the name of the model or tool, the version used, and the developer or manufacturer,
+      where applicable.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: This policy does not prevent the use of AI tools in formal research design or research methods,
+      including but not limited to study design, code development and data analysis.
     quote_provenance: raw_bytes
 - axis: illustrative_images
   permission: permitted_with_conditions
@@ -172,8 +324,14 @@ policies:
   - figure_caption
   - dedicated_section
   rationale: accountability
-  conditions: Explanatory images only (flow charts, decision trees, timelines, schematic illustrations,
-    workflow diagrams); tool, version and use disclosed in each caption and in the AI declaration.
+  conditions: Permitted for explanatory images (flow charts, decision trees, timelines, schematic illustrations,
+    workflow diagrams); tool, version and use disclosed in each caption and in the AI declaration. General-purpose
+    generative AI tools must not be used for graphical abstracts; authors should use dedicated scientific
+    illustration tools and mention the tool in the image caption. AI-generated cover art needs prior permission
+    from the journal editor and publisher. Authors are responsible for the accuracy and originality of
+    all images. Images that duplicate or refer to existing copyrighted images, real people, or others'
+    identifiable products or brands must not be generated. Images based on existing artwork need attribution
+    and the rights holder's permission before submission.
   evidence:
   - source: journals-policy
     quote: Authors may use AI tools to support the creation of certain types of explanatory images for
@@ -184,18 +342,45 @@ policies:
     quote: The use of AI tools should be disclosed in the caption of each image (including the specific
       tool, version, and how the tool was used) and in the general AI disclosure statement in the article.
     quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: General-purpose generative AI tools must not be used to create graphical abstracts.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Graphical abstracts ⚠ Only use dedicated scientific illustration tools Mention the tool used
+      in the image caption
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Authors must obtain prior permission from the journal editor and publisher before submitting
+      AI-generated cover art.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Authors are responsible for ensuring the accuracy and originality of all images submitted for
+      publication.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Where images are based on existing artwork or graphics, appropriate attribution must be provided
+      and permission from any relevant rights holder must be obtained before submission.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Images that duplicate or refer to existing copyrighted images, real people, or others’ identifiable
+      products or brands must not be generated, nor any likeness of an individual’s voice.
+    quote_provenance: raw_bytes
 - axis: data_visualisation
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - methods
-  rationale: reproducibility
+  rationale: unstated
   conditions: Only where the visual is directly derived from underlying data via reproducible methods
     reported in Methods; tool, version and developer disclosed there.
   evidence:
   - source: journals-policy
     quote: AI tools may be used to support the creation of data visualizations only when the visual output
       is directly derived from underlying data.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Such visualizations must be created via reproducible analytical, computational, or statistical
+      methods that are clearly reported within the Methods section.
     quote_provenance: raw_bytes
   - source: journals-policy
     quote: Where AI tools are used in the generation of data visualizations, authors should disclose the
@@ -205,9 +390,14 @@ policies:
   permission: prohibited
   disclosure: not_addressed
   disclosure_location: []
-  rationale: quality
+  rationale: unstated
   conditions: Covers fabricated results, invented or altered data, figures not faithfully derived from
-    data, and primary research images (microscopy, blots, scans, patient images).
+    data, and primary research images (microscopy, histology, western blots, radiology scans, patient
+    images). The ban on AI alteration of primary research images includes adjustments to brightness, contrast
+    or colour balance, which should be done only with established image processing software. The policy
+    does not prevent AI use in formal research design or research methods, such as AI-assisted imaging
+    approaches used to collect or interpret the underlying research data; such use must be described
+    reproducibly in the Methods section.
   evidence:
   - source: journals-policy
     quote: AI tools must not be used to fabricate results, invent or alter underlying data, or generate
@@ -217,17 +407,104 @@ policies:
     quote: AI tools must not be used to create or alter images that represent primary observed or experimental
       data that were not directly obtained in the research.
     quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Primary research images represent primary observed or experimental data (such as microscopy,
+      histology, western blots, radiology scans, or patient images).
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: This includes adjustments to brightness, contrast, or color balance, which should only be done
+      using established image processing software.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: This policy does not prevent the use of AI tools in formal research design or research methods
+      (such as in AI-assisted imaging approaches used for collection and/or interpretation of the underlying
+      research data or predictive modelling of clinical outcomes based on patient data).
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Where the use of AI tools forms part of the research design or research methods, the use of
+      the tools must be described in a reproducible manner in the Methods section.
+    quote_provenance: raw_bytes
+- axis: code_presentation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: unstated
+  conditions: Using AI only to improve the presentation of code, such as formatting, must be done with
+    human control and oversight and reported in the AI declaration. Code written or edited with AI as
+    part of the research is declared in detail in Methods.
+  evidence:
+  - source: journals-policy
+    quote: If authors only use AI tools to improve the presentation of their code in a manuscript, for
+      example, for formatting, this should still be done with human control and oversight and should be
+      reported in the AI declaration.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: If authors write or edit code using AI tools as part of their research, they should declare
+      this in detail in the Methods section and follow field-specific standards and guidance.
+    quote_provenance: raw_bytes
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: quality
+  conditions: Authors should always check AI-suggested sources. Use of AI to select, collate, generate
+    or edit references should be declared in the manuscript. Reference managers used without a generative
+    AI option need no disclosure. Fabricated references may lead to rejection.
+  evidence:
+  - source: journals-policy
+    quote: Yes, authors can use AI tools to help organize literature and suggest sources.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: If these or any other AI tool are used to select, collate, generate or edit references, this
+      should be declared in the manuscript.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Authors should always check sources, as AI-generated references and citations can be incorrect,
+      hallucinated, or fabricated.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: If these tools are used without a generative AI option to organize references, this process
+      does not require disclosure.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: Inclusion of fabricated references may lead to rejection of a manuscript.
+    quote_provenance: raw_bytes
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: reproducibility
+  conditions: Authors should keep a separate record of the tool and model used and how it was used; this
+    may include tool logs, prompts and outputs, and evidence of how content was reviewed and edited. Documentation
+    should be provided if editors request it.
+  evidence:
+  - source: journals-policy
+    quote: Authors should keep a separate record of which tool and model was used, and how AI tools were
+      used.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: This may include retaining logs provided by the tool, saving prompts and generated outputs,
+      and keeping evidence of how the content was reviewed and edited
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: If requested by editors, authors should be able to provide documentation of their use of AI
+      tools.
+    quote_provenance: raw_bytes
+  - source: journals-policy
+    quote: documenting the use of AI during manuscript preparation supports transparency and reproducibility
+    quote_provenance: raw_bytes
 coherence: []
 metadata_inconsistency:
 - sources:
   - journals-policy
   - announcement-2026-08
-  summary: The policy page's own footer states 'Policy updated June 2026', while Elsevier Connect announced
-    'Elsevier has updated its generative AI policies for journals' on 18 August 2026. Either the August
-    post is a late announcement of the June revision or the page changed again without its date line.
-    Cite the page as updated June 2026 per its own statement.
+  summary: The policy page's closing line states 'Policy updated June 2026', while Elsevier Connect announced
+    'Elsevier has updated its generative AI policies for journals' on 18 August 2026.
 - sources:
   - journals-policy
-  summary: Editorial-tool wording changed between the 15 October adjudication and 1 November snapshot
-    while the stated update remained June 2026. This is an observed interval, not an inferred effective
-    date.
+  summary: The stored copy of the policy page from 1 November 2026 has editors-section wording on private
+    AI tools in Elsevier's editorial systems that the 15 October 2026 copy lacks. Both copies carry the
+    line 'Policy updated June 2026'.

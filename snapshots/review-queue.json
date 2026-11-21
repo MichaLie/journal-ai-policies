@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-01",
+  "generated": "2026-11-21",
   "review_queue": [
     {
       "entity": "elsevier",
@@ -8,14 +8,19 @@
       "url": "https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals",
       "signed_off": "8977f5de1347",
       "now": "089404563935",
-      "fetched": "2026-11-01",
+      "fetched": "2026-11-20",
       "axes_to_recheck": [
+        "audit_trail",
+        "code_presentation",
+        "content_licensing",
         "data_visualisation",
+        "detection_screening",
         "due_process",
         "illustrative_images",
         "language_refinement",
         "passing_off",
         "publisher_own_use",
+        "reference_gathering",
         "research_process_ai",
         "reviewer_use",
         "translation",
@@ -29,9 +34,10 @@
       "url": "https://www.elsevier.com/about/policies-and-standards/publishing-ethics-books/generative-ai-policies",
       "signed_off": "93c6664ac466",
       "now": "62a2906f7f73",
-      "fetched": "2026-11-01",
+      "fetched": "2026-11-20",
       "axes_to_recheck": [
-        "publisher_own_use"
+        "content_licensing",
+        "detection_screening"
       ]
     },
     {
@@ -40,52 +46,478 @@
       "source": "announcement-2026-08",
       "url": "https://www.elsevier.com/connect/updated-generative-ai-policies-for-journals-supporting-responsible-use-while-protecting-trust",
       "signed_off": "2215164be27a",
-      "now": "81f15063439c",
-      "fetched": "2026-11-01",
+      "now": "49adea7c30f0",
+      "fetched": "2026-11-20",
       "axes_to_recheck": []
+    },
+    {
+      "entity": "springer-nature",
+      "entity_name": "Springer Nature",
+      "source": "peer-review-ai",
+      "url": "https://www.springernature.com/de/policies/editorial-policies/using-ai-in-peer-review",
+      "signed_off": "d9af514ed88f",
+      "now": "6eb4a695cdf5",
+      "fetched": "2026-11-20",
+      "axes_to_recheck": [
+        "detection_screening",
+        "reviewer_use"
+      ]
+    },
+    {
+      "entity": "wiley",
+      "entity_name": "Wiley",
+      "source": "ai-guidelines",
+      "url": "https://www.wiley.com/publishing/article/ai-guidelines",
+      "signed_off": "e2b0e8794377",
+      "now": "9df8597eca38",
+      "fetched": "2026-11-20",
+      "axes_to_recheck": [
+        "audit_trail",
+        "code_presentation",
+        "content_licensing",
+        "data_visualisation",
+        "detection_screening",
+        "due_process",
+        "illustrative_images",
+        "language_refinement",
+        "passing_off",
+        "publisher_own_use",
+        "reference_gathering",
+        "research_process_ai",
+        "reviewer_use",
+        "translation",
+        "writing_drafting"
+      ]
     }
   ],
-  "unchanged": 18,
+  "unchanged": 16,
   "never_fetched": [],
-  "awaiting_first_signoff": 0,
+  "awaiting_first_signoff": 48,
   "url_changed": [],
   "orphan_snapshots": [],
-  "retrieval_failures": [],
+  "retrieval_failures": [
+    {
+      "source": "acs/ai-policy",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://researcher-resources.acs.org/publish/aipolicy"
+    },
+    {
+      "source": "arxiv/ai-guidance",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://info.arxiv.org/help/moderation/index.html"
+    },
+    {
+      "source": "bernoulli/ai-guidance",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://bernoullisociety.org/publications/bernoulli-journal/policy-on-ai-3"
+    },
+    {
+      "source": "bmj/ai-policy",
+      "attempted": "2026-11-20",
+      "url": "https://www.bmj.com/content/ai-use",
+      "method": "http",
+      "status": "failed",
+      "detail": "HTTP 403"
+    },
+    {
+      "source": "cambridge/ai-policy",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.cambridge.org/core/services/publishing-ethics/authorship-and-contributorship-journals"
+    },
+    {
+      "source": "china-national/official-information",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=5F6B9C9E6B66C75BE06397BE0A0A6C0B"
+    },
+    {
+      "source": "dfg/ai-guidance",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.dfg.de/en/news/news-topics/announcements-proposals/2026/ifr-26-18"
+    },
+    {
+      "source": "doaj/ai-guidance",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://doaj.org/apply/guide/"
+    },
+    {
+      "source": "elife/review-process-ai",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://reviewer.elifesciences.org/reviewer-guide/review-process"
+    },
+    {
+      "source": "elife/author-instructions",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://elife-rp.msubmit.net/html/elife-rp_author_instructions.html"
+    },
+    {
+      "source": "elsevier/journals-policy",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals"
+    },
+    {
+      "source": "elsevier/books-policy",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.elsevier.com/about/policies-and-standards/publishing-ethics-books/generative-ai-policies"
+    },
+    {
+      "source": "elsevier/announcement-2026-08",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.elsevier.com/connect/updated-generative-ai-policies-for-journals-supporting-responsible-use-while-protecting-trust"
+    },
+    {
+      "source": "era/ai-guidance",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en"
+    },
+    {
+      "source": "erc/ai-guidance",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://erc.europa.eu/news-events/news/erc-clarifies-limits-ai-use-grant-evaluation"
+    },
+    {
+      "source": "frontiers/ai-policy",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.frontiersin.org/guidelines/policies-and-publication-ethics"
+    },
+    {
+      "source": "horizon-europe/evaluator-briefing",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/experts/standard-briefing-slides-for-experts_he_en.pdf"
+    },
+    {
+      "source": "horizon-europe/application-template",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/temp-form/af/af_he-ria-ia-stage-1_en.pdf"
+    },
+    {
+      "source": "icmje/ai-authors",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-authors.html"
+    },
+    {
+      "source": "icmje/ai-editors",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-editors.html"
+    },
+    {
+      "source": "icmje/preparing-submission",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html"
+    },
+    {
+      "source": "icmje/authors-contributors",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html"
+    },
+    {
+      "source": "icmje/ai-reviewers",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-reviewers.html"
+    },
+    {
+      "source": "iop/ai-policy",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://publishingsupport.iopscience.iop.org/ethical-policy-journals/"
+    },
+    {
+      "source": "iop/tdm-ai",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://ioppublishing.org/legal/textanddataminingpolicy/"
+    },
+    {
+      "source": "isc/official-information",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://council.science/our-work/ai-disclosure-in-research/"
+    },
+    {
+      "source": "istic/guideline-v3-en",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://files.sciengine.com/gridfs/2001556325267406848/%E9%99%84%E4%BB%B61-%E5%AD%A6%E6%9C%AF%E5%87%BA%E7%89%88%E4%B8%ADAIGC%E4%BD%BF%E7%94%A8%E8%BE%B9.pdf"
+    },
+    {
+      "source": "istic/guideline-v2-zh",
+      "attempted": "2026-11-20",
+      "url": "https://www.lib.szu.edu.cn/sites/szulib/files/2025-06/%E5%AD%A6%E6%9C%AF%E5%87%BA%E7%89%88%E4%B8%ADAIGC%E4%BD%BF%E7%94%A8%E8%BE%B9%E7%95%8C%E6%8C%87%E5%8D%972.0.pdf",
+      "method": "http",
+      "status": "failed",
+      "detail": "URLError"
+    },
+    {
+      "source": "jmir/ai-policy",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://support.jmir.org/hc/en-us/articles/13387268671771-JMIR-Publications-Editorial-Policy-on-the-use-of-generative-AI-during-manuscript-preparation"
+    },
+    {
+      "source": "lancet/info-for-authors",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.thelancet.com/pb-assets/Lancet/authors/tl-info-for-authors-1787150940677.pdf"
+    },
+    {
+      "source": "nsf/ai-guidance",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.nsf.gov/policies/ai/merit-review"
+    },
+    {
+      "source": "openrxiv/biorxiv-approach-to-ai",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://connect.biorxiv.org/news/2026/10/20/approach_to_ai"
+    },
+    {
+      "source": "openrxiv/medrxiv-approach-to-ai",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://connect.medrxiv.org/news/2026/10/20/approach_to_ai"
+    },
+    {
+      "source": "plos/ethical-publishing-practice",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://journals.plos.org/plosone/s/ethical-publishing-practice"
+    },
+    {
+      "source": "royal-society/ai-policy",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://royalsociety.org/journals/ethics-policies/artificial-intelligence/"
+    },
+    {
+      "source": "royal-society/biology-letters-announcement",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://royalsociety.org/blog/2025/02/new-ai-policy-to-be-launched-on-biology-letters/"
+    },
+    {
+      "source": "sage/ai-policy",
+      "attempted": "2026-11-20",
+      "url": "https://www.sagepub.com/journals/publication-ethics-policies/artificial-intelligence-policy",
+      "method": "http",
+      "status": "failed",
+      "detail": "HTTP 403"
+    },
+    {
+      "source": "sage/tdm-ai",
+      "attempted": "2026-11-20",
+      "url": "https://www.sagepub.com/tdm-ai-policy",
+      "method": "http",
+      "status": "failed",
+      "detail": "HTTP 403"
+    },
+    {
+      "source": "springer-nature/announcement-2026-09",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://group.springernature.com/de/group/media/press-releases/sn-policy-responsible-ai-use/53209516"
+    },
+    {
+      "source": "stm/classification-2025",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://s3.eu-west-2.amazonaws.com/stm.offloadmedia/wp-content/uploads/2025/04/23020709/STM_AI_Classification_Recs_19_Sept2025-1.pdf"
+    },
+    {
+      "source": "taylor-francis/ai-policy",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://taylorandfrancis.com/our-policies/ai-policy/"
+    },
+    {
+      "source": "ukri/ai-policy",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/use-of-generative-artificial-intelligence-in-application-preparation-and-assessment/"
+    },
+    {
+      "source": "ukri/landing-page",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/"
+    },
+    {
+      "source": "wame/ai-guidance",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://wame.org/pdf/Chatbots-Generative-AI-and-Scholarly-Manuscripts.pdf"
+    },
+    {
+      "source": "wellcome/ai-guidance",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://wellcome.org/research-funding/guidance/policies-grant-conditions/use-of-generative-ai"
+    },
+    {
+      "source": "wiley/ai-guidelines",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://www.wiley.com/publishing/article/ai-guidelines"
+    },
+    {
+      "source": "wiley/ethics-guidelines",
+      "status": "stale_fetch",
+      "detail": "No successful fetch today",
+      "url": "https://authors.wiley.com/ethics-guidelines/index.html"
+    }
+  ],
   "live_review_due": [
+    {
+      "source": "aip/ai-policy",
+      "url": "https://publishing.aip.org/resources/researchers/policies-and-ethics/ai-policy/",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "asm/generative-ai",
+      "url": "https://journals.asm.org/generative-ai",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "cell/ai-policy",
+      "url": "https://www.cell.com/cell/information-for-authors/journal-policies",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
     {
       "source": "cope/position-authorship-ai",
       "url": "https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools",
-      "last_live_verified": "2026-10-15",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "embo/ai-policy",
+      "url": "https://link.springer.com/partners/embo-press/editorial-policies",
+      "last_live_verified": "2026-11-20",
       "reason": "A current live read is required; stored evidence is historical."
     },
     {
       "source": "jama-network/instructions-for-authors",
       "url": "https://jamanetwork.com/journals/jama/pages/instructions-for-authors",
-      "last_live_verified": "2026-10-15",
+      "last_live_verified": "2026-11-20",
       "reason": "A current live read is required; stored evidence is historical."
     },
     {
       "source": "jama-network/editorial-2026-08",
       "url": "https://jamanetwork.com/journals/jama/fullarticle/2852772",
-      "last_live_verified": "2026-10-15",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "mdpi/ai-policy",
+      "url": "https://www.mdpi.com/ethics",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "nejm/editorial-policies",
+      "url": "https://www.nejm.org/about-nejm/editorial-policies",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "nhmrc/genai-policy",
+      "url": "https://www.nhmrc.gov.au/about-us/resources/policy-use-generative-artificial-intelligence",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "nih/applications-ai",
+      "url": "https://www.grants.nih.gov/grants/guide/notice-files/NOT-OD-25-132.html",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "nih/peer-review-ai",
+      "url": "https://grants.nih.gov/grants/guide/notice-files/NOT-OD-23-149.html",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "oup/ai-use-disclosure",
+      "url": "https://academic.oup.com/pages/for-authors/journals/preparing-and-submitting-your-manuscript/ai-principles-for-oxford-journals/policy-on-ai-use-and-disclosure-for-oxford-journals-authors",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "pnas/ai-policy",
+      "url": "https://www.pnas.org/author-center/editorial-and-journal-policies",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "rsc/ai-policy",
+      "url": "https://www.rsc.org/publishing/journals/processes-and-policies/author-responsibilities",
+      "last_live_verified": "2026-11-20",
       "reason": "A current live read is required; stored evidence is historical."
     },
     {
       "source": "science-aaas/editorial-policies",
       "url": "https://www.science.org/content/page/science-journals-editorial-policies",
-      "last_live_verified": "2026-10-15",
+      "last_live_verified": "2026-11-20",
       "reason": "A current live read is required; stored evidence is historical."
     },
     {
       "source": "springer-nature/nature-portfolio-ai",
       "url": "https://www.nature.com/nature-portfolio/editorial-policies/ai",
-      "last_live_verified": "2026-10-15",
+      "last_live_verified": "2026-11-20",
       "reason": "A current live read is required; stored evidence is historical."
     },
     {
       "source": "springer-nature/peer-review-ai",
       "url": "https://www.springernature.com/de/policies/editorial-policies/using-ai-in-peer-review",
-      "last_live_verified": "2026-10-15",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "springer-nature/manuscript-preparation",
+      "url": "https://www.springernature.com/gp/policies/editorial-policies/ai-manuscript-preparation",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "springer-nature/research-use",
+      "url": "https://www.springernature.com/gp/policies/editorial-policies/using-ai-in-research",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "springer-nature/editor-guidance",
+      "url": "https://www.springernature.com/gp/policies/editorial-policies/ai-editor-guidance",
+      "last_live_verified": "2026-11-20",
+      "reason": "A current live read is required; stored evidence is historical."
+    },
+    {
+      "source": "wolters-kluwer-health/ethical-best-practices",
+      "url": "https://www.wolterskluwer.com/en/solutions/lippincott-journals/lippincott-journals-ethical-best-practices-in-scholarly-publishing",
+      "last_live_verified": "2026-11-20",
       "reason": "A current live read is required; stored evidence is historical."
     }
   ]

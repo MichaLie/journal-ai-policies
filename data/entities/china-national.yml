@@ -2,8 +2,10 @@ id: china-national
 name: China GB/Z 290-2026
 type: national_body
 policy_owner: china-national
-notes: Issued 30 October 2026. Official register metadata for the separate national guidance technical
-  document; not ISTIC 3.0. Full normative text remains to be assessed.
+notes: China's national guidance technical document GB/Z 290-2026, "Guideline on the boundaries of artificial
+  intelligence generated content (AIGC) usage in academic publishing", was issued on 30 October 2026.
+  The national standards register lists no implementation date. ISTIC is the first-listed drafting unit.
+  Only the register entry has been read so far; the guidance text itself has not been assessed.
 sources:
 - id: official-information
   url: https://std.samr.gov.cn/gb/search/gbDetailed?id=5F6B9C9E6B66C75BE06397BE0A0A6C0B
@@ -12,9 +14,9 @@ sources:
   status: current
   authoritative: true
   fetch_method: http
-  date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: 7960b61fded2378f81128f8b4c8515c9c1dec848608187e5470ada51e5080e2f
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  date_source: stated
+  last_verified: '2026-11-20'
+  content_sha256: e7f513abb7a53234ea5216b69a46635eb5e312d9962a1b864c9a064b9e52435e
+  stated_date: '2026-10-30'
 policies: []
 coherence: []

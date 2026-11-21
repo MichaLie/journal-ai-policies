@@ -1,0 +1,316 @@
+id: lancet
+name: The Lancet
+type: journal
+parent: elsevier
+platform: null
+policy_owner: lancet
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+homepage: null
+notes: 'The Lancet''s Information for Authors (August 2026) gives general AI rules written for authors
+  preparing a manuscript for an Elsevier journal, plus rules for named sections of The Lancet. AI use is
+  not allowed in World Report and Perspectives; in Comments and Correspondence, AI may help only with
+  grammar and spelling, must not be used to translate at submission, and a breach leads to rejection.
+  Other AI use is declared in a separate statement at the end of the manuscript, editors may decide
+  whether the use is appropriate, and AI tools should not be listed or cited as authors. Authors should
+  also check an AI tool''s terms so that the tool gets only the right to provide the service to them,
+  with no right to train on their material.'
+sources:
+- id: info-for-authors
+  url: https://www.thelancet.com/pb-assets/Lancet/authors/tl-info-for-authors-1787150940677.pdf
+  role: policy
+  audience: authors
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: stated
+  stated_date: 2026-08
+  last_verified: '2026-11-20'
+  content_sha256: 115e07ebf9db7ad70221ba9f14fffafa0ab7c064ea26786f1714d0ecc45ac623
+  adjudicated_sha256: null
+  note: 'PDF of the Information for Authors; its page header gives the date as August 2026.'
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: accountability
+  conditions: AI tools may support authors but must not substitute for their critical thinking, expertise
+    and evaluation. AI tools should always be applied with human oversight and control. Authors are responsible
+    and accountable for the contents of their work, including editing and adapting all material thoroughly
+    so the manuscript represents their own original contribution and reflects their own analysis, interpretation,
+    insights and ideas. Authors must check the terms and conditions of any AI tool to keep their data
+    and inputs, including unpublished manuscripts, private and confidential. Use is declared in a separate
+    AI declaration statement at the end of the manuscript, published with the work. No AI use is allowed
+    in World Report and Perspectives. In Comments and Correspondence, AI must not be used to translate
+    at submission, improve arguments, generate, reorder, shorten or summarise content, alter meaning,
+    or generate, complete or verify references; a breach leads to rejection. For Comments linked to Research
+    Articles, no confidential unpublished data relating to that Article should be input into any AI-assisted
+    tool. The source describes Comments, Correspondence, World Report and Perspectives as spaces for human
+    interpretation of science and medicine.
+  evidence:
+  - source: info-for-authors
+    quote: Authors preparing a manuscript for an Elsevier journal can use AI tools to support them. However,
+      these tools must never be used as a substitute for human critical thinking, expertise, and evaluation.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: AI tools should always be applied with human oversight and control.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Ultimately, authors are responsible and accountable for the contents of their work.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: 'This includes accountability for:'
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Editing and adapting all material thoroughly to ensure the manuscript represents the author’s
+      authentic and original contribution and reflects their own analysis, interpretation, insights, and
+      ideas.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Authors must check the terms and conditions of any AI tool that they use to ensure that the
+      privacy and confidentiality of their data and inputs, including their unpublished manuscripts, is
+      maintained.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Authors should disclose the use of AI tools for manuscript preparation in a separate AI declaration
+      statement at the end of their manuscript upon submission and this statement will appear in the published
+      work.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Comments, Correspondence, World Report, and Perspectives are spaces in The Lancet for human
+      interpretation of science and medicine.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Use of AI-assisted tools and generative AI is not allowed for the World Report and Perspectives
+      sections.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: 'AI-assisted tools must not be used to: translate Comments or Correspondence at the submission
+      stage, in whole or in part; improve arguments; generate new content or sentences; reorder content;
+      shorten or summarise content; alter'
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: meaning; or generate, complete, or verify references or citations.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: For Comments linked to Research Articles, no confidential unpublished data relating to the
+      Article you are commenting on should be input into any AI-assisted tool.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Any breach of this policy will lead to rejection of your Comment or Correspondence.
+    quote_provenance: raw_bytes
+- axis: language_refinement
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: unstated
+  conditions: Only basic checks of grammar, spelling and punctuation need no declaration. Other AI use
+    in preparing the manuscript is declared in a separate AI declaration statement at the end of the manuscript.
+    Not allowed in World Report and Perspectives. In Comments and Correspondence, AI may assist only with
+    grammar and spelling, confidential information must be removed first, and any AI use must be declared
+    at submission. For Comments linked to Research Articles, no confidential unpublished data relating
+    to that Article should be input into any AI-assisted tool.
+  evidence:
+  - source: info-for-authors
+    quote: Basic checks of grammar, spelling, and punctuation need no declaration.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Authors should disclose the use of AI tools for manuscript preparation in a separate AI declaration
+      statement at the end of their manuscript upon submission and this statement will appear in the published
+      work.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Use of AI-assisted tools and generative AI is not allowed for the World Report and Perspectives
+      sections.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: For Comments and Correspondence, the use of generative AI is permitted only to assist with
+      grammar and spelling; however, as your Comment or Correspondence will be edited to our house style,
+      this should be rarely needed.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: If you use AI to assist with grammar and spelling, you must remove any confidential information
+      before using the tool.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: For Comments linked to Research Articles, no confidential unpublished data relating to the
+      Article you are commenting on should be input into any AI-assisted tool.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: If AI has been used, a declaration must be included at the submission stage that fully describes
+      how you have used AI.
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: discouraged
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: licensing
+  conditions: Generative AI should be used for figures mainly to brainstorm and suggest image concepts.
+    Direct creation of figures or artwork should be limited to demonstrating AI capabilities in specific
+    contexts. Images duplicating copyrighted images, real people or identifiable products or brands must
+    not be generated. Disclosure follows the general AI declaration, made in a separate statement at the
+    end of the manuscript. No AI use is allowed in World Report and Perspectives.
+  evidence:
+  - source: info-for-authors
+    quote: For figures, generative AI should be used primarily as a tool for brainstorming and suggesting
+      image concepts. Its direct use in creating figures or artwork should be limited to demonstrations
+      of its capabilities in specific contexts, such as academic articles.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: This caution is due to potential copyright issues associated with using images from the internet
+      without proper attribution.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Images that duplicate or refer to existing copyrighted images, real people, or others’ identifiable
+      products or brands must not be generated, nor any likeness of an individual’s voice.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: for the use of AI tools we require a disclosure statement upon submission.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Authors should disclose the use of AI tools for manuscript preparation in a separate AI declaration
+      statement at the end of their manuscript upon submission and this statement will appear in the published
+      work.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Use of AI-assisted tools and generative AI is not allowed for the World Report and Perspectives
+      sections.
+    quote_provenance: raw_bytes
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: quality
+  conditions: Authors are accountable for reviewing and verifying all AI-generated output, including checking
+    the sources, as AI-generated references can be incorrect or fabricated. Use is declared in a separate AI declaration
+    statement at the end of the manuscript. No AI use is allowed in World Report and Perspectives. In
+    Comments and Correspondence, AI must not be used to generate, complete or verify references or citations.
+  evidence:
+  - source: info-for-authors
+    quote: Authors preparing a manuscript for an Elsevier journal can use AI tools to support them.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Ultimately, authors are responsible and accountable for the contents of their work.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Carefully reviewing and verifying the accuracy, comprehensiveness, and impartiality of all
+      AI-generated output (including checking the sources, as AI-generated references can be incorrect
+      or fabricated).
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Authors should disclose the use of AI tools for manuscript preparation in a separate AI declaration
+      statement at the end of their manuscript upon submission and this statement will appear in the published
+      work.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Use of AI-assisted tools and generative AI is not allowed for the World Report and Perspectives
+      sections.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: 'AI-assisted tools must not be used to: translate Comments or Correspondence at the submission
+      stage, in whole or in part; improve arguments; generate new content or sentences; reorder content;
+      shorten or summarise content; alter'
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: meaning; or generate, complete, or verify references or citations.
+    quote_provenance: raw_bytes
+- axis: translation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - dedicated_section
+  rationale: unstated
+  conditions: The general AI section permits AI tools to support authors and does not mention translation.
+    Use is declared in a separate AI declaration statement at the end of the manuscript. No AI use is
+    allowed in World Report and Perspectives. AI-assisted tools must not be used to translate Comments
+    or Correspondence at submission, in whole or in part; a breach leads to rejection. The source describes
+    Comments, Correspondence, World Report and Perspectives as spaces for human interpretation of science
+    and medicine.
+  evidence:
+  - source: info-for-authors
+    quote: Authors preparing a manuscript for an Elsevier journal can use AI tools to support them.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Authors should disclose the use of AI tools for manuscript preparation in a separate AI declaration
+      statement at the end of their manuscript upon submission and this statement will appear in the published
+      work.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Comments, Correspondence, World Report, and Perspectives are spaces in The Lancet for human
+      interpretation of science and medicine.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Use of AI-assisted tools and generative AI is not allowed for the World Report and Perspectives
+      sections.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: 'AI-assisted tools must not be used to: translate Comments or Correspondence at the submission
+      stage, in whole or in part;'
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Any breach of this policy will lead to rejection of your Comment or Correspondence.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: unstated
+  conditions: Research-process use is declared and described in detail in Methods. Editors reserve the
+    right to decide whether the AI use is appropriate. No AI use is allowed in World Report and Perspectives.
+  evidence:
+  - source: info-for-authors
+    quote: AI use in the research process should be declared and described in detail in the Methods section.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Editors reserve the right to determine whether the use of AI is appropriate.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Use of AI-assisted tools and generative AI is not allowed for the World Report and Perspectives
+      sections.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: A consequence is stated for Comments and Correspondence, where any breach of the AI policy
+    leads to rejection. Contact with the author is stated, since editors may ask authors for their prompts.
+    The guide describes a general appeal route for declined papers; the AI section does not refer to it.
+    No threshold for reviewing suspected AI use is stated.
+  evidence:
+  - source: info-for-authors
+    quote: Any breach of this policy will lead to rejection of your Comment or Correspondence.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Prompts should be provided where applicable and editors reserve the right to ask authors for
+      these.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: If an author believes that an editor has made an error in declining a paper, we welcome an
+      appeal.
+    quote_provenance: raw_bytes
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: unstated
+  conditions: Authors document the tool name and version, the purpose and the extent of their oversight.
+    Prompts are provided where applicable, and editors may ask for them. Retention of session records
+    is not stated.
+  evidence:
+  - source: info-for-authors
+    quote: Authors should document their use of AI, including the name and version of the AI tool used,
+      the purpose of the use, and the extent of their oversight.
+    quote_provenance: raw_bytes
+  - source: info-for-authors
+    quote: Prompts should be provided where applicable and editors reserve the right to ask authors for
+      these.
+    quote_provenance: raw_bytes
+coherence: []

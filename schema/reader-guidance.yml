@@ -19,25 +19,21 @@ citations:
     doi: 10.5334/pme.2431
     pmid: '41800434'
   plos2026:
-    text: PLOS. Ethical Publishing Practice — AI tools and technologies. Checked 15 October 2026.
+    text: PLOS. Ethical Publishing Practice — AI tools and technologies. Checked 20 November 2026.
     url: https://journals.plos.org/plosone/s/ethical-publishing-practice
   springer2026:
     text: Springer Nature. Announcement on responsible AI use, 10 September 2026. The framework is also
       present in the 4 August archive held here.
     url: https://group.springernature.com/de/group/media/press-releases/sn-policy-responsible-ai-use/53209516
   science2026:
-    text: Science journals. Editorial policies — AI and peer review. Checked 15 October 2026.
+    text: Science journals. Editorial policies — AI and peer review. Checked 20 November 2026.
     url: https://www.science.org/content/page/science-journals-editorial-policies
 reassurance:
   headline: You have almost certainly not done anything wrong.
-  body: 'Of the 100 highest-ranked journals surveyed in 2023, 87% had published guidance on generative
-    AI and just one prohibited using it to help write a manuscript outright. What nearly all of them prohibited
-    was something different: listing AI as an author. Describe permitted use plainly. A disclosure does
-    not make a prohibited use acceptable.
-
-    '
-  body_cite: ganjavi2024
-  bound: The lines are concrete. Do not invent citations. Do not present generated content as your data.
+  # The opening counts are computed from the records by tools/build.py (opening_counts);
+  # only the closing advice below is fixed wording.
+  body: Describe permitted use plainly. A disclosure does not make a prohibited use acceptable.
+  bound: The lines are concrete. Do not list AI as an author. Do not invent citations. Do not present generated content as your data.
     Do not upload an unpublished manuscript while reviewing it unless the journal explicitly authorizes
     the tool and use. For language help, follow the journal’s disclosure rule and carry on.
 detector_note:
@@ -115,11 +111,12 @@ boundary:
     A declaration helps readers understand the work, but does not override a prohibition.
 cases:
 - axis: language_refinement
-  worry: low
+  worry: some
   you_did: I used AI to fix my English, or to tidy up my writing
-  do_this: Check whether you changed only the language or also the intellectual content. PLOS expressly
-    exempts spelling, grammar and rephrasing for clarity or conciseness from disclosure. If the model
-    introduced arguments or interpretations, use the drafting guidance below.
+  do_this: Check what the tool changed and what your journal exempts. Some publishers exempt all language
+    editing (PLOS exempts spelling, grammar and rephrasing for clarity or conciseness). Others exempt only
+    basic spelling and grammar checkers and ask you to declare fuller editing. If the model introduced
+    arguments or interpretations, use the drafting guidance below.
   example:
     needed: false
     text: '[Tool and version] was used for language editing only; no content was generated. The authors
@@ -140,9 +137,8 @@ cases:
     text: '[Tool and version] was used to draft [which sections], accessed [date]. All generated text
       was verified against the primary sources and substantially revised by the authors, who take full
       responsibility for the content.'
-    note: 'Name the sections. A statement saying only "AI was used in preparing this manuscript" is the
-      kind editors describe as uninformative — one study found disclosures averaging 43 words and describing
-      the use only superficially.
+    note: 'Name the sections. A statement saying only "AI was used in preparing this manuscript" tells a
+      reader little; one study found disclosures averaged 43 words and described the use only superficially.
 
       '
     note_cite: ans2026
@@ -257,8 +253,8 @@ cases:
 - axis: passing_off
   worry: check_first
   you_did: I am wondering whether generated content can stand in for data I do not have
-  do_this: 'No. This is the one clear prohibition in the dataset, and it is the thing all the other rules
-    exist to protect against. If a figure, a value or a participant did not come from your research, it
+  do_this: 'No. Every publisher and journal here that addresses this forbids it, and it is the thing all
+    the other rules exist to protect against. If a figure, a value or a participant did not come from your research, it
     cannot appear as though it did.
 
     '
@@ -272,8 +268,8 @@ cases:
 not_covered:
   headline: Things this page does not answer
   items:
-  - '**Your specific journal.** Publisher rules are a starting point. Cell, for example, adds a specific
-    cover-art restriction to Elsevier’s policy. Check the journal instructions as well.'
+  - '**Your specific journal.** Publisher rules are a starting point. Cell, for example, is stricter than
+    Elsevier on AI cover art. Check the journal instructions as well.'
   - '**Your thesis.** University rules apply separately. Check the rules for your programme.'
   - '**Your co-authors.** Agree what the declaration says before submission — it describes the whole manuscript.'
   - '**Your funder and preprint server.** Their rules apply to different stages of the work. Their records

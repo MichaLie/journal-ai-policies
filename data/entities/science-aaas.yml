@@ -5,11 +5,13 @@ parent: null
 platform: science.org
 policy_owner: science-aaas
 delegates_to_journal: false
-policy_architecture: per_task_matrix
+policy_architecture: prose
 homepage: https://www.science.org
-notes: Reviewer writing support and image exceptions are recorded from the held policy. The linked AI-use
-  matrix needs a separate full capture before its editorial-disclosure rules are assigned. General integrity
-  procedures must be assessed separately from AI-specific thresholds.
+notes: The Science journals' editorial policies cover AI use by authors and reviewers. AI tools cannot
+  be authors, and AI-generated images need explicit permission from the editors. Authors who use AI in
+  the research or as an aid in writing or presenting the manuscript should note this in the cover letter
+  and in the methods or acknowledgments. The page points to separate AI usage guidelines for details by
+  use case; those guidelines are not yet included here, so some activities are not yet assessed.
 sources:
 - id: editorial-policies
   url: https://web.archive.org/web/20260614001840/https://www.science.org/content/page/science-journals-editorial-policies
@@ -21,13 +23,12 @@ sources:
   date_source: hash
   stated_date: null
   last_verified: '2026-10-15'
-  content_sha256: ab8a190e9db099ff710d9cedbd92b167b9b0f99e234048a05bddde04a9f46314
-  note: Live science.org returns 403 to every automated client. This is a dated Internet Archive capture.
-    The corresponding live policy was re-read on 15 October 2026; fixed archive captures are retained
-    as evidence and do not establish current live freshness.
+  content_sha256: 0db401065af068666b61a8b3b97928d2701d4638e7b8e800e7240e33f449b5a5
+  note: A dated Internet Archive copy of the page from 14 June 2026; the live page was last checked on 20
+    November 2026.
   adjudicated_sha256: 71b0012bd7fc6c12a7ced1ca183b3ddddee5dc5d845fae74c7583f88c0dadc52
   live_url: https://www.science.org/content/page/science-journals-editorial-policies
-  last_live_verified: '2026-10-15'
+  last_live_verified: '2026-11-20'
 policies:
 - axis: reviewer_use
   permission: permitted_with_conditions
@@ -44,21 +45,38 @@ policies:
     quote: However, reviewers may use AI tools to revise their own writing, provided that the system does
       not save or use inputs to train the model and that such use is transparently declared in the review.
     quote_provenance: raw_bytes
-  conditions: Reviewers may revise their own writing if the tool neither saves inputs nor uses them for
-    training, and they disclose this in the review. Entering any manuscript content remains prohibited.
-    This corrects the former blanket prohibition in this record; the exception was already present in
-    the stored source.
+  - source: editorial-policies
+    quote: Reviewers are solely accountable for outputs created with the help of generative AI tools.
+    quote_provenance: raw_bytes
+  conditions: Reviewers must not enter any part of the manuscript into an AI tool. They may use AI to revise
+    their own writing if the system neither saves inputs nor uses them for training, and they declare this
+    in the review. Reviewers are solely accountable for outputs created with generative AI tools.
 - axis: illustrative_images
-  permission: permitted_with_conditions
+  permission: prohibited
   disclosure: required
   disclosure_location:
-  - submission_field
-  rationale: accountability
-  conditions: Prior editor permission required; exceptions case-by-case and disclosed at submission.
+  - unspecified
+  rationale: unstated
+  conditions: AI-generated images and other multimedia need explicit permission from the editors. Exceptions,
+    such as images or videos in manuscripts about AI or machine learning, are judged case by case and should
+    be disclosed at submission. The journals say this position may change with copyright law and industry
+    standards.
   evidence:
   - source: editorial-policies
     quote: AI-generated images and other multimedia are not permitted in the Science journals without
       explicit permission from the editors.
+    quote_provenance: raw_bytes
+  - source: editorial-policies
+    quote: Exceptions may be granted in certain situations—e.g., for images and/or videos in manuscripts
+      specifically about AI and/or machine learning.
+    quote_provenance: raw_bytes
+  - source: editorial-policies
+    quote: Such exceptions will be evaluated on a case-by-case basis and should be disclosed at the time
+      of submission.
+    quote_provenance: raw_bytes
+  - source: editorial-policies
+    quote: our position on AI-generated multimedia may change with the evolution of copyright law and industry
+      standards on ethical use.
     quote_provenance: raw_bytes
 - axis: writing_drafting
   permission: permitted_with_conditions
@@ -68,13 +86,36 @@ policies:
   - methods
   - acknowledgements
   rationale: accountability
-  conditions: Location and detail depend on use case. Authors verify accuracy, sources and bias; the separately
-    linked matrix needs its own capture.
+  conditions: AI tools may not be listed as authors or coauthors, and sources cited in Science journal content
+    may not be authored or coauthored by AI tools. Authors should note AI use in the cover letter and in
+    the methods or acknowledgments section. The location and details of the declaration depend on use case,
+    as set out in the linked AI usage guidelines. Authors are accountable for the accuracy of the work and
+    for ensuring there is no plagiarism. They must ensure all sources are appropriately cited and should
+    review the work for bias introduced by AI. Editors may decline manuscripts where AI is used inappropriately.
   evidence:
+  - source: editorial-policies
+    quote: AI-assisted technologies [such as large language models (LLMs), chatbots, and image creators]
+      do not meet the Science journals’ criteria for authorship and therefore may not be listed as authors
+      or coauthors, nor may sources cited in Science journal content be authored or coauthored by AI tools.
+    quote_provenance: raw_bytes
   - source: editorial-policies
     quote: Authors who use AI-assisted technologies as components of their research study or as aids in
       the writing or presentation of the manuscript should note this in the cover letter and in the methods
       section or acknowledgments section of the manuscript
+    quote_provenance: raw_bytes
+  - source: editorial-policies
+    quote: the location and details of the declaration will depend on use case; see our AI usage guidelines
+      for specifics
+    quote_provenance: raw_bytes
+  - source: editorial-policies
+    quote: Authors are accountable for the accuracy of the work and for ensuring that there is no plagiarism.
+    quote_provenance: raw_bytes
+  - source: editorial-policies
+    quote: They must also ensure that all sources are appropriately cited and should carefully review the
+      work to guard against bias that may be introduced by AI.
+    quote_provenance: raw_bytes
+  - source: editorial-policies
+    quote: Editors may decline to move forward with manuscripts if AI is used inappropriately.
     quote_provenance: raw_bytes
 - axis: research_process_ai
   permission: permitted_with_conditions
@@ -84,12 +125,40 @@ policies:
   - methods
   - acknowledgements
   rationale: accountability
-  conditions: Location and detail depend on use case. Authors verify accuracy, sources and bias; the separately
-    linked matrix needs its own capture.
+  conditions: Authors should note AI use in the cover letter and in the methods or acknowledgments section.
+    The location and details of the declaration depend on use case, as set out in the linked AI usage
+    guidelines. Authors are accountable for the accuracy of the work and for ensuring there is no plagiarism.
+    They must ensure all sources are appropriately cited and should review the work for bias introduced
+    by AI. Editors may decline manuscripts where AI is used inappropriately.
   evidence:
   - source: editorial-policies
     quote: Authors who use AI-assisted technologies as components of their research study or as aids in
       the writing or presentation of the manuscript should note this in the cover letter and in the methods
       section or acknowledgments section of the manuscript
+    quote_provenance: raw_bytes
+  - source: editorial-policies
+    quote: the location and details of the declaration will depend on use case; see our AI usage guidelines
+      for specifics
+    quote_provenance: raw_bytes
+  - source: editorial-policies
+    quote: Authors are accountable for the accuracy of the work and for ensuring that there is no plagiarism.
+    quote_provenance: raw_bytes
+  - source: editorial-policies
+    quote: They must also ensure that all sources are appropriately cited and should carefully review the
+      work to guard against bias that may be introduced by AI.
+    quote_provenance: raw_bytes
+  - source: editorial-policies
+    quote: Editors may decline to move forward with manuscripts if AI is used inappropriately.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'Consequence: stated. Editors may decline to move forward with manuscripts if AI is used
+    inappropriately. Contact with the author about AI use: not stated. Appeal route: not stated.'
+  evidence:
+  - source: editorial-policies
+    quote: Editors may decline to move forward with manuscripts if AI is used inappropriately.
     quote_provenance: raw_bytes
 coherence: []

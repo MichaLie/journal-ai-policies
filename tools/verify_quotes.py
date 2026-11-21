@@ -4,10 +4,19 @@ should have existed from the start: eight quotes shipped misattributed and one
 was a paraphrase in quotation marks, because quotes were transcribed from agent
 reports rather than from documents.
 
-EXACT  — found byte-for-byte in the cited source
-NORM   — found after collapsing whitespace, unescaping entities and stripping tags
-ELSEWHERE — not in the cited source, but present in another source we hold
-MISSING — not found in anything we hold
+Verdicts, as printed:
+VERIFIED                          — found in the stored text of the cited source,
+                                    after unescaping entities, folding curly quotes
+                                    and dashes, collapsing whitespace and lower-casing
+VERIFIED (punctuation-normalised) — found only after also discarding everything but
+                                    letters and digits (ligatures, PDF spacing);
+                                    quotes of 30+ such characters only
+ELSEWHERE -> <entity/source>, …   — not in the cited source, but in another source we hold
+NO SNAPSHOT                       — no stored text for the cited source
+MISSING                           — the cited source is held and the quote is not in it,
+                                    nor in anything else we hold
+Only the two VERIFIED verdicts pass validate.py's gate; a quote whose
+quote_provenance is `unverified` is an honest declaration and is exempt.
 """
 from __future__ import annotations
 import html, json, re, sys

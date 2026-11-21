@@ -1,0 +1,18 @@
+{
+  "name": "Wolters Kluwer Health (Lippincott journals)",
+  "url": "https://www.wolterskluwer.com/en/solutions/lippincott-journals/lippincott-journals-ethical-best-practices-in-scholarly-publishing",
+  "capture_method": "browser_dom",
+  "capture_scope": "Two generative-AI sections of the rendered Lippincott Journals 'Ethical best practices in scholarly publishing' page, 'Generative AI policy for authors' and 'Generative AI Policy for Journals', each with its reference list, from the first heading up to the next heading ('Authorship'), captured from the browser DOM on 20 November 2026; whitespace normalised. The other sections of the page are not held. Not a raw HTTP response or full-page capture.",
+  "sha256": null,
+  "text_sha256": "62ce17dce3fa173e5fa3f26adb29a41b366d8069ad6c85e748ea025468a1859b",
+  "entity": "wolters-kluwer-health",
+  "source": "ethical-best-practices",
+  "fetched": "2026-11-20",
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "text_sha256": "62ce17dce3fa173e5fa3f26adb29a41b366d8069ad6c85e748ea025468a1859b",
+      "capture_method": "browser_dom"
+    }
+  ]
+}

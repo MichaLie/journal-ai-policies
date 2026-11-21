@@ -6,7 +6,10 @@ platform: null
 policy_owner: doaj
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
-notes: Guidance for journal AI policies; supports disclosed editing, not generated assessments.
+notes: DOAJ's Guide to applying (Version 2.9) sets out what journal AI policies should include for authors,
+  reviewers and editors. These provisions sit under Best practices, which DOAJ says are not mandatory
+  for indexing, and the guide defines “should” as a recommendation. DOAJ's open access definition lets
+  users pass articles as data to software. The guide does not address licensing content for AI training.
 sources:
 - id: ai-guidance
   url: https://doaj.org/apply/guide/
@@ -16,21 +19,162 @@ sources:
   authoritative: true
   fetch_method: http
   date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: efe1f8581424ff7b8170ccadc1bbffca0d567839e4ee575218a63be7c9a1292d
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  last_verified: '2026-11-20'
+  content_sha256: eedbe0102da182377f03c7e3feaefd8bdf404a22769b0f6de4f5445569613c25
 policies:
-- axis: reviewer_use
+- axis: language_refinement
+  permission: permitted
+  disclosure: not_required
+  disclosure_location: []
+  rationale: unstated
+  conditions: The recommended author disclosure covers generative AI use beyond straightforward language
+    correction, editing and formatting.
+  evidence:
+  - source: ai-guidance
+    quote: Authors should disclose the use of generative AI in preparing the article, beyond straightforward
+      language correction, editing and formatting
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In this guide, “must” means a requirement and “should” means a recommendation.
+    quote_provenance: raw_bytes
+- axis: writing_drafting
   permission: permitted_with_conditions
   disclosure: encouraged
   disclosure_location:
   - unspecified
   rationale: accountability
-  conditions: Guidance for journal AI policies; supports disclosed editing, not generated assessments.
+  conditions: DOAJ recommends that journal policies ask authors to disclose generative AI use beyond straightforward
+    language correction, editing and formatting. Authors are responsible for checking the validity of the
+    output. Automated tools cannot be credited as authors. Generative AI cannot be cited as a source.
+  evidence:
+  - source: ai-guidance
+    quote: 'At a minimum the policy should include:'
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Authors should disclose the use of generative AI in preparing the article, beyond straightforward
+      language correction, editing and formatting
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Authors are responsible for checking the validity of the output of any automated tools used
+      in their research and preparing their manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Automated tools cannot be credited as authors
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Generative AI cannot be cited as a source.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In this guide, “must” means a requirement and “should” means a recommendation.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: DOAJ recommends that journal policies make authors responsible for checking the validity
+    of output from automated tools used in their research.
+  evidence:
+  - source: ai-guidance
+    quote: Authors are responsible for checking the validity of the output of any automated tools used
+      in their research and preparing their manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: 'At a minimum the policy should include:'
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In this guide, “must” means a requirement and “should” means a recommendation.
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: encouraged
+  disclosure_location:
+  - unspecified
+  rationale: confidentiality
+  conditions: DOAJ recommends that reviewers and editors do not use generative AI to create their assessments.
+    Editing and rewriting may be acceptable if disclosed. The stated risks include breaches of confidentiality,
+    superficial and non-specific feedback, bias, hidden prompts and false information such as fake references.
   evidence:
   - source: ai-guidance
     quote: Peer reviewers and editors should not use generative AI to create their assessments, due to
       risks such as breaches of confidentiality, superficial and non-specific feedback, bias, hidden prompts
       , and false information such as fake references; editing and rewriting may be acceptable if disclosed.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: 'At a minimum the policy should include:'
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In this guide, “must” means a requirement and “should” means a recommendation.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: encouraged
+  disclosure_location:
+  - unspecified
+  rationale: confidentiality
+  conditions: DOAJ recommends that journals disclose routine use of automated tools, test the tools and
+    keep a human in the loop. It recommends that editors do not use generative AI to create their assessments.
+    Editing and rewriting may be acceptable if disclosed. Stated risks of generative AI in assessments
+    include breaches of confidentiality, superficial and non-specific feedback, bias, hidden prompts and
+    false information such as fake references. The guide does not name or describe specific tools.
+  evidence:
+  - source: ai-guidance
+    quote: Any routine use of automated tools by the journal or publisher should be disclosed.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: The tool should have been appropriately tested.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Use of automated tools should be overseen by humans (human in the loop).
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Peer reviewers and editors should not use generative AI to create their assessments, due to
+      risks such as breaches of confidentiality, superficial and non-specific feedback, bias, hidden prompts
+      , and false information such as fake references; editing and rewriting may be acceptable if disclosed.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In this guide, “must” means a requirement and “should” means a recommendation.
+    quote_provenance: raw_bytes
+- axis: detection_screening
+  permission: permitted_with_conditions
+  disclosure: encouraged
+  disclosure_location:
+  - unspecified
+  rationale: unstated
+  conditions: DOAJ recommends that an editor or other staff verify automated detection of integrity issues,
+    including undeclared generative AI use. It recommends that journals disclose any routine use of automated
+    tools. It does not say whether an author is told when a flag is raised on their manuscript.
+  evidence:
+  - source: ai-guidance
+    quote: Journals should ensure that an editor or other staff will verify the automated detection of
+      integrity issues such as text similarity, figure manipulation or duplication, or undeclared generative
+      AI use, or automated peer reviewer suggestions.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Any routine use of automated tools by the journal or publisher should be disclosed.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In this guide, “must” means a requirement and “should” means a recommendation.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'Trigger: DOAJ recommends that an editor or other staff verify automated detection of undeclared
+    generative AI use. Consequence: none is stated for undeclared generative AI use. Author contact: not
+    stated. Appeal route: the guide''s Appeals section covers journals and publishers appealing DOAJ decisions.
+    It names no appeal route for authors.'
+  evidence:
+  - source: ai-guidance
+    quote: Journals should ensure that an editor or other staff will verify the automated detection of
+      integrity issues such as text similarity, figure manipulation or duplication, or undeclared generative
+      AI use, or automated peer reviewer suggestions.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In this guide, “must” means a requirement and “should” means a recommendation.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: A journal or publisher is eligible to submit an appeal if
     quote_provenance: raw_bytes
 coherence: []

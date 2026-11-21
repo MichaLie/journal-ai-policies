@@ -7,7 +7,10 @@ policy_owner: bmj
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
 homepage: null
-notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+notes: One AI policy covers all BMJ titles, content types and formats, and is built on transparent declaration.
+  Authors describe in the contributor section what AI was used, why and how, and are also expected to
+  disclose AI use in key cited sources, to the best of their knowledge. The site's copyright notice reserves
+  rights including for AI training; this notice is separate from the AI-use policy.
 sources:
 - id: ai-policy
   url: https://www.bmj.com/content/ai-use
@@ -19,7 +22,8 @@ sources:
   date_source: none
   last_verified: '2026-11-11'
   content_sha256: c1bc68ca35d0e3f661f940f212215c1962a19c41079cd6b22a197d985900b100
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  note: Downloaded directly on 11 November 2026. Automated downloads were blocked on 20 November 2026, so every
+    quoted sentence was checked on the live page in a browser that day.
 policies:
 - axis: writing_drafting
   permission: permitted_with_conditions
@@ -27,20 +31,241 @@ policies:
   disclosure_location:
   - unspecified
   rationale: accountability
-  conditions: Declare what, why and how in the contributor section; research uses also belong in Methods.
+  conditions: AI use is described in the contributor section, stating what was used, why and how. Editors
+    consider whether the use is suitable. Authors are responsible for AI-produced content. Only humans
+    are recognised as authors, since they must be accountable for the work.
   evidence:
   - source: ai-policy
     quote: BMJ will consider content where AI technologies are used.
     quote_provenance: raw_bytes
-- axis: detection_screening
+  - source: ai-policy
+    quote: Where AI technology has been used this should be clearly described. Editors will consider the
+      suitability of the use outlined.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Include an acknowledgement of AI use in the ‘contributor’ section of written material.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'Transparent declaration includes a description of: a) What AI technology was used (the name
+      of the technology) b) Why this AI technology was used (the reason for its use) c) How the AI technology
+      was used (what the task of the technology was)'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors and contributors are responsible for content produced by AI technology in their work.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: BMJ only recognises humans as being capable of authorship since they must be accountable for
+      the work.
+    quote_provenance: raw_bytes
+- axis: illustrative_images
   permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: The policy applies to all formats, including diagrams, photographs and other images or illustrative
+    materials. AI use is described in the contributor section, stating what was used, why and how. Editors
+    consider whether the use is suitable. Authors are responsible for AI-produced content. Only humans
+    are recognised as authors, since they must be accountable for the work.
+  evidence:
+  - source: ai-policy
+    quote: It applies to all formats, including, without limitation, all text, audio, video and audio-visual
+      material, abstracts, databases, tables, data, diagrams, photographs and other images or illustrative
+      materials.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Where AI technology has been used this should be clearly described. Editors will consider the
+      suitability of the use outlined.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Include an acknowledgement of AI use in the ‘contributor’ section of written material.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'Transparent declaration includes a description of: a) What AI technology was used (the name
+      of the technology) b) Why this AI technology was used (the reason for its use) c) How the AI technology
+      was used (what the task of the technology was)'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors and contributors are responsible for content produced by AI technology in their work.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: BMJ only recognises humans as being capable of authorship since they must be accountable for
+      the work.
+    quote_provenance: raw_bytes
+- axis: data_presentation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: The policy applies to all formats, including tables and data. AI use is described in the
+    contributor section, stating what was used, why and how. Editors consider whether the use is suitable.
+    Authors are responsible for AI-produced content. Only humans are recognised as authors, since they
+    must be accountable for the work.
+  evidence:
+  - source: ai-policy
+    quote: It applies to all formats, including, without limitation, all text, audio, video and audio-visual
+      material, abstracts, databases, tables, data, diagrams, photographs and other images or illustrative
+      materials.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Where AI technology has been used this should be clearly described. Editors will consider the
+      suitability of the use outlined.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Include an acknowledgement of AI use in the ‘contributor’ section of written material.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'Transparent declaration includes a description of: a) What AI technology was used (the name
+      of the technology) b) Why this AI technology was used (the reason for its use) c) How the AI technology
+      was used (what the task of the technology was)'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors and contributors are responsible for content produced by AI technology in their work.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: BMJ only recognises humans as being capable of authorship since they must be accountable for
+      the work.
+    quote_provenance: raw_bytes
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: The policy applies to all formats, including data and diagrams. AI use is described in the
+    contributor section, stating what was used, why and how. Editors consider whether the use is suitable.
+    Authors are responsible for AI-produced content. Only humans are recognised as authors, since they
+    must be accountable for the work.
+  evidence:
+  - source: ai-policy
+    quote: It applies to all formats, including, without limitation, all text, audio, video and audio-visual
+      material, abstracts, databases, tables, data, diagrams, photographs and other images or illustrative
+      materials.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Where AI technology has been used this should be clearly described. Editors will consider the
+      suitability of the use outlined.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Include an acknowledgement of AI use in the ‘contributor’ section of written material.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'Transparent declaration includes a description of: a) What AI technology was used (the name
+      of the technology) b) Why this AI technology was used (the reason for its use) c) How the AI technology
+      was used (what the task of the technology was)'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors and contributors are responsible for content produced by AI technology in their work.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: BMJ only recognises humans as being capable of authorship since they must be accountable for
+      the work.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - unspecified
+  rationale: accountability
+  conditions: AI use in the course of research is acknowledged in the contributor section and described
+    more fully in the methods section. Disclosure also covers other work by the authors that underpins
+    the submitted content. Authors are responsible for AI-produced content. Only humans are recognised
+    as authors, since they must be accountable for the work.
+  evidence:
+  - source: ai-policy
+    quote: Include an acknowledgement of AI use in the ‘contributor’ section of written material. If the
+      AI use was in the course of research, a fuller description should be included in the methods section.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: We expect authors or others who are creating content to disclose and describe use of AI technologies
+      in (a) any content which is submitted to us, (b) any other work by the authors which underpins or
+      is otherwise connected with the content submitted to us
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors and contributors are responsible for content produced by AI technology in their work.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: BMJ only recognises humans as being capable of authorship since they must be accountable for
+      the work.
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: confidentiality
+  conditions: The policy's principles also apply to the use of AI in peer review comments. Reviewers who
+    use AI to improve word processing and language declare this when submitting their reports. Reviewers
+    should not put unpublished manuscripts, or information about them, into publicly available AI tools
+    where the security of confidential information cannot be guaranteed.
+  evidence:
+  - source: ai-policy
+    quote: The same principles apply to the use of AI in peer review comments submitted to journals and
+      any other advice or material sent to us.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If reviewers use AI technology to improve word processing and language, they should declare
+      this when submitting their reports.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: reviewers should preserve the confidentiality of the peer review process by not putting unpublished
+      manuscripts that they are reviewing for BMJ Journals (or information about them) into publicly available
+      AI tools
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: the security of the confidential information cannot be guaranteed.
+    quote_provenance: raw_bytes
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: encouraged
+  disclosure_location:
+  - unspecified
+  rationale: unstated
+  conditions: Authors are asked to consider supplying a summary of AI input, output and how the output was
+    reviewed, as supplementary files or additional information for the editor.
+  evidence:
+  - source: ai-policy
+    quote: Consider including a summary of the input, output, and the way in which the AI output was reviewed
+      on the part of the authors as supplementary files or additional information for the editor to review.
+    quote_provenance: raw_bytes
+- axis: detection_screening
+  permission: permitted
   disclosure: not_addressed
   disclosure_location: []
-  rationale: accountability
-  conditions: Published screening practice; this does not establish detector accuracy.
+  rationale: unstated
+  conditions: BMJ may use screening tools before publication, systematically or case by case, and may also
+    use them after publication. Notification of authors is not stated.
   evidence:
   - source: ai-policy
     quote: We may, on a systematic or case by case basis, use screening tools pre-publication to assist
       with the identification of content generated (in whole or in part) through AI technologies.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: We may also use such tools post-publication.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: BMJ considers whether the way AI was used and declared is reasonable and consistent with
+    its publication policies and practice. Trigger and consequence are stated, as content may be rejected
+    or changed after publication on the basis of inadequate declaration or the circumstances of use. Contact
+    with the author is stated, as the editor may ask for more information or for information to be added
+    to the content. A route of appeal is not stated.
+  evidence:
+  - source: ai-policy
+    quote: BMJ will consider whether the way in which AI was used and declared is reasonable and consistent
+      with its publication policies and practice.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The editor may ask for more information and/or for information to be added to the content for
+      internal use and/or for publication.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Content may be rejected or be subject to post-publication changes on the basis of inadequate
+      declaration or on the particular circumstances of its use.
     quote_provenance: raw_bytes
 coherence: []

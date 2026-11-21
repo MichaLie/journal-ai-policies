@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Fetch every declared source into ITS OWN isolated directory, hash it, snapshot it.
+"""Fetch every declared http source into ITS OWN isolated directory, hash it, snapshot it.
+
+Only `fetch_method: http` sources are fetched. Archive, browser and manual
+sources are never fetched here: a fixed archive capture cannot show a live
+change, and a browser extract cannot be refetched by a script. Each of them is
+recorded as due for a dated manual live read and printed in the work queue.
+
+Usage: fetch.py [entity-id] [--accept-suspect]
 
 WHY ISOLATED DIRECTORIES: during the reconnaissance that produced this repo, one
 agent's generically-named temp file was silently overwritten by a different agent
@@ -17,19 +24,33 @@ keeping sha256 preserves the archival record.
 WHY PDFs ARE EXTRACTED HERE: the first version decoded every body as UTF-8, so a
 PDF's "visible text" was its raw bytes. That looked fine — the hash was stable and
 the file was large — but the committed text.txt held no words, and the monthly
-monitor's commit of 2026-09-01 silently overwrote the three PDF extracts the quote
+monitor's commit of 2026-09-01 silently overwrote the PDF extracts the quote
 gate depends on. Nothing ran validate.py on that commit, so the gate stayed broken
 for ten days. Text now comes from pypdf, the same way verify_quotes reads it.
 For a PDF the drift hash is taken over the raw bytes, not the extraction: the bytes
 ARE the document, and pypdf's output varies between versions (CI and a laptop do
 not necessarily agree), which would report drift that does not exist.
 
-WHY THE WAYBACK TOOLBAR IS STRIPPED: three sources are dated Internet Archive
+WHY THE WAYBACK TOOLBAR IS STRIPPED: some sources are dated Internet Archive
 captures. The archive injects its toolbar into the page, and that toolbar carries
 the capture count and date range, which change every time anyone saves the page.
 Two captures reported drift in September 2026 with not one word of policy changed.
 The toolbar sits between fixed HTML comments; removing that block gives the hash
 the archive was supposed to give — the captured page, and only the captured page.
+main() no longer fetches archive sources, but visible_text() is the single
+extractor for the pipeline (verify_quotes reads a stored content.bin through it),
+so any capture that is re-extracted must be stripped the same way.
+
+WHY A SUSPECT EXTRACT IS NOT STORED: a 200 response that passes the challenge
+checks can still be the wrong page — a cookie wall, a login redirect, a
+truncated render. If an http source already has a text.txt and the new extract
+is under 40% of the old one's length, or a quote the records cite from this
+source was in the old extract and is gone from the new one, nothing is
+overwritten. attempt.json records status "failed" with detail "suspect extract: …"
+and diff.py lists it for a human. A redirect to a different path is named in
+that detail; on its own it is only printed as [REDIRECTED]. When a person has
+read the live page and the change is real, rerun with --accept-suspect, then
+update the quotes.
 
 WHY `adjudicated_sha256`: a change must survive an unread month. The previous
 design compared each fetch to the one before it, so an unadjudicated change was
@@ -38,8 +59,9 @@ this project exists to document. diff.py now compares against the hash a human
 last signed off, which is stored in the entity YAML, not in the snapshot.
 """
 from __future__ import annotations
-import hashlib, html, json, os, re, sys, urllib.error, urllib.request
+import hashlib, html, json, os, re, sys, urllib.error, urllib.parse, urllib.request
 from common import SNAPSHOTS, load_entities, today
+from verify_quotes import norm
 
 # A plain UA gets 403 from Wiley, Springer Nature, science.org and COPE. Those
 # sites are not blocking automation as such — they block obviously-scripted
@@ -53,6 +75,7 @@ HEADERS = {
 }
 TIMEOUT = 60
 MAX_BYTES = 25 * 1024 * 1024
+MIN_KEPT = 0.40            # a new extract below this share of the old one is suspect
 
 
 def sha256(b: bytes) -> str:
@@ -149,8 +172,37 @@ def response_problem(body: bytes) -> str | None:
     return None
 
 
+def moved_path(url: str, final_url: str | None) -> bool:
+    """True when a redirect landed on a different host or path, not merely a
+    trailing slash or a query string."""
+    if not final_url:
+        return False
+    a, b = urllib.parse.urlsplit(url), urllib.parse.urlsplit(final_url)
+    return (a.netloc.lower(), a.path.rstrip("/")) != (b.netloc.lower(), b.path.rstrip("/"))
+
+
+def suspect_extract(old: str | None, new: str, quotes: list[str]) -> str | None:
+    """Why a new extract should not replace the stored one, or None.
+    Quotes are compared after verify_quotes.norm, the same normalisation the
+    quote gate uses, so a quote counts as present exactly when the gate would
+    find it."""
+    if not old:
+        return None
+    reasons = []
+    if len(new) < MIN_KEPT * len(old):
+        reasons.append(f"text shrank from {len(old)} to {len(new)} characters")
+    old_n, new_n = norm(old), norm(new)
+    lost = [q for q in quotes if norm(q) in old_n and norm(q) not in new_n]
+    if lost:
+        reasons.append(f"{len(lost)} quoted passage(s) present in the stored extract are missing "
+                       f"from the new one, starting “{lost[0][:60]}…”")
+    return "; ".join(reasons) or None
+
+
 def main(argv: list[str]) -> int:
-    only = argv[1] if len(argv) > 1 else None
+    accept_suspect = "--accept-suspect" in argv
+    args = [a for a in argv[1:] if a != "--accept-suspect"]
+    only = args[0] if args else None
     stamp = today().isoformat()
     fetched, queue, failed = [], [], []
 
@@ -191,6 +243,20 @@ def main(argv: list[str]) -> int:
                 record_attempt("failed", problem)
                 failed.append((tag, problem, url)); continue
 
+            # Do not overwrite good evidence with a page that merely returned 200.
+            txt_path = outdir / "text.txt"
+            old_text = txt_path.read_text(encoding="utf-8") if txt_path.exists() else None
+            new_text = visible_text(body)
+            quotes = [ev["quote"] for p in e.get("policies", [])
+                      for ev in p.get("evidence", []) if ev.get("source") == s["id"]]
+            suspect = None if accept_suspect else suspect_extract(old_text, new_text, quotes)
+            if suspect:
+                if moved_path(url, final_url):
+                    suspect += f"; redirected to {final_url}"
+                problem = f"suspect extract: {suspect}"
+                record_attempt("failed", problem)
+                failed.append((tag, problem, url)); continue
+
             digest, tdigest = sha256(body), drift_hash(body)
             adjudicated = s.get("adjudicated_sha256")
             state = ("NEW" if not prev else
@@ -206,7 +272,7 @@ def main(argv: list[str]) -> int:
             # only content.bin meant the quote gate could not run on a fresh
             # checkout, so CI validated everything except the check this project
             # is built around.
-            write_atomic(outdir / "text.txt", visible_text(body).encode("utf-8"))
+            write_atomic(txt_path, new_text.encode("utf-8"))
             meta_path.write_text(json.dumps({
                 "entity": e["id"], "source": s["id"],
                 "url": url, "final_url": final_url, "http_status": status,

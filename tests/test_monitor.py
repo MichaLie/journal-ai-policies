@@ -82,6 +82,85 @@ class MonitoringTests(unittest.TestCase):
         self.assertEqual(code, 2)
         self.assertEqual(queue["retrieval_failures"][0]["detail"], "CHALLENGE PAGE")
 
+    def quote(self, text):
+        self.entity["policies"] = [{"axis": "language_refinement", "permission": "permitted",
+                                    "disclosure": "not_required",
+                                    "evidence": [{"source": "policy", "quote": text,
+                                                  "quote_provenance": "raw_bytes"}]}]
+
+    def assert_evidence_kept(self):
+        self.assertEqual((self.folder / "content.bin").read_bytes(), self.good)
+        self.assertEqual((self.folder / "text.txt").read_text(), fetch.visible_text(self.good))
+        self.assertEqual(json.loads((self.folder / "meta.json").read_text()), self.meta)
+
+    def test_shrunken_extract_is_suspect_and_not_stored(self):
+        long_page = (b"<html><title>Editorial policy</title><p>Authors are responsible. "
+                     + b"Further policy wording. " * 40 + b"</p></html>")
+        self.good = long_page
+        (self.folder / "content.bin").write_bytes(long_page)
+        (self.folder / "text.txt").write_text(fetch.visible_text(long_page))
+        self.meta["text_sha256"] = fetch.drift_hash(long_page)
+        (self.folder / "meta.json").write_text(json.dumps(self.meta))
+        stub = b"<html><title>Editorial policy</title><p>Please sign in to continue.</p></html>"
+        self.assertEqual(self.run_fetch((stub, "200", self.source["url"])), 1)
+        self.assert_evidence_kept()
+        attempt = json.loads((self.folder / "attempt.json").read_text())
+        self.assertEqual(attempt["status"], "failed")
+        self.assertTrue(attempt["detail"].startswith("suspect extract: text shrank"))
+        code, queue = self.run_diff()
+        self.assertEqual(code, 2)
+        self.assertTrue(queue["retrieval_failures"][0]["detail"].startswith("suspect extract"))
+
+    def test_lost_quote_is_suspect_and_not_stored(self):
+        self.quote("Authors are responsible.")
+        same_size = self.good.replace(b"Authors are responsible.", b"Readers are welcome here.")
+        self.assertEqual(self.run_fetch((same_size, "200", self.source["url"])), 1)
+        self.assert_evidence_kept()
+        detail = json.loads((self.folder / "attempt.json").read_text())["detail"]
+        self.assertIn("suspect extract: 1 quoted passage(s)", detail)
+        self.assertNotIn("redirected", detail)
+
+    def test_quote_survives_normalisation_differences(self):
+        self.quote("authors   are RESPONSIBLE.")
+        changed = self.good.replace(b"</p>", b" New disclosure requirement.</p>")
+        self.assertEqual(self.run_fetch((changed, "200", self.source["url"])), 0)
+        self.assertIn("New disclosure requirement.", (self.folder / "text.txt").read_text())
+
+    def test_quote_never_in_old_extract_does_not_block(self):
+        self.quote("A sentence the stored extract never held.")
+        changed = self.good.replace(b"</p>", b" New disclosure requirement.</p>")
+        self.assertEqual(self.run_fetch((changed, "200", self.source["url"])), 0)
+
+    def test_suspect_redirect_is_named(self):
+        self.quote("Authors are responsible.")
+        login = self.good.replace(b"Authors are responsible.", b"Log in to your account now.")
+        self.assertEqual(self.run_fetch((login, "200", "https://example.org/login?next=policy")), 1)
+        detail = json.loads((self.folder / "attempt.json").read_text())["detail"]
+        self.assertIn("redirected to https://example.org/login", detail)
+        self.assert_evidence_kept()
+
+    def test_redirect_alone_is_not_suspect(self):
+        self.quote("Authors are responsible.")
+        self.assertEqual(self.run_fetch((self.good, "200", "https://example.org/policy/")), 0)
+        self.assertEqual(json.loads((self.folder / "attempt.json").read_text())["status"], "fetched")
+        self.assertFalse(fetch.moved_path("https://example.org/policy", "https://example.org/policy/"))
+        self.assertTrue(fetch.moved_path("https://example.org/policy", "https://example.org/login"))
+
+    def test_accept_suspect_stores_a_reviewed_change(self):
+        self.quote("Authors are responsible.")
+        reworded = self.good.replace(b"Authors are responsible.", b"Authors remain accountable.")
+        with patch.object(fetch, "fetch_url", return_value=(reworded, "200", self.source["url"])), \
+             contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(fetch.main(["fetch.py", "--accept-suspect"]), 0)
+        self.assertIn("Authors remain accountable.", (self.folder / "text.txt").read_text())
+
+    def test_first_fetch_has_nothing_to_compare(self):
+        for name in ("text.txt", "meta.json", "content.bin"):
+            (self.folder / name).unlink()
+        self.quote("Authors are responsible.")
+        self.assertEqual(self.run_fetch((self.good, "200", self.source["url"])), 0)
+        self.assertTrue((self.folder / "text.txt").exists())
+
     def test_archive_hash_cannot_substitute_for_a_live_read(self):
         self.source.update(fetch_method="archive", last_live_verified="2026-09-11",
                            live_url="https://example.org/current")
@@ -149,6 +228,52 @@ class WorkflowTests(unittest.TestCase):
             env = {**os.environ, **dict(zip(("FETCH_CODE", "GATE_CODE", "DIFF_CODE"), codes))}
             result = subprocess.run(["bash", "-c", final["run"]], env=env)
             self.assertEqual(result.returncode, expected)
+
+    def monitor_steps(self):
+        workflow = yaml.safe_load((ROOT / ".github/workflows/verify.yml").read_text())
+        return workflow["jobs"]["monitor"]["steps"]
+
+    def test_failed_gate_persists_nothing(self):
+        persist = next(s for s in self.monitor_steps() if s.get("name") == "Persist the hash chain")
+        self.assertEqual(persist.get("if"), "steps.gate.outputs.code == '0'")
+
+    def test_review_issue_runs_after_earlier_failures(self):
+        issue = next(s for s in self.monitor_steps() if "review issue" in s.get("name", ""))
+        self.assertTrue(issue["if"].replace(" ", "").startswith("always()&&("), issue["if"])
+
+    def run_issue_step(self, open_issue):
+        """Run the real issue script against a fake `gh` that logs its calls."""
+        issue = next(s for s in self.monitor_steps() if "review issue" in s.get("name", ""))
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            (base / "bin").mkdir()
+            log = base / "gh.log"
+            gh = base / "bin" / "gh"
+            gh.write_text("#!/bin/bash\n"
+                          f'echo "$*" >> "{log}"\n'
+                          'if [ "$1 $2" = "issue list" ]; then echo "${FAKE_OPEN_ISSUE}"; fi\n')
+            gh.chmod(0o755)
+            (base / "gate.txt").write_text("ERROR quote missing\n")
+            script = issue["run"].replace("/tmp/", str(base) + "/")
+            env = {**os.environ, "PATH": f"{base / 'bin'}:{os.environ['PATH']}",
+                   "FAKE_OPEN_ISSUE": open_issue, "GATE_CODE": "1"}
+            result = subprocess.run(["bash", "--noprofile", "--norc", "-e", "-o", "pipefail", "-c", script],
+                                    cwd=base, env=env, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            body = (base / "issue.md").read_text()
+            return log.read_text().splitlines(), body
+
+    def test_open_review_issue_gets_a_comment_not_a_duplicate(self):
+        calls, body = self.run_issue_step("42")
+        self.assertTrue(any(c.startswith("issue comment 42") for c in calls), calls)
+        self.assertFalse(any(c.startswith("issue create") for c in calls), calls)
+        self.assertIn("nothing from this run was committed", body)
+        self.assertIn("(no fetch output)", body)
+
+    def test_no_open_review_issue_creates_one(self):
+        calls, _ = self.run_issue_step("")
+        self.assertTrue(any(c.startswith("issue create") for c in calls), calls)
+        self.assertFalse(any(c.startswith("issue comment") for c in calls), calls)
 
 
 if __name__ == "__main__":

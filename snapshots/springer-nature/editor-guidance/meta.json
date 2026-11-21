@@ -2,10 +2,22 @@
   "name": "Springer Nature editors",
   "url": "https://www.springernature.com/gp/policies/editorial-policies/ai-editor-guidance",
   "capture_method": "browser_dom",
-  "capture_scope": "Selected visible policy passages, captured 11 November 2026. Excerpt, not a full page or raw HTTP response.",
+  "capture_scope": "Full AI-policy text of the rendered page, captured from the browser DOM on 20 November 2026 with collapsed sections expanded; whitespace normalised. Not a raw HTTP response. Reference list items are included as they appear on the page.",
   "sha256": null,
-  "text_sha256": "63c541c29e0731f2985948bb3cd4d55bb953335180332d34452b2fd9dd139976",
+  "text_sha256": "bb491f8940d6e1aa384942fdf99cc119c4fc2f2c02f2cf03c391f72f91c9ed19",
   "entity": "springer-nature",
   "source": "editor-guidance",
-  "fetched": "2026-11-11"
+  "fetched": "2026-11-20",
+  "history": [
+    {
+      "fetched": "2026-11-11",
+      "text_sha256": "63c541c29e0731f2985948bb3cd4d55bb953335180332d34452b2fd9dd139976",
+      "capture_method": "browser_dom"
+    },
+    {
+      "fetched": "2026-11-20",
+      "text_sha256": "bb491f8940d6e1aa384942fdf99cc119c4fc2f2c02f2cf03c391f72f91c9ed19",
+      "capture_method": "browser_dom"
+    }
+  ]
 }

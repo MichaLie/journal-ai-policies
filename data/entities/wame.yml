@@ -5,9 +5,12 @@ parent: null
 platform: null
 policy_owner: wame
 delegates_to_journal: false
-policy_architecture: rule_with_exemptions
-notes: Recommendations revised 31 May 2023. Research uses are reported in Abstract and Methods; drafting
-  in acknowledgments. These are recommendations, not every journal’s rule.
+policy_architecture: prose
+notes: WAME's recommendations (revised 31 May 2023) are meant to inform editors and help them develop
+  journal policies, and to help authors and reviewers attribute chatbot use. Chatbots cannot be authors.
+  Chatbot help with drafting is noted in the acknowledgment; research uses are stated in the Abstract
+  and Methods. WAME warns that chatbots keep the content and prompts supplied to them and may use them
+  in future responses.
 sources:
 - id: ai-guidance
   url: https://wame.org/pdf/Chatbots-Generative-AI-and-Scholarly-Manuscripts.pdf
@@ -16,23 +19,234 @@ sources:
   status: current
   authoritative: true
   fetch_method: http
-  date_source: none
-  last_verified: '2026-11-11'
+  date_source: stated
+  stated_date: '2023-05-31'
+  last_verified: '2026-11-20'
   content_sha256: ae0f0362bf7fdb16befea19fc9dec0de66ef6cbaf2dfffc419c8d52870e0aaf4
-  note: Verified for this PR. Maintainer adjudication remains pending.
 policies:
-- axis: audit_trail
+- axis: writing_drafting
   permission: permitted_with_conditions
-  disclosure: encouraged
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  rationale: accountability
+  conditions: Indicate the extent and type of chatbot use. Note the use in the acknowledgment and specify
+    all prompts used to generate new text. Authors are
+    responsible for chatbot-generated material, including its accuracy. Authors specify what they have
+    done to mitigate the risk of plagiarism, provide a balanced view and ensure the accuracy of all their
+    references. Authors must ensure that all quoted material is appropriately attributed, with full
+    citations, and that the cited sources support the chatbot's statements.
+  evidence:
+  - source: ai-guidance
+    quote: The extent and type of use of chatbots in journal publications should be indicated.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Authors submitting a paper in which a chatbot/AI was used to draft new text should note such
+      use in the acknowledgment; all prompts used to generate new text, or to convert text or text prompts
+      into tables or illustrations, should be specified.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Authors of articles written with the help of a chatbot are responsible for the material generated
+      by the chatbot, including its accuracy.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: They should specify what they have done to mitigate the risk of plagiarism, provide a balanced
+      view, and ensure the accuracy of all their references.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: authors must ensure that all quoted material is appropriately attributed, including full citations,
+      and that the cited sources support the chatbot’s statements.
+    quote_provenance: raw_bytes
+- axis: data_presentation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - abstract
+  - methods
+  rationale: reproducibility
+  conditions: State the use of AI to generate tables that report results in both the Abstract and the
+    Methods. For AI-generated research results, give the full prompt, the time and date of the query, and
+    the AI tool and its version, to enable scientific scrutiny including replication. Specify all prompts
+    used to convert text or text prompts into tables.
+  evidence:
+  - source: ai-guidance
+    quote: When an AI tool such as a chatbot is used to carry out or generate analytical work, help report
+      results (e.g., generating tables or figures), or write computer codes, this should be stated in the
+      body of the paper, in both the Abstract and the Methods section.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In the interests of enabling scientific scrutiny, including replication and identifying falsification,
+      the full prompt used to generate the research results, the time and date of query, and the AI tool
+      used and its version, should be provided.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: all prompts used to generate new text, or to convert text or text prompts into tables or illustrations,
+      should be specified.
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
   disclosure_location:
   - unspecified
+  rationale: unstated
+  conditions: Specify all prompts used to convert text or text prompts into illustrations. The source does
+    not say where the prompts go.
+  evidence:
+  - source: ai-guidance
+    quote: all prompts used to generate new text, or to convert text or text prompts into tables or illustrations,
+      should be specified.
+    quote_provenance: raw_bytes
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - abstract
+  - methods
+  rationale: reproducibility
+  conditions: State the use of AI to generate figures that report results in both the Abstract and the
+    Methods. For AI-generated research results, give the full prompt, the time and date of the query, and
+    the AI tool and its version, to enable scientific scrutiny including replication.
+  evidence:
+  - source: ai-guidance
+    quote: When an AI tool such as a chatbot is used to carry out or generate analytical work, help report
+      results (e.g., generating tables or figures), or write computer codes, this should be stated in the
+      body of the paper, in both the Abstract and the Methods section.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In the interests of enabling scientific scrutiny, including replication and identifying falsification,
+      the full prompt used to generate the research results, the time and date of query, and the AI tool
+      used and its version, should be provided.
+    quote_provenance: raw_bytes
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
   rationale: accountability
-  conditions: Recommendations revised 31 May 2023. Research uses are reported in Abstract and Methods;
-    drafting in acknowledgments. These are recommendations, not every journal’s rule.
+  conditions: Authors must ensure that content reflects their own data and ideas and is not plagiarism,
+    fabrication or falsification. Otherwise, offering it for publication is potentially scientific misconduct.
+  evidence:
+  - source: ai-guidance
+    quote: It is the author’s responsibility to ensure that the content reflects the author's data and ideas
+      and is not plagiarism, fabrication or falsification.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Otherwise, it is potentially scientific misconduct to offer such material for publication, irrespective
+      of how it was written.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - abstract
+  - methods
+  rationale: reproducibility
+  conditions: State the use in both the Abstract and the Methods. This covers analytical work, help reporting
+    results and writing computer code.
+  evidence:
+  - source: ai-guidance
+    quote: When an AI tool such as a chatbot is used to carry out or generate analytical work, help report
+      results (e.g., generating tables or figures), or write computer codes, this should be stated in the
+      body of the paper, in both the Abstract and the Methods section.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In the interests of enabling scientific scrutiny, including replication and identifying falsification,
+      the full prompt used to generate the research results, the time and date of query, and the AI tool
+      used and its version, should be provided.
+    quote_provenance: raw_bytes
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: reproducibility
+  conditions: For AI-generated research results, give the full prompt, the time and date of the query,
+    and the AI tool and its version. Specify all prompts used to generate new text, or to convert text or
+    text prompts into tables or illustrations. Identify the chatbot used and the specific prompt. The source
+    does not say where these details go.
   evidence:
   - source: ai-guidance
     quote: In the interests of enabling scientific scrutiny, including replication and identifying falsification,
       the full prompt used to generate the research results, the time and date of query, and the AI tool
       used and its version, should be provided.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: all prompts used to generate new text, or to convert text or text prompts into tables or illustrations,
+      should be specified.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Authors should identify the chatbot used and the specific prompt (query statement) used with
+      the chatbot.
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: confidentiality
+  conditions: Specify any chatbot use to authors and to each other. If reviewers use chatbots in communications
+    with authors and each other, they explain how. Supplying an author's manuscript to a chatbot breaches
+    confidentiality. Reviewers are responsible for chatbot-generated content and citations.
+  evidence:
+  - source: ai-guidance
+    quote: Editors and peer reviewers should specify, to authors and each other, any use of chatbots in
+      the evaluation of the manuscript and generation of reviews and correspondence.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: If they use chatbots in their communications with authors and each other, they should explain
+      how they were used.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: supplying an author's manuscript to a chatbot breaches confidentiality of the submitted manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Editors and reviewers are responsible for any content and citations generated by a chatbot.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: confidentiality
+  conditions: Editors specify any chatbot use in evaluating manuscripts and in correspondence, to authors
+    and to reviewers. If they use chatbots in communications with authors and each other, they explain how.
+    Editors are responsible for chatbot-generated content and citations. Supplying an author's manuscript
+    to a chatbot breaches confidentiality. The source does not describe AI systems or tools run by WAME
+    itself.
+  evidence:
+  - source: ai-guidance
+    quote: Editors and peer reviewers should specify, to authors and each other, any use of chatbots in
+      the evaluation of the manuscript and generation of reviews and correspondence.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: If they use chatbots in their communications with authors and each other, they should explain
+      how they were used.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: supplying an author's manuscript to a chatbot breaches confidentiality of the submitted manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Editors and reviewers are responsible for any content and citations generated by a chatbot.
+    quote_provenance: raw_bytes
+- axis: detection_screening
+  permission: permitted
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: quality
+  conditions: WAME calls for editors to have tools that detect AI-generated or AI-altered content. Such
+    tools should be available to editors regardless of ability to pay, for the good of science and the public,
+    and to help ensure the integrity of healthcare information and reduce the risk of adverse health outcomes.
+    Editors need tools that help them evaluate content efficiently and accurately. It does not say whether
+    authors are told about screening.
+  evidence:
+  - source: ai-guidance
+    quote: Editors need appropriate tools to help them detect content generated or altered by AI.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Such tools should be made available to editors regardless of ability to pay for them, for the
+      good of science and the public, and to help ensure the integrity of healthcare information and reducing
+      the risk of adverse health outcomes.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Editors need access to tools that will help them evaluate content efficiently and accurately.
     quote_provenance: raw_bytes
 coherence: []

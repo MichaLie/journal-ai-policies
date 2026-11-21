@@ -1,0 +1,18 @@
+{
+  "name": "NIH",
+  "url": "https://www.grants.nih.gov/grants/guide/notice-files/NOT-OD-25-132.html",
+  "capture_method": "browser_dom",
+  "capture_scope": "Full text of NIH notice NOT-OD-25-132 (Supporting Fairness and Originality in NIH Research Applications), from the title through the Inquiries contact, captured from the rendered browser DOM on 20 November 2026; whitespace normalised. Site navigation and footer excluded. Not a raw HTTP response.",
+  "sha256": null,
+  "text_sha256": "e1ccabe41048d27a045b87e6ce89f8e4dcec0038de3dfcc728c5bbb4312bdef1",
+  "entity": "nih",
+  "source": "applications-ai",
+  "fetched": "2026-11-20",
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "text_sha256": "e1ccabe41048d27a045b87e6ce89f8e4dcec0038de3dfcc728c5bbb4312bdef1",
+      "capture_method": "browser_dom"
+    }
+  ]
+}

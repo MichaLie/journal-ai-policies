@@ -1,0 +1,223 @@
+id: ukri
+name: UK Research and Innovation
+type: funder
+parent: null
+platform: null
+policy_owner: ukri
+delegates_to_journal: false
+policy_architecture: rule_with_exemptions
+notes: Policy on generative AI in the application and assessment process for all UKRI funding opportunities.
+  It covers applicants, assessors (reviewers and panellists) and UKRI's responsibilities as a funder. Applicants
+  must not use generative AI during interviews that form part of the application process. Upheld allegations
+  of misconduct arising from generative AI use can lead to sanctions, including rejection of applications
+  and termination of funding.
+sources:
+- id: ai-policy
+  url: https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/use-of-generative-artificial-intelligence-in-application-preparation-and-assessment/
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: hash
+  stated_date: null
+  last_verified: '2026-11-20'
+  content_sha256: da5731e776813722a323f886910bf5d46f586eeb4a74bc6bfec5df61a78726cd
+  adjudicated_sha256: null
+  note: The policy text. The page shows a publication date of 23 September 2024 and no update date. The
+    landing page gives 20 September 2024 as the publication date and records the latest update.
+- id: landing-page
+  url: https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/
+  role: information
+  audience: all
+  status: current
+  authoritative: false
+  fetch_method: http
+  date_source: stated
+  stated_date: '2026-07-06'
+  last_verified: '2026-11-20'
+  content_sha256: c3b421f2da10ae6c927f2066cf0ce3457f1755cd65d7621b49683c9a689c7f16
+  adjudicated_sha256: null
+  note: Publication landing page with the update history. Last updated 6 July 2026, when the assessor and
+    funder responsibilities sections were revised.
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: unstated
+  conditions: Applies to funding applications, not manuscripts. Applicants are expected to be transparent
+    about generative AI use in developing an application; generating an abstract is listed as substantive
+    use that could be declared. The declaration does not affect assessment. Applicants must not generate
+    an entire application, or sections of one, without human involvement. Sensitive or personal data of
+    others must not be entered into a tool without formal consent.
+  evidence:
+  - source: ai-policy
+    quote: In line with current sector good practice, applicants and applications are expected to be transparent
+      where they have used generative AI tools in the development of an application.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: This information will not affect the assessment process.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'Examples of substantive use that could be declared:'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: generating an abstract
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Applicants must not use generative AI tools to generate an entire application, or sections of
+      an application, without human involvement.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Sensitive or personal data of others must never be input into a generative AI tool without formal
+      consent from the individual.
+    quote_provenance: raw_bytes
+- axis: language_refinement
+  permission: permitted
+  disclosure: not_required
+  disclosure_location: []
+  rationale: unstated
+  conditions: Applies to funding applications, not manuscripts. Improving the standard of English, formatting
+    and reducing word count are listed as minimal use, which need not be disclosed.
+  evidence:
+  - source: ai-policy
+    quote: 'Applicants do not need to disclose any minimal use of generative AI tools in their application.
+      Examples of minimal use include: translating applications from other languages to English improving
+      the standard of English formatting or reducing word count.'
+    quote_provenance: raw_bytes
+- axis: translation
+  permission: permitted
+  disclosure: not_required
+  disclosure_location: []
+  rationale: unstated
+  conditions: Applies to funding applications, not manuscripts. Translating an application into English
+    is listed as minimal use, which need not be disclosed.
+  evidence:
+  - source: ai-policy
+    quote: 'Applicants do not need to disclose any minimal use of generative AI tools in their application.
+      Examples of minimal use include: translating applications from other languages to English improving
+      the standard of English formatting or reducing word count.'
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: unstated
+  conditions: Applies to work done in developing a funding application. Idea generation, hypothesis development,
+    interpreting, analysing or summarising data and text, comparing literature sources, and generating or
+    refining code are listed as substantive uses that could be declared, under the general expectation of
+    transparency.
+  evidence:
+  - source: ai-policy
+    quote: 'Examples of substantive use that could be declared: assisting idea generation or development of
+      hypotheses interpreting, analysing or summarising data (including audio, image files) and text comparing
+      literature sources'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: generating or refining code
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: In line with current sector good practice, applicants and applications are expected to be transparent
+      where they have used generative AI tools in the development of an application.
+    quote_provenance: raw_bytes
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Applies to funding applications. Applicants must ensure that generative AI outputs used in
+    an application contain no falsified, fabricated, plagiarised or misrepresented information.
+  evidence:
+  - source: ai-policy
+    quote: 'Applicants must apply caution when using outputs from generative AI tools to develop applications.
+      In line with the UKRI policy on the governance of good research practice , you must ensure this does
+      not contain any information that is: confidential and used without consent falsified fabricated plagiarised
+      misrepresented'
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: confidentiality
+  conditions: Applies to assessors of funding applications, including reviewers and panellists. Generative
+    AI may be used only to refine the language of a review. No part of the application and no personal information
+    from it may be entered, and the tool must not be tasked with understanding, summarising or evaluating
+    the application. Assessors must not take into account or speculate whether an applicant used generative
+    AI.
+  evidence:
+  - source: ai-policy
+    quote: 'Assessors, including reviewers and panellists, must: not use generative AI tools as part of their
+      assessment activities except for language refinement purposes'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'When using generative AI to refine the language of a review, assessors must ensure that: no part
+      of the application being assessed is entered into generative AI no personal information from the application
+      is disclosed generative AI is not tasked with understanding, summarising or evaluating the application’s
+      content'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The release of confidential material into generative AI tools constitutes a breach of confidentiality
+      and integrity
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: not take into account or speculate within their assessment whether generative AI has been used
+      to develop the application
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: The section on UKRI's responsibilities as a funder covers guidance to the community and sanctions
+    for misconduct. It does not address UKRI's own use of generative AI on applications, and it describes
+    no UKRI systems or tools that use generative AI.
+  evidence:
+  - source: ai-policy
+    quote: We will provide easily accessible guidance to applicants and organisations to ensure our expectations
+      on the use of generative AI tools within the application and assessment process are clear.
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+  - source: ai-policy
+    quote: 'If UKRI is informed of an allegation of research misconduct arising from the use of generative
+      AI during application and assessment that is partially or wholly upheld, we reserve the right to: reject
+      any application under consideration on which the individual is a named applicant or researcher'
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Applies to funding applications and their assessment. The stated threshold for action is
+    an allegation of research misconduct arising from generative AI use that is partially or wholly upheld.
+    UKRI may then reject applications, bar further applications, terminate funding and reclaim unspent
+    money. The trigger and consequences are stated. Contact with the individual before action is not stated.
+    An appeal route is not stated.
+  evidence:
+  - source: ai-policy
+    quote: 'If UKRI is informed of an allegation of research misconduct arising from the use of generative
+      AI during application and assessment that is partially or wholly upheld, we reserve the right to: reject
+      any application under consideration on which the individual is a named applicant or researcher'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: prevent the individual from submitting any further funding applications to UKRI for any period
+      of time, including indefinitely
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: terminate any funding which the grant-holding organisation is receiving from UKRI in connection
+      with research being carried out by the individual
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: reclaim from the grant-holding organisation any and all unspent money awarded by UKRI for projects
+      involving that individual
+    quote_provenance: raw_bytes
+coherence: []
+metadata_inconsistency:
+- sources:
+  - ai-policy
+  - landing-page
+  summary: "The policy page says 'Published: 23 September 2024'; the landing page for the same policy says
+    'Published: 20 September 2024'."

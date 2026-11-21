@@ -6,8 +6,11 @@ platform: null
 policy_owner: bernoulli
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
-notes: Mathematics/statistics journal. Secure tools must prohibit training on manuscripts. Disclose tools/purposes
-  confidentially to editors; authors agree to safeguarded review use on submission.
+notes: The Bernoulli Society's AI policy for Bernoulli Journal covers authors, reviewers and editors, and
+  applies to submissions on or after 8 November 2026. Only humans may be listed as authors. Every submission
+  needs an AI statement in the acknowledgments, even if no AI tools were used. Reviewers and editors may
+  share manuscript material only with secure or institutionally approved AI tools whose settings prohibit
+  training on it.
 sources:
 - id: ai-guidance
   url: https://bernoullisociety.org/publications/bernoulli-journal/policy-on-ai-3
@@ -16,22 +19,217 @@ sources:
   status: current
   authoritative: true
   fetch_method: http
-  date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: eeaad0b5d89a17ae91d487d8a823559413274bbed5ac8137600b2346b3362513
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  date_source: stated
+  stated_date: '2026-11-05'
+  last_verified: '2026-11-20'
+  content_sha256: 3f6bd939500222326a93f9b97af4ae8b9b3388e9c14ed9606eb364a20cffd361
+  note: The page says it was last updated on 5 November 2026.
 policies:
 - axis: reviewer_use
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
-  - unspecified
+  - review_report
   rationale: accountability
-  conditions: Mathematics/statistics journal. Secure tools must prohibit training on manuscripts. Disclose
-    tools/purposes confidentially to editors; authors agree to safeguarded review use on submission.
+  conditions: At their discretion, reviewers and editors may use AI tools for technical checks such as
+    examining proofs, verifying references and checking internal consistency. They must critically evaluate
+    any AI-assisted findings, and their assessments of novelty, importance, scientific interest and quality
+    of exposition must rest on their own expertise. Reviewers remain responsible for their reports and
+    recommendations. Reviewers and editors must maintain the confidentiality of the review process and
+    comply with applicable legal obligations. Manuscript material may be shared only with secure or institutionally
+    approved AI tools whose settings prohibit training on it. Review reports and confidential editorial
+    correspondence must not be disclosed to external AI services. Reviewers name the tools and purposes
+    in their confidential comments to the editors.
   evidence:
   - source: ai-guidance
     quote: Bernoulli allows reviewers and editors to use AI tools to assist in checking technical claims,
       subject to the confidentiality and data-protection safeguards specified below.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: At their discretion, reviewers and editors may use AI tools to assist with technical checks,
+      such as examining proofs, verifying references, and checking internal consistency, subject to the
+      confidentiality and data-protection safeguards specified below.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: However, they must critically evaluate any AI-assisted findings, and their assessments of novelty,
+      importance, scientific interest, and quality of exposition must be grounded in their own expertise.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Reviewers remain responsible for the writing of their review reports and making recommendations,
+      while editors remain responsible for editorial decisions and for maintaining the integrity and quality
+      of the review process.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Reviewers must specify, in their confidential comments to the editors, which AI tools they
+      used and for what purposes.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Reviewers and editors must maintain the confidentiality of the review process and comply with
+      applicable legal obligations when using AI tools.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Any manuscript material may be shared only with secure or institutionally approved AI tools
+      whose data-control settings adequately prohibit the use of manuscript content for model training.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Confidential editorial correspondence and review reports must not be disclosed to external
+      AI services.
+    quote_provenance: raw_bytes
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  rationale: accountability
+  conditions: Authors remain fully responsible for their submissions. They must verify any AI-assisted
+    material, fully understand the work they submit and keep their manuscripts comprehensible to human
+    readers. The acknowledgments statement should explain whether and how AI tools were used in proof
+    development, writing and exposition, and supporting tasks. A statement is required even if no AI was
+    used. The editorial board decides whether the nature and extent of AI use are acceptable.
+  evidence:
+  - source: ai-guidance
+    quote: Authors may use AI tools to assist with preparation of their manuscripts.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Authors, however, remain fully responsible for the content of their submissions, including
+      correctness, originality, presentation, and intellectual integrity.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Accordingly, authors must carefully verify any AI-assisted material, fully understand the work
+      they submit, and ensure that their manuscripts are comprehensible to human readers.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Authors must include a statement in the acknowledgments section describing their use of AI
+      tools.The AI disclosure statement should explain whether and how AI tools were used in proof development,
+      writing and exposition, and other supporting tasks, such as numerical experiments and proofreading.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Even if no AI tools were used, authors must include an AI statement clarifying this.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: The editorial board has final discretion to determine whether the nature and extent of AI use
+      are acceptable.
+    quote_provenance: raw_bytes
+- axis: language_refinement
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  rationale: accountability
+  conditions: Authors remain fully responsible for their submissions and must verify any AI-assisted material.
+    The acknowledgments statement should explain whether and how AI tools were used, and proofreading
+    is named among the supporting tasks it covers. The editorial board decides whether the nature and
+    extent of AI use are acceptable.
+  evidence:
+  - source: ai-guidance
+    quote: Authors may use AI tools to assist with preparation of their manuscripts.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Authors, however, remain fully responsible for the content of their submissions, including
+      correctness, originality, presentation, and intellectual integrity.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Accordingly, authors must carefully verify any AI-assisted material, fully understand the work
+      they submit, and ensure that their manuscripts are comprehensible to human readers.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Authors must include a statement in the acknowledgments section describing their use of AI
+      tools.The AI disclosure statement should explain whether and how AI tools were used in proof development,
+      writing and exposition, and other supporting tasks, such as numerical experiments and proofreading.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: The editorial board has final discretion to determine whether the nature and extent of AI use
+      are acceptable.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  rationale: accountability
+  conditions: Use in proof development and numerical experiments is declared in the acknowledgments statement.
+    Authors remain fully responsible for their submissions and must verify any AI-assisted material. The
+    editorial board decides whether the nature and extent of AI use are acceptable.
+  evidence:
+  - source: ai-guidance
+    quote: Authors may use AI tools to assist with preparation of their manuscripts.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Authors, however, remain fully responsible for the content of their submissions, including
+      correctness, originality, presentation, and intellectual integrity.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Accordingly, authors must carefully verify any AI-assisted material, fully understand the work
+      they submit, and ensure that their manuscripts are comprehensible to human readers.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Authors must include a statement in the acknowledgments section describing their use of AI
+      tools.The AI disclosure statement should explain whether and how AI tools were used in proof development,
+      writing and exposition, and other supporting tasks, such as numerical experiments and proofreading.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: The editorial board has final discretion to determine whether the nature and extent of AI use
+      are acceptable. Severe violations of these guidelines may result in restrictions on future submissions
+      to Bernoulli.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: At their discretion, editors may use AI tools for technical checks such as examining proofs,
+    verifying references and checking internal consistency. They must critically evaluate any AI-assisted
+    findings and ground their assessments in their own expertise. Editors remain responsible for editorial
+    decisions. They must maintain the confidentiality of the review process and comply with applicable
+    legal obligations. Manuscript material may be shared only with secure or institutionally approved
+    AI tools whose settings prohibit training on it, and review reports and confidential editorial correspondence
+    must not be disclosed to external AI services. As a condition of submission, authors agree that reviewers
+    and editors may use AI tools under these safeguards. The policy does not describe any AI systems or
+    tools run by the journal itself.
+  evidence:
+  - source: ai-guidance
+    quote: At their discretion, reviewers and editors may use AI tools to assist with technical checks,
+      such as examining proofs, verifying references, and checking internal consistency, subject to the
+      confidentiality and data-protection safeguards specified below.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: However, they must critically evaluate any AI-assisted findings, and their assessments of novelty,
+      importance, scientific interest, and quality of exposition must be grounded in their own expertise.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Reviewers remain responsible for the writing of their review reports and making recommendations,
+      while editors remain responsible for editorial decisions and for maintaining the integrity and quality
+      of the review process.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Reviewers and editors must maintain the confidentiality of the review process and comply with
+      applicable legal obligations when using AI tools.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Any manuscript material may be shared only with secure or institutionally approved AI tools
+      whose data-control settings adequately prohibit the use of manuscript content for model training.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Confidential editorial correspondence and review reports must not be disclosed to external
+      AI services.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: As a condition of submission, authors agree that reviewers and editors may use AI tools to
+      assist in evaluating their manuscripts under these safeguards.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: The editorial board has final discretion to decide whether the nature and extent of AI use
+    are acceptable, and severe violations of the guidelines may result in restrictions on future submissions
+    to Bernoulli. A consequence is stated. Contact with the author before action and a route of appeal
+    are not stated.
+  evidence:
+  - source: ai-guidance
+    quote: The editorial board has final discretion to determine whether the nature and extent of AI use
+      are acceptable. Severe violations of these guidelines may result in restrictions on future submissions
+      to Bernoulli.
     quote_provenance: raw_bytes
 coherence: []

@@ -7,13 +7,13 @@ policy_owner: jama-network
 delegates_to_journal: false
 policy_architecture: per_task_matrix
 homepage: https://jamanetwork.com
-notes: Publisher of JAMA and the JAMA Network specialty journals (American Medical Association). One instructions-for-authors
-  page serves every title, so the AI rules are network-wide. Revised guidance was published as an editorial
-  on 2026-08-10 (Flanagin, Perlis, Bibbins-Domingo; doi:10.1001/jama.2026.16613, Crossref-verified 2026-09-11)
-  with a table grading fourteen use types; the instructions page was updated 2026-07-29 to add the prohibition
-  on drafting Opinion pieces, Letters and Comments. Alongside Science / AAAS it is one of two publishers
-  here ruling on AI-drafted responses to reviewers (not permitted). Live jamanetwork.com returns 403 to
-  automated clients; both sources are dated Internet Archive captures.
+notes: Covers authors in JAMA and the JAMA Network specialty journals, published by the American Medical
+  Association. Revised guidance appeared as an editorial on 10 August 2026 (Flanagin, Perlis, Bibbins-Domingo;
+  doi:10.1001/jama.2026.16613) with a table grading fourteen kinds of AI use, and was added to the journals'
+  Instructions for Authors. The table marks AI use in peer review, and for author responses to peer reviewer
+  and editor comments, as not acceptable. The JAMA Instructions for Authors page labels its sections with
+  the journals they include or exclude. The site's copyright notice reserves rights for AI training, but
+  that notice is not part of the AI policy.
 sources:
 - id: instructions-for-authors
   url: https://web.archive.org/web/20260819063831/https://jamanetwork.com/journals/jama/pages/instructions-for-authors
@@ -26,15 +26,11 @@ sources:
   stated_date: '2026-07-29'
   last_verified: '2026-10-15'
   content_sha256: ea9289537ae5792a5ca9b7baaa4a7c3a89eb64b58be55181cd24679f19787a08
-  note: 'Live jamanetwork.com returns 403 to automated clients. Dated Internet Archive capture; the page
-    states ''Last Updated: July 29, 2026''. The previous capture (2026-07-01) lacks the Opinion/Letters/Comments
-    prohibition, so that rule dates from July 2026. The corresponding live policy was re-read on 15 October
-    2026; fixed archive captures are retained as evidence and do not establish current live freshness.
-    The live instructions show Last Updated: September 8, 2026; the July date above describes the retained
-    capture. The recorded AI provisions remain present.'
+  note: 'Dated Internet Archive copy of 19 August 2026, which states ''Last Updated: July 29, 2026''; the
+    live page was last checked on 20 November 2026.'
   adjudicated_sha256: 1b016f4853977c20c81486235f5eca17eb4d2c2147eed6afe8f841fc345e7d32
   live_url: https://jamanetwork.com/journals/jama/pages/instructions-for-authors
-  last_live_verified: '2026-10-15'
+  last_live_verified: '2026-11-20'
 - id: editorial-2026-08
   url: https://web.archive.org/web/20260812121424/https://jamanetwork.com/journals/jama/fullarticle/2852772
   role: guidance
@@ -46,14 +42,12 @@ sources:
   stated_date: '2026-08-10'
   last_verified: '2026-10-15'
   content_sha256: 811a0929d768904195c205f4ed966a1ca979f2623b86f3b89b31d6ce6d19414c
-  note: Flanagin A, Perlis RH, Bibbins-Domingo K. Updated Guidance for Author Use of AI in Medical Publication.
-    JAMA, published online 2026-08-10, doi:10.1001/jama.2026.16613. Carries the acceptable-use table and
-    the Box reproduced in the instructions. Dated Internet Archive capture. The corresponding live policy
-    was re-read on 15 October 2026; fixed archive captures are retained as evidence and do not establish
-    current live freshness.
+  note: Dated Internet Archive copy of 12 August 2026 of the editorial (Flanagin A, Perlis RH, Bibbins-Domingo
+    K. Updated Guidance for Author Use of AI in Medical Publication. JAMA, published online 10 August 2026,
+    doi:10.1001/jama.2026.16613); the live page was last checked on 20 November 2026.
   adjudicated_sha256: 6675f00f71eb78680233c5c34262a033ae41f4e9ce0d0c8a9246d55cd589ad32
   live_url: https://jamanetwork.com/journals/jama/fullarticle/2852772
-  last_live_verified: '2026-10-15'
+  last_live_verified: '2026-11-20'
 policies:
 - axis: writing_drafting
   permission: permitted_with_conditions
@@ -61,9 +55,17 @@ policies:
   disclosure_location:
   - acknowledgements
   rationale: accountability
-  conditions: Not permitted at all for Opinion manuscripts, Letters to the Editor and online Comments
-    ('human insights are prioritized'). Acknowledgment must name tool, version, manufacturer, dates of
-    use, what it was used on, and confirm author responsibility.
+  conditions: Use to assist content creation, revision and formatting must be reported in the Acknowledgment
+    with tool, version, manufacturer, dates of use, what it was used on, and confirmation of author responsibility.
+    Authors must review and confirm the accuracy of AI-generated content and take full responsibility for
+    it. Drafting Opinion manuscripts, Letters to the Editor, online Comments, A Piece of My Mind essays
+    and poems with AI is not permitted. Using AI for author responses to peer reviewer and editor comments
+    is not acceptable. In the Reproduced and Re-created Material section, the instructions state that submitting
+    and publishing AI-created content is discouraged unless part of formal research design or methods, and
+    is not permitted without a clear description of the content and the tool. On the page this passage follows
+    per-journal Include/Exclude markers, so it is unclear which journals it covers. The editorial calls
+    author responsibility for the accuracy of all content a foundational tenet. AI tools do not qualify
+    for authorship.
   evidence:
   - source: instructions-for-authors
     quote: Use of AI, LLMs, chatbots, or similar technologies to assist with content creation, revision,
@@ -73,13 +75,70 @@ policies:
     quote: Use of AI, LLM, and chatbots to draft Opinion manuscripts, Letters to the Editor, and Online
       Comments is not permitted.
     quote_provenance: raw_bytes
+  - source: editorial-2026-08
+    quote: Manuscript preparation Yes, provided the use is fully described in the Acknowledgment section
+      and authors check for accuracy and take full responsibility for all content
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: Use of AI, LLM, and chatbots to draft poems is not permitted.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: The submission and publication of content created by artificial intelligence, language models,
+      machine learning, or similar technologies is discouraged, unless part of formal research design
+      or methods, and is not permitted without clear description of the content that was created and the
+      name of the model or tool, version and extension numbers, and manufacturer.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: This should include a description of the content that was created or edited and the name of
+      the language model or tool, version and extension numbers, manufacturer, date(s) of use, and confirmation
+      that the authors take responsibility for the integrity of the content generated.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: Authors must review and confirm the accuracy of all content generated by artificial intelligence
+      (AI), large language models (LLMs), chatbots, or similar technologies and must be accountable and
+      take full responsibility for all content.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: occasional pieces express views and opinions on the myriad issues that affect the profession.
+      Use of AI, LLM, and chatbots to draft this manuscript type is not permitted.
+    quote_provenance: raw_bytes
+  - source: editorial-2026-08
+    quote: Author response to peer reviewer and editor comments No Author’s insights are prioritized
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: 'Include: JNO and JHF Exclude: All other journals Comments: Paragraph ("Please verify that
+      all information and materials...") The submission and publication of content created by artificial
+      intelligence'
+    quote_provenance: raw_bytes
+  - source: editorial-2026-08
+    quote: our guidance reaffirms the foundational tenet that authors must be responsible for the accuracy
+      of all content submitted to journals, whether AI generated or assisted or produced solely by humans.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: Nonhuman artificial intelligence, language models, machine learning, or similar technologies
+      do not qualify for authorship.
+    quote_provenance: raw_bytes
 - axis: language_refinement
-  permission: permitted
-  disclosure: not_required
-  disclosure_location: []
-  rationale: unstated
-  conditions: Only after the initial text is written by humans.
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  rationale: accountability
+  conditions: AI use to assist with writing, editing or revision is reported in the Acknowledgment. The
+    editorial table marks AI checking of grammar or spelling as acceptable with no disclosure needed;
+    the instructions exempt basic tools for checking grammar or spelling. AI checking of grammar and spelling
+    is permitted only after the initial text is written by humans. Authors must take full responsibility
+    for any content changed by such tools.
   evidence:
+  - source: instructions-for-authors
+    quote: Authors should report the use of artificial intelligence, language models, machine learning,
+      or similar technologies to create content or assist with writing or editing of manuscripts in the
+      Acknowledgment section
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: Use of AI, LLMs, chatbots, or similar technologies to assist with content creation, revision,
+      and formatting must be reported in the Acknowledgment section.
+    quote_provenance: raw_bytes
   - source: instructions-for-authors
     quote: Note this guidance does not apply to basic tools for checking grammar or spelling.
     quote_provenance: raw_bytes
@@ -87,51 +146,135 @@ policies:
     quote: Use of AI tools and software to check grammar and spelling or for translation is permitted,
       but only after the initial text is written by humans.
     quote_provenance: raw_bytes
+  - source: editorial-2026-08
+    quote: Checking grammar or spelling Yes No disclosure needed
+    quote_provenance: raw_bytes
+  - source: editorial-2026-08
+    quote: Authors must understand the risks of putting their content into an AI model and take full responsibility
+      for any content changed by such tools.
+    quote_provenance: raw_bytes
 - axis: translation
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - acknowledgements
   rationale: accountability
-  conditions: Table row; warns against entering content into public translation tools.
+  conditions: Use must be described in the Acknowledgment; authors check accuracy and take full responsibility.
+    Translation is permitted only after the initial text is written by humans. The table warns of the
+    risk of entering content into public translation solutions.
   evidence:
   - source: editorial-2026-08
     quote: Translation Yes, provided the use is fully described in the Acknowledgment section and authors
       check for accuracy and take full responsibility for all content
     quote_provenance: raw_bytes
+  - source: editorial-2026-08
+    quote: Use of AI tools and software to check grammar and spelling or for translation is permitted,
+      but only after the initial text is written by humans.
+    quote_provenance: raw_bytes
+  - source: editorial-2026-08
+    quote: Be aware of risk of entering content into public translation solutions
+    quote_provenance: raw_bytes
+  - source: editorial-2026-08
+    quote: Authors must understand the risks of putting their content into an AI model and take full responsibility
+      for any content changed by such tools.
+    quote_provenance: raw_bytes
 - axis: reference_gathering
   permission: discouraged
-  disclosure: not_addressed
-  disclosure_location: []
+  disclosure: required
+  disclosure_location:
+  - methods
+  - acknowledgements
   rationale: quality
-  conditions: The editorial's table grades this 'Discouraged'; the instructions say 'should not'.
+  conditions: The table grades AI use for bibliographic references 'Discouraged'. The instructions say
+    AI should not be used to generate or format references, as these tools may cause problems with the
+    accuracy and integrity of cited references, and that standard reference managers may be used instead.
+    AI-assisted literature search is acceptable if fully described in Methods for research reports and
+    in the Acknowledgment for other manuscripts, with authors checking accuracy and taking full responsibility.
   evidence:
+  - source: editorial-2026-08
+    quote: Bibliographic references Discouraged AI tools may cause problems with the accuracy and integrity
+      of cited references; standard reference managers may be used instead
+    quote_provenance: raw_bytes
   - source: instructions-for-authors
     quote: AI, LLM, and chatbots should not be used to generate or format references as these tools may
       cause problems with the accuracy and integrity of cited references; standard reference managers
       may be used instead.
+    quote_provenance: raw_bytes
+  - source: editorial-2026-08
+    quote: Literature search Yes, provided the use is fully described in the Methods section for reports
+      of research and the Acknowledgment section for other types of manuscripts and that authors check
+      for accuracy and take full responsibility for all content
     quote_provenance: raw_bytes
 - axis: illustrative_images
   permission: prohibited
   disclosure: required
   disclosure_location:
   - methods
+  - figure_caption
   rationale: quality
-  conditions: Scope is clinical images and clinical illustrations (and clinical video/audio); the sole
-    exception is use as part of formal research design or methods, which must be fully disclosed. Non-clinical
-    explanatory figures are not addressed.
+  conditions: Scope is clinical images and clinical illustrations, and clinical video and audio. The exception
+    is use as part of formal research design or methods, which must be fully disclosed; the instructions
+    name the Methods section for AI use that is part of formal research design or methods. The editorial
+    permits replacing nonclinically relevant background in photographs with a solid colour; the adjustment
+    and the AI or software (name and version) must be described in the figure legend, and the original unedited
+    photographs provided for editorial review. The stated ground is concern about accuracy, clinical fidelity
+    and demographic representational bias in AI-generated images. No figure-specific rule is given for non-clinical
+    illustrations. The Reproduced and Re-created Material paragraph discourages AI-created content unless
+    it is part of formal research design or methods, and it is unclear which journals it covers.
   evidence:
   - source: instructions-for-authors
     quote: Submission of clinical images and clinical illustrations created or manipulated by AI, LLM,
       and chatbots is not permitted, unless part of formal research design or methods, which must be fully
       disclosed.
     quote_provenance: raw_bytes
-- axis: data_visualisation
+  - source: editorial-2026-08
+    quote: This policy also applies to the submission of clinical video and audio files.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: Authors should report the use of artificial intelligence, language models, machine learning,
+      or similar technologies to create content or assist with writing or editing of manuscripts in the
+      Acknowledgment section or Methods section if this is part of formal research design or methods.
+    quote_provenance: raw_bytes
+  - source: editorial-2026-08
+    quote: We also share concerns about the accuracy, clinical fidelity, and demographic representational
+      bias in AI-generated images.
+    quote_provenance: raw_bytes
+  - source: editorial-2026-08
+    quote: Replacement of nonclinically relevant background with a solid color in photographs is permitted.
+      Any such adjustment or background replacement must be fully described in the figure legend along
+      with indication of the AI or software (name and version number) used, and the original unedited
+      photographs must be provided for editorial review.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: The submission and publication of content created by artificial intelligence, language models,
+      machine learning, or similar technologies is discouraged, unless part of formal research design
+      or methods, and is not permitted without clear description of the content that was created and the
+      name of the model or tool, version and extension numbers, and manufacturer.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: 'Include: JNO and JHF Exclude: All other journals Comments: Paragraph ("Please verify that
+      all information and materials...") The submission and publication of content created by artificial
+      intelligence'
+    quote_provenance: raw_bytes
+- axis: data_presentation
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - figure_caption
   rationale: accountability
+  conditions: Use must be fully described in the figure legend; authors check accuracy and take full responsibility.
+  evidence:
+  - source: editorial-2026-08
+    quote: Formatting data or graphic visualization of research data or results Yes, provided that use
+      is fully described in the figure legend and authors check for accuracy and take full responsibility
+      for all content
+    quote_provenance: raw_bytes
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - figure_caption
+  rationale: unstated
   conditions: Name and version number of the AI or software in the figure legend.
   evidence:
   - source: editorial-2026-08
@@ -142,8 +285,9 @@ policies:
   permission: prohibited
   disclosure: not_addressed
   disclosure_location: []
-  rationale: quality
-  conditions: Table row in the editorial.
+  rationale: unstated
+  conditions: The editorial table marks presenting AI-generated data as if it were original research from
+    non-AI sources as not acceptable use. The row gives no comment.
   evidence:
   - source: editorial-2026-08
     quote: Presenting AI-generated data as if it were original research from non-AI sources No
@@ -156,7 +300,10 @@ policies:
   rationale: reproducibility
   conditions: Follow the relevant reporting guideline; describe each use in Methods; for LLM studies give
     platform, version, manufacturer, dates and prompts; for ML give training/validation data, metrics,
-    bias and subgroup analyses; data-sharing statement including code.
+    bias and subgroup analyses; data-sharing statement including code. Avoid identifiable patient information
+    in text, tables and figures. If copyrighted content was entered into the AI model, include the permission
+    or licence and describe it in Methods; state rights to publish AI-generated content in Methods or
+    in the figure or multimedia legend.
   evidence:
   - source: editorial-2026-08
     quote: Research Yes, provided the use is fully described in the Methods section and reporting guidance
@@ -166,6 +313,44 @@ policies:
     quote: Describe how AI was used for specific aspects of the study (eg, to generate or refine study
       hypotheses, assist in the generation of a list of adjustment variables, create graphs to show visual
       relationships).
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: Follow relevant reporting guidelines for specific study designs when they exist and report
+      each recommended guideline element with sufficient detail to enable reproducibility.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: For studies using LLMs, provide the name of the platform or program, tool, version, and manufacturer;
+      specify dates and prompt(s) used and their sequence and any revisions to prompts in response to
+      initial outputs.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: For studies reporting ML and algorithm development, include details about data sets used for
+      development, training, and validation.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: Indicate the metric used to evaluate the performance of the algorithms, including bias, discrimination,
+      calibration, reclassification, and others as appropriate.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: Indicate, when appropriate, if sensitivity analyses were performed to explore the performance
+      of the AI model in vulnerable or underrepresented subgroups.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: Provide a data sharing statement, including if code will be shared.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: Avoid inclusion of identifiable patient information in text, tables, and figures.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: If content protected by copyright was entered into the AI model by authors, include a copy
+      of the permission or license from the copyright owner and describe this permission/license in the
+      Methods section.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: If content (text, images, multimedia) generated by AI is included in a submitted manuscript
+      or supplemental material, indicate rights or permissions to publish that content as determined by
+      the AI service or owner in the Methods section or in the legend(s) of any AI-generated figures or
+      multimedia.
     quote_provenance: raw_bytes
 - axis: audit_trail
   permission: permitted_with_conditions
@@ -183,36 +368,83 @@ policies:
       specify dates and prompt(s) used and their sequence and any revisions to prompts in response to
       initial outputs.
     quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: 'If AI, LLM, or chatbots were used to assist with content creation, revision, or formatting,
+      the following should be reported in the Acknowledgment section: Name of the AI software platform,
+      program, or tool Version and extension numbers Manufacturer Date(s) of use'
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: report each recommended guideline element with sufficient detail to enable reproducibility
+    quote_provenance: raw_bytes
 - axis: reviewer_use
   permission: prohibited
   disclosure: not_addressed
   disclosure_location: []
   rationale: confidentiality
-  conditions: Stated in the author-facing table; JAMA Network's separate reviewer instructions are not
-    held here. The same table also bars AI-drafted author responses to reviewer and editor comments.
+  conditions: 'The table marks peer review as not acceptable use: entering a manuscript or the reviewer''s
+    summary into an external AI tool or LLM is a violation of confidentiality. The instructions tell reviewers
+    not to submit confidential manuscripts, abstracts or other text into a chatbot, language model or
+    similar tool.'
   evidence:
   - source: editorial-2026-08
-    quote: Entering an author’s manuscript or the reviewer’s summary of the manuscript into an external
-      AI tool or LLM is a violation of confidentiality
+    quote: Peer review No Entering an author’s manuscript or the reviewer’s summary of the manuscript
+      into an external AI tool or LLM is a violation of confidentiality
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: Reviewers are instructed to not submit confidential manuscripts, abstracts, or other text into
+      a chatbot, language model, or similar tool.
     quote_provenance: raw_bytes
 - axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Trigger and consequence are stated, as content may be rejected or subject to postpublication
+    corrective action if incomplete disclosure or failure to disclose AI use is detected during the editorial
+    process or after publication. Contact with the author is stated in the Image Integrity section, which
+    also holds the rule on AI-created or AI-manipulated clinical images; when inappropriate images or image
+    adjustments are detected, authors are asked for an explanation and for the image as originally captured.
+    This step covers all inappropriate images and is not limited to AI. The AI provisions do not point
+    to a route of appeal; the instructions give a general appeals route for decisions.
+  evidence:
+  - source: instructions-for-authors
+    quote: If incomplete disclosure or failure to disclose use of AI is detected during the editorial
+      process or after publication, content may be rejected or subject to postpublication corrective action.
+    quote_provenance: raw_bytes
+  - source: editorial-2026-08
+    quote: If incomplete disclosure or failure to disclose use of AI is detected during the editorial
+      process or after publication, content may be rejected or subject to postpublication corrective action.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: The submission of clinical images and clinical illustrations created or manipulated by artificial
+      intelligence, machine learning tools, or similar technologies is not permitted, unless part of formal
+      research design or methods, which must be fully disclosed.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: When inappropriate images or image adjustments are detected by the journal staff, authors will
+      be asked for an explanation and will be requested to submit the image as originally captured prior
+      to any adjustment, cropping, or labeling.
+    quote_provenance: raw_bytes
+  - source: instructions-for-authors
+    quote: Authors may appeal decisions. All appeals are reviewed by the editor in chief, on a case-by-case
+      basis, or a designated editor if the editor in chief is recused from the review.
+    quote_provenance: raw_bytes
+- axis: detection_screening
   permission: not_addressed
   disclosure: not_addressed
   disclosure_location: []
-  rationale: control
-  conditions: A sanction is stated (rejection or post-publication correction) but no threshold for suspicion,
-    no duty to notify the author and no route of appeal.
+  rationale: unstated
+  conditions: The instructions and the editorial both speak of non-disclosure being 'detected' but neither
+    says whether AI-text screening is run or whether authors are told.
   evidence:
   - source: instructions-for-authors
     quote: If incomplete disclosure or failure to disclose use of AI is detected during the editorial
       process or after publication, content may be rejected or subject to postpublication corrective action.
     quote_provenance: raw_bytes
     evidence_role: documents_absence
-- axis: detection_screening
-  permission: not_addressed
-  disclosure: not_addressed
-  disclosure_location: []
-  rationale: unstated
-  conditions: Both sources speak of non-disclosure being 'detected' but neither says whether AI-text screening
-    is run or whether authors are told.
+  - source: editorial-2026-08
+    quote: If incomplete disclosure or failure to disclose use of AI is detected during the editorial
+      process or after publication, content may be rejected or subject to postpublication corrective action.
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
 coherence: []

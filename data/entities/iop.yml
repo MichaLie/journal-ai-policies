@@ -7,19 +7,27 @@ policy_owner: iop
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
 homepage: null
-notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+notes: IOP Publishing's generative AI policy covers authors in IOP Publishing-owned journals and in the
+  partner journals listed on the page; other partner journals follow the partners' own ethical policies.
+  Authors must not upload reviewer reports to GenAI tools or use them to generate responses to reviewers,
+  though they may use them to improve the language of their responses; hiding prompts for GenAI tools
+  in a manuscript to manipulate peer review results in immediate rejection. Reviewers are pointed to separate
+  ethical policies for reviewers, which were not reviewed here. A separate text and data mining policy
+  says that, unless a licence or separate written agreement permits it, access to the publications gives
+  no right to build embeddings, vector databases, retrieval or RAG systems or agentic systems from them,
+  and that access through APIs, MCP servers or connectors, automated agents or other machine-to-machine
+  methods needs a separate written agreement.
 sources:
 - id: ai-policy
   url: https://publishingsupport.iopscience.iop.org/ethical-policy-journals/
   role: policy
-  audience: all
+  audience: authors
   status: current
   authoritative: true
   fetch_method: http
   date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: 20f6950ccb0a1de295034080cd951e7328ee489fb27b17681323bdf55c39675b
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  last_verified: '2026-11-20'
+  content_sha256: c5db211526b86e53ca7e5399f59b457de6dd37c15ce17b7f71dd85a6ba4f0c80
 - id: tdm-ai
   url: https://ioppublishing.org/legal/textanddataminingpolicy/
   role: policy
@@ -27,10 +35,10 @@ sources:
   status: current
   authoritative: false
   fetch_method: http
-  date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: 7af8f5424a7af14c4b689f44c7aabbb18e087983338cedfe20318b126c9dded8
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  date_source: stated
+  last_verified: '2026-11-20'
+  content_sha256: 87a9a79c8f99098a20787ae778539a7e146a85d14a9ae56220475f85b774dd61
+  stated_date: 2026-07
 policies:
 - axis: research_process_ai
   permission: permitted_with_conditions
@@ -39,21 +47,54 @@ policies:
   - methods
   - acknowledgements
   rationale: accountability
-  conditions: Material uses require an AI statement in Acknowledgements and research-method detail in
-    Methods.
+  conditions: Use must be methodologically appropriate, transparent and reproducible, and outputs must
+    be appropriately validated by the authors. Authors remain responsible for all content. Use that materially
+    contributes to the research is disclosed in a separate AI statement in the Acknowledgement section,
+    and research-process use is also described in detail in the Methods. The statement should name the
+    tool or model, describe how it was used, and explain how far the authors verified the outputs.
   evidence:
   - source: ai-policy
     quote: GenAI tools may be used as part of the research process, including to support research ideation,
       methodology, analysis where their use is methodologically appropriate, transparent and reproducible.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: provided their use is disclosed where required and any outputs are appropriately validated
+      by the authors.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: All authors remain fully responsible for the accuracy, originality and integrity of all content
+      in their submission, including any content, analysis or conclusions produced with the support of
+      AI tools.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Where AI tools have been used in ways that materially contribute to the research process, the
+      preparation of the manuscript or the analysis, interpretation and presentation of results, authors
+      must disclose this in a separate AI disclosure statement as part of the Acknowledgement section
+      of their article.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Where AI tools have been used as part of the research process rather than manuscript preparation,
+      this use should be additionally described in detail in the Methods (and other relevant sections)
+      of the main body of the article.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The disclosure statement should identify the tool or model used, describe how it was used
+      and explain the extent to which the authors verified, validated and critically reviewed the AI-assisted
+      outputs.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: these tools can produce misleading or fabricated content, cannot be legally accountable for
+      published work and lack the ability to think critically about the material they are producing.
     quote_provenance: raw_bytes
 - axis: audit_trail
   permission: permitted_with_conditions
   disclosure: encouraged
   disclosure_location:
   - unspecified
-  rationale: accountability
-  conditions: Conditional requirement where AI is central; retain the distinction from a universal prompt-publication
-    mandate.
+  rationale: reproducibility
+  conditions: Encouraged, and may be required in fields where AI is central to the research method. Prompts,
+    logs, settings, outputs and validation materials go in supplementary data where needed for transparency,
+    reproducibility and assessment.
   evidence:
   - source: ai-policy
     quote: Authors are encouraged, and may be required in fields where AI is central to the research method,
@@ -61,15 +102,278 @@ policies:
       data where this is necessary to support transparency, reproducibility and assessment of the work.
     quote_provenance: raw_bytes
 - axis: content_licensing
-  permission: permitted_with_conditions
+  permission: prohibited
   disclosure: not_addressed
   disclosure_location: []
-  rationale: accountability
-  conditions: Publisher-stated access and reuse terms. Scope depends on content, license and purpose;
-    this is not a finding about author consent or the reach of legal exceptions.
+  rationale: licensing
+  conditions: Users must not train, fine-tune or improve AI models on the publications. The listed exception
+    is use strictly necessary for permitted non-commercial research, private study, scholarship, teaching
+    or educational purposes and authorised by applicable licence terms. Developing, training or improving
+    commercial AI products or services needs express written agreement from IOP Publishing. AI and text
+    and data mining of subscription content is permitted only for non-commercial research, study, scholarship,
+    teaching and educational purposes; commercial use needs written agreement from IOP Publishing. Gold
+    open access content follows its Creative Commons licence; CC BY content may be used for commercial
+    and non-commercial AI and text and data mining under the licence terms. The page does not address
+    author consent.
   evidence:
+  - source: tdm-ai
+    quote: AI and/or T&DM of subscription content is permitted only for non-commercial scientific research,
+      private study, scholarship, teaching and educational purposes.
+    quote_provenance: raw_bytes
   - source: tdm-ai
     quote: AI and/or T&DM for commercial purposes is not permitted unless expressly agreed in writing
       by IOP Publishing.
+    quote_provenance: raw_bytes
+  - source: tdm-ai
+    quote: Users must not use the Publications to train, pre-train, fine-tune, adapt, evaluate, benchmark
+      or improve any artificial intelligence model, machine learning model, foundation model, large language
+      model or similar system
+    quote_provenance: raw_bytes
+  - source: tdm-ai
+    quote: develop, train or improve commercial AI products or services unless expressly agreed in writing
+      by IOP Publishing
+    quote_provenance: raw_bytes
+  - source: tdm-ai
+    quote: except where strictly necessary for permitted non-commercial research, private study, scholarship,
+      teaching or educational purposes and otherwise authorised by applicable licence terms
+    quote_provenance: raw_bytes
+  - source: tdm-ai
+    quote: All use of articles or journals published under the gold open access model for AI and/or T&DM
+      will be governed by the terms of the Creative Commons licence relating to the relevant article.
+    quote_provenance: raw_bytes
+  - source: tdm-ai
+    quote: If the content you wish to use for AI and/or T&DM was published under the gold open access
+      model under a CC BY licence, you have the right to use the content for AI and/or TDM purposes for
+      both commercial and non-commercial usage, in accordance with the licence terms.
+    quote_provenance: raw_bytes
+  - source: tdm-ai
+    quote: to protect our investment, and the investment of the authors in our publications
+    quote_provenance: raw_bytes
+- axis: language_refinement
+  permission: permitted
+  disclosure: not_required
+  disclosure_location: []
+  rationale: unstated
+  conditions: Editing human-written text is allowed, from spelling and grammar to clarity and structure.
+    Routine spelling, grammar and language editing that does not materially contribute to the manuscript
+    needs no separate disclosure statement. Use that materially contributes to the preparation of the
+    manuscript is disclosed in a separate AI statement in the Acknowledgement section.
+  evidence:
+  - source: ai-policy
+    quote: Edit human-written text – this includes minor corrections (checking spelling, grammar and punctuation)
+      and more significant changes (enhancing the clarity and structure of the work).
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Where AI tools have been used for routine spelling, grammar and language editing that does
+      not materially contribute to the manuscript a separate disclosure statement is not required.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Where AI tools have been used in ways that materially contribute to the research process, the
+      preparation of the manuscript or the analysis, interpretation and presentation of results, authors
+      must disclose this in a separate AI disclosure statement as part of the Acknowledgement section
+      of their article.
+    quote_provenance: raw_bytes
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  rationale: accountability
+  conditions: Authors must critically revise AI-generated text for accuracy and plagiarism and are responsible
+    for interpretation and conclusions. Material use is disclosed in a separate AI statement in the Acknowledgement
+    section. The statement should name the tool or model, describe how it was used, and explain how far
+    the authors verified the outputs.
+  evidence:
+  - source: ai-policy
+    quote: Generate text – authors must ensure that they have critically revised any AI-generated text
+      to ensure it is accurate and free from plagiarism.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are responsible for the interpretation, reasoning and conclusions presented in the
+      manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Where AI tools have been used in ways that materially contribute to the research process, the
+      preparation of the manuscript or the analysis, interpretation and presentation of results, authors
+      must disclose this in a separate AI disclosure statement as part of the Acknowledgement section
+      of their article.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The disclosure statement should identify the tool or model used, describe how it was used
+      and explain the extent to which the authors verified, validated and critically reviewed the AI-assisted
+      outputs.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: these tools can produce misleading or fabricated content, cannot be legally accountable for
+      published work and lack the ability to think critically about the material they are producing.
+    quote_provenance: raw_bytes
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  rationale: unstated
+  conditions: Figures may be generated from existing data. AI-assisted figure generation must not alter,
+    distort or misrepresent the underlying data. Material use is disclosed in the Acknowledgement section
+    statement.
+  evidence:
+  - source: ai-policy
+    quote: Generate figures based on existing data – for example, creating a graph based on data collected
+      during an experiment.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: This includes the use of AI-assisted coding, visualisation and formatting tools however authors
+      must ensure that AI-assisted figure generation does not alter, distort or misrepresent the underlying
+      data.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Where AI tools have been used in ways that materially contribute to the research process, the
+      preparation of the manuscript or the analysis, interpretation and presentation of results, authors
+      must disclose this in a separate AI disclosure statement as part of the Acknowledgement section
+      of their article.
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  rationale: unstated
+  conditions: Explanatory images such as graphical summaries, conceptual illustrations and workflow diagrams
+    are allowed. They must be clearly distinguishable from research data. Material use is disclosed in
+    the Acknowledgement section statement.
+  evidence:
+  - source: ai-policy
+    quote: Create explanatory images – such as graphical summaries, conceptual illustrations, workflow
+      diagrams, flowcharts and decision trees, where these are used to communicate research concepts,
+      methods, or processes rather than present research data or results.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Any AI-generated explanatory image must be clearly distinguishable from research data and must
+      not misrepresent, fabricate, or obscure scientific evidence.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Where AI tools have been used in ways that materially contribute to the research process, the
+      preparation of the manuscript or the analysis, interpretation and presentation of results, authors
+      must disclose this in a separate AI disclosure statement as part of the Acknowledgement section
+      of their article.
+    quote_provenance: raw_bytes
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  rationale: quality
+  conditions: AI may support literature discovery, citation management, reference formatting and checking.
+    Generating or modifying reference lists is listed as unacceptable, and every cited source must be
+    verified against the original. References to non-existent sources usually lead to rejection, and IOP
+    reserves the right to retract after publication. Material use is disclosed in the Acknowledgement
+    section statement.
+  evidence:
+  - source: ai-policy
+    quote: 'Unacceptable Uses Authors may not:'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Support literature review – GenAI tools may be used to help locate, retrieve, organise and
+      summarise relevant publications for authors to read and draw upon in their own manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Generate or modify reference lists – authors may use generative AI tools to support literature
+      discovery, citation management, reference formatting and reference checking, but every cited source
+      must be verified by the authors against the original source to confirm that it exists, is accurately
+      represented, and is drawn upon and referenced in the main body of the manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: authors should keep in mind that these tools are prone to generating false content, including
+      references to non-existent work.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: We consider the presence of references to non-existent sources to be strong evidence of irresponsible
+      AI usage and to raise serious concerns about the validity of the work.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If they are found during the submission process, this will usually result in a rejection of
+      the submitted manuscript and potentially further sanctions.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If they are discovered after publication (either in the Accepted Manuscript or Version of Record),
+      IOP Publishing reserves the right to retract the paper due to a loss of confidence in the work.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Where AI tools have been used in ways that materially contribute to the research process, the
+      preparation of the manuscript or the analysis, interpretation and presentation of results, authors
+      must disclose this in a separate AI disclosure statement as part of the Acknowledgement section
+      of their article.
+    quote_provenance: raw_bytes
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Authors may not fabricate, alter or manipulate original research data or results, including
+    images such as blots.
+  evidence:
+  - source: ai-policy
+    quote: 'Unacceptable Uses Authors may not:'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Fabricate original research data or results – any data or results must have been gathered from
+      the experiment presented in the paper or generated through a legitimate, disclosed and scientifically
+      valid research method.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Alter or manipulate original research data or results – this includes the manipulation of images
+      such as blots.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'Trigger and consequence: stated in the AI section. References to non-existent sources are
+    treated as strong evidence of irresponsible AI use. Found during submission, they usually lead to rejection
+    and possibly further sanctions; found after publication, IOP Publishing may retract the paper. Hidden
+    prompts for GenAI tools in a manuscript lead to immediate rejection. Author contact: not stated in
+    the AI section. Under the page''s general ethics procedure, possible breaches go to the Research Integrity
+    Team, which contacts the accused individuals for comment before acting. Appeal route: not stated.'
+  evidence:
+  - source: ai-policy
+    quote: We consider the presence of references to non-existent sources to be strong evidence of irresponsible
+      AI usage and to raise serious concerns about the validity of the work.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If they are found during the submission process, this will usually result in a rejection of
+      the submitted manuscript and potentially further sanctions.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If they are discovered after publication (either in the Accepted Manuscript or Version of Record),
+      IOP Publishing reserves the right to retract the paper due to a loss of confidence in the work.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Hidden prompts – concealing prompts for GenAI tools within a manuscript in an attempt to manipulate
+      the peer review process will result in immediate rejection.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: if a possible breach of ethics is brought to our attention, we will refer the case to our Research
+      Integrity Team for investigation.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: reach out to the accused individuals in every instance, to provide them with the opportunity
+      to comment on the matter before committing to a particular course of action.
+    quote_provenance: raw_bytes
+- axis: detection_screening
+  permission: permitted
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: IOP Publishing runs visual and technology-assisted checks on submission to detect the inappropriate
+    presentation of images. It also routinely screens submissions for originality via iThenticate. The
+    page does not say whether these checks use AI or whether AI-text screening is run.
+  evidence:
+  - source: ai-policy
+    quote: Within IOP Publishing, we perform visual and technology-assisted checks on submission to detect
+      the inappropriate presentation of images.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: IOP Publishing routinely screens submissions for originality via iThenticate
     quote_provenance: raw_bytes
 coherence: []

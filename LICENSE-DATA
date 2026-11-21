@@ -11,4 +11,5 @@ must be able to pick it up without asking.
 EXCEPTION: verbatim quotations of publisher policy text remain the property of
 their respective publishers. They are reproduced here as short excerpts for
 comparison and criticism, with attribution and a link to the source, and are not
-covered by this dedication.
+covered by this dedication. The same applies to the extracted policy text kept under
+snapshots/, which is held so that every quote can be re-checked against its source.

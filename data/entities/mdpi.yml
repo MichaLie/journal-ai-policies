@@ -4,10 +4,17 @@ type: publisher
 parent: null
 platform: null
 policy_owner: mdpi
-delegates_to_journal: false
+delegates_to_journal: true
 policy_architecture: rule_with_exemptions
 homepage: null
-notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+notes: 'Covers authors, reviewers and Academic Editors. Authors declare all AI use in the cover letter
+  and in an Acknowledgments statement, apart from text editing such as grammar and spelling, and AI
+  tools cannot be listed as authors. Reviewers may use AI only for limited language editing, which they
+  disclose, and Academic Editors must not use generative AI during editorial review or decision-making.
+  Journals decide one point themselves: “The inclusion of AI-generated images for purposes other than
+  data visualization is at the discretion of the journal’s Editorial Board.” Authors must not agree to
+  an AI tool re-using their uploaded material for training unless safeguards for copyright,
+  confidentiality and privacy are in place.'
 sources:
 - id: ai-policy
   url: https://www.mdpi.com/ethics
@@ -17,33 +24,334 @@ sources:
   authoritative: true
   fetch_method: browser
   date_source: none
-  last_verified: '2026-11-11'
+  last_verified: '2026-11-20'
   content_sha256: null
-  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
-    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
+  note: 'Copied from the live page in a browser on 20 November 2026 (the full generative-AI section of
+    the Research and Publication Ethics page); no direct download is held.'
 policies:
 - axis: language_refinement
-  permission: permitted_with_conditions
+  permission: permitted
   disclosure: not_required
   disclosure_location: []
-  rationale: accountability
-  conditions: Editing exemption includes structure.
+  rationale: unstated
+  conditions: Use of GenAI for text editing, for example grammar, structure, spelling, punctuation and
+    formatting, is outside the policy and does not need to be declared.
   evidence:
   - source: ai-policy
     quote: The use of GenAI tools for the purposes of text editing (e.g., grammar, structure, spelling,
-      punctuation, and formatting) is not covered by this policy and does not need to be declared.
+      punctuation and formatting) is not covered by this policy and does not need to be declared.
+    quote_provenance: browser_dom
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - cover_letter
+  - acknowledgements
+  rationale: accountability
+  conditions: The policy names transparency, reproducibility and accountability as its underlying principles.
+    Use of GenAI tools to assist with preparing manuscripts may be acceptable under some circumstances.
+    All AI tools used must be declared in the cover letter at submission. An Acknowledgements statement
+    should give details of all tools used, describe the prompts and include the product version. The source’s
+    example statement also confirms that the authors reviewed and edited the output. Authors are responsible
+    for the entire content of the manuscript and are fully responsible for its accuracy, validity and
+    integrity, regardless of material contributed by AI tools. Authors must ensure that AI-generated material
+    complies with MDPI’s core and journal-specific editorial policies. MDPI states that some authors use
+    GenAI tools to fabricate entire manuscripts. For narrative and systematic reviews, authors are expected
+    to define the review question, the search strategy and the criteria for selecting included articles.
+    Authors are responsible for ensuring that uploading material to a tool does not breach confidentiality,
+    privacy or copyright, and must not agree to the tool re-using uploaded material for training unless
+    safeguards are in place.
+  evidence:
+  - source: ai-policy
+    quote: The underlying principles of this policy are the need for transparency, reproducibility and
+      accountability.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: While the use of GenAI tools may be acceptable to assist with the preparation of manuscripts
+      under some circumstances
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: MDPI is aware that some authors use GenAI tools to fabricate entire manuscripts.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: For both narrative and systematic reviews, authors are expected to define the question that
+      the review is attempting to address, the search strategy, and the criteria used for selecting the
+      included articles.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Any AI tools that were used must be declared in the cover letter on submission of the manuscript.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Details of all the tools used, including those used to help write the manuscript should be
+      included in a statement in the ‘Acknowledgments’ section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: The prompts used should be described and the product version of the tool should be included.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: The authors have reviewed and edited the output and take full responsibility for the content
+      of this publication.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Human authors are responsible for the entire content of their manuscript, including the output
+      of any AI tools that might have been used.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors are fully responsible for the accuracy, validity, and integrity of the content of their
+      manuscript, regardless of any material contributed by generative or other AI tools.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: It is the authors’ responsibility to ensure that any AI-generated material (both during the
+      conduct and reporting of their research) complies with all of MDPI’s core and journal-specific editorial
+      policies.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors are responsible for ensuring that uploading any material to the tool does not breach
+      any confidentiality, privacy, or copyright restrictions.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors must also ensure that they do not, inadvertently or intentionally, agree to the re-use
+      of the material they uploaded to train the tool, unless due safeguards to protect copyright and
+      rights to confidentiality and privacy are in place.
+    quote_provenance: browser_dom
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - cover_letter
+  - acknowledgements
+  rationale: reproducibility
+  conditions: Authors are expected to declare all use of AI tools in the conduct and reporting of the
+    research, and must describe in the Methods how the tools were used in the conduct of the study. Where
+    AI analysed or summarised data, authors should give the tool, prompts, outputs and how the outputs
+    were edited. All AI tools used must be declared in the cover letter at submission, and details of
+    all tools used should be given in a statement in the Acknowledgments section. Authors must ensure
+    that AI-generated material from both the conduct and the reporting of the research complies with MDPI’s
+    core and journal-specific editorial policies. Authors are responsible for ensuring that uploading
+    material to a tool does not breach confidentiality, privacy or copyright, and must not agree to the
+    tool re-using uploaded material for training unless safeguards are in place.
+  evidence:
+  - source: ai-policy
+    quote: Authors are expected to declare all use of AI tools* (generative and others) during the conduct
+      and reporting of the research in the manuscript.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: To support reproducibility and enable other researchers to repeat the study, authors must provide
+      details of how the tools were used in the conduct of their study in the ‘Methods’ section of their
+      manuscript.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: For example, if an AI tool was used to analyze or summarize data, authors should specify the
+      tool used, what prompts were used, the outputs generated by the tools and the ways in which the
+      outputs were edited or modified.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Any AI tools that were used must be declared in the cover letter on submission of the manuscript.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Details of all the tools used, including those used to help write the manuscript should be
+      included in a statement in the ‘Acknowledgments’ section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: It is the authors’ responsibility to ensure that any AI-generated material (both during the
+      conduct and reporting of their research) complies with all of MDPI’s core and journal-specific editorial
+      policies.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors are responsible for ensuring that uploading any material to the tool does not breach
+      any confidentiality, privacy, or copyright restrictions.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors must also ensure that they do not, inadvertently or intentionally, agree to the re-use
+      of the material they uploaded to train the tool, unless due safeguards to protect copyright and
+      rights to confidentiality and privacy are in place.
+    quote_provenance: browser_dom
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'Trigger: the source names the authenticity of a manuscript being called into question,
+    with no threshold for review. No consequence for authors is stated. Author contact: authors should
+    be prepared to share previous versions with the journal editor or the Publication Ethics and Research
+    Integrity Team on request, and are strongly encouraged to keep a provenance record for this purpose.
+    No route of appeal is stated.'
+  evidence:
+  - source: ai-policy
+    quote: Regardless of the article type, authors are strongly encouraged to maintain a record of the
+      provenance of their manuscripts, even for secondary research, non-quantitative research, and opinion-based
+      articles so that the authenticity of their work can be proven, should it be called into question.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: authors should be prepared to share previous versions with the journal editor or Publication
+      Ethics and Research Integrity Team upon request.
+    quote_provenance: browser_dom
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - acknowledgements
+  rationale: reproducibility
+  conditions: Prompts and the product version of the tool should be described in the Acknowledgments statement.
+    Where AI analysed or summarised data, the Methods should give the prompts, the outputs and how the
+    outputs were edited. Authors are encouraged to submit raw AI outputs as supplementary files. For all
+    article types, authors are strongly encouraged to keep a record of the provenance of their manuscripts,
+    so that the authenticity of the work can be proven if it is called into question. Time-stamped previous
+    versions of the manuscript should be kept, preferably in a third-party repository, and shared with
+    the journal editor or the Publication Ethics and Research Integrity Team on request.
+  evidence:
+  - source: ai-policy
+    quote: To support reproducibility and enable other researchers to repeat the study, authors must provide
+      details of how the tools were used in the conduct of their study in the ‘Methods’ section of their
+      manuscript.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: For example, if an AI tool was used to analyze or summarize data, authors should specify the
+      tool used, what prompts were used, the outputs generated by the tools and the ways in which the
+      outputs were edited or modified.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Details of all the tools used, including those used to help write the manuscript should be
+      included in a statement in the ‘Acknowledgments’ section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: The prompts used should be described and the product version of the tool should be included.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors are encouraged to submit the raw outputs of the AI tools they used as supplementary
+      files.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Regardless of the article type, authors are strongly encouraged to maintain a record of the
+      provenance of their manuscripts, even for secondary research, non-quantitative research, and opinion-based
+      articles so that the authenticity of their work can be proven, should it be called into question.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Time-stamped previous versions of the manuscript should be kept, preferably in a third-party
+      repository, such as the Open Science Framework.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: authors should be prepared to share previous versions with the journal editor or Publication
+      Ethics and Research Integrity Team upon request.
+    quote_provenance: browser_dom
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: unstated
+  conditions: Where GenAI tools generate figures representing original raw data, the raw data and the
+    tools and prompts used should be described in the manuscript. GenAI tools must not be used to alter
+    or manipulate original images.
+  evidence:
+  - source: ai-policy
+    quote: If GenAI tools are used to generate figures to represent original raw data, the raw data and
+      details of the tools and prompts used should be described in the manuscript.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: 'GenAI tools must not be used:'
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: To generate images purporting to represent data that does not exist or that was also generated
+      by an AI tool, or to alter or manipulate original images.
+    quote_provenance: browser_dom
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: unstated
+  conditions: Inclusion of AI-generated images for purposes other than data visualisation is at the discretion
+    of the journal’s Editorial Board. For images representing an abstract (for example a graphic abstract),
+    the tools and prompts used should be described within the manuscript.
+  evidence:
+  - source: ai-policy
+    quote: If GenAI tools are used to generate images to represent an abstract (e.g., graphic abstract),
+      details of the tools and prompts used should be described within the manuscript.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: The inclusion of AI-generated images for purposes other than data visualization is at the discretion
+      of the journal’s Editorial Board.
+    quote_provenance: browser_dom
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: GenAI tools must not be used to generate, alter or manipulate research data, results or
+    images in a way that could misrepresent the research, to generate images purporting to represent data
+    that does not exist or that was itself generated by an AI tool, or to alter or manipulate original
+    images.
+  evidence:
+  - source: ai-policy
+    quote: 'GenAI tools must not be used:'
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: To generate, alter, or manipulate research data, results, or images in a way that could misrepresent
+      the underlying research.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: To generate images purporting to represent data that does not exist or that was also generated
+      by an AI tool, or to alter or manipulate original images.
     quote_provenance: browser_dom
 - axis: reviewer_use
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
-  - review_report
-  rationale: accountability
-  conditions: Limited editing only; no manuscript or review communications may be uploaded.
+  - unspecified
+  rationale: confidentiality
+  conditions: Reviewers should not use GenAI tools or other large language models to prepare review reports.
+    The exception is limited use to improve the written quality of a report, such as checking grammar,
+    structure, spelling, punctuation and formatting, which should be disclosed when the report is submitted.
+    Reviewers must never upload manuscripts or related material to GenAI tools, as this violates MDPI’s
+    confidentiality policy for peer review. Reports found to involve inappropriate AI use are discarded.
   evidence:
+  - source: ai-policy
+    quote: GenAI tools and other large language models (LLMs) should not be used by reviewers in the preparation
+      of review reports.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Reviewers are solely responsible for the contents of their reports, and the utilization of
+      these tools may violate confidentiality, proprietary, and data privacy rights.
+    quote_provenance: browser_dom
   - source: ai-policy
     quote: Some limited use to improve the written quality of a peer review report, such as checking grammar,
       structure, spelling, punctuation, and formatting, may be acceptable but should be disclosed upon
       submission of the peer review report.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Under no circumstances should reviewers upload manuscripts either in whole or in part, images,
+      figures, tables, or any kind of communication relating to manuscripts that are under review to any
+      GenAI tools, as this violates MDPI's confidentiality policy relating to peer review.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: If it is determined that AI tools have been inappropriately used in the preparation of a review
+      report, the report will be discarded.
+    quote_provenance: browser_dom
+- axis: publisher_own_use
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: Applies to Academic Editors (Editors-in-Chief, Editorial Board Members and Guest Editors),
+    who must not use GenAI tools during editorial review or decision-making. The ban is grounded in their
+    responsibility for the integrity and rigour of peer review. Academic Editors must never upload manuscripts
+    or related material to GenAI tools, as this violates MDPI’s confidentiality policy for peer review.
+    The section does not describe MDPI’s own in-house use of AI.
+  evidence:
+  - source: ai-policy
+    quote: Academic Editors (Editors-in-Chief, Editorial Board Members, and Guest Editors) play an essential
+      role within the peer review process to ensure the integrity and rigor of this process.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Given this significant responsibility, Academic Editors must not use GenAI tools during the
+      editorial review or decision-making process.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Under no circumstances should Academic Editors upload manuscripts either in whole or in part,
+      images, figures, tables, or any kind of communication relating to manuscripts that are under review
+      to any GenAI tools, as this violates MDPI's confidentiality policy relating to peer review.
     quote_provenance: browser_dom
 coherence: []

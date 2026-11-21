@@ -7,7 +7,12 @@ policy_owner: aip
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
 homepage: null
-notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+notes: AIP Publishing's AI policy covers authors, editors and reviewers, and says AI tools cannot be a coauthor.
+  Using AI only to improve readability needs no disclosure, but uses that could affect findings or conclusions
+  must be described in the Methods section. Editors and reviewers may not upload any part of a manuscript
+  or review report into an AI tool that the publisher has not provided or authorised. Authors are advised
+  to check a tool's terms, including how the provider may keep, reuse or redistribute uploaded or generated
+  content; the page does not mention training AI models on authors' content.
 sources:
 - id: ai-policy
   url: https://publishing.aip.org/resources/researchers/policies-and-ethics/ai-policy/
@@ -17,32 +22,225 @@ sources:
   authoritative: true
   fetch_method: browser
   date_source: none
-  last_verified: '2026-11-11'
+  last_verified: '2026-11-20'
   content_sha256: null
-  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
-    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
+  note: Copied from the live page in a browser on 20 November 2026 (full main content of the AI Policy page).
+    It is a browser copy and was not downloaded directly.
 policies:
 - axis: language_refinement
   permission: permitted_with_conditions
   disclosure: not_required
   disclosure_location: []
   rationale: accountability
-  conditions: AI affecting findings or conclusions follows a different disclosure rule.
+  conditions: Applies to original content created by the authors. Authors must critically analyse any
+    content edited with AI and are responsible for its integrity, accuracy and originality. Uses that
+    could affect findings or conclusions should be disclosed and described in the Methods section.
   evidence:
   - source: ai-policy
     quote: The use of AI tools to prepare manuscripts or improve the readability of original content created
       by the authors is permitted and does not require disclosure.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Any content generated or edited with the help of AI must be critically analyzed by the authors,
+      who are responsible for the integrity, accuracy, and originality of their submitted work.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: AI use should be disclosed when it has the potential to affect the findings or conclusions
+      of an article
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Such uses of AI should be described in detail in the Methods section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: 'Human Accountability: AI is a tool to inform, assist, and accelerate human work, not to replace
+      human judgment and accountability.'
     quote_provenance: browser_dom
 - axis: research_process_ai
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - methods
-  rationale: accountability
-  conditions: Identify tool/version/manufacturer, purpose and reason; authors validate outputs.
+  rationale: reproducibility
+  conditions: Disclosure applies where AI could affect findings or conclusions, including analysis of
+    content, data or images, designing or conducting experiments, and extracting or synthesizing information.
+    The Methods description must give the exact tool (name, version, manufacturer), what it was used for
+    and why.
   evidence:
   - source: ai-policy
     quote: AI use should be disclosed when it has the potential to affect the findings or conclusions
       of an article
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Analysis of content, data, or images
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Designing or conducting experiments
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Extracting or synthesizing information
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Such uses of AI should be described in detail in the Methods section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: To increase transparency and reproducibility, the description must include the exact tool (name,
+      version, manufacturer), what the tool was used for, and the reason for using it for the task.
+    quote_provenance: browser_dom
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: not_required
+  disclosure_location: []
+  rationale: accountability
+  conditions: Using AI tools to prepare manuscripts or improve the readability of original content created
+    by the authors is permitted and does not require disclosure. The AI principles separately expect material
+    or substantive uses of AI in scholarly work to be appropriately disclosed. Authors must critically
+    analyse any content generated or edited with AI and are responsible for its integrity, accuracy and
+    originality. Using AI-generated references or citations that do not exist in real sources is a breach
+    of publication ethics. Uses that could affect findings or conclusions should be disclosed and described
+    in the Methods section.
+  evidence:
+  - source: ai-policy
+    quote: The use of AI tools to prepare manuscripts or improve the readability of original content created
+      by the authors is permitted and does not require disclosure.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Any content generated or edited with the help of AI must be critically analyzed by the authors,
+      who are responsible for the integrity, accuracy, and originality of their submitted work.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: AI use should be disclosed when it has the potential to affect the findings or conclusions
+      of an article
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Such uses of AI should be described in detail in the Methods section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Any use of AI-generated references or citations that do not exist in real sources is a breach
+      of publication ethics.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: 'Transparency and Provenance: AIPP will be transparent about how it uses AI and expects material
+      or substantive uses of AI in scholarly work to be appropriately disclosed.'
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: 'Human Accountability: AI is a tool to inform, assist, and accelerate human work, not to replace
+      human judgment and accountability.'
+    quote_provenance: browser_dom
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Covers creating, altering or manipulating original research data or results, and adjustments
+    to original images that alter their accuracy or interpretation.
+  evidence:
+  - source: ai-policy
+    quote: Generative AI should not be used to create, alter, or manipulate original research data results
+      or make adjustments to original images that alter the accuracy or interpretation of the original
+      material.
+    quote_provenance: browser_dom
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: confidentiality
+  conditions: Reviewers and editors may not upload any part of a manuscript or review report into an AI
+    tool that the publisher has not provided or authorized, including local LLMs. If AIPP has reasonable
+    grounds to believe AI was used to generate or perform a review in violation of the policy, it may
+    stop inviting the reviewer and seek a replacement review.
+  evidence:
+  - source: ai-policy
+    quote: To protect the confidentiality of the manuscript and review process, peer reviewers and editors
+      may not upload any part of a submitted manuscript or the peer review report into an AI tool that
+      is not provided by or authorized by the publisher, including local LLMs.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: If AIPP has reasonable grounds to believe that AI was used to generate or perform peer review
+      in violation of this policy, we may stop inviting that reviewer in the future and seek a replacement
+      review.
+    quote_provenance: browser_dom
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: confidentiality
+  conditions: Editors may not upload any part of a submitted manuscript or peer review report into an
+    AI tool that the publisher has not provided or authorized, including local LLMs. The page refers to
+    AI tools provided or authorized by the publisher but does not describe the publisher's own systems
+    or tools. AIPP states it will be transparent about how it uses AI; the page does not say how or where.
+    Its principles describe AI as a tool to inform, assist and accelerate human work without replacing
+    human judgment and accountability, and state that AIPP will maintain governance, oversight and accountability
+    for its use of AI.
+  evidence:
+  - source: ai-policy
+    quote: To protect the confidentiality of the manuscript and review process, peer reviewers and editors
+      may not upload any part of a submitted manuscript or the peer review report into an AI tool that
+      is not provided by or authorized by the publisher, including local LLMs.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: 'Transparency and Provenance: AIPP will be transparent about how it uses AI and expects material
+      or substantive uses of AI in scholarly work to be appropriately disclosed.'
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: 'Human Accountability: AI is a tool to inform, assist, and accelerate human work, not to replace
+      human judgment and accountability.'
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: 'Governance and Continuous Improvement: AIPP will maintain appropriate governance, oversight,
+      and accountability for its use of AI.'
+    quote_provenance: browser_dom
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'A trigger and consequence are stated for peer reviewers: if AIPP has reasonable grounds
+    to believe AI was used to generate or perform peer review in violation of the policy, it may stop
+    inviting that reviewer and seek a replacement review. Notification of the reviewer and a route of
+    appeal are not stated. For authors, the author section says the journal may request the original images
+    or data during review if there are concerns about their validity, and authors are expected to keep
+    the original files and provide them if requested; these sentences follow the rule on generative AI
+    and original data and images but do not themselves mention AI. Use of AI-generated references that
+    do not exist is called a breach of publication ethics, with no consequence stated. No route of appeal
+    is stated for authors.'
+  evidence:
+  - source: ai-policy
+    quote: If AIPP has reasonable grounds to believe that AI was used to generate or perform peer review
+      in violation of this policy, we may stop inviting that reviewer in the future and seek a replacement
+      review.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: During the review process, the journal may request the original images or data if there are
+      concerns about their validity.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors are expected to maintain the original image and data files during the submission and
+      publishing process and provide them if requested.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Any use of AI-generated references or citations that do not exist in real sources is a breach
+      of publication ethics.
+    quote_provenance: browser_dom
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: reproducibility
+  conditions: Applies to AI uses that could affect the findings or conclusions of an article. The Methods
+    description must give the exact tool (name, version, manufacturer), what it was used for and why.
+    The page does not mention keeping prompts or session records.
+  evidence:
+  - source: ai-policy
+    quote: AI use should be disclosed when it has the potential to affect the findings or conclusions
+      of an article
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Such uses of AI should be described in detail in the Methods section.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: To increase transparency and reproducibility, the description must include the exact tool (name,
+      version, manufacturer), what the tool was used for, and the reason for using it for the task.
     quote_provenance: browser_dom
 coherence: []

@@ -6,29 +6,62 @@ platform: null
 policy_owner: erc
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
-notes: 'Funding review: no proposal summarization, scientific-merit assessment or draft evaluations; external
-  uploads prohibited.'
+notes: Covers reviewers of ERC grant proposals. Reviewers may use AI tools only to improve the language
+  of their reports or to search for general information, without sharing proposal content or personal
+  data, and may not use them to summarise proposals, assess their merit or draft evaluations. This entry
+  is based on the ERC press release of 24 March 2026; the full guidelines for panel members and remote
+  reviewers, and the ERC Scientific Council's position on AI use in proposal preparation, are linked from
+  it but were not reviewed here.
 sources:
 - id: ai-guidance
   url: https://erc.europa.eu/news-events/news/erc-clarifies-limits-ai-use-grant-evaluation
-  role: policy
-  audience: all
+  role: announcement
+  audience: reviewers
   status: current
   authoritative: true
   fetch_method: http
-  date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: 643433ae66eea7cc214b936ab38548763c9676d705f672cfb0aa264dc1c7e609
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  date_source: stated
+  stated_date: '2026-03-24'
+  last_verified: '2026-11-20'
+  content_sha256: dbe71e06f5065589cb0502244a1dd00297b7bef8ef61c8c6b6ab464c4959df12
+  note: ERC press release summarising the new guidelines on AI use in grant evaluation.
 policies:
 - axis: reviewer_use
   permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
-  rationale: accountability
-  conditions: 'Funding review: no proposal summarization, scientific-merit assessment or draft evaluations;
-    external uploads prohibited.'
+  rationale: non_delegation
+  conditions: Applies to evaluation of grant proposals. The guidance rests on two principles, non-delegation
+    of the evaluation task and protection of confidentiality. Reviewers remain fully responsible for assessing
+    proposals and writing reviews. AI tools may not be used to summarise proposals, assess their scientific
+    merit or generate draft evaluations. Uploading any part of a proposal to external AI systems is prohibited,
+    because it would disclose sensitive information to third parties. Reviewers may use AI to improve the
+    language of their reports or to search for general information, provided no proposal content or personal
+    data is shared and no assessment is delegated. The press release does not address disclosure of AI
+    use.
   evidence:
+  - source: ai-guidance
+    quote: The ERC Scientific Council has adopted new guidelines on the use of artificial intelligence in
+      the evaluation of grant proposals.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: 'The guidance rests on two core principles: non-delegation of the evaluation task and strict
+      protection of confidentiality.'
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Reviewers remain fully responsible for assessing proposals and writing reviews.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: AI tools may not be used to summarise proposals, assess their scientific merit or generate draft
+      evaluations.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Uploading proposals, or any part of them, to external AI systems is prohibited, as this would
+      disclose sensitive information to third parties.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Limited uses are permitted.
+    quote_provenance: raw_bytes
   - source: ai-guidance
     quote: Reviewers may use AI tools to improve the language of their reports or to search for general
       information, provided no proposal content or personal data is shared and no assessment is delegated.

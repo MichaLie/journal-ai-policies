@@ -1,0 +1,18 @@
+{
+  "name": "Oxford University Press (OUP journals)",
+  "url": "https://academic.oup.com/pages/for-authors/journals/preparing-and-submitting-your-manuscript/ai-principles-for-oxford-journals/policy-on-ai-use-and-disclosure-for-oxford-journals-authors",
+  "capture_method": "browser_dom",
+  "capture_scope": "Full policy text of the rendered Oxford Academic page 'Policy on AI Use & Disclosure for OUP Journals Authors', from the page heading through 'Policy last updated on: 13 July 2026' (site navigation, sidebar, cookie banner and footer excluded), captured from the browser DOM on 20 November 2026; whitespace normalised, non-breaking spaces retained as rendered. Not a raw HTTP response.",
+  "sha256": null,
+  "text_sha256": "69d7787df1c6ca1fc4c05418f00cfbc31ef60d5d8b6d0ffe0d5288e5b9df5a37",
+  "entity": "oup",
+  "source": "ai-use-disclosure",
+  "fetched": "2026-11-20",
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "text_sha256": "69d7787df1c6ca1fc4c05418f00cfbc31ef60d5d8b6d0ffe0d5288e5b9df5a37",
+      "capture_method": "browser_dom"
+    }
+  ]
+}

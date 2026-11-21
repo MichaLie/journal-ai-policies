@@ -1,0 +1,19 @@
+{
+  "entity": "lancet",
+  "source": "info-for-authors",
+  "url": "https://www.thelancet.com/pb-assets/Lancet/authors/tl-info-for-authors-1787150940677.pdf",
+  "final_url": "https://www.thelancet.com/pb-assets/Lancet/authors/tl-info-for-authors-1787150940677.pdf",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "115e07ebf9db7ad70221ba9f14fffafa0ab7c064ea26786f1714d0ecc45ac623",
+  "text_sha256": "115e07ebf9db7ad70221ba9f14fffafa0ab7c064ea26786f1714d0ecc45ac623",
+  "bytes": 550417,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "115e07ebf9db7ad70221ba9f14fffafa0ab7c064ea26786f1714d0ecc45ac623",
+      "text_sha256": "115e07ebf9db7ad70221ba9f14fffafa0ab7c064ea26786f1714d0ecc45ac623"
+    }
+  ]
+}
