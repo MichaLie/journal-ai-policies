@@ -2,17 +2,22 @@
   "entity": "springer-nature",
   "source": "peer-review-ai",
   "url": "https://www.springernature.com/de/policies/editorial-policies/using-ai-in-peer-review",
-  "fetched": "2026-10-15",
+  "fetched": "2026-11-20",
   "capture_method": "browser_dom",
-  "capture_scope": "First visible risk-framework table; whitespace normalized. This is an excerpt, not the full page or raw HTTP bytes.",
+  "capture_scope": "Full AI-policy text of the rendered page, captured from the browser DOM on 20 November 2026 with collapsed sections expanded; whitespace normalised. Not a raw HTTP response.",
   "sha256": null,
-  "text_sha256": "d9af514ed88f51113a79375c391d1066e3b2ad24068fda018075c09bb96e9ee2",
-  "bytes": 1358,
+  "text_sha256": "6eb4a695cdf555f2b40155a6cb954d54cd040258b98ba5eb146c659b93e39c18",
+  "bytes": 9466,
   "adjudicated_sha256": "d9af514ed88f51113a79375c391d1066e3b2ad24068fda018075c09bb96e9ee2",
   "history": [
     {
       "fetched": "2026-10-15",
       "text_sha256": "d9af514ed88f51113a79375c391d1066e3b2ad24068fda018075c09bb96e9ee2"
+    },
+    {
+      "fetched": "2026-11-20",
+      "text_sha256": "6eb4a695cdf555f2b40155a6cb954d54cd040258b98ba5eb146c659b93e39c18",
+      "capture_method": "browser_dom"
     }
   ]
 }

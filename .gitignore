@@ -3,7 +3,7 @@ __pycache__/
 .DS_Store
 
 # Raw fetched bytes are large and re-fetchable. The archival hash of them lives
-# in meta.json as content_sha256; the bytes themselves stay local.
+# in meta.json as sha256 (text_sha256 is the drift hash); the bytes themselves stay local.
 snapshots/**/content.bin
 
 # text.txt IS tracked. It is the extracted visible text, ~9% of the raw size,

@@ -1,0 +1,19 @@
+{
+  "entity": "ukri",
+  "source": "ai-policy",
+  "url": "https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/use-of-generative-artificial-intelligence-in-application-preparation-and-assessment/",
+  "final_url": "https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/use-of-generative-artificial-intelligence-in-application-preparation-and-assessment/",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "da5731e776813722a323f886910bf5d46f586eeb4a74bc6bfec5df61a78726cd",
+  "text_sha256": "2eb65865b60099ece48c7dca35753327d8d6ce28fa1361d5fc07f980673806b4",
+  "bytes": 75554,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "da5731e776813722a323f886910bf5d46f586eeb4a74bc6bfec5df61a78726cd",
+      "text_sha256": "2eb65865b60099ece48c7dca35753327d8d6ce28fa1361d5fc07f980673806b4"
+    }
+  ]
+}

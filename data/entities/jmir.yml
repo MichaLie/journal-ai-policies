@@ -5,37 +5,57 @@ parent: null
 platform: null
 policy_owner: jmir
 delegates_to_journal: false
-policy_architecture: rule_with_exemptions
+policy_architecture: prose
 homepage: null
-notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+notes: 'Summary of JMIR Publications'' generative AI policy for authors, applying to any JMIR
+  Publications journal. Authors declare AI use through a dedicated question at submission and at each
+  resubmission, and generative AI should never be listed as an author. The page names a 2023 editorial
+  in the Journal of Medical Internet Research, written for authors, peer reviewers and editors, as the
+  full policy. That editorial''s rules for reviewers and editors are not covered here.'
 sources:
 - id: ai-policy
   url: https://support.jmir.org/hc/en-us/articles/13387268671771-JMIR-Publications-Editorial-Policy-on-the-use-of-generative-AI-during-manuscript-preparation
   role: policy
-  audience: all
+  audience: authors
   status: current
   authoritative: true
   fetch_method: http
   date_source: stated
-  last_verified: '2026-11-11'
-  content_sha256: d5108693ec15c79b31b1056f256d13f25d853e3a21cfe26693d0950d65c22fa2
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  last_verified: '2026-11-20'
+  content_sha256: 7e84fd977a79d8d86f06c9c96e626ad70474a8108e8dfdd346e55ebc42e2f7ae
   stated_date: '2026-10-23'
 policies:
 - axis: audit_trail
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
-  - submission_field
-  - dedicated_section
+  - unspecified
   rationale: accountability
-  conditions: Declare at submission and each resubmission. Retain the complete prompts, responses and
-    conversations, with supplementary materials as instructed.
+  conditions: Authors are asked to keep the complete original prompts, responses and transcripts on file.
+    They are asked to submit all generative AI conversations used in preparing the manuscript as a Multimedia
+    Appendix, so reviewers and readers can assess the extent of AI-generated content. Editors or JMIR
+    Publications staff may, at their discretion, ask for prompts and responses when this is necessary
+    and relevant to the editorial or peer review process.
   evidence:
   - source: ai-policy
     quote: We ask authors to keep the complete original prompts, responses, and transcripts on file and
       to submit all generative AI conversations used in the preparation of the manuscript as a Multimedia
       Appendix, so reviewers and readers can assess the extent of AI-generated content in the manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Editors or JMIR Publications staff may, at their discretion, ask authors to supply prompts/responses
+      used, if this is determined to be necessary and relevant to the editorial/peer review process.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors must fact-check statements made and are ultimately accountable for the entirety of
+      their submitted article.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are advised to carefully read the full published editorial policy on generative AI
+      usage to ensure their adherence to the required appropriate statements and/or supplementary materials.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are required to adhere to the policies with regards to author accountability
     quote_provenance: raw_bytes
 - axis: writing_drafting
   permission: permitted_with_conditions
@@ -44,11 +64,134 @@ policies:
   - submission_field
   - dedicated_section
   rationale: accountability
-  conditions: AI-generated text must be identified as such. The October 2026 update replaces acknowledgments
-    with a dedicated disclosure statement.
+  conditions: AI-generated text used in the manuscript should be presented as a blockquote, textbox or
+    figure that shows it comes from the AI tool. Use is declared through the generative AI question at
+    submission and again at each resubmission. It is published in a dedicated AI disclosure statement
+    at the end of the article. It should not be disclosed in the Acknowledgments section. The disclosure
+    should state which tasks were given to generative AI in manuscript preparation and which tools were
+    used. The policy warns against taking statements from generative AI output at face value. Authors
+    must fact-check statements made and are accountable for the whole submitted article. Submitting a
+    manuscript written solely or largely by AI without proper disclosure is academic misconduct.
   evidence:
   - source: ai-policy
     quote: We do allow the use of generative AI in ideation, but ask for full disclosure on the extent
       of use of generative AI in the ideation or writing process.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If AI-generated text is used, it should be presented as blockquote, textbox or figure, making
+      clear that this text comes from the generative AI tool used.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The submission of manuscripts that are solely or to a large extent written by generative AI
+      without proper disclosure constitutes academic misconduct.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors must disclose their use of generative AI by answering the dedicated generative AI disclosure
+      question during manuscript submission.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The information provided is compiled into a dedicated AI disclosure statement that appears
+      in its own section at the end of the published article.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are asked this question again at each resubmission, so any additional generative AI
+      use during revision can be declared.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Generative AI use should not be disclosed in the Acknowledgments section to avoid duplication.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are required to adhere to the policies with regards to author accountability
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Disclosure should be precise about the task(s) outsourced to generative AI during scientific
+      work conducted and in manuscript preparation, and using which generative AI tool(s)
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: We warn against taking statements or references from any generative AI output at face value
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors must fact-check statements made and are ultimately accountable for the entirety of
+      their submitted article.
+    quote_provenance: raw_bytes
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - submission_field
+  - dedicated_section
+  rationale: quality
+  conditions: Authors must check any reference suggested by generative AI and ensure its relevance. The
+    policy warns that AI has been seen making up references.
+  evidence:
+  - source: ai-policy
+    quote: We warn against taking statements or references from any generative AI output at face value
+      – generative AI sometimes strings words together without understanding the meaning behind it, and
+      we have seen it making up references that don't exist
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: For example, if references are suggested by generative AI, authors are responsible (accountable)
+      to check the reference and ensure its relevance to the output material, and to the manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors must disclose their use of generative AI by answering the dedicated generative AI disclosure
+      question during manuscript submission.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The information provided is compiled into a dedicated AI disclosure statement that appears
+      in its own section at the end of the published article.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - submission_field
+  - dedicated_section
+  rationale: accountability
+  conditions: Generative AI may be used in ideation. Disclosure should state precisely which tasks were
+    outsourced to generative AI during the scientific work and in manuscript preparation, and which tools
+    were used.
+  evidence:
+  - source: ai-policy
+    quote: Disclosure should be precise about the task(s) outsourced to generative AI during scientific
+      work conducted and in manuscript preparation, and using which generative AI tool(s)
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: We do allow the use of generative AI in ideation, but ask for full disclosure on the extent
+      of use of generative AI in the ideation or writing process.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors must disclose their use of generative AI by answering the dedicated generative AI disclosure
+      question during manuscript submission.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The information provided is compiled into a dedicated AI disclosure statement that appears
+      in its own section at the end of the published article.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors are required to adhere to the policies with regards to author accountability
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors must fact-check statements made and are ultimately accountable for the entirety of
+      their submitted article.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: A consequence is stated in part. Submitting a manuscript written solely or largely by generative
+    AI without proper disclosure constitutes academic misconduct. The policy does not say what action
+    follows. Author contact is stated. Editors or JMIR Publications staff may, at their discretion, ask
+    authors to supply the prompts and responses used, if this is necessary and relevant to the editorial
+    or peer review process. No route of appeal is stated.
+  evidence:
+  - source: ai-policy
+    quote: The submission of manuscripts that are solely or to a large extent written by generative AI
+      without proper disclosure constitutes academic misconduct.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Editors or JMIR Publications staff may, at their discretion, ask authors to supply prompts/responses
+      used, if this is determined to be necessary and relevant to the editorial/peer review process.
     quote_provenance: raw_bytes
 coherence: []

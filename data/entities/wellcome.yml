@@ -6,8 +6,9 @@ platform: null
 policy_owner: wellcome
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
-notes: Grant applications, not journal articles. Minimal language, translation and formatting uses are
-  exempt.
+notes: Policy on generative AI in Wellcome's grant application process, last updated 8 April 2026. It
+  covers applicants and their organisations, expert reviewers and advisory committee members, and
+  Wellcome's own use.
 sources:
 - id: ai-guidance
   url: https://wellcome.org/research-funding/guidance/policies-grant-conditions/use-of-generative-ai
@@ -16,22 +17,194 @@ sources:
   status: current
   authoritative: true
   fetch_method: http
-  date_source: none
-  last_verified: '2026-11-11'
-  content_sha256: 6fa06f38653823ac312ba9dfa21aae849b3caa9a8ba7ec5686e89a7df3c30c73
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  date_source: stated
+  stated_date: '2026-04-08'
+  last_verified: '2026-11-20'
+  content_sha256: 94682017a094bb4c04efced5fc96f5c754000c37f5e6e618ba69774263269bd0
+  note: null
 policies:
 - axis: writing_drafting
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
-  - unspecified
+  - submission_field
   rationale: accountability
-  conditions: Grant applications, not journal articles. Minimal language, translation and formatting uses
-    are exempt.
+  conditions: Applies to grant applications, not manuscripts. Substantive use, such as generating an abstract,
+    must be declared on the application form. Wellcome collects this information for monitoring and does
+    not use it in assessment. Applicants must not use generative AI to generate an entire application,
+    or sections of one, without human involvement. Applicants are responsible for the content of their
+    applications. Applicants must not input confidential information or personal data into generative
+    AI tools, and may use information from third-party sources only with consent from the copyright holder.
   evidence:
   - source: ai-guidance
     quote: Applicants for Wellcome funding can use generative AI tools when preparing a grant application
       but must tell us about any substantive use of generative AI on their application form.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: generating an abstract
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: We collect information on the use of generative AI in grant applications for monitoring purposes.
+      Anything you tell us will not be used in the assessment process.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Applicants are responsible for the content of their applications.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: to generate an entire application, or sections of an application, without human involvement.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: protect confidential information and personal data by not inputting it into generative AI tools
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: only use information from third-party sources with consent from the relevant copyright holder
+    quote_provenance: raw_bytes
+- axis: language_refinement
+  permission: permitted
+  disclosure: not_required
+  disclosure_location: []
+  rationale: unstated
+  conditions: Applies to grant applications, not manuscripts. Improving the standard of English, formatting
+    and reducing word count are listed as minimal use, which need not be declared.
+  evidence:
+  - source: ai-guidance
+    quote: 'Applicants are not required to disclose any minimal use of generative AI tools on their application
+      form. Examples of minimal use include: translating applications from other languages to English improving
+      the standard of English formatting or reducing word count'
+    quote_provenance: raw_bytes
+- axis: translation
+  permission: permitted
+  disclosure: not_required
+  disclosure_location: []
+  rationale: unstated
+  conditions: Applies to grant applications, not manuscripts. Translating an application into English counts
+    as minimal use and need not be declared.
+  evidence:
+  - source: ai-guidance
+    quote: 'Applicants are not required to disclose any minimal use of generative AI tools on their application
+      form. Examples of minimal use include: translating applications from other languages to English improving
+      the standard of English formatting or reducing word count'
+    quote_provenance: raw_bytes
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Applies to grant applications. Generative AI must not be used for uses that breach Wellcome's
+    research integrity expectations, including fabricating or falsifying data, images or results.
+  evidence:
+  - source: ai-guidance
+    quote: 'Applicants must not use generative AI tools: for uses that would breach our standard research
+      integrity expectations.'
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: fabricating, falsifying, manipulating, duplicating, altering original data, images or results
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - submission_field
+  rationale: accountability
+  conditions: Applies to grant applications. The policy covers use of generative AI in the grant application
+    process. Substantive use, such as interpreting, analysing or summarising data or generating or refining
+    code, must be declared on the application form. Wellcome collects this information for monitoring and
+    does not use it in assessment. Applicants are responsible for the content of their applications and
+    must ensure that outputs from generative AI tools used in them are valid. Applicants must not input
+    confidential information or personal data into generative AI tools, and may use information from
+    third-party sources only with consent from the copyright holder.
+  evidence:
+  - source: ai-guidance
+    quote: Use of Generative Artificial Intelligence (AI) in our grant application process
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Applicants for Wellcome funding can use generative AI tools when preparing a grant application
+      but must tell us about any substantive use of generative AI on their application form.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: interpreting, analysing or summarising data (including audio, image files) and text
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: generating or refining code
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Applicants are responsible for the content of their applications.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: ensure the outputs from generative AI tools used in their applications are valid
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: We collect information on the use of generative AI in grant applications for monitoring purposes.
+      Anything you tell us will not be used in the assessment process.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: protect confidential information and personal data by not inputting it into generative AI tools
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: only use information from third-party sources with consent from the relevant copyright holder
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: confidentiality
+  conditions: Expert reviewers and advisory committee members must not input confidential grant applications
+    into generative AI tools. Reviewers may use such tools for side tasks, such as checking whether research
+    has already been carried out or language refinement, only if they do not input the applications. Reviewers
+    must ensure the outputs are valid.
+  evidence:
+  - source: ai-guidance
+    quote: Expert reviewers and advisory committee members must not input our confidential grant applications
+      into generative AI tools. Doing this breaches the confidentiality agreement that expert reviewers and
+      advisory committee members agree to.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Reviewers may only use generative AI tools for side tasks if they do not input our confidential
+      grant applications.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: checking if research has previously been carried out sourcing existing knowledge, methods or
+      techniques language refinement
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Reviewers must ensure the outputs from generative AI tools used are valid.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Covers Wellcome's own handling of grant applications. Generative AI is not used to assess
+    application quality or to aid funding decisions. Staff have access to a limited number of enterprise
+    data protected (EDP) generative AI tools, assessed for security and safety. Information from grant
+    applications may be entered into them for processing, for example to assess scheme eligibility or remit.
+  evidence:
+  - source: ai-guidance
+    quote: We do not use generative AI tools to assess the quality of grant applications or to aid funding
+      decisions.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Wellcome staff have access to a limited number of enterprise data protected (EDP) generative
+      AI tools.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: These tools have been assessed for security and safety, and information from grant applications
+      may be entered into them for processing purposes, for example, to assess scheme eligibility or remit.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Applies to grant applications. Any concerns raised that generative AI has been misused will
+    be investigated. A trigger for review is stated. Notification of the applicant and a route of appeal
+    are not stated.
+  evidence:
+  - source: ai-guidance
+    quote: Any concerns raised that generative AI has been misused will be investigated.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Clarified that any concerns raised that generative AI has been misused in our application process
+      will be investigated.
     quote_provenance: raw_bytes
 coherence: []

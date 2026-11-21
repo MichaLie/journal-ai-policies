@@ -1,0 +1,18 @@
+{
+  "name": "NHMRC",
+  "url": "https://www.nhmrc.gov.au/about-us/resources/policy-use-generative-artificial-intelligence",
+  "capture_method": "browser_dom",
+  "capture_scope": "Full policy text of the rendered NHMRC page 'Policy on Use of Generative Artificial Intelligence in Grant Applications and Peer Review', from the page title and date through the Footnotes (site navigation, the 'Related resources' block and site footer excluded; the 'Print this page' button label is included as rendered), captured from the browser DOM on 20 November 2026; whitespace normalised. Not a raw HTTP response.",
+  "sha256": null,
+  "text_sha256": "a5850ae6e581556f232c31073efb74ef379d19e72eb8cf33014a52e1a15c0eff",
+  "entity": "nhmrc",
+  "source": "genai-policy",
+  "fetched": "2026-11-20",
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "text_sha256": "a5850ae6e581556f232c31073efb74ef379d19e72eb8cf33014a52e1a15c0eff",
+      "capture_method": "browser_dom"
+    }
+  ]
+}

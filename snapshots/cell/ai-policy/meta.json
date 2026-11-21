@@ -2,10 +2,22 @@
   "name": "Cell",
   "url": "https://www.cell.com/cell/information-for-authors/journal-policies",
   "capture_method": "browser_dom",
-  "capture_scope": "Selected visible policy passages, captured 11 November 2026. Excerpt, not a full page or raw HTTP response.",
+  "capture_scope": "The two AI sections of the rendered journal-policies page ('Declaration of generative AI and AI-assisted technologies in the manuscript preparation process' and 'Generative AI and figures, images, and artwork'), captured from the browser DOM on 20 November 2026; whitespace normalised. Excerpt of a longer page, not a raw HTTP response.",
   "sha256": null,
-  "text_sha256": "5ca0fa066ec727bad7634041a5faa8baa106346574722fa0af03adc09762a6f3",
+  "text_sha256": "eb7582bd59256061021a12e25fe8d8a19b9edb1847932d6e13673ea05682a053",
   "entity": "cell",
   "source": "ai-policy",
-  "fetched": "2026-11-11"
+  "fetched": "2026-11-20",
+  "history": [
+    {
+      "fetched": "2026-11-11",
+      "text_sha256": "5ca0fa066ec727bad7634041a5faa8baa106346574722fa0af03adc09762a6f3",
+      "capture_method": "browser_dom"
+    },
+    {
+      "fetched": "2026-11-20",
+      "text_sha256": "eb7582bd59256061021a12e25fe8d8a19b9edb1847932d6e13673ea05682a053",
+      "capture_method": "browser_dom"
+    }
+  ]
 }

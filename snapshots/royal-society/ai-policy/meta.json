@@ -1,0 +1,19 @@
+{
+  "entity": "royal-society",
+  "source": "ai-policy",
+  "url": "https://royalsociety.org/journals/ethics-policies/artificial-intelligence/",
+  "final_url": "https://royalsociety.org/journals/ethics-policies/artificial-intelligence/",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "41fa6c62171b0e7a6a04818cd58b5ee3beff2ccd8be84da7fb8dfa979d5b8a8c",
+  "text_sha256": "a8e5b003d18c24babad4e699956d19e304b11a68b4966939c687331ebc13c153",
+  "bytes": 94019,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "41fa6c62171b0e7a6a04818cd58b5ee3beff2ccd8be84da7fb8dfa979d5b8a8c",
+      "text_sha256": "a8e5b003d18c24babad4e699956d19e304b11a68b4966939c687331ebc13c153"
+    }
+  ]
+}

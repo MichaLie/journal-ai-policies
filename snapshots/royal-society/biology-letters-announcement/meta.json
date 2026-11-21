@@ -1,0 +1,19 @@
+{
+  "entity": "royal-society",
+  "source": "biology-letters-announcement",
+  "url": "https://royalsociety.org/blog/2025/02/new-ai-policy-to-be-launched-on-biology-letters/",
+  "final_url": "https://royalsociety.org/blog/2025/02/new-ai-policy-to-be-launched-on-biology-letters/",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "ccbcdae740c366f7c03ed67946d4f3bf0bcc081300df1a267b888820c5c93fa8",
+  "text_sha256": "b6c1ca006be9807d581d3a3641718a325dc0f120e11f705ed1047c0345576aa7",
+  "bytes": 112735,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "ccbcdae740c366f7c03ed67946d4f3bf0bcc081300df1a267b888820c5c93fa8",
+      "text_sha256": "b6c1ca006be9807d581d3a3641718a325dc0f120e11f705ed1047c0345576aa7"
+    }
+  ]
+}

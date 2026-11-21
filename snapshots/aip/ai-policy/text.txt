@@ -1,1 +1,29 @@
-The use of AI tools to prepare manuscripts or improve the readability of original content created by the authors is permitted and does not require disclosure. AI use should be disclosed when it has the potential to affect the findings or conclusions of an article, including but not limited to: Such uses of AI should be described in detail in the Methods section. To increase transparency and reproducibility, the description must include the exact tool (name, version, manufacturer), what the tool was used for, and the reason for using it for the task. To protect the confidentiality of the manuscript and review process, peer reviewers and editors may not upload any part of a submitted manuscript or the peer review report into an AI tool that is not provided by or authorized by the publisher, including local LLMs.
+AI Policy
+AIP Publishing AI Principles
+These principles guide how AIP Publishing uses AI, evaluates AI technologies and partnerships, and stewards the content and data entrusted to AIPP.
+Protecting the Integrity of the Scientific Record: AIPP will use AI in ways that protect the quality, accuracy, reliability, and trustworthiness of the scientific record.
+Stewardship of Content and Data: AIPP will protect intellectual property, privacy, confidentiality, attribution, and provenance while supporting appropriate access to scientific content.
+Human Accountability: AI is a tool to inform, assist, and accelerate human work, not to replace human judgment and accountability.
+Transparency and Provenance: AIPP will be transparent about how it uses AI and expects material or substantive uses of AI in scholarly work to be appropriately disclosed.
+Fair and Responsible Use: AIPP will evaluate AI applications based on their purpose, potential benefits, rights implications, risks, and impact on the research community.
+Value and Responsible Innovation: AIPP’s AI engagements should create meaningful value for the physical sciences community and support the sustainability of scholarly publishing.
+Governance and Continuous Improvement: AIPP will maintain appropriate governance, oversight, and accountability for its use of AI.
+These principles are supported by AIPP policies and guidance that establish specific expectations for responsible AI use and are informed by recognized standards and best practices in scholarly publishing.
+For Authors
+The use of AI tools to prepare manuscripts or improve the readability of original content created by the authors is permitted and does not require disclosure.
+AI use should be disclosed when it has the potential to affect the findings or conclusions of an article, including but not limited to:
+Analysis of content, data, or images
+Designing or conducting experiments
+Extracting or synthesizing information
+Such uses of AI should be described in detail in the Methods section. To increase transparency and reproducibility, the description must include the exact tool (name, version, manufacturer), what the tool was used for, and the reason for using it for the task.
+As outlined in the authorship policies, AI tools cannot be a coauthor. Any content generated or edited with the help of AI must be critically analyzed by the authors, who are responsible for the integrity, accuracy, and originality of their submitted work.
+Any use of AI-generated references or citations that do not exist in real sources is a breach of publication ethics.
+Generative AI should not be used to create, alter, or manipulate original research data results or make adjustments to original images that alter the accuracy or interpretation of the original material.
+During the review process, the journal may request the original images or data if there are concerns about their validity. Authors are expected to maintain the original image and data files during the submission and publishing process and provide them if requested.
+Best practices:
+As AI tools continue to evolve, it is important to use them strategically and responsibly.
+Verify the output of an AI tool to ensure that it is scientifically sound, that it uses terminology appropriate to the field, and that any factual statements can be corroborated by reputable sources.
+Be aware that using generative AI in analysis and interpretation of results might make the scientific output harder to reproduce. Because of inherent variability of generative AI output as well as the potential for hallucinations, the results can vary for users duplicating the same steps and prompts.
+Always review the terms and conditions of the tools that were used, such as who holds the rights to the generated content, restrictions on commercial usage, and how the tool provider may retain, reuse, or redistribute any uploaded or generated content. If required by the provider, credit the tool appropriately in the manuscript.
+For Editors and Reviewers
+To protect the confidentiality of the manuscript and review process, peer reviewers and editors may not upload any part of a submitted manuscript or the peer review report into an AI tool that is not provided by or authorized by the publisher, including local LLMs. If AIPP has reasonable grounds to believe that AI was used to generate or perform peer review in violation of this policy, we may stop inviting that reviewer in the future and seek a replacement review.

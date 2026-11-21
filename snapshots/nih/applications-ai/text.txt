@@ -1,0 +1,24 @@
+Supporting Fairness and Originality in NIH Research Applications
+Notice Number:
+NOT-OD-25-132
+Key Dates
+Release Date:
+July 17, 2025
+Related Announcements
+July 23, 2018 – NIH/AHRQ Application Submission/Resubmission Policy. See Notice NOT-OD-18-197.
+Issued by
+NATIONAL INSTITUTES OF HEALTH (NIH)
+Purpose
+NIH is providing guidance to researchers on the appropriate usage of artificial intelligence (AI) to maintain the fairness and originality of NIH’s research application process. NIH is also instituting a new policy limiting the number of applications that NIH will consider per Principal Investigator per calendar year.
+Background
+NIH has recently observed instances of Principal Investigators submitting large numbers of applications, some of which may have been generated with AI tools. While AI may be a helpful tool in reducing the burden of preparing applications, the rapid submission of large numbers of research applications from a single Principal Investigator may unfairly strain NIH’s application review processes. The percentage of applications from Principal Investigators submitting an average of more than six applications per year is relatively low; however, there is evidence that the use of AI tools has enabled Principal Investigators to submit more than 40 distinct applications in a single application submission round.
+NIH will continue to employ the latest technology in detection of AI-generated content to identify AI generated applications, but it is imperative that all NIH research applications are consistent with the NIH Grants Policy Statement (GPS) Section 2.1.2’s expectation that institutions and affiliated research teams propose original ideas for funding. AI tools may be appropriate to assist in application preparation for limited aspects or in specific circumstances, but researchers should be aware that using AI comes with its own risks. AI use may result in plagiarism, fabricated citations, or other kinds of research misconduct. As a reminder, NIH oversees research misconduct investigations and acts on non-compliance (see GPS Section 4.1.27).
+Policy
+NIH will not consider applications that are either substantially developed by AI, or contain sections substantially developed by AI, to be original ideas of applicants. If the detection of AI is identified post award, NIH may refer the matter to the Office of Research Integrity to determine whether there is research misconduct while simultaneously taking enforcement actions including but not limited to disallowing costs, withholding future awards, wholly or in part suspending the grant, and possible termination.
+NIH will only accept six new, renewal, resubmission, or revision applications from an individual Principal Investigator/Program Director or Multiple Principal Investigator for all council rounds in a calendar year. This policy applies to all activity codes except T activity codes and R13 Conference Grant Applications. Based on recent data, this limit will affect a relatively small number of Principal Investigators while enabling the NIH to maintain consistently high-quality grant application review and appropriately steward taxpayer dollars.
+Effective Date
+This policy is effective for applications submitted to the September 25, 2025, receipt date and beyond.
+Inquiries
+Please direct all inquiries to:
+NIH Office of Science Policy:
+SciencePolicy@od.nih.gov

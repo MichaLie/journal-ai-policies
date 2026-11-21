@@ -256,7 +256,7 @@
               "reproducibility",
               "unstated"
             ],
-            "description": "The GROUND of the rule, not its verdict. The ERC and DFG reach opposite conclusions from different principles; recording only the verdict loses that."
+            "description": "The GROUND of the rule, not its verdict: the reason the source itself gives (confidentiality, non-delegation, accountability…). Two organisations can reach the same verdict on different grounds; recording only the verdict loses that. Use `unstated` when the source gives no reason."
           },
           "conditions": {
             "type": [

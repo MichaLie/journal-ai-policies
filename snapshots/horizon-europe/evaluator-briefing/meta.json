@@ -1,0 +1,19 @@
+{
+  "entity": "horizon-europe",
+  "source": "evaluator-briefing",
+  "url": "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/experts/standard-briefing-slides-for-experts_he_en.pdf",
+  "final_url": "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/experts/standard-briefing-slides-for-experts_he_en.pdf",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "9af85191d7fb11e07c424b3b8fa6a6dda361038629fd923794dd4d3d0e858264",
+  "text_sha256": "9af85191d7fb11e07c424b3b8fa6a6dda361038629fd923794dd4d3d0e858264",
+  "bytes": 2937601,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "9af85191d7fb11e07c424b3b8fa6a6dda361038629fd923794dd4d3d0e858264",
+      "text_sha256": "9af85191d7fb11e07c424b3b8fa6a6dda361038629fd923794dd4d3d0e858264"
+    }
+  ]
+}

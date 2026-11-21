@@ -6,8 +6,11 @@ platform: null
 policy_owner: era
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
-notes: Non-binding fourth edition, October 2026. Substantial use, human responsibility, checkpoints and
-  reproducibility; not a journal submission rule.
+notes: Non-binding ERA Forum guidelines for researchers, research organisations and research funders,
+  including AI use in peer review. This fourth version was published on 15 October 2026. The guidelines
+  do not replace legislation or institutional, disciplinary, funder and other requirements; where specific
+  legal or policy requirements apply, these take precedence. They state that AI systems are neither authors
+  nor co-authors nor owners.
 sources:
 - id: ai-guidance
   url: https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en
@@ -16,22 +19,366 @@ sources:
   status: current
   authoritative: true
   fetch_method: http
-  date_source: none
-  last_verified: '2026-11-11'
+  date_source: stated
+  stated_date: '2026-10-15'
+  last_verified: '2026-11-20'
   content_sha256: 0935796ec133fea77d609ad2d9bb25dfdd7e37f8ca15ca0c8dde60521f63fe0d
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  note: null
 policies:
 - axis: research_process_ai
   permission: permitted_with_conditions
-  disclosure: encouraged
+  disclosure: required
   disclosure_location:
   - unspecified
   rationale: accountability
-  conditions: Non-binding fourth edition, October 2026. Substantial use, human responsibility, checkpoints
-    and reproducibility; not a journal submission rule.
+  conditions: Recommendations in non-binding guidelines. Researchers remain ultimately responsible for
+    scientific output. They disclose substantial AI use in research or reporting and describe what it
+    contributed. Carrying out a literature review, identifying research gaps, formulating research aims
+    and developing hypotheses with generative AI are substantial use. Disclosure is expected where AI
+    shapes or influences human judgement or may affect the results, and is advised in case of doubt.
+    Researchers also describe how they oversaw and verified AI contributions. When complex tasks are run
+    autonomously, for example with AI agents, researchers set checkpoints so that they validate critical
+    decisions. Using AI agents is never a delegation of control or responsibility. If an agent is given
+    access to sensitive information, the researcher constrains potential confidentiality breaches and
+    remains accountable for how the agent uses that information. Researchers take care not to upload
+    unpublished or sensitive work to an external AI system unless there are assurances that the data
+    will not be re-used. They take care not to provide third parties' personal data to external generative
+    AI systems unless the data subject has given consent and they have a clear goal for its use. For
+    funding proposals, funders are recommended to ask applicants to declare substantial use of generative
+    AI in preparing their application and to describe its role in the research activities proposed and
+    carried out.
   evidence:
   - source: ai-guidance
     quote: Researchers disclose which AI tools or systems were used substantially10 in their research
       or reporting processes and describe what they contributed or were used for.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: These guidelines are non-binding.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: When aiming to implement complex tasks autonomously, for example with AI agents, researchers
+      identify and ensure relevant check points throughout the process to ensure that critical decisions
+      (for example methodological) are validated by the researchers.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Understand that they remain ultimately responsible for scientific output.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In particular, disclosure is expected if the use of AI shapes or influences human judgement,
+      or if the contribution of AI may affect the results, their meaning or interpretation.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In case of doubt, disclosure is advised.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Researchers also describe meaningful information about oversight and verification strategies
+      (such as measures to identify hallucinations, mitigate bias, etc.) in order to enable readers to
+      understand and assess the validity of AI-assisted work.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Therefore, they protect unpublished or sensitive work (such as their own or others’
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: taking care not to upload it into an external AI system unless there are assurances that the
+      data will not be re-used
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Researchers take care not to provide third parties’ personal data to external generative AI
+      systems unless the data subject (individual) has given their consent and researchers have a clear
+      goal for which the personal data are to be used
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: The use of AI agents may never be considered a delegation of control or responsibility.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: If an AI agent is granted access to sensitive information following a suitability assessment,
+      the researcher shall instruct and constrain potential confidentiality breaches and remain accountable
+      for how the agent uses that sensitive information.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: However, using it as a method or source, interpreting data analysis, carrying out a literature
+      review, identifying research gaps, formulating research aims, developing hypotheses, etc. is substantial
+      use.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Request transparency from applicants on their use of generative AI, facilitating ways to report
+      it.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Applicants declare if they substantially21 used generative AI tool(s) to prepare their application.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Applicants provide information on the role of generative AI in the research activities proposed
+      and carried out.
+    quote_provenance: raw_bytes
+- axis: language_refinement
+  permission: permitted
+  disclosure: not_required
+  disclosure_location: []
+  rationale: unstated
+  conditions: Purely technical or minor uses that should not affect substance, such as spellchecking,
+    grammar correction, polishing and formatting, generally need not be disclosed. Using generative AI
+    as a basic editorial support tool is not a substantial use. Disclosure is expected if AI use shapes
+    or influences human judgement or may affect the results. In case of doubt, disclosure is advised.
+  evidence:
+  - source: ai-guidance
+    quote: Purely technical or minor uses that should not affect substance, such as spellchecking, grammar
+      correction, polishing or formatting, generally do not need to be disclosed.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In this case, for example, using generative AI as a basic editorial support tool is not a substantial
+      use.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In particular, disclosure is expected if the use of AI shapes or influences human judgement,
+      or if the contribution of AI may affect the results, their meaning or interpretation.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: In case of doubt, disclosure is advised.
+    quote_provenance: raw_bytes
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: quality
+  conditions: Recommendations in non-binding guidelines. Generative AI may produce plausible-sounding
+    but incorrect citations, so researchers check all references, the content of the citations and the
+    summaries. Final responsibility for a citation and its correctness remains with the researcher. Using
+    generative AI as a source is substantial use, and researchers disclose substantial use.
+  evidence:
+  - source: ai-guidance
+    quote: These guidelines are non-binding.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Generative AI models may generate plausible sounding but incorrect citations, which can mislead
+      users who rely on those sources for research or verification.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Therefore, researchers are responsible for checking all the references and content of the citations
+      and the summaries.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: the final responsibility on the citation and its correctness remains with the researcher.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: However, using it as a method or source, interpreting data analysis, carrying out a literature
+      review, identifying research gaps, formulating research aims, developing hypotheses, etc. is substantial
+      use.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Researchers disclose which AI tools or systems were used substantially10 in their research
+      or reporting processes and describe what they contributed or were used for.
+    quote_provenance: raw_bytes
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Content should not be fabricated, falsified or plagiarised. For example, researchers do
+    not use generative AI to falsify, alter or manipulate original research data.
+  evidence:
+  - source: ai-guidance
+    quote: Content should not be fabricated, falsified or plagiarised.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: For example, researchers do not use generative AI to falsify, alter or manipulate original research
+      data.
+    quote_provenance: raw_bytes
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: encouraged
+  disclosure_location:
+  - unspecified
+  rationale: reproducibility
+  conditions: Authors decide whether to keep or share prompts, logs, model versions and parameters, based
+    on whether these are needed to understand, reproduce or audit the research. This is particularly
+    relevant when AI agents perform sequences of research tasks or contribute to methodological decisions.
+  evidence:
+  - source: ai-guidance
+    quote: Authors decide whether prompts, logs, model versions, parameters and other information should
+      be retained or shared, based on whether these are needed to understand, reproduce or audit the research,
+      or to assess its validity.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: This is particularly relevant when AI agents perform sequences of research tasks or contribute
+      to methodological decisions.
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Recommendations in non-binding guidelines. They address evaluators, peer reviewers and
+    editors. Peer review remains a fundamentally human process. AI may support it but must not replace the accountability, discernment
+    and professional responsibility of reviewers and editors. AI may be used only for supporting tasks,
+    such as clarifying concepts, background research or language polishing, and only when permitted. The
+    judgement of scientific quality and merit must not be delegated to AI, and AI should not draft evaluation
+    reports. Reviewers and editors remain fully accountable for all assessments, recommendations,
+    judgements and decisions. Unpublished material should not be disclosed through non-secured AI tools
+    or uploaded to AI systems that cannot guarantee confidentiality, data protection and non-use for
+    training. Reviewers use secure, trusted tools, preferably provided by the institution, funder or
+    publisher, and verify factual claims, references and substantive information against original
+    sources. Substantive use, and any other use required by applicable policies, should be disclosed.
+    Where funders allow AI in evaluation, they are to support the allowed uses and help evaluators
+    disclose when and for what purposes AI was used. Funders that give evaluators internal AI tools are
+    to ensure that the tools respect confidentiality and data processing requirements.
+  evidence:
+  - source: ai-guidance
+    quote: These guidelines are non-binding.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: 'Evaluators, peer reviewers and editors should:'
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Use generative AI only for certain supporting tasks
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: If research funding organisations allow the use of generative AI in evaluation-related activities,
+      they must provide active support for allowed uses and facilitate evaluators to disclose when and
+      for what purposes AI has been used.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Peer review remains a fundamentally human process
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: AI may support that process, but it must not replace the accountability, discernment and professional
+      responsibility of reviewers and editors.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Use it only when permitted and where it is the most appropriate tool available.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: For example, it can be used to clarify concepts, background research or support language-polishing.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Ensure that the judgement task is not delegated to an AI tool when assessing scientific quality
+      and merit of proposals and papers.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: But AI can’t be used to draft evaluation reports or assess scientific merit.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: 'Confidentiality and data protection: do not disclose unpublished proposals, manuscripts, review
+      reports or key ideas through non-secured AI tools, including through excerpts or prompts.'
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Remain fully accountable for all assessments, recommendations, judgements and decisions.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: 'Confidentiality is non-negotiable: unpublished materials should not be uploaded to AI systems
+      that cannot guarantee high levels of confidentiality, data protection and non-use for training.'
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Ensure the use of secure, trusted tools17; preferably provided by the institution, funder or
+      publisher.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Verify factual claims, references and any substantive information used against original sources.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Be transparent about its use.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Disclose substantive AI use, and any other use required by applicable policies, in line with
+      relevant community and involved institutions standards.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: When research funding organisations provide access to internal AI tools to evaluators, they
+      will provide appropriate details on when and how to use them, and on potential risks and limitations.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: They will also ensure that the tools respect confidentiality and data processing requirements
+      according to relevant legislation and policies.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Recommendations in non-binding guidelines. Covers editors and research funding organisations.
+    For funders, the material is funding proposals. The guidelines describe no specific publisher or
+    funder AI system. They refer in general terms to funders' internal AI tools and to publisher-sanctioned
+    or institutional tools. Editors do not delegate the judgement of scientific quality and merit to AI, and AI must
+    not replace their accountability, discernment and professional responsibility. AI should not make
+    or substitute for core peer-review judgements, including whether a manuscript should be accepted or
+    rejected. Editors do not disclose unpublished material through non-secured AI tools, and they disclose
+    substantive AI use. Funders remain fully responsible for their own use of generative AI, keep a balance
+    between efficiency, human involvement, supervision and safeguards, and are transparent about that
+    use. Non-delegation of the evaluation of scientific merit must be present throughout the funding process.
+    Funders using AI in internal processes remain aware that applications may contain hidden prompts.
+    Where relevant, they set clear rules prohibiting such manipulation and introduce safeguards.
+    Experimenting with AI demands high levels of transparency with applicants and reviewers while
+    protecting applicants' rights, such as fair treatment, confidentiality and appeal procedures.
+  evidence:
+  - source: ai-guidance
+    quote: These guidelines are non-binding.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: 'Evaluators, peer reviewers and editors should:'
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Ensure that the judgement task is not delegated to an AI tool when assessing scientific quality
+      and merit of proposals and papers.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: AI may support that process, but it must not replace the accountability, discernment and professional
+      responsibility of reviewers and editors.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: AI should not be used to make or substitute for core peer-review judgements, including assessing
+      novelty, originality, significance, whether evidence supports a research claim, or whether a manuscript
+      should be accepted or rejected.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: 'Confidentiality and data protection: do not disclose unpublished proposals, manuscripts, review
+      reports or key ideas through non-secured AI tools, including through excerpts or prompts.'
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Disclose substantive AI use, and any other use required by applicable policies, in line with
+      relevant community and involved institutions standards.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Research funding organisations remain fully responsible for the use of generative AI and agentic
+      AI in their activities, in line with the accountability principle that emphasises responsibility
+      and human oversight.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Generative AI could be used to improve internal processes for funders, keeping a balance between
+      efficiency, human involvement, supervision and safeguards (including safeguards against biased,
+      discriminatory or erroneous outcomes, particularly in screening, ranking, prioritisation or exclusion)
+      and being transparent about its use.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: This is especially sensitive concerning the evaluation and funding of proposals, where confidentiality
+      and non-delegation of the evaluation of scientific merit must be present throughout the whole funding
+      process.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: When using generative AI as part of the internal processes, take into account the risks related
+      to hidden prompts22 in content received from third parties, in particular in applications and proposals.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Research funding organisations remain aware that content may contain hidden prompts or invisible
+      instructions intended to influence generative AI tools.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: When research funding organisations provide access to internal AI tools to evaluators, they
+      will provide appropriate details on when and how to use them, and on potential risks and limitations.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Secure, trusted, publisher-sanctioned or institutional tools are likely to be necessary for wider
+      adoption and trust.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Where relevant, they set clear rules prohibiting such manipulation and introduce appropriate
+      safeguards, in particular in the IT systems involved in the processing of that information.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: Experimenting with AI demands high levels of transparency with applicants and reviewers, reporting
+      on conclusions and lessons learnt while protecting the rights of applicants (e.g. fair treatment,
+      confidentiality, appealing procedures etc.).
     quote_provenance: raw_bytes
 coherence: []

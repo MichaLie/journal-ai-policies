@@ -1,10 +1,19 @@
 {
-  "name": "Taylor & Francis",
-  "url": "https://taylorandfrancis.com/our-policies/ai-policy/",
-  "final_url": "https://taylorandfrancis.com/our-policies/ai-policy/",
-  "sha256": "a678b1c8d000353bad9386d6e5e9d623f7e90b9c538a8b74f5fc2c57edc50517",
-  "text_sha256": "23be2a6323e376d08d694e3bf1be42ef1b8885d1b718b6715ddfabb43133fdf3",
   "entity": "taylor-francis",
   "source": "ai-policy",
-  "fetched": "2026-11-11"
+  "url": "https://taylorandfrancis.com/our-policies/ai-policy/",
+  "final_url": "https://taylorandfrancis.com/our-policies/ai-policy/",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "6fe8a9af585634f85b35c10c048b2f7c5836be5820634c5a54a6112625bbe49d",
+  "text_sha256": "23be2a6323e376d08d694e3bf1be42ef1b8885d1b718b6715ddfabb43133fdf3",
+  "bytes": 112322,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "6fe8a9af585634f85b35c10c048b2f7c5836be5820634c5a54a6112625bbe49d",
+      "text_sha256": "23be2a6323e376d08d694e3bf1be42ef1b8885d1b718b6715ddfabb43133fdf3"
+    }
+  ]
 }

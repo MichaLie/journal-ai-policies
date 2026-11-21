@@ -7,7 +7,11 @@ policy_owner: acs
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
 homepage: null
-notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+notes: One ACS Publications policy covers authors, editors and peer reviewers. Peer reviewers must not use
+  generative AI to generate, draft or revise their reports, and editors must not hand editorial judgement
+  or decisions to it. Confidential manuscript material may go only into AI tools that ACS has authorised
+  and built into its editorial or peer review systems. AI-generated images cannot be used in Table of
+  Contents graphics.
 sources:
 - id: ai-policy
   url: https://researcher-resources.acs.org/publish/aipolicy
@@ -17,34 +21,366 @@ sources:
   authoritative: true
   fetch_method: http
   date_source: stated
-  last_verified: '2026-11-11'
-  content_sha256: f5b741386422c85c92ce976c0b335630738b5757c82f8ae5f500ae6d10aaf8b4
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  last_verified: '2026-11-20'
+  content_sha256: 6b2ba6c4f1aa11fc61b7c2948fcd3726e33726a2896bb80b721547e120b0e5c7
+  note: null
   stated_date: '2026-11-06'
 policies:
+- axis: language_refinement
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  - methods
+  rationale: accountability
+  conditions: Improving the language, readability or organisation of the authors' own text is a permitted
+    use. Authors must review and verify AI-assisted content. Disclosure is required where generative AI
+    creates or substantially modifies text. Tools that only check spelling, grammar or formatting without
+    generating new content are not treated as generative AI under the policy. Brief disclosures go in
+    the Acknowledgments; more extensive use is described in the Methods or another appropriate section.
+  evidence:
+  - source: ai-policy
+    quote: Permitted uses include improving the language, readability, or organization of the authors’
+      own text; translating text; and supporting literature searches.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors must review and verify all AI-assisted content.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors remain fully responsible for their submission, including any AI-generated material contained
+      within it.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Tools that only check spelling, grammar, or formatting without generating new content are not
+      generative AI for purposes of this policy.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors must disclose the use of generative AI tools to create or substantially modify text,
+      permitted images and figures, or other submission content.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Brief disclosures should be included in the Acknowledgments section. More extensive use of generative
+      AI must be described in the Methods section or another appropriate section of the manuscript.
+    quote_provenance: raw_bytes
+- axis: translation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  - methods
+  rationale: accountability
+  conditions: Translating text is a permitted use. Authors must review and verify AI-assisted content
+    and disclose generative AI that creates or substantially modifies text. Brief disclosures go in the
+    Acknowledgments; more extensive use is described in the Methods or another appropriate section.
+  evidence:
+  - source: ai-policy
+    quote: Permitted uses include improving the language, readability, or organization of the authors’
+      own text; translating text; and supporting literature searches.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors must review and verify all AI-assisted content.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors remain fully responsible for their submission, including any AI-generated material contained
+      within it.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors must disclose the use of generative AI tools to create or substantially modify text,
+      permitted images and figures, or other submission content.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Brief disclosures should be included in the Acknowledgments section. More extensive use of generative
+      AI must be described in the Methods section or another appropriate section of the manuscript.
+    quote_provenance: raw_bytes
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: Supporting literature searches is a permitted use. Generative AI may not create substantial
+    amounts of literature review content. Authors must ensure appropriate attribution or citation.
+  evidence:
+  - source: ai-policy
+    quote: Permitted uses include improving the language, readability, or organization of the authors’
+      own text; translating text; and supporting literature searches.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors may not use generative AI to create, alter, or enhance (i) a paper’s underlying data
+      or results; (ii) any image that represents research results; (iii) the substance of their scientific
+      reasoning, analysis, or interpretation of results; or (iv) substantial amounts of commentary, analysis,
+      or literature review content.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors must ensure that all submitted content is accurate, non-infringing, and free from bias,
+      and that it does not plagiarize others’ work and contains appropriate attribution or citation.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors remain fully responsible for their submission, including any AI-generated material contained
+      within it.
+    quote_provenance: raw_bytes
 - axis: writing_drafting
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - acknowledgements
+  - methods
   rationale: accountability
-  conditions: 'Assistance only: no generation of underlying results, scientific reasoning or substantial
-    commentary/review content. Research-method uses have a separate exception.'
+  conditions: Generative AI may assist in preparing submissions. It may not create, alter or enhance the
+    substance of scientific reasoning, analysis or interpretation, or substantial amounts of commentary,
+    analysis or literature review content. Use of generative AI to create or substantially modify text
+    must be disclosed. Brief disclosures go in the Acknowledgments; more extensive use is described in
+    the Methods or another appropriate section.
   evidence:
   - source: ai-policy
     quote: Authors may use generative AI tools to assist in preparing their submissions, provided that
       the use complies with this policy and is disclosed where required below.
     quote_provenance: raw_bytes
-- axis: reviewer_use
+  - source: ai-policy
+    quote: Authors must disclose the use of generative AI tools to create or substantially modify text,
+      permitted images and figures, or other submission content.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors may not use generative AI to create, alter, or enhance (i) a paper’s underlying data
+      or results; (ii) any image that represents research results; (iii) the substance of their scientific
+      reasoning, analysis, or interpretation of results; or (iv) substantial amounts of commentary, analysis,
+      or literature review content.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors remain fully responsible for their submission, including any AI-generated material contained
+      within it.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Brief disclosures should be included in the Acknowledgments section. More extensive use of generative
+      AI must be described in the Methods section or another appropriate section of the manuscript.
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - figure_caption
+  - acknowledgements
+  - methods
+  rationale: accountability
+  conditions: Use of generative AI to create or substantially modify permitted images and figures must
+    be disclosed. Brief disclosures go in the Acknowledgments; more extensive use is described in the Methods
+    or another appropriate section. AI-generated images and graphics also need a statement in the figure
+    caption on how they were created. Authors remain fully responsible for any AI-generated material. AI-generated
+    cover art is permitted with disclosure and confirmation that the tool's terms allow commercial use,
+    that the authors hold enough rights to grant ACS use, and that the artwork does not infringe third-party
+    rights. AI-generated images cannot be used in Table of Contents graphics, as these have no caption
+    or disclosure mechanism for transparent attribution.
+  evidence:
+  - source: ai-policy
+    quote: Authors must disclose the use of generative AI tools to create or substantially modify text,
+      permitted images and figures, or other submission content.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Brief disclosures should be included in the Acknowledgments section. More extensive use of generative
+      AI must be described in the Methods section or another appropriate section of the manuscript.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: For AI-generated images or graphics, authors must also include a statement in the relevant figure
+      caption describing how the content was created.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors remain fully responsible for their submission, including any AI-generated material contained
+      within it.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: 'AI-generated artwork is permitted for journal covers, provided authors must disclose their use
+      of generative AI, comply with all other terms of this policy, and confirm that:'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The AI tool’s terms of use allow commercial use
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The authors hold enough rights to grant ACS rights to use the art on a journal cover
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The artwork does not infringe third-party rights
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: AI-generated images cannot be used in ToC graphics, as there is no accompanying caption or disclosure
+      mechanism to provide transparent attribution and explain how AI was used.
+    quote_provenance: raw_bytes
+- axis: data_visualisation
+  permission: prohibited
+  disclosure: required
+  disclosure_location:
+  - methods
+  - figure_caption
+  rationale: unstated
+  conditions: Generative AI may not create, alter or enhance any image that represents research results.
+    The restriction does not apply where AI or machine learning is part of the research methodology, such
+    as AI-based image reconstruction, if fully described in the Methods section with original data available
+    on request. Standard image processing is permitted if applied to the entire image without obscuring,
+    removing or introducing features, and must be disclosed in the Methods section or figure caption.
+    Disclosure applies only to these permitted exceptions.
+  evidence:
+  - source: ai-policy
+    quote: Authors may not use generative AI to create, alter, or enhance (i) a paper’s underlying data
+      or results; (ii) any image that represents research results;
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The above restriction does not apply where AI or machine learning is part of the research methodology
+      (e.g., predictive modeling, AI-based image reconstruction, or AI-predicted structures), provided
+      the use is fully described in the Methods section and the original data are made available to editors
+      and reviewers on request.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Standard image processing is permitted if it is applied to the entire image, does not obscure,
+      remove, or introduce features, and is disclosed in the Methods section or figure caption.
+    quote_provenance: raw_bytes
+- axis: passing_off
   permission: prohibited
   disclosure: not_addressed
   disclosure_location: []
-  rationale: accountability
-  conditions: Report generation, drafting and revision are prohibited. Confidential material may enter
-    only ACS-authorized integrated tools.
+  rationale: unstated
+  conditions: Generative AI may not create, alter or enhance a paper's underlying data or results.
+  evidence:
+  - source: ai-policy
+    quote: Authors may not use generative AI to create, alter, or enhance (i) a paper’s underlying data
+      or results;
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: unstated
+  conditions: Where AI or machine learning is part of the research methodology, the use must be fully
+    described in the Methods section and the original data made available to editors and reviewers on
+    request.
+  evidence:
+  - source: ai-policy
+    quote: The above restriction does not apply where AI or machine learning is part of the research methodology
+      (e.g., predictive modeling, AI-based image reconstruction, or AI-predicted structures), provided
+      the use is fully described in the Methods section and the original data are made available to editors
+      and reviewers on request.
+    quote_provenance: raw_bytes
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - acknowledgements
+  - methods
+  rationale: unstated
+  conditions: Disclosures identify the tool, its version or model where available, the purpose and the
+    affected portions. Brief disclosures go in the Acknowledgments; more extensive use is described in
+    the Methods or another appropriate section. Retention of prompts or session records is not stated.
+  evidence:
+  - source: ai-policy
+    quote: Disclosures must identify the AI tool used (including the version or model, where available),
+      the purpose of its use, and the portion(s) of the manuscript affected.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Brief disclosures should be included in the Acknowledgments section. More extensive use of generative
+      AI must be described in the Methods section or another appropriate section of the manuscript.
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: confidentiality
+  conditions: Reviewers remain responsible for all comments and recommendations and must not use generative
+    AI to generate, draft or revise their reports. Confidential materials may be shared only with AI
+    tools that ACS has authorized and integrated into its review systems. Sharing confidential materials
+    with any other AI tool is a breach of confidentiality. ACS may respond to violations by removing a
+    reviewer from the peer review process or suspending or terminating reviewer privileges.
   evidence:
   - source: ai-policy
     quote: peer reviewers remain responsible for all comments and recommendations provided during peer
       review and must not use generative AI tools to generate, draft, or revise their peer review reports.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Submissions, associated data, peer review reports, author and reviewer correspondence, and other
+      materials obtained through the editorial and peer review processes constitute confidential materials.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Editors and peer reviewers must maintain the confidentiality of such materials and must not upload,
+      share, or disclose them to AI tools or platforms other than those that ACS has authorized and integrated
+      into its editorial or peer review system(s)
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Where confidential materials are uploaded, shared, or disclosed to an AI tool or platform other
+      than an ACS-Authorized Tool, such use will constitute a breach of confidentiality and violation of
+      this policy.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: In response to an editor’s or peer reviewer’s violation of this policy, ACS may take such actions
+      it deems appropriate, including but not limited to removal from the peer review process and suspension
+      or termination of reviewer or editor privileges.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: confidentiality
+  conditions: Editors remain responsible for all editorial assessments and decisions and must not delegate
+    editorial judgement or decision-making to generative AI. Confidential materials may be shared only
+    with ACS-Authorized Tools integrated into its editorial or peer review systems; sharing them with any
+    other AI tool is a breach of confidentiality. ACS may respond to violations by suspending or terminating
+    editor privileges. The policy names ACS-Authorized Tools but does not describe these tools or how ACS
+    itself uses AI on submitted manuscripts.
+  evidence:
+  - source: ai-policy
+    quote: Editors remain responsible for all editorial assessments and decisions and must not delegate
+      editorial judgment or decision-making to a generative AI tool.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Submissions, associated data, peer review reports, author and reviewer correspondence, and other
+      materials obtained through the editorial and peer review processes constitute confidential materials.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Editors and peer reviewers must maintain the confidentiality of such materials and must not upload,
+      share, or disclose them to AI tools or platforms other than those that ACS has authorized and integrated
+      into its editorial or peer review system(s)
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Where confidential materials are uploaded, shared, or disclosed to an AI tool or platform other
+      than an ACS-Authorized Tool, such use will constitute a breach of confidentiality and violation of
+      this policy.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: In response to an editor’s or peer reviewer’s violation of this policy, ACS may take such actions
+      it deems appropriate, including but not limited to removal from the peer review process and suspension
+      or termination of reviewer or editor privileges.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'Trigger and consequence: stated. Editors have discretion to determine whether AI use in
+    a submission is inconsistent with the policy. An author''s non-compliance may be considered a breach
+    of the ACS Ethical Guidelines and may lead to editorial action, including rejection, withdrawal, correction,
+    expression of concern, retraction or notification of institutions or funding agencies. For editors
+    and reviewers, ACS may remove them from the peer review process or suspend or terminate their privileges.
+    Author contact: where AI is part of the research methodology, the original data must be made available
+    to editors and reviewers on request; notification of the author before action is not stated. Appeal
+    route: not stated.'
+  evidence:
+  - source: ai-policy
+    quote: Editors have discretion to determine whether the use of generative AI in a submission is inconsistent
+      with this policy.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: An author’s failure to comply with or violation of this policy may be considered a breach of
+      the ACS Ethical Guidelines to Publication of Chemical Research and may result in editorial action.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Such actions may include manuscript rejection, withdrawal, correction, expression of concern,
+      retraction, or notification of institutions or funding agencies
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: In response to an editor’s or peer reviewer’s violation of this policy, ACS may take such actions
+      it deems appropriate, including but not limited to removal from the peer review process and suspension
+      or termination of reviewer or editor privileges.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The above restriction does not apply where AI or machine learning is part of the research methodology
+      (e.g., predictive modeling, AI-based image reconstruction, or AI-predicted structures), provided
+      the use is fully described in the Methods section and the original data are made available to editors
+      and reviewers on request.
     quote_provenance: raw_bytes
 coherence: []

@@ -1,0 +1,69 @@
+Policy on Use of Generative Artificial Intelligence in Grant Applications and Peer Review
+28 April 2026
+The use of generative artificial intelligence (GenAI) may present a number of opportunities and challenges for grant applicants and peer reviewers. The purpose of this document is to outline NHMRC’s policy (the Policy) on the use of GenAI.
+Print this page
+This revised Policy applies to all peer review conducted for NHMRC MREA grant schemes from 28 April 2026.
+As GenAI is a rapidly evolving field, NHMRC will maintain a watching brief and update this Policy when required.
+Generative Artificial Intelligence
+Generative Artificial Intelligence (GenAI) refers to algorithms that are capable of producing new content such as audio, code, images, text, simulations, and videos.1 They are also known as foundational models, natural language processing models or large language models (LLMs). GenAI can perform a wide range of tasks including learning, problem-solving, decision-making and natural language understanding. Information provided to GenAI may become public and be accessed by unspecified third parties; the model may store, process, or integrate the inputs into its learning. Given the rapidly evolving nature of AI, any assumptions about confidentiality of a model may become quickly invalid or outdated.
+NHMRC recognises that the use of GenAI may present a number of opportunities and challenges to applicants and peer reviewers. Opportunities include:
+assisting applicants in drafting, summarising and streamlining their applications
+assisting peer reviewers in drafting and editing feedback
+assisting neurodivergent researchers
+reducing potential language barriers
+reducing the time burden associated with drafting and assessing grant applications and increase the time spent on research and innovation.
+However, the use of GenAI in the funding application and assessment process also presents potential risks for research in areas such as rigour, transparency, originality, reliability, data protection, national security, confidentiality, intellectual property, privacy, copyright, and bias. NHMRC seeks to protect against potential ethical, legal and integrity issues in the use of GenAI tools to maintain the high standards of the research and innovation it funds.
+Inappropriate or uncritical use of GenAI may also undermine confidence in the peer review process and create a public perception that artificial intelligence is influencing funding decisions. Maintaining confidentiality, human judgement and accountability is essential to sustaining trust in NHMRC’s funding and peer review processes.
+NHMRC and peer review
+The strength of peer review is based on the expertise and judgement of the peer reviewers.2 NHMRC peer reviewers are selected for their expertise and experience in their field and NHMRC values their unique perspectives.
+Peer reviewers are engaged as an official of NHMRC. NHMRC and its peer reviewers are bound by the provisions of the Privacy Act 1988 in its collection and use of personal information, and by the commercial confidentiality requirements under section 80 of the National Health and Medical Research Council Act 1992.
+Policy
+GenAI should only be used as a support tool where appropriate, with human oversight, and decision-making authority remaining with a human. NHMRC considers the following uses of GenAI appropriate:
+by applicants in the preparation of grant applications
+by peer reviewers to assist with refining review comments (for example, to improve clarity, check grammar, structure comments, or reduce language barriers).
+NHMRC considers the use of GenAI by peer reviewers to evaluate, critique and/or score applications to be inappropriate.
+Any use of GenAI must accord with the following principles and responsibilities.
+Principles
+P1. Confidentiality and Privacy
+P1.1 The application submitted to NHMRC must be treated as confidential and handled in a manner that protects privacy.
+P1.2 Assume anything entered into a GenAI tool could be made public.
+P1.3 Only use the minimum information necessary when interacting with GenAI tools. Paraphrase or anonymise content where possible to protect confidentiality and privacy while still obtaining useful assistance.
+P1.4 Know the confidentiality and privacy implications of any GenAI tool you use.
+P2. Human expertise
+P2.1 All outputs must be reviewed by a human.
+P2.2 Use judgement and critically assess GenAI outputs.
+P2.3 Check for fairness, accuracy and bias in GenAI outputs.
+P2.4 Be aware that GenAI can produce convincing but inaccurate content.
+P2.5 Undertake training to understand GenAI and how to critically assess its outputs.
+P3. Ownership and accountability
+P3.1 Applicants and peer reviewers must take responsibility for the accuracy and appropriateness of their outputs.
+P3.2 Comply with relevant legislation, policies and guidelines.
+P3.3 Remain responsible and accountable, and be able to explain, justify and take ownership of your decisions.
+P3.4 Ensure AI-generated content is verified and does not replace your expert opinion or judgement.
+P3.5 Ensure your use of GenAI supports public trust in science and upholds the standards and frameworks expected of NHMRC applicants and peer reviewers.
+Responsibilities
+R1. Understand and comply with the Australian Code for the Responsible Conduct of Research, relevant laws, regulations, disciplinary standards, ethics guidelines and institutional policies related to responsible research conduct.
+R2. Understand the technical, ethical and security implications regarding privacy, confidentiality and intellectual property rights. Check, for example, your institutional guidelines, the privacy options of the tools, who is managing the tool (public or private institutions, companies, etc.), where the tool is running and implications for any information uploaded.
+R3. Undertake education and training in responsible use of GenAI.3
+Applicants
+R4. Applicants (and their Administering Institutions) must certify that all information provided in their applications is accurate and are accountable for any misinformation and factual errors more broadly, including those resulting from the use of GenAI in their applications.
+Peer reviewers
+R5. Participate in peer review in a way that is fair, rigorous and maintains the confidentiality of the content.
+R6. Reflect carefully on whether your use of GenAI could put you at risk of breaching any of the principles in this Policy. If you are unsure, seek expert advice from within your organisation. If you don’t have an organisation that you are affiliated with for your role as a peer reviewer, contact the secretariat team for the relevant grant opportunity at NHMRC.
+R7. Comply with NHMRC’s Privacy Policy and ensure that personal information is not inadvertently or intentionally compromised. Improper use of GenAI tools may trigger notification obligations under the Privacy Act 1988 or the Notifiable Data Breaches Scheme. Any improper use of GenAI tools, including the inadvertent disclosure of personal or sensitive information, must be notified to NHMRC.
+R8. Understand your obligations under the NHMRC confidentiality undertaking form.
+R9. Conduct your peer review in accordance with the NHMRC principles of peer review.
+R10. Report suspected breaches of this Policy to NHMRC as appropriate.
+Non-compliance
+A failure to meet the principles and responsibilities set out in this Policy is a breach of the Policy. A breach could occur on a spectrum from minor breaches to those that are more serious. The application and peer review process falls under the Australian Code for the Responsible Conduct of Research and associated Guides. Any breaches will be managed as per NHMRC’s Policy on Research Integrity and the NHMRC Confidentiality Undertaking form. Any complaints made about alleged breaches of this Policy will be managed as per the NHMRC Complaints policy.
+Resources
+Australia’s AI Ethics Principles – Department of Industry, Science and Resources
+Australian Code for the Responsible Conduct of Research 2018 – NHMRC
+Australian Public Service staff guidance on public generative AI – digital.gov.au
+Embracing AI with integrity. UK Research Integrity Office – UK Research Integrity Office
+Living guidelines on the responsible use of generative AI in research – European Commission
+Policy for the responsible use of AI in government v2.0 – digital.gov.au
+Footnotes
+1 https://architecture.digital.gov.au/domain/ai
+2 For the purposes of this policy the term peer reviewers also includes community/consumer reviewers.
+3 The Digital Transformation Agency has developed AI fundamentals training, including a version that is available for people outside the Australian Public Service. It is available from https://www.digital.gov.au/ai/ai-in-government-policy/staff-training

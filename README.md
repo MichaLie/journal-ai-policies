@@ -1,7 +1,7 @@
 # What journals actually require
 
-A version-controlled record of what publishers and research-ethics bodies say about generative AI
-in the natural and life sciences.
+A version-controlled record of what publishers, journals, funders, preprint servers and
+research-ethics bodies say about generative AI in the natural and life sciences.
 
 - **Site:** <https://michalie.github.io/journal-ai-policies/>
 - **Data:** <https://michalie.github.io/journal-ai-policies/data.json> (CC0)
@@ -15,9 +15,11 @@ wording it relies on, so corrections can be specific.
 Policies can change between checks. Direct sources are re-fetched on a schedule; browser and
 archive-backed sources are queued for a dated live read. The git history of `data/entities/` is the dataset.
 
-Currently 36 organisations, 140 quotes, 53 sources. Evidence update prepared 11 November 2026.
-Publisher/journal agreement is calculated separately from funders, preprint servers and advisory bodies.
-See [the November review notes](reviews/2026-11-11.md) for evidence scope and remaining retrieval work.
+Currently 47 organisations, 1,549 quotes, 69 sources. Every source re-read and every record
+re-checked on 20 November 2026. The agreement panel counts publishers and journals only; funders,
+preprint servers and advisory bodies appear in the grid and records but are not counted.
+See [the 20 November review notes](reviews/2026-11-20.md) for what was checked and what is still
+open, and [how quotes become cell values](schema/coding-conventions.md) for the coding rules.
 
 ## Install
 
@@ -35,7 +37,7 @@ python3 tools/fetch.py          # fetch HTTP sources; queue sources needing a li
 python3 tools/diff.py           # what changed since last sign-off (exit 2 = review needed)
 python3 tools/build.py          # render docs/
 python3 tools/verify_quotes.py  # quote report on its own
-python3 -m unittest discover -s tests -v  # monitoring failure-path regression tests
+python3 -m unittest discover -s tests -v  # regression tests
 ```
 
 `validate.py` must pass before anything ships. It fails the build if a quote cannot be found in the
@@ -51,14 +53,21 @@ and finishes with a failing status while review or repair remains outstanding.
 Fixed archive captures are retained as historical evidence, not fetched again to claim live freshness.
 Read their confirmed `live_url` and update `last_live_verified` only after checking the current text.
 Browser/manual sources use `last_verified` for the same purpose. Each monitoring run requires a live
-check dated that day, so these six sources will need manual attention on future runs. To retain a new
+check dated that day, so the 22 browser and archive sources need a same-day live read on every run. In
+practice the monthly monitor therefore ends red and adds its report to the open review issue; treat
+that issue as the to-do list. To retain a new
 browser excerpt, save its text and scope in its own snapshot directory, label its provenance
 `browser_dom`, and review its new text hash before updating the record. The monitor never signs it off.
+
+If a fetch returns an extract that is much shorter than the stored one, or that no longer contains a
+quote the records cite, `fetch.py` keeps the stored copy and reports the source as suspect. After
+reading the live page yourself, `python3 tools/fetch.py <entity> --accept-suspect` stores the new copy.
 
 ## Layout
 
 ```
-schema/stm-activities.yml     the nine STM activities plus 7 extended axes, verbatim
+schema/stm-activities.yml     the nine STM activities (verbatim) plus 7 extended axes (our wording)
+schema/coding-conventions.md  how a quote becomes a cell value
 schema/entity.schema.json     record structure and controlled vocabularies
 schema/reader-guidance.yml    reader-facing copy, kept separate from the verbatim STM file
 data/entities/*.yml           one file per organisation
@@ -70,6 +79,8 @@ tools/verify_quotes.py        check quotes against stored bytes
 tools/consensus.py            derive what holds, what's contested, what's unanswered
 tools/validate.py             schema, cross-references, quote check
 tools/build.py                render docs/
+tests/                        regression tests for monitoring, validation, consensus and build
+reviews/                      dated audit notes
 ```
 
 Each tool's docstring explains why it works the way it does.
@@ -97,7 +108,7 @@ Each tool's docstring explains why it works the way it does.
 - Records published policy, not practice.
 - Coverage is activity-specific; blank cells are unassessed, not silent.
 - Browser excerpts are labelled and archived separately from HTTP captures.
-- New evidence awaits maintainer adjudication through this PR; historical sign-off hashes are preserved.
+- Sources without an `adjudicated_sha256` have not yet been signed off by the maintainer.
 - GitHub disables scheduled workflows after 60 days without repository activity. If nobody pushes,
   the monitor stops.
 
@@ -105,4 +116,17 @@ Each tool's docstring explains why it works the way it does.
 
 Records CC0, chosen so the data can be taken over by someone else if this stops being maintained.
 Code MIT. Quoted policy text belongs to the publishers and is reproduced as short excerpts for
-comparison and criticism, with attribution and a link to the source.
+comparison and criticism, with attribution and a link to the source. `snapshots/` holds the extracted
+text of each policy page so that every quote can be re-checked; that text also belongs to the
+publishers and is kept for verification.
+
+## How to cite
+
+Cite the dataset with the date of the version you used, for example:
+MichaLie (2026). *What journals actually require* [dataset], version of 20 November 2026.
+https://github.com/MichaLie/journal-ai-policies
+
+## Corrections
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). Every record names its source and quotes the wording it relies
+on, so a correction can point at a specific quote.

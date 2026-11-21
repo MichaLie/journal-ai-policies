@@ -2,10 +2,22 @@
   "name": "AIP Publishing",
   "url": "https://publishing.aip.org/resources/researchers/policies-and-ethics/ai-policy/",
   "capture_method": "browser_dom",
-  "capture_scope": "Selected visible policy passages, captured 11 November 2026. Excerpt, not a full page or raw HTTP response.",
+  "capture_scope": "Full main content of the rendered AI Policy page, captured from the browser DOM on 20 November 2026; whitespace normalised. Not a raw HTTP response.",
   "sha256": null,
-  "text_sha256": "ea0072463f5ac163e0b222d7967dd81b1733a5fb0067713a89e6bffdda259369",
+  "text_sha256": "610838d51b7651cd6044386ca2243d7c24e327f63f07c931cd0bb0f31c4795f7",
   "entity": "aip",
   "source": "ai-policy",
-  "fetched": "2026-11-11"
+  "fetched": "2026-11-20",
+  "history": [
+    {
+      "fetched": "2026-11-11",
+      "text_sha256": "ea0072463f5ac163e0b222d7967dd81b1733a5fb0067713a89e6bffdda259369",
+      "capture_method": "browser_dom"
+    },
+    {
+      "fetched": "2026-11-20",
+      "text_sha256": "610838d51b7651cd6044386ca2243d7c24e327f63f07c931cd0bb0f31c4795f7",
+      "capture_method": "browser_dom"
+    }
+  ]
 }

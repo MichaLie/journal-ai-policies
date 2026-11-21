@@ -2,10 +2,22 @@
   "name": "MDPI",
   "url": "https://www.mdpi.com/ethics",
   "capture_method": "browser_dom",
-  "capture_scope": "Selected visible policy passages, captured 11 November 2026. Excerpt, not a full page or raw HTTP response.",
+  "capture_scope": "The complete generative-AI section of the rendered Research and Publication Ethics page, from 'MDPI recognizes the opportunities' to the closing note, captured from the browser DOM on 20 November 2026; whitespace normalised. Excerpt of a longer page, not a raw HTTP response.",
   "sha256": null,
-  "text_sha256": "d225f27758c4a98a14e3d9fad3e1a5b9461cc6358117ad5ae2c3d15ca20be3e1",
+  "text_sha256": "36ad99dd9ad8b623523bccbd96aba88e9434febe75c0de07d03c082e204e2e81",
   "entity": "mdpi",
   "source": "ai-policy",
-  "fetched": "2026-11-11"
+  "fetched": "2026-11-20",
+  "history": [
+    {
+      "fetched": "2026-11-11",
+      "text_sha256": "d225f27758c4a98a14e3d9fad3e1a5b9461cc6358117ad5ae2c3d15ca20be3e1",
+      "capture_method": "browser_dom"
+    },
+    {
+      "fetched": "2026-11-20",
+      "text_sha256": "36ad99dd9ad8b623523bccbd96aba88e9434febe75c0de07d03c082e204e2e81",
+      "capture_method": "browser_dom"
+    }
+  ]
 }

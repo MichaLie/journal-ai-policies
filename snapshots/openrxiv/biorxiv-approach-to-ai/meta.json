@@ -1,0 +1,19 @@
+{
+  "entity": "openrxiv",
+  "source": "biorxiv-approach-to-ai",
+  "url": "https://connect.biorxiv.org/news/2026/10/20/approach_to_ai",
+  "final_url": "https://connect.biorxiv.org/news/2026/10/20/approach_to_ai",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "d114c683f4d76b3f6aa8652740761e8c075f83ad05787ce48558c497d9a5d342",
+  "text_sha256": "265e4a7f794be77f23de1edd50a2ddc37f047f6382ecf094318f815f396c1083",
+  "bytes": 28778,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "d114c683f4d76b3f6aa8652740761e8c075f83ad05787ce48558c497d9a5d342",
+      "text_sha256": "265e4a7f794be77f23de1edd50a2ddc37f047f6382ecf094318f815f396c1083"
+    }
+  ]
+}

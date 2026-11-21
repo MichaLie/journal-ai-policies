@@ -1,0 +1,19 @@
+{
+  "entity": "openrxiv",
+  "source": "medrxiv-approach-to-ai",
+  "url": "https://connect.medrxiv.org/news/2026/10/20/approach_to_ai",
+  "final_url": "https://connect.medrxiv.org/news/2026/10/20/approach_to_ai",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "e1a2ff201484a99e9a3dd38093d7e630ed57af9ffc3b08ae796d12aea9f36708",
+  "text_sha256": "8732ab5bd63ba6449630f0919de121077205ab6ca85c2dbce60b12245ab583cf",
+  "bytes": 19709,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "e1a2ff201484a99e9a3dd38093d7e630ed57af9ffc3b08ae796d12aea9f36708",
+      "text_sha256": "8732ab5bd63ba6449630f0919de121077205ab6ca85c2dbce60b12245ab583cf"
+    }
+  ]
+}

@@ -5,9 +5,10 @@ parent: null
 platform: null
 policy_owner: arxiv
 delegates_to_journal: false
-policy_architecture: rule_with_exemptions
-notes: Significant tool use should be reported; authors remain responsible. Preprint moderation, not journal
-  peer review.
+policy_architecture: prose
+notes: arXiv's AI policy is part of its moderation policies for preprints. Authors are required to report
+  significant use of text-to-text generative AI, consistent with subject standards for methodology. Generative
+  AI language tools should not be listed as authors.
 sources:
 - id: ai-guidance
   url: https://info.arxiv.org/help/moderation/index.html
@@ -17,9 +18,9 @@ sources:
   authoritative: true
   fetch_method: http
   date_source: none
-  last_verified: '2026-11-11'
+  last_verified: '2026-11-20'
   content_sha256: f483423e281516c22676503f1e98439dcb35784070573c6e5f6f00758b0ca13b
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  note: null
 policies:
 - axis: writing_drafting
   permission: permitted_with_conditions
@@ -27,11 +28,60 @@ policies:
   disclosure_location:
   - unspecified
   rationale: accountability
-  conditions: Significant tool use should be reported; authors remain responsible. Preprint moderation,
-    not journal peer review.
+  conditions: Authors report significant use of text-to-text generative AI in their work, consistent with
+    subject standards for methodology. Each author takes full responsibility for all contents, however
+    generated. Generative AI language tools should not be listed as an author.
   evidence:
+  - source: ai-guidance
+    quote: continue to require authors to report in their work any significant use of sophisticated tools,
+      such as instruments and software;
+    quote_provenance: raw_bytes
   - source: ai-guidance
     quote: we now include in particular text-to-text generative AI among those that should be reported
       consistent with subject standards for methodology.
     quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: by signing their name as an author of a paper, they each individually take full responsibility
+      for all its contents, irrespective of how the contents were generated.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: generative AI language tools should not be listed as an author;
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: quality
+  conditions: Authors report in their work any significant use of sophisticated tools, such as instruments
+    and software, used to do the science.
+  evidence:
+  - source: ai-guidance
+    quote: arXiv recognizes that authors of scientific works use a variety of tools to do the science on
+      which they report, and to prepare the report itself, from simple ones to very sophisticated ones.
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: continue to require authors to report in their work any significant use of sophisticated tools,
+      such as instruments and software;
+    quote_provenance: raw_bytes
+  - source: ai-guidance
+    quote: tools may generate useful and helpful results, but also errors or misleading results; therefore,
+      knowing which tools were used is relevant to evaluating and interpreting scientific works.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: The AI policy states no consequence, author contact or appeal route tied to AI use. The
+    moderation policies give general withdrawal and appeal procedures.
+  evidence:
+  - source: ai-guidance
+    quote: In cases where public papers are found to violate arXiv policy, we may withdraw the paper
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+  - source: ai-guidance
+    quote: If you disagree with a moderation decision, you may appeal.
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
 coherence: []

@@ -1,0 +1,180 @@
+id: horizon-europe
+name: Horizon Europe (European Commission)
+type: funder
+parent: null
+platform: null
+policy_owner: horizon-europe
+delegates_to_journal: false
+policy_architecture: prose
+notes: Covers applicants and expert evaluators of Horizon Europe funding proposals. Applicants may use
+  generative AI to prepare a proposal but must disclose which tools they used and how, and remain fully
+  responsible for the content; evaluators must not delegate the evaluation to AI tools. The applicant
+  guidance is in Part B of the application form template (version 5.0, 5 November 2025), and the evaluator
+  rules are in the standard briefing for experts (version 14.0, 15 April 2026). In relevant topics, evaluators
+  also answer whether the project itself uses or develops AI-based systems; that question concerns the
+  funded research.
+sources:
+- id: evaluator-briefing
+  url: https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/experts/standard-briefing-slides-for-experts_he_en.pdf
+  role: guidance
+  audience: reviewers
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: stated
+  stated_date: '2026-04-15'
+  last_verified: '2026-11-20'
+  content_sha256: 9af85191d7fb11e07c424b3b8fa6a6dda361038629fd923794dd4d3d0e858264
+  adjudicated_sha256: null
+  note: Standard briefing slides for experts who evaluate Horizon Europe proposals; they also restate the
+    applicant guidance from the Part B template.
+- id: application-template
+  url: https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/temp-form/af/af_he-ria-ia-stage-1_en.pdf
+  role: guidance
+  audience: authors
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: stated
+  stated_date: '2025-11-05'
+  last_verified: '2026-11-20'
+  content_sha256: 4df50a6f9755505d16f207949418548ac7dd40837ab74c3bba41047482c88c37
+  adjudicated_sha256: null
+  note: Application form template for first-stage RIA and IA proposals; the AI guidance for applicants is
+    in Part B.
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Applies to funding proposals, not manuscripts. Applicants may use generative AI to prepare
+    proposals but must disclose to the granting authority which tools were used and how. They must review and validate AI-generated
+    content for accuracy and compliance with intellectual property regulations, check for plagiarism, and
+    acknowledge the tool's limitations, including bias, errors and gaps in knowledge. They remain fully
+    responsible for the whole proposal. Evaluators may not penalise a proposal for using generative AI.
+  evidence:
+  - source: application-template
+    quote: When considering the use of generative artificial intelligence (AI) tools for the preparation
+      of the proposal, it is imperative to exercise caution and careful consideration.
+    quote_provenance: raw_bytes
+  - source: application-template
+    quote: The AI -generated content should be thoroughly reviewed and validated by the applicants to ensure
+      its appropriateness and accuracy, as well as its compliance with intellectual property regulations.
+    quote_provenance: raw_bytes
+  - source: evaluator-briefing
+    quote: must review and validate thoroughly any AI-generated content to ensure its appropriateness and
+      accuracy,as well as its compliance with intellectual property regulations
+    quote_provenance: raw_bytes
+  - source: application-template
+    quote: Applicants are fully responsible for the content of the proposal (even those parts produced by
+      the AI tool) and must be transparent in disclosing which AI tools were used and how they were utilized.
+    quote_provenance: raw_bytes
+  - source: application-template
+    quote: Be conscious of the potential for plagiarism where the AI tool may have reproduced substantial
+      text from other sources. Check the original sources to be sure you are not plagiarizing someone else’s
+      work.
+    quote_provenance: raw_bytes
+  - source: application-template
+    quote: Acknowledge the limitations of the AI tool in the proposal preparation, including the potential
+      for bias, errors, and gaps in knowledge.
+    quote_provenance: raw_bytes
+  - source: evaluator-briefing
+    quote: may use generativeAI tools when preparing proposals
+    quote_provenance: raw_bytes
+  - source: evaluator-briefing
+    quote: must be fully transparent towards the granting authority and disclose which AI tools were used
+      and how they were utilized
+    quote_provenance: raw_bytes
+  - source: evaluator-briefing
+    quote: The use of generative AI tools in drafting proposals may not be considered by expert evaluators
+      as a reason to penalise a proposal.
+    quote_provenance: raw_bytes
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: accountability
+  conditions: Applies to funding proposals, not manuscripts. Applicants must verify any citations generated
+    by an AI tool and provide a list of the sources used to generate content and citations, including those
+    generated by the tool.
+  evidence:
+  - source: application-template
+    quote: Verify the accuracy, validity, and appropriateness of the content and any citations generated
+      by the AI tool and correct any errors or inconsistencies.
+    quote_provenance: raw_bytes
+  - source: application-template
+    quote: Provide a list of sources used to generate content and citations, including those generated by
+      the AI tool. Double-check citations to ensure they are accurate and properly referenced.
+    quote_provenance: raw_bytes
+  - source: application-template
+    quote: Applicants are fully responsible for the content of the proposal (even those parts produced by
+      the AI tool) and must be transparent in disclosing which AI tools were used and how they were utilized.
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: confidentiality
+  conditions: Applies to expert evaluators of funding proposals. Evaluation must not be delegated to AI
+    tools. AI may be used only for side tasks, such as collecting background information, only where the
+    confidentiality of proposal information and personal data is ensured, and only where evaluators take
+    precautions for the limitations of AI tools, such as hallucinations and biases. Evaluators must document
+    their AI use and make the documentation available to the contracting authority on request. Evaluators
+    remain responsible for keeping proposal information confidential and protecting personal data. Processing
+    proposal information in AI tools that do not respect confidentiality rules, particularly online tools,
+    must be avoided. A breach of confidentiality or personal-data obligations may lead to rejection or reduction
+    of remuneration or costs, or to suspension or termination of the contract.
+  evidence:
+  - source: evaluator-briefing
+    quote: must not delegate the evaluation of proposals to AI tools
+    quote_provenance: raw_bytes
+  - source: evaluator-briefing
+    quote: only for side tasks (e.g. to collect background information) and not for the assessment of proposals
+    quote_provenance: raw_bytes
+  - source: evaluator-briefing
+    quote: only if the confidentiality of all the proposal information and the protection of personal data
+      are ensured
+    quote_provenance: raw_bytes
+  - source: evaluator-briefing
+    quote: only if they take necessary precautions for potential limitations of AI tools (i.e. hallucinations
+      and biases)
+    quote_provenance: raw_bytes
+  - source: evaluator-briefing
+    quote: must appropriately document the use of AI tools (and make the documentation available to the
+      contracting authority on request)
+    quote_provenance: raw_bytes
+  - source: evaluator-briefing
+    quote: Please be aware that the use of generative AI tools for evaluation, particularly generative AI
+      online tools, may represent a breach of the confidentiality requirements of your contract
+    quote_provenance: raw_bytes
+  - source: evaluator-briefing
+    quote: the processing of this information in an AI tool, particularly online, that do not respect
+      confidentiality rules must be avoided
+    quote_provenance: raw_bytes
+  - source: evaluator-briefing
+    quote: are responsible for keeping the confidentiality of proposal information and the protection of
+      personal data
+    quote_provenance: raw_bytes
+  - source: evaluator-briefing
+    quote: must be aware that breaching confidentiality or personal data obligations may have serious consequences,
+      such as rejection/reduction of the remuneration/costs, suspension or termination of the contract
+    quote_provenance: raw_bytes
+- axis: audit_trail
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: unstated
+  conditions: Applies to expert evaluators of funding proposals. Evaluators must document their use of AI
+    tools and make the documentation available to the contracting authority on request. The briefing does
+    not say what the documentation must contain.
+  evidence:
+  - source: evaluator-briefing
+    quote: must appropriately document the use of AI tools (and make the documentation available to the
+      contracting authority on request)
+    quote_provenance: raw_bytes
+coherence: []

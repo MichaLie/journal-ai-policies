@@ -7,8 +7,10 @@ name: verify
 # quotes shipped attributed to pages that did not contain them.
 #
 # `monitor` runs monthly, NEVER edits a record, and COMMITS the fetched hashes
-# back. Without that commit the previous version compared every scheduled run
-# against a frozen baseline and could not detect drift at all.
+# back, but only when the refetched extracts pass the quote gate. Without that
+# commit the previous version compared every scheduled run against a frozen
+# baseline and could not detect drift at all. When the gate fails, nothing from
+# the run is committed and the review issue carries the gate's output.
 
 on:
   push:
@@ -84,7 +86,12 @@ jobs:
           python3 tools/diff.py 2>&1 | tee /tmp/review.txt || code=$?
           echo "code=$code" >> "$GITHUB_OUTPUT"
 
+      # Only what passed the gate is committed. An extract that fails the quote
+      # gate is not evidence, and committing it would make the next run's
+      # baseline the broken copy. When the gate fails this step is skipped and
+      # the issue below says why.
       - name: Persist the hash chain
+        if: steps.gate.outputs.code == '0'
         shell: bash
         run: |
           git config user.name  "policy-monitor"
@@ -93,19 +100,43 @@ jobs:
           git diff --cached --quiet || git commit -m "monitor: refresh source hashes $(date -u +%Y-%m-%d)"
           git push
 
-      - name: Open a review issue for drift, failed retrieval or missing live checks
-        if: steps.diff.outputs.code != '0' || steps.gate.outputs.code != '0' || steps.fetch.outputs.code != '0'
+      # always() so a failed push above cannot suppress the report. One open
+      # review-queue issue at a time: a month nobody adjudicated adds a comment
+      # to the open issue instead of a second issue that says the same thing.
+      - name: Open or update the review issue for drift, failed retrieval or missing live checks
+        if: always() && (steps.diff.outputs.code != '0' || steps.gate.outputs.code != '0' || steps.fetch.outputs.code != '0')
         env:
           GH_TOKEN: ${{ github.token }}
+          GATE_CODE: ${{ steps.gate.outputs.code }}
         shell: bash
         run: |
           gh label create review-queue --color FBCA04 \
             --description "A tracked policy page changed and needs a human" 2>/dev/null || true
-          { cat /tmp/review.txt; echo; echo '## Fetch and live coverage'; echo '```'; cat /tmp/fetch.txt; echo '```'; echo '## Quote gate'; echo '```'; cat /tmp/gate.txt; echo '```'; } > /tmp/issue.md
-          gh issue create \
-            --title "Policy review needed — $(date -u +%Y-%m-%d)" \
-            --body-file /tmp/issue.md \
-            --label review-queue
+          {
+            echo "## Monitor run $(date -u +%Y-%m-%d)"
+            if [ "$GATE_CODE" != 0 ]; then
+              echo
+              echo '**The quote gate failed, so nothing from this run was committed.** The snapshots in the repository are unchanged; the gate output below says which quotes no longer match.'
+            fi
+            echo
+            cat /tmp/review.txt 2>/dev/null || echo '(no review queue output)'
+            echo
+            echo '## Fetch and live coverage'; echo '```'
+            cat /tmp/fetch.txt 2>/dev/null || echo '(no fetch output)'
+            echo '```'
+            echo '## Quote gate'; echo '```'
+            cat /tmp/gate.txt 2>/dev/null || echo '(no gate output)'
+            echo '```'
+          } > /tmp/issue.md
+          existing=$(gh issue list --label review-queue --state open --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file /tmp/issue.md
+          else
+            gh issue create \
+              --title "Policy review needed — $(date -u +%Y-%m-%d)" \
+              --body-file /tmp/issue.md \
+              --label review-queue
+          fi
 
       - name: Fail the monitor when review or repair is needed
         if: always()

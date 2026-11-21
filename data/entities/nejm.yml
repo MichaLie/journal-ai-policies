@@ -1,0 +1,109 @@
+id: nejm
+name: NEJM (New England Journal of Medicine)
+type: journal
+parent: null
+platform: nejm.org
+policy_owner: nejm
+delegates_to_journal: false
+policy_architecture: prose
+homepage: https://www.nejm.org
+notes: 'Editorial policy of the New England Journal of Medicine, whose AI rules for authors follow
+  ICMJE. Authors disclose AI use at submission, AI tools cannot be listed as authors, and citing
+  AI-generated material as a primary source is not acceptable. On its own use, NEJM says human editors
+  make all editorial decisions, and NEJM Group offers reader features such as the AI Companion and
+  licenses content so that its evidence reaches the tools clinicians and patients use; these passages do
+  not mention AI training or author consent. The AI sections do not say whether other NEJM Group titles
+  follow the policy.'
+sources:
+- id: editorial-policies
+  url: https://www.nejm.org/about-nejm/editorial-policies
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: browser
+  date_source: none
+  stated_date: null
+  last_verified: '2026-11-20'
+  content_sha256: null
+  adjudicated_sha256: null
+  note: 'Copied from the live page in a browser on 20 November 2026 (the two AI sections only: author
+    use and NEJM''s own use); no direct download or full-page copy is held.'
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - cover_letter
+  - unspecified
+  rationale: accountability
+  conditions: Authors disclose at submission whether AI-assisted technologies were used to produce the
+    work. The cover letter and the submitted work both describe the technologies used and what they produced.
+    AI tools cannot be listed as authors, because authors are responsible for the accuracy, integrity and
+    originality of the work. Authors review and edit all AI-produced material and must be able to assert
+    that it contains no plagiarism. All quoted material must be properly attributed, with full citations.
+    Citing AI-generated material as a primary source is not acceptable.
+  evidence:
+  - source: editorial-policies
+    quote: Authors must disclose at submission of the manuscript whether AI-assisted technologies (such
+      as large language models, chatbots, or image creators) were used to produce the submitted work.
+    quote_provenance: browser_dom
+  - source: editorial-policies
+    quote: If so, both the cover letter and the submitted work should include a description of the technologies
+      used and what was produced.
+    quote_provenance: browser_dom
+  - source: editorial-policies
+    quote: Because the authors of a manuscript are responsible for the accuracy, integrity, and originality
+      of the work, chatbots or other AI-assisted technologies cannot be listed as authors.
+    quote_provenance: browser_dom
+  - source: editorial-policies
+    quote: Authors must carefully review and edit all materials produced with AI, to prevent the submission
+      of authoritative-sounding output that is incorrect, incomplete, or biased.
+    quote_provenance: browser_dom
+  - source: editorial-policies
+    quote: Authors must be able to assert that there is no plagiarism of text or images in materials produced
+      by AI.
+    quote_provenance: browser_dom
+  - source: editorial-policies
+    quote: Authors must ensure that all quoted material is properly attributed, including full citations.
+    quote_provenance: browser_dom
+  - source: editorial-policies
+    quote: Citation of AI-generated material as a primary source is not acceptable.
+    quote_provenance: browser_dom
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - cover_letter
+  - unspecified
+  rationale: unstated
+  conditions: Image creators are named among the AI-assisted technologies whose use is disclosed at submission
+    and described in the cover letter and the submitted work. Authors must be able to assert that AI-produced
+    images contain no plagiarism.
+  evidence:
+  - source: editorial-policies
+    quote: Authors must disclose at submission of the manuscript whether AI-assisted technologies (such
+      as large language models, chatbots, or image creators) were used to produce the submitted work.
+    quote_provenance: browser_dom
+  - source: editorial-policies
+    quote: If so, both the cover letter and the submitted work should include a description of the technologies
+      used and what was produced.
+    quote_provenance: browser_dom
+  - source: editorial-policies
+    quote: Authors must be able to assert that there is no plagiarism of text or images in materials produced
+      by AI.
+    quote_provenance: browser_dom
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: AI tools support parts of the editorial process. Human editors review all content and make
+    all editorial decisions. The source does not name or describe the AI tools or systems used in the
+    editorial process.
+  evidence:
+  - source: editorial-policies
+    quote: AI tools are used selectively to support aspects of our editorial process. All content is reviewed
+      by human editors who make all editorial decisions for what we publish.
+    quote_provenance: browser_dom
+coherence: []

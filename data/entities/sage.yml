@@ -7,7 +7,11 @@ policy_owner: sage
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
 homepage: null
-notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+notes: 'Sage''s policy covers authors, reviewers and editors. It sorts AI use into three kinds: assistive
+  (no disclosure needed), generative (disclosure required) and prohibited. It mentions translation only
+  for materials used in the research process and says nothing about translating the manuscript. A separate
+  Sage page says any AI use of Sage content, including training large language models, needs lawful access
+  and a licence from Sage.'
 sources:
 - id: ai-policy
   url: https://www.sagepub.com/journals/publication-ethics-policies/artificial-intelligence-policy
@@ -19,7 +23,8 @@ sources:
   date_source: none
   last_verified: '2026-11-11'
   content_sha256: 756f1101abb0153481f63f17c5c88b7e552768ca4225cb61ec0b2d63396d42f6
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  note: Downloaded on 11 November 2026; on 20 November the site blocked downloads, so the quoted sentences
+    were checked against the live page in a browser.
 - id: tdm-ai
   url: https://www.sagepub.com/tdm-ai-policy
   role: policy
@@ -30,28 +35,38 @@ sources:
   date_source: none
   last_verified: '2026-11-11'
   content_sha256: f46ca0118908979e3dd2f35f5753a43840dd53cdf09b0a380d2ad6e7c87caef0
-  note: Verified for this PR. Maintainer adjudication remains pending.
+  note: Downloaded on 11 November 2026; on 20 November the site blocked downloads, so the quoted sentences
+    were checked against the live page in a browser.
 policies:
 - axis: language_refinement
   permission: permitted_with_conditions
   disclosure: not_required
   disclosure_location: []
   rationale: accountability
-  conditions: Assistive editing of the author’s own work.
+  conditions: Tools that suggest improvements to language, grammar or structure of the author's own work
+    are assistive and need no disclosure. Authors remain responsible for accuracy.
   evidence:
   - source: ai-policy
     quote: AI tools that make suggestions to improve or enhance your own work, such as tools to improve
       language, grammar, or structure, are considered assistive AI tools and do not require disclosure
       by authors or reviewers.
     quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: However, authors are responsible for ensuring their submission is accurate and meets the standards
+      for rigorous scholarship
+    quote_provenance: raw_bytes
 - axis: writing_drafting
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
-  - methods
-  - acknowledgements
-  rationale: accountability
-  conditions: Verify outputs and sources. Disclosing use does not authorize prohibited activities.
+  - unspecified
+  rationale: quality
+  conditions: AI-produced content that directly impacts the research methodology, analysis, results or
+    conclusions must be disclosed at submission so the editorial team can evaluate it. Authors must verify
+    the accuracy of all outputs and check original sources, because LLMs may generate false content and
+    citations that do not exist. Generation of incorrect text or content is listed as inappropriate use.
+    Generation of a submission using a series of prompts, and plagiarism or inappropriate attribution to
+    prior sources, are also listed as inappropriate use.
   evidence:
   - source: ai-policy
     quote: The primary or partial use of AI tools and/or LLMs that produce content such as references,
@@ -59,16 +74,267 @@ policies:
       and/or conclusions must be disclosed upon submission so the editorial team can evaluate the content
       generated.
     quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Understanding that LLMs may have generated false content, including getting facts wrong or
+      generating citations that don’t exist, authors must take steps to verify the accuracy of all outputs
+      and check the original sources.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Generation of incorrect text or content
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Generation of data or submission using a series of prompts
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Plagiarism or inappropriate attribution to prior sources
+    quote_provenance: raw_bytes
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - acknowledgements
+  rationale: unstated
+  conditions: Generating representative illustrations or infographics is listed as an appropriate use that
+    requires disclosure in the methods or acknowledgements. Citing the GenAI tool may be appropriate when
+    it was used to create images as representative contributions. Generated images presented as unique or
+    novel research images are listed as inappropriate use.
+  evidence:
+  - source: ai-policy
+    quote: 'Authors should consider the following as appropriate uses for GenAI in research publishing that
+      require disclosure within the methods or acknowledgements:'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Generation of representative illustrations or infographics
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: It may be appropriate to cite GenAI tools when they have been used to create images or visualization
+      as representative contributions rather than original.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Generated images that are presented as unique or novel research images
+    quote_provenance: raw_bytes
+- axis: translation
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: The policy mentions translation only for materials used in the research process. It does not
+    address translation of the manuscript text.
+  evidence:
+  - source: ai-policy
+    quote: Translation of materials as part of the research process
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - acknowledgements
+  rationale: unstated
+  conditions: Assistance in research data visualisation is listed as an appropriate use that requires disclosure
+    in the methods or acknowledgements. Citing the GenAI tool may be appropriate when it was used to create
+    visualisations as representative contributions.
+  evidence:
+  - source: ai-policy
+    quote: 'Authors should consider the following as appropriate uses for GenAI in research publishing that
+      require disclosure within the methods or acknowledgements:'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Assistance in research data visualization
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: It may be appropriate to cite GenAI tools when they have been used to create images or visualization
+      as representative contributions rather than original.
+    quote_provenance: raw_bytes
+- axis: reference_gathering
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - acknowledgements
+  rationale: quality
+  conditions: Assistance with compilation of references is listed as an appropriate use that requires
+    disclosure in the methods or acknowledgements. Authors should cite original sources. Authors must verify
+    all outputs and check the original sources, because LLMs may generate citations that do not exist.
+    Fabricated references are listed as inappropriate use.
+  evidence:
+  - source: ai-policy
+    quote: 'Authors should consider the following as appropriate uses for GenAI in research publishing that
+      require disclosure within the methods or acknowledgements:'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Assistance with compilation of references
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Authors should cite original sources, rather than GenAI tools as primary sources within the references.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Understanding that LLMs may have generated false content, including getting facts wrong or
+      generating citations that don’t exist, authors must take steps to verify the accuracy of all outputs
+      and check the original sources.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Fabricated references or falsified claims
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  - acknowledgements
+  rationale: unstated
+  conditions: Literature review, translation of research materials, AI-generated software or code for further
+    research, and code enhanced or checked by AI are listed as appropriate uses that require disclosure in
+    the methods or acknowledgements. Conducting interviews with GenAI in place of participants and analysis
+    of experiences and themes are listed as inappropriate use.
+  evidence:
+  - source: ai-policy
+    quote: 'Authors should consider the following as appropriate uses for GenAI in research publishing that
+      require disclosure within the methods or acknowledgements:'
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Assistance with literature review or compilation of relevant sources
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Translation of materials as part of the research process
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Using software or code generated by AI to undertake additional research
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Code enhanced or checked for errors by AI assistance
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Conducting interviews with GenAI tools in lieu of participants for qualitative research
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Analysis of experiences and themes
+    quote_provenance: raw_bytes
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: Generated images presented as unique or novel research images, and generation of data or of
+    a submission using a series of prompts, are listed as inappropriate use.
+  evidence:
+  - source: ai-policy
+    quote: Generated images that are presented as unique or novel research images
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Generation of data or submission using a series of prompts
+    quote_provenance: raw_bytes
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: not_required
+  disclosure_location: []
+  rationale: confidentiality
+  conditions: Reviewers may use GenAI to help write and format review reports and remain responsible for
+    their content. This sits under the heading for assistive use with no disclosure required. Generating
+    review reports by uploading or pasting the manuscript into a GenAI tool is listed as inappropriate use,
+    and so is use of GenAI tools to conduct peer review. Reviewers who use GenAI tools to generate review
+    reports inappropriately will not be invited to review for the journal, and their review will not be
+    included in the final decision. The journal and publisher reserve the right to take action if reviewers
+    breach peer-review confidentiality by using GenAI tools.
+  evidence:
+  - source: ai-policy
+    quote: AI assistance (no disclosure required)
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Peer reviewers may use generative AI (GenAI) to help write and format the peer review reports,
+      but they remain responsible for the content of the reports.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Use of GenAI to generate peer review reports, such as uploading or copy-pasting the manuscript
+      or parts of it to a GenAI tool
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Use of GenAI tools for editorial work or to conduct peer-review
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Reviewers using ChatGPT or other GenAI tools to generate review reports inappropriately will not
+      be invited to review for the journal and their review will not be included in the final decision.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The journal and publisher reserve the right to take action if reviewers and editors breach peer-review
+      confidentiality by using GenAI tools.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: confidentiality
+  conditions: Editors must not use GenAI to generate decision letters or summaries of unpublished research.
+    Use of GenAI tools for editorial work is listed as inappropriate use. The journal and publisher reserve
+    the right to take action if editors breach peer-review confidentiality by using GenAI tools. The policy
+    does not describe any AI tools used by Sage itself.
+  evidence:
+  - source: ai-policy
+    quote: Editors must not use ChatGPT or other GenAI to generate decision letters, or summaries of unpublished
+      research.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Use of GenAI tools for editorial work or to conduct peer-review
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: The journal and publisher reserve the right to take action if reviewers and editors breach peer-review
+      confidentiality by using GenAI tools.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'Trigger and consequence: stated. Disclosed use alone is not grounds for rejection. Reviewers
+    who suspect inappropriate or undisclosed use should flag it to the journal editor, and editors who suspect
+    AI use should make an editorial assessment under the policy or contact Sage for advice. The editor may
+    reject a submission at any time if undisclosed inappropriate use comes to light. Concerns about a published
+    article lead to a joint investigation by Sage and the journal editor in accordance with COPE guidance
+    and Sage''s internal policies. Author contact: not stated. Appeal route: not stated.'
+  evidence:
+  - source: ai-policy
+    quote: While submissions will not be rejected solely because of the disclosed use of GenAI tools
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: if the editor becomes aware that GenAI was inappropriately used in the preparation of a submission
+      without disclosure, the editor reserves the right to reject the submission at any time during the
+      publishing process.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Reviewers suspecting the inappropriate or undisclosed use of generative AI in a submission should
+      flag their concerns with the journal editor.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: If editors suspect the use of Generative AI in a submitted manuscript or a submitted review, they
+      should consider this policy in undertaking an editorial assessment of the matter or contact their Sage
+      representative for advice.
+    quote_provenance: raw_bytes
+  - source: ai-policy
+    quote: Sage and the journal editor will lead a joint investigation into concerns raised about the inappropriate
+      or undisclosed use of GenAI in a published article in accordance with guidance issued by COPE and
+      our internal policies
+    quote_provenance: raw_bytes
 - axis: content_licensing
   permission: permitted_with_conditions
   disclosure: not_addressed
   disclosure_location: []
-  rationale: accountability
-  conditions: Publisher-stated access and reuse terms. Scope depends on content, license and purpose;
-    this is not a finding about author consent or the reach of legal exceptions.
+  rationale: licensing
+  conditions: Any AI use of Sage content, including generative AI, training of large language models and
+    retrieval augmented generation, requires lawful access and a licence from Sage. The page does not address
+    author consent.
   evidence:
   - source: tdm-ai
-    quote: If you wish to use Sage journals content for any AI uses including generative AI you should
-      request permission
+    quote: To use Sage’s website and content for any AI uses including generative AI you will need lawful
+      access to the content you wish to use as well as a license from Sage.
+    quote_provenance: raw_bytes
+  - source: tdm-ai
+    quote: Artificial Intelligence (AI) including generative AI, training of large language models, Retrieval
+      Augmented Generation (RAG) and other uses
+    quote_provenance: raw_bytes
+  - source: tdm-ai
+    quote: Sage content, including its website content, is copyright protected and requires prior written
+      permission from Sage in each instance for its use, unless otherwise stated.
     quote_provenance: raw_bytes
 coherence: []

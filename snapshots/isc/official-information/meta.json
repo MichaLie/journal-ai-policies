@@ -1,10 +1,19 @@
 {
-  "name": "isc",
-  "url": "https://council.science/our-work/ai-disclosure-in-research/",
-  "final_url": "https://council.science/our-work/ai-disclosure-in-research/",
-  "sha256": "6554a9555636deed52c80834d33a2d85ec631c92cbf0fa9c04b2b4892264a670",
-  "text_sha256": "3be1363fb0b37eec2d27c0c2d1f0f4f74fa335b7a26e67f6033cb1ff135939d9",
   "entity": "isc",
   "source": "official-information",
-  "fetched": "2026-11-11"
+  "url": "https://council.science/our-work/ai-disclosure-in-research/",
+  "final_url": "https://council.science/our-work/ai-disclosure-in-research/",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "f2a8d303d442e1d371f5135fb76877074f1e8b8e97b8ebe8a95e36537648e5ca",
+  "text_sha256": "2a9141aac517a5a3ad1a115214daa23541ff8ef3309daf9fcc6ac1978dab1347",
+  "bytes": 126388,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "f2a8d303d442e1d371f5135fb76877074f1e8b8e97b8ebe8a95e36537648e5ca",
+      "text_sha256": "2a9141aac517a5a3ad1a115214daa23541ff8ef3309daf9fcc6ac1978dab1347"
+    }
+  ]
 }

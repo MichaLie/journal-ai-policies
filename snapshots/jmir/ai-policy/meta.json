@@ -1,10 +1,19 @@
 {
-  "name": "JMIR Publications",
-  "url": "https://support.jmir.org/hc/en-us/articles/13387268671771-JMIR-Publications-Editorial-Policy-on-the-use-of-generative-AI-during-manuscript-preparation",
-  "final_url": "https://support.jmir.org/hc/en-us/articles/13387268671771-JMIR-Publications-Editorial-Policy-on-the-use-of-generative-AI-during-manuscript-preparation",
-  "sha256": "d5108693ec15c79b31b1056f256d13f25d853e3a21cfe26693d0950d65c22fa2",
-  "text_sha256": "ef0f3634eda3c35dad91d7ac25f0ba3d6e28b1c8a8d6ecd6a8cf7ec5506e1354",
   "entity": "jmir",
   "source": "ai-policy",
-  "fetched": "2026-11-11"
+  "url": "https://support.jmir.org/hc/en-us/articles/13387268671771-JMIR-Publications-Editorial-Policy-on-the-use-of-generative-AI-during-manuscript-preparation",
+  "final_url": "https://support.jmir.org/hc/en-us/articles/13387268671771-JMIR-Publications-Editorial-Policy-on-the-use-of-generative-AI-during-manuscript-preparation",
+  "http_status": "200",
+  "fetched": "2026-11-20",
+  "sha256": "7e84fd977a79d8d86f06c9c96e626ad70474a8108e8dfdd346e55ebc42e2f7ae",
+  "text_sha256": "5c309e19d9e00d6ac51984929838ab333ff62b7208b8416d1f9fcfb1a4991893",
+  "bytes": 37719,
+  "adjudicated_sha256": null,
+  "history": [
+    {
+      "fetched": "2026-11-20",
+      "sha256": "7e84fd977a79d8d86f06c9c96e626ad70474a8108e8dfdd346e55ebc42e2f7ae",
+      "text_sha256": "5c309e19d9e00d6ac51984929838ab333ff62b7208b8416d1f9fcfb1a4991893"
+    }
+  ]
 }

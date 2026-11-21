@@ -1,0 +1,176 @@
+id: openrxiv
+name: bioRxiv / medRxiv
+type: preprint_server
+parent: null
+platform: null
+policy_owner: openrxiv
+delegates_to_journal: false
+policy_architecture: prose
+notes: 'openRxiv''s approach to AI for bioRxiv and medRxiv, published on 20 October 2026 as eight
+  principles. Authors must be verifiable human beings affiliated with an organisation, and may use AI in
+  drafting and research if they critically review and stand behind the work; the posts set no disclosure
+  requirement. Automated tools support screening, staff make all decisions, and authors can appeal a
+  decline. openRxiv provides a dedicated resource for machine access and text mining and expects all
+  users of its content to respect the authors'' chosen licences; the posts do not mention AI training or
+  author consent.'
+sources:
+- id: biorxiv-approach-to-ai
+  url: https://connect.biorxiv.org/news/2026/10/20/approach_to_ai
+  role: announcement
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: http
+  date_source: stated
+  stated_date: '2026-10-20'
+  last_verified: '2026-11-20'
+  content_sha256: d114c683f4d76b3f6aa8652740761e8c075f83ad05787ce48558c497d9a5d342
+  adjudicated_sha256: null
+  note: News post on the bioRxiv site announcing openRxiv's approach to AI.
+- id: medrxiv-approach-to-ai
+  url: https://connect.medrxiv.org/news/2026/10/20/approach_to_ai
+  role: announcement
+  audience: all
+  status: current
+  authoritative: false
+  fetch_method: http
+  date_source: stated
+  stated_date: '2026-10-20'
+  last_verified: '2026-11-20'
+  content_sha256: e1a2ff201484a99e9a3dd38093d7e630ed57af9ffc3b08ae796d12aea9f36708
+  adjudicated_sha256: null
+  note: 'The same post on the medRxiv site. On 20 November 2026 its policy text matched the bioRxiv post
+    word for word; only the byline and page layout differ.'
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: AI is recognised as a drafting tool, in particular for non-native English speakers. Authors
+    must shape, review and stand behind the work they submit. Submissions showing uncritically reviewed
+    AI material may receive further review and may be declined. No disclosure requirement is stated.
+  evidence:
+  - source: biorxiv-approach-to-ai
+    quote: We recognize that AI is being widely used by researchers to advance science and is a useful
+      tool for many researchers discovering, consuming, and drafting manuscripts, in particular non-native
+      English speakers.
+    quote_provenance: raw_bytes
+  - source: biorxiv-approach-to-ai
+    quote: However, if an author uses AI, they must shape, review, stand behind and have intellectual input
+      into the interpretation of the work they submit.
+    quote_provenance: raw_bytes
+  - source: biorxiv-approach-to-ai
+    quote: It is humans who are accountable for what it produces.
+    quote_provenance: raw_bytes
+  - source: biorxiv-approach-to-ai
+    quote: When screening identifies evidence that authors have not critically reviewed AI-generated material,
+      such as large numbers of fabricated references or entirely AI-generated discussion/conclusions, a submission
+      may receive further review and we reserve the right to decline the work.
+    quote_provenance: raw_bytes
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: AI use in research design, execution, analysis and reporting is acknowledged. Authors must
+    shape, review and stand behind the work and have intellectual input into its interpretation. No disclosure
+    requirement is stated.
+  evidence:
+  - source: biorxiv-approach-to-ai
+    quote: AI is now commonly used in research design, execution, analysis, and reporting.
+    quote_provenance: raw_bytes
+  - source: biorxiv-approach-to-ai
+    quote: However, if an author uses AI, they must shape, review, stand behind and have intellectual input
+      into the interpretation of the work they submit.
+    quote_provenance: raw_bytes
+  - source: biorxiv-approach-to-ai
+    quote: It is humans who are accountable for what it produces.
+    quote_provenance: raw_bytes
+- axis: passing_off
+  permission: prohibited
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: quality
+  conditions: The posts describe the use of AI to generate fabricated or misleading submissions as misuse.
+    To maintain the integrity and reliability of the corpus, openRxiv reserves the right to decline articles
+    or rate limit authors in some instances.
+  evidence:
+  - source: biorxiv-approach-to-ai
+    quote: AI can also be misused to generate fabricated or misleading submissions, including high volumes
+      of material that do not meet screening requirements.
+    quote_provenance: raw_bytes
+  - source: biorxiv-approach-to-ai
+    quote: Our responsibility is to maintain the integrity, accessibility, and reliability of the corpus
+      for researchers. We therefore reserve the right to decline articles or rate limit authors in some
+      instances and restrict machine access where this may disrupt our services.
+    quote_provenance: raw_bytes
+- axis: publisher_own_use
+  permission: not_addressed
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: openRxiv uses text-analysis and other automated tools in screening, and these tools do not
+    alone decide a submission. The posts do not say whether these tools use AI.
+  evidence:
+  - source: biorxiv-approach-to-ai
+    quote: 6. Preserving confidentiality We use text-analysis tools as part of screening content submitted
+      for potential public dissemination.
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+  - source: biorxiv-approach-to-ai
+    quote: We use a variety of automated tools in screening, but these tools do not alone determine the
+      outcome of a submission.
+    quote_provenance: raw_bytes
+    evidence_role: documents_absence
+- axis: detection_screening
+  permission: permitted
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: quality
+  conditions: Screening uses several automated tools and can identify uncritically reviewed AI-generated
+    material. The posts do not say whether authors are told that a submission was flagged.
+  evidence:
+  - source: biorxiv-approach-to-ai
+    quote: We use a variety of automated tools in screening, but these tools do not alone determine the
+      outcome of a submission.
+    quote_provenance: raw_bytes
+  - source: biorxiv-approach-to-ai
+    quote: When screening identifies evidence that authors have not critically reviewed AI-generated material,
+      such as large numbers of fabricated references or entirely AI-generated discussion/conclusions, a submission
+      may receive further review and we reserve the right to decline the work.
+    quote_provenance: raw_bytes
+  - source: biorxiv-approach-to-ai
+    quote: Our responsibility is to maintain the integrity, accessibility, and reliability of the corpus
+      for researchers. We therefore reserve the right to decline articles or rate limit authors in some
+      instances and restrict machine access where this may disrupt our services.
+    quote_provenance: raw_bytes
+- axis: due_process
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: unstated
+  conditions: 'Trigger and consequence are stated: when screening finds evidence that authors have not
+    critically reviewed AI-generated material, such as large numbers of fabricated references, a submission
+    may receive further review and may be declined. Contact with the author before action is not stated.
+    An appeal route is stated: authors can appeal a decline they believe is mistaken. Automated tools do
+    not alone decide a submission, and staff make all decisions. openRxiv commits to re-evaluating its tools
+    regularly.'
+  evidence:
+  - source: biorxiv-approach-to-ai
+    quote: We use a variety of automated tools in screening, but these tools do not alone determine the
+      outcome of a submission.
+    quote_provenance: raw_bytes
+  - source: biorxiv-approach-to-ai
+    quote: When screening identifies evidence that authors have not critically reviewed AI-generated material,
+      such as large numbers of fabricated references or entirely AI-generated discussion/conclusions, a submission
+      may receive further review and we reserve the right to decline the work.
+    quote_provenance: raw_bytes
+  - source: biorxiv-approach-to-ai
+    quote: All decisions are made by our staff and informed by input from affiliates and multiple tools.
+    quote_provenance: raw_bytes
+  - source: biorxiv-approach-to-ai
+    quote: Authors can appeal if they believe work has been mistakenly declined, and we commit to regularly
+      reevaluating the tools we use so that we do not wrongly or unfairly flag work as out of scope.
+    quote_provenance: raw_bytes
+coherence: []

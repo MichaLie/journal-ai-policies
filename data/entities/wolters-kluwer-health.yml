@@ -1,0 +1,162 @@
+id: wolters-kluwer-health
+name: Wolters Kluwer Health (Lippincott journals)
+type: publisher
+parent: null
+platform: null
+policy_owner: wolters-kluwer-health
+delegates_to_journal: false
+policy_architecture: prose
+homepage: null
+notes: 'Wolters Kluwer Health has two position statements for its periodical journals: one for authors,
+  and one for journals that covers authors, editors and reviewers. Both are on the Lippincott Journals
+  ethical best practices page. An AI authoring tool does not meet the ICMJE standards for authorship.
+  Authors must not upload an accepted or published manuscript, or any part of it, into a generative AI
+  tool, as this may breach the copyright agreement or licensing terms.'
+sources:
+- id: ethical-best-practices
+  url: https://www.wolterskluwer.com/en/solutions/lippincott-journals/lippincott-journals-ethical-best-practices-in-scholarly-publishing
+  role: policy
+  audience: all
+  status: current
+  authoritative: true
+  fetch_method: browser
+  date_source: none
+  stated_date: null
+  last_verified: '2026-11-20'
+  content_sha256: null
+  adjudicated_sha256: null
+  note: Copied from the live page in a browser on 20 November 2026 (the two generative AI sections only).
+policies:
+- axis: writing_drafting
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: accountability
+  conditions: Authors disclose which AI tool they used and how, in the Materials and Methods or a similar
+    section. Authors are fully responsible for all content, including parts produced by an AI tool.
+  evidence:
+  - source: ethical-best-practices
+    quote: WKH’s Artificial Intelligence Authoring Tools and Authorship Policy permits authors to use generative
+      AI and AI-assisted technologies in the writing of a manuscript, production of images or graphical
+      elements of the paper, or in the collection and analysis of data.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: Authors must be transparent in disclosing in the Materials and Methods (or similar section) of
+      the paper how the AI tool was used, and which tool was used.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: Authors are fully responsible for the content of their manuscript, even those parts produced
+      by an AI tool, and are thus liable for any breach of publication ethics.
+    quote_provenance: browser_dom
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: accountability
+  conditions: Covers production of images or graphical elements of the paper. Authors disclose the tool
+    and how it was used in the Materials and Methods or a similar section. Authors are fully responsible
+    for all content, including parts produced by an AI tool.
+  evidence:
+  - source: ethical-best-practices
+    quote: WKH’s Artificial Intelligence Authoring Tools and Authorship Policy permits authors to use generative
+      AI and AI-assisted technologies in the writing of a manuscript, production of images or graphical
+      elements of the paper, or in the collection and analysis of data.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: Authors must be transparent in disclosing in the Materials and Methods (or similar section) of
+      the paper how the AI tool was used, and which tool was used.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: Authors are fully responsible for the content of their manuscript, even those parts produced
+      by an AI tool, and are thus liable for any breach of publication ethics.
+    quote_provenance: browser_dom
+- axis: research_process_ai
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - methods
+  rationale: accountability
+  conditions: Covers collection and analysis of data. Authors disclose the tool and how it was used in the
+    Materials and Methods or a similar section. Authors are fully responsible for all content, including
+    parts produced by an AI tool.
+  evidence:
+  - source: ethical-best-practices
+    quote: WKH’s Artificial Intelligence Authoring Tools and Authorship Policy permits authors to use generative
+      AI and AI-assisted technologies in the writing of a manuscript, production of images or graphical
+      elements of the paper, or in the collection and analysis of data.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: Authors must be transparent in disclosing in the Materials and Methods (or similar section) of
+      the paper how the AI tool was used, and which tool was used.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: Authors are fully responsible for the content of their manuscript, even those parts produced
+      by an AI tool, and are thus liable for any breach of publication ethics.
+    quote_provenance: browser_dom
+- axis: reviewer_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: confidentiality
+  conditions: Reviewers must not upload a submitted manuscript or any part of it into a generative AI tool.
+    They must not upload their reviews into an AI tool, even to improve language and readability. Reviewers
+    should not use AI as the sole mechanism for evaluating or making decisions about a manuscript.
+  evidence:
+  - source: ethical-best-practices
+    quote: Editors, editorial office staff, or reviewers must not upload a submitted manuscript or any part
+      of it into a generative AI tool, as this may violate confidentiality and proprietary rights and, where
+      the paper contains personally identifiable information, may violate data privacy rights.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: For this reason, reviewers and editors must not upload their reviews and letters, respectively,
+      into an AI tool, even if it is just for the purpose of improving language and readability.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: AI technologies should not be used by editors or reviewers as the sole mechanism in evaluating
+      or making decisions about a manuscript.
+    quote_provenance: browser_dom
+- axis: publisher_own_use
+  permission: permitted_with_conditions
+  disclosure: not_addressed
+  disclosure_location: []
+  rationale: accountability
+  conditions: AI-powered automation may support processing speed, validation, quality assessment and progression
+    of peer review, provided the AI does not itself decide on acceptance or rejection. Editors and editorial
+    office staff must not upload a submitted manuscript or any part of it into a generative AI tool. Editors
+    must not upload their letters, including decision letters, into an AI tool. Editors should not use AI
+    as the sole mechanism for evaluating or deciding on a manuscript. Misconduct and integrity evaluations
+    should not rely solely on AI decision-making. The source does not name or describe specific publisher
+    AI systems or tools.
+  evidence:
+  - source: ethical-best-practices
+    quote: AI-powered automation to increase processing speed, validation, quality assessment, and progression
+      of the peer review process may be used provided the outcome does not result in a decision by the AI
+      itself on acceptance or rejection of a manuscript.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: The management of the editorial evaluation of a scientific manuscript is a responsibility of humans.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: AI technologies should not be used by editors or reviewers as the sole mechanism in evaluating
+      or making decisions about a manuscript.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: The editor is responsible and accountable for the editorial process, the final decision, and
+      the communication thereof to the authors.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: Editors, editorial office staff, or reviewers must not upload a submitted manuscript or any part
+      of it into a generative AI tool, as this may violate confidentiality and proprietary rights and, where
+      the paper contains personally identifiable information, may violate data privacy rights.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: For this reason, reviewers and editors must not upload their reviews and letters, respectively,
+      into an AI tool, even if it is just for the purpose of improving language and readability.
+    quote_provenance: browser_dom
+  - source: ethical-best-practices
+    quote: Evaluations of misconduct and research integrity, including those leading to expressions of concerns,
+      retractions, or contacting researchers’ institutions, also should not rely solely on AI decision-making.
+    quote_provenance: browser_dom
+coherence: []

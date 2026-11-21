@@ -4,12 +4,15 @@
 # Preparation", STM Association Task and Finish Group on AI Labelling Terminology
 # for Research Content Declaration, September 2025.
 # URL: https://s3.eu-west-2.amazonaws.com/stm.offloadmedia/wp-content/uploads/2025/04/23020709/STM_AI_Classification_Recs_19_Sept2025-1.pdf
-# Retrieved and text-extracted locally 2026-08-21. Titles below are VERBATIM.
+# Retrieved 2026-08-21; text re-extracted from the same PDF bytes on later fetches.
+# Titles, descriptions and exclusions below are VERBATIM. The `plain` labels and
+# the whole `extended_axes` block are OUR wording, not STM's.
 #
 # WHY THIS IS THE AXIS LIST:
-# The group that wrote it is staffed by Springer Nature (x2), Elsevier, Wiley,
-# Taylor & Francis, CUP, BMJ, ACS and IEEE. It instructs publishers to decide,
-# per activity, what is permitted and what must be declared — which is precisely
+# The group that wrote it includes staff of Springer Nature (x2), Elsevier, Wiley,
+# Taylor & Francis, CUP, BMJ, ACS and IEEE, plus an independent consultant and
+# STM Solutions. It recommends that publishers "consider each of the AI-assisted
+# activities" and decide what is permitted and what must be declared — which is precisely
 # the shape of Springer Nature's risk tiers and Wiley's per-task matrix.
 # It then explicitly declines to harmonise the answers. Same grid, different
 # answers by design. We record how differently the grid gets filled in.
@@ -34,49 +37,49 @@ activities:
     plain: Using AI to polish your language
     title: Refinement, correction, editing or formatting the manuscript to improve clarity of language
     note_2023: "2023 STM Guidelines recommend that disclosure is not necessary for this use of automated tools."
-    excludes: Using AI tools to generate text from prompts or generate summaries of text
+    excludes: "Using AI tools to generate text from prompts or generate summaries of text; using AI tools to analyse or summarise textual documents as part of the research process"
 
   - id: 2
     key: writing_drafting
     plain: Using AI to draft manuscript text
     title: Writing or drafting manuscript content
-    excludes: Use of simple spelling and grammar checkers
+    excludes: "Use of simple spelling and grammar checkers; analysing or summarising textual documents as part of the research process"
 
   - id: 3
     key: data_presentation
     plain: Using AI to format the data you report
     title: Refining or formatting of data reported in the manuscript
-    excludes: Using AI tools to visualise data sets (activity 6) or data manipulation
+    excludes: "Using AI tools to visualise data sets (activity 6) or data manipulation; any generation, correcting, or editing of data used as part of the research process"
 
   - id: 4
     key: illustrative_images
-    plain: AI-generated illustrative figures
+    plain: Using AI for illustrative figures
     title: Generation, refinement, correction, editing or formatting of images, diagrams or other figures for illustrative purposes only
-    excludes: Visualisation of actual data or research outputs
+    excludes: "Visualisation of actual data or research outputs, editing of visualisations of actual data or results, presentation of generated images as research outputs in themselves or as representing research outputs"
 
   - id: 5
     key: translation
     plain: Using AI to translate your manuscript
     title: Translation of manuscript text for the purpose of publishing
-    excludes: Translation of materials as part of the research process, unrelated to manuscript preparation
+    excludes: "Translation of materials (such as source documents) as part of the research process, unrelated to manuscript preparation"
 
   - id: 6
     key: data_visualisation
-    plain: AI-generated charts of your real data
+    plain: Using AI to visualise your research data
     title: Generation, refinement, correction, editing or formatting of visualisations of research data or results
-    excludes: Use of traditional statistical software (such as STATA, SAS, and R) to visualise data
+    excludes: "Use of traditional statistical software (such as STATA, SAS, and R) to visualise data; generation of images or other content without any basis in real research data/outputs"
 
   - id: 7
     key: code_presentation
     plain: Using AI to tidy code you report
     title: Refinement or formatting of code reported in the submitted manuscript
-    excludes: Using AI tools to generate new code for use in research processes
+    excludes: "Using AI tools to generate new code for use in research processes, or alter the functionality of code used in research processes before manuscript submission"
 
   - id: 8
     key: reference_gathering
     plain: Using AI to find references
     title: Assisting with gathering references
-    excludes: Using AI tools to generate plausible-sounding references that do not exist
+    excludes: "Using automated tools (such as BibTeX) to generate formatted citations for references identified by human authors; using AI tools to generate plausible-sounding references that do not exist; using AI tools to identify publications that may be useful to the research process"
 
   - id: 9
     key: passing_off
@@ -98,11 +101,11 @@ extended_axes:
     title: Use of AI by peer reviewers
 
   - key: publisher_own_use
-    plain: The publisher running AI on your manuscript
+    plain: The publisher or its editors using AI on your manuscript
     title: The publisher's or editor's own AI use on submitted manuscripts
 
   - key: detection_screening
-    plain: Being screened by AI detectors
+    plain: Your submission being screened, including with AI tools
     title: Whether AI-text or integrity screening is run, and whether authors are told
 
   - key: due_process
@@ -114,5 +117,5 @@ extended_axes:
     title: Prompts, model versions, session records retained as evidence
 
   - key: content_licensing
-    plain: Your paper licensed for AI training
+    plain: Licensing published papers for AI training
     title: Licensing of author content for AI training, and author consent

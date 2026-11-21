@@ -9,7 +9,7 @@ A **time series**, not a table. The git history of `data/entities/` is the datas
 It cannot be reconstructed after the fact — which is why records go in even when
 incomplete, marked as incomplete, rather than waiting until they are perfect.
 
-## The five hard rules
+## The hard rules
 
 1. **Verbatim or nothing.** Never paraphrase policy text into a record. A quote gets
    the exact words, the source id, and nothing else. Accuracy of quotation is this
@@ -65,6 +65,7 @@ incomplete, marked as incomplete, rather than waiting until they are perfect.
 
 ## Adding an entity
 
+- Code cells by `schema/coding-conventions.md`.
 - `id` is kebab-case and stable forever — it is the join key across the time series.
 - `platform` ≠ `policy_owner`. EMBO Press sits on Springer Nature Link and sets its own
   policy; conflating them invents an inheritance that does not exist.
@@ -95,7 +96,8 @@ and record `last_live_verified` after actually reading it. Browser/manual source
 ## What this does not have yet
 
 - Broader journal-level coverage under publishers that delegate.
-- Funders (DFG, ERC, NWO, NIH), preprint servers, and the content-licensing axis.
+- Funders beyond those recorded (for example NWO, SNSF, Canada's Tri-agency, Czech funders), further
+  preprint servers, and journal-level records under most publishers that delegate.
 - Further task-level coverage for newly added publishers; a source record does not imply every activity has been assessed.
 - Roughly half the possible organisation×axis cells. The rest render as `—`, which means
   *not assessed*, never *silent*.
@@ -109,10 +111,10 @@ challenge page **with HTTP 200** — a 3KB body that hashes and stores perfectly
 containing no policy at all. That is why `fetch.py` stores a text hash and why quotes are
 re-checked: a 200 is not evidence of content.
 
-Three sources are PDFs. `fetch.py` extracts their text with pypdf (the first version decoded
+Several sources are PDFs. `fetch.py` extracts their text with pypdf (the first version decoded
 them as UTF-8 and committed raw bytes as "text", which broke the quote gate on 2026-09-01) and
 hashes the raw bytes for drift, because pypdf's extraction differs between versions. The five
 archive-checked sources carry the Wayback toolbar, whose capture count changes whenever anyone
-saves the page; `fetch.py` strips it before hashing. Their live pages were re-read on
-2026-10-15. A sixth source, Springer Nature's reviewer guidance, uses a labelled browser
-DOM excerpt because direct HTTP returns a challenge page.
+saves the page; `fetch.py` strips it before hashing. Their live pages were last re-read on
+2026-11-20. Sources marked `browser` hold a labelled browser DOM extract of the full AI section,
+captured with a SHA-256 check against the live page, because direct HTTP returns a challenge page.

@@ -7,7 +7,16 @@ registry has been observed to rot:
   - every evidence source id resolves to a declared source (dangling citation)
   - a quote with no URL is flagged, never silently shipped (fabrication risk)
   - exactly one authoritative source per audience          ("cite this, not that")
+  - no two authoritative sources with overlapping audiences
+    ('all' overlaps every audience)                         (two pages both "cite this")
   - parent ids resolve                                     (broken inheritance)
+  - policy_owner names a recorded entity or the record itself (invented inheritance)
+  - "format": "date" fields are real dates                  (schema formats are
+                                                             annotations unless checked)
+  - quote_provenance matches how the source is held:
+    browser sources -> browser_dom; http/archive sources never browser_dom
+    (`unverified` and `summariser_relayed` are honest anywhere)
+  - every quote is found in the stored copy of its source  (the quote gate)
 """
 from __future__ import annotations
 import json, sys
@@ -26,7 +35,11 @@ def main() -> int:
     errors, warnings = [], []
 
     schema = json.loads((SCHEMA / "entity.schema.json").read_text(encoding="utf-8"))
-    validator = jsonschema.Draft202012Validator(schema) if jsonschema else None
+    # Without a FormatChecker, "format": "date" is an annotation only and
+    # "2026-13-45" passes. The checker makes the schema mean what it says.
+    validator = (jsonschema.Draft202012Validator(
+        schema, format_checker=jsonschema.Draft202012Validator.FORMAT_CHECKER)
+        if jsonschema else None)
 
     # Duplicate ids would collide in the same snapshots/<id>/<src>/ directory —
     # silently reintroducing the invisible-overwrite failure this repo is built
@@ -70,6 +83,37 @@ def main() -> int:
                 errors.append(f"{f}: {n} authoritative sources for audience '{aud}' — must be exactly one")
         if rec.get("sources") and not by_audience:
             errors.append(f"{f}: no authoritative source — the 'cite this' panel would render empty")
+        # Different audiences can still overlap: an authoritative page for 'all'
+        # and another for 'authors' both claim to be the one an author cites.
+        auths = [(s["id"], s.get("audience", "unspecified"))
+                 for s in rec.get("sources", []) if s.get("authoritative")]
+        for i, (sa, aa) in enumerate(auths):
+            for sb, ab in auths[i + 1:]:
+                if aa != ab and "all" in (aa, ab):
+                    warnings.append(f"{f}: authoritative sources '{sa}' ({aa}) and '{sb}' ({ab}) "
+                                    f"overlap — 'all' covers every audience, so both say 'cite this'")
+
+        # policy_owner is the entity that writes the policy. A value that names
+        # nothing recorded here is an inheritance the site cannot show.
+        owner = rec.get("policy_owner")
+        if owner and owner != rec.get("id") and owner not in ids:
+            warnings.append(f"{f}: policy_owner '{owner}' is not a recorded entity id")
+
+        # Provenance must say how the words were actually obtained. A browser
+        # source has no raw HTTP bytes to quote from; an http or archive source
+        # was not captured from a rendered DOM.
+        method_of = {s["id"]: s.get("fetch_method", "http") for s in rec.get("sources", [])}
+        for p in rec.get("policies", []):
+            for ev in p.get("evidence", []):
+                prov, method = ev.get("quote_provenance"), method_of.get(ev["source"])
+                if prov in ("unverified", "summariser_relayed") or method is None:
+                    continue
+                if method == "browser" and prov != "browser_dom":
+                    warnings.append(f"{f}: quote on '{p['axis']}' cites browser source '{ev['source']}' "
+                                    f"but claims provenance '{prov}' — should be browser_dom")
+                elif method in ("http", "archive") and prov == "browser_dom":
+                    warnings.append(f"{f}: quote on '{p['axis']}' cites {method} source '{ev['source']}' "
+                                    f"but claims provenance browser_dom")
 
         for s in rec.get("sources", []):
             d = age_days(s.get("last_verified"))
@@ -138,7 +182,9 @@ def main() -> int:
                           f"provenance '{u['provenance']}' but is {u['verdict']} "
                           f"in the bytes held for source '{u['source']}'")
     except Exception as exc:                                    # noqa: BLE001
-        warnings.append(f"quote verification could not run: {exc}")
+        # A gate that could not run has checked nothing. Exiting 0 here would
+        # report every quote as verified, so this is an error.
+        errors.append(f"quote verification could not run: {type(exc).__name__}: {exc}")
 
     for w in warnings:
         print(f"  warn  {w}")

@@ -7,7 +7,10 @@ policy_owner: embo
 delegates_to_journal: false
 policy_architecture: rule_with_exemptions
 homepage: null
-notes: Task-specific rules verified on 11 November 2026. Unassessed activities remain blank.
+notes: EMBO Press sets its own AI rules for authors, published on its Springer Nature Link partner page.
+  AI use should be mainly limited to improving the style, accessibility or quality of human-generated
+  text and images, and any use must be disclosed in the published article, naming the parts affected and
+  the tools. AI may be used to collect and analyse data if this is documented in the Methods section.
 sources:
 - id: ai-policy
   url: https://link.springer.com/partners/embo-press/editorial-policies
@@ -17,30 +20,89 @@ sources:
   authoritative: true
   fetch_method: browser
   date_source: none
-  last_verified: '2026-11-11'
+  last_verified: '2026-11-20'
   content_sha256: null
-  note: Verified for this PR. Maintainer adjudication remains pending. Selected visible policy passages,
-    captured 11 November 2026. Excerpt, not a full page or raw HTTP response.
+  note: Copied from the live page in a browser on 11 November 2026 (selected AI policy passages only); this
+    is a browser copy and not a direct download of the full page.
 policies:
 - axis: language_refinement
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - unspecified
-  rationale: accountability
-  conditions: Declare affected parts and tools in the published article.
+  rationale: unstated
+  conditions: Use of AI should be primarily restricted to improving the style, accessibility or quality
+    of human-generated text and images. Authors disclose the use in the published article, naming the
+    affected parts and the tools.
   evidence:
   - source: ai-policy
     quote: Use of AI programs should be primarily restricted to improve the style, accessibility or quality
       of human generated text and images, including schemata and data figures.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors must disclose their use in the published article, including details on which parts
+      of the article were assembled with the assistance of AI programs and details on the tools employed.
+    quote_provenance: browser_dom
+- axis: writing_drafting
+  permission: discouraged
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: unstated
+  conditions: AI use should be primarily restricted to improving human-generated text. Any use is disclosed
+    in the published article, naming the affected parts and the tools.
+  evidence:
+  - source: ai-policy
+    quote: Use of AI programs should be primarily restricted to improve the style, accessibility or quality
+      of human generated text and images, including schemata and data figures.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: Authors must disclose their use in the published article, including details on which parts
+      of the article were assembled with the assistance of AI programs and details on the tools employed.
+    quote_provenance: browser_dom
+- axis: illustrative_images
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: unstated
+  conditions: AI use on images, including schemata, should be primarily restricted to improving
+    human-generated images. AI may be used for illustrative purposes if declared, with attribution
+    where appropriate.
+  evidence:
+  - source: ai-policy
+    quote: Use of AI programs should be primarily restricted to improve the style, accessibility or quality
+      of human generated text and images, including schemata and data figures.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: AI programs may be used to display data or for illustrative purposes, as long as that is declared
+      and attribution is provided, where appropriate.
+    quote_provenance: browser_dom
+- axis: data_visualisation
+  permission: permitted_with_conditions
+  disclosure: required
+  disclosure_location:
+  - unspecified
+  rationale: unstated
+  conditions: AI use on data figures should be primarily restricted to improving human-generated
+    figures. AI may be used to display data if declared, with attribution where appropriate.
+  evidence:
+  - source: ai-policy
+    quote: Use of AI programs should be primarily restricted to improve the style, accessibility or quality
+      of human generated text and images, including schemata and data figures.
+    quote_provenance: browser_dom
+  - source: ai-policy
+    quote: AI programs may be used to display data or for illustrative purposes, as long as that is declared
+      and attribution is provided, where appropriate.
     quote_provenance: browser_dom
 - axis: research_process_ai
   permission: permitted_with_conditions
   disclosure: required
   disclosure_location:
   - methods
-  rationale: accountability
-  conditions: Label synthetic data; never misrepresent experimental findings.
+  rationale: unstated
+  conditions: For data from original experimentation or meta-analysis of the literature, AI may be used
+    in data collection and analysis if this is documented in the Methods section.
   evidence:
   - source: ai-policy
     quote: For data based on original experimentation or meta-analysis of the literature, AI programs
